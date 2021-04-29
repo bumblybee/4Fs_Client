@@ -1,11 +1,11 @@
 import React from "react";
-import SemanticTable from "../table/SemanticTable";
+import TableComponent from "../table/TableComponent";
 
 const System = () => {
   return (
     <>
       <h1 style={{ textAlign: "center" }}>Master your System</h1>
-      {/* <SemanticTable
+      {/* <TableComponent
       data={rowData}
       editablecells={{
         beliefs: "text",

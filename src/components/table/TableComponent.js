@@ -26,7 +26,7 @@ TableComponent.TF = function TF({ children, ...props }) {
   return <Table.Footer {...props}>{children}</Table.Footer>;
 };
 
-const TableComponent = ({ children, ...props }) => {
+export default function TableComponent({ children, ...props }) {
   const [rowData, setRowData] = useState(props.rows);
 
   useEffect(() => {
@@ -116,6 +116,4 @@ const TableComponent = ({ children, ...props }) => {
       <Table.Body>{renderRows(rowsMappedToColumns)}</Table.Body>
     </StyledTable>
   );
-};
-
-export default TableComponent;
+}

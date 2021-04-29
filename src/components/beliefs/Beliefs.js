@@ -1,5 +1,5 @@
 import React from "react";
-import SemanticTable from "../table/SemanticTable";
+import TableComponent from "../table/TableComponent";
 import generateCellComponent from "../../utils/generateCellComponent";
 import useCRUD from "../../hooks/useCRUD";
 import { getBeliefs, mutateBelief, deleteBelief } from "../../api/exampleApi";
@@ -61,7 +61,7 @@ const Beliefs = () => {
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam,
           laboriosam!
         </p>
-        <SemanticTable
+        <TableComponent
           rows={rows(addEmptyRow())}
           columns={columns}
           color="purple"

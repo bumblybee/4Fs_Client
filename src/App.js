@@ -10,6 +10,8 @@ import SignupForm from "./pages/signup/SignupForm";
 import LoginForm from "./pages/login/LoginForm";
 import NavBar from "./components/nav/NavBar";
 import FTabBar from "./components/fTabBar/FTabBar";
+import Milestones from "./components/milestones/Milestones";
+import System from "./components/system/System";
 import SectionTabMenu from "./components/sectionTabMenu/SectionTabMenu";
 import TableContainer from "./components/table/TableContainer";
 

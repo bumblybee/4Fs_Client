@@ -3,7 +3,7 @@ import generateCellComponent from "../../utils/generateCellComponent";
 import { getMilestones, mutateMilestone } from "../../api/exampleApi";
 import useCRUD from "../../hooks/useCRUD";
 
-import SemanticTable from "../table/SemanticTable";
+import TableComponent from "../table/TableComponent";
 
 const Milestones = () => {
   const [milestones, handleSave] = useCRUD(getMilestones, mutateMilestone);
@@ -91,7 +91,7 @@ const Milestones = () => {
           Feel free to add your personal touch to each milestone so that it
           works for you!
         </p>
-        <SemanticTable
+        <TableComponent
           rows={rows()}
           columns={columns}
           color="orange"
