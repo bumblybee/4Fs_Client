@@ -27,7 +27,7 @@ import { Container, Menu, Tab } from "semantic-ui-react";
 //   },
 // ];
 
-const SectionTabMenu = ({ setChild }) => {
+const SectionTabMenu = () => {
   const [activeItem, setActiveItem] = useState("milestones");
 
   return (
@@ -44,7 +44,6 @@ const SectionTabMenu = ({ setChild }) => {
           active={activeItem === "milestones"}
           onClick={() => {
             setActiveItem("milestones");
-            setChild("milestones");
           }}
         />
         <Menu.Item
@@ -52,7 +51,6 @@ const SectionTabMenu = ({ setChild }) => {
           active={activeItem === "beliefs"}
           onClick={() => {
             setActiveItem("beliefs");
-            setChild("beliefs");
           }}
         />
         <Menu.Item
@@ -60,7 +58,6 @@ const SectionTabMenu = ({ setChild }) => {
           active={activeItem === "calculator"}
           onClick={() => {
             setActiveItem("calculator");
-            setChild("calculator");
           }}
         />
       </Menu>
