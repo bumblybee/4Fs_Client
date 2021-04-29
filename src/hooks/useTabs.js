@@ -8,7 +8,7 @@ const useTabs = (path) => {
   const tabs = {
     home: ["milestones", "beliefs", "calculator"],
     focus: ["system", "swagger", "sleep", "habits"],
-    fasting: ["window", "fasting guide"],
+    fasting: ["fasting window", "fasting guide"],
     food: ["calories", "food list", "meal planner"],
     fitness: ["fitness activities", "fitness planner"],
   };
