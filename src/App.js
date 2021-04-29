@@ -11,6 +11,7 @@ import LoginForm from "./pages/login/LoginForm";
 import NavBar from "./components/nav/NavBar";
 import FTabBar from "./components/fTabBar/FTabBar";
 import Milestones from "./components/milestones/Milestones";
+import Beliefs from "./components/beliefs/Beliefs";
 import System from "./components/system/System";
 import SectionTabMenu from "./components/sectionTabMenu/SectionTabMenu";
 import TableContainer from "./components/table/TableContainer";
@@ -29,6 +30,11 @@ function App() {
           <Route path="/home/milestones">
             <TableContainer>
               <Milestones />
+            </TableContainer>
+          </Route>
+          <Route path="/home/beliefs">
+            <TableContainer>
+              <Beliefs />
             </TableContainer>
           </Route>
           <Route path="/focus" exact>
