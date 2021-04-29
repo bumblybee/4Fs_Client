@@ -7,6 +7,10 @@ import {
   Redirect,
 } from "react-router-dom";
 import SignupForm from "./pages/signup/SignupForm";
+import LoginForm from "./pages/login/LoginForm";
+import NavBar from "./components/nav/NavBar";
+import FTabBar from "./components/fTabBar/FTabBar";
+import SectionTabMenu from "./components/sectionTabMenu/SectionTabMenu";
 import TableContainer from "./components/table/TableContainer";
 
 function App() {
@@ -15,8 +19,8 @@ function App() {
       <Switch>
         <div className="App">
           <NavBar />
-          <FBar />
-          <TabMenu />
+          <FTabBar />
+          <SectionTabMenu />
           <Route path="/home" exact>
             <Redirect to="/home/milestones" />
           </Route>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import UserInfo from "./UserInfo";
 import AddedDetails from "./AddedDetails";
 import { Form, Message } from "semantic-ui-react";
-import { SettingsPowerSharp } from "@material-ui/icons";
+
 // Semantic has built in form validation object
 const SignupForm = () => {
   const [step, setStep] = useState(1);
