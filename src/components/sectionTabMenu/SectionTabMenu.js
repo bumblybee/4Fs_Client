@@ -15,7 +15,7 @@ const SectionTabMenu = () => {
         secondary
         color="blue"
         size="huge"
-        style={{ width: "min-content", margin: "0 auto 3rem" }}
+        style={{ width: "max-content", margin: "0 auto 3rem" }}
       >
         {tabs}
       </Menu>

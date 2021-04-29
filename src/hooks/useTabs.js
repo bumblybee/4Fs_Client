@@ -17,7 +17,7 @@ const useTabs = (path) => {
     return tabArr.map((tab) => (
       <Menu.Item
         as={Link}
-        to={`/${path}/${tab}`}
+        to={`/${path}/${tab.replace(/\s+/g, "-")}`}
         name={tab}
         active={activeItem === tab}
         onClick={() => {
