@@ -42,7 +42,9 @@ function App() {
             <Redirect to="/focus/system" />
           </Route>
           <Route path="/focus/system">
-            <System />
+            <TableContainer>
+              <System />
+            </TableContainer>
           </Route>
           <Route path="/focus/swagger"></Route>
           <Route path="/focus/sleep"></Route>
