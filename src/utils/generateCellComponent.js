@@ -40,6 +40,24 @@ const generateCellComponent = (type, props) => {
           accessor={props.accessor}
         />
       );
+    case "check":
+      return (
+        <CheckboxCell
+          id={props.id}
+          onSave={props.onSave}
+          label={props.label}
+          accessor={props.accessor}
+        />
+      );
+    case "number":
+      return (
+        <NumberCell
+          id={props.id}
+          onSave={props.onSave}
+          label={props.label}
+          accessor={props.accessor}
+        />
+      );
     default:
       return <div>{props.val}</div>;
   }
