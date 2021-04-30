@@ -2,7 +2,7 @@ import EditableCell from "../components/cells/EditableCell";
 import EmptyRowCell from "../components/cells/EmptyRowCell";
 import DropdownCell from "../components/cells/DropdownCell";
 import ExampleRowCell from "../components/cells/ExampleRowCell";
-import CheckboxCell from "../components/cells/CheckboxCell";
+import CheckboxCell from "../components/cells/checkbox/CheckboxCell";
 import DatePickerCell from "../components/cells/DatePickerCell";
 import NumberCell from "../components/cells/NumberCell";
 

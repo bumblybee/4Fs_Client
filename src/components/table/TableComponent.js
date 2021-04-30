@@ -15,11 +15,7 @@ TableComponent.TR = function TR({ children, ...props }) {
 };
 
 TableComponent.TH = function TH({ children, ...props }) {
-  return (
-    <Table.HeaderCell width={props.columnwidth} {...props}>
-      {children}
-    </Table.HeaderCell>
-  );
+  return <Table.HeaderCell {...props}>{children}</Table.HeaderCell>;
 };
 
 TableComponent.TF = function TF({ children, ...props }) {
@@ -42,6 +38,7 @@ export default function TableComponent({ children, ...props }) {
           color: "#fff",
           borderRadius: props.descriptionheader ? "0" : "",
         }}
+        width={header.width && header.width}
       >
         {header.label}
       </TableComponent.TH>
