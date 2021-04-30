@@ -58,6 +58,15 @@ const generateCellComponent = (type, props) => {
           accessor={props.accessor}
         />
       );
+    case "date":
+      return (
+        <DatePickerCell
+          id={props.id}
+          onSave={props.onSave}
+          label={props.label}
+          accessor={props.accessor}
+        />
+      );
     default:
       return <div>{props.val}</div>;
   }

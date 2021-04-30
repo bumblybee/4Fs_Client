@@ -151,7 +151,7 @@ const System = () => {
   const addEmptyRow = () => {
     const emptyRow = {
       practice: {
-        cellComponent: generateCellComponent("empty", {
+        cellComponent: generateCellComponent("editable", {
           onSave: handleSave,
           accessor: "practice",
           alignment: "center",
@@ -234,6 +234,17 @@ const System = () => {
         color="purple"
         aligntext="left"
         striped
+        descriptionheader={
+          <div>
+            <label>Start Date:</label> {""}
+            {generateCellComponent("date", {
+              onSave: handleSave,
+              accessor: "startDate",
+              alignment: "center",
+              placeholder: "Start date",
+            })}
+          </div>
+        }
       />
     </div>
   );

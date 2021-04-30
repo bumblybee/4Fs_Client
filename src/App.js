@@ -7,6 +7,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import SignupForm from "./pages/signup/SignupForm";
+import { signupUser } from "./api/exampleApi";
 import LoginForm from "./pages/login/LoginForm";
 import NavBar from "./components/nav/NavBar";
 import FTabBar from "./components/fTabBar/FTabBar";
@@ -17,6 +18,7 @@ import SectionTabMenu from "./components/sectionTabMenu/SectionTabMenu";
 import TableContainer from "./components/table/TableContainer";
 
 function App() {
+  // signupUser();
   return (
     <Router>
       <Switch>

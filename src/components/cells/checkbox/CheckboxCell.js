@@ -5,9 +5,15 @@ import * as sc from "./StyledCheckbox";
 
 const CheckboxCell = (props) => {
   const [isChecked, setIsChecked] = useState(false);
+
   const handleCheck = () => {
     setIsChecked(!isChecked);
-    // props.onSave()
+    props.onSave(
+      {
+        [props.accessor]: isChecked,
+      },
+      props.id
+    );
   };
 
   return (
