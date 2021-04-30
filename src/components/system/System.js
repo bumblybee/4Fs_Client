@@ -144,7 +144,84 @@ const System = () => {
       },
     }));
 
-    return [...rowData];
+    return [...rowData, additionalRow];
+  };
+
+  const addEmptyRow = () => {
+    const emptyRow = {
+      practice: {
+        cellComponent: generateCellComponent("empty", {
+          onSave: handleSave,
+          accessor: "practice",
+          alignment: "center",
+          placeholder: "New practice...",
+        }),
+      },
+      goal: {
+        cellComponent: generateCellComponent("number", {
+          onSave: handleSave,
+          accessor: "goal",
+          alignment: "center",
+        }),
+      },
+      dayOne: {
+        cellComponent: generateCellComponent("check", {
+          onSave: handleSave,
+          accessor: "dayOne",
+          alignment: "center",
+        }),
+      },
+      dayTwo: {
+        cellComponent: generateCellComponent("check", {
+          onSave: handleSave,
+          accessor: "dayTwo",
+          alignment: "center",
+        }),
+      },
+      dayThree: {
+        cellComponent: generateCellComponent("check", {
+          onSave: handleSave,
+          accessor: "dayThree",
+          alignment: "center",
+        }),
+      },
+      dayFour: {
+        cellComponent: generateCellComponent("check", {
+          onSave: handleSave,
+          accessor: "dayFour",
+          alignment: "center",
+        }),
+      },
+      dayFive: {
+        cellComponent: generateCellComponent("check", {
+          onSave: handleSave,
+          accessor: "dayFive",
+          alignment: "center",
+        }),
+      },
+      daySix: {
+        cellComponent: generateCellComponent("check", {
+          onSave: handleSave,
+          accessor: "daySix",
+          alignment: "center",
+        }),
+      },
+      daySeven: {
+        cellComponent: generateCellComponent("check", {
+          onSave: handleSave,
+          accessor: "daySeven",
+          alignment: "center",
+        }),
+      },
+      performed: {
+        cellComponent: generateCellComponent("number", {
+          onSave: handleSave,
+          accessor: "performed",
+          alignment: "center",
+        }),
+      },
+    };
+    return emptyRow;
   };
 
   return (
@@ -152,7 +229,7 @@ const System = () => {
       <h1 style={{ textAlign: "center" }}>Master your System</h1>
       <TableComponent
         columns={columns}
-        rows={rows()}
+        rows={rows(addEmptyRow())}
         color="purple"
         aligntext="left"
         striped
