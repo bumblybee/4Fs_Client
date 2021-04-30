@@ -24,6 +24,7 @@ function App() {
           <NavBar />
           <FTabBar />
           <SectionTabMenu />
+
           <Route path="/home" exact>
             <Redirect to="/home/milestones" />
           </Route>
