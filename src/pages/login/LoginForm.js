@@ -2,17 +2,22 @@ import React, { useState, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Form, Button } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
+import { ErrorContext } from "../../context/error/ErrorContext";
 
 const LoginForm = () => {
   const history = useHistory();
   const { logUserIn } = useContext(UserContext);
+  const { setError } = useContext(ErrorContext);
   const [userDetails, setUserDetails] = useState({ email: "", password: "" });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const login = await logUserIn(userDetails);
-    console.log(login);
-    login && history.push("/home");
+    if (login.error) {
+      setError(login.error);
+    } else {
+      login && history.push("/home");
+    }
   };
 
   return (

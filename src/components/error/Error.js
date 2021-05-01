@@ -5,8 +5,8 @@ import { StyledErrorMessage } from "./StyledError";
 
 const Error = () => {
   const { errorMessage } = useContext(ErrorContext);
-  const title = errorMessage.split(".")[0];
-  const body = errorMessage.split(".")[1];
+  const title = errorMessage && errorMessage.split(".")[0];
+  const body = errorMessage && errorMessage.split(".")[1];
 
   return (
     errorMessage !== null && (

@@ -10,6 +10,7 @@ import ErrorProvider from "./context/error/ErrorProvider";
 import UserProvider from "./context/user/UserProvider";
 
 import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
+import Error from "./components/error/Error";
 import AppWrapper from "./components/wrapper/AppWrapper";
 import SignupForm from "./pages/signup/SignupForm";
 import LoginForm from "./pages/login/LoginForm";
@@ -22,6 +23,7 @@ function App() {
     <Router>
       <ErrorProvider>
         <UserProvider>
+          <Error />
           <Switch>
             <div className="App">
               <ProtectedRoute path="/" exact>
