@@ -7,15 +7,12 @@ import {
 } from "react-router-dom";
 import UserProvider from "./context/UserProvider";
 import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
+import AppWrapper from "./components/wrapper/AppWrapper";
 import SignupForm from "./pages/signup/SignupForm";
 import LoginForm from "./pages/login/LoginForm";
-import NavBar from "./components/nav/NavBar";
-import FTabBar from "./components/fTabBar/FTabBar";
 import Milestones from "./components/milestones/Milestones";
 import Beliefs from "./components/beliefs/Beliefs";
 import System from "./components/system/System";
-import SectionTabMenu from "./components/sectionTabMenu/SectionTabMenu";
-import AppWrapper from "./components/wrapper/AppWrapper";
 
 function App() {
   return (
@@ -23,40 +20,40 @@ function App() {
       <UserProvider>
         <Switch>
           <div className="App">
-            <Route path="/home" exact>
+            <ProtectedRoute path="/home" exact>
               <Redirect to="/home/milestones" />
-            </Route>
-            <Route path="/home/milestones">
+            </ProtectedRoute>
+            <ProtectedRoute path="/home/milestones">
               <AppWrapper>
                 <Milestones />
               </AppWrapper>
-            </Route>
-            <Route path="/home/beliefs">
+            </ProtectedRoute>
+            <ProtectedRoute path="/home/beliefs">
               <AppWrapper>
                 <Beliefs />
               </AppWrapper>
-            </Route>
-            <Route path="/focus" exact>
+            </ProtectedRoute>
+            <ProtectedRoute path="/focus" exact>
               <Redirect to="/focus/system" />
-            </Route>
-            <Route path="/focus/system">
+            </ProtectedRoute>
+            <ProtectedRoute path="/focus/system">
               <AppWrapper>
                 <System />
               </AppWrapper>
-            </Route>
-            <Route path="/focus/swagger"></Route>
-            <Route path="/focus/sleep"></Route>
-            <Route path="/focus/habits"></Route>
+            </ProtectedRoute>
+            <ProtectedRoute path="/focus/swagger"></ProtectedRoute>
+            <ProtectedRoute path="/focus/sleep"></ProtectedRoute>
+            <ProtectedRoute path="/focus/habits"></ProtectedRoute>
 
-            <Route path="/fasting">
+            <ProtectedRoute path="/fasting">
               <Redirect to="/fasting/window" />
-            </Route>
-            <Route path="/food">
+            </ProtectedRoute>
+            <ProtectedRoute path="/food">
               <Redirect to="/food/calories" />
-            </Route>
-            <Route path="/fitness">
+            </ProtectedRoute>
+            <ProtectedRoute path="/fitness">
               <Redirect to="/fitness/activities" />
-            </Route>
+            </ProtectedRoute>
 
             <Route path="/login">
               <LoginForm />
@@ -64,9 +61,9 @@ function App() {
             <Route path="/signup">
               <SignupForm />
             </Route>
-            <Route path="/" exact>
+            <ProtectedRoute path="/" exact>
               <Redirect to="/home" />
-            </Route>
+            </ProtectedRoute>
           </div>
         </Switch>
       </UserProvider>
