@@ -1,6 +1,6 @@
 import React from "react";
 import generateCellComponent from "../../utils/generateCellComponent";
-import { getMilestones, mutateMilestone } from "../../api/exampleApi";
+import { getMilestones, mutateMilestone } from "../../api/home/milestonesApi";
 import useCRUD from "../../hooks/useCRUD";
 
 import TableComponent from "../table/TableComponent";

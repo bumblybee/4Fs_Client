@@ -1,5 +1,10 @@
 import React, { useState, useCallback, useEffect } from "react";
-import { getUser, signupUser, loginUser, logoutUser } from "../../api/userApi";
+import {
+  getUser,
+  signupUser,
+  loginUser,
+  logoutUser,
+} from "../../api/user/userApi";
 import { UserContext } from "./UserContext";
 
 const UserProvider = ({ children }) => {
