@@ -17,7 +17,8 @@ const LoginForm = () => {
       setError(login.error);
       return;
     } else {
-      login && history.push("/home");
+      console.log(login);
+      login.data && history.push("/home");
     }
   };
 
