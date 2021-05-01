@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Form, Button, Icon, Message } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import { Form, Button, Icon } from "semantic-ui-react";
 
 const UserInfo = ({ userDetails, handleChange, nextStep, errors }) => {
   const [fieldsComplete, setFieldsComplete] = useState(false);
@@ -85,7 +86,7 @@ const UserInfo = ({ userDetails, handleChange, nextStep, errors }) => {
         <Icon name="right arrow" />
       </Button>
       <div style={{ textAlign: "center" }} className="ui message align center">
-        Have an account? <a href="#">Log in</a>
+        Have an account? <Link to="/login">Log in</Link>
       </div>
     </div>
   );

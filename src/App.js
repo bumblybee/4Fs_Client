@@ -15,7 +15,7 @@ import Milestones from "./components/milestones/Milestones";
 import Beliefs from "./components/beliefs/Beliefs";
 import System from "./components/system/System";
 import SectionTabMenu from "./components/sectionTabMenu/SectionTabMenu";
-import TableContainer from "./components/table/TableContainer";
+import AppWrapper from "./components/wrapper/AppWrapper";
 
 function App() {
   return (
@@ -23,28 +23,26 @@ function App() {
       <UserProvider>
         <Switch>
           <div className="App">
-            <NavBar />
-            <FTabBar />
-            <SectionTabMenu />
-
             <Route path="/home" exact>
               <Redirect to="/home/milestones" />
             </Route>
             <Route path="/home/milestones">
-              <TableContainer>
+              <AppWrapper>
                 <Milestones />
-              </TableContainer>
+              </AppWrapper>
             </Route>
             <Route path="/home/beliefs">
-              <TableContainer>
+              <AppWrapper>
                 <Beliefs />
-              </TableContainer>
+              </AppWrapper>
             </Route>
             <Route path="/focus" exact>
               <Redirect to="/focus/system" />
             </Route>
             <Route path="/focus/system">
-              <System />
+              <AppWrapper>
+                <System />
+              </AppWrapper>
             </Route>
             <Route path="/focus/swagger"></Route>
             <Route path="/focus/sleep"></Route>
@@ -59,6 +57,7 @@ function App() {
             <Route path="/fitness">
               <Redirect to="/fitness/activities" />
             </Route>
+
             <Route path="/login">
               <LoginForm />
             </Route>

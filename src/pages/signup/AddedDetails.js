@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Form, Button } from "semantic-ui-react";
 
 const AddedDetails = ({
@@ -92,7 +93,7 @@ const AddedDetails = ({
         </Button>
       </div>
       <div style={{ textAlign: "center" }} className="ui message align center">
-        Have an account? <a href="#">Log in</a>
+        Have an account? <Link to="/login">Log in</Link>
       </div>
     </div>
   );
