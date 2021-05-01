@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ErrorContext } from "../../context/error/ErrorContext";
-import { Message } from "semantic-ui-react";
+import { StyledErrorMessage } from "./StyledError";
 // import { StyledNotificationPopup } from "../../styles/GlobalStyledComponents";
 
 const Error = () => {
@@ -10,10 +10,10 @@ const Error = () => {
 
   return (
     errorMessage !== null && (
-      <Message color="red">
-        <Message.Header>{title}</Message.Header>
+      <StyledErrorMessage color="red">
+        <StyledErrorMessage.Header>{title}</StyledErrorMessage.Header>
         <p>{body}</p>
-      </Message>
+      </StyledErrorMessage>
     )
   );
 };
