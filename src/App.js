@@ -40,6 +40,7 @@ function App() {
               <Beliefs />
             </TableContainer>
           </Route>
+
           <Route path="/focus" exact>
             <Redirect to="/focus/system" />
           </Route>
@@ -55,9 +56,11 @@ function App() {
           <Route path="/fasting">
             <Redirect to="/fasting/window" />
           </Route>
+
           <Route path="/food">
             <Redirect to="/food/calories" />
           </Route>
+
           <Route path="/fitness">
             <Redirect to="/fitness/activities" />
           </Route>
