@@ -1,4 +1,5 @@
 import axios from "axios";
+import { handleErrors, handleErrorsArray } from "../handlers/errorHandler";
 
 const baseURL =
   process.env.NODE_ENV === "development" ? "http://localhost:9000" : "";
@@ -12,7 +13,13 @@ const instance = axios.create({
 export const get = async (url) => {
   return await instance.get(url).catch((e) => {
     if (e.response) {
-      console.log(e.response.data.error);
+      if (e.response && e.response.data.errors) {
+        const errors = handleErrorsArray(e.response.data.errors);
+
+        return errors;
+      }
+
+      return handleErrors(e.response.data.error);
     }
   });
 };
@@ -20,7 +27,13 @@ export const get = async (url) => {
 export const post = async (url, data) => {
   return await instance.post(url, data).catch((e) => {
     if (e.response) {
-      console.log(e.response.data.error);
+      if (e.response && e.response.data.errors) {
+        const errors = handleErrorsArray(e.response.data.errors);
+
+        return errors;
+      }
+
+      return handleErrors(e.response.data.error);
     }
   });
 };
@@ -28,7 +41,13 @@ export const post = async (url, data) => {
 export const put = async (url, data) => {
   return await instance.put(url, data).catch((e) => {
     if (e.response) {
-      console.log(e.response.data.error);
+      if (e.response && e.response.data.errors) {
+        const errors = handleErrorsArray(e.response.data.errors);
+
+        return errors;
+      }
+
+      return handleErrors(e.response.data.error);
     }
   });
 };
@@ -36,7 +55,13 @@ export const put = async (url, data) => {
 export const destroy = async (url, data) => {
   return await instance.delete(url, data).catch((e) => {
     if (e.response) {
-      console.log(e.response.data.error);
+      if (e.response && e.response.data.errors) {
+        const errors = handleErrorsArray(e.response.data.errors);
+
+        return errors;
+      }
+
+      return handleErrors(e.response.data.error);
     }
   });
 };
