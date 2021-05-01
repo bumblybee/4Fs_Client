@@ -5,7 +5,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import UserProvider from "./context/UserProvider";
+import UserProvider from "./context/user/UserProvider";
 import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 import AppWrapper from "./components/wrapper/AppWrapper";
 import SignupForm from "./pages/signup/SignupForm";

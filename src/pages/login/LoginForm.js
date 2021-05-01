@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Form, Button } from "semantic-ui-react";
-import { UserContext } from "../../context/UserContext";
+import { UserContext } from "../../context/user/UserContext";
 
 const LoginForm = () => {
   const history = useHistory();
