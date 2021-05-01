@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Form, Button } from "semantic-ui-react";
-import { loginUser } from "../../api/userApi";
+import { UserContext } from "../../context/UserContext";
 
 const LoginForm = () => {
   const history = useHistory();
+  const { logUserIn } = useContext(UserContext);
+  const [userDetails, setUserDetails] = useState({ email: "", password: "" });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await loginUser();
-    console.log("login");
+    const login = await logUserIn(userDetails);
+
     history.push("/home");
   };
 
@@ -47,15 +49,23 @@ const LoginForm = () => {
               iconPosition="left"
               placeholder="example@example.com"
               label="Email"
+              value={userDetails.email}
+              onChange={(e) =>
+                setUserDetails({ ...userDetails, email: e.target.value })
+              }
               required
             />
             <Form.Input
               fluid
               icon="lock"
               iconPosition="left"
-              placeholder="*********"
+              placeholder="********"
               type="password"
               label="Password"
+              value={userDetails.password}
+              onChange={(e) =>
+                setUserDetails({ ...userDetails, password: e.target.value })
+              }
               required
             />
 

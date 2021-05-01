@@ -10,8 +10,8 @@ export const signupUser = async () => {
   return signup;
 };
 
-export const loginUser = async () => {
-  const login = await post("/example/login");
+export const loginUser = async (data) => {
+  const login = await post("/users/login", data);
   return login;
 };
 

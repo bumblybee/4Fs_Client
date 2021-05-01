@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
-// import { getUser, signupUser, loginUser, logoutUser } from "../../api/userApi";
+import { getUser, signupUser, loginUser, logoutUser } from "../api/userApi";
 import { UserContext } from "./UserContext";
 
 const UserProvider = ({ children }) => {
@@ -16,22 +16,23 @@ const UserProvider = ({ children }) => {
   //     }
   //   }, []);
 
-  //   const signUserUp = async (userDetails) => {
-  //     const user = await signupUser(userDetails);
-  //     setUser(user.data);
-  //     return user;
-  //   };
+  const signUserUp = async (userDetails) => {
+    const userData = await signupUser(userDetails);
+    setUser(userData.data);
+    return userData;
+  };
 
-  //   const logUserIn = async (userDetails) => {
-  //     const user = await loginUser(userDetails);
-  //     setUser(user.data);
-  //     return user;
-  //   };
+  const logUserIn = async (userDetails) => {
+    const userData = await loginUser(userDetails);
 
-  //   const logUserOut = async () => {
-  //     await logoutUser();
-  //     setUser(null);
-  //   };
+    setUser(userData.data.data);
+    return userData;
+  };
+  console.log(user);
+  const logUserOut = async () => {
+    await logoutUser();
+    setUser(null);
+  };
 
   //   useEffect(() => {
   //     getCurrentUser();
@@ -39,20 +40,17 @@ const UserProvider = ({ children }) => {
 
   //   console.log(user);
 
-  //   return (
-  //     <UserContext.Provider
-  //       value={{
-  //         user,
-  //         setUser,
-  //         getCurrentUser,
-  //         signUserUp,
-  //         logUserIn,
-  //         logUserOut,
-  //       }}
-  //     >
-  //       {children}
-  //     </UserContext.Provider>
-  //   );
+  return (
+    <UserContext.Provider
+      value={{
+        user,
+        signUserUp,
+        logUserIn,
+      }}
+    >
+      {children}
+    </UserContext.Provider>
+  );
 };
 
 export default UserProvider;
