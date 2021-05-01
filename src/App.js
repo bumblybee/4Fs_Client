@@ -20,6 +20,9 @@ function App() {
       <UserProvider>
         <Switch>
           <div className="App">
+            <ProtectedRoute path="/" exact>
+              <Redirect to="/home" />
+            </ProtectedRoute>
             <ProtectedRoute path="/home" exact>
               <Redirect to="/home/milestones" />
             </ProtectedRoute>
@@ -61,10 +64,6 @@ function App() {
             <Route path="/signup">
               <SignupForm />
             </Route>
-
-            <ProtectedRoute path="/" exact>
-              <Redirect to="/home" />
-            </ProtectedRoute>
           </div>
         </Switch>
       </UserProvider>
