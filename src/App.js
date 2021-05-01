@@ -1,11 +1,11 @@
 import React from "react";
-
 import {
   Route,
   BrowserRouter as Router,
   Switch,
   Redirect,
 } from "react-router-dom";
+import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 import SignupForm from "./pages/signup/SignupForm";
 import LoginForm from "./pages/login/LoginForm";
 import NavBar from "./components/nav/NavBar";
