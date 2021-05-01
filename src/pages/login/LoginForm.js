@@ -15,6 +15,7 @@ const LoginForm = () => {
     const login = await logUserIn(userDetails);
     if (login.error) {
       setError(login.error);
+      return;
     } else {
       login && history.push("/home");
     }

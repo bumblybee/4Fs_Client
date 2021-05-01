@@ -1,11 +1,15 @@
-import React, { useState } from "react";
-import { signupUser } from "../../api/userApi";
+import React, { useState, useContext } from "react";
+import { ErrorContext } from "../../context/error/ErrorContext";
+import { UserContext } from "../../context/user/UserContext";
 import UserInfo from "./UserInfo";
 import AddedDetails from "./AddedDetails";
 import { Form, Message } from "semantic-ui-react";
 
 // Semantic has built in form validation object
 const SignupForm = () => {
+  const { signUserUp } = useContext(UserContext);
+  const { setError } = useContext(ErrorContext);
+
   const [step, setStep] = useState(1);
   const [userDetails, setUserDetails] = useState({
     firstName: "",
