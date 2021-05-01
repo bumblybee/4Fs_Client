@@ -1,24 +1,5 @@
 import { get, post, put, destroy } from "./baseApi";
 
-export const signupUser = async () => {
-  const signup = await post("/example");
-  return signup;
-};
-
-export const loginUser = async () => {
-  const login = await post("/example/login");
-  return login;
-};
-
-export const updateUser = async () => {
-  const update = await put("/users", {
-    firstName: "Peter",
-    gender: "male",
-    age: 52,
-  });
-  return update.data;
-};
-
 export const getMilestones = async () => {
   const milestones = await get("/milestones");
 

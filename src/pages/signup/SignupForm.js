@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { signupUser } from "../../api/userApi";
 import UserInfo from "./UserInfo";
 import AddedDetails from "./AddedDetails";
 import { Form, Message } from "semantic-ui-react";

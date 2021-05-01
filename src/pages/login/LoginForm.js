@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Form, Button } from "semantic-ui-react";
-import { loginUser } from "../../api/exampleApi";
+import { loginUser } from "../../api/userApi";
 
 const LoginForm = () => {
   const history = useHistory();
