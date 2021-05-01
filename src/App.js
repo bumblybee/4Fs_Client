@@ -61,6 +61,7 @@ function App() {
             <Route path="/signup">
               <SignupForm />
             </Route>
+
             <ProtectedRoute path="/" exact>
               <Redirect to="/home" />
             </ProtectedRoute>

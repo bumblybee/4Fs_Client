@@ -5,7 +5,13 @@ import { UserContext } from "../../context/UserContext";
 const ProtectedRoute = ({ children, ...rest }) => {
   const { user } = useContext(UserContext);
 
-  return user ? <Route {...rest}>{children}</Route> : <Redirect to="/signup" />;
+  return user ? (
+    <Route {...rest}>{children}</Route>
+  ) : (
+    <Route>
+      <Redirect to="/signup" />
+    </Route>
+  );
 };
 
 export default ProtectedRoute;
