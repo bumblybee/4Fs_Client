@@ -2,7 +2,7 @@ import EditableCell from "../components/cells/EditableCell";
 import EmptyRowCell from "../components/cells/EmptyRowCell";
 import DropdownCell from "../components/cells/DropdownCell";
 import ExampleRowCell from "../components/cells/ExampleRowCell";
-import CheckboxCell from "../components/cells/CheckboxCell";
+import CheckboxCell from "../components/cells/checkbox/CheckboxCell";
 import DatePickerCell from "../components/cells/DatePickerCell";
 import NumberCell from "../components/cells/NumberCell";
 
@@ -37,6 +37,33 @@ const generateCellComponent = (type, props) => {
           label={props.label}
           options={props.options}
           defaultState={props.defaultState}
+          accessor={props.accessor}
+        />
+      );
+    case "check":
+      return (
+        <CheckboxCell
+          id={props.id}
+          onSave={props.onSave}
+          label={props.label}
+          accessor={props.accessor}
+        />
+      );
+    case "number":
+      return (
+        <NumberCell
+          id={props.id}
+          onSave={props.onSave}
+          label={props.label}
+          accessor={props.accessor}
+        />
+      );
+    case "date":
+      return (
+        <DatePickerCell
+          id={props.id}
+          onSave={props.onSave}
+          label={props.label}
           accessor={props.accessor}
         />
       );

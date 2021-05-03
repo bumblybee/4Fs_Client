@@ -13,12 +13,14 @@ import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 import Error from "./components/error/Error";
 import AppWrapper from "./components/wrapper/AppWrapper";
 import SignupForm from "./pages/signup/SignupForm";
+import { signupUser } from "./api/exampleApi";
 import LoginForm from "./pages/login/LoginForm";
 import Milestones from "./components/milestones/Milestones";
 import Beliefs from "./components/beliefs/Beliefs";
 import System from "./components/system/System";
 
 function App() {
+  // signupUser();
   return (
     <Router>
       <ErrorProvider>

@@ -97,7 +97,6 @@ const Milestones = () => {
           color="orange"
           aligntext="left"
           striped
-          example
         />
       </div>
     )

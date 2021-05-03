@@ -5,7 +5,8 @@ const useCRUD = (getter, setter, destroyer) => {
 
   const getData = useCallback(async () => {
     const res = await getter();
-    setState([...res.data]);
+
+    setState(res.data.length ? [...res.data] : []);
   }, []);
 
   const setData = async (data, id) => {
@@ -16,11 +17,12 @@ const useCRUD = (getter, setter, destroyer) => {
     } else {
       // Best to call getData again or return dataset from server like above example?
 
-      await setter(data, id);
+      const res = await setter(data, id);
+      console.log(res);
       await getData();
     }
   };
-
+  console.log(state);
   useEffect(() => {
     getData();
   }, [getData]);

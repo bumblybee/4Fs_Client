@@ -6,14 +6,20 @@ const DatePickerCell = (props) => {
   const [date, setDate] = useState("");
 
   const handleChange = (e) => {
+    console.log(e.target.value);
     setDate(e.target.value);
-    // props.onSave()
+    props.onSave(
+      {
+        [props.accessor]: date,
+      },
+      props.id
+    );
     console.log(date);
   };
 
   return (
     <Input
-      value={date || props.val}
+      value={date}
       onChange={(e) => handleChange(e)}
       style={{ width: "65px" }}
       type="date"
