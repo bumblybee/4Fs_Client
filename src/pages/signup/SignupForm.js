@@ -111,11 +111,13 @@ const SignupForm = () => {
         return (
           <UserInfo
             userDetails={userDetails}
+            setErrorMessage={setErrorMessage}
             handleChange={handleChange}
             nextStep={nextStep}
             errors={errors}
             handleSubmit={handleSubmit}
             validateFields={validateFields}
+            setErrors={setErrors}
           />
         );
       case 2:

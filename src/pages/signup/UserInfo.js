@@ -8,11 +8,28 @@ const UserInfo = ({
   nextStep,
   errors,
   handleSubmit,
+  setErrors,
+  setErrorMessage,
 }) => {
+  const validatePassword = () => {
+    if (/^(?=.*\d)(?=.*[a-z]).{7,20}$/.test(userDetails.password)) {
+      return true;
+    }
+
+    return false;
+  };
+
   const advanceForm = async (e) => {
     e.preventDefault();
-
-    await handleSubmit(e, "userInfo");
+    if (validatePassword()) {
+      setErrors({ ...errors, password: false, form: false });
+      await handleSubmit(e, "userInfo");
+    } else {
+      setErrors({ ...errors, password: true, form: true });
+      setErrorMessage(
+        "Password must be at least 7 characters with at least one number and one lowercase letter"
+      );
+    }
   };
 
   return (
