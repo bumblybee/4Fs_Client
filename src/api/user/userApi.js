@@ -6,7 +6,7 @@ export const getUser = async () => {
 };
 
 export const signupUser = async () => {
-  const signup = await post("/example");
+  const signup = await post("/users/signup");
   return signup;
 };
 

@@ -10,16 +10,17 @@ import { UserContext } from "./UserContext";
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  //   const getCurrentUser = useCallback(async () => {
-  //     const userData = await getUser();
-  //     if (userData && !userData.error) {
-  //       setUser(userData.data.user);
-  //       return userData.data.user;
-  //     } else {
-  //       setUser(null);
-  //       return user;
-  //     }
-  //   }, []);
+  const getCurrentUser = useCallback(async () => {
+    const userData = await getUser();
+    if (userData && !userData.error) {
+      console.log(userData);
+      setUser(userData.data.user);
+      return userData.data.user;
+    } else {
+      setUser(null);
+      return user;
+    }
+  }, []);
 
   const signUserUp = async (userDetails) => {
     const userData = await signupUser(userDetails);
@@ -29,26 +30,27 @@ const UserProvider = ({ children }) => {
 
   const logUserIn = async (userDetails) => {
     const userData = await loginUser(userDetails);
-    console.log(userData);
+
     userData.data && setUser(userData.data.data);
     return userData;
   };
-  console.log(user);
+
   const logUserOut = async () => {
     await logoutUser();
     setUser(null);
   };
 
-  //   useEffect(() => {
-  //     getCurrentUser();
-  //   }, [getCurrentUser]);
+  useEffect(() => {
+    getCurrentUser();
+  }, [getCurrentUser]);
 
-  //   console.log(user);
+  console.log(user);
 
   return (
     <UserContext.Provider
       value={{
         user,
+        getCurrentUser,
         signUserUp,
         logUserIn,
       }}
