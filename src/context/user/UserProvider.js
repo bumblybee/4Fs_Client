@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import {
   getUser,
+  validateUserEmail,
   signupUser,
   loginUser,
   logoutUser,
@@ -35,6 +36,11 @@ const UserProvider = ({ children }) => {
     return userData;
   };
 
+  const validateEmail = async (email) => {
+    const validation = await validateUserEmail(email);
+    return validation;
+  };
+
   const logUserOut = async () => {
     await logoutUser();
     setUser(null);
@@ -53,6 +59,7 @@ const UserProvider = ({ children }) => {
         getCurrentUser,
         signUserUp,
         logUserIn,
+        validateEmail,
       }}
     >
       {children}

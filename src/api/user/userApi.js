@@ -5,14 +5,19 @@ export const getUser = async () => {
   return res;
 };
 
-export const signupUser = async () => {
-  const signup = await post("/users/signup");
+export const signupUser = async (data) => {
+  const signup = await post("/users/signup", data);
   return signup;
 };
 
 export const loginUser = async (data) => {
   const login = await post("/users/login", data);
   return login;
+};
+
+export const validateUserEmail = async (data) => {
+  const emailValidation = await post("/users/validate-email", data);
+  return emailValidation;
 };
 
 export const updateUser = async () => {

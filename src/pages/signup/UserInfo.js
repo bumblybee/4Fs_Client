@@ -2,21 +2,17 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button, Icon } from "semantic-ui-react";
 
-const UserInfo = ({ userDetails, handleChange, nextStep, errors }) => {
-  const [fieldsComplete, setFieldsComplete] = useState(false);
-  const advanceForm = (e) => {
+const UserInfo = ({
+  userDetails,
+  handleChange,
+  nextStep,
+  errors,
+  handleSubmit,
+}) => {
+  const advanceForm = async (e) => {
     e.preventDefault();
-    if (
-      userDetails["firstName"] === "" ||
-      userDetails["lastName"] === "" ||
-      userDetails["email"] === "" ||
-      userDetails["password"] === ""
-    ) {
-      setFieldsComplete(false);
-      return;
-    }
-    setFieldsComplete(true);
-    nextStep();
+
+    await handleSubmit(e, "userInfo");
   };
 
   return (
@@ -80,7 +76,6 @@ const UserInfo = ({ userDetails, handleChange, nextStep, errors }) => {
         color="blue"
         type="submit"
         onClick={advanceForm}
-        disabled={fieldsComplete}
       >
         Next
         <Icon name="right arrow" />

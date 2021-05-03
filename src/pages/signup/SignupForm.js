@@ -1,13 +1,16 @@
 import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { ErrorContext } from "../../context/error/ErrorContext";
 import { UserContext } from "../../context/user/UserContext";
+
 import UserInfo from "./UserInfo";
 import UserDetails from "./UserDetails";
 import { Form, Message } from "semantic-ui-react";
 
 // Semantic has built in form validation object
 const SignupForm = () => {
-  const { signUserUp } = useContext(UserContext);
+  const history = useHistory();
+  const { signUserUp, validateEmail } = useContext(UserContext);
   const { setError } = useContext(ErrorContext);
 
   const [step, setStep] = useState(1);
@@ -33,6 +36,8 @@ const SignupForm = () => {
     age: false,
   });
 
+  const [errorMessage, setErrorMessage] = useState("");
+
   const nextStep = () => {
     setStep(step + 1);
   };
@@ -50,32 +55,54 @@ const SignupForm = () => {
     }
   };
 
-  const validation = () => {
-    for (const item in userDetails) {
+  const validateFields = (fields) => {
+    for (const item of fields) {
       if (userDetails[item] === "") {
-        console.log(`${item} error`);
         setErrors({ ...errors, [item]: true, form: true });
         console.log(errors);
+        setErrorMessage("Please fill in the highlighted fields");
 
-        return;
+        return false;
       } else {
         setErrors({ ...errors, [item]: false });
       }
     }
-
     setErrors({ form: false });
+    return true;
   };
 
-  const handleSubmit = (e, origin) => {
+  const handleSubmit = async (e, origin) => {
     e.preventDefault();
 
-    if (origin === "next") {
-      nextStep();
-      return;
+    if (origin === "userInfo") {
+      const validate = await validateEmail({ email: userDetails.email });
+
+      if (validate.data && validate.data.code === "email.available") {
+        const validValues = validateFields([
+          "firstName",
+          "lastName",
+          "email",
+          "password",
+        ]);
+        if (!validValues) {
+          return;
+        }
+
+        nextStep();
+      } else {
+        setErrors({ ...errors, form: true, email: true });
+        setErrorMessage("Email already in use. Please log in.");
+      }
+    } else {
+      const validValues = validateFields(["height", "weight", "age", "gender"]);
+      if (!validValues) {
+        return;
+      }
+
+      const signup = await signUserUp(userDetails);
+      console.log(signup);
+      signup.data && history.push("/");
     }
-    console.log(userDetails);
-    validation();
-    if (errors.form) console.log("err");
   };
 
   const renderFormComponent = () => {
@@ -88,6 +115,7 @@ const SignupForm = () => {
             nextStep={nextStep}
             errors={errors}
             handleSubmit={handleSubmit}
+            validateFields={validateFields}
           />
         );
       case 2:
@@ -98,6 +126,7 @@ const SignupForm = () => {
             handleSubmit={handleSubmit}
             prevStep={prevStep}
             errors={errors}
+            validateFields={validateFields}
           />
         );
     }
@@ -112,9 +141,12 @@ const SignupForm = () => {
         {errors.form && (
           <Message
             error
-            content="Please correct the highlighted fields"
-            size="tiny"
-            style={{ marginBottom: "0" }}
+            content={errorMessage}
+            size="small"
+            style={{
+              width: "95%",
+              margin: "-1rem auto 0",
+            }}
           />
         )}
         <h2
