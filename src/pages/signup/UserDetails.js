@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Form, Button } from "semantic-ui-react";
 
-const AddedDetails = ({
+const UserDetails = ({
   userDetails,
   handleChange,
   prevStep,
@@ -99,4 +99,4 @@ const AddedDetails = ({
   );
 };
 
-export default AddedDetails;
+export default UserDetails;

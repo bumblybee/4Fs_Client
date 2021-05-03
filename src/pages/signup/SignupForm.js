@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { ErrorContext } from "../../context/error/ErrorContext";
 import { UserContext } from "../../context/user/UserContext";
 import UserInfo from "./UserInfo";
-import AddedDetails from "./AddedDetails";
+import UserDetails from "./UserDetails";
 import { Form, Message } from "semantic-ui-react";
 
 // Semantic has built in form validation object
@@ -92,7 +92,7 @@ const SignupForm = () => {
         );
       case 2:
         return (
-          <AddedDetails
+          <UserDetails
             userDetails={userDetails}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
