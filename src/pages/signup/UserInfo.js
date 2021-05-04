@@ -5,13 +5,12 @@ import { Form, Button, Icon } from "semantic-ui-react";
 const UserInfo = ({
   userDetails,
   handleChange,
-  nextStep,
   errors,
   handleSubmit,
   setErrors,
   setErrorMessage,
 }) => {
-  const validatePassword = () => {
+  const validPassword = () => {
     if (/^(?=.*\d)(?=.*[a-z]).{7,20}$/.test(userDetails.password)) {
       return true;
     }
@@ -21,7 +20,7 @@ const UserInfo = ({
 
   const advanceForm = async (e) => {
     e.preventDefault();
-    if (validatePassword()) {
+    if (validPassword()) {
       setErrors({ ...errors, password: false, form: false });
       await handleSubmit(e, "userInfo");
     } else {

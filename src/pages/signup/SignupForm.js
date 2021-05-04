@@ -59,7 +59,7 @@ const SignupForm = () => {
     for (const item of fields) {
       if (userDetails[item] === "") {
         setErrors({ ...errors, [item]: true, form: true });
-        console.log(errors);
+
         setErrorMessage("Please fill in the highlighted fields");
 
         return false;
@@ -71,37 +71,56 @@ const SignupForm = () => {
     return true;
   };
 
+  const handleUserInfoValidation = async () => {
+    // Check email doesn't exist in db
+    const emailValidation = await validateEmail({ email: userDetails.email });
+
+    // API returns code for available/unavailable email
+    const emailAvailable =
+      emailValidation.data && emailValidation.data.code === "email.available";
+
+    // Validate fields aren't empty
+    const validatedFields = validateFields([
+      "firstName",
+      "lastName",
+      "email",
+      "password",
+    ]);
+
+    if (emailAvailable && validatedFields) {
+      // Go to next form step
+      nextStep();
+    } else {
+      // Set email error and error message
+      setErrors({ ...errors, form: true, email: true });
+      setErrorMessage("Email already in use. Please log in.");
+    }
+  };
+
   const handleSubmit = async (e, origin) => {
     e.preventDefault();
 
     if (origin === "userInfo") {
-      const validate = await validateEmail({ email: userDetails.email });
-
-      if (validate.data && validate.data.code === "email.available") {
-        const validValues = validateFields([
-          "firstName",
-          "lastName",
-          "email",
-          "password",
-        ]);
-        if (!validValues) {
-          return;
-        }
-
-        nextStep();
-      } else {
-        setErrors({ ...errors, form: true, email: true });
-        setErrorMessage("Email already in use. Please log in.");
-      }
+      // We're on the first step of form, need to check email isn't in db and that form fields are filled out
+      await handleUserInfoValidation();
     } else {
-      const validValues = validateFields(["height", "weight", "age", "gender"]);
-      if (!validValues) {
-        return;
-      }
+      // Validate second step fields
+      const validatedFields = validateFields([
+        "height",
+        "weight",
+        "age",
+        "gender",
+      ]);
 
-      const signup = await signUserUp(userDetails);
-      console.log(signup);
-      signup.data && history.push("/");
+      if (validatedFields) {
+        const signup = await signUserUp(userDetails);
+        // Fix how this is handled
+        if (signup[0] && signup[0].error) {
+          setError(signup[0].error);
+          prevStep();
+        }
+        signup.data && history.push("/");
+      }
     }
   };
 

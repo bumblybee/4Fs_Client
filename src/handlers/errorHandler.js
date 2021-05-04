@@ -5,6 +5,7 @@ const errorCodeToMessage = {
     "Looks like you already have an account. Please log in.",
   "auth.noToken":
     "Token not found or has expired. Try resetting your password again.",
+  "user.invalidEmail": "Please check email address formatting",
 };
 
 // Pass array of errors to handleErrors fn
