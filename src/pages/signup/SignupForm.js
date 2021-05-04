@@ -5,14 +5,13 @@ import { UserContext } from "../../context/user/UserContext";
 
 import UserInfo from "./UserInfo";
 import UserDetails from "./UserDetails";
-import { Form, Message } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 
 // Semantic has built in form validation object
 const SignupForm = () => {
   const history = useHistory();
   const { signUserUp, validateEmail } = useContext(UserContext);
   const { setError } = useContext(ErrorContext);
-
   const [step, setStep] = useState(1);
   const [userDetails, setUserDetails] = useState({
     firstName: "",
@@ -26,7 +25,6 @@ const SignupForm = () => {
   });
 
   const [errors, setErrors] = useState({
-    form: false,
     firstName: false,
     lastName: false,
     email: false,
@@ -35,8 +33,6 @@ const SignupForm = () => {
     weight: false,
     age: false,
   });
-
-  const [errorMessage, setErrorMessage] = useState("");
 
   const nextStep = () => {
     setStep(step + 1);
@@ -51,23 +47,23 @@ const SignupForm = () => {
       setUserDetails({ ...userDetails, gender: data.value });
     } else {
       setUserDetails({ ...userDetails, [input]: e.target.value });
-      setErrors({ ...errors, [input]: false, form: false });
     }
+    setErrors({ ...errors, [input]: false });
   };
 
   const validateFields = (fields) => {
     for (const item of fields) {
       if (userDetails[item] === "") {
-        setErrors({ ...errors, [item]: true, form: true });
+        setErrors({ ...errors, [item]: true });
 
-        setErrorMessage("Please fill in the highlighted fields");
+        setError("Please fill in the highlighted fields");
 
         return false;
       } else {
         setErrors({ ...errors, [item]: false });
       }
     }
-    setErrors({ form: false });
+
     return true;
   };
 
@@ -94,8 +90,8 @@ const SignupForm = () => {
       nextStep();
     } else {
       // Set email error and error message
-      setErrors({ ...errors, form: true, email: true });
-      setErrorMessage("Email already in use. Please log in.");
+      setErrors({ ...errors, email: true });
+      setError("Email already in use. Please log in.");
     }
   };
 
@@ -120,9 +116,10 @@ const SignupForm = () => {
         // Fix how this is handled
         if (signup[0] && signup[0].error) {
           setError(signup[0].error);
+          // Error will be invalid email format - handle in handleUserInfo or just handle all errors at submission?
           prevStep();
         }
-        console.log(signup);
+
         signup.data && history.push("/");
       }
     }
@@ -134,13 +131,13 @@ const SignupForm = () => {
         return (
           <UserInfo
             userDetails={userDetails}
-            setErrorMessage={setErrorMessage}
             handleChange={handleChange}
             nextStep={nextStep}
             errors={errors}
             handleSubmit={handleSubmit}
             validateFields={validateFields}
             setErrors={setErrors}
+            setErrorMessage={setError}
           />
         );
       case 2:
@@ -166,20 +163,6 @@ const SignupForm = () => {
         className="column ui segment raised"
         style={{ maxWidth: "450px", position: "relative" }}
       >
-        {errors.form && (
-          <Message
-            error
-            content={errorMessage}
-            size="small"
-            style={{
-              width: "95%",
-
-              position: "absolute",
-              top: "1%",
-              zIndex: "500",
-            }}
-          />
-        )}
         <h2
           className="ui image header blue"
           style={{ textShadow: "0 0 0px #eeeeee99" }}
@@ -196,7 +179,7 @@ const SignupForm = () => {
           />{" "}
           Sign Up
         </h2>
-        <Form onSubmit={handleSubmit} error={errors.form}>
+        <Form onSubmit={handleSubmit} error={errors}>
           {renderFormComponent()}
         </Form>
       </div>

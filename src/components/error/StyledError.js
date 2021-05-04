@@ -9,4 +9,8 @@ export const StyledErrorMessage = styled(Message)`
   z-index: 1000;
   width: 24%;
   text-align: center;
+
+  @media (max-width: 900px) {
+    width: 70%;
+  }
 `;

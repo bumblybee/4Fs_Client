@@ -14,7 +14,6 @@ const UserProvider = ({ children }) => {
   const getCurrentUser = useCallback(async () => {
     const userData = await getUser();
     if (userData && !userData.error) {
-      console.log(userData);
       setUser(userData.data.user);
       return userData.data.user;
     } else {

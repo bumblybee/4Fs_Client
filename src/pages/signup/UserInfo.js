@@ -21,10 +21,10 @@ const UserInfo = ({
   const advanceForm = async (e) => {
     e.preventDefault();
     if (validPassword()) {
-      setErrors({ ...errors, password: false, form: false });
+      setErrors({ ...errors, password: false });
       await handleSubmit(e, "userInfo");
     } else {
-      setErrors({ ...errors, password: true, form: true });
+      setErrors({ ...errors, password: true });
       setErrorMessage(
         "Password must be at least 7 characters with at least one number and one lowercase letter"
       );
