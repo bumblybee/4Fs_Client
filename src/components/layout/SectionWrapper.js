@@ -2,17 +2,17 @@ import React from "react";
 import NavBar from "../nav/NavBar";
 import FTabBar from "../fTabBar/FTabBar";
 import SectionTabMenu from "../sectionTabMenu/SectionTabMenu";
-import TableContainer from "../table/TableContainer";
+import SectionContainer from "../layout/SectionContainer";
 
-const AppWrapper = ({ children }) => {
+const SectionWrapper = ({ children }) => {
   return (
     <div>
       <NavBar />
       <FTabBar />
       <SectionTabMenu />
-      <TableContainer>{children}</TableContainer>
+      <SectionContainer>{children}</SectionContainer>
     </div>
   );
 };
 
-export default AppWrapper;
+export default SectionWrapper;

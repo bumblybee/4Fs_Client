@@ -11,7 +11,7 @@ import UserProvider from "./context/user/UserProvider";
 
 import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 import Error from "./components/error/Error";
-import AppWrapper from "./components/wrapper/AppWrapper";
+import SectionWrapper from "./components/layout/SectionWrapper";
 import SignupForm from "./pages/signup/SignupForm";
 import { signupUser } from "./api/user/userApi";
 import LoginForm from "./pages/login/LoginForm";
@@ -34,22 +34,22 @@ function App() {
               <Redirect to="/home/milestones" />
             </ProtectedRoute>
             <ProtectedRoute path="/home/milestones">
-              <AppWrapper>
+              <SectionWrapper>
                 <Milestones />
-              </AppWrapper>
+              </SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/home/beliefs">
-              <AppWrapper>
+              <SectionWrapper>
                 <Beliefs />
-              </AppWrapper>
+              </SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/focus" exact>
               <Redirect to="/focus/system" />
             </ProtectedRoute>
             <ProtectedRoute path="/focus/system">
-              <AppWrapper>
+              <SectionWrapper>
                 <System />
-              </AppWrapper>
+              </SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/focus/swagger"></ProtectedRoute>
             <ProtectedRoute path="/focus/sleep"></ProtectedRoute>
