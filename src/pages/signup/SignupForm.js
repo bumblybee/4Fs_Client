@@ -80,7 +80,7 @@ const SignupForm = () => {
 
     // Check email doesn't exist in db
     const emailValidation = await validateEmail({ email: userDetails.email });
-
+    console.log(emailValidation);
     // API returns code for available/unavailable email
     const emailAvailable =
       emailValidation.data && emailValidation.data.code === "email.available";
@@ -91,7 +91,7 @@ const SignupForm = () => {
     } else {
       // Set email error and error message
       setErrors({ ...errors, email: true });
-      setError("Email already in use. Please log in.");
+      setError(emailValidation.error);
     }
   };
 
@@ -117,7 +117,6 @@ const SignupForm = () => {
         if (signup[0] && signup[0].error) {
           setError(signup[0].error);
           // Error will be invalid email format - handle in handleUserInfo or just handle all errors at submission?
-          prevStep();
         }
 
         signup.data && history.push("/");
