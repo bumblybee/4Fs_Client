@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 import useTabs from "../../hooks/useTabs";
 import { Container, Menu, Tab } from "semantic-ui-react";

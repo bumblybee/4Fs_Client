@@ -63,7 +63,7 @@ export default function TableComponent({ children, ...props }) {
       </Table.Header>
     );
   };
-
+  console.log(rowData);
   const rowsMappedToColumns = rowData.map((row) => {
     const rowCells = props.columns.map((column) => {
       const { key: columnKey } = column;

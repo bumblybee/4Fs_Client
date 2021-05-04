@@ -5,6 +5,8 @@ import ExampleRowCell from "../components/cells/ExampleRowCell";
 import CheckboxCell from "../components/cells/checkbox/CheckboxCell";
 import DatePickerCell from "../components/cells/DatePickerCell";
 import NumberCell from "../components/cells/NumberCell";
+import { Link } from "react-router-dom";
+import { Button } from "semantic-ui-react";
 
 const generateCellComponent = (type, props) => {
   switch (type) {
@@ -66,6 +68,18 @@ const generateCellComponent = (type, props) => {
           label={props.label}
           accessor={props.accessor}
         />
+      );
+    case "button":
+      return (
+        <Button
+          size="massive"
+          as={Link}
+          to={props.url}
+          accessor={props.accessor}
+          color={props.buttonColor}
+        >
+          {props.val}
+        </Button>
       );
     default:
       return <div>{props.val}</div>;

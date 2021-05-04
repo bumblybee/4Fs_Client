@@ -6,7 +6,7 @@ const useTabs = (path) => {
   const [activeItem, setActiveItem] = useState("milestones");
 
   const tabs = {
-    home: ["milestones", "beliefs", "calculator"],
+    home: ["milestones", "beliefs", "body calculator"],
     focus: ["system", "swagger", "sleep", "habits"],
     fasting: ["fasting window", "fasting guide"],
     food: ["calories", "food list", "meal planner"],

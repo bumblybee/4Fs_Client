@@ -4,10 +4,13 @@ import { Table } from "semantic-ui-react";
 export const StyledTable = styled(Table)`
   tbody {
     display: block;
-    height: ${(props) => (props.rowdata.length > 9 ? "33.5rem" : "auto")};
+    height: ${(props) =>
+      props.rowdata.length > 9 || props.fullHeightTable ? "33.5rem" : "auto"};
     overflow: auto;
   }
-
+  td {
+    height: ${(props) => (props.fullHeightTD ? "33rem" : "")};
+  }
   thead,
   tbody tr {
     display: table;

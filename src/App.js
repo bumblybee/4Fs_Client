@@ -8,7 +8,6 @@ import {
 
 import ErrorProvider from "./context/error/ErrorProvider";
 import UserProvider from "./context/user/UserProvider";
-
 import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 import Error from "./components/error/Error";
 import SectionWrapper from "./components/layout/SectionWrapper";
@@ -17,6 +16,7 @@ import { signupUser } from "./api/user/userApi";
 import LoginForm from "./pages/login/LoginForm";
 import Milestones from "./components/milestones/Milestones";
 import Beliefs from "./components/beliefs/Beliefs";
+import BodyCalculator from "./components/bodyCalculator/BodyCalculator";
 import System from "./components/system/System";
 
 function App() {
@@ -41,6 +41,11 @@ function App() {
             <ProtectedRoute path="/home/beliefs">
               <SectionWrapper>
                 <Beliefs />
+              </SectionWrapper>
+            </ProtectedRoute>
+            <ProtectedRoute path="/home/body-calculator">
+              <SectionWrapper>
+                <BodyCalculator />
               </SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/focus" exact>

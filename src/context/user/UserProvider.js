@@ -21,7 +21,6 @@ const UserProvider = ({ children }) => {
       return user;
     }
   }, []);
-
   const signUserUp = async (userDetails) => {
     const userData = await signupUser(userDetails);
     userData && userData.data && setUser(userData.data);
