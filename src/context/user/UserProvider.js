@@ -25,7 +25,7 @@ const UserProvider = ({ children }) => {
 
   const signUserUp = async (userDetails) => {
     const userData = await signupUser(userDetails);
-    setUser(userData.data);
+    userData && userData.data && setUser(userData.data);
     return userData;
   };
 

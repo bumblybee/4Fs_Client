@@ -102,6 +102,7 @@ const SignupForm = () => {
 
     if (origin === "userInfo") {
       // We're on the first step of form, need to check email isn't in db and that form fields are filled out
+      // TODO: May not be necessary - could just take user back to first step if email taken?
       await handleUserInfoValidation();
     } else {
       // Validate second step fields
@@ -119,6 +120,7 @@ const SignupForm = () => {
           setError(signup[0].error);
           prevStep();
         }
+        console.log(signup);
         signup.data && history.push("/");
       }
     }
