@@ -72,13 +72,6 @@ const SignupForm = () => {
   };
 
   const handleUserInfoValidation = async () => {
-    // Check email doesn't exist in db
-    const emailValidation = await validateEmail({ email: userDetails.email });
-
-    // API returns code for available/unavailable email
-    const emailAvailable =
-      emailValidation.data && emailValidation.data.code === "email.available";
-
     // Validate fields aren't empty
     const validatedFields = validateFields([
       "firstName",
@@ -87,7 +80,16 @@ const SignupForm = () => {
       "password",
     ]);
 
-    if (emailAvailable && validatedFields) {
+    if (!validatedFields) return;
+
+    // Check email doesn't exist in db
+    const emailValidation = await validateEmail({ email: userDetails.email });
+
+    // API returns code for available/unavailable email
+    const emailAvailable =
+      emailValidation.data && emailValidation.data.code === "email.available";
+
+    if (emailAvailable) {
       // Go to next form step
       nextStep();
     } else {
@@ -101,8 +103,8 @@ const SignupForm = () => {
     e.preventDefault();
 
     if (origin === "userInfo") {
-      // We're on the first step of form, need to check email isn't in db and that form fields are filled out
-      // TODO: May not be necessary - could just take user back to first step if email taken?
+      // We're on the first step of form, need to check email isn't in db and that form fields are filled out before moving to next step
+
       await handleUserInfoValidation();
     } else {
       // Validate second step fields
@@ -160,7 +162,10 @@ const SignupForm = () => {
       style={{ height: "100vh" }}
       className="ui middle aligned center aligned grid"
     >
-      <div className="column ui segment raised" style={{ maxWidth: "450px" }}>
+      <div
+        className="column ui segment raised"
+        style={{ maxWidth: "450px", position: "relative" }}
+      >
         {errors.form && (
           <Message
             error
@@ -168,7 +173,10 @@ const SignupForm = () => {
             size="small"
             style={{
               width: "95%",
-              margin: "-1rem auto 0",
+
+              position: "absolute",
+              top: "1%",
+              zIndex: "500",
             }}
           />
         )}
