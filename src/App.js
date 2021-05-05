@@ -19,6 +19,7 @@ import BodyCalculator from "./components/bodyCalculator/BodyCalculator";
 import FastingGuide from "./components/fasting/FastingGuide";
 import CalorieRequirements from "./components/food/CalorieRequirements";
 import FoodList from "./components/food/FoodList";
+import MealPlanner from "./components/food/MealPlanner";
 import System from "./components/system/System";
 
 function App() {
@@ -94,7 +95,9 @@ function App() {
               </SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/food/meal-planner">
-              <SectionWrapper></SectionWrapper>
+              <SectionWrapper>
+                <MealPlanner />
+              </SectionWrapper>
             </ProtectedRoute>
 
             <ProtectedRoute path="/fitness" exact>
