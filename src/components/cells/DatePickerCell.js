@@ -18,10 +18,10 @@ const DatePickerCell = (props) => {
   };
 
   return (
-    <Input
+    <input
       value={date}
       onChange={(e) => handleChange(e)}
-      style={{ width: "65px" }}
+      style={{ width: "70px", height: "35px" }}
       type="date"
     />
   );
