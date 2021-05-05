@@ -1,10 +1,10 @@
-import EditableCell from "../components/cells/EditableCell";
-import EmptyRowCell from "../components/cells/EmptyRowCell";
-import DropdownCell from "../components/cells/DropdownCell";
-import ExampleRowCell from "../components/cells/ExampleRowCell";
+import EditableCell from "../components/cells/editable/EditableCell";
+import EmptyRowCell from "../components/cells/empty/EmptyRowCell";
+import DropdownCell from "../components/cells/dropdown/DropdownCell";
+import ExampleRowCell from "../components/cells/example/ExampleRowCell";
 import CheckboxCell from "../components/cells/checkbox/CheckboxCell";
-import DatePickerCell from "../components/cells/DatePickerCell";
-import NumberCell from "../components/cells/NumberCell";
+import DatePickerCell from "../components/cells/date/DatePickerCell";
+import NumberCell from "../components/cells/number/NumberCell";
 import ButtonCell from "../components/cells/button/ButtonCell";
 
 const generateCellComponent = (type, props) => {
