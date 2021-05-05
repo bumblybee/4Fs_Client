@@ -21,6 +21,7 @@ import CalorieRequirements from "./components/food/CalorieRequirements";
 import FoodList from "./components/food/FoodList";
 import MealPlanner from "./components/food/MealPlanner";
 import System from "./components/system/System";
+import FitnessActivities from "./components/fitness/FitnessActivities";
 
 function App() {
   return (
@@ -104,7 +105,9 @@ function App() {
               <Redirect to="/fitness/fitness-activities" />
             </ProtectedRoute>
             <ProtectedRoute path="/fitness/fitness-activities">
-              <SectionWrapper></SectionWrapper>
+              <SectionWrapper>
+                <FitnessActivities />
+              </SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/fitness/fitness-planner">
               <SectionWrapper></SectionWrapper>
