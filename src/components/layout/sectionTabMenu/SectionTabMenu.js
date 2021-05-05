@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import useTabs from "../../hooks/useTabs";
+import useTabs from "../../../hooks/useTabs";
 import { Container, Menu } from "semantic-ui-react";
 
 const SectionTabMenu = () => {
