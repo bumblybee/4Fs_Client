@@ -18,7 +18,8 @@ const useCRUD = (getter, setter, destroyer) => {
       (field === "accomplishment" && data[field] == null)
     ) {
       const res = await destroyer(id);
-      res && res.data && res.data.length && setState([...res.data]);
+
+      await getData();
     } else {
       // Best to call getData again or return dataset from server like above example?
 
