@@ -17,6 +17,7 @@ import Milestones from "./components/milestones/Milestones";
 import Beliefs from "./components/beliefs/Beliefs";
 import BodyCalculator from "./components/bodyCalculator/BodyCalculator";
 import FastingGuide from "./components/fasting/FastingGuide";
+import CalorieRequirements from "./components/food/CalorieRequirements";
 import System from "./components/system/System";
 
 function App() {
@@ -82,7 +83,9 @@ function App() {
               <Redirect to="/food/calories" />
             </ProtectedRoute>
             <ProtectedRoute path="/food/calories">
-              <SectionWrapper></SectionWrapper>
+              <SectionWrapper>
+                <CalorieRequirements />
+              </SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/food/food-list">
               <SectionWrapper></SectionWrapper>
