@@ -23,7 +23,7 @@ const CheckboxCell = (props) => {
         <input
           style={{ padding: "0 0 0 0.5rem" }}
           checked={isChecked}
-          onClick={handleCheck}
+          onChange={handleCheck}
           type="checkbox"
         />
       </label>
