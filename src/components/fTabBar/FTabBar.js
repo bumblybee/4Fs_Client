@@ -124,7 +124,11 @@ const FTabBar = () => {
           top: "40%",
           right: "27%",
           fontSize: "1.2rem",
-          fontWeight: "500",
+          fontWeight: path === "resources" ? "600" : "500",
+          borderBottom:
+            path === "resources"
+              ? "2px solid #2b73ce"
+              : "2px solid transparent",
           color: "#2b73ce",
         }}
       >

@@ -78,8 +78,24 @@ function App() {
             <ProtectedRoute path="/food" exact>
               <Redirect to="/food/calories" />
             </ProtectedRoute>
+            <ProtectedRoute path="/food/calories">
+              <SectionWrapper></SectionWrapper>
+            </ProtectedRoute>
+            <ProtectedRoute path="/food/food-list">
+              <SectionWrapper></SectionWrapper>
+            </ProtectedRoute>
+            <ProtectedRoute path="/food/meal-planner">
+              <SectionWrapper></SectionWrapper>
+            </ProtectedRoute>
+
             <ProtectedRoute path="/fitness" exact>
-              <Redirect to="/fitness/activities" />
+              <Redirect to="/fitness/fitness-activities" />
+            </ProtectedRoute>
+            <ProtectedRoute path="/fitness/fitness-activities">
+              <SectionWrapper></SectionWrapper>
+            </ProtectedRoute>
+            <ProtectedRoute path="/fitness/fitness-planner">
+              <SectionWrapper></SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/resources">
               <SectionWrapper></SectionWrapper>

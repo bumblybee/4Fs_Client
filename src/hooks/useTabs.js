@@ -30,7 +30,7 @@ const useTabs = (path) => {
 
   useEffect(() => {
     setActiveItem(tabs[path][0]);
-  }, [path, tabs]);
+  }, [path]);
 
   switch (path) {
     case "home":
