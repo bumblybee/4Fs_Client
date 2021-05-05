@@ -6,7 +6,7 @@ const useCRUD = (getter, setter, destroyer) => {
   const getData = useCallback(async () => {
     const res = await getter();
 
-    setState(res.data.length ? [...res.data] : []);
+    setState(res && res.data.length ? [...res.data] : []);
   }, []);
 
   const setData = async (data, id) => {

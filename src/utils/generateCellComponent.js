@@ -5,7 +5,7 @@ import ExampleRowCell from "../components/cells/ExampleRowCell";
 import CheckboxCell from "../components/cells/checkbox/CheckboxCell";
 import DatePickerCell from "../components/cells/DatePickerCell";
 import NumberCell from "../components/cells/NumberCell";
-import { Button } from "semantic-ui-react";
+import ButtonCell from "../components/cells/button/ButtonCell";
 
 const generateCellComponent = (type, props) => {
   switch (type) {
@@ -68,18 +68,19 @@ const generateCellComponent = (type, props) => {
           accessor={props.accessor}
         />
       );
+
     case "button":
       return (
-        <Button
+        <ButtonCell
           size={props.size}
           as="a"
           href={props.to}
           accessor={props.accessor}
           color={props.color}
-        >
-          {props.icon && props.icon}
-          {props.val}
-        </Button>
+          isCentered={props.isCentered}
+          icon={props.icon}
+          val={props.val}
+        ></ButtonCell>
       );
     default:
       return <div>{props.val}</div>;

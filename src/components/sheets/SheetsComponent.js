@@ -27,13 +27,14 @@ const SheetsComponent = ({ title, subtitle, buttonText, colorScheme }) => {
           color: colorScheme,
           size: "huge",
           icon: <Icon name="google drive" />,
+          isCentered: true,
         }),
       },
     };
 
     return [rowData];
   };
-  console.log(rows());
+
   return (
     <div>
       <h1 style={{ textAlign: "center", marginBottom: 0 }}>{title}</h1>
@@ -51,8 +52,8 @@ const SheetsComponent = ({ title, subtitle, buttonText, colorScheme }) => {
         columns={columns}
         color={colorScheme}
         aligntext="center"
-        fullHeightTable
-        fullHeightTD
+        fullheighttable
+        fullheighttd
       />
     </div>
   );
