@@ -22,6 +22,7 @@ import FoodList from "./components/food/FoodList";
 import MealPlanner from "./components/food/MealPlanner";
 import System from "./components/system/System";
 import FitnessActivities from "./components/fitness/FitnessActivities";
+import FitnessPlanner from "./components/fitness/FitnessPlanner";
 
 function App() {
   return (
@@ -110,7 +111,9 @@ function App() {
               </SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/fitness/fitness-planner">
-              <SectionWrapper></SectionWrapper>
+              <SectionWrapper>
+                <FitnessPlanner />
+              </SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/resources">
               <SectionWrapper></SectionWrapper>
