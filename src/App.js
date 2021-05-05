@@ -13,14 +13,14 @@ import Error from "./components/error/Error";
 import SectionWrapper from "./components/layout/SectionWrapper";
 import SignupForm from "./pages/signup/SignupForm";
 import LoginForm from "./pages/login/LoginForm";
-import Milestones from "./components/milestones/Milestones";
-import Beliefs from "./components/beliefs/Beliefs";
-import BodyCalculator from "./components/bodyCalculator/BodyCalculator";
+import Milestones from "./components/home/milestones/Milestones";
+import Beliefs from "./components/home/beliefs/Beliefs";
+import BodyCalculator from "./components/home/bodyCalculator/BodyCalculator";
 import FastingGuide from "./components/fasting/FastingGuide";
 import CalorieRequirements from "./components/food/CalorieRequirements";
 import FoodList from "./components/food/FoodList";
 import MealPlanner from "./components/food/MealPlanner";
-import System from "./components/system/System";
+import System from "./components/focus/system/System";
 import FitnessActivities from "./components/fitness/FitnessActivities";
 import FitnessPlanner from "./components/fitness/FitnessPlanner";
 

@@ -1,12 +1,12 @@
 import React from "react";
-import TableComponent from "../table/TableComponent";
-import generateCellComponent from "../../utils/generateCellComponent";
-import useCRUD from "../../hooks/useCRUD";
+import TableComponent from "../../table/TableComponent";
+import generateCellComponent from "../../../utils/generateCellComponent";
+import useCRUD from "../../../hooks/useCRUD";
 import {
   getBeliefs,
   mutateBelief,
   deleteBelief,
-} from "../../api/home/beliefsApi";
+} from "../../../api/home/beliefsApi";
 
 const Beliefs = () => {
   const [beliefs, handleSave] = useCRUD(getBeliefs, mutateBelief, deleteBelief);

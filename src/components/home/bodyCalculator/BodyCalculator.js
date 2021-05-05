@@ -1,5 +1,5 @@
 import React from "react";
-import SheetsComponent from "../sheets/SheetsComponent";
+import SheetsComponent from "../../sheets/SheetsComponent";
 
 const BodyCalculator = () => {
   return (

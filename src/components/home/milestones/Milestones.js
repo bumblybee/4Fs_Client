@@ -1,9 +1,12 @@
 import React from "react";
-import generateCellComponent from "../../utils/generateCellComponent";
-import { getMilestones, mutateMilestone } from "../../api/home/milestonesApi";
-import useCRUD from "../../hooks/useCRUD";
+import generateCellComponent from "../../../utils/generateCellComponent";
+import {
+  getMilestones,
+  mutateMilestone,
+} from "../../../api/home/milestonesApi";
+import useCRUD from "../../../hooks/useCRUD";
 
-import TableComponent from "../table/TableComponent";
+import TableComponent from "../../table/TableComponent";
 
 const Milestones = () => {
   const [milestones, handleSave] = useCRUD(getMilestones, mutateMilestone);
