@@ -16,6 +16,7 @@ import LoginForm from "./pages/login/LoginForm";
 import Milestones from "./components/milestones/Milestones";
 import Beliefs from "./components/beliefs/Beliefs";
 import BodyCalculator from "./components/bodyCalculator/BodyCalculator";
+import FastingGuide from "./components/fasting/FastingGuide";
 import System from "./components/system/System";
 
 function App() {
@@ -72,7 +73,9 @@ function App() {
               <SectionWrapper></SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/fasting/fasting-guide">
-              <SectionWrapper></SectionWrapper>
+              <SectionWrapper>
+                <FastingGuide />
+              </SectionWrapper>
             </ProtectedRoute>
 
             <ProtectedRoute path="/food" exact>
