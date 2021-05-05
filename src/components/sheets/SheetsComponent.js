@@ -2,8 +2,11 @@ import React, { useContext } from "react";
 import TableComponent from "../table/TableComponent";
 import generateCellComponent from "../../utils/generateCellComponent";
 import { UserContext } from "../../context/user/UserContext";
+import { Icon } from "semantic-ui-react";
 
-const SheetsComponent = ({ title, subtitle, buttonText, buttonColor }) => {
+const SheetsComponent = ({ title, subtitle, buttonText, colorScheme }) => {
+  // TODO: Specify which sheet to direct user to
+
   const { user } = useContext(UserContext);
   const url = user && user.sheetsURL ? user.sheetsURL : "";
 
@@ -18,10 +21,12 @@ const SheetsComponent = ({ title, subtitle, buttonText, buttonColor }) => {
     const rowData = {
       sheetsURL: {
         cellComponent: generateCellComponent("button", {
-          to: url,
-          val: buttonText,
+          to: url === "" ? "/profile" : url,
+          val: url === "" ? "Add Google Sheets Link in Profile" : buttonText,
           accessor: "sheetsURL",
-          color: buttonColor,
+          color: colorScheme,
+          size: "huge",
+          icon: <Icon name="google drive" />,
         }),
       },
     };
@@ -44,7 +49,7 @@ const SheetsComponent = ({ title, subtitle, buttonText, buttonColor }) => {
       <TableComponent
         rows={rows()}
         columns={columns}
-        color="teal"
+        color={colorScheme}
         aligntext="center"
         fullHeightTable
         fullHeightTD

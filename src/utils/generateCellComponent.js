@@ -72,12 +72,13 @@ const generateCellComponent = (type, props) => {
     case "button":
       return (
         <Button
-          size="massive"
-          as={Link}
-          to={props.url}
+          size={props.size}
+          as="a"
+          href={props.to}
           accessor={props.accessor}
-          color={props.buttonColor}
+          color={props.color}
         >
+          {props.icon && props.icon}
           {props.val}
         </Button>
       );

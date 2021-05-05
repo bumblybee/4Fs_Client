@@ -20,13 +20,9 @@ export const validateUserEmail = async (data) => {
   return emailValidation;
 };
 
-export const updateUser = async () => {
-  const update = await put("/users", {
-    firstName: "Peter",
-    gender: "male",
-    age: 52,
-  });
-  return update.data;
+export const updateUser = async (data) => {
+  const update = await put("/users", data);
+  return update;
 };
 
 export const logoutUser = async () => {

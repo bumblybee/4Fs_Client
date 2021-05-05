@@ -12,7 +12,6 @@ import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 import Error from "./components/error/Error";
 import SectionWrapper from "./components/layout/SectionWrapper";
 import SignupForm from "./pages/signup/SignupForm";
-import { signupUser } from "./api/user/userApi";
 import LoginForm from "./pages/login/LoginForm";
 import Milestones from "./components/milestones/Milestones";
 import Beliefs from "./components/beliefs/Beliefs";
@@ -20,7 +19,6 @@ import BodyCalculator from "./components/bodyCalculator/BodyCalculator";
 import System from "./components/system/System";
 
 function App() {
-  // signupUser();
   return (
     <Router>
       <ErrorProvider>
