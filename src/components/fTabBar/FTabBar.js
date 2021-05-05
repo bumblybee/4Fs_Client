@@ -13,7 +13,7 @@ const FTabBar = () => {
 
   useEffect(() => {
     setActiveItem(path);
-  }, []);
+  }, [path]);
   return (
     <div
       style={{

@@ -11,6 +11,7 @@ const useTabs = (path) => {
     fasting: ["fasting window", "fasting guide"],
     food: ["calories", "food list", "meal planner"],
     fitness: ["fitness activities", "fitness planner"],
+    resources: ["resources"],
   };
 
   const renderTabs = (tabArr) => {
@@ -29,7 +30,7 @@ const useTabs = (path) => {
 
   useEffect(() => {
     setActiveItem(tabs[path][0]);
-  }, [path]);
+  }, [path, tabs]);
 
   switch (path) {
     case "home":

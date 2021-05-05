@@ -46,6 +46,7 @@ function App() {
                 <BodyCalculator />
               </SectionWrapper>
             </ProtectedRoute>
+
             <ProtectedRoute path="/focus" exact>
               <Redirect to="/focus/system" />
             </ProtectedRoute>
@@ -54,18 +55,34 @@ function App() {
                 <System />
               </SectionWrapper>
             </ProtectedRoute>
-            <ProtectedRoute path="/focus/swagger"></ProtectedRoute>
-            <ProtectedRoute path="/focus/sleep"></ProtectedRoute>
-            <ProtectedRoute path="/focus/habits"></ProtectedRoute>
-
-            <ProtectedRoute path="/fasting">
-              <Redirect to="/fasting/window" />
+            <ProtectedRoute path="/focus/swagger">
+              <SectionWrapper></SectionWrapper>
             </ProtectedRoute>
-            <ProtectedRoute path="/food">
+            <ProtectedRoute path="/focus/sleep">
+              <SectionWrapper></SectionWrapper>
+            </ProtectedRoute>
+            <ProtectedRoute path="/focus/habits">
+              <SectionWrapper></SectionWrapper>
+            </ProtectedRoute>
+
+            <ProtectedRoute path="/fasting" exact>
+              <Redirect to="/fasting/fasting-window" />
+            </ProtectedRoute>
+            <ProtectedRoute path="/fasting/fasting-window">
+              <SectionWrapper></SectionWrapper>
+            </ProtectedRoute>
+            <ProtectedRoute path="/fasting/fasting-guide">
+              <SectionWrapper></SectionWrapper>
+            </ProtectedRoute>
+
+            <ProtectedRoute path="/food" exact>
               <Redirect to="/food/calories" />
             </ProtectedRoute>
-            <ProtectedRoute path="/fitness">
+            <ProtectedRoute path="/fitness" exact>
               <Redirect to="/fitness/activities" />
+            </ProtectedRoute>
+            <ProtectedRoute path="/resources">
+              <SectionWrapper></SectionWrapper>
             </ProtectedRoute>
 
             <Route path="/login">

@@ -5,7 +5,6 @@ import ExampleRowCell from "../components/cells/ExampleRowCell";
 import CheckboxCell from "../components/cells/checkbox/CheckboxCell";
 import DatePickerCell from "../components/cells/DatePickerCell";
 import NumberCell from "../components/cells/NumberCell";
-import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
 
 const generateCellComponent = (type, props) => {
