@@ -169,6 +169,7 @@ const SignupForm = () => {
           <img
             className="image"
             src="/4flogo.png"
+            alt="4fs logo"
             style={{
               display: "block",
               margin: "0 auto",

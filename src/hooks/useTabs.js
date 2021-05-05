@@ -28,9 +28,11 @@ const useTabs = (path) => {
     ));
   };
 
+  const activePath = tabs[path][0];
+
   useEffect(() => {
-    setActiveItem(tabs[path][0]);
-  }, [path]);
+    setActiveItem(activePath);
+  }, [activePath]);
 
   switch (path) {
     case "home":
