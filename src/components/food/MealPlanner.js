@@ -4,7 +4,7 @@ import SheetsComponent from "../sheets/SheetsComponent";
 const MealPlanner = () => {
   return (
     <SheetsComponent
-      colorScheme="purple"
+      colorScheme="green"
       buttonText="Google Sheets"
       title="Meal Planner"
       subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
