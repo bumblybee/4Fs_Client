@@ -1,9 +1,5 @@
 import { get, post, put, destroy } from "../baseApi";
 
-export const mutateMoment = async (data, id) => {
-  return await post(`/moments/${id}`, data);
-};
-
 export const getAccomplishments = async () => {
   const accomplishments = await get("/accomplishments");
   return accomplishments.data;
@@ -17,6 +13,21 @@ export const mutateAccomplishment = async (data, id) => {
 export const deleteAccomplishment = async (id) => {
   const deletedAccomplishment = await destroy(`/accomplishments/${id}`);
   return deletedAccomplishment;
+};
+
+export const getMoments = async () => {
+  const moments = await get("/moments");
+  return moments.data;
+};
+
+export const mutateMoment = async (data, id) => {
+  const moment = await post(`/moments/${id}`, data);
+  return moment.data;
+};
+
+export const deleteMoment = async (id) => {
+  const deletedMoment = await destroy(`/moments/${id}`);
+  return deletedMoment;
 };
 
 export const getSkills = async () => {

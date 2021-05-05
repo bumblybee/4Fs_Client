@@ -1,6 +1,8 @@
 import React from "react";
 import Accomplishments from "./Accomplishments";
+import Moments from "./Moments";
 
+// Todo: Add skills table
 const SwaggerStockpile = () => {
   return (
     <div>
@@ -9,7 +11,7 @@ const SwaggerStockpile = () => {
         style={{
           textAlign: "center",
           margin: "0 auto 0.5rem",
-          fontSize: "1.1rem",
+          fontSize: "1.2rem",
           width: "65%",
         }}
       >
@@ -18,9 +20,18 @@ const SwaggerStockpile = () => {
         can reference at any time in order to keep you on your path to success.
       </p>
       <h4 style={{ textAlign: "center", marginBottom: "2rem", marginTop: "0" }}>
-        "I Think. I Know. I Can. I Do."
+        <em>"I Think. I Know. I Can. I Do."</em>
       </h4>
-      <Accomplishments />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "flex-start",
+        }}
+      >
+        <Moments />
+        <Accomplishments />
+      </div>
     </div>
   );
 };

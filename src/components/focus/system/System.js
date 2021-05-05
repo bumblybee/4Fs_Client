@@ -1,9 +1,10 @@
 import React from "react";
 import useCRUD from "../../../hooks/useCRUD";
 import generateCellComponent from "../../../utils/generateCellComponent";
-import { getSystem, mutateSystem } from "../../../api/focus/system";
+import { getSystem, mutateSystem } from "../../../api/focus/systemApi";
 import TableComponent from "../../table/TableComponent";
 
+// TODO: Checkbox update days
 const System = () => {
   const [system, handleSave] = useCRUD(getSystem, mutateSystem);
 

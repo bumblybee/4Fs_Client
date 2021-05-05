@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Table } from "semantic-ui-react";
 
 export const StyledTable = styled(Table)`
+  margin: 0 !important;
   tbody {
     display: block;
     height: ${(props) =>

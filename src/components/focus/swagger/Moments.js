@@ -36,7 +36,7 @@ const Moments = () => {
 
   const addEmptyRow = () => {
     const emptyRow = {
-      accomplishment: {
+      moment: {
         cellComponent: generateCellComponent("empty", {
           onSave: handleSave,
           accessor: "moment",
