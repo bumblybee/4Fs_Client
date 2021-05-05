@@ -1,11 +1,19 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 import { Menu, Icon } from "semantic-ui-react";
 
 const FTabBar = () => {
+  const location = useLocation();
+  const { pathname } = location;
+  const path = pathname.split("/")[1];
+
   const [activeItem, setActiveItem] = useState("");
   // ea8b1c;
+
+  useEffect(() => {
+    setActiveItem(path);
+  }, []);
   return (
     <div
       style={{
