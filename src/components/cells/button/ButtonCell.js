@@ -1,6 +1,5 @@
 import React from "react";
 import { StyledButton } from "./StyledButtonCell";
-import { Button } from "semantic-ui-react";
 
 const ButtonCell = (props) => {
   // TODO: look into why class necessary if styled component
