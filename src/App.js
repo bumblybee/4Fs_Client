@@ -14,7 +14,7 @@ import SectionWrapper from "./components/layout/SectionWrapper";
 import SignupForm from "./pages/signup/SignupForm";
 import LoginForm from "./pages/login/LoginForm";
 import { Milestones, Beliefs, BodyCalculator } from "./components/home";
-import { System } from "./components/focus";
+import { System, SwaggerStockpile } from "./components/focus";
 import { FastingGuide, FastingWindow } from "./components/fasting";
 import { CalorieRequirements, FoodList, MealPlanner } from "./components/food";
 import { FitnessActivities, FitnessPlanner } from "./components/fitness";
@@ -57,7 +57,9 @@ function App() {
               </SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/focus/swagger">
-              <SectionWrapper></SectionWrapper>
+              <SectionWrapper>
+                <SwaggerStockpile />
+              </SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/focus/sleep">
               <SectionWrapper></SectionWrapper>

@@ -5,15 +5,20 @@ const useCRUD = (getter, setter, destroyer) => {
 
   const getData = useCallback(async () => {
     const res = await getter();
-
+    console.log(res);
     setState(res && res.data && res.data.length ? [...res.data] : []);
   }, []);
 
   const setData = async (data, id) => {
     // Need to generalize this check
-    if (data.belief == null && destroyer) {
+    console.log(data);
+    const field = Object.keys(data)[0];
+    if (
+      (field === "belief" && data[field] == null) ||
+      (field === "accomplishment" && data[field] == null)
+    ) {
       const res = await destroyer(id);
-      setState([...res.data]);
+      res && res.data && res.data.length && setState([...res.data]);
     } else {
       // Best to call getData again or return dataset from server like above example?
 

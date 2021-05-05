@@ -9,18 +9,19 @@ export const getAccomplishments = async () => {
   return accomplishments.data;
 };
 
-export const createAccomplishment = async (data) => {
-  const accomplishment = await post("/accomplishments", data);
+export const mutateAccomplishment = async (data, id) => {
+  const accomplishment = await post(`/accomplishments/${id}`, data);
   return accomplishment.data;
+};
+
+export const deleteAccomplishment = async (id) => {
+  const deletedAccomplishment = await destroy(`/accomplishments/${id}`);
+  return deletedAccomplishment;
 };
 
 export const getSkills = async () => {
   const skills = await get("/skills");
   return skills.data;
-};
-
-export const createSkill = async (data) => {
-  return await post("/skills", data);
 };
 
 export const mutateSkill = async (data, id) => {

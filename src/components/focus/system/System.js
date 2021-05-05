@@ -226,38 +226,40 @@ const System = () => {
   };
 
   return (
-    <div>
-      <h1 style={{ textAlign: "center" }}>Master your System</h1>
-      <p
-        style={{
-          textAlign: "center",
-          margin: "0 auto 2.5rem",
-          fontSize: "1.2rem",
-          fontWeight: "500",
-        }}
-      >
-        Purpose: To begin doing new practices that will help you with your
-        health and wellbeing
-      </p>
-      <TableComponent
-        columns={columns}
-        rows={rows(addEmptyRow())}
-        color="purple"
-        aligntext="left"
-        striped
-        descriptionheader={
-          <div>
-            <label>Start Date:</label> {""}
-            {generateCellComponent("date", {
-              onSave: handleSave,
-              accessor: "startDate",
-              alignment: "center",
-              placeholder: "Start date",
-            })}
-          </div>
-        }
-      />
-    </div>
+    rows && (
+      <div>
+        <h1 style={{ textAlign: "center" }}>Master your System</h1>
+        <p
+          style={{
+            textAlign: "center",
+            margin: "0 auto 2.5rem",
+            fontSize: "1.2rem",
+            fontWeight: "500",
+          }}
+        >
+          Purpose: To begin doing new practices that will help you with your
+          health and wellbeing
+        </p>
+        <TableComponent
+          columns={columns}
+          rows={rows(addEmptyRow())}
+          color="purple"
+          aligntext="left"
+          striped
+          descriptionheader={
+            <div>
+              <label>Start Date:</label> {""}
+              {generateCellComponent("date", {
+                onSave: handleSave,
+                accessor: "startDate",
+                alignment: "center",
+                placeholder: "Start date",
+              })}
+            </div>
+          }
+        />
+      </div>
+    )
   );
 };
 

@@ -10,7 +10,6 @@ const EmptyRowCell = ({ children, ...props }) => {
   const inputRef = useRef(null);
 
   const makeData = () => {
-    // If user deleted text, send null instead of empty string
     if (blankCellVal !== "") {
       let updateVal = blankCellVal;
       if (blankCellVal === "") {
@@ -19,7 +18,7 @@ const EmptyRowCell = ({ children, ...props }) => {
 
       props.onSave(
         {
-          [props.accessor]: updateVal,
+          [props.accessor]: blankCellVal,
         },
         props.id
       );
