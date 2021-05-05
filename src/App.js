@@ -18,6 +18,7 @@ import Beliefs from "./components/beliefs/Beliefs";
 import BodyCalculator from "./components/bodyCalculator/BodyCalculator";
 import FastingGuide from "./components/fasting/FastingGuide";
 import CalorieRequirements from "./components/food/CalorieRequirements";
+import FoodList from "./components/food/FoodList";
 import System from "./components/system/System";
 
 function App() {
@@ -88,7 +89,9 @@ function App() {
               </SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/food/food-list">
-              <SectionWrapper></SectionWrapper>
+              <SectionWrapper>
+                <FoodList />
+              </SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/food/meal-planner">
               <SectionWrapper></SectionWrapper>
