@@ -54,7 +54,7 @@ const EditableTableCell = ({ children, ...props }) => {
         />
       );
     } else {
-      return editCellVal;
+      return editCellVal || props.placeholder;
     }
   };
 
