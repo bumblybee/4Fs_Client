@@ -16,12 +16,8 @@ import LoginForm from "./pages/login/LoginForm";
 import { Milestones, Beliefs, BodyCalculator } from "./components/home";
 import { System } from "./components/focus";
 import { FastingGuide, FastingWindow } from "./components/fasting";
-import CalorieRequirements from "./components/food/CalorieRequirements";
-import FoodList from "./components/food/FoodList";
-import MealPlanner from "./components/food/MealPlanner";
-
-import FitnessActivities from "./components/fitness/FitnessActivities";
-import FitnessPlanner from "./components/fitness/FitnessPlanner";
+import { CalorieRequirements, FoodList, MealPlanner } from "./components/food";
+import { FitnessActivities, FitnessPlanner } from "./components/fitness";
 
 function App() {
   return (
