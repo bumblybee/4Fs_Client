@@ -5,9 +5,9 @@ import { Form, Button, Icon } from "semantic-ui-react";
 const UserInfo = ({
   userDetails,
   handleChange,
-  errors,
+  formErrors,
   handleSubmit,
-  setErrors,
+  setFormErrors,
   setErrorMessage,
 }) => {
   // Make sure password contains at minimum seven character, both nums and lowercase letters
@@ -22,10 +22,10 @@ const UserInfo = ({
   const advanceForm = async (e) => {
     e.preventDefault();
     if (validPassword()) {
-      setErrors({ ...errors, password: false });
+      setFormErrors({ ...formErrors, password: false });
       await handleSubmit(e, "userInfo");
     } else {
-      setErrors({ ...errors, password: true });
+      setFormErrors({ ...formErrors, password: true });
       setErrorMessage(
         "Password must contain at least 7 characters consisting of numbers and letters"
       );
@@ -45,7 +45,7 @@ const UserInfo = ({
           placeholder="First"
           label="First name"
           value={userDetails.firstName || ""}
-          error={errors.firstName}
+          error={formErrors.firstName}
           onChange={handleChange("firstName")}
           required
         />
@@ -56,7 +56,7 @@ const UserInfo = ({
           placeholder="Last"
           label="Last name"
           value={userDetails.lastName || ""}
-          error={errors.lastName}
+          error={formErrors.lastName}
           onChange={handleChange("lastName")}
           required
         />
@@ -69,7 +69,7 @@ const UserInfo = ({
         label="Email"
         type="email"
         value={userDetails.email}
-        error={errors.email}
+        error={formErrors.email}
         onChange={handleChange("email")}
         required
       />
@@ -82,7 +82,7 @@ const UserInfo = ({
         type="password"
         label="Password"
         value={userDetails.password}
-        error={errors.password}
+        error={formErrors.password}
         onChange={handleChange("password")}
         required
       />
