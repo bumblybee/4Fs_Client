@@ -1,6 +1,7 @@
 import React from "react";
 import Accomplishments from "./Accomplishments";
 import Moments from "./Moments";
+import Skills from "./Skills";
 
 // Todo: Add skills table
 const SwaggerStockpile = () => {
@@ -31,6 +32,7 @@ const SwaggerStockpile = () => {
       >
         <Moments />
         <Accomplishments />
+        <Skills />
       </div>
     </div>
   );

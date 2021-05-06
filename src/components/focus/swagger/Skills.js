@@ -3,33 +3,29 @@ import TableComponent from "../../table/TableComponent";
 import useCRUD from "../../../hooks/useCRUD";
 import generateCellComponent from "../../../utils/generateCellComponent";
 import {
-  getAccomplishments,
-  mutateAccomplishment,
-  deleteAccomplishment,
+  getSkills,
+  mutateSkill,
+  deleteSkill,
 } from "../../../api/focus/swaggerApi";
 
-const Accomplishments = () => {
-  const [accomplishments, handleSave] = useCRUD(
-    getAccomplishments,
-    mutateAccomplishment,
-    deleteAccomplishment
-  );
+const Skills = () => {
+  const [skills, handleSave] = useCRUD(getSkills, mutateSkill, deleteSkill);
 
   const columns = [
     {
-      label: "Accomplishments",
-      key: "accomplishment",
+      label: "Skills",
+      key: "skill",
     },
   ];
 
   const rows = (additionalRow) => {
-    const rowData = accomplishments.map((item) => ({
-      accomplishment: {
+    const rowData = skills.map((item) => ({
+      skill: {
         cellComponent: generateCellComponent("editable", {
           id: item.id,
           onSave: handleSave,
-          val: item.accomplishment,
-          accessor: "accomplishment",
+          val: item.skill,
+          accessor: "skill",
           alignment: "center",
         }),
       },
@@ -40,12 +36,12 @@ const Accomplishments = () => {
 
   const addEmptyRow = () => {
     const emptyRow = {
-      accomplishment: {
+      skill: {
         cellComponent: generateCellComponent("empty", {
           onSave: handleSave,
-          accessor: "accomplishment",
+          accessor: "skill",
           alignment: "center",
-          placeholder: "New accomplishment...",
+          placeholder: "New skill...",
         }),
       },
     };
@@ -65,4 +61,4 @@ const Accomplishments = () => {
   );
 };
 
-export default Accomplishments;
+export default Skills;

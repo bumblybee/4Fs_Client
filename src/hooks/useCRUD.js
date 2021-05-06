@@ -13,10 +13,7 @@ const useCRUD = (getter, setter, destroyer) => {
     // Need to generalize this check
     console.log(data);
     const field = Object.keys(data)[0];
-    if (
-      (field === "belief" && data[field] == null) ||
-      (field === "accomplishment" && data[field] == null)
-    ) {
+    if (destroyer && field !== "milestone" && data[field] == null) {
       const res = await destroyer(id);
 
       await getData();

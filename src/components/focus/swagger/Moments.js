@@ -13,7 +13,7 @@ const Moments = () => {
 
   const columns = [
     {
-      label: "Moment",
+      label: "Moments",
       key: "moment",
     },
   ];

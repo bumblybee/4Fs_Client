@@ -36,5 +36,11 @@ export const getSkills = async () => {
 };
 
 export const mutateSkill = async (data, id) => {
-  return await post(`/skills/${id}`, data);
+  const skill = await post(`/skills/${id}`, data);
+  return skill.data;
+};
+
+export const deleteSkill = async (id) => {
+  const deletedSkill = await destroy(`/skills/${id}`);
+  return deletedSkill;
 };
