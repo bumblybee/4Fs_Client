@@ -10,7 +10,7 @@ import { Form } from "semantic-ui-react";
 const SignupForm = () => {
   const history = useHistory();
   const { signUserUp, validateEmail } = useContext(UserContext);
-  const { setError } = useContext(ErrorContext);
+  const { setErrorMessage } = useContext(ErrorContext);
 
   const [step, setStep] = useState(1);
   const [userDetails, setUserDetails] = useState({
@@ -58,7 +58,7 @@ const SignupForm = () => {
       if (userDetails[item] === "") {
         setFormErrors({ ...formErrors, [item]: true });
 
-        setError("Please fill in the highlighted fields");
+        setErrorMessage("Please fill in the highlighted fields");
 
         return false;
       } else {
@@ -93,7 +93,7 @@ const SignupForm = () => {
     } else {
       // Set email input error and error message
       setFormErrors({ ...formErrors, email: true });
-      setError(emailValidation.error);
+      setErrorMessage(emailValidation.error);
     }
   };
 
@@ -118,7 +118,7 @@ const SignupForm = () => {
       const signup = await signUserUp(userDetails);
       // Todo: Refactor how this is handled
       if (signup[0] && signup[0].error) {
-        setError(signup[0].error);
+        setErrorMessage(signup[0].error);
       }
 
       signup.data && history.push("/");
@@ -137,7 +137,7 @@ const SignupForm = () => {
             handleSubmit={handleSubmit}
             validateFields={validateFields}
             setFormErrors={setFormErrors}
-            setErrorMessage={setError}
+            setErrorMessage={setErrorMessage}
           />
         );
       case 2:

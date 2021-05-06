@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
 import { ErrorContext } from "../../context/error/ErrorContext";
 import { StyledErrorMessage } from "./StyledError";
-// import { StyledNotificationPopup } from "../../styles/GlobalStyledComponents";
 
 const Error = () => {
-  const { errorMessage } = useContext(ErrorContext);
-  const title = errorMessage && errorMessage.split(".")[0];
-  const body = errorMessage && errorMessage.split(".")[1];
+  const { error } = useContext(ErrorContext);
+  const title = error && error.split(".")[0];
+  const body = error && error.split(".")[1];
 
   return (
-    errorMessage !== null && (
+    error !== null && (
       <StyledErrorMessage color="red">
         <StyledErrorMessage.Header>{title}</StyledErrorMessage.Header>
         <p>{body}</p>

@@ -7,17 +7,16 @@ import { ErrorContext } from "../../context/error/ErrorContext";
 const LoginForm = () => {
   const history = useHistory();
   const { logUserIn } = useContext(UserContext);
-  const { setError } = useContext(ErrorContext);
+  const { setErrorMessage } = useContext(ErrorContext);
   const [userDetails, setUserDetails] = useState({ email: "", password: "" });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const login = await logUserIn(userDetails);
     if (login.error) {
-      setError(login.error);
+      setErrorMessage(login.error);
       return;
     } else {
-      console.log(login);
       login.data && history.push("/home");
     }
   };
