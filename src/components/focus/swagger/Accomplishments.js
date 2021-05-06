@@ -58,7 +58,7 @@ const Accomplishments = () => {
       <TableComponent
         rows={rows(addEmptyRow())}
         columns={columns}
-        color="blue"
+        color="olive"
         aligntext="center"
       />
     )

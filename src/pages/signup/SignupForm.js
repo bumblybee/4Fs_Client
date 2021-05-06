@@ -7,11 +7,11 @@ import UserInfo from "./UserInfo";
 import UserDetails from "./UserDetails";
 import { Form } from "semantic-ui-react";
 
-// Semantic has built in form validation object
 const SignupForm = () => {
   const history = useHistory();
   const { signUserUp, validateEmail } = useContext(UserContext);
   const { setError } = useContext(ErrorContext);
+
   const [step, setStep] = useState(1);
   const [userDetails, setUserDetails] = useState({
     firstName: "",
@@ -24,6 +24,7 @@ const SignupForm = () => {
     gender: "",
   });
 
+  // Handles setting error on individual inputs and highlighting if invalid
   const [errors, setErrors] = useState({
     firstName: false,
     lastName: false,
@@ -51,6 +52,7 @@ const SignupForm = () => {
     setErrors({ ...errors, [input]: false });
   };
 
+  // Check all inputs are filled in
   const validateFields = (fields) => {
     for (const item of fields) {
       if (userDetails[item] === "") {
@@ -68,7 +70,6 @@ const SignupForm = () => {
   };
 
   const handleUserInfoValidation = async () => {
-    // Validate fields aren't empty
     const validatedFields = validateFields([
       "firstName",
       "lastName",
@@ -76,20 +77,21 @@ const SignupForm = () => {
       "password",
     ]);
 
+    // Error handled above in validateFields
     if (!validatedFields) return;
 
-    // Check email doesn't exist in db
+    // Check email doesn't already exist in db
     const emailValidation = await validateEmail({ email: userDetails.email });
-    console.log(emailValidation);
-    // API returns code for available/unavailable email
+
+    // API returns a code for available/unavailable email
     const emailAvailable =
       emailValidation.data && emailValidation.data.code === "email.available";
 
     if (emailAvailable) {
-      // Go to next form step
+      // Go to next step of form
       nextStep();
     } else {
-      // Set email error and error message
+      // Set email input error and error message
       setErrors({ ...errors, email: true });
       setError(emailValidation.error);
     }
@@ -99,7 +101,7 @@ const SignupForm = () => {
     e.preventDefault();
 
     if (origin === "userInfo") {
-      // We're on the first step of form, need to check email isn't in db and that form fields are filled out before moving to next step
+      // We're on the first step of form. Need to check email isn't in db and that form fields are filled out before moving to next step.
 
       await handleUserInfoValidation();
     } else {
@@ -111,16 +113,15 @@ const SignupForm = () => {
         "gender",
       ]);
 
-      if (validatedFields) {
-        const signup = await signUserUp(userDetails);
-        // Fix how this is handled
-        if (signup[0] && signup[0].error) {
-          setError(signup[0].error);
-          // Error will be invalid email format - handle in handleUserInfo or just handle all errors at submission?
-        }
+      if (!validatedFields) return;
 
-        signup.data && history.push("/");
+      const signup = await signUserUp(userDetails);
+      // Todo: Refactor how this is handled
+      if (signup[0] && signup[0].error) {
+        setError(signup[0].error);
       }
+
+      signup.data && history.push("/");
     }
   };
 

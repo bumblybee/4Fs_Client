@@ -54,7 +54,7 @@ const Moments = () => {
       <TableComponent
         rows={rows(addEmptyRow())}
         columns={columns}
-        color="blue"
+        color="olive"
         aligntext="center"
       />
     )

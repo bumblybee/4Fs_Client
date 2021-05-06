@@ -4,7 +4,7 @@ import generateCellComponent from "../../../utils/generateCellComponent";
 import { getSystem, mutateSystem } from "../../../api/focus/systemApi";
 import TableComponent from "../../table/TableComponent";
 
-// TODO: Checkbox update days
+// TODO: Checkbox and number cells update db
 const System = () => {
   const [system, handleSave] = useCRUD(getSystem, mutateSystem);
 

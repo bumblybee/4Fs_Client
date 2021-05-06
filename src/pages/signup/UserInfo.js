@@ -10,6 +10,7 @@ const UserInfo = ({
   setErrors,
   setErrorMessage,
 }) => {
+  // Make sure password contains at minimum seven character, both nums and lowercase letters
   const validPassword = () => {
     if (/^(?=.*\d)(?=.*[a-z]).{7,20}$/.test(userDetails.password)) {
       return true;
@@ -26,7 +27,7 @@ const UserInfo = ({
     } else {
       setErrors({ ...errors, password: true });
       setErrorMessage(
-        "Password must be at least 7 characters with at least one number and one lowercase letter"
+        "Password must contain at least 7 characters consisting of numbers and letters"
       );
     }
   };

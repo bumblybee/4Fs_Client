@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Route, Redirect } from "react-router-dom";
 import { UserContext } from "../../context/user/UserContext";
 
-const ProtectedRoute = ({ children, ...rest }) => {
+const ProtectedRoute = ({ children }) => {
   const { getCurrentUser } = useContext(UserContext);
   const [user, setUser] = useState({});
 
@@ -11,7 +11,7 @@ const ProtectedRoute = ({ children, ...rest }) => {
   }, []);
 
   return user ? (
-    <Route {...rest}>{children}</Route>
+    <Route>{children}</Route>
   ) : (
     <Route>
       <Redirect to="/signup" />
