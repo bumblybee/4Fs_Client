@@ -9,8 +9,10 @@ import { Form } from "semantic-ui-react";
 
 const SignupForm = () => {
   const history = useHistory();
-  const { signUserUp, validateEmail } = useContext(UserContext);
+
   const { setErrorMessage } = useContext(ErrorContext);
+
+  const { signUserUp, checkIfEmailExists } = useContext(UserContext);
 
   const [step, setStep] = useState(1);
   const [userDetails, setUserDetails] = useState({
@@ -25,6 +27,7 @@ const SignupForm = () => {
   });
 
   // Handles setting error on individual inputs and highlighting if invalid
+
   const [formErrors, setFormErrors] = useState({
     firstName: false,
     lastName: false,
@@ -53,7 +56,8 @@ const SignupForm = () => {
   };
 
   // Check all inputs are filled in
-  const validateFields = (fields) => {
+
+  const validateFieldsAreComplete = (fields) => {
     for (const item of fields) {
       if (userDetails[item] === "") {
         setFormErrors({ ...formErrors, [item]: true });
@@ -70,7 +74,8 @@ const SignupForm = () => {
   };
 
   const handleUserInfoValidation = async () => {
-    const validatedFields = validateFields([
+    // Validate fields aren't empty
+    const validatedFields = validateFieldsAreComplete([
       "firstName",
       "lastName",
       "email",
@@ -80,12 +85,18 @@ const SignupForm = () => {
     // Error handled above in validateFields
     if (!validatedFields) return;
 
-    // Check email doesn't already exist in db
-    const emailValidation = await validateEmail({ email: userDetails.email });
-
     // API returns a code for available/unavailable email
+
+    // Check email doesn't exist in db
+    const serverEmailStatus = await checkIfEmailExists({
+      email: userDetails.email,
+    });
+
+    // API returns code for available/unavailable email
+
     const emailAvailable =
-      emailValidation.data && emailValidation.data.code === "email.available";
+      serverEmailStatus.data &&
+      serverEmailStatus.data.code === "email.available";
 
     if (emailAvailable) {
       // Go to next step of form
@@ -93,7 +104,7 @@ const SignupForm = () => {
     } else {
       // Set email input error and error message
       setFormErrors({ ...formErrors, email: true });
-      setErrorMessage(emailValidation.error);
+      setErrorMessage(serverEmailStatus.error);
     }
   };
 
@@ -106,7 +117,7 @@ const SignupForm = () => {
       await handleUserInfoValidation();
     } else {
       // Validate second step fields
-      const validatedFields = validateFields([
+      const validatedFields = validateFieldsAreComplete([
         "height",
         "weight",
         "age",
@@ -131,12 +142,11 @@ const SignupForm = () => {
         return (
           <UserInfo
             userDetails={userDetails}
-            handleChange={handleChange}
             nextStep={nextStep}
-            formErrors={formErrors}
+            handleChange={handleChange}
             handleSubmit={handleSubmit}
-            validateFields={validateFields}
             setFormErrors={setFormErrors}
+            formErrors={formErrors}
             setErrorMessage={setErrorMessage}
           />
         );
@@ -144,11 +154,10 @@ const SignupForm = () => {
         return (
           <UserDetails
             userDetails={userDetails}
+            prevStep={prevStep}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
-            prevStep={prevStep}
             formErrors={formErrors}
-            validateFields={validateFields}
           />
         );
     }
