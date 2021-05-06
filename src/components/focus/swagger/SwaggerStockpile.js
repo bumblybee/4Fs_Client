@@ -15,7 +15,13 @@ const SwaggerStockpile = () => {
         can reference at any time in order to keep you on your path to success."
       />
 
-      <h4 style={{ textAlign: "center", marginBottom: "2rem", marginTop: "0" }}>
+      <h4
+        style={{
+          textAlign: "center",
+          marginBottom: "2rem",
+          marginTop: "-1rem",
+        }}
+      >
         <em>"I Think. I Know. I Can. I Do."</em>
       </h4>
       <div

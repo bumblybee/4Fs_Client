@@ -6,12 +6,12 @@ export const StyledTable = styled(Table)`
   tbody {
     display: block;
     height: ${(props) =>
-      props.rowdata.length > 9 || props.fullheighttable ? "33.5rem" : "auto"};
+      props.rowdata.length > 9 || props.fullheighttable ? "31rem" : "auto"};
     overflow: auto;
   }
 
   td {
-    height: ${(props) => (props.fullheighttd ? "33rem" : "")};
+    height: ${(props) => (props.fullheighttd ? "31rem" : "")};
     position: relative;
   }
 

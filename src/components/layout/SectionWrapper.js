@@ -4,13 +4,13 @@ import FTabBar from "./fTabBar/FTabBar";
 import SectionTabMenu from "./sectionTabMenu/SectionTabMenu";
 import SectionContainer from "./SectionContainer";
 
-const SectionWrapper = ({ children }) => {
+const SectionWrapper = ({ component }) => {
   return (
     <div>
       <NavBar />
       <FTabBar />
       <SectionTabMenu />
-      <SectionContainer>{children}</SectionContainer>
+      <SectionContainer>{component}</SectionContainer>
     </div>
   );
 };
