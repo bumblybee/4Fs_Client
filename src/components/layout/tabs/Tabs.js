@@ -45,7 +45,6 @@ const Tabs = ({ path }) => {
       return renderTabs(tabs.food);
     case "fitness":
       return renderTabs(tabs.fitness);
-
     default:
       return "";
   }
