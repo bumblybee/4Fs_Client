@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../nav/NavBar";
 import FTabBar from "./fTabBar/FTabBar";
-import SectionTabMenu from "./sectionTabMenu/SectionTabMenu";
+import TabMenu from "./tabs/TabMenu";
 import SectionContainer from "./SectionContainer";
 
 const SectionWrapper = ({ component }) => {
@@ -9,7 +9,7 @@ const SectionWrapper = ({ component }) => {
     <div>
       <NavBar />
       <FTabBar />
-      <SectionTabMenu />
+      <TabMenu />
       <SectionContainer>{component}</SectionContainer>
     </div>
   );

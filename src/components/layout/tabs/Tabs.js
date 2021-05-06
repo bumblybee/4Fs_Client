@@ -2,7 +2,7 @@ import { Menu } from "semantic-ui-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const useTabs = (path) => {
+const Tabs = ({ path }) => {
   const [activeItem, setActiveItem] = useState("milestones");
 
   const tabs = {
@@ -51,4 +51,4 @@ const useTabs = (path) => {
   }
 };
 
-export default useTabs;
+export default Tabs;
