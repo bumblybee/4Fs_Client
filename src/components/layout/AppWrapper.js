@@ -4,7 +4,7 @@ import FTabBar from "./fTabBar/FTabBar";
 import TabMenu from "./tabs/TabMenu";
 import SectionContainer from "./SectionContainer";
 
-const SectionWrapper = ({ component }) => {
+const AppWrapper = ({ component }) => {
   return (
     <div>
       <NavBar />
@@ -15,4 +15,4 @@ const SectionWrapper = ({ component }) => {
   );
 };
 
-export default SectionWrapper;
+export default AppWrapper;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect, Switch, Route } from "react-router-dom";
 import ProtectedRoute from "../protectedRoute/ProtectedRoute";
-import SectionWrapper from "../layout/SectionWrapper";
+import AppWrapper from "../layout/AppWrapper";
 import SignupForm from "../../pages/signup/SignupForm";
 import LoginForm from "../../pages/login/LoginForm";
 import Resources from "../resources/Resources";
@@ -21,65 +21,65 @@ const Routes = () => {
         <Redirect to="/home/milestones" />
       </ProtectedRoute>
       <ProtectedRoute path="/home/milestones">
-        <SectionWrapper component={<Milestones />} />
+        <AppWrapper component={<Milestones />} />
       </ProtectedRoute>
       <ProtectedRoute path="/home/beliefs">
-        <SectionWrapper component={<Beliefs />} />
+        <AppWrapper component={<Beliefs />} />
       </ProtectedRoute>
       <ProtectedRoute path="/home/body-calculator">
-        <SectionWrapper component={<BodyCalculator />} />
+        <AppWrapper component={<BodyCalculator />} />
       </ProtectedRoute>
 
       <ProtectedRoute path="/focus" exact>
         <Redirect to="/focus/system" />
       </ProtectedRoute>
       <ProtectedRoute path="/focus/system">
-        <SectionWrapper component={<System />} />
+        <AppWrapper component={<System />} />
       </ProtectedRoute>
       <ProtectedRoute path="/focus/swagger">
-        <SectionWrapper component={<SwaggerStockpile />} />
+        <AppWrapper component={<SwaggerStockpile />} />
       </ProtectedRoute>
       <ProtectedRoute path="/focus/sleep">
-        <SectionWrapper></SectionWrapper>
+        <AppWrapper></AppWrapper>
       </ProtectedRoute>
       <ProtectedRoute path="/focus/habits">
-        <SectionWrapper></SectionWrapper>
+        <AppWrapper></AppWrapper>
       </ProtectedRoute>
 
       <ProtectedRoute path="/fasting" exact>
         <Redirect to="/fasting/fasting-window" />
       </ProtectedRoute>
       <ProtectedRoute path="/fasting/fasting-window">
-        <SectionWrapper></SectionWrapper>
+        <AppWrapper></AppWrapper>
       </ProtectedRoute>
       <ProtectedRoute path="/fasting/fasting-guide">
-        <SectionWrapper component={<FastingGuide />} />
+        <AppWrapper component={<FastingGuide />} />
       </ProtectedRoute>
 
       <ProtectedRoute path="/food" exact>
         <Redirect to="/food/calories" />
       </ProtectedRoute>
       <ProtectedRoute path="/food/calories">
-        <SectionWrapper component={<CalorieRequirements />} />
+        <AppWrapper component={<CalorieRequirements />} />
       </ProtectedRoute>
       <ProtectedRoute path="/food/food-list">
-        <SectionWrapper component={<FoodList />} />
+        <AppWrapper component={<FoodList />} />
       </ProtectedRoute>
       <ProtectedRoute path="/food/meal-planner">
-        <SectionWrapper component={<MealPlanner />} />
+        <AppWrapper component={<MealPlanner />} />
       </ProtectedRoute>
 
       <ProtectedRoute path="/fitness" exact>
         <Redirect to="/fitness/fitness-activities" />
       </ProtectedRoute>
       <ProtectedRoute path="/fitness/fitness-activities">
-        <SectionWrapper component={<FitnessActivities />} />
+        <AppWrapper component={<FitnessActivities />} />
       </ProtectedRoute>
       <ProtectedRoute path="/fitness/fitness-planner">
-        <SectionWrapper component={<FitnessPlanner />} />
+        <AppWrapper component={<FitnessPlanner />} />
       </ProtectedRoute>
       <ProtectedRoute path="/resources">
-        <SectionWrapper component={<Resources />} />
+        <AppWrapper component={<Resources />} />
       </ProtectedRoute>
 
       <Route path="/login">
