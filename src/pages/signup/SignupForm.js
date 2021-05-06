@@ -73,6 +73,16 @@ const SignupForm = () => {
     return true;
   };
 
+  const validateEmailFormat = () => {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (re.test(userDetails.email.toLowerCase())) {
+      return true;
+    } else {
+      setErrorMessage("Please check the email address formatting");
+    }
+  };
+
   const handleUserInfoValidation = async () => {
     // Validate fields aren't empty
     const validatedFields = validateFieldsAreComplete([
@@ -84,6 +94,8 @@ const SignupForm = () => {
 
     // Error handled above in validateFields
     if (!validatedFields) return;
+
+    if (!validateEmailFormat()) return;
 
     // API returns a code for available/unavailable email
 
