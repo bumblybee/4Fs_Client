@@ -5,7 +5,7 @@ import {
   mutateMilestone,
 } from "../../../api/home/milestonesApi";
 import useCRUD from "../../../hooks/useCRUD";
-
+import SectionHeader from "../../layout/SectionHeader";
 import TableComponent from "../../table/TableComponent";
 
 const Milestones = () => {
@@ -83,17 +83,12 @@ const Milestones = () => {
   return (
     rows && (
       <div>
-        <h1 style={{ textAlign: "center", marginBottom: 0 }}>Milestones</h1>
-        <p
-          style={{
-            textAlign: "center",
-            margin: "0 auto 2.5rem",
-            fontSize: "1.1rem",
-          }}
-        >
-          Feel free to add your personal touch to each milestone so that it
-          works for you!
-        </p>
+        <SectionHeader
+          title="Milestones"
+          subtitle="Feel free to add your personal touch to each milestone so that it
+          works for you!"
+        />
+
         <TableComponent
           rows={rows()}
           columns={columns}

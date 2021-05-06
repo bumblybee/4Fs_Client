@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import TableComponent from "../table/TableComponent";
+import SectionHeader from "../layout/SectionHeader";
 import generateCellComponent from "../../utils/generateCellComponent";
 import { UserContext } from "../../context/user/UserContext";
 import { Icon } from "semantic-ui-react";
@@ -37,16 +38,8 @@ const SheetsComponent = ({ title, subtitle, buttonText, colorScheme }) => {
 
   return (
     <div>
-      <h1 style={{ textAlign: "center", marginBottom: 0 }}>{title}</h1>
-      <p
-        style={{
-          textAlign: "center",
-          margin: "0 auto 2.5rem",
-          fontSize: "1.1rem",
-        }}
-      >
-        {subtitle}
-      </p>
+      <SectionHeader title={title} subtitle={subtitle} />
+
       <TableComponent
         rows={rows()}
         columns={columns}

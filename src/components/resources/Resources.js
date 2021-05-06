@@ -1,7 +1,7 @@
 import React from "react";
 import SheetsComponent from "../sheets/SheetsComponent";
 
-const BodyCalculator = () => {
+const Resources = () => {
   return (
     <SheetsComponent
       colorScheme="blue"
@@ -13,4 +13,4 @@ const BodyCalculator = () => {
   );
 };
 
-export default BodyCalculator;
+export default Resources;

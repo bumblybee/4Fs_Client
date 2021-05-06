@@ -1,5 +1,6 @@
 import React from "react";
 import TableComponent from "../../table/TableComponent";
+import SectionHeader from "../../layout/SectionHeader";
 import generateCellComponent from "../../../utils/generateCellComponent";
 import useCRUD from "../../../hooks/useCRUD";
 import {
@@ -52,19 +53,12 @@ const Beliefs = () => {
   return (
     rows && (
       <div>
-        <h1 style={{ textAlign: "center", marginBottom: 0 }}>
-          Empowering Beliefs
-        </h1>
-        <p
-          style={{
-            textAlign: "center",
-            margin: "0 auto 2.5rem",
-            fontSize: "1.1rem",
-          }}
-        >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam,
-          laboriosam!
-        </p>
+        <SectionHeader
+          title="Empowering Beliefs"
+          subtitle="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam,
+          laboriosam!"
+        />
+
         <TableComponent
           rows={rows(addEmptyRow())}
           columns={columns}

@@ -3,6 +3,7 @@ import useCRUD from "../../../hooks/useCRUD";
 import generateCellComponent from "../../../utils/generateCellComponent";
 import { getSystem, mutateSystem } from "../../../api/focus/systemApi";
 import TableComponent from "../../table/TableComponent";
+import SectionHeader from "../../layout/SectionHeader";
 
 // TODO: Checkbox and number cells update db
 const System = () => {
@@ -229,18 +230,11 @@ const System = () => {
   return (
     rows && (
       <div>
-        <h1 style={{ textAlign: "center" }}>Master your System</h1>
-        <p
-          style={{
-            textAlign: "center",
-            margin: "0 auto 2.5rem",
-            fontSize: "1.2rem",
-            fontWeight: "500",
-          }}
-        >
-          Purpose: To begin doing new practices that will help you with your
-          health and wellbeing
-        </p>
+        <SectionHeader
+          title="Master your System"
+          subtitle="Purpose: To begin doing new practices that will help you with your
+          health and wellbeing."
+        />
         <TableComponent
           columns={columns}
           rows={rows(addEmptyRow())}
