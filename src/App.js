@@ -13,6 +13,7 @@ import Error from "./components/error/Error";
 import SectionWrapper from "./components/layout/SectionWrapper";
 import SignupForm from "./pages/signup/SignupForm";
 import LoginForm from "./pages/login/LoginForm";
+import Resources from "./components/resources/Resources";
 import { Milestones, Beliefs, BodyCalculator } from "./components/home";
 import { System, SwaggerStockpile } from "./components/focus";
 import { FastingGuide, FastingWindow } from "./components/fasting";
@@ -113,7 +114,9 @@ function App() {
               </SectionWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/resources">
-              <SectionWrapper></SectionWrapper>
+              <SectionWrapper>
+                <Resources />
+              </SectionWrapper>
             </ProtectedRoute>
 
             <Route path="/login">
