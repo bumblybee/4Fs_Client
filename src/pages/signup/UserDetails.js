@@ -7,7 +7,7 @@ const UserDetails = ({
   handleChange,
   prevStep,
   handleSubmit,
-  errors,
+  formErrors,
 }) => {
   const reverseForm = (e) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const UserDetails = ({
           min="40"
           max="90"
           value={userDetails.height}
-          error={errors.height}
+          error={formErrors.height}
           onChange={handleChange("height")}
           required
         />
@@ -44,7 +44,7 @@ const UserDetails = ({
           placeholder="lb"
           min="70"
           value={userDetails.weight}
-          error={errors.weight}
+          error={formErrors.weight}
           onChange={handleChange("weight")}
           required
         />
@@ -58,7 +58,7 @@ const UserDetails = ({
         min="15"
         type="number"
         value={userDetails.age}
-        error={errors.age}
+        error={formErrors.age}
         onChange={handleChange("age")}
         required
       />
@@ -72,7 +72,7 @@ const UserDetails = ({
           { key: "f", text: "Female", value: "female" },
           { key: "o", text: "Other", value: "other" },
         ]}
-        error={errors.gender}
+        error={formErrors.gender}
         onChange={handleChange("gender")}
         required
       />

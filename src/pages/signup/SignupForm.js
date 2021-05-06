@@ -10,7 +10,7 @@ import { Form } from "semantic-ui-react";
 // Semantic has built in form validation object
 const SignupForm = () => {
   const history = useHistory();
-  const { signUserUp, validateEmail } = useContext(UserContext);
+  const { signUserUp, checkIfEmailExists } = useContext(UserContext);
   const { setError } = useContext(ErrorContext);
   const [step, setStep] = useState(1);
   const [userDetails, setUserDetails] = useState({
@@ -24,7 +24,7 @@ const SignupForm = () => {
     gender: "",
   });
 
-  const [errors, setErrors] = useState({
+  const [formErrors, setFormErrors] = useState({
     firstName: false,
     lastName: false,
     email: false,
@@ -48,19 +48,19 @@ const SignupForm = () => {
     } else {
       setUserDetails({ ...userDetails, [input]: e.target.value });
     }
-    setErrors({ ...errors, [input]: false });
+    setFormErrors({ ...formErrors, [input]: false });
   };
 
-  const validateFields = (fields) => {
+  const validateFieldsAreComplete = (fields) => {
     for (const item of fields) {
       if (userDetails[item] === "") {
-        setErrors({ ...errors, [item]: true });
+        setFormErrors({ ...formErrors, [item]: true });
 
         setError("Please fill in the highlighted fields");
 
         return false;
       } else {
-        setErrors({ ...errors, [item]: false });
+        setFormErrors({ ...formErrors, [item]: false });
       }
     }
 
@@ -69,7 +69,7 @@ const SignupForm = () => {
 
   const handleUserInfoValidation = async () => {
     // Validate fields aren't empty
-    const validatedFields = validateFields([
+    const validatedFields = validateFieldsAreComplete([
       "firstName",
       "lastName",
       "email",
@@ -79,19 +79,22 @@ const SignupForm = () => {
     if (!validatedFields) return;
 
     // Check email doesn't exist in db
-    const emailValidation = await validateEmail({ email: userDetails.email });
-    console.log(emailValidation);
+    const serverEmailStatus = await checkIfEmailExists({
+      email: userDetails.email,
+    });
+
     // API returns code for available/unavailable email
     const emailAvailable =
-      emailValidation.data && emailValidation.data.code === "email.available";
+      serverEmailStatus.data &&
+      serverEmailStatus.data.code === "email.available";
 
     if (emailAvailable) {
       // Go to next form step
       nextStep();
     } else {
       // Set email error and error message
-      setErrors({ ...errors, email: true });
-      setError(emailValidation.error);
+      setFormErrors({ ...formErrors, email: true });
+      setError(serverEmailStatus.error);
     }
   };
 
@@ -104,7 +107,7 @@ const SignupForm = () => {
       await handleUserInfoValidation();
     } else {
       // Validate second step fields
-      const validatedFields = validateFields([
+      const validatedFields = validateFieldsAreComplete([
         "height",
         "weight",
         "age",
@@ -130,12 +133,11 @@ const SignupForm = () => {
         return (
           <UserInfo
             userDetails={userDetails}
-            handleChange={handleChange}
             nextStep={nextStep}
-            errors={errors}
+            handleChange={handleChange}
             handleSubmit={handleSubmit}
-            validateFields={validateFields}
-            setErrors={setErrors}
+            setFormErrors={setFormErrors}
+            formErrors={formErrors}
             setErrorMessage={setError}
           />
         );
@@ -143,11 +145,10 @@ const SignupForm = () => {
         return (
           <UserDetails
             userDetails={userDetails}
+            prevStep={prevStep}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
-            prevStep={prevStep}
-            errors={errors}
-            validateFields={validateFields}
+            formErrors={formErrors}
           />
         );
     }
@@ -178,7 +179,7 @@ const SignupForm = () => {
           />{" "}
           Sign Up
         </h2>
-        <Form onSubmit={handleSubmit} error={errors}>
+        <Form onSubmit={handleSubmit} error={formErrors}>
           {renderFormComponent()}
         </Form>
       </div>

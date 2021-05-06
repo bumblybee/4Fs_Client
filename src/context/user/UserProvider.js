@@ -35,7 +35,7 @@ const UserProvider = ({ children }) => {
     return userData;
   };
 
-  const validateEmail = async (email) => {
+  const checkIfEmailExists = async (email) => {
     const validation = await validateUserEmail(email);
     return validation;
   };
@@ -58,7 +58,7 @@ const UserProvider = ({ children }) => {
         getCurrentUser,
         signUserUp,
         logUserIn,
-        validateEmail,
+        checkIfEmailExists,
       }}
     >
       {children}
