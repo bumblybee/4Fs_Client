@@ -1,13 +1,21 @@
 import React from "react";
 import useCRUD from "../../../hooks/useCRUD";
 import generateCellComponent from "../../../utils/generateCellComponent";
-import { getSystem, mutateSystem } from "../../../api/focus/systemApi";
+import {
+  getSystem,
+  mutateSystem,
+  deleteSystem,
+} from "../../../api/focus/systemApi";
 import TableComponent from "../../table/TableComponent";
 import SectionHeader from "../../layout/SectionHeader";
 
 // TODO: Checkbox and number cells update db
 const System = () => {
-  const [system, handleSave] = useCRUD(getSystem, mutateSystem);
+  const [system, handleSave, handleDelete] = useCRUD(
+    getSystem,
+    mutateSystem,
+    deleteSystem
+  );
 
   const columns = [
     {
@@ -50,6 +58,10 @@ const System = () => {
     {
       label: "Performed",
       key: "performed",
+    },
+    {
+      label: "Delete",
+      key: "delete",
     },
   ];
 
@@ -146,6 +158,13 @@ const System = () => {
           alignment: "right",
         }),
       },
+      delete: {
+        cellComponent: generateCellComponent("delete", {
+          id: item.id,
+          onDelete: handleDelete,
+          alignment: "right",
+        }),
+      },
     }));
 
     return [...rowData, additionalRow];
@@ -221,6 +240,11 @@ const System = () => {
         cellComponent: generateCellComponent("", {
           onSave: handleSave,
           accessor: "performed",
+          alignment: "right",
+        }),
+      },
+      delete: {
+        cellComponent: generateCellComponent("delete", {
           alignment: "right",
         }),
       },

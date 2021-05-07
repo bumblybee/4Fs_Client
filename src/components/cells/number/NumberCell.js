@@ -23,14 +23,17 @@ const NumberCell = (props) => {
       inputRef.current = inputVal;
     }
   };
+
+  useEffect(() => {
+    setInputVal(props.val);
+  }, [props.val]);
   console.log(inputVal);
   return (
     <Input
-      value={inputVal || props.val}
+      value={inputVal || 0}
       onChange={(e) => setInputVal(e.target.value)}
       onBlur={makeData}
       style={{ width: "65px" }}
-      value={inputVal || props.val}
       type="number"
     />
   );

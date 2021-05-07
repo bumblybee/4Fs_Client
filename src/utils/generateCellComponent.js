@@ -6,6 +6,7 @@ import CheckboxCell from "../components/cells/checkbox/CheckboxCell";
 import DatePickerCell from "../components/cells/date/DatePickerCell";
 import NumberCell from "../components/cells/number/NumberCell";
 import ButtonCell from "../components/cells/button/ButtonCell";
+import DeleteCell from "../components/cells/delete/DeleteCell";
 
 const generateCellComponent = (type, props) => {
   switch (type) {
@@ -70,7 +71,6 @@ const generateCellComponent = (type, props) => {
           accessor={props.accessor}
         />
       );
-
     case "button":
       return (
         <ButtonCell
@@ -82,7 +82,15 @@ const generateCellComponent = (type, props) => {
           isCentered={props.isCentered}
           icon={props.icon}
           val={props.val}
-        ></ButtonCell>
+        />
+      );
+    case "delete":
+      return (
+        <DeleteCell
+          id={props.id}
+          onDelete={props.onDelete}
+          alignment={props.alignment}
+        />
       );
     default:
       return <div>{props.val}</div>;

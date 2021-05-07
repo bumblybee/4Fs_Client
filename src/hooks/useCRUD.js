@@ -26,11 +26,17 @@ const useCRUD = (getter, setter, destroyer) => {
     }
   };
 
+  const destroyData = async (id) => {
+    const res = await destroyer(id);
+    console.log(res);
+    await getData();
+  };
+
   useEffect(() => {
     getData();
   }, [getData]);
 
-  return [state, setData];
+  return [state, setData, destroyData];
 };
 
 export default useCRUD;
