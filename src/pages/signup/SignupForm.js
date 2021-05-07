@@ -10,7 +10,7 @@ import { Form } from "semantic-ui-react";
 const SignupForm = () => {
   const history = useHistory();
 
-  const { setErrorMessage } = useContext(ErrorContext);
+  const { setErrorMessage, clearErrorMessage } = useContext(ErrorContext);
 
   const { signUserUp, checkIfEmailExists } = useContext(UserContext);
 
@@ -53,6 +53,7 @@ const SignupForm = () => {
       setUserDetails({ ...userDetails, [input]: e.target.value });
     }
     setFormErrors({ ...formErrors, [input]: false });
+    clearErrorMessage();
   };
 
   // Check all inputs are filled in
@@ -160,6 +161,7 @@ const SignupForm = () => {
             setFormErrors={setFormErrors}
             formErrors={formErrors}
             setErrorMessage={setErrorMessage}
+            clearErrorMessage={clearErrorMessage}
           />
         );
       case 2:

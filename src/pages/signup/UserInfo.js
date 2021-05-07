@@ -9,6 +9,7 @@ const UserInfo = ({
   handleSubmit,
   setFormErrors,
   setErrorMessage,
+  clearErrorMessage,
 }) => {
   // Make sure password contains at minimum seven character, both nums and lowercase letters
   const validPassword = () => {
@@ -21,8 +22,10 @@ const UserInfo = ({
 
   const advanceForm = async (e) => {
     e.preventDefault();
+
     if (validPassword()) {
       setFormErrors({ ...formErrors, password: false });
+      clearErrorMessage();
       await handleSubmit(e, "userInfo");
     } else {
       setFormErrors({ ...formErrors, password: true });

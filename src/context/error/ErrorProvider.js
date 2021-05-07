@@ -4,15 +4,24 @@ import { ErrorContext } from "./ErrorContext";
 const ErrorProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
-  const setErrorMessage = (msg) => {
+  const setErrorMessage = (msg, timed) => {
     setError(msg);
-    setTimeout(() => {
-      setError(null);
-    }, 5000);
+
+    if (timed) {
+      setTimeout(() => {
+        setError(null);
+      }, 5000);
+    }
+  };
+
+  const clearErrorMessage = () => {
+    setError(null);
   };
 
   return (
-    <ErrorContext.Provider value={{ error, setErrorMessage }}>
+    <ErrorContext.Provider
+      value={{ error, setErrorMessage, clearErrorMessage }}
+    >
       {children}
     </ErrorContext.Provider>
   );
