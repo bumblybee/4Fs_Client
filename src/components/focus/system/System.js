@@ -137,12 +137,12 @@ const System = () => {
         }),
       },
       performed: {
-        cellComponent: generateCellComponent("number", {
+        cellComponent: generateCellComponent("", {
           id: item.id,
           onSave: handleSave,
           val: item.performed,
           accessor: "performed",
-          alignment: "center",
+          alignment: "right",
         }),
       },
     }));
@@ -217,10 +217,10 @@ const System = () => {
         }),
       },
       performed: {
-        cellComponent: generateCellComponent("number", {
+        cellComponent: generateCellComponent("", {
           onSave: handleSave,
           accessor: "performed",
-          alignment: "center",
+          alignment: "right",
         }),
       },
     };
