@@ -11,7 +11,7 @@ const useCRUD = (getter, setter, destroyer) => {
 
   const setData = async (data, id) => {
     // Need to generalize this check
-    console.log(data);
+
     const field = Object.keys(data)[0];
     if (destroyer && field !== "milestone" && data[field] == null) {
       const res = await destroyer(id);
@@ -21,7 +21,7 @@ const useCRUD = (getter, setter, destroyer) => {
       // Best to call getData again or return dataset from server like above example?
 
       const res = await setter(data, id);
-
+      console.log(res);
       await getData();
     }
   };
