@@ -48,6 +48,7 @@ const generateCellComponent = (type, props) => {
           id={props.id}
           onSave={props.onSave}
           val={props.val}
+          performed={props.performed}
           label={props.label}
           accessor={props.accessor}
         />

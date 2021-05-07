@@ -21,7 +21,7 @@ const System = () => {
     {
       label: "Practice",
       key: "practice",
-      // width: "4",
+      // width: "3",
     },
     {
       label: "Goal",
@@ -91,6 +91,7 @@ const System = () => {
           id: item.id,
           onSave: handleSave,
           val: item.dayOne,
+          performed: item.performed,
           accessor: "dayOne",
           alignment: "center",
         }),
@@ -99,6 +100,7 @@ const System = () => {
         cellComponent: generateCellComponent("check", {
           id: item.id,
           onSave: handleSave,
+          performed: item.performed,
           val: item.dayTwo,
           accessor: "dayTwo",
           alignment: "center",
@@ -108,6 +110,7 @@ const System = () => {
         cellComponent: generateCellComponent("check", {
           id: item.id,
           onSave: handleSave,
+          performed: item.performed,
           val: item.dayThree,
           accessor: "dayThree",
           alignment: "center",
@@ -117,6 +120,7 @@ const System = () => {
         cellComponent: generateCellComponent("check", {
           id: item.id,
           onSave: handleSave,
+          performed: item.performed,
           val: item.dayFour,
           accessor: "dayFour",
           alignment: "center",
@@ -126,6 +130,7 @@ const System = () => {
         cellComponent: generateCellComponent("check", {
           id: item.id,
           onSave: handleSave,
+          performed: item.performed,
           val: item.dayFive,
           accessor: "dayFive",
           alignment: "center",
@@ -135,6 +140,7 @@ const System = () => {
         cellComponent: generateCellComponent("check", {
           id: item.id,
           onSave: handleSave,
+          performed: item.performed,
           val: item.daySix,
           accessor: "daySix",
           alignment: "center",
@@ -144,6 +150,7 @@ const System = () => {
         cellComponent: generateCellComponent("check", {
           id: item.id,
           onSave: handleSave,
+          performed: item.performed,
           val: item.daySeven,
           accessor: "daySeven",
           alignment: "center",
@@ -267,7 +274,17 @@ const System = () => {
           aligntext="left"
           striped
           descriptionheader={
-            <div>
+            <div style={{ marginBottom: "0.5rem" }}>
+              <div
+                style={{
+                  width: "85%",
+                  margin: "0 auto 1rem",
+                }}
+              >
+                Input your new practice and define a goal for the amount of
+                times you wish to complete it per week. Check off each day you
+                perform the practice.
+              </div>
               <label>Start Date:</label> {""}
               {generateCellComponent("date", {
                 onSave: handleSave,

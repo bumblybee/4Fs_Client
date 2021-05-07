@@ -21,7 +21,16 @@ const DatePickerCell = (props) => {
     <input
       value={date}
       onChange={(e) => handleChange(e)}
-      style={{ width: "125px", height: "35px" }}
+      style={{
+        width: "144px",
+        padding: "1rem 0.25rem",
+        height: "35px",
+        borderRadius: "6px",
+        border: "2px solid #ffffff66",
+        background: "#ffffff77",
+        // color: "#fff",
+        fontWeight: "600",
+      }}
       type="date"
     />
   );

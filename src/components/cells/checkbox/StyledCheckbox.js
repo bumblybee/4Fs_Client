@@ -7,7 +7,7 @@ export const StyledCheckboxWrapper = styled.div`
     -moz-appearance: none;
     -o-appearance: none;
     appearance: none;
-    border: 2px solid #728fa5;
+    border: 2px solid #800080;
     margin-left: 0.3rem;
     height: 23px;
     width: 24px;
@@ -19,8 +19,8 @@ export const StyledCheckboxWrapper = styled.div`
   }
 
   input:checked {
-    background: #218fdcdd;
-    border: 2px solid #218fdcdd;
+    background: #800080aa;
+    border: 2px solid #800080;
   }
 
   label {
