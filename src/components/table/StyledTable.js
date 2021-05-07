@@ -35,8 +35,12 @@ export const StyledTable = styled(Table)`
 
   input[type="date"] {
     :hover {
-      cursor: pointer;
+      cursor: text;
     }
+  }
+
+  input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
   }
 
   /* Responsive table */
