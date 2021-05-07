@@ -8,7 +8,7 @@ const SectionTabMenu = () => {
   const path = pathname.split("/")[1];
 
   return (
-    <Container style={{ margin: "2rem auto 3.5rem" }}>
+    <Container style={{ margin: "2rem auto 3rem" }}>
       <Menu
         pointing
         secondary

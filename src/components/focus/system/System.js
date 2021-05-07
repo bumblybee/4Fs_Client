@@ -62,6 +62,7 @@ const System = () => {
           val: item.practice,
           accessor: "practice",
           alignment: "center",
+          placeholder: "New practice...",
         }),
       },
       goal: {
@@ -131,7 +132,7 @@ const System = () => {
         cellComponent: generateCellComponent("check", {
           id: item.id,
           onSave: handleSave,
-          val: item.dayOne,
+          val: item.daySeven,
           accessor: "daySeven",
           alignment: "center",
         }),
@@ -153,7 +154,7 @@ const System = () => {
   const addEmptyRow = () => {
     const emptyRow = {
       practice: {
-        cellComponent: generateCellComponent("editable", {
+        cellComponent: generateCellComponent("empty", {
           onSave: handleSave,
           accessor: "practice",
           alignment: "center",

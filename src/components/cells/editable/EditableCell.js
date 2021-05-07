@@ -54,7 +54,7 @@ const EditableTableCell = ({ children, ...props }) => {
         />
       );
     } else {
-      return editCellVal;
+      return editCellVal ? editCellVal : props.placeholder;
     }
   };
 
@@ -85,6 +85,7 @@ const EditableTableCell = ({ children, ...props }) => {
         display: "flex",
         justifyContent: props.alignment,
         alignItems: "center",
+        color: editCellVal ? "" : "#bbb",
       }}
       tabIndex="0"
     >

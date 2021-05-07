@@ -19,7 +19,7 @@ const SwaggerStockpile = () => {
         style={{
           textAlign: "center",
           marginBottom: "2rem",
-          marginTop: "-1rem",
+          marginTop: "-2.5rem",
         }}
       >
         <em>"I Think. I Know. I Can. I Do."</em>

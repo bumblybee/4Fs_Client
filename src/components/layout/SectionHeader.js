@@ -7,7 +7,7 @@ const SectionHeader = ({ title, subtitle }) => {
       <p
         style={{
           textAlign: "center",
-          margin: "0 auto 1.75rem",
+          margin: "0 auto 3rem",
           fontSize: "1.2rem",
           fontWeight: "500",
           width: "65%",

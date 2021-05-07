@@ -28,7 +28,8 @@ const CheckboxCell = (props) => {
         <input
           style={{ padding: "0 0 0 0.5rem" }}
           checked={isChecked}
-          value={isChecked || props.val}
+          value={isChecked}
+          defaultValue={props.val}
           onChange={makeData}
           type="checkbox"
         />
