@@ -15,7 +15,7 @@ const useCRUD = (getter, setter, destroyer) => {
     const field = Object.keys(data)[0];
     if (destroyer && field !== "milestone" && data[field] == null) {
       const res = await destroyer(id);
-
+      console.log(res);
       await getData();
     } else {
       // Best to call getData again or return dataset from server like above example?

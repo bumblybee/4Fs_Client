@@ -46,6 +46,7 @@ const generateCellComponent = (type, props) => {
         <CheckboxCell
           id={props.id}
           onSave={props.onSave}
+          val={props.val}
           label={props.label}
           accessor={props.accessor}
         />
@@ -55,6 +56,7 @@ const generateCellComponent = (type, props) => {
         <NumberCell
           id={props.id}
           onSave={props.onSave}
+          val={props.val}
           label={props.label}
           accessor={props.accessor}
         />

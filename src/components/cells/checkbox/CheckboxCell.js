@@ -1,20 +1,25 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Icon } from "semantic-ui-react";
 
 import * as sc from "./StyledCheckbox";
 
 const CheckboxCell = (props) => {
-  const [isChecked, setIsChecked] = useState(false);
+  // console.log(props);
+  const [isChecked, setIsChecked] = useState(props.val);
 
-  const handleCheck = () => {
-    setIsChecked(!isChecked);
+  const makeData = (e) => {
+    setIsChecked(e.target.checked);
     props.onSave(
       {
-        [props.accessor]: isChecked,
+        [props.accessor]: e.target.checked,
       },
       props.id
     );
   };
+
+  useEffect(() => {
+    setIsChecked(props.val);
+  }, [props.val]);
 
   return (
     <sc.StyledCheckboxWrapper>
@@ -23,7 +28,8 @@ const CheckboxCell = (props) => {
         <input
           style={{ padding: "0 0 0 0.5rem" }}
           checked={isChecked}
-          onChange={handleCheck}
+          value={isChecked || props.val}
+          onChange={makeData}
           type="checkbox"
         />
       </label>
