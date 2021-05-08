@@ -48,7 +48,7 @@ export default function TableComponent({ children, ...props }) {
   const renderDescriptionHeader = () => {
     /* If we have an additional header with descriptive text */
     return (
-      <Table.Header>
+      <Table.Header fullWidth>
         <TableComponent.TR>
           <TableComponent.TH
             style={{
@@ -56,6 +56,7 @@ export default function TableComponent({ children, ...props }) {
               color: "#fff",
               textAlign: "center",
             }}
+            colSpan="16"
           >
             {props.descriptionheader}
           </TableComponent.TH>

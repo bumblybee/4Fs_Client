@@ -86,7 +86,8 @@ const EmptyRowCell = ({ children, ...props }) => {
         cursor: "pointer",
         borderRadius: "4px",
         height: "40px",
-        color: blankCellVal ? "" : "#ccccccee",
+        color: blankCellVal ? "" : "#bbbbbbff",
+
         borderBottom: blankCellVal ? "none" : "1px solid #dddddd66",
         background: blankCellVal ? "" : "#eeeeee55",
         textAlign: props.aligntext,

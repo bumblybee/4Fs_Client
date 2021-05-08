@@ -21,7 +21,7 @@ const System = () => {
     {
       label: "Practice",
       key: "practice",
-      // width: "3",
+      width: 3,
     },
     {
       label: "Goal",

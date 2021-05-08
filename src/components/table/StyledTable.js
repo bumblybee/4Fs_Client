@@ -3,16 +3,18 @@ import { Table } from "semantic-ui-react";
 
 export const StyledTable = styled(Table)`
   margin: 0 !important;
+
   tbody {
-    display: block;
+    /* display: block; */
     height: ${(props) =>
       props.rowdata.length > 9 || props.fullheighttable ? "31rem" : "auto"};
     overflow: auto;
   }
 
-  td {
+  /* td {
     height: ${(props) => (props.fullheighttd ? "31rem" : "")};
     position: relative;
+    width: inherit;
   }
 
   thead,
@@ -20,7 +22,7 @@ export const StyledTable = styled(Table)`
     display: table;
     width: 100%;
     table-layout: fixed;
-  }
+  } */
 
   input[type="text"] {
     border: none;
