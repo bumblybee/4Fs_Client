@@ -1,50 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Icon } from "semantic-ui-react";
 
 import * as sc from "./StyledCheckbox";
 
 const CheckboxCell = (props) => {
-  // console.log(props);
-  const [isChecked, setIsChecked] = useState(props.val);
-  const [daysPerformed, setDaysPerformed] = useState(props.performed);
+  const checkboxRef = useRef();
+  const [isChecked, setIsChecked] = useState(false);
 
-  // TODO: ref for prev state, if remove check then decrement performed
+  const handleChange = (e) => {
+    setIsChecked(!isChecked);
+    makeData(e);
+  };
 
   const makeData = (e) => {
-    setIsChecked(e.target.checked);
-    isChecked && setDaysPerformed(daysPerformed + 1);
-    console.log(daysPerformed);
-    e.target.checked
-      ? props.onSave(
-          {
-            [props.accessor]: e.target.checked,
-            performed: daysPerformed + 1,
-          },
-          props.id
-        )
-      : props.onSave(
-          {
-            [props.accessor]: e.target.checked,
-          },
-          props.id
-        );
+    props.onSave(
+      {
+        [props.accessor]: e.target.checked,
+        performed: e.target.checked ? props.performed + 1 : props.performed - 1,
+      },
+      props.id
+    );
   };
 
   useEffect(() => {
-    setIsChecked(props.val);
-    setDaysPerformed(props.performed);
-  }, [props.val, props.performed]);
+    setIsChecked(isChecked || props.val);
+  }, [props.val]);
 
   return (
     <sc.StyledCheckboxWrapper>
       <label>
         {isChecked ? <Icon name="check" /> : ""}
         <input
+          ref={checkboxRef}
           style={{ padding: "0 0 0 0.5rem" }}
           checked={isChecked}
-          value={isChecked}
-          defaultValue={props.val}
-          onChange={makeData}
+          onClick={(e) => handleChange(e)}
           type="checkbox"
         />
       </label>

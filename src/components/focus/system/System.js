@@ -9,7 +9,7 @@ import {
 import TableComponent from "../../table/TableComponent";
 import SectionHeader from "../../layout/SectionHeader";
 
-// TODO: Checkbox and number cells update db
+// TODO: Break out two table components, one for progress and one for curr week
 const System = () => {
   const [system, handleSave, handleDelete] = useCRUD(
     getSystem,
