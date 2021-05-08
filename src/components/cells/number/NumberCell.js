@@ -29,13 +29,24 @@ const NumberCell = (props) => {
   }, [props.val]);
   console.log(inputVal);
   return (
-    <Input
-      value={inputVal || 0}
-      onChange={(e) => setInputVal(e.target.value)}
-      onBlur={makeData}
-      style={{ width: "65px" }}
-      type="number"
-    />
+    <div
+      style={{
+        width: "55px",
+        display: "flex",
+        justifyContent: props.alignment,
+        alignItems: props.alignment,
+      }}
+    >
+      <Input
+        transparent
+        style={{ width: "40px" }}
+        size="small"
+        value={inputVal || 0}
+        onChange={(e) => setInputVal(e.target.value)}
+        onBlur={makeData}
+        type="number"
+      />
+    </div>
   );
 };
 

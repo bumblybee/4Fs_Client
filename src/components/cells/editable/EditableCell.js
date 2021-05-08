@@ -85,6 +85,7 @@ const EditableTableCell = ({ children, ...props }) => {
         display: "flex",
         justifyContent: props.alignment,
         alignItems: "center",
+        fontWeight: props.textweight,
         color: editCellVal ? "" : "#bbb",
       }}
       tabIndex="0"

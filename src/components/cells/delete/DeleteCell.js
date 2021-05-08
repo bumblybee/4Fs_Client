@@ -10,9 +10,18 @@ const DeleteCell = (props) => {
   };
 
   return (
-    <Button size="mini" icon onClick={deleteData}>
-      <Icon name="trash" />
-    </Button>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "70%",
+      }}
+    >
+      <Button size="mini" icon onClick={deleteData}>
+        <Icon name="trash" />
+      </Button>
+    </div>
   );
 };
 

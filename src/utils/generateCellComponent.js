@@ -18,6 +18,7 @@ const generateCellComponent = (type, props) => {
           val={props.val}
           placeholder={props.placeholder}
           alignment={props.alignment}
+          textweight={props.textWeight}
           accessor={props.accessor}
         />
       );
@@ -61,6 +62,7 @@ const generateCellComponent = (type, props) => {
           val={props.val}
           label={props.label}
           accessor={props.accessor}
+          alignment={props.alignment}
         />
       );
     case "date":
@@ -94,7 +96,7 @@ const generateCellComponent = (type, props) => {
         />
       );
     default:
-      return <div>{props.val}</div>;
+      return <div style={props.style}>{props.val}</div>;
   }
 };
 

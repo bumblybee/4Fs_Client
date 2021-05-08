@@ -73,7 +73,8 @@ const System = () => {
           onSave: handleSave,
           val: item.practice,
           accessor: "practice",
-          alignment: "center",
+          alignment: "left",
+          textWeight: "600",
           placeholder: "New practice...",
         }),
       },
@@ -163,6 +164,13 @@ const System = () => {
           val: item.performed,
           accessor: "performed",
           alignment: "right",
+          style: {
+            color: item.performed >= item.goal ? "#21ba45" : "",
+            fontWeight: "bold",
+            fontSize: "1.15rem",
+            width: "max-content",
+            margin: "0 auto",
+          },
         }),
       },
       delete: {

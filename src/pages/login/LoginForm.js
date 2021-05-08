@@ -14,7 +14,7 @@ const LoginForm = () => {
     e.preventDefault();
     const login = await logUserIn(userDetails);
     if (login.error) {
-      setErrorMessage(login.error);
+      setErrorMessage(login.error, true);
       return;
     } else {
       login.data && history.push("/home");
