@@ -5,25 +5,25 @@ const TimePickerCell = (props) => {
   const [time, setTime] = useState("");
 
   const handleChange = (e) => {
-    // console.log(e.target.value);
-    // setDate(e.target.value);
-    // props.onSave(
-    //   {
-    //     [props.accessor]: date,
-    //   },
-    //   props.id
-    // );
-    // console.log(date);
+    setTime(e.target.value);
+    makeData(e);
+  };
+
+  const makeData = (e) => {
+    props.onSave(
+      {
+        [props.accessor]: e.target.value,
+      },
+      props.id
+    );
   };
 
   return (
     <StyledTimePickerCell
       value={time}
-      onChange={(e) => setTime(e.target.value)}
+      onChange={handleChange}
       type="time"
       width={props.width}
-      // onFocus={(e) => (e.target.type = "date")}
-      // onBlur={(e) => (e.target.type = "text")}
     />
   );
 };

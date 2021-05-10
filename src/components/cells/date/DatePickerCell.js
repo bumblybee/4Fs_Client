@@ -7,7 +7,6 @@ const DatePickerCell = (props) => {
   const handleChange = (e) => {
     setDate(e.target.value);
     makeData(e);
-    console.log(e.target.value);
   };
 
   const makeData = (e) => {
