@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { StyledTimePickerCell } from "./StyledTimePickerCell";
 
 const TimePickerCell = (props) => {
   const [time, setTime] = useState("");
+  const [editing, setEditing] = useState(false);
 
   const handleChange = (e) => {
     setTime(e.target.value);
@@ -18,13 +19,47 @@ const TimePickerCell = (props) => {
     );
   };
 
+  const renderCell = () => {
+    if (editing) {
+      return (
+        <StyledTimePickerCell
+          value={time}
+          onChange={handleChange}
+          type="time"
+          width={props.width}
+        />
+      );
+    } else {
+      return convertTime();
+    }
+  };
+
+  const convertTime = () => {
+    if (time) {
+      let hour = time.split(":")[0];
+      const min = time.split(":")[1];
+      const amPm = hour < 12 ? "AM" : "PM";
+      hour = hour % 12;
+
+      return `${hour}:${min} ${amPm}`;
+    } else {
+      return "";
+    }
+  };
+
+  useEffect(() => {
+    setTime(props.val || null);
+  }, []);
+
+  console.log(convertTime());
+
   return (
-    <StyledTimePickerCell
-      value={time}
-      onChange={handleChange}
-      type="time"
-      width={props.width}
-    />
+    <div
+      onClick={() => setEditing(!editing)}
+      onBlur={() => setEditing(!editing)}
+    >
+      {renderCell()}
+    </div>
   );
 };
 

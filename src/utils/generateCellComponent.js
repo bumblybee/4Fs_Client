@@ -82,6 +82,7 @@ const generateCellComponent = (type, props) => {
         <TimePickerCell
           id={props.id}
           onSave={props.onSave}
+          val={props.val}
           label={props.label}
           accessor={props.accessor}
           width={props.width}
