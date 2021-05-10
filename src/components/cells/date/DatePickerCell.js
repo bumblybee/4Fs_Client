@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { StyledDatePickerCell } from "./StyledDatePickerCell";
 
 const DatePickerCell = (props) => {
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(null);
 
   const handleChange = (e) => {
     setDate(e.target.value);
@@ -16,17 +16,22 @@ const DatePickerCell = (props) => {
       },
       props.id
     );
+    setDate(null);
   };
 
+  useEffect(() => {
+    setDate(props.val);
+  }, [props.val]);
+
   return (
-    <StyledDatePickerCell
-      value={date}
-      onChange={handleChange}
-      type="date"
-      width={props.width}
-      // onFocus={(e) => (e.target.type = "date")}
-      // onBlur={(e) => (e.target.type = "text")}
-    />
+    <div>
+      <StyledDatePickerCell
+        value={date || ""}
+        onChange={handleChange}
+        type="date"
+        width={props.width}
+      />
+    </div>
   );
 };
 

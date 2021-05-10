@@ -15,14 +15,17 @@ const Milestones = () => {
     {
       label: "Milestone",
       key: "milestone",
+      width: 5,
     },
     {
       label: "Personalize",
       key: "personalize",
+      width: 5,
     },
     {
       label: "Comments",
       key: "comments",
+      width: 4,
     },
     {
       label: "Status",
@@ -49,6 +52,7 @@ const Milestones = () => {
           onSave: handleSave,
           val: item.comments,
           accessor: "comments",
+          // placeholder: "Add comments...",
         }),
       },
       status: {

@@ -53,6 +53,7 @@ const Sleep = () => {
           onSave: handleSave,
           val: item.date,
           accessor: "date",
+          placeholder: "mm/dd/yyyy",
           alignment: "left",
           textWeight: "600",
         }),
@@ -142,10 +143,11 @@ const Sleep = () => {
           onSave: handleSave,
           accessor: "comments",
           alignment: "left",
+          placeholder: "Add comments...",
         }),
       },
       delete: {
-        cellComponent: generateCellComponent("delete", {
+        cellComponent: generateCellComponent("", {
           alignment: "right",
         }),
       },

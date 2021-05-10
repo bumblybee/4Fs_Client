@@ -18,8 +18,6 @@ const useCRUD = (getter, setter, destroyer) => {
       console.log(res);
       await getData();
     } else {
-      // Best to call getData again or return dataset from server like above example?
-
       const res = await setter(data, id);
       console.log(res);
       await getData();

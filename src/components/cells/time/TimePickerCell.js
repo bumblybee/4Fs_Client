@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { StyledTimePickerCell } from "./StyledTimePickerCell";
 
 const TimePickerCell = (props) => {
-  const [time, setTime] = useState("");
+  const [time, setTime] = useState(null);
   const [editing, setEditing] = useState(false);
 
   const handleChange = (e) => {
@@ -17,21 +17,7 @@ const TimePickerCell = (props) => {
       },
       props.id
     );
-  };
-
-  const renderCell = () => {
-    if (editing) {
-      return (
-        <StyledTimePickerCell
-          value={time}
-          onChange={handleChange}
-          type="time"
-          width={props.width}
-        />
-      );
-    } else {
-      return convertTime();
-    }
+    setTime(null);
   };
 
   const convertTime = () => {
@@ -43,22 +29,22 @@ const TimePickerCell = (props) => {
 
       return `${hour}:${min} ${amPm}`;
     } else {
-      return "";
+      return;
     }
   };
 
   useEffect(() => {
-    setTime(props.val || null);
-  }, []);
-
-  console.log(convertTime());
+    setTime(props.val);
+  }, [props.val]);
 
   return (
-    <div
-      onClick={() => setEditing(!editing)}
-      onBlur={() => setEditing(!editing)}
-    >
-      {renderCell()}
+    <div>
+      <StyledTimePickerCell
+        value={time || ""}
+        onChange={handleChange}
+        type="time"
+        width={props.width}
+      />
     </div>
   );
 };

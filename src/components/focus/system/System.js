@@ -259,7 +259,7 @@ const System = () => {
         }),
       },
       delete: {
-        cellComponent: generateCellComponent("delete", {
+        cellComponent: generateCellComponent("", {
           alignment: "right",
         }),
       },
