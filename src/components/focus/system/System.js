@@ -299,6 +299,7 @@ const System = () => {
                 accessor: "startDate",
                 alignment: "center",
                 placeholder: "Start date",
+                width: "144px",
               })}
             </div>
           }

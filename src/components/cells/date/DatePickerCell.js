@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-
-import { Input } from "semantic-ui-react";
+import { StyledDatePickerCell } from "./StyledDatePickerCell";
 
 const DatePickerCell = (props) => {
   const [date, setDate] = useState("");
@@ -18,20 +17,13 @@ const DatePickerCell = (props) => {
   };
 
   return (
-    <input
+    <StyledDatePickerCell
       value={date}
       onChange={(e) => setDate(e.target.value)}
-      style={{
-        width: "144px",
-        padding: "1rem 0.25rem",
-        height: "35px",
-        borderRadius: "6px",
-        border: "2px solid #ffffff66",
-        background: "#ffffff77",
-        // color: "#fff",
-        fontWeight: "600",
-      }}
       type="date"
+      width={props.width}
+      // onFocus={(e) => (e.target.type = "date")}
+      // onBlur={(e) => (e.target.type = "text")}
     />
   );
 };

@@ -6,7 +6,7 @@ import SignupForm from "../../pages/signup/SignupForm";
 import LoginForm from "../../pages/login/LoginForm";
 import Resources from "../resources/Resources";
 import { Milestones, Beliefs, BodyCalculator } from "../home";
-import { System, SwaggerStockpile } from "../focus";
+import { System, SwaggerStockpile, Sleep } from "../focus";
 import { FastingGuide, FastingWindow } from "../../components/fasting";
 import { CalorieRequirements, FoodList, MealPlanner } from "../food";
 import { FitnessActivities, FitnessPlanner } from "../fitness";
@@ -40,7 +40,7 @@ const Routes = () => {
         <AppWrapper component={<SwaggerStockpile />} />
       </ProtectedRoute>
       <ProtectedRoute path="/focus/sleep">
-        <AppWrapper></AppWrapper>
+        <AppWrapper component={<Sleep />} />
       </ProtectedRoute>
       <ProtectedRoute path="/focus/habits">
         <AppWrapper></AppWrapper>

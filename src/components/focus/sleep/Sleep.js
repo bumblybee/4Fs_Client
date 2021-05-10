@@ -36,6 +36,7 @@ const Sleep = () => {
     {
       label: "Comments",
       key: "comments",
+      width: 4,
     },
     {
       label: "Delete",
@@ -53,7 +54,6 @@ const Sleep = () => {
           accessor: "date",
           alignment: "left",
           textWeight: "600",
-          //   placeholder: "New practice...",
         }),
       },
       toBed: {
@@ -89,7 +89,7 @@ const Sleep = () => {
           onSave: handleSave,
           val: item.comments,
           accessor: "comments",
-          alignment: "center",
+          alignment: "left",
           //   placeholder: "New comment..."
         }),
       },
@@ -108,11 +108,11 @@ const Sleep = () => {
   const addEmptyRow = () => {
     const emptyRow = {
       date: {
-        cellComponent: generateCellComponent("time", {
+        cellComponent: generateCellComponent("date", {
           onSave: handleSave,
           accessor: "date",
           alignment: "left",
-          //   placeholder: "New practice...",
+          width: "110px",
         }),
       },
       toBed: {
