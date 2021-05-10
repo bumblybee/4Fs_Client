@@ -11,13 +11,13 @@ export const StyledTable = styled(Table)`
     overflow: auto;
   }
 
-  /* td {
+  td {
     height: ${(props) => (props.fullheighttd ? "31rem" : "")};
     position: relative;
     width: inherit;
   }
 
-  thead,
+  /* thead,
   tbody tr {
     display: table;
     width: 100%;

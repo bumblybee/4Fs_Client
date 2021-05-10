@@ -15,12 +15,12 @@ const Milestones = () => {
     {
       label: "Milestone",
       key: "milestone",
-      width: 5,
+      width: 4,
     },
     {
       label: "Personalize",
       key: "personalize",
-      width: 5,
+      width: 4,
     },
     {
       label: "Comments",

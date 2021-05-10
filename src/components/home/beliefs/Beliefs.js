@@ -42,6 +42,7 @@ const Beliefs = () => {
           onSave: handleSave,
           accessor: "belief",
           alignment: "center",
+          aligntext: "center",
           placeholder: "New belief...",
         }),
       },

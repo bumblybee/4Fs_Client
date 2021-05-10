@@ -8,6 +8,7 @@ import {
 } from "../../../api/focus/systemApi";
 import TableComponent from "../../table/TableComponent";
 import SectionHeader from "../../layout/SectionHeader";
+import MilestonesTableHeader from "../../home/milestones/MilestonesTableHeader";
 
 // TODO: Break out two table components, one for progress and one for curr week - logic for separating current week from prev - don't display empty row until current start date set
 const System = () => {
@@ -21,7 +22,7 @@ const System = () => {
     {
       label: "Practice",
       key: "practice",
-      width: 2,
+      width: 3,
     },
     {
       label: "Goal",
@@ -282,26 +283,20 @@ const System = () => {
           aligntext="left"
           striped
           descriptionheader={
-            <div style={{ marginBottom: "0.5rem" }}>
-              <div
-                style={{
-                  width: "85%",
-                  margin: "0 auto 1rem",
-                }}
-              >
-                Input your new practice and define a goal for the amount of
-                times you wish to complete it per week. Check off each day you
-                perform the practice.
-              </div>
-              <label>Start Date:</label> {""}
-              {generateCellComponent("date", {
-                onSave: handleSave,
-                accessor: "startDate",
-                alignment: "center",
-                placeholder: "Start date",
-                width: "144px",
-              })}
-            </div>
+            <MilestonesTableHeader
+              component={
+                <div>
+                  <label>Start Date:</label>
+                  {generateCellComponent("date", {
+                    onSave: handleSave,
+                    accessor: "startDate",
+                    alignment: "center",
+                    placeholder: "Start date",
+                    width: "144px",
+                  })}
+                </div>
+              }
+            />
           }
         />
       </div>
