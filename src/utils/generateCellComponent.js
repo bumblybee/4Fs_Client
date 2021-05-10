@@ -4,6 +4,7 @@ import DropdownCell from "../components/cells/dropdown/DropdownCell";
 import ExampleRowCell from "../components/cells/example/ExampleRowCell";
 import CheckboxCell from "../components/cells/checkbox/CheckboxCell";
 import DatePickerCell from "../components/cells/date/DatePickerCell";
+import TimePickerCell from "../components/cells/time/TimePickerCell";
 import NumberCell from "../components/cells/number/NumberCell";
 import ButtonCell from "../components/cells/button/ButtonCell";
 import DeleteCell from "../components/cells/delete/DeleteCell";
@@ -69,6 +70,16 @@ const generateCellComponent = (type, props) => {
     case "date":
       return (
         <DatePickerCell
+          id={props.id}
+          onSave={props.onSave}
+          label={props.label}
+          accessor={props.accessor}
+          width={props.width}
+        />
+      );
+    case "time":
+      return (
+        <TimePickerCell
           id={props.id}
           onSave={props.onSave}
           label={props.label}
