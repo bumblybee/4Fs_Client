@@ -5,21 +5,24 @@ const DatePickerCell = (props) => {
   const [date, setDate] = useState("");
 
   const handleChange = (e) => {
-    // console.log(e.target.value);
-    // setDate(e.target.value);
-    // props.onSave(
-    //   {
-    //     [props.accessor]: date,
-    //   },
-    //   props.id
-    // );
-    // console.log(date);
+    setDate(e.target.value);
+    makeData(e);
+    console.log(e.target.value);
+  };
+
+  const makeData = (e) => {
+    props.onSave(
+      {
+        [props.accessor]: e.target.value,
+      },
+      props.id
+    );
   };
 
   return (
     <StyledDatePickerCell
       value={date}
-      onChange={(e) => setDate(e.target.value)}
+      onChange={handleChange}
       type="date"
       width={props.width}
       // onFocus={(e) => (e.target.type = "date")}
