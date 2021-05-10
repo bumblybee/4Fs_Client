@@ -41,6 +41,7 @@ const Skills = () => {
           onSave: handleSave,
           accessor: "skill",
           alignment: "center",
+          aligntext: "center",
           placeholder: "New skill...",
         }),
       },

@@ -29,6 +29,7 @@ const generateCellComponent = (type, props) => {
           val=""
           placeholder={props.placeholder}
           alignment={props.alignment}
+          aligntext={props.aligntext}
           accessor={props.accessor}
         />
       );

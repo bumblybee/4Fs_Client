@@ -87,12 +87,12 @@ const EmptyRowCell = ({ children, ...props }) => {
         borderRadius: "4px",
         height: "40px",
         color: blankCellVal ? "" : "#bbbbbbff",
-
+        paddingLeft: "0.2rem",
         borderBottom: blankCellVal ? "none" : "1px solid #dddddd66",
         background: blankCellVal ? "" : "#eeeeee55",
         textAlign: props.aligntext,
         display: "flex",
-        justifyContent: "center",
+        justifyContent: props.aligntext,
         alignItems: "center",
       }}
       tabIndex="0"

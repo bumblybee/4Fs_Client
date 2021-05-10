@@ -41,6 +41,7 @@ const Moments = () => {
           onSave: handleSave,
           accessor: "moment",
           alignment: "center",
+          aligntext: "center",
           placeholder: "New moment...",
         }),
       },

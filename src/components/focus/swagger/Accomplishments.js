@@ -45,6 +45,7 @@ const Accomplishments = () => {
           onSave: handleSave,
           accessor: "accomplishment",
           alignment: "center",
+          aligntext: "center",
           placeholder: "New accomplishment...",
         }),
       },

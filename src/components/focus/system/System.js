@@ -9,7 +9,7 @@ import {
 import TableComponent from "../../table/TableComponent";
 import SectionHeader from "../../layout/SectionHeader";
 
-// TODO: Break out two table components, one for progress and one for curr week
+// TODO: Break out two table components, one for progress and one for curr week - logic for separating current week from prev - don't display empty row until current start date set
 const System = () => {
   const [system, handleSave, handleDelete] = useCRUD(
     getSystem,
@@ -21,7 +21,7 @@ const System = () => {
     {
       label: "Practice",
       key: "practice",
-      width: 3,
+      width: 2,
     },
     {
       label: "Goal",
@@ -163,7 +163,7 @@ const System = () => {
           onSave: handleSave,
           val: item.performed,
           accessor: "performed",
-          alignment: "right",
+          alignment: "center",
           style: {
             color: item.performed >= item.goal ? "#21ba45" : "",
             fontWeight: "bold",
@@ -177,7 +177,7 @@ const System = () => {
         cellComponent: generateCellComponent("delete", {
           id: item.id,
           onDelete: handleDelete,
-          alignment: "right",
+          alignment: "center",
         }),
       },
     }));
@@ -191,7 +191,7 @@ const System = () => {
         cellComponent: generateCellComponent("empty", {
           onSave: handleSave,
           accessor: "practice",
-          alignment: "center",
+          alignment: "left",
           placeholder: "New practice...",
         }),
       },
