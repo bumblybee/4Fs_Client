@@ -3,6 +3,7 @@ import Accomplishments from "./Accomplishments";
 import Moments from "./Moments";
 import Skills from "./Skills";
 import SectionHeader from "../../layout/SectionHeader";
+import { StyledSwaggerTableContainer } from "./StyledSwagger";
 
 // Todo: Add skills table
 const SwaggerStockpile = () => {
@@ -24,17 +25,11 @@ const SwaggerStockpile = () => {
       >
         <em>"I Think. I Know. I Can. I Do."</em>
       </h4>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-start",
-        }}
-      >
+      <StyledSwaggerTableContainer>
         <Moments />
         <Accomplishments />
         <Skills />
-      </div>
+      </StyledSwaggerTableContainer>
     </div>
   );
 };
