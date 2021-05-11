@@ -55,6 +55,8 @@ const Skills = () => {
       skill: {
         cellComponent: generateCellComponent("example", {
           val: "Make a list of skills that relate to weight loss",
+          tooltipContent:
+            "ex. can go without food for 16 hours, can bike for 1 hour, can do a handstand",
         }),
       },
     };

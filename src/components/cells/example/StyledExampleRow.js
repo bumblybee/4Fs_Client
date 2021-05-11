@@ -6,6 +6,7 @@ export const StyledExampleRow = styled.div`
   height: 3rem;
   display: flex;
   justify-content: center;
+  position: relative;
 
   @media (max-width: 900px) {
     height: 1.5rem;
@@ -13,4 +14,10 @@ export const StyledExampleRow = styled.div`
 
   @media (max-width: 800px) {
   }
+`;
+
+export const StyledTooltipContainer = styled.div`
+  position: absolute;
+  top: 2%;
+  right: -7%;
 `;
