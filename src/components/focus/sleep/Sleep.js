@@ -38,27 +38,27 @@ const Sleep = () => {
     {
       label: "Date",
       key: "date",
-      width: 2,
+      width: 3,
     },
     {
       label: "Went to Bed",
       key: "toBed",
-      width: 2,
+      width: 3,
     },
     {
       label: "Woke up",
       key: "woke",
-      width: 2,
+      width: 3,
     },
     {
       label: "Hours Slept",
       key: "hoursSlept",
-      width: 2,
+      width: 3,
     },
     {
       label: "Comments",
       key: "comments",
-      width: 2,
+      width: 5,
     },
     {
       label: "",
@@ -152,6 +152,7 @@ const Sleep = () => {
             id: item.id,
             onDelete: handleDelete,
             alignment: "center",
+            collapsing: true,
           }),
         },
       };

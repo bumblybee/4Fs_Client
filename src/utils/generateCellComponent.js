@@ -117,6 +117,7 @@ const generateCellComponent = (type, props) => {
           id={props.id}
           onDelete={props.onDelete}
           alignment={props.alignment}
+          collapsing={props.collapsing}
         />
       );
     default:

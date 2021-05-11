@@ -4,7 +4,11 @@ import { StyledTable } from "./StyledTable";
 
 TableComponent.TD = function TD({ children, ...props }) {
   return (
-    <Table.Cell {...props} style={{ minHeight: "45px" }}>
+    <Table.Cell
+      {...props}
+      style={{ minHeight: "45px" }}
+      collapsing={props.collapsing}
+    >
       {children}
     </Table.Cell>
   );
@@ -54,7 +58,7 @@ export default function TableComponent({ children, ...props }) {
   const renderDescriptionHeader = () => {
     /* If we have an additional header with descriptive text */
     return (
-      <Table.Header fullWidth>
+      <Table.Header>
         <TableComponent.TR>
           <TableComponent.TH
             style={{
@@ -63,6 +67,7 @@ export default function TableComponent({ children, ...props }) {
               textAlign: "center",
             }}
             colSpan="16"
+            className="descriptionHeader"
           >
             {props.descriptionheader}
           </TableComponent.TH>
@@ -97,7 +102,9 @@ export default function TableComponent({ children, ...props }) {
 
   const renderCells = (row) => {
     return row.map((cellComponent, idx) => (
-      <TableComponent.TD key={idx}>{cellComponent}</TableComponent.TD>
+      <TableComponent.TD key={idx} collapsing={cellComponent.collapsing}>
+        {cellComponent}
+      </TableComponent.TD>
     ));
   };
 

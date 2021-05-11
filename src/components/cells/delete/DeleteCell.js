@@ -14,16 +14,15 @@ const DeleteCell = (props) => {
     <div
       style={{
         display: "flex",
-        justifyContent: "flex-end",
+        justifyContent: "flex-start",
         alignItems: "center",
-        width: "min-content",
         marginLeft: "auto",
       }}
     >
       <Icon
         title="Delete"
-        style={{ cursor: "pointer", color: "#C41E3Acc" }}
-        name="trash"
+        style={{ cursor: "pointer", color: "#C41E3Abb" }}
+        name="delete"
         onClick={deleteData}
       />
     </div>
