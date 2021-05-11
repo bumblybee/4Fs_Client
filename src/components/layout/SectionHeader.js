@@ -3,7 +3,7 @@ import React from "react";
 const SectionHeader = ({ title, subtitle }) => {
   return (
     <div>
-      <h1 style={{ textAlign: "center", marginBottom: 0 }}>{title}</h1>
+      <h1 style={{ textAlign: "center", marginBottom: "1rem" }}>{title}</h1>
       <p
         style={{
           textAlign: "center",
