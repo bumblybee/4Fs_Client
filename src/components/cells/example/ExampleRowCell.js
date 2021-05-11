@@ -2,12 +2,12 @@ import React from "react";
 import { Popup, Icon } from "semantic-ui-react";
 import { StyledExampleRow, StyledTooltipContainer } from "./StyledExampleRow";
 
-const ExampleRowCell = ({ val, tooltipContent }) => {
+const ExampleRowCell = ({ val, tooltipContent, alignment, textWeight }) => {
   return (
-    <StyledExampleRow>
+    <StyledExampleRow textWeight={textWeight}>
       {val}
       {tooltipContent && (
-        <StyledTooltipContainer>
+        <StyledTooltipContainer alignment={alignment}>
           <Popup
             position="top center"
             content={tooltipContent}

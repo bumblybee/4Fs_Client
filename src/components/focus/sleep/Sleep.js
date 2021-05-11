@@ -22,31 +22,36 @@ const Sleep = () => {
     {
       label: "Date",
       key: "date",
+      width: 2,
     },
     {
       label: "Went to Bed",
       key: "toBed",
+      width: 2,
     },
     {
       label: "Woke up",
       key: "woke",
+      width: 2,
     },
     {
       label: "Hours Slept",
       key: "hoursSlept",
+      width: 2,
     },
     {
       label: "Comments",
       key: "comments",
-      width: 4,
+      width: 3,
     },
     {
       label: "Delete",
       key: "delete",
+      width: 1,
     },
   ];
 
-  const rows = (additionalRow) => {
+  const rows = (exampleRow, emptyRow) => {
     const rowData = sleep.map((item) => {
       return {
         date: {
@@ -85,7 +90,7 @@ const Sleep = () => {
             accessor: "hoursSlept",
             alignment: "center",
             style: {
-              margin: "0 15%",
+              paddingLeft: "0.5rem",
               width: "max-content",
               fontWeight: "bold",
             },
@@ -97,8 +102,6 @@ const Sleep = () => {
             onSave: handleSave,
             val: item.comments,
             accessor: "comments",
-            alignment: "left",
-            aligntext: "left",
           }),
         },
         delete: {
@@ -111,7 +114,7 @@ const Sleep = () => {
       };
     });
 
-    return [...rowData, additionalRow];
+    return [exampleRow, ...rowData, emptyRow];
   };
 
   const addEmptyRow = () => {
@@ -163,6 +166,51 @@ const Sleep = () => {
     return emptyRow;
   };
 
+  const addExampleRow = () => {
+    const exampleRow = {
+      date: {
+        cellComponent: generateCellComponent("example", {
+          val: "05/25/2021",
+          alignment: "left",
+        }),
+      },
+      toBed: {
+        cellComponent: generateCellComponent("example", {
+          val: "10:00 PM",
+          alignment: "left",
+        }),
+      },
+      woke: {
+        cellComponent: generateCellComponent("example", {
+          val: "07:00 AM",
+          alignment: "left",
+        }),
+      },
+      hoursSlept: {
+        cellComponent: generateCellComponent("example", {
+          val: "09:00",
+          alignment: "flex-start",
+        }),
+      },
+      comments: {
+        cellComponent: generateCellComponent("example", {
+          val:
+            "Woke up once to go to washroom. Sleep felt great. Woke up feeling very refreshed.",
+          alignment: "flex-start",
+          textweight: "400",
+        }),
+      },
+      delete: {
+        cellComponent: generateCellComponent("example", {
+          val: "",
+          alignment: "flex-start",
+        }),
+      },
+    };
+
+    return exampleRow;
+  };
+
   const calcHoursSlept = (item) => {
     let timeSlept = null;
 
@@ -188,10 +236,11 @@ const Sleep = () => {
         />
         <TableComponent
           columns={columns}
-          rows={rows(addEmptyRow())}
+          rows={rows(addExampleRow(), addEmptyRow())}
           color="teal"
           aligntext="left"
           striped
+          example
           descriptionheader={<SleepTableHeader />}
         />
       </div>

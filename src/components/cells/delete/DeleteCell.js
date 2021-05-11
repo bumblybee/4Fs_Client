@@ -15,7 +15,7 @@ const DeleteCell = (props) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        width: "70%",
+        width: "80%",
       }}
     >
       <Button size="mini" icon onClick={deleteData}>

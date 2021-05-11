@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledTimePickerCell = styled.input`
   width: ${(props) => props.width};
-  padding: 1rem 0.25rem;
+  padding: 1rem 0;
   height: 35px;
   border-radius: 6px;
   border: 2px solid #ffffff66;
@@ -13,15 +13,11 @@ export const StyledTimePickerCell = styled.input`
 
   ::-webkit-calendar-picker-indicator {
     margin-left: 0px;
-    /* appearance: none;
-    display: none; */
     filter: invert(1);
   }
 
   :focus {
     ::-webkit-calendar-picker-indicator {
-      /* display: block;
-      appearance: auto; */
       filter: invert(0);
     }
   }

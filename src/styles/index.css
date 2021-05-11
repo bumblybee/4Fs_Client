@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Lato", sans-serif;
+}
+
 #root {
   height: 100%;
 }
@@ -19,9 +23,15 @@ h2,
 h3,
 h4,
 h5,
-th {
+th,
+thead {
   font-family: "Montserrat", sans-serif;
   font-weight: bolder;
+}
+
+input[type="time"],
+input[type="date"] {
+  font-family: "Lato", sans-serif;
 }
 
 ::-webkit-scrollbar,

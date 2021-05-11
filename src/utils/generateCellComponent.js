@@ -36,7 +36,12 @@ const generateCellComponent = (type, props) => {
       );
     case "example":
       return (
-        <ExampleRowCell val={props.val} tooltipContent={props.tooltipContent} />
+        <ExampleRowCell
+          val={props.val}
+          alignment={props.alignment}
+          textWeight={props.textweight}
+          tooltipContent={props.tooltipContent}
+        />
       );
     case "dropdown":
       return (

@@ -38,7 +38,14 @@ const TimePickerCell = (props) => {
   }, [props.val]);
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        width: "max-content",
+        padding: "0 0 0 0.25rem",
+      }}
+    >
       <StyledTimePickerCell
         value={time || ""}
         onChange={handleChange}

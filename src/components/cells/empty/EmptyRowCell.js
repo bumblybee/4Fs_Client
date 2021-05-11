@@ -82,17 +82,17 @@ const EmptyRowCell = ({ children, ...props }) => {
       onBlur={() => setEditing(false)}
       style={{
         width: "95%",
-        margin: "0 auto",
+        // margin: "0 auto",
         cursor: "pointer",
         borderRadius: "0",
         height: "40px",
-        color: blankCellVal ? "" : "#bbbbbbff",
+        color: blankCellVal ? "" : "#aaaaaacc",
         paddingLeft: "0.5rem",
         borderBottom:
           blankCellVal || editing
             ? "1px solid transparent"
             : "1px solid #dddddd88",
-        background: blankCellVal ? "" : "#fff",
+        // background: blankCellVal ? "" : "",
         textAlign: props.aligntext,
         display: "flex",
         justifyContent: props.aligntext,
