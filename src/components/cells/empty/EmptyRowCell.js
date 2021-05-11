@@ -48,7 +48,7 @@ const EmptyRowCell = ({ children, ...props }) => {
 
             whiteSpace: "normal",
 
-            textAlignLast: "center",
+            // textAlignLast: "center",
           }}
           value={blankCellVal || ""}
           onChange={(e) => setBlankCellVal(e.target.value)}

@@ -98,6 +98,7 @@ const Sleep = () => {
             val: item.comments,
             accessor: "comments",
             alignment: "left",
+            aligntext: "left",
           }),
         },
         delete: {
@@ -149,6 +150,7 @@ const Sleep = () => {
           onSave: handleSave,
           accessor: "comments",
           alignment: "left",
+          aligntext: "left",
           placeholder: "New comment...",
         }),
       },

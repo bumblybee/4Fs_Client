@@ -77,7 +77,7 @@ const EditableTableCell = ({ children, ...props }) => {
       onBlur={() => setEditing(false)}
       style={{
         width: "95%",
-        margin: "0 auto",
+        paddingLeft: "0.25rem",
         cursor: "pointer",
         borderRadius: "4px",
         minHeight: "40px",
