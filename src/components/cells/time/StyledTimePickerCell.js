@@ -6,9 +6,10 @@ export const StyledTimePickerCell = styled.input`
   height: 35px;
   border-radius: 6px;
   border: 2px solid #ffffff66;
-  background: #ffffff77;
+  background: #ffffff11;
   font-size: 0.95rem;
   font-weight: 600;
+  color: ${(props) => (props.time ? "" : "#aaaaaaff")};
   cursor: text;
 
   ::-webkit-calendar-picker-indicator {

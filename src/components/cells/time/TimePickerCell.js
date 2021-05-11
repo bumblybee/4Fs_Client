@@ -3,7 +3,6 @@ import { StyledTimePickerCell } from "./StyledTimePickerCell";
 
 const TimePickerCell = (props) => {
   const [time, setTime] = useState(null);
-  const [editing, setEditing] = useState(false);
 
   const handleChange = (e) => {
     setTime(e.target.value);
@@ -50,6 +49,7 @@ const TimePickerCell = (props) => {
         value={time || ""}
         onChange={handleChange}
         type="time"
+        time={time}
         width={props.width}
       />
     </div>
