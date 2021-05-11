@@ -6,21 +6,26 @@ const DeleteCell = (props) => {
 
   const deleteData = () => {
     setIsDeleted(true);
-    props.onDelete(props.id);
+    if (window.confirm("Are you sure you want to delete this entry?"))
+      props.onDelete(props.id);
   };
 
   return (
     <div
       style={{
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "flex-end",
         alignItems: "center",
-        width: "80%",
+        width: "min-content",
+        marginLeft: "auto",
       }}
     >
-      <Button size="mini" icon onClick={deleteData}>
-        <Icon name="trash" />
-      </Button>
+      <Icon
+        title="Delete"
+        style={{ cursor: "pointer", color: "#C41E3Acc" }}
+        name="trash"
+        onClick={deleteData}
+      />
     </div>
   );
 };

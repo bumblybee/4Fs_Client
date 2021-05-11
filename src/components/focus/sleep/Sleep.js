@@ -58,10 +58,10 @@ const Sleep = () => {
     {
       label: "Comments",
       key: "comments",
-      width: 3,
+      width: 2,
     },
     {
-      label: "Delete",
+      label: "",
       key: "delete",
       width: 1,
     },

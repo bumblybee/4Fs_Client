@@ -9,7 +9,7 @@ export const StyledExampleRow = styled.div`
   justify-content: center;
   align-items: center;
   color: #aaaaaaff;
-  /* font-style: italic; */
+  font-style: italic;
   position: relative;
   padding-left: 0.25rem;
 
