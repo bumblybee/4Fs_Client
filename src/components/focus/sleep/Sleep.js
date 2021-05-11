@@ -98,7 +98,6 @@ const Sleep = () => {
             val: item.comments,
             accessor: "comments",
             alignment: "left",
-            //   placeholder: "New comment..."
           }),
         },
         delete: {

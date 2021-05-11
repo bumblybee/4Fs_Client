@@ -18,7 +18,7 @@ const Skills = () => {
     },
   ];
 
-  const rows = (additionalRow) => {
+  const rows = (exampleRow, additionalRow) => {
     const rowData = skills.map((item) => ({
       skill: {
         cellComponent: generateCellComponent("editable", {
@@ -31,7 +31,7 @@ const Skills = () => {
       },
     }));
 
-    return [...rowData, additionalRow];
+    return [exampleRow, ...rowData, additionalRow];
   };
 
   const addEmptyRow = () => {
@@ -50,13 +50,26 @@ const Skills = () => {
     return emptyRow;
   };
 
+  const addExampleRow = () => {
+    const exampleRow = {
+      skill: {
+        cellComponent: generateCellComponent("example", {
+          val: "Make a list of skills that relate to weight loss",
+        }),
+      },
+    };
+
+    return exampleRow;
+  };
+
   return (
     rows && (
       <TableComponent
-        rows={rows(addEmptyRow())}
+        rows={rows(addExampleRow(), addEmptyRow())}
         columns={columns}
         color="olive"
         aligntext="center"
+        example
       />
     )
   );

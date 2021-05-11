@@ -22,7 +22,7 @@ const Accomplishments = () => {
     },
   ];
 
-  const rows = (additionalRow) => {
+  const rows = (exampleRow, additionalRow) => {
     const rowData = accomplishments.map((item) => ({
       accomplishment: {
         cellComponent: generateCellComponent("editable", {
@@ -35,7 +35,7 @@ const Accomplishments = () => {
       },
     }));
 
-    return [...rowData, additionalRow];
+    return [exampleRow, ...rowData, additionalRow];
   };
 
   const addEmptyRow = () => {
@@ -54,13 +54,27 @@ const Accomplishments = () => {
     return emptyRow;
   };
 
+  // Use for tables that have example row at top
+  const addExampleRow = () => {
+    const exampleRow = {
+      accomplishment: {
+        cellComponent: generateCellComponent("example", {
+          val: "Make a list of accomplishments that relate to weight loss",
+        }),
+      },
+    };
+
+    return exampleRow;
+  };
+
   return (
     rows && (
       <TableComponent
-        rows={rows(addEmptyRow())}
+        rows={rows(addExampleRow(), addEmptyRow())}
         columns={columns}
         color="olive"
         aligntext="center"
+        example
       />
     )
   );

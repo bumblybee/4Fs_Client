@@ -1,7 +1,8 @@
 import React from "react";
+import { StyledExampleRow } from "./StyledExampleRow";
 
-const ExampleRowCell = ({ children }) => {
-  return <div style={{ fontWeight: "600", width: "95%" }}>{children}</div>;
+const ExampleRowCell = ({ val }) => {
+  return <StyledExampleRow>{val}</StyledExampleRow>;
 };
 
 export default ExampleRowCell;

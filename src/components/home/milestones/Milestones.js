@@ -70,20 +70,6 @@ const Milestones = () => {
     return rowData;
   };
 
-  // Use for tables that have example row at top
-  // const addExampleRow = () => {
-  //   const exampleRow = {
-  //     field: {
-  //       cellComponent: generateCellComponent("example", {val: "example text"}),
-  //     },
-  //     field: {
-  //       cellComponent: generateCellComponent("example", {val: "example text"}),
-  //     },
-  //   };
-
-  //   return exampleRow
-  // };
-
   return (
     rows && (
       <div>

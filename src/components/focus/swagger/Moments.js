@@ -18,7 +18,7 @@ const Moments = () => {
     },
   ];
 
-  const rows = (additionalRow) => {
+  const rows = (exampleRow, additionalRow) => {
     const rowData = moments.map((item) => ({
       moment: {
         cellComponent: generateCellComponent("editable", {
@@ -31,7 +31,7 @@ const Moments = () => {
       },
     }));
 
-    return [...rowData, additionalRow];
+    return [exampleRow, ...rowData, additionalRow];
   };
 
   const addEmptyRow = () => {
@@ -50,13 +50,27 @@ const Moments = () => {
     return emptyRow;
   };
 
+  const addExampleRow = () => {
+    const exampleRow = {
+      moment: {
+        cellComponent: generateCellComponent("example", {
+          val:
+            "Make a list of moments you're proud of that relate to weight loss",
+        }),
+      },
+    };
+
+    return exampleRow;
+  };
+
   return (
     rows && (
       <TableComponent
-        rows={rows(addEmptyRow())}
+        rows={rows(addExampleRow(), addEmptyRow())}
         columns={columns}
         color="olive"
         aligntext="center"
+        example
       />
     )
   );

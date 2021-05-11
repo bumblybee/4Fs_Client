@@ -79,8 +79,9 @@ export default function TableComponent({ children, ...props }) {
       <TableComponent.TR
         key={idx}
         style={{
-          minHeight: "40px",
+          minHeight: "45px",
           textAlign: props.aligntext,
+          background: props.example && idx === 0 && "#eee",
         }}
       >
         {renderCells(row)}
@@ -101,6 +102,7 @@ export default function TableComponent({ children, ...props }) {
       color={props.color}
       compact
       unstackable
+      example
       striped={props.striped}
       collapsing={props.collapsing}
     >
