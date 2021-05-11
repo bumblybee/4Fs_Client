@@ -19,7 +19,13 @@ TableComponent.TH = function TH({ children, ...props }) {
 };
 
 TableComponent.TF = function TF({ children, ...props }) {
-  return <Table.Footer {...props}>{children}</Table.Footer>;
+  return (
+    <Table.Footer {...props} fullWidth>
+      <TableComponent.TR>
+        <TableComponent.TH colSpan="8">{children}</TableComponent.TH>
+      </TableComponent.TR>
+    </Table.Footer>
+  );
 };
 
 export default function TableComponent({ children, ...props }) {
@@ -114,6 +120,8 @@ export default function TableComponent({ children, ...props }) {
         </TableComponent.TR>
       </Table.Header>
       <Table.Body>{renderRows(rowsMappedToColumns)}</Table.Body>
+
+      {props.footer && <TableComponent.TF>{props.footer}</TableComponent.TF>}
     </StyledTable>
   );
 }

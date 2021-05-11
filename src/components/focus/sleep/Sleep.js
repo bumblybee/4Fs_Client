@@ -232,7 +232,7 @@ const Sleep = () => {
       <div>
         <SectionHeader
           title="Sleep Tracker"
-          subtitle="Purpose: To bring awareness to how much sleep you are getting and help you focus on getting your desired rest. "
+          subtitle="Purpose: To bring awareness to how much sleep you are getting and help you focus on getting your desired rest."
         />
         <TableComponent
           columns={columns}
@@ -241,7 +241,7 @@ const Sleep = () => {
           aligntext="left"
           striped
           example
-          descriptionheader={<SleepTableHeader />}
+          descriptionheader={<SleepTableHeader data={sleep} />}
         />
       </div>
     )
