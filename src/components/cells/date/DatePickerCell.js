@@ -29,6 +29,7 @@ const DatePickerCell = (props) => {
         value={date || ""}
         onChange={handleChange}
         type="date"
+        date={date}
         width={props.width}
       />
     </div>

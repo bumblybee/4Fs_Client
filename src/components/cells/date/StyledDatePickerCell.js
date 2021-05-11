@@ -8,7 +8,8 @@ export const StyledDatePickerCell = styled.input`
   border: 2px solid #ffffff66;
   background: #ffffff77;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: ${(props) => (props.date ? "600" : "500")};
+  color: ${(props) => (props.date ? "" : "#aaaaaaff")};
 
   ::-webkit-calendar-picker-indicator {
     margin-left: 0px;

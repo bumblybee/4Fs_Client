@@ -18,6 +18,22 @@ const Sleep = () => {
     deleteSleep
   );
 
+  const calcHoursSlept = (item) => {
+    let timeSlept = null;
+
+    if (item.toBed && item.woke) {
+      const slept = moment(item.toBed, "HH:mm:ss");
+      const woke = moment(item.woke, "HH:mm:ss");
+
+      if (woke.isBefore(slept)) woke.add(1, "day");
+      const duration = moment.duration(woke.diff(slept));
+
+      timeSlept = moment.utc(+duration).format("HH:mm");
+    }
+
+    return timeSlept;
+  };
+
   const columns = [
     {
       label: "Date",
@@ -50,6 +66,34 @@ const Sleep = () => {
       width: 1,
     },
   ];
+
+  const csvColumns = [
+    {
+      id: "date",
+      displayName: "Date",
+    },
+    {
+      id: "toBed",
+      displayName: "Went to Bed",
+    },
+    {
+      id: "woke",
+      displayName: "Woke up",
+    },
+    {
+      id: "hoursSlept",
+      displayName: "Hours Slept",
+    },
+    {
+      id: "comments",
+      displayName: "Comments",
+    },
+  ];
+
+  const csvRows = sleep.map((item) => {
+    item.hoursSlept = calcHoursSlept(item);
+    return item;
+  });
 
   const rows = (exampleRow, emptyRow) => {
     const rowData = sleep.map((item) => {
@@ -87,7 +131,6 @@ const Sleep = () => {
           cellComponent: generateCellComponent("", {
             id: item.id,
             val: calcHoursSlept(item),
-            accessor: "hoursSlept",
             alignment: "center",
             style: {
               paddingLeft: "0.5rem",
@@ -154,7 +197,6 @@ const Sleep = () => {
           accessor: "comments",
           alignment: "left",
           aligntext: "left",
-          placeholder: "New comment...",
         }),
       },
       delete: {
@@ -211,22 +253,6 @@ const Sleep = () => {
     return exampleRow;
   };
 
-  const calcHoursSlept = (item) => {
-    let timeSlept = null;
-
-    if (item.toBed && item.woke) {
-      const slept = moment(item.toBed, "HH:mm:ss");
-      const woke = moment(item.woke, "HH:mm:ss");
-
-      if (woke.isBefore(slept)) woke.add(1, "day");
-      const duration = moment.duration(woke.diff(slept));
-
-      timeSlept = moment.utc(+duration).format("HH:mm");
-    }
-
-    return timeSlept;
-  };
-
   return (
     rows && (
       <div>
@@ -241,7 +267,9 @@ const Sleep = () => {
           aligntext="left"
           striped
           example
-          descriptionheader={<SleepTableHeader data={sleep} />}
+          descriptionheader={
+            <SleepTableHeader columns={csvColumns} data={csvRows} />
+          }
         />
       </div>
     )

@@ -37,7 +37,7 @@ export const StyledTable = styled(Table)`
 
   input[type="date"] {
     :hover {
-      cursor: text;
+      cursor: pointer;
     }
   }
 
