@@ -16,7 +16,6 @@ const DatePickerCell = (props) => {
       },
       props.id
     );
-    setDate(null);
   };
 
   useEffect(() => {
@@ -31,6 +30,7 @@ const DatePickerCell = (props) => {
         type="date"
         date={date}
         width={props.width}
+        alignment={props.alignment}
       />
     </div>
   );

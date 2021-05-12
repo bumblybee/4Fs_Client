@@ -85,6 +85,7 @@ const generateCellComponent = (type, props) => {
           val={props.val}
           accessor={props.accessor}
           width={props.width}
+          alignment={props.alignment}
         />
       );
     case "time":

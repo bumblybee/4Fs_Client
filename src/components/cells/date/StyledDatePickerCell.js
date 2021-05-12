@@ -6,10 +6,11 @@ export const StyledDatePickerCell = styled.input`
   height: 35px;
   border-radius: 6px;
   border: 2px solid #ffffff66;
-  background: #ffffff77;
+  background: #ffffff55;
   font-size: 0.95rem;
   font-weight: ${(props) => (props.date ? "600" : "500")};
-  color: ${(props) => (props.date ? "" : "#aaaaaaff")};
+  color: ${(props) => (props.date ? "" : "#aaaaaa")};
+  text-align: ${(props) => props.alignment};
 
   ::-webkit-calendar-picker-indicator {
     margin-left: 0px;
