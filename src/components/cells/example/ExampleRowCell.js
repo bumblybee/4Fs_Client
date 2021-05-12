@@ -9,6 +9,7 @@ const ExampleRowCell = ({
   justify,
   textWeight,
   width,
+  color,
 }) => {
   return (
     <StyledExampleRow
@@ -16,6 +17,7 @@ const ExampleRowCell = ({
       alignment={alignment}
       justify={justify}
       width={width}
+      color={color}
     >
       <div>{val}</div>
       {tooltipContent && (

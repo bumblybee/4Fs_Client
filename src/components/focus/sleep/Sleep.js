@@ -137,8 +137,7 @@ const Sleep = () => {
             val: calcHoursSlept(item),
             alignment: "center",
             style: {
-              paddingLeft: "0.5rem",
-              width: "max-content",
+              textAlign: "center",
               fontWeight: "bold",
             },
           }),
@@ -218,24 +217,28 @@ const Sleep = () => {
           val: "05/25/2021",
           alignment: "center",
           justify: "flex-start",
+          color: "#9d9d9d",
         }),
       },
       toBed: {
         cellComponent: generateCellComponent("example", {
           val: "10:00 PM",
           alignment: "center",
+          color: "#9d9d9d",
         }),
       },
       woke: {
         cellComponent: generateCellComponent("example", {
           val: "07:00 AM",
           alignment: "center",
+          color: "#9d9d9d",
         }),
       },
       hoursSlept: {
         cellComponent: generateCellComponent("example", {
           val: "09:00",
           alignment: "center",
+          color: "#9d9d9d",
         }),
       },
       comments: {
@@ -244,6 +247,7 @@ const Sleep = () => {
             "Woke up once to go to washroom. Sleep felt great. Woke up feeling very refreshed.",
           alignment: "center",
           textweight: "400",
+          color: "#9d9d9d",
         }),
       },
       delete: {
@@ -267,7 +271,6 @@ const Sleep = () => {
           columns={columns}
           rows={rows(addExampleRow(), addEmptyRow())}
           color="teal"
-          aligntext="left"
           striped
           celled
           example

@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const StyledExampleRow = styled.div`
   font-weight: ${(props) => (props.textWeight ? props.textWeight : "500")};
   width: 100%;
-  height: 3rem;
+  height: 2.75rem;
   display: flex;
   justify-content: ${(props) => props.justify || "center"};
   align-items: ${(props) => props.alignment || "center"};
-  color: #aaaaaaff;
+  color: ${(props) => props.color || "#333"};
   font-style: italic;
   position: relative;
   padding-left: 0.25rem;

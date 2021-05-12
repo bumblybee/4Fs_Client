@@ -42,6 +42,7 @@ const generateCellComponent = (type, props) => {
           alignment={props.alignment}
           justify={props.justify}
           width={props.width}
+          color={props.color}
           textWeight={props.textweight}
           tooltipContent={props.tooltipContent}
         />
