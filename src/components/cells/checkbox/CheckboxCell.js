@@ -13,6 +13,7 @@ const CheckboxCell = (props) => {
   };
 
   const makeData = (e) => {
+    // Updating performed based on checked or unchecked
     props.onSave(
       {
         [props.accessor]: e.target.checked,
@@ -29,14 +30,13 @@ const CheckboxCell = (props) => {
   return (
     <sc.StyledCheckboxWrapper>
       <label>
-        {isChecked ? <Icon name="check" /> : ""}
         <input
           ref={checkboxRef}
-          style={{ padding: "0 0 0 0.5rem" }}
           checked={isChecked}
           onClick={(e) => handleChange(e)}
           type="checkbox"
         />
+        {isChecked ? <Icon name="check" /> : ""}
       </label>
     </sc.StyledCheckboxWrapper>
   );

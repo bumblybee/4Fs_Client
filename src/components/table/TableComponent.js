@@ -8,6 +8,7 @@ TableComponent.TD = function TD({ children, ...props }) {
       {...props}
       style={{ minHeight: "45px" }}
       collapsing={props.collapsing}
+      textAlign={props.alignment}
     >
       {children}
     </Table.Cell>
