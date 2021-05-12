@@ -9,7 +9,7 @@ import {
 } from "../../../api/focus/swaggerApi";
 
 const Accomplishments = () => {
-  const [accomplishments, handleSave] = useCRUD(
+  const [accomplishments, handleSave, handleDelete] = useCRUD(
     getAccomplishments,
     mutateAccomplishment,
     deleteAccomplishment
@@ -28,6 +28,7 @@ const Accomplishments = () => {
         cellComponent: generateCellComponent("editable", {
           id: item.id,
           onSave: handleSave,
+          onDelete: handleDelete,
           val: item.accomplishment,
           accessor: "accomplishment",
           alignment: "center",

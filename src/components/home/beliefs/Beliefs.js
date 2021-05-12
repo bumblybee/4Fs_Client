@@ -10,7 +10,11 @@ import {
 } from "../../../api/home/beliefsApi";
 
 const Beliefs = () => {
-  const [beliefs, handleSave] = useCRUD(getBeliefs, mutateBelief, deleteBelief);
+  const [beliefs, handleSave, handleDelete] = useCRUD(
+    getBeliefs,
+    mutateBelief,
+    deleteBelief
+  );
 
   const columns = [
     {
@@ -25,6 +29,7 @@ const Beliefs = () => {
         cellComponent: generateCellComponent("editable", {
           id: item.id,
           onSave: handleSave,
+          onDelete: handleDelete,
           val: item.belief,
           accessor: "belief",
           alignment: "center",

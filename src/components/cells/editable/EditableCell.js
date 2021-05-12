@@ -9,20 +9,24 @@ const EditableTableCell = ({ children, ...props }) => {
   const inputRef = useRef(null);
 
   const makeData = () => {
-    // If user deleted text, send null instead of empty string
-    if (inputRef.current != editCellVal) {
-      let updateVal = editCellVal;
-      if (editCellVal === "") {
-        updateVal = null;
-      }
+    if (props.onDelete && editCellVal === "") {
+      props.onDelete(props.id);
+    } else {
+      if (inputRef.current != editCellVal) {
+        // If user deleted text and we don't want to delete the record, send null instead of empty string
+        let updateVal = editCellVal;
+        if (editCellVal === "") {
+          updateVal = null;
+        }
 
-      props.onSave(
-        {
-          [props.accessor]: updateVal,
-        },
-        props.id
-      );
-      inputRef.current = editCellVal;
+        props.onSave(
+          {
+            [props.accessor]: updateVal,
+          },
+          props.id
+        );
+        inputRef.current = editCellVal;
+      }
     }
     setEditing(false);
   };

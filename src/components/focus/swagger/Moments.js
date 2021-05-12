@@ -9,7 +9,11 @@ import {
 } from "../../../api/focus/swaggerApi";
 //todo: handle delete
 const Moments = () => {
-  const [moments, handleSave] = useCRUD(getMoments, mutateMoment, deleteMoment);
+  const [moments, handleSave, handleDelete] = useCRUD(
+    getMoments,
+    mutateMoment,
+    deleteMoment
+  );
 
   const columns = [
     {
@@ -24,6 +28,7 @@ const Moments = () => {
         cellComponent: generateCellComponent("editable", {
           id: item.id,
           onSave: handleSave,
+          onDelete: handleDelete,
           val: item.moment,
           accessor: "moment",
           alignment: "center",

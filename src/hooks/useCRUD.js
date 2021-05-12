@@ -10,18 +10,9 @@ const useCRUD = (getter, setter, destroyer) => {
   }, []);
 
   const setData = async (data, id) => {
-    // Need to generalize this check
-    console.log(data);
-    const field = Object.keys(data)[0];
-    if (destroyer && field !== "milestone" && data[field] == null) {
-      const res = await destroyer(id);
-      console.log(res);
-      await getData();
-    } else {
-      const res = await setter(data, id);
-      console.log(res);
-      await getData();
-    }
+    const res = await setter(data, id);
+    console.log(res);
+    await getData();
   };
 
   const destroyData = async (id) => {

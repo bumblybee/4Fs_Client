@@ -9,7 +9,11 @@ import {
 } from "../../../api/focus/swaggerApi";
 
 const Skills = () => {
-  const [skills, handleSave] = useCRUD(getSkills, mutateSkill, deleteSkill);
+  const [skills, handleSave, handleDelete] = useCRUD(
+    getSkills,
+    mutateSkill,
+    deleteSkill
+  );
 
   const columns = [
     {
@@ -24,6 +28,7 @@ const Skills = () => {
         cellComponent: generateCellComponent("editable", {
           id: item.id,
           onSave: handleSave,
+          onDelete: handleDelete,
           val: item.skill,
           accessor: "skill",
           alignment: "center",
