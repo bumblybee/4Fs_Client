@@ -8,7 +8,7 @@ import {
 } from "../../../api/focus/systemApi";
 import TableComponent from "../../table/TableComponent";
 import SectionHeader from "../../layout/SectionHeader";
-import MilestonesTableHeader from "../../home/milestones/MilestonesTableHeader";
+import SystemTableHeader from "../../focus/system/SystemTableHeader";
 
 // TODO: Break out two table components, one for progress and one for curr week - logic for separating current week from prev - don't display empty row until current start date set
 const System = () => {
@@ -293,7 +293,7 @@ const System = () => {
           aligntext="left"
           striped
           descriptionheader={
-            <MilestonesTableHeader
+            <SystemTableHeader
               component={
                 <div>
                   <label>Start Date:</label>

@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const StyledExampleRow = styled.div`
   font-weight: ${(props) => (props.textWeight ? props.textWeight : "500")};
+  font-style: italic;
+  color: ${(props) => props.color || "#333"};
   width: 100%;
   height: 2.75rem;
   display: flex;
   justify-content: ${(props) => props.justify || "center"};
   align-items: ${(props) => props.alignment || "center"};
-  color: ${(props) => props.color || "#333"};
-  font-style: italic;
   position: relative;
   padding-left: 0.25rem;
 
@@ -27,5 +27,5 @@ export const StyledExampleRow = styled.div`
 export const StyledTooltipContainer = styled.div`
   position: absolute;
   top: 0;
-  right: -3%;
+  right: -2.5%;
 `;

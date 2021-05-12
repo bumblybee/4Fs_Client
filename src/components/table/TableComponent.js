@@ -49,6 +49,8 @@ export default function TableComponent({ children, ...props }) {
           backgroundColor: props.color,
           color: "#fff",
           borderRadius: props.descriptionheader ? "0" : "",
+          fontFamily: "Lato",
+          fontSize: "1.1rem",
         }}
         width={header.width && header.width}
       >
@@ -94,7 +96,7 @@ export default function TableComponent({ children, ...props }) {
         style={{
           minHeight: "45px",
           textAlign: props.aligntext,
-          background: props.example && idx === 0 && "#daddde88",
+          background: props.example && idx === 0 && "#daddde99",
         }}
       >
         {renderCells(row)}

@@ -26,7 +26,7 @@ const SleepTableHeader = ({ data, columns }) => {
           <Icon name="download" />
         </CsvDownloader>
       </div>
-      <div style={{ margin: "auto" }}>
+      <div style={{ margin: "auto", fontStyle: "italic" }}>
         Pro Tip: Set a timer on your phone for your ideal bedtime and wake up
         time.
       </div>

@@ -64,6 +64,7 @@ const Skills = () => {
             "ex. can go without food for 16 hours, can bike for 1 hour, can do a handstand",
           alignment: "flex-start",
           width: "90%",
+          textweight: 600,
         }),
       },
     };

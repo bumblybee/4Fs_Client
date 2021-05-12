@@ -65,6 +65,7 @@ const Moments = () => {
             "ex. got a complement on the beach, won a beauty pageant, ran a mile, etc.",
           alignment: "flex-start",
           width: "90%",
+          textweight: 600,
         }),
       },
     };

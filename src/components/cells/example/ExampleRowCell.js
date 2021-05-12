@@ -25,7 +25,7 @@ const ExampleRowCell = ({
           <Popup
             position="top center"
             content={tooltipContent}
-            trigger={<Icon name="question circle outline" />}
+            trigger={<Icon name="question circle outline" color="grey" />}
           />
         </StyledTooltipContainer>
       )}

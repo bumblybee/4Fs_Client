@@ -1,11 +1,11 @@
 import React from "react";
 
-const MilestonesTableHeader = ({ component }) => {
+const SystemTableHeader = ({ component }) => {
   return (
     <div style={{ marginBottom: "0.5rem" }}>
       <div
         style={{
-          width: "85%",
+          width: "80%",
           margin: "0 auto 1rem",
         }}
       >
@@ -18,4 +18,4 @@ const MilestonesTableHeader = ({ component }) => {
   );
 };
 
-export default MilestonesTableHeader;
+export default SystemTableHeader;
