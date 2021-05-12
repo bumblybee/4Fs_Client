@@ -9,7 +9,7 @@ const DatePickerCell = (props) => {
 
   const handleChange = (e) => {
     setDate(e.target.value);
-    makeData(e);
+    // makeData(e);
   };
 
   const makeData = (e) => {
@@ -30,6 +30,7 @@ const DatePickerCell = (props) => {
       <StyledDatePickerCell
         value={date || ""}
         onChange={handleChange}
+        onBlur={makeData}
         type="date"
         date={date}
         width={props.width}

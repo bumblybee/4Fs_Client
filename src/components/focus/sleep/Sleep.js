@@ -214,7 +214,7 @@ const Sleep = () => {
     const exampleRow = {
       date: {
         cellComponent: generateCellComponent("example", {
-          val: "05/25/2021",
+          val: "04/25/2021",
           alignment: "center",
           justify: "flex-start",
           color: "#33333399",
