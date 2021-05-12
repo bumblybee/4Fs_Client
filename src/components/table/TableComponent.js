@@ -44,6 +44,7 @@ export default function TableComponent({ children, ...props }) {
     return columns.map((header, idx) => (
       <TableComponent.TH
         key={idx}
+        textAlign={header.aligntext}
         style={{
           backgroundColor: props.color,
           color: "#fff",
@@ -93,7 +94,7 @@ export default function TableComponent({ children, ...props }) {
         style={{
           minHeight: "45px",
           textAlign: props.aligntext,
-          background: props.example && idx === 0 && "#daddde77",
+          background: props.example && idx === 0 && "#daddde88",
         }}
       >
         {renderCells(row)}

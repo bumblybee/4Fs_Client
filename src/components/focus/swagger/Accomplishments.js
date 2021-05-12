@@ -63,6 +63,8 @@ const Accomplishments = () => {
           val: "Make a list of accomplishments that relate to weight loss",
           tooltipContent:
             "ex. fit into your old jeans, lost 10 lbs, can eat a meal of only veggies",
+          alignment: "flex-start",
+          width: "90%",
         }),
       },
     };

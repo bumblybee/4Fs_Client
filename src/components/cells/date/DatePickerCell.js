@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { StyledDatePickerCell } from "./StyledDatePickerCell";
+import {
+  StyledDatePickerCellWrapper,
+  StyledDatePickerCell,
+} from "./StyledDatePickerCell";
 
 const DatePickerCell = (props) => {
   const [date, setDate] = useState(null);
@@ -23,7 +26,7 @@ const DatePickerCell = (props) => {
   }, [props.val]);
 
   return (
-    <div>
+    <StyledDatePickerCellWrapper>
       <StyledDatePickerCell
         value={date || ""}
         onChange={handleChange}
@@ -32,7 +35,7 @@ const DatePickerCell = (props) => {
         width={props.width}
         alignment={props.alignment}
       />
-    </div>
+    </StyledDatePickerCellWrapper>
   );
 };
 

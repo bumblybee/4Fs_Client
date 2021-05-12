@@ -40,6 +40,8 @@ const generateCellComponent = (type, props) => {
         <ExampleRowCell
           val={props.val}
           alignment={props.alignment}
+          justify={props.justify}
+          width={props.width}
           textWeight={props.textweight}
           tooltipContent={props.tooltipContent}
         />
@@ -87,6 +89,7 @@ const generateCellComponent = (type, props) => {
           accessor={props.accessor}
           width={props.width}
           alignment={props.alignment}
+          justify={props.justify}
         />
       );
     case "time":

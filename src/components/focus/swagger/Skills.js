@@ -62,6 +62,8 @@ const Skills = () => {
           val: "Make a list of skills that relate to weight loss",
           tooltipContent:
             "ex. can go without food for 16 hours, can bike for 1 hour, can do a handstand",
+          alignment: "flex-start",
+          width: "90%",
         }),
       },
     };

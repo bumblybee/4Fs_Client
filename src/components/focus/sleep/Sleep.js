@@ -44,21 +44,25 @@ const Sleep = () => {
       label: "Went to Bed",
       key: "toBed",
       width: 3,
+      aligntext: "center",
     },
     {
       label: "Woke up",
       key: "woke",
       width: 3,
+      aligntext: "center",
     },
     {
       label: "Hours Slept",
       key: "hoursSlept",
       width: 3,
+      aligntext: "center",
     },
     {
       label: "Comments",
       key: "comments",
       width: 5,
+      aligntext: "center",
     },
     {
       label: "",
@@ -105,7 +109,7 @@ const Sleep = () => {
             val: item.date,
             accessor: "date",
             placeholder: "mm/dd/yyyy",
-            alignment: "left",
+            alignment: "flex-start",
             textWeight: "600",
           }),
         },
@@ -212,32 +216,33 @@ const Sleep = () => {
       date: {
         cellComponent: generateCellComponent("example", {
           val: "05/25/2021",
-          alignment: "left",
+          alignment: "center",
+          justify: "flex-start",
         }),
       },
       toBed: {
         cellComponent: generateCellComponent("example", {
           val: "10:00 PM",
-          alignment: "left",
+          alignment: "center",
         }),
       },
       woke: {
         cellComponent: generateCellComponent("example", {
           val: "07:00 AM",
-          alignment: "left",
+          alignment: "center",
         }),
       },
       hoursSlept: {
         cellComponent: generateCellComponent("example", {
           val: "09:00",
-          alignment: "flex-start",
+          alignment: "center",
         }),
       },
       comments: {
         cellComponent: generateCellComponent("example", {
           val:
             "Woke up once to go to washroom. Sleep felt great. Woke up feeling very refreshed.",
-          alignment: "flex-start",
+          alignment: "center",
           textweight: "400",
         }),
       },

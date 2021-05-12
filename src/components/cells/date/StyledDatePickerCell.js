@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const StyledDatePickerCellWrapper = styled.div`
+  /* display: flex;
+  justify-content: center; */
+  width: 100%;
+`;
+
 export const StyledDatePickerCell = styled.input`
   width: ${(props) => props.width};
   padding: 1rem 0;
