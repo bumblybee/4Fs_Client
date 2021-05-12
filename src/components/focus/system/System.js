@@ -27,42 +27,52 @@ const System = () => {
     {
       label: "Goal",
       key: "goal",
+      width: 1,
     },
     {
       label: "Sun",
       key: "dayOne",
+      width: 1,
     },
     {
       label: "Mon",
       key: "dayTwo",
+      width: 1,
     },
     {
       label: "Tues",
       key: "dayThree",
+      width: 1,
     },
     {
       label: "Wed",
       key: "dayFour",
+      width: 1,
     },
     {
       label: "Thur",
       key: "dayFive",
+      width: 1,
     },
     {
       label: "Fri",
       key: "daySix",
+      width: 1,
     },
     {
       label: "Sat",
       key: "daySeven",
+      width: 1,
     },
     {
       label: "Performed",
       key: "performed",
+      width: 1,
     },
     {
-      label: "Delete",
+      label: "",
       key: "delete",
+      width: 1,
     },
   ];
 
@@ -170,7 +180,7 @@ const System = () => {
             fontWeight: "bold",
             fontSize: "1.15rem",
             width: "max-content",
-            margin: "0 auto",
+            margin: "auto 0 auto 35%",
           },
         }),
       },

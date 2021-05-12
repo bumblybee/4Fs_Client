@@ -201,9 +201,7 @@ const Sleep = () => {
         }),
       },
       delete: {
-        cellComponent: generateCellComponent("", {
-          alignment: "right",
-        }),
+        cellComponent: generateCellComponent("", {}),
       },
     };
     return emptyRow;
@@ -246,7 +244,6 @@ const Sleep = () => {
       delete: {
         cellComponent: generateCellComponent("example", {
           val: "",
-          alignment: "flex-start",
         }),
       },
     };
@@ -268,6 +265,7 @@ const Sleep = () => {
           aligntext="left"
           striped
           example
+          sticky
           descriptionheader={
             <SleepTableHeader columns={csvColumns} data={csvRows} />
           }

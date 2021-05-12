@@ -21,6 +21,7 @@ export const StyledDatePickerCell = styled.input`
     ::-webkit-calendar-picker-indicator {
       display: block;
       appearance: auto;
+      cursor: pointer;
     }
   }
 `;

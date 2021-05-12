@@ -3,38 +3,16 @@ import { Table } from "semantic-ui-react";
 
 export const StyledTable = styled(Table)`
   margin: 0 !important;
-  max-height: 480px !important;
-  display: block;
-  overflow-y: auto;
-  position: relative;
-
   tbody {
-    /* height: ${(props) =>
-      props.rowdata.length > 9 || props.fullheighttable ? "31rem" : "auto"}; */
-    /* height: inherit; */
-    overflow-y: scroll;
+    /* display: block; */
+    height: ${(props) =>
+      props.rowdata.length > 9 || props.fullheighttable ? "31rem" : "auto"};
+    overflow: auto;
   }
 
   td {
     height: ${(props) => (props.fullheighttd ? "31rem" : "")};
-
     position: relative;
-    width: inherit;
-  }
-
-  thead {
-    position: relative;
-  }
-
-  th {
-    position: sticky;
-    top: 9.85%;
-    z-index: 500;
-  }
-
-  .descriptionHeader {
-    position: sticky;
-    top: 0;
   }
 
   /* thead,
@@ -59,10 +37,6 @@ export const StyledTable = styled(Table)`
     :hover {
       cursor: pointer;
     }
-  }
-
-  input::-webkit-calendar-picker-indicator {
-    cursor: pointer;
   }
 
   /* Responsive table */

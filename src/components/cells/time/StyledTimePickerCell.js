@@ -20,6 +20,7 @@ export const StyledTimePickerCell = styled.input`
   :focus {
     ::-webkit-calendar-picker-indicator {
       filter: invert(0);
+      cursor: pointer;
     }
   }
 `;
