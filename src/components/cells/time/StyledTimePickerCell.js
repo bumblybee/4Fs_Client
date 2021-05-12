@@ -1,8 +1,15 @@
 import styled from "styled-components";
 
+export const StyledTimePickerCellWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 0 0 0.25rem;
+`;
+
 export const StyledTimePickerCell = styled.input`
-  width: ${(props) => props.width};
-  padding: 1rem 0;
+  /* width: ${(props) => props.width}; */
+  /* padding: 1rem 0; */
   height: 35px;
   border-radius: 6px;
   border: 2px solid #ffffff66;
@@ -11,6 +18,7 @@ export const StyledTimePickerCell = styled.input`
   font-weight: 600;
   color: ${(props) => (props.time ? "" : "#aaaaaaff")};
   cursor: text;
+  margin-left: 1.5rem;
 
   ::-webkit-calendar-picker-indicator {
     margin-left: 0px;

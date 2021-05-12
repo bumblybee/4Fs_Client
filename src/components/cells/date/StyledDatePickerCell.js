@@ -20,14 +20,12 @@ export const StyledDatePickerCell = styled.input`
 
   ::-webkit-calendar-picker-indicator {
     margin-left: 0px;
-    appearance: none;
-    display: none;
+    filter: invert(1);
   }
 
   :focus {
     ::-webkit-calendar-picker-indicator {
-      display: block;
-      appearance: auto;
+      filter: invert(0);
       cursor: pointer;
     }
   }

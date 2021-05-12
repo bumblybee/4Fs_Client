@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { StyledTimePickerCell } from "./StyledTimePickerCell";
+import {
+  StyledTimePickerCellWrapper,
+  StyledTimePickerCell,
+} from "./StyledTimePickerCell";
 
 const TimePickerCell = (props) => {
   const [time, setTime] = useState(null);
@@ -37,14 +40,7 @@ const TimePickerCell = (props) => {
   }, [props.val]);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        width: "max-content",
-        padding: "0 0 0 0.25rem",
-      }}
-    >
+    <StyledTimePickerCellWrapper>
       <StyledTimePickerCell
         value={time || ""}
         onChange={handleChange}
@@ -52,7 +48,7 @@ const TimePickerCell = (props) => {
         time={time}
         width={props.width}
       />
-    </div>
+    </StyledTimePickerCellWrapper>
   );
 };
 
