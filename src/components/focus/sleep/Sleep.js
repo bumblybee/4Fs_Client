@@ -264,6 +264,7 @@ const Sleep = () => {
           color="teal"
           aligntext="left"
           striped
+          celled
           example
           sticky
           descriptionheader={

@@ -118,6 +118,7 @@ export default function TableComponent({ children, ...props }) {
       example
       striped={props.striped}
       collapsing={props.collapsing}
+      celled={props.celled}
     >
       {props.descriptionheader && renderDescriptionHeader()}
 
