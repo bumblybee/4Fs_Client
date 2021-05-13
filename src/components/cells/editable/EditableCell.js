@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
+import { StyledEditableCell } from "./StyledEditableCell";
 
-import { Input, TextArea } from "semantic-ui-react";
+import { Input } from "semantic-ui-react";
 
 const EditableTableCell = ({ children, ...props }) => {
   const [editing, setEditing] = useState(false);
@@ -35,22 +36,8 @@ const EditableTableCell = ({ children, ...props }) => {
   const renderCell = () => {
     if (editing) {
       return (
-        <Input
+        <input
           ref={inputRef}
-          style={{
-            border: "none",
-            borderColor: "transparent",
-            outline: "none",
-            width: "100%",
-            height: "inherit",
-            textAlign: props.aligntext,
-            margin: "0 auto",
-            // resize: "none",
-
-            whiteSpace: "normal",
-
-            textAlignLast: "center",
-          }}
           value={editCellVal}
           placeholder={props.placeholder}
           onChange={(e) => setEditCellVal(e.target.value)}
@@ -74,28 +61,17 @@ const EditableTableCell = ({ children, ...props }) => {
   }, [props.val]);
 
   return (
-    <div
+    <StyledEditableCell
       {...props}
       onFocus={() => setEditing(true)}
       onClick={() => setEditing(true)}
       onBlur={() => setEditing(false)}
-      style={{
-        width: "95%",
-        paddingLeft: "0.5rem",
-        cursor: "pointer",
-        borderRadius: "4px",
-        minHeight: "40px",
-        overflow: "auto",
-        display: "flex",
-        justifyContent: props.alignment,
-        alignItems: "center",
-        fontWeight: props.textweight,
-        color: editCellVal ? "" : "#bbb",
-      }}
+      style={{}}
       tabIndex="0"
+      editCellVal={editCellVal}
     >
       {renderCell()}
-    </div>
+    </StyledEditableCell>
   );
 };
 

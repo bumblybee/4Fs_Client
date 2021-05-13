@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-
-import { Input, TextArea } from "semantic-ui-react";
+import { StyledEmptyCell, StyledWrapper } from "./StyledEmptyRowCell";
 
 const EmptyRowCell = ({ children, ...props }) => {
   const [editing, setEditing] = useState(false);
@@ -33,23 +32,8 @@ const EmptyRowCell = ({ children, ...props }) => {
   const renderCell = () => {
     if (editing) {
       return (
-        <Input
+        <input
           ref={inputRef}
-          style={{
-            border: "none",
-            borderColor: "transparent",
-            outline: "none",
-            width: "100%",
-            height: "inherit",
-            textAlign: props.aligntext,
-            margin: "0 auto",
-
-            // resize: "none",
-
-            whiteSpace: "normal",
-
-            // textAlignLast: "center",
-          }}
           value={blankCellVal || ""}
           onChange={(e) => setBlankCellVal(e.target.value)}
           onBlur={makeData}
@@ -75,33 +59,15 @@ const EmptyRowCell = ({ children, ...props }) => {
   }, [setBlankCellVal, blankCellVal]);
 
   return (
-    <div
+    <StyledEmptyCell
       {...props}
       onFocus={() => setEditing(true)}
       onClick={() => setEditing(true)}
       onBlur={() => setEditing(false)}
-      style={{
-        width: "95%",
-        // margin: "0 auto",
-        cursor: "pointer",
-        borderRadius: "0",
-        height: "40px",
-        color: blankCellVal ? "" : "#aaaaaacc",
-        paddingLeft: "0.5rem",
-        borderBottom:
-          blankCellVal || editing
-            ? "1px solid transparent"
-            : "1px solid #dddddd88",
-        // background: blankCellVal ? "" : "",
-        textAlign: props.aligntext,
-        display: "flex",
-        justifyContent: props.aligntext,
-        alignItems: "center",
-      }}
       tabIndex="0"
     >
       {renderCell()}
-    </div>
+    </StyledEmptyCell>
   );
 };
 

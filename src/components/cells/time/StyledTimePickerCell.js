@@ -9,13 +9,12 @@ export const StyledTimePickerCellWrapper = styled.div`
 
 export const StyledTimePickerCell = styled.input`
   width: ${(props) => props.width};
-  /* padding: 1rem 0; */
   height: 35px;
   border-radius: 6px;
   border: 2px solid #ffffff66;
   background: #ffffff11;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 500;
   color: ${(props) => (props.time ? "" : "#aaaaaaff")};
   cursor: pointer;
   margin-left: 1.5rem;

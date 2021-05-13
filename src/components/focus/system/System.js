@@ -76,6 +76,7 @@ const System = () => {
     },
   ];
 
+  // TODO: Pass className prop and move styling related props to styled components
   const rows = (additionalRow) => {
     const rowData = system.map((item) => ({
       practice: {
@@ -169,19 +170,12 @@ const System = () => {
         }),
       },
       performed: {
-        cellComponent: generateCellComponent("", {
+        cellComponent: generateCellComponent("static", {
           id: item.id,
           onSave: handleSave,
           val: item.performed,
-          accessor: "performed",
-          alignment: "center",
-          style: {
-            color: item.performed >= item.goal ? "#21ba45" : "",
-            fontWeight: "bold",
-            fontSize: "1.15rem",
-            width: "max-content",
-            margin: "auto 0 auto 35%",
-          },
+          condition: item.performed >= item.goal,
+          className: "system-performed",
         }),
       },
       delete: {

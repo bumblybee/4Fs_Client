@@ -14,6 +14,11 @@ export const StyledDatePickerCellWrapper = styled.div`
     margin-left: 0.5rem;
     width: 120px;
   }
+
+  .sleep-date-picker {
+    font-weight: 600;
+    width: 110px;
+  }
 `;
 
 export const StyledDatePickerCell = styled.input`

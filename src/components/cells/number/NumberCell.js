@@ -24,7 +24,7 @@ const NumberCell = (props) => {
   useEffect(() => {
     setInputVal(props.val);
   }, [props.val]);
-  console.log(inputVal);
+
   return (
     <div
       style={{
@@ -36,7 +36,7 @@ const NumberCell = (props) => {
     >
       <Input
         transparent
-        style={{ width: "40px", fontWeight: 600 }}
+        style={{ width: "35px" }}
         size="small"
         value={inputVal || 0}
         onChange={handleChange}

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledExampleRow = styled.div`
-  font-weight: ${(props) => (props.textWeight ? props.textWeight : "500")};
+  font-weight: ${(props) => props.textWeight || 400};
   font-style: italic;
   color: ${(props) => props.color || "#333"};
   width: 100%;

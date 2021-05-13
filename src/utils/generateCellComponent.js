@@ -8,6 +8,7 @@ import TimePickerCell from "../components/cells/time/TimePickerCell";
 import NumberCell from "../components/cells/number/NumberCell";
 import ButtonCell from "../components/cells/button/ButtonCell";
 import DeleteCell from "../components/cells/delete/DeleteCell";
+import StaticCell from "../components/cells/static/StaticCell";
 
 const generateCellComponent = (type, props) => {
   switch (type) {
@@ -102,6 +103,7 @@ const generateCellComponent = (type, props) => {
           onSave={props.onSave}
           val={props.val}
           label={props.label}
+          className={props.className}
           accessor={props.accessor}
           width={props.width}
         />
@@ -126,6 +128,14 @@ const generateCellComponent = (type, props) => {
           onDelete={props.onDelete}
           alignment={props.alignment}
           collapsing={props.collapsing}
+        />
+      );
+    case "static":
+      return (
+        <StaticCell
+          val={props.val}
+          condition={props.condition}
+          className={props.className}
         />
       );
     default:

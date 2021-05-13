@@ -110,9 +110,8 @@ const Sleep = () => {
             val: item.date,
             accessor: "date",
             placeholder: "mm/dd/yyyy",
+            className: "sleep-date-picker",
             alignment: "flex-start",
-            textWeight: "600",
-            width: "110px",
           }),
         },
         toBed: {
@@ -121,8 +120,8 @@ const Sleep = () => {
             onSave: handleSave,
             val: item.toBed,
             accessor: "toBed",
+            className: "sleep-bed-timepicker",
             alignment: "center",
-            width: "95px",
           }),
         },
         woke: {
@@ -131,18 +130,14 @@ const Sleep = () => {
             onSave: handleSave,
             val: item.woke,
             accessor: "woke",
-            width: "95px",
           }),
         },
         hoursSlept: {
-          cellComponent: generateCellComponent("", {
+          cellComponent: generateCellComponent("static", {
             id: item.id,
             val: calcHoursSlept(item),
             alignment: "center",
-            style: {
-              textAlign: "center",
-              fontWeight: "bold",
-            },
+            className: "sleep-hours-slept",
           }),
         },
         comments: {
@@ -174,7 +169,7 @@ const Sleep = () => {
           onSave: handleSave,
           accessor: "date",
           alignment: "left",
-          width: "110px",
+          className: "sleep-date-picker",
         }),
       },
       toBed: {
@@ -182,7 +177,6 @@ const Sleep = () => {
           onSave: handleSave,
           accessor: "toBed",
           alignment: "center",
-          width: "95px",
         }),
       },
       woke: {
@@ -190,7 +184,6 @@ const Sleep = () => {
           onSave: handleSave,
           accessor: "woke",
           alignment: "center",
-          width: "95px",
         }),
       },
       hoursSlept: {
@@ -214,7 +207,7 @@ const Sleep = () => {
     };
     return emptyRow;
   };
-
+  // TODO: Classname prop and remove styling related props
   const addExampleRow = () => {
     const exampleRow = {
       date: {
@@ -222,7 +215,6 @@ const Sleep = () => {
           val: "04/25/2021",
           alignment: "center",
           justify: "center",
-          color: "#33333399",
         }),
       },
       toBed: {
@@ -251,7 +243,6 @@ const Sleep = () => {
           val:
             "Woke up once to go to washroom. Sleep felt great. Woke up feeling very refreshed.",
           alignment: "center",
-          textweight: "400",
           color: "#33333399",
         }),
       },
