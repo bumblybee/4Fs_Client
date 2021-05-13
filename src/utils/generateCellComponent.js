@@ -84,10 +84,12 @@ const generateCellComponent = (type, props) => {
       return (
         <DatePickerCell
           id={props.id}
+          className={props.className}
           onSave={props.onSave}
           label={props.label}
           val={props.val}
           accessor={props.accessor}
+          label={props.label}
           width={props.width}
           alignment={props.alignment}
           justify={props.justify}

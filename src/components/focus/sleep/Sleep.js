@@ -38,30 +38,31 @@ const Sleep = () => {
     {
       label: "Date",
       key: "date",
-      width: 3,
+      width: 1,
+      aligntext: "center",
     },
     {
       label: "Went to Bed",
       key: "toBed",
-      width: 3,
+      width: 2,
       aligntext: "center",
     },
     {
       label: "Woke up",
       key: "woke",
-      width: 3,
+      width: 2,
       aligntext: "center",
     },
     {
       label: "Hours Slept",
       key: "hoursSlept",
-      width: 3,
+      width: 2,
       aligntext: "center",
     },
     {
       label: "Comments",
       key: "comments",
-      width: 5,
+      width: 4,
       aligntext: "center",
     },
     {
@@ -111,6 +112,7 @@ const Sleep = () => {
             placeholder: "mm/dd/yyyy",
             alignment: "flex-start",
             textWeight: "600",
+            width: "110px",
           }),
         },
         toBed: {
@@ -120,6 +122,7 @@ const Sleep = () => {
             val: item.toBed,
             accessor: "toBed",
             alignment: "center",
+            width: "95px",
           }),
         },
         woke: {
@@ -128,7 +131,7 @@ const Sleep = () => {
             onSave: handleSave,
             val: item.woke,
             accessor: "woke",
-            alignment: "center",
+            width: "95px",
           }),
         },
         hoursSlept: {
@@ -179,6 +182,7 @@ const Sleep = () => {
           onSave: handleSave,
           accessor: "toBed",
           alignment: "center",
+          width: "95px",
         }),
       },
       woke: {
@@ -186,6 +190,7 @@ const Sleep = () => {
           onSave: handleSave,
           accessor: "woke",
           alignment: "center",
+          width: "95px",
         }),
       },
       hoursSlept: {
@@ -216,7 +221,7 @@ const Sleep = () => {
         cellComponent: generateCellComponent("example", {
           val: "04/25/2021",
           alignment: "center",
-          justify: "flex-start",
+          justify: "center",
           color: "#33333399",
         }),
       },

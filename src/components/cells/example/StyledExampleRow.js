@@ -10,7 +10,7 @@ export const StyledExampleRow = styled.div`
   justify-content: ${(props) => props.justify || "center"};
   align-items: ${(props) => props.alignment || "center"};
   position: relative;
-  padding-left: 0.25rem;
+  text-align: "center";
 
   div:first-child {
     width: ${(props) => props.width || ""};

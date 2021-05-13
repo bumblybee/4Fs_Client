@@ -9,16 +9,18 @@ const DatePickerCell = (props) => {
 
   const handleChange = (e) => {
     setDate(e.target.value);
-    // makeData(e);
   };
 
+  // Todo: Remove startDate check once figured out
   const makeData = (e) => {
-    props.onSave(
-      {
-        [props.accessor]: e.target.value,
-      },
-      props.id
-    );
+    if (e.target.value !== "" && props.accessor !== "startDate") {
+      props.onSave(
+        {
+          [props.accessor]: e.target.value,
+        },
+        props.id
+      );
+    }
   };
 
   useEffect(() => {
@@ -27,7 +29,9 @@ const DatePickerCell = (props) => {
 
   return (
     <StyledDatePickerCellWrapper>
+      {props.label && <label>{props.label}</label>}
       <StyledDatePickerCell
+        className={props.className}
         value={date || ""}
         onChange={handleChange}
         onBlur={makeData}

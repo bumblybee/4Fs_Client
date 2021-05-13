@@ -8,7 +8,7 @@ export const StyledTimePickerCellWrapper = styled.div`
 `;
 
 export const StyledTimePickerCell = styled.input`
-  /* width: ${(props) => props.width}; */
+  width: ${(props) => props.width};
   /* padding: 1rem 0; */
   height: 35px;
   border-radius: 6px;
@@ -17,7 +17,7 @@ export const StyledTimePickerCell = styled.input`
   font-size: 0.95rem;
   font-weight: 600;
   color: ${(props) => (props.time ? "" : "#aaaaaaff")};
-  cursor: text;
+  cursor: pointer;
   margin-left: 1.5rem;
 
   ::-webkit-calendar-picker-indicator {
@@ -29,6 +29,13 @@ export const StyledTimePickerCell = styled.input`
     ::-webkit-calendar-picker-indicator {
       filter: invert(0);
       cursor: pointer;
+    }
+  }
+
+  :hover {
+    ::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      filter: invert(0);
     }
   }
 `;

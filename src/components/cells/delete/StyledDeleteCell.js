@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledDeleteCell = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   margin-left: auto;
   position: relative;

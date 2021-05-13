@@ -295,16 +295,15 @@ const System = () => {
           descriptionheader={
             <SystemTableHeader
               component={
-                <div>
-                  <label>Start Date:</label>
+                <>
                   {generateCellComponent("date", {
                     onSave: handleSave,
                     accessor: "startDate",
+                    className: "system-date-picker",
+                    label: "Choose Start Date:",
                     alignment: "center",
-                    placeholder: "Start date",
-                    width: "144px",
                   })}
-                </div>
+                </>
               }
             />
           }

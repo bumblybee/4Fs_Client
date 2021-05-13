@@ -1,9 +1,19 @@
 import styled from "styled-components";
 
 export const StyledDatePickerCellWrapper = styled.div`
-  /* display: flex;
-  justify-content: center; */
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  label {
+    font-family: "Lato";
+  }
+
+  .system-date-picker {
+    margin-left: 0.5rem;
+    width: 120px;
+  }
 `;
 
 export const StyledDatePickerCell = styled.input`
@@ -17,6 +27,7 @@ export const StyledDatePickerCell = styled.input`
   font-weight: ${(props) => (props.date ? "600" : "500")};
   color: ${(props) => (props.date ? "" : "#aaaaaa")};
   text-align: ${(props) => props.alignment};
+  margin-left: 1.5rem;
 
   ::-webkit-calendar-picker-indicator {
     margin-left: 0px;
@@ -27,6 +38,13 @@ export const StyledDatePickerCell = styled.input`
     ::-webkit-calendar-picker-indicator {
       filter: invert(0);
       cursor: pointer;
+    }
+  }
+
+  :hover {
+    ::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      filter: invert(0);
     }
   }
 `;

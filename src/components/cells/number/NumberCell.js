@@ -6,22 +6,19 @@ const NumberCell = (props) => {
   const [inputVal, setInputVal] = useState(0);
   const inputRef = useRef(null);
 
-  const makeData = () => {
-    if (inputRef.current != inputVal) {
-      let updateVal = inputVal;
+  const handleChange = (e) => {
+    setInputVal(e.target.value);
+    makeData(e.target.value);
+  };
 
-      if (inputVal === "") {
-        updateVal = null;
-      }
-
-      props.onSave(
-        {
-          [props.accessor]: updateVal,
-        },
-        props.id
-      );
-      inputRef.current = inputVal;
-    }
+  const makeData = (value) => {
+    props.onSave(
+      {
+        [props.accessor]: value,
+      },
+      props.id
+    );
+    inputRef.current = value;
   };
 
   useEffect(() => {
@@ -39,11 +36,10 @@ const NumberCell = (props) => {
     >
       <Input
         transparent
-        style={{ width: "40px" }}
+        style={{ width: "40px", fontWeight: 600 }}
         size="small"
         value={inputVal || 0}
-        onChange={(e) => setInputVal(e.target.value)}
-        onBlur={makeData}
+        onChange={handleChange}
         type="number"
       />
     </div>
