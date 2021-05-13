@@ -18,7 +18,7 @@ const Sleep = () => {
     deleteSleep
   );
 
-  const calcHoursSlept = (item) => {
+  const findHoursSlept = (item) => {
     let timeSlept = null;
 
     if (item.toBed && item.woke) {
@@ -96,7 +96,7 @@ const Sleep = () => {
   ];
 
   const csvRows = sleep.map((item) => {
-    item.hoursSlept = calcHoursSlept(item);
+    item.hoursSlept = findHoursSlept(item);
     return item;
   });
 
@@ -122,6 +122,7 @@ const Sleep = () => {
             accessor: "toBed",
             className: "sleep-bed-timepicker",
             alignment: "center",
+            sleepHours: findHoursSlept(item),
           }),
         },
         woke: {
@@ -130,12 +131,13 @@ const Sleep = () => {
             onSave: handleSave,
             val: item.woke,
             accessor: "woke",
+            sleepHours: findHoursSlept(item),
           }),
         },
         hoursSlept: {
           cellComponent: generateCellComponent("static", {
             id: item.id,
-            val: calcHoursSlept(item),
+            val: item.hoursSlept,
             alignment: "center",
             className: "sleep-hours-slept",
           }),
@@ -240,8 +242,7 @@ const Sleep = () => {
       },
       comments: {
         cellComponent: generateCellComponent("example", {
-          val:
-            "Woke up once to go to washroom. Sleep felt great. Woke up feeling very refreshed.",
+          val: "Woke up once to go to washroom. Sleep felt great. Woke up feeling very refreshed.",
           alignment: "center",
           color: "#33333399",
         }),

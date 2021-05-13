@@ -12,10 +12,12 @@ const TimePickerCell = (props) => {
     makeData(e);
   };
 
+  //TODO: Sort by date asc if hours slept value
   const makeData = (e) => {
     props.onSave(
       {
         [props.accessor]: e.target.value,
+        hoursSlept: props.sleepHours,
       },
       props.id
     );

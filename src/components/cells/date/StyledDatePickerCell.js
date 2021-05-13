@@ -16,7 +16,7 @@ export const StyledDatePickerCellWrapper = styled.div`
   }
 
   .sleep-date-picker {
-    font-weight: 600;
+    /* font-weight: 600; */
     width: 110px;
   }
 `;
@@ -29,7 +29,7 @@ export const StyledDatePickerCell = styled.input`
   border: 2px solid #ffffff66;
   background: #ffffff55;
   font-size: 0.95rem;
-  font-weight: ${(props) => (props.date ? "600" : "500")};
+  font-weight: ${(props) => (props.date ? "600" : "400")};
   color: ${(props) => (props.date ? "" : "#aaaaaa")};
   text-align: ${(props) => props.alignment};
   margin-left: 1.5rem;

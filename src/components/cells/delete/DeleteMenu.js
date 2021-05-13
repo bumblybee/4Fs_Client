@@ -5,7 +5,12 @@ import { StyledDeleteMenu } from "./StyledDeleteCell";
 const DeleteMenu = ({ toDelete, setToDelete, deleteData }) => {
   return (
     <StyledDeleteMenu>
-      <Button size="mini" basic onClick={() => setToDelete(!toDelete)}>
+      <Button
+        size="mini"
+        basic
+        color="teal"
+        onClick={() => setToDelete(!toDelete)}
+      >
         Cancel
       </Button>
       <Button

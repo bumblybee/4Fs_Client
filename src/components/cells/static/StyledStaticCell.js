@@ -12,5 +12,6 @@ export const StyledStaticCell = styled.div`
   .sleep-hours-slept {
     text-align: center;
     font-weight: bold;
+    color: #008089;
   }
 `;

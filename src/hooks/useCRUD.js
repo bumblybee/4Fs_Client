@@ -12,13 +12,13 @@ const useCRUD = (getter, setter, destroyer) => {
   const setData = async (data, id) => {
     const res = await setter(data, id);
     console.log(res);
-    await getData();
+    setState(res && res.data && res.data.length ? [...res.data] : []);
   };
 
   const destroyData = async (id) => {
     const res = await destroyer(id);
     console.log(res);
-    await getData();
+    setState(res && res.data && res.data.length ? [...res.data] : []);
   };
 
   useEffect(() => {

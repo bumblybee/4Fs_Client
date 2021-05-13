@@ -106,6 +106,7 @@ const generateCellComponent = (type, props) => {
           className={props.className}
           accessor={props.accessor}
           width={props.width}
+           sleepHours={props.sleepHours}
         />
       );
     case "button":
@@ -136,6 +137,7 @@ const generateCellComponent = (type, props) => {
           val={props.val}
           condition={props.condition}
           className={props.className}
+         
         />
       );
     default:
