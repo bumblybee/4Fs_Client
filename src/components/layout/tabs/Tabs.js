@@ -12,6 +12,7 @@ const Tabs = ({ path }) => {
     food: ["calories", "food list", "meal planner"],
     fitness: ["fitness activities", "fitness planner"],
     resources: ["resources"],
+    profile: [],
   };
 
   const renderTabs = (tabArr) => {
@@ -28,7 +29,7 @@ const Tabs = ({ path }) => {
     ));
   };
 
-  const defaultActiveTab = tabs[path][0];
+  const defaultActiveTab = tabs[path][0] && tabs[path][0];
 
   useEffect(() => {
     setActiveItem(defaultActiveTab);

@@ -4,6 +4,7 @@ import ProtectedRoute from "../protectedRoute/ProtectedRoute";
 import AppWrapper from "../layout/AppWrapper";
 import SignupForm from "../../pages/signup/SignupForm";
 import LoginForm from "../../pages/login/LoginForm";
+import UserProfile from "../../pages/user/UserProfile";
 import Resources from "../resources/Resources";
 import { Milestones, Beliefs, BodyCalculator } from "../home";
 import { System, SwaggerStockpile, Sleep } from "../focus";
@@ -81,7 +82,9 @@ const Routes = () => {
       <ProtectedRoute path="/resources">
         <AppWrapper component={<Resources />} />
       </ProtectedRoute>
-
+      <ProtectedRoute path="/profile" exact>
+        <AppWrapper component={<UserProfile />} />
+      </ProtectedRoute>
       <Route path="/login">
         <LoginForm />
       </Route>

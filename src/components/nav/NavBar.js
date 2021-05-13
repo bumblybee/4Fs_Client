@@ -36,22 +36,24 @@ const NavBar = () => {
       </div>
 
       <div style={{ marginLeft: "auto" }}>
-        <Button
-          as="a"
-          size="huge"
-          icon="user"
-          title="profile"
-          style={{
-            borderRadius: "50%",
-            padding: "14px 14px",
-            boxShadow: "0 0 10px 2px rgba(17,47,167,0.3)",
-            color: "#2f528b",
-            border: "2px solid #2f528b",
-            marginRight: "0",
-            background:
-              "linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%)",
-          }}
-        ></Button>
+        <Link to="/profile">
+          <Button
+            as="a"
+            size="huge"
+            icon="user"
+            title="profile"
+            style={{
+              borderRadius: "50%",
+              padding: "14px 14px",
+              boxShadow: "0 0 10px 2px rgba(17,47,167,0.3)",
+              color: "#2f528b",
+              border: "2px solid #2f528b",
+              marginRight: "0",
+              background:
+                "linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%)",
+            }}
+          ></Button>
+        </Link>
       </div>
     </div>
   );
