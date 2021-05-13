@@ -5,6 +5,7 @@ import {
   signupUser,
   loginUser,
   logoutUser,
+  updateUser,
 } from "../../api/user/userApi";
 import { UserContext } from "./UserContext";
 
@@ -21,6 +22,7 @@ const UserProvider = ({ children }) => {
       return user;
     }
   }, []);
+
   const signUserUp = async (userDetails) => {
     const userData = await signupUser(userDetails);
     userData && userData.data && setUser(userData.data);
@@ -37,6 +39,12 @@ const UserProvider = ({ children }) => {
   const checkIfEmailExists = async (email) => {
     const validation = await validateUserEmail(email);
     return validation;
+  };
+
+  const updateUserDetails = async (userDetails) => {
+    const userData = await updateUser(userDetails);
+    await getCurrentUser();
+    return userData;
   };
 
   const logUserOut = async () => {
@@ -57,6 +65,7 @@ const UserProvider = ({ children }) => {
         getCurrentUser,
         signUserUp,
         logUserIn,
+        updateUserDetails,
         checkIfEmailExists,
       }}
     >
