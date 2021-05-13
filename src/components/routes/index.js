@@ -22,26 +22,26 @@ const Routes = () => {
         <Redirect to="/home/milestones" />
       </ProtectedRoute>
       <ProtectedRoute path="/home/milestones">
-        <AppWrapper component={<Milestones />} />
+        <AppWrapper component={<Milestones />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/home/beliefs">
-        <AppWrapper component={<Beliefs />} />
+        <AppWrapper component={<Beliefs />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/home/body-calculator">
-        <AppWrapper component={<BodyCalculator />} />
+        <AppWrapper component={<BodyCalculator />} tabs />
       </ProtectedRoute>
 
       <ProtectedRoute path="/focus" exact>
         <Redirect to="/focus/system" />
       </ProtectedRoute>
       <ProtectedRoute path="/focus/system">
-        <AppWrapper component={<System />} />
+        <AppWrapper component={<System />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/focus/swagger">
-        <AppWrapper component={<SwaggerStockpile />} />
+        <AppWrapper component={<SwaggerStockpile />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/focus/sleep">
-        <AppWrapper component={<Sleep />} />
+        <AppWrapper component={<Sleep />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/focus/habits">
         <AppWrapper></AppWrapper>
@@ -54,30 +54,30 @@ const Routes = () => {
         <AppWrapper></AppWrapper>
       </ProtectedRoute>
       <ProtectedRoute path="/fasting/fasting-guide">
-        <AppWrapper component={<FastingGuide />} />
+        <AppWrapper component={<FastingGuide />} tabs />
       </ProtectedRoute>
 
       <ProtectedRoute path="/food" exact>
         <Redirect to="/food/calories" />
       </ProtectedRoute>
       <ProtectedRoute path="/food/calories">
-        <AppWrapper component={<CalorieRequirements />} />
+        <AppWrapper component={<CalorieRequirements />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/food/food-list">
-        <AppWrapper component={<FoodList />} />
+        <AppWrapper component={<FoodList />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/food/meal-planner">
-        <AppWrapper component={<MealPlanner />} />
+        <AppWrapper component={<MealPlanner />} tabs />
       </ProtectedRoute>
 
       <ProtectedRoute path="/fitness" exact>
         <Redirect to="/fitness/fitness-activities" />
       </ProtectedRoute>
       <ProtectedRoute path="/fitness/fitness-activities">
-        <AppWrapper component={<FitnessActivities />} />
+        <AppWrapper component={<FitnessActivities />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/fitness/fitness-planner">
-        <AppWrapper component={<FitnessPlanner />} />
+        <AppWrapper component={<FitnessPlanner />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/resources">
         <AppWrapper component={<Resources />} />

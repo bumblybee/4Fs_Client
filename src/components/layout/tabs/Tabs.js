@@ -12,7 +12,6 @@ const Tabs = ({ path }) => {
     food: ["calories", "food list", "meal planner"],
     fitness: ["fitness activities", "fitness planner"],
     resources: ["resources"],
-    profile: [],
   };
 
   const renderTabs = (tabArr) => {

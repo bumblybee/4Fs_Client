@@ -4,12 +4,12 @@ import FTabBar from "./fTabBar/FTabBar";
 import TabMenu from "./tabs/TabMenu";
 import SectionContainer from "./SectionContainer";
 
-const AppWrapper = ({ component }) => {
+const AppWrapper = ({ component, tabs }) => {
   return (
     <div>
       <NavBar />
       <FTabBar />
-      <TabMenu />
+      {tabs && <TabMenu />}
       <SectionContainer>{component}</SectionContainer>
     </div>
   );
