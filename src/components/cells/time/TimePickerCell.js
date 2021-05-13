@@ -21,7 +21,7 @@ const TimePickerCell = (props) => {
       },
       props.id
     );
-    setTime(null);
+    // setTime(null);
   };
 
   const convertTime = () => {
