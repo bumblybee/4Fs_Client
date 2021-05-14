@@ -6,6 +6,8 @@ import {
   StyledProfileHeader,
   StyledPhoneWrapper,
   StyledLinkWrapper,
+  StyledFormContainer,
+  StyledSegment,
 } from "./StyledUserProfile";
 import * as sc from "../../styles/GlobalStyledComponents";
 
@@ -68,17 +70,9 @@ const UserProfile = () => {
   }, [user]);
 
   return (
-    <sc.StyledFormWrapper
-      verticalAlign="middle"
-      centered
-      style={{ marginTop: "-7.5%" }}
-    >
-      <Segment style={{ maxWidth: "70%" }} className="column" raised>
-        <Segment
-          basic
-          padded
-          style={{ width: "60%", maxWidth: "100%", margin: "0 auto" }}
-        >
+    <sc.StyledFormWrapper verticalAlign="middle" centered origin="profile">
+      <StyledSegment className="column" raised>
+        <StyledFormContainer basic padded>
           <StyledProfileHeader>Member Profile</StyledProfileHeader>
           <sc.StyledForm
             countryCode={userDetails.countryCode}
@@ -231,8 +225,8 @@ const UserProfile = () => {
           <StyledLinkWrapper>
             <Link to="/password-reset">Reset your password</Link>
           </StyledLinkWrapper>
-        </Segment>
-      </Segment>
+        </StyledFormContainer>
+      </StyledSegment>
     </sc.StyledFormWrapper>
   );
 };

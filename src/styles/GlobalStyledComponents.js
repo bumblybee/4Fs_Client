@@ -3,6 +3,12 @@ import { Grid, Segment, Header, Form, Message } from "semantic-ui-react";
 
 export const StyledFormWrapper = styled(Grid)`
   height: 100vh;
+
+  margin-top: ${(props) => props.origin === "profile" && "-7.5%"};
+
+  @media (max-width: 620px) {
+    margin-top: ${(props) => props.origin === "profile" && "1%"} !important;
+  }
 `;
 
 export const StyledSegment = styled(Segment)`

@@ -1,5 +1,26 @@
 import styled from "styled-components";
-import { Form } from "semantic-ui-react";
+import { Segment } from "semantic-ui-react";
+
+export const StyledFormContainer = styled.div`
+  width: 60%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+
+  @media (max-width: 620px) {
+    width: 85%;
+    /* padding: 0.5rem; */
+  }
+`;
+
+export const StyledSegment = styled(Segment)`
+  width: 70% !important;
+
+  @media (max-width: 620px) {
+    width: 95% !important;
+    height: 94%;
+  }
+`;
 
 export const StyledProfileHeader = styled.h1`
   text-align: center;
