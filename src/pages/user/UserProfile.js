@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { Segment, Form, Button } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
 import {
-  StyledProfileForm,
   StyledProfileHeader,
   StyledPhoneWrapper,
   StyledLinkWrapper,
 } from "./StyledUserProfile";
+import * as sc from "../../styles/GlobalStyledComponents";
 
 const UserProfile = () => {
   const { user, updateUserDetails } = useContext(UserContext);
@@ -68,162 +68,172 @@ const UserProfile = () => {
   }, [user]);
 
   return (
-    <Segment style={{ maxWidth: "70%", margin: "5% auto" }} raised>
-      <Segment basic padded style={{ maxWidth: "60%", margin: "0 auto" }}>
-        <StyledProfileHeader>Member Profile</StyledProfileHeader>
-        <StyledProfileForm
-          countryCode={userDetails.countryCode}
-          onSubmit={handleSubmit}
+    <sc.StyledFormWrapper verticalAlign="middle" centered>
+      <Segment
+        style={{ maxWidth: "70%", margin: "5% auto" }}
+        className="column"
+        raised
+      >
+        <Segment
+          basic
+          padded
+          style={{ width: "60%", maxWidth: "100%", margin: "0 auto" }}
         >
-          <Form.Group widths="equal">
-            <Form.Input
-              fluid
-              icon="user"
-              iconPosition="left"
-              placeholder="First name"
-              label="First Name"
-              value={userDetails.firstName}
-              onChange={handleChange("firstName")}
-            />
-
-            <Form.Input
-              fluid
-              icon="user"
-              iconPosition="left"
-              placeholder="Last name"
-              label="Last Name"
-              value={userDetails.lastName}
-              onChange={handleChange("lastName")}
-            />
-          </Form.Group>
-          <Form.Input
-            fluid
-            icon="envelope"
-            iconPosition="left"
-            placeholder="example@example.com"
-            label="Email"
-            type="email"
-            value={userDetails.email}
-            onChange={handleChange("email")}
-          />
-          <StyledPhoneWrapper>
-            <div>
-              <label style={{ display: "block" }} htmlFor="">
-                Phone
-              </label>
+          <StyledProfileHeader>Member Profile</StyledProfileHeader>
+          <sc.StyledForm
+            countryCode={userDetails.countryCode}
+            onSubmit={handleSubmit}
+          >
+            <Form.Group widths="equal">
               <Form.Input
                 fluid
-                className="country-code phone"
-                placeholder="1"
-                icon="phone"
+                icon="user"
                 iconPosition="left"
-                type="text"
-                pattern="[0-9]{1}"
-                title="Enter the country code"
-                value={userDetails.countryCode || 1}
-                onChange={handleChange("countryCode")}
+                placeholder="First name"
+                label="First Name"
+                value={userDetails.firstName}
+                onChange={handleChange("firstName")}
               />
-            </div>
-            <input
-              className="phone"
-              placeholder="555"
-              label=""
-              type="text"
-              pattern="[0-9]{3}"
-              title="Enter the area code"
-              value={userDetails.phone1}
-              onChange={handleChange("phone1")}
-            />
-            <input
-              className="phone"
-              placeholder="555"
-              label=""
-              type="text"
-              pattern="[0-9]{3}"
-              title="Enter first three digits of phone number"
-              value={userDetails.phone2}
-              onChange={handleChange("phone2")}
-            />
-            <input
-              className="phone"
-              placeholder="5555"
-              label=" "
-              type="text"
-              title="Enter last four digits of phone number"
-              pattern="[0-9]{4}"
-              value={userDetails.phone3}
-              onChange={handleChange("phone3")}
-            />
-          </StyledPhoneWrapper>
-          <Form.Input
-            fluid
-            icon="google drive"
-            iconPosition="left"
-            placeholder="https://docs.google.com/spreadsheets/d/CveaIsVeKQ"
-            label="Google Sheets Link"
-            value={userDetails.sheetsURL}
-            onChange={handleChange("sheetsURL")}
-          />
-          <Form.Group widths="equal">
-            <Form.Input
-              fluid
-              icon="arrows alternate vertical"
-              iconPosition="left"
-              type="number"
-              label="Height"
-              placeholder="in"
-              min="40"
-              max="90"
-              value={userDetails.height}
-              onChange={handleChange("height")}
-            />
 
+              <Form.Input
+                fluid
+                icon="user"
+                iconPosition="left"
+                placeholder="Last name"
+                label="Last Name"
+                value={userDetails.lastName}
+                onChange={handleChange("lastName")}
+              />
+            </Form.Group>
             <Form.Input
               fluid
-              icon="weight"
+              icon="envelope"
               iconPosition="left"
-              type="number"
-              label="Weight"
-              placeholder="lb"
-              min="70"
-              value={userDetails.weight}
-              onChange={handleChange("weight")}
+              placeholder="example@example.com"
+              label="Email"
+              type="email"
+              value={userDetails.email}
+              onChange={handleChange("email")}
             />
-          </Form.Group>
-          <Form.Group widths="equal">
+            <StyledPhoneWrapper>
+              <div>
+                <label style={{ display: "block" }} htmlFor="">
+                  Phone
+                </label>
+                <Form.Input
+                  fluid
+                  className="country-code phone"
+                  placeholder="1"
+                  icon="phone"
+                  iconPosition="left"
+                  type="text"
+                  pattern="[0-9]{1}"
+                  title="Enter the country code"
+                  value={userDetails.countryCode || 1}
+                  onChange={handleChange("countryCode")}
+                />
+              </div>
+              <input
+                className="phone"
+                placeholder="555"
+                label=""
+                type="text"
+                pattern="[0-9]{3}"
+                title="Enter the area code"
+                value={userDetails.phone1}
+                onChange={handleChange("phone1")}
+              />
+              <input
+                className="phone"
+                placeholder="555"
+                label=""
+                type="text"
+                pattern="[0-9]{3}"
+                title="Enter first three digits of phone number"
+                value={userDetails.phone2}
+                onChange={handleChange("phone2")}
+              />
+              <input
+                className="phone"
+                placeholder="5555"
+                label=" "
+                type="text"
+                title="Enter last four digits of phone number"
+                pattern="[0-9]{4}"
+                value={userDetails.phone3}
+                onChange={handleChange("phone3")}
+              />
+            </StyledPhoneWrapper>
             <Form.Input
               fluid
-              icon="clock"
+              icon="google drive"
               iconPosition="left"
-              label="Age"
-              placeholder="yr"
-              min="15"
-              type="number"
-              value={userDetails.age}
-              onChange={handleChange("age")}
+              placeholder="https://docs.google.com/spreadsheets/d/CveaIsVeKQ"
+              label="Google Sheets Link"
+              value={userDetails.sheetsURL}
+              onChange={handleChange("sheetsURL")}
             />
-            <Form.Select
-              fluid
-              label="Gender"
-              placeholder="Gender"
-              options={[
-                { key: "m", text: "Male", value: "male" },
-                { key: "f", text: "Female", value: "female" },
-                { key: "o", text: "Other", value: "other" },
-              ]}
-              value={userDetails.gender}
-              onChange={handleChange("gender")}
-            />
-          </Form.Group>
-          <Button color="blue" fluid>
-            Update
-          </Button>
-        </StyledProfileForm>
-        <StyledLinkWrapper>
-          <Link to="/password-reset">Reset your password</Link>
-        </StyledLinkWrapper>
+            <Form.Group widths="equal">
+              <Form.Input
+                fluid
+                icon="arrows alternate vertical"
+                iconPosition="left"
+                type="number"
+                label="Height"
+                placeholder="in"
+                min="40"
+                max="90"
+                value={userDetails.height}
+                onChange={handleChange("height")}
+              />
+
+              <Form.Input
+                fluid
+                icon="weight"
+                iconPosition="left"
+                type="number"
+                label="Weight"
+                placeholder="lb"
+                min="70"
+                value={userDetails.weight}
+                onChange={handleChange("weight")}
+              />
+            </Form.Group>
+            <Form.Group widths="equal">
+              <Form.Input
+                fluid
+                icon="clock"
+                iconPosition="left"
+                label="Age"
+                placeholder="yr"
+                min="15"
+                type="number"
+                value={userDetails.age}
+                onChange={handleChange("age")}
+              />
+              <Form.Select
+                fluid
+                label="Gender"
+                placeholder="Gender"
+                options={[
+                  { key: "m", text: "Male", value: "male" },
+                  { key: "f", text: "Female", value: "female" },
+                  { key: "o", text: "Other", value: "other" },
+                ]}
+                value={userDetails.gender}
+                onChange={handleChange("gender")}
+              />
+            </Form.Group>
+            <Button color="blue" fluid>
+              Update
+            </Button>
+          </sc.StyledForm>
+          <StyledLinkWrapper>
+            <Link to="/password-reset">Reset your password</Link>
+          </StyledLinkWrapper>
+        </Segment>
       </Segment>
-    </Segment>
+    </sc.StyledFormWrapper>
   );
 };
 

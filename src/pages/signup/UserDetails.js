@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Segment } from "semantic-ui-react";
 import { StyledFooterMessage } from "../../styles/GlobalStyledComponents";
 
 const UserDetails = ({
@@ -16,10 +16,7 @@ const UserDetails = ({
   };
 
   return (
-    <div
-      className="ui segment basic"
-      style={{ boxShadow: "none", textAlign: "left" }}
-    >
+    <Segment basic style={{ textAlign: "left" }}>
       <Form.Group widths="equal">
         <Form.Input
           fluid
@@ -96,7 +93,7 @@ const UserDetails = ({
       <StyledFooterMessage>
         Have an account? <Link to="/login">Log in</Link>
       </StyledFooterMessage>
-    </div>
+    </Segment>
   );
 };
 

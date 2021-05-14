@@ -5,38 +5,6 @@ export const StyledProfileHeader = styled.h1`
   text-align: center;
 `;
 
-export const StyledProfileForm = styled(Form)`
-  padding: 1rem;
-
-  h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  input,
-  select,
-  div.dropdown {
-    background: #fcfdff !important;
-    border: 1px solid #dce9fe !important;
-  }
-
-  div.item:hover {
-    background: #dce9fe77 !important;
-  }
-
-  div.item.active {
-    background: #dce9fe !important;
-  }
-
-  input:not(:last-child) {
-    margin-bottom: 1rem;
-  }
-
-  label {
-    font-weight: 600;
-  }
-`;
-
 export const StyledPhoneWrapper = styled.div`
   display: flex !important;
   align-items: flex-end !important;
@@ -55,5 +23,5 @@ export const StyledPhoneWrapper = styled.div`
 
 export const StyledLinkWrapper = styled.div`
   text-align: center;
-  margin: 0 auto;
+  margin: 1rem auto 0;
 `;
