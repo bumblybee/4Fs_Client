@@ -1,6 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Segment, Form, Button } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
+import {
+  StyledProfileForm,
+  StyledProfileHeader,
+  StyledPhoneWrapper,
+} from "./StyledUserProfile";
 
 const UserProfile = () => {
   const { user, updateUserDetails } = useContext(UserContext);
@@ -11,6 +16,7 @@ const UserProfile = () => {
     firstName: "",
     lastName: "",
     email: "",
+    countryCode: "",
     phone1: "",
     phone2: "",
     phone3: "",
@@ -27,7 +33,15 @@ const UserProfile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await updateUserDetails(userDetails);
+
+    const phoneNumber = `${userDetails.phone1}-${userDetails.phone2}-${userDetails.phone1}`;
+
+    const data = (({ phone1, phone2, phone3, ...rest }) => rest)({
+      ...userDetails,
+      phoneNumber,
+    });
+
+    const res = await updateUserDetails(data);
     console.log(res);
   };
 
@@ -39,9 +53,10 @@ const UserProfile = () => {
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
-        phone1: splitPhoneNumber && splitPhoneNumber[0],
-        phone2: splitPhoneNumber && splitPhoneNumber[1],
-        phone3: splitPhoneNumber && splitPhoneNumber[2],
+        countryCode: splitPhoneNumber && splitPhoneNumber[0],
+        phone1: splitPhoneNumber && splitPhoneNumber[1],
+        phone2: splitPhoneNumber && splitPhoneNumber[2],
+        phone3: splitPhoneNumber && splitPhoneNumber[3],
         age: user.age,
         height: user.height,
         weight: user.weight,
@@ -52,11 +67,12 @@ const UserProfile = () => {
 
   return (
     <Segment style={{ maxWidth: "70%", margin: "5% auto" }} raised>
-      <Segment basic padded style={{ maxWidth: "65%", margin: "0 auto" }}>
-        <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>
-          Member Profile
-        </h1>
-        <Form style={{ padding: "1rem" }} onSubmit={handleSubmit}>
+      <Segment basic padded style={{ maxWidth: "60%", margin: "0 auto" }}>
+        <StyledProfileHeader>Member Profile</StyledProfileHeader>
+        <StyledProfileForm
+          countryCode={userDetails.countryCode}
+          onSubmit={handleSubmit}
+        >
           <Form.Group widths="equal">
             <Form.Input
               fluid
@@ -88,34 +104,55 @@ const UserProfile = () => {
             value={userDetails.email}
             onChange={handleChange("email")}
           />
-          <Form.Group inline widths="equal">
-            <Form.Input
-              fluid
-              icon="phone"
-              iconPosition="left"
-              placeholder="555"
-              label="Phone Number"
-              type="text"
-              value={userDetails.phone1}
-              onChange={handleChange("phone1")}
-            />{" "}
-            <Form.Input
-              fluid
+          <StyledPhoneWrapper>
+            <div>
+              <label style={{ display: "block" }} htmlFor="">
+                Phone
+              </label>
+              <Form.Input
+                fluid
+                className="country-code phone"
+                placeholder="1"
+                icon="phone"
+                iconPosition="left"
+                type="text"
+                pattern="[0-9]{1}"
+                title="Enter the country code"
+                value={userDetails.countryCode || 1}
+                onChange={handleChange("countryCode")}
+              />
+            </div>
+            <input
+              className="phone"
               placeholder="555"
               label=""
               type="text"
+              pattern="[0-9]{3}"
+              title="Enter the area code"
+              value={userDetails.phone1}
+              onChange={handleChange("phone1")}
+            />
+            <input
+              className="phone"
+              placeholder="555"
+              label=""
+              type="text"
+              pattern="[0-9]{3}"
+              title="Enter first three digits of phone number"
               value={userDetails.phone2}
               onChange={handleChange("phone2")}
-            />{" "}
-            <Form.Input
-              fluid
+            />
+            <input
+              className="phone"
               placeholder="5555"
               label=" "
               type="text"
+              title="Enter last four digits of phone number"
+              pattern="[0-9]{4}"
               value={userDetails.phone3}
               onChange={handleChange("phone3")}
             />
-          </Form.Group>
+          </StyledPhoneWrapper>
           <Form.Input
             fluid
             icon="google drive"
@@ -179,7 +216,7 @@ const UserProfile = () => {
           <Button color="blue" fluid>
             Update
           </Button>
-        </Form>
+        </StyledProfileForm>
       </Segment>
     </Segment>
   );
