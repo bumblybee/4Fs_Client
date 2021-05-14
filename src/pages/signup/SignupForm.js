@@ -10,7 +10,7 @@ import {
   StyledSegment,
   StyledFormHeader,
   StyledForm,
-} from "./StyledSignupForm";
+} from "../../styles/GlobalStyledComponents";
 
 const SignupForm = () => {
   const history = useHistory();
