@@ -16,7 +16,7 @@ const UserProfile = () => {
     firstName: "",
     lastName: "",
     email: "",
-    countryCode: "",
+    countryCode: "1",
     phone1: "",
     phone2: "",
     phone3: "",
@@ -34,34 +34,45 @@ const UserProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const phoneNumber = `${userDetails.phone1}-${userDetails.phone2}-${userDetails.phone1}`;
+    const phoneNumber = `${userDetails.countryCode}-${userDetails.phone1}-${userDetails.phone2}-${userDetails.phone1}`;
 
-    const data = (({ phone1, phone2, phone3, ...rest }) => rest)({
+    const data = (({ countryCode, phone1, phone2, phone3, ...rest }) => rest)({
       ...userDetails,
-      phoneNumber,
+      phone: phoneNumber,
     });
 
     const res = await updateUserDetails(data);
-    console.log(res);
+    console.log(data);
   };
+  const {
+    id,
+    firstName,
+    lastName,
+    email,
+    age,
+    height,
+    weight,
+    gender,
+    sheetsUrl,
+  } = user;
 
   useEffect(() => {
     user &&
       setUserDetails({
         ...userDetails,
-        id: user.id,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        countryCode: splitPhoneNumber && splitPhoneNumber[0],
+        id,
+        firstName,
+        lastName,
+        email,
+        countryCode: splitPhoneNumber ? splitPhoneNumber[0] : 1,
         phone1: splitPhoneNumber && splitPhoneNumber[1],
         phone2: splitPhoneNumber && splitPhoneNumber[2],
         phone3: splitPhoneNumber && splitPhoneNumber[3],
-        age: user.age,
-        height: user.height,
-        weight: user.weight,
-        gender: user.gender,
-        sheetsUrl: user.sheetsUrl,
+        age,
+        height,
+        weight,
+        gender,
+        sheetsUrl,
       });
   }, [user]);
 
