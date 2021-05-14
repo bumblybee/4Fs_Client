@@ -10,7 +10,7 @@ import {
 import * as sc from "../../styles/GlobalStyledComponents";
 
 const UserProfile = () => {
-  const { user, updateUserDetails } = useContext(UserContext);
+  const { user, getCurrentUser, updateUserDetails } = useContext(UserContext);
 
   const splitPhoneNumber = user && user.phone && user.phone.split("-");
   const [userDetails, setUserDetails] = useState({
@@ -68,12 +68,12 @@ const UserProfile = () => {
   }, [user]);
 
   return (
-    <sc.StyledFormWrapper verticalAlign="middle" centered>
-      <Segment
-        style={{ maxWidth: "70%", margin: "5% auto" }}
-        className="column"
-        raised
-      >
+    <sc.StyledFormWrapper
+      verticalAlign="middle"
+      centered
+      style={{ marginTop: "-7.5%" }}
+    >
+      <Segment style={{ maxWidth: "70%" }} className="column" raised>
         <Segment
           basic
           padded
