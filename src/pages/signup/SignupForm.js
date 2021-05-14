@@ -2,10 +2,15 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { ErrorContext } from "../../context/error/ErrorContext";
 import { UserContext } from "../../context/user/UserContext";
-
 import UserInfo from "./UserInfo";
 import UserDetails from "./UserDetails";
-import { Form } from "semantic-ui-react";
+import { Image } from "semantic-ui-react";
+import {
+  StyledFormWrapper,
+  StyledSegment,
+  StyledFormHeader,
+  StyledForm,
+} from "./StyledSignupForm";
 
 const SignupForm = () => {
   const history = useHistory();
@@ -75,7 +80,8 @@ const SignupForm = () => {
   };
 
   const validateEmailFormat = () => {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (re.test(userDetails.email.toLowerCase())) {
       return true;
@@ -178,36 +184,17 @@ const SignupForm = () => {
   };
 
   return (
-    <div
-      style={{ height: "100vh" }}
-      className="ui middle aligned center aligned grid"
-    >
-      <div
-        className="column ui segment raised"
-        style={{ maxWidth: "450px", position: "relative" }}
-      >
-        <h2
-          className="ui image header blue"
-          style={{ textShadow: "0 0 0px #eeeeee99" }}
-        >
-          <img
-            className="image"
-            src="/4flogo.png"
-            alt="4fs logo"
-            style={{
-              display: "block",
-              margin: "0 auto",
-              height: "60px",
-              width: "70px",
-            }}
-          />{" "}
+    <StyledFormWrapper verticalAlign="middle" centered>
+      <StyledSegment className="column" raised>
+        <StyledFormHeader as="h2" image>
+          <Image className="logo" src="/4flogo.png" alt="4fs logo" />
           Sign Up
-        </h2>
-        <Form onSubmit={handleSubmit} error={formErrors}>
+        </StyledFormHeader>
+        <StyledForm onSubmit={handleSubmit} error={formErrors}>
           {renderFormComponent()}
-        </Form>
-      </div>
-    </div>
+        </StyledForm>
+      </StyledSegment>
+    </StyledFormWrapper>
   );
 };
 
