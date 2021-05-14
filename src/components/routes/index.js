@@ -44,14 +44,14 @@ const Routes = () => {
         <AppWrapper component={<Sleep />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/focus/habits">
-        <AppWrapper></AppWrapper>
+        <AppWrapper tabs></AppWrapper>
       </ProtectedRoute>
 
       <ProtectedRoute path="/fasting" exact>
         <Redirect to="/fasting/fasting-window" />
       </ProtectedRoute>
       <ProtectedRoute path="/fasting/fasting-window">
-        <AppWrapper></AppWrapper>
+        <AppWrapper tabs></AppWrapper>
       </ProtectedRoute>
       <ProtectedRoute path="/fasting/fasting-guide">
         <AppWrapper component={<FastingGuide />} tabs />

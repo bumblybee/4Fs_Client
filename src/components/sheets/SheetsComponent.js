@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import TableComponent from "../table/TableComponent";
 import SectionHeader from "../layout/SectionHeader";
 import generateCellComponent from "../../utils/generateCellComponent";
@@ -9,7 +9,7 @@ const SheetsComponent = ({ title, subtitle, buttonText, colorScheme }) => {
   // TODO: Specify which sheet to direct user to
 
   const { user } = useContext(UserContext);
-  const url = user && user.sheetsURL ? user.sheetsURL : "";
+  const [url, setUrl] = useState("user && user.sheetsURL");
 
   const columns = [
     {
@@ -22,8 +22,8 @@ const SheetsComponent = ({ title, subtitle, buttonText, colorScheme }) => {
     const rowData = {
       sheetsURL: {
         cellComponent: generateCellComponent("button", {
-          to: url === "" ? "/profile" : url,
-          val: url === "" ? "Add Google Sheets Link in Profile" : buttonText,
+          to: url ? url : "/profile",
+          val: url ? buttonText : "Add Google Sheets Link in Profile",
           accessor: "sheetsURL",
           color: colorScheme,
           size: "huge",
@@ -35,6 +35,10 @@ const SheetsComponent = ({ title, subtitle, buttonText, colorScheme }) => {
 
     return [rowData];
   };
+
+  useEffect(() => {
+    user && user.sheetsURL && setUrl(user.sheetsURL);
+  }, [user]);
 
   return (
     <div>

@@ -12,7 +12,6 @@ const UserProfile = () => {
 
   const splitPhoneNumber = user && user.phone && user.phone.split("-");
   const [userDetails, setUserDetails] = useState({
-    id: null,
     firstName: "",
     lastName: "",
     email: "",
@@ -24,7 +23,7 @@ const UserProfile = () => {
     height: null,
     weight: null,
     gender: "",
-    sheetsUrl: "",
+    sheetsURL: "",
   });
 
   const handleChange = (field) => (e) => {
@@ -34,7 +33,7 @@ const UserProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const phoneNumber = `${userDetails.countryCode}-${userDetails.phone1}-${userDetails.phone2}-${userDetails.phone1}`;
+    const phoneNumber = `${userDetails.countryCode}-${userDetails.phone1}-${userDetails.phone2}-${userDetails.phone3}`;
 
     const data = (({ countryCode, phone1, phone2, phone3, ...rest }) => rest)({
       ...userDetails,
@@ -44,23 +43,13 @@ const UserProfile = () => {
     const res = await updateUserDetails(data);
     console.log(data);
   };
-  const {
-    id,
-    firstName,
-    lastName,
-    email,
-    age,
-    height,
-    weight,
-    gender,
-    sheetsUrl,
-  } = user;
+  const { firstName, lastName, email, age, height, weight, gender, sheetsURL } =
+    user;
 
   useEffect(() => {
     user &&
       setUserDetails({
         ...userDetails,
-        id,
         firstName,
         lastName,
         email,
@@ -72,7 +61,7 @@ const UserProfile = () => {
         height,
         weight,
         gender,
-        sheetsUrl,
+        sheetsURL,
       });
   }, [user]);
 
@@ -170,8 +159,8 @@ const UserProfile = () => {
             iconPosition="left"
             placeholder="https://docs.google.com/spreadsheets/d/CveaIsVeKQ"
             label="Google Sheets Link"
-            value={userDetails.sheetsUrl}
-            onChange={handleChange("sheetsUrl")}
+            value={userDetails.sheetsURL}
+            onChange={handleChange("sheetsURL")}
           />
           <Form.Group widths="equal">
             <Form.Input

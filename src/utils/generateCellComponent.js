@@ -106,7 +106,7 @@ const generateCellComponent = (type, props) => {
           className={props.className}
           accessor={props.accessor}
           width={props.width}
-           sleepHours={props.sleepHours}
+          sleepHours={props.sleepHours}
         />
       );
     case "button":
@@ -114,7 +114,7 @@ const generateCellComponent = (type, props) => {
         <ButtonCell
           size={props.size}
           as="a"
-          href={props.to}
+          to={props.to}
           accessor={props.accessor}
           color={props.color}
           isCentered={props.isCentered}
@@ -137,7 +137,6 @@ const generateCellComponent = (type, props) => {
           val={props.val}
           condition={props.condition}
           className={props.className}
-         
         />
       );
     default:
