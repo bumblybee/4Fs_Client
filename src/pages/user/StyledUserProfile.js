@@ -14,9 +14,18 @@ export const StyledProfileForm = styled(Form)`
   }
 
   input,
-  select {
+  select,
+  div.dropdown {
     background: #fcfdff !important;
     border: 1px solid #dce9fe !important;
+  }
+
+  div.item:hover {
+    background: #dce9fe77 !important;
+  }
+
+  div.item.active {
+    background: #dce9fe !important;
   }
 
   input:not(:last-child) {

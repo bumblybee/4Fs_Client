@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button, Icon } from "semantic-ui-react";
+import { StyledFooterMessage } from "./StyledSignupForm";
 
 const UserInfo = ({
   userDetails,
@@ -100,9 +101,9 @@ const UserInfo = ({
         Next
         <Icon name="right arrow" />
       </Button>
-      <div style={{ textAlign: "center" }} className="ui message align center">
+      <StyledFooterMessage>
         Have an account? <Link to="/login">Log in</Link>
-      </div>
+      </StyledFooterMessage>
     </div>
   );
 };

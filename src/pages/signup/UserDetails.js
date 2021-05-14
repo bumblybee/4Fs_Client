@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Form, Button } from "semantic-ui-react";
+import { StyledFooterMessage } from "./StyledSignupForm";
 
 const UserDetails = ({
   userDetails,
@@ -92,9 +93,9 @@ const UserDetails = ({
           Submit
         </Button>
       </div>
-      <div style={{ textAlign: "center" }} className="ui message align center">
+      <StyledFooterMessage>
         Have an account? <Link to="/login">Log in</Link>
-      </div>
+      </StyledFooterMessage>
     </div>
   );
 };

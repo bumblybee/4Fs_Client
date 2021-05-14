@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Grid, Segment, Header, Form } from "semantic-ui-react";
+import { Grid, Segment, Header, Form, Message } from "semantic-ui-react";
 
 export const StyledFormWrapper = styled(Grid)`
   height: 100vh;
@@ -30,8 +30,22 @@ export const StyledFormHeader = styled(Header)`
 
 export const StyledForm = styled(Form)`
   input,
-  select {
+  select,
+  div.dropdown {
     background: #fcfdff !important;
     border: 1px solid #dce9fe !important;
   }
+
+  div.item:hover {
+    background: #dce9fe77 !important;
+  }
+
+  div.item.active {
+    background: #dce9fe !important;
+  }
+`;
+
+export const StyledFooterMessage = styled(Message)`
+  text-align: center;
+  font-size: 1.1rem;
 `;
