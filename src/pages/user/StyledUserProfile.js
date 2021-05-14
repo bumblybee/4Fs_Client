@@ -43,3 +43,8 @@ export const StyledPhoneWrapper = styled.div`
     width: 65px;
   }
 `;
+
+export const StyledLinkWrapper = styled.div`
+  text-align: center;
+  margin: 0 auto;
+`;

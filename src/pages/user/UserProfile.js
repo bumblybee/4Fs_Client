@@ -1,10 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Segment, Form, Button } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
 import {
   StyledProfileForm,
   StyledProfileHeader,
   StyledPhoneWrapper,
+  StyledLinkWrapper,
 } from "./StyledUserProfile";
 
 const UserProfile = () => {
@@ -41,7 +43,7 @@ const UserProfile = () => {
     });
 
     const res = await updateUserDetails(data);
-    console.log(data);
+    console.log(res);
   };
   const { firstName, lastName, email, age, height, weight, gender, sheetsURL } =
     user;
@@ -217,6 +219,9 @@ const UserProfile = () => {
             Update
           </Button>
         </StyledProfileForm>
+        <StyledLinkWrapper>
+          <Link to="/password-reset">Reset your password</Link>
+        </StyledLinkWrapper>
       </Segment>
     </Segment>
   );
