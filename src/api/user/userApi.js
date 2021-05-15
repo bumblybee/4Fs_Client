@@ -29,3 +29,11 @@ export const logoutUser = async () => {
   const res = await post("/users/logout");
   return res;
 };
+
+export const triggerPasswordReset = async (email) => {
+  return await post(`/users/reset-password`, { email });
+};
+
+export const resetPassword = async (token, password) => {
+  return await post(`/users/reset-password/${token}`, { password });
+};

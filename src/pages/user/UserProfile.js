@@ -223,7 +223,7 @@ const UserProfile = () => {
             </Button>
           </sc.StyledForm>
           <StyledLinkWrapper>
-            <Link to="/password-reset">Reset your password</Link>
+            <Link to="/reset-password">Reset your password</Link>
           </StyledLinkWrapper>
         </StyledFormContainer>
       </StyledSegment>
