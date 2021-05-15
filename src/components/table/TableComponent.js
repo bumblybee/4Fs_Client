@@ -117,7 +117,7 @@ export default function TableComponent({ children, ...props }) {
       {...props}
       rowdata={rowData}
       color={props.color}
-      compact
+      compact={props.compact}
       unstackable
       example
       striped={props.striped}

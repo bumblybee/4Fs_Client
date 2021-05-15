@@ -80,6 +80,7 @@ const Skills = () => {
         color="olive"
         aligntext="center"
         example
+        compact
       />
     )
   );

@@ -81,10 +81,21 @@ const LoginForm = () => {
               Log in
             </Button>
             <div
-              style={{ textAlign: "center" }}
+              style={{
+                textAlign: "center",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
               className="ui message align center"
             >
-              New to the program? <Link to="/signup">Sign up</Link>
+              <div style={{ marginRight: "0.5rem" }}>
+                <Link to="/signup">Create account</Link>
+              </div>
+              |
+              <div style={{ marginLeft: "0.5rem" }}>
+                <Link to="/reset-password"> Reset password</Link>
+              </div>
             </div>
           </div>
         </Form>

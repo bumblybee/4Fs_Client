@@ -12,6 +12,7 @@ import { FastingGuide, FastingWindow } from "../../components/fasting";
 import { CalorieRequirements, FoodList, MealPlanner } from "../food";
 import { FitnessActivities, FitnessPlanner } from "../fitness";
 import PasswordResetRequest from "../../pages/password/PasswordResetRequest";
+import PasswordReset from "../../pages/password/PasswordReset";
 
 const Routes = () => {
   return (
@@ -86,9 +87,13 @@ const Routes = () => {
       <ProtectedRoute path="/profile" exact>
         <AppWrapper component={<UserProfile />} />
       </ProtectedRoute>
+      <Route path="/reset-password/:token" exact>
+        <PasswordReset />
+      </Route>
       <Route path="/reset-password" exact>
         <PasswordResetRequest />
       </Route>
+
       <Route path="/login">
         <LoginForm />
       </Route>

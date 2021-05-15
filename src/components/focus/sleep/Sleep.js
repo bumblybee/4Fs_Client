@@ -272,6 +272,7 @@ const Sleep = () => {
           celled
           example
           sticky
+          compact
           descriptionheader={
             <SleepTableHeader columns={csvColumns} data={csvRows} />
           }

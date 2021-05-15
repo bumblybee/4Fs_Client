@@ -81,6 +81,7 @@ const Accomplishments = () => {
         color="olive"
         aligntext="center"
         example
+        compact
       />
     )
   );

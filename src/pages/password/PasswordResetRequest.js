@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { triggerPasswordReset } from "../../api/user/userApi";
-import { Form, Button, Segment, Image, Header } from "semantic-ui-react";
+import PasswordRequestConfirmation from "./PasswordRequestConfirmation";
+import { Form, Button, Segment, Image } from "semantic-ui-react";
 import {
   StyledFormWrapper,
   StyledSegment,
@@ -24,7 +25,9 @@ const PasswordResetRequest = () => {
     }
   };
 
-  return (
+  return submitted ? (
+    <PasswordRequestConfirmation />
+  ) : (
     <StyledFormWrapper verticalAlign="middle" centered>
       <StyledSegment className="column" raised>
         <div
@@ -35,13 +38,13 @@ const PasswordResetRequest = () => {
             marginBottom: "2rem",
           }}
         >
-          <StyledFormHeader as="h2" image>
+          <StyledFormHeader as="h2" origin="password" image>
             <Image className="logo" src="/4flogo.png" alt="4fs logo" />
             Reset Password
           </StyledFormHeader>
-          <p style={{ textAlign: "center" }}>
+          <p style={{ textAlign: "center", width: "80%", margin: "0 auto" }}>
             A link to reset your password will be sent to the email address
-            provided.
+            provided
           </p>
         </div>
         <StyledForm onSubmit={handleSubmit}>

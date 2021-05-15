@@ -286,6 +286,7 @@ const System = () => {
           color="purple"
           aligntext="left"
           striped
+          compact
           descriptionheader={
             <SystemTableHeader
               component={

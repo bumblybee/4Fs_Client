@@ -59,8 +59,7 @@ const Moments = () => {
     const exampleRow = {
       moment: {
         cellComponent: generateCellComponent("example", {
-          val:
-            "Make a list of moments you're proud of that relate to weight loss",
+          val: "Make a list of moments you're proud of that relate to weight loss",
           tooltipContent:
             "ex. got a complement on the beach, won a beauty pageant, ran a mile, etc.",
           alignment: "flex-start",
@@ -81,6 +80,7 @@ const Moments = () => {
         color="olive"
         aligntext="center"
         example
+        compact
       />
     )
   );

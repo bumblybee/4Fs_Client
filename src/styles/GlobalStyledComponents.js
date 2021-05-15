@@ -25,6 +25,7 @@ export const StyledFormHeader = styled(Header)`
   text-align: center;
   text-shadow: 0 0 0px #eeeeee99;
   color: #2185d0;
+  margin-bottom: ${(props) => (props.origin === "password" ? 0 : "")};
 
   .logo {
     display: block;

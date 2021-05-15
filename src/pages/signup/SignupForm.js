@@ -190,6 +190,7 @@ const SignupForm = () => {
           <Image className="logo" src="/4flogo.png" alt="4fs logo" />
           Sign Up
         </StyledFormHeader>
+
         <StyledForm onSubmit={handleSubmit} error={formErrors}>
           {renderFormComponent()}
         </StyledForm>
