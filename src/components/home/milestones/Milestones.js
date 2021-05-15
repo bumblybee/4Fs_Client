@@ -12,7 +12,7 @@ const Milestones = () => {
   const [milestones, handleSave] = useCRUD(getMilestones, mutateMilestone);
 
   const columns = [
-    { label: "F", key: "f", width: 4 },
+    { label: "F", key: "f", width: 2 },
     {
       label: "Milestone",
       key: "milestone",
