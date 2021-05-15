@@ -3,7 +3,7 @@ import { StyledStaticCell } from "./StyledStaticCell";
 
 const StaticCell = (props) => {
   return (
-    <StyledStaticCell condition={props.condition}>
+    <StyledStaticCell condition={props.condition} {...props}>
       <div className={props.className}>{props.val}</div>
     </StyledStaticCell>
   );

@@ -12,6 +12,7 @@ export const StyledEditableCell = styled.div`
   align-items: center;
   font-weight: ${(props) => props.textweight};
   color: ${(props) => (props.editCellVal ? "" : "#bbb")};
+  text-align: ${(props) => props.aligntext};
 
   input {
     border: none;

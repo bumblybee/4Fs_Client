@@ -21,6 +21,7 @@ const generateCellComponent = (type, props) => {
           val={props.val}
           placeholder={props.placeholder}
           alignment={props.alignment}
+          aligntext={props.aligntext}
           textweight={props.textWeight}
           accessor={props.accessor}
         />
@@ -137,6 +138,9 @@ const generateCellComponent = (type, props) => {
           val={props.val}
           condition={props.condition}
           className={props.className}
+          aligntext={props.aligntext}
+          alignment={props.alignment}
+          textweight={props.textweight}
         />
       );
     default:

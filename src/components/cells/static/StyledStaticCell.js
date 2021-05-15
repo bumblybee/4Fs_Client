@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 export const StyledStaticCell = styled.div`
+  text-align: ${(props) => props.aligntext};
+  display: flex;
+  justify-content: ${(props) => props.alignment};
+  font-weight: ${(props) => props.textweight};
+
   .system-performed {
     color: ${(props) => props.condition && "#21ba45"};
     font-weight: bold;

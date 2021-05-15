@@ -37,12 +37,19 @@ const Milestones = () => {
   const rows = () => {
     const rowData = milestones.map((item) => ({
       f: {
-        cellComponent: generateCellComponent("", {
+        cellComponent: generateCellComponent("static", {
           val: item.f,
+          // aligntext: "left",
+          alignment: "center",
+          textweight: "600",
         }),
       },
       milestone: {
-        cellComponent: generateCellComponent("", { val: item.milestone }),
+        cellComponent: generateCellComponent("static", {
+          val: item.milestone,
+          // aligntext: "left",
+          alignment: "center",
+        }),
       },
       personalize: {
         cellComponent: generateCellComponent("editable", {
@@ -50,6 +57,8 @@ const Milestones = () => {
           onSave: handleSave,
           val: item.personalize,
           accessor: "personalize",
+          alignment: "center",
+          // aligntext: "left",
         }),
       },
       comments: {
@@ -58,7 +67,8 @@ const Milestones = () => {
           onSave: handleSave,
           val: item.comments,
           accessor: "comments",
-          // placeholder: "Add comments...",
+          alignment: "center",
+          // aligntext: "left",
         }),
       },
       status: {
@@ -89,7 +99,7 @@ const Milestones = () => {
           rows={rows()}
           columns={columns}
           color="orange"
-          aligntext="left"
+          aligntext="center"
           striped
         />
       </div>
