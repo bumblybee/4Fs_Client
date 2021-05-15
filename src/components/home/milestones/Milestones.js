@@ -12,6 +12,7 @@ const Milestones = () => {
   const [milestones, handleSave] = useCRUD(getMilestones, mutateMilestone);
 
   const columns = [
+    { label: "F", key: "f", width: 4 },
     {
       label: "Milestone",
       key: "milestone",
@@ -35,6 +36,11 @@ const Milestones = () => {
 
   const rows = () => {
     const rowData = milestones.map((item) => ({
+      f: {
+        cellComponent: generateCellComponent("", {
+          val: item.f,
+        }),
+      },
       milestone: {
         cellComponent: generateCellComponent("", { val: item.milestone }),
       },

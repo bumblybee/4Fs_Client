@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Segment, Form, Button } from "semantic-ui-react";
+import { Input, Form, Button } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
 import {
   StyledProfileHeader,
