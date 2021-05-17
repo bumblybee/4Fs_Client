@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import moment from "moment";
+import React from "react";
 import TableComponent from "../../table/TableComponent";
-import SectionHeader from "../../layout/SectionHeader";
-import SystemTableHeader from "../../focus/system/SystemTableHeader";
+import SystemTableHeader from "./SystemTableHeader";
 
 import useCRUD from "../../../hooks/useCRUD";
 import generateCellComponent from "../../../utils/generateCellComponent";

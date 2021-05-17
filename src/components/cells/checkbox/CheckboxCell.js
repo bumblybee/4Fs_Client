@@ -24,7 +24,7 @@ const CheckboxCell = (props) => {
   };
 
   useEffect(() => {
-    setIsChecked(isChecked || props.val);
+    setIsChecked(props.val);
   }, [props.val]);
 
   return (
@@ -33,7 +33,7 @@ const CheckboxCell = (props) => {
         <input
           ref={checkboxRef}
           checked={isChecked}
-          onClick={(e) => handleChange(e)}
+          onChange={(e) => handleChange(e)}
           type="checkbox"
           disabled={props.disabled}
         />
