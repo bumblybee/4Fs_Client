@@ -35,6 +35,7 @@ const generateCellComponent = (type, props) => {
           alignment={props.alignment}
           aligntext={props.aligntext}
           accessor={props.accessor}
+          disabled={props.disabled}
         />
       );
     case "example":
@@ -69,6 +70,7 @@ const generateCellComponent = (type, props) => {
           performed={props.performed}
           label={props.label}
           accessor={props.accessor}
+          disabled={props.disabled}
         />
       );
     case "number":
@@ -80,6 +82,7 @@ const generateCellComponent = (type, props) => {
           label={props.label}
           accessor={props.accessor}
           alignment={props.alignment}
+          disabled={props.disabled}
         />
       );
     case "date":

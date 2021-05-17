@@ -41,6 +41,7 @@ const NumberCell = (props) => {
         value={inputVal || 0}
         onChange={handleChange}
         type="number"
+        disabled={props.disabled}
       />
     </div>
   );

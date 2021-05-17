@@ -37,12 +37,17 @@ const EmptyRowCell = ({ children, ...props }) => {
           value={blankCellVal || ""}
           onChange={(e) => setBlankCellVal(e.target.value)}
           onBlur={makeData}
+          disabled={props.disabled}
         />
       );
     }
     return (
       <p onClick={() => setEditing(true)}>
-        {blankCellVal || props.placeholder}
+        {blankCellVal
+          ? blankCellVal
+          : props.disabled
+          ? "Choose start date to begin week"
+          : props.placeholder}
       </p>
     );
   };

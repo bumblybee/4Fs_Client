@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledEmptyCell = styled.div`
   width: 95%;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? "default" : "pointer")};
   border-radius: 0;
   min-height: 40px;
   color: ${(props) => (props.blankCellVal ? "" : "#aaaaaacc")};

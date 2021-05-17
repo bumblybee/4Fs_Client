@@ -9,7 +9,8 @@ export const StyledCheckboxWrapper = styled.div`
     -moz-appearance: none;
     -o-appearance: none;
     appearance: none;
-    border: 2px solid #800080;
+    border: ${(props) =>
+      props.disabled ? "2px solid #ddd" : "2px solid #800080"};
     margin-left: 0.25rem;
     height: 23px;
     width: 24px;

@@ -30,16 +30,16 @@ const System = () => {
   const getWeek = async () => {
     const week = await getCurrentWeek();
     console.log(week);
-    setCurrWeek({
-      startDate: moment(week.startDate).format("MM/DD/YYYY"),
-      endDate: moment(week.endDate).format("MM/DD/YYYY"),
-    });
+    // setCurrWeek({
+    //   startDate: moment(week.startDate).format("MM/DD/YYYY"),
+    //   endDate: moment(week.endDate).format("MM/DD/YYYY"),
+    // });
+    setCurrWeek({});
   };
 
   useEffect(() => {
     getWeek();
   }, []);
-  console.log(currWeek);
 
   const columns = [
     {
@@ -99,7 +99,6 @@ const System = () => {
     },
   ];
 
-  // TODO: Pass className prop and move styling related props to styled components
   const rows = (additionalRow) => {
     const rowData = system.map((item) => ({
       practice: {
@@ -221,6 +220,7 @@ const System = () => {
           accessor: "practice",
           alignment: "left",
           placeholder: "New practice...",
+          disabled: currWeek,
         }),
       },
       goal: {
@@ -228,6 +228,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "goal",
           alignment: "center",
+          disabled: currWeek,
         }),
       },
       dayOne: {
@@ -235,6 +236,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayOne",
           alignment: "center",
+          disabled: currWeek,
         }),
       },
       dayTwo: {
@@ -242,6 +244,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayTwo",
           alignment: "center",
+          disabled: currWeek,
         }),
       },
       dayThree: {
@@ -249,6 +252,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayThree",
           alignment: "center",
+          disabled: currWeek,
         }),
       },
       dayFour: {
@@ -256,6 +260,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayFour",
           alignment: "center",
+          disabled: currWeek,
         }),
       },
       dayFive: {
@@ -263,6 +268,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayFive",
           alignment: "center",
+          disabled: currWeek,
         }),
       },
       daySix: {
@@ -270,6 +276,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "daySix",
           alignment: "center",
+          disabled: currWeek,
         }),
       },
       daySeven: {
@@ -277,6 +284,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "daySeven",
           alignment: "center",
+          disabled: currWeek,
         }),
       },
       performed: {
