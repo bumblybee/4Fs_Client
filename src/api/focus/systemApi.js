@@ -5,6 +5,11 @@ export const getSystem = async () => {
   return system.data;
 };
 
+export const getCurrentSystem = async () => {
+  const currSystem = await get("/system/current");
+  return currSystem && currSystem.data ? currSystem.data : currSystem;
+};
+
 export const mutateSystem = async (data, id) => {
   const system = await post(`/system/${id}`, data);
   return system.data;
@@ -25,7 +30,7 @@ export const getCurrentWeek = async () => {
   return currWeek.data;
 };
 
-export const getCurrentSystem = async () => {
-  const currSystem = await get("/system/current");
-  return currSystem.data || currSystem;
+export const deleteCurrentWeek = async (id) => {
+  const deletedWeek = await destroy(`/system-week/${id}`);
+  return deletedWeek;
 };

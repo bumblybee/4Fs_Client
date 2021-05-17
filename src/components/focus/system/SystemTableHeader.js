@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 import {
@@ -7,16 +7,31 @@ import {
   StyledDatePicker,
 } from "./StyledSystem";
 
-const SystemTableHeader = ({ currWeek, handleStartCurrWeek }) => {
+const SystemTableHeader = ({
+  currWeek,
+  handleStartCurrWeek,
+  handleDeleteCurrWeek,
+}) => {
   const [date, setDate] = useState(null);
 
   const handleChange = (e) => {
     setDate(e.target.value);
   };
 
-  const handleStartWeek = () => {
-    const week = handleStartCurrWeek({ startDate: date });
+  const handleStartWeek = async () => {
+    const week = await handleStartCurrWeek({ startDate: date });
     console.log(week);
+  };
+
+  const handleDeleteWeek = async () => {
+    if (
+      window.confirm(
+        "Are you sure you want to reset the current week? All practices will also be reset."
+      )
+    ) {
+      await handleDeleteCurrWeek(currWeek.id);
+    }
+    setDate(null);
   };
 
   return (
@@ -43,10 +58,12 @@ const SystemTableHeader = ({ currWeek, handleStartCurrWeek }) => {
           <div>
             {moment(currWeek.startDate).format("MM/DD/YYYY")} -{" "}
             {moment(currWeek.endDate).format("MM/DD/YYYY")}
+            <StyledButton inverted onClick={handleDeleteWeek}>
+              Reset
+            </StyledButton>
           </div>
         ) : (
           <>
-            {/* <label>Start date:</label> */}
             <StyledDatePicker
               value={date || ""}
               onChange={handleChange}
