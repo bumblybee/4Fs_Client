@@ -9,6 +9,7 @@ import {
 import TableComponent from "../../table/TableComponent";
 import SectionHeader from "../../layout/SectionHeader";
 import SystemTableHeader from "../../focus/system/SystemTableHeader";
+import { Button } from "semantic-ui-react";
 
 // TODO: Break out two table components, one for progress and one for curr week - logic for separating current week from prev - don't display empty row until current start date set
 const System = () => {
@@ -292,10 +293,9 @@ const System = () => {
               component={
                 <>
                   {generateCellComponent("date", {
-                    onSave: handleSave,
                     accessor: "startDate",
                     className: "system-date-picker",
-                    label: "Choose Start Date:",
+                    label: "Start Date:",
                     alignment: "center",
                   })}
                 </>

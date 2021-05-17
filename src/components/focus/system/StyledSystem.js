@@ -1,7 +1,24 @@
 import styled from "styled-components";
+import { Button } from "semantic-ui-react";
 
-export const StyledDatePickerCellWrapper = styled.div`
-  width: 100%;
+export const StyledStartDateContainer = styled.div`
+  width: 26%;
+  margin: 0 auto;
+  display: flex;
+`;
+
+export const StyledButton = styled(Button)`
+  background: #ffffffee !important;
+  color: purple !important;
+
+  :hover {
+    background: #ffffff !important;
+  }
+`;
+
+export const StyledDatePickerWrapper = styled.input`
+  margin-left: 0.5rem;
+  width: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,24 +26,17 @@ export const StyledDatePickerCellWrapper = styled.div`
   label {
     font-family: "Lato";
   }
-
-  .sleep-date-picker {
-    /* font-weight: 600; */
-    width: 110px;
-  }
 `;
 
-export const StyledDatePickerCell = styled.input`
-  width: ${(props) => props.width};
+export const StyledDatePicker = styled.input`
   padding: 1rem 0;
   height: 35px;
   border-radius: 6px;
   border: 2px solid #ffffff66;
   background: #ffffff55;
   font-size: 0.95rem;
-  font-weight: ${(props) => (props.date ? "600" : "400")};
   color: ${(props) => (props.date ? "" : "#aaaaaa")};
-  text-align: ${(props) => props.alignment};
+  text-align: center;
   margin-left: 1.5rem;
 
   ::-webkit-calendar-picker-indicator {

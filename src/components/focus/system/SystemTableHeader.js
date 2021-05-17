@@ -1,4 +1,5 @@
 import React from "react";
+import { StyledStartDateContainer, StyledButton } from "./StyledSystem";
 
 const SystemTableHeader = ({ component }) => {
   return (
@@ -13,7 +14,10 @@ const SystemTableHeader = ({ component }) => {
         wish to complete it per week. Check off each day you perform the
         practice.
       </div>
-      {component}
+      <StyledStartDateContainer>
+        {component}
+        <StyledButton>Start</StyledButton>
+      </StyledStartDateContainer>
     </div>
   );
 };
