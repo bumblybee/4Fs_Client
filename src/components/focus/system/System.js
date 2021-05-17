@@ -30,11 +30,11 @@ const System = () => {
   const getWeek = async () => {
     const week = await getCurrentWeek();
     console.log(week);
-    // setCurrWeek({
-    //   startDate: moment(week.startDate).format("MM/DD/YYYY"),
-    //   endDate: moment(week.endDate).format("MM/DD/YYYY"),
-    // });
-    setCurrWeek({});
+    setCurrWeek({
+      startDate: moment(week.startDate).format("MM/DD/YYYY"),
+      endDate: moment(week.endDate).format("MM/DD/YYYY"),
+    });
+    // setCurrWeek({});
   };
 
   useEffect(() => {
@@ -220,7 +220,7 @@ const System = () => {
           accessor: "practice",
           alignment: "left",
           placeholder: "New practice...",
-          disabled: currWeek,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       goal: {
@@ -228,7 +228,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "goal",
           alignment: "center",
-          disabled: currWeek,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       dayOne: {
@@ -236,7 +236,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayOne",
           alignment: "center",
-          disabled: currWeek,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       dayTwo: {
@@ -244,7 +244,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayTwo",
           alignment: "center",
-          disabled: currWeek,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       dayThree: {
@@ -252,7 +252,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayThree",
           alignment: "center",
-          disabled: currWeek,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       dayFour: {
@@ -260,7 +260,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayFour",
           alignment: "center",
-          disabled: currWeek,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       dayFive: {
@@ -268,7 +268,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayFive",
           alignment: "center",
-          disabled: currWeek,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       daySix: {
@@ -276,7 +276,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "daySix",
           alignment: "center",
-          disabled: currWeek,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       daySeven: {
@@ -284,7 +284,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "daySeven",
           alignment: "center",
-          disabled: currWeek,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       performed: {

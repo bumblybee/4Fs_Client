@@ -48,7 +48,6 @@ const SystemTableHeader = ({ currWeek }) => {
             <StyledDatePicker
               value={date || ""}
               onChange={handleChange}
-              // onBlur={makeData}
               type="date"
               date={date}
             />
