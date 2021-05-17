@@ -29,10 +29,16 @@ const SystemTableHeader = ({ startDate, endDate, handleStartCurrWeek }) => {
           margin: "0 auto 1rem",
         }}
       >
-        {/* Dynamically render choose start date text, then input new pratice based on if in progress or not - Choose the date you'd like to start tracking practices.*/}
-        Input your new practice and define a goal for the amount of times you
-        wish to complete it per week. Check off each day you perform the
-        practice.
+        {/* Dynamically render choose start date text, then input new practice based on if in progress or not - */}
+        {startDate ? (
+          <p>
+            Input your new practice and define a goal for the amount of times
+            you wish to complete it per week. Check off each day you perform the
+            practice.
+          </p>
+        ) : (
+          <p>Choose the date you'd like to begin tracking practices. </p>
+        )}
       </div>
       <StyledStartDateContainer>
         {startDate ? (

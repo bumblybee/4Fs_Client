@@ -32,8 +32,10 @@ const System = () => {
   const [endDate, setEndDate] = useState(null);
 
   useEffect(() => {
-    setStartDate(moment(currWeek.startDate).format("MM/DD/YYYY"));
-    setEndDate(moment(currWeek.endDate).format("MM/DD/YYYY"));
+    if (currWeek) {
+      setStartDate(moment(currWeek.startDate).format("MM/DD/YYYY"));
+      setEndDate(moment(currWeek.endDate).format("MM/DD/YYYY"));
+    }
   }, [currWeek]);
 
   const columns = [
