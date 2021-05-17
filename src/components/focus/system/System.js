@@ -8,6 +8,7 @@ import {
   mutateSystem,
   deleteSystem,
   getCurrentWeek,
+  startWeek,
 } from "../../../api/focus/systemApi";
 
 import TableComponent from "../../table/TableComponent";
@@ -25,21 +26,15 @@ const System = () => {
     deleteSystem
   );
 
-  const [currWeek, setCurrWeek] = useState({});
+  const [currWeek, handleStartCurrWeek] = useCRUD(getCurrentWeek, startWeek);
 
-  const getWeek = async () => {
-    const week = await getCurrentWeek();
-    console.log(week);
-    setCurrWeek({
-      startDate: moment(week.startDate).format("MM/DD/YYYY"),
-      endDate: moment(week.endDate).format("MM/DD/YYYY"),
-    });
-    // setCurrWeek({});
-  };
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
 
   useEffect(() => {
-    getWeek();
-  }, []);
+    setStartDate(moment(currWeek.startDate).format("MM/DD/YYYY"));
+    setEndDate(moment(currWeek.endDate).format("MM/DD/YYYY"));
+  }, [currWeek]);
 
   const columns = [
     {
@@ -220,7 +215,7 @@ const System = () => {
           accessor: "practice",
           alignment: "left",
           placeholder: "New practice...",
-          disabled: currWeek.startDate ? false : true,
+          disabled: startDate ? false : true,
         }),
       },
       goal: {
@@ -228,7 +223,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "goal",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: startDate ? false : true,
         }),
       },
       dayOne: {
@@ -236,7 +231,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayOne",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: startDate ? false : true,
         }),
       },
       dayTwo: {
@@ -244,7 +239,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayTwo",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: startDate ? false : true,
         }),
       },
       dayThree: {
@@ -252,7 +247,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayThree",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: startDate ? false : true,
         }),
       },
       dayFour: {
@@ -260,7 +255,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayFour",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: startDate ? false : true,
         }),
       },
       dayFive: {
@@ -268,7 +263,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayFive",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: startDate ? false : true,
         }),
       },
       daySix: {
@@ -276,7 +271,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "daySix",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: startDate ? false : true,
         }),
       },
       daySeven: {
@@ -284,7 +279,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "daySeven",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: startDate ? false : true,
         }),
       },
       performed: {
@@ -319,7 +314,11 @@ const System = () => {
           striped
           compact
           descriptionheader={
-            <SystemTableHeader getWeek={getWeek} currWeek={currWeek} />
+            <SystemTableHeader
+              startDate={startDate}
+              endDate={endDate}
+              handleStartCurrWeek={handleStartCurrWeek}
+            />
           }
         />
       </div>

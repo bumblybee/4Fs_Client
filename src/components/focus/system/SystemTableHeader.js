@@ -1,28 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { startWeek } from "../../../api/focus/systemApi";
+
 import {
   StyledStartDateContainer,
   StyledButton,
   StyledDatePicker,
 } from "./StyledSystem";
 
-const SystemTableHeader = ({ currWeek }) => {
+const SystemTableHeader = ({ startDate, endDate, handleStartCurrWeek }) => {
   const [date, setDate] = useState(null);
 
   const handleChange = (e) => {
     setDate(e.target.value);
   };
 
-  const handleStartWeek = async () => {
-    const week = await startWeek({ startDate: date });
+  const handleStartWeek = () => {
+    const week = handleStartCurrWeek({ startDate: date });
     console.log(week);
   };
 
   // getWeek();
-
-  useEffect(() => {
-    // getWeek();
-  }, []);
 
   return (
     <div style={{ marginBottom: "0.5rem" }}>
@@ -38,9 +35,9 @@ const SystemTableHeader = ({ currWeek }) => {
         practice.
       </div>
       <StyledStartDateContainer>
-        {currWeek.startDate ? (
+        {startDate ? (
           <div>
-            {currWeek.startDate} - {currWeek.endDate}
+            {startDate} - {endDate}
           </div>
         ) : (
           <>
