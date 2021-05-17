@@ -38,7 +38,7 @@ const SystemTableHeader = ({ currWeek }) => {
         practice.
       </div>
       <StyledStartDateContainer>
-        {currWeek ? (
+        {currWeek.startDate ? (
           <div>
             {currWeek.startDate} - {currWeek.endDate}
           </div>
