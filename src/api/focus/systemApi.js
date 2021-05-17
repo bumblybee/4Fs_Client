@@ -15,6 +15,12 @@ export const deleteSystem = async (id) => {
   return deletedSystem;
 };
 
-export const findSystemWeek = async (data) => {
-  return await post("/system/week", data);
+export const startWeek = async (data) => {
+  const week = await post("/system-week", data);
+  return week;
+};
+
+export const getCurrentWeek = async () => {
+  const currWeek = await get("/system-week/current");
+  return currWeek.data;
 };

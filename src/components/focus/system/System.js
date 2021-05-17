@@ -1,23 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import moment from "moment";
+
 import useCRUD from "../../../hooks/useCRUD";
 import generateCellComponent from "../../../utils/generateCellComponent";
 import {
   getSystem,
   mutateSystem,
   deleteSystem,
+  getCurrentWeek,
 } from "../../../api/focus/systemApi";
+
 import TableComponent from "../../table/TableComponent";
 import SectionHeader from "../../layout/SectionHeader";
 import SystemTableHeader from "../../focus/system/SystemTableHeader";
-import { Button } from "semantic-ui-react";
 
 // TODO: Break out two table components, one for progress and one for curr week - logic for separating current week from prev - don't display empty row until current start date set
+
+// TODO: Format startDate and endDate so displays right in header
+
 const System = () => {
   const [system, handleSave, handleDelete] = useCRUD(
     getSystem,
     mutateSystem,
     deleteSystem
   );
+
+  const [currWeek, setCurrWeek] = useState({});
+
+  const getWeek = async () => {
+    const week = await getCurrentWeek();
+    console.log(week);
+    setCurrWeek({
+      startDate: moment(week.startDate).format("MM/DD/YYYY"),
+      endDate: moment(week.endDate).format("MM/DD/YYYY"),
+    });
+  };
+
+  useEffect(() => {
+    getWeek();
+  }, []);
+  console.log(currWeek);
 
   const columns = [
     {
@@ -288,7 +310,9 @@ const System = () => {
           aligntext="left"
           striped
           compact
-          descriptionheader={<SystemTableHeader />}
+          descriptionheader={
+            <SystemTableHeader getWeek={getWeek} currWeek={currWeek} />
+          }
         />
       </div>
     )

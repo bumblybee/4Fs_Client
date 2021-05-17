@@ -2,8 +2,6 @@ import styled from "styled-components";
 import { Button } from "semantic-ui-react";
 
 export const StyledStartDateContainer = styled.div`
-  /* width: 35%; */
-  /* margin: 0 auto; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,12 +9,6 @@ export const StyledStartDateContainer = styled.div`
   label {
     font-family: "Lato";
   }
-`;
-
-export const StyledDatePickerWrapper = styled.div`
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 `;
 
 export const StyledDatePicker = styled.input`
@@ -56,6 +48,7 @@ export const StyledButton = styled(Button)`
   margin-left: 0.5rem !important;
 
   :hover {
-    background: #ffffffde !important;
+    background: transparent !important;
+    color: #fff !important;
   }
 `;
