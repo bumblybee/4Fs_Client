@@ -288,20 +288,7 @@ const System = () => {
           aligntext="left"
           striped
           compact
-          descriptionheader={
-            <SystemTableHeader
-              component={
-                <>
-                  {generateCellComponent("date", {
-                    accessor: "startDate",
-                    className: "system-date-picker",
-                    label: "Start Date:",
-                    alignment: "center",
-                  })}
-                </>
-              }
-            />
-          }
+          descriptionheader={<SystemTableHeader />}
         />
       </div>
     )

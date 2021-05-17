@@ -2,23 +2,8 @@ import styled from "styled-components";
 import { Button } from "semantic-ui-react";
 
 export const StyledStartDateContainer = styled.div`
-  width: 26%;
-  margin: 0 auto;
-  display: flex;
-`;
-
-export const StyledButton = styled(Button)`
-  background: #ffffffee !important;
-  color: purple !important;
-
-  :hover {
-    background: #ffffff !important;
-  }
-`;
-
-export const StyledDatePickerWrapper = styled.input`
-  margin-left: 0.5rem;
-  width: 120px;
+  /* width: 35%; */
+  /* margin: 0 auto; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,6 +13,12 @@ export const StyledDatePickerWrapper = styled.input`
   }
 `;
 
+export const StyledDatePickerWrapper = styled.div`
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+`;
+
 export const StyledDatePicker = styled.input`
   padding: 1rem 0;
   height: 35px;
@@ -35,9 +26,9 @@ export const StyledDatePicker = styled.input`
   border: 2px solid #ffffff66;
   background: #ffffff55;
   font-size: 0.95rem;
-  color: ${(props) => (props.date ? "" : "#aaaaaa")};
+  color: #ffffffdd;
   text-align: center;
-  margin-left: 1.5rem;
+  margin-left: 0.5rem;
 
   ::-webkit-calendar-picker-indicator {
     margin-left: 0px;
@@ -56,5 +47,15 @@ export const StyledDatePicker = styled.input`
       cursor: pointer;
       filter: invert(0);
     }
+  }
+`;
+
+export const StyledButton = styled(Button)`
+  background: #ffffffef !important;
+  color: purple !important;
+  margin-left: 0.5rem !important;
+
+  :hover {
+    background: #ffffffde !important;
   }
 `;
