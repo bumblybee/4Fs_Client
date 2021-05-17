@@ -4,6 +4,7 @@ export const StyledCheckboxWrapper = styled.div`
   width: 23px;
   display: flex;
   justify-content: center;
+
   input {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -18,7 +19,7 @@ export const StyledCheckboxWrapper = styled.div`
     outline: none;
     transition-duration: 0.1s;
     background-color: #ffffff88;
-    cursor: pointer;
+    cursor: ${(props) => (props.disabled ? "default" : "pointer")};
     padding: 0 0 0 0.5rem;
     position: relative;
   }

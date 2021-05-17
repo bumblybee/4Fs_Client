@@ -32,6 +32,7 @@ const NumberCell = (props) => {
         display: "flex",
         justifyContent: props.alignment,
         alignItems: props.alignment,
+        cursor: props.disabled ? "default" : "pointer",
       }}
     >
       <Input
