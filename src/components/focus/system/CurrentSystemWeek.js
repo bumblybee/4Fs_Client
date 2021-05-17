@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import TableComponent from "../../table/TableComponent";
 import SystemTableHeader from "./SystemTableHeader";
 
@@ -28,6 +29,7 @@ const CurrentSystemWeek = () => {
 
   // Returning curr week object as array so fits current logic in useCRUD
   const currWeekObject = currWeek.length && currWeek[0];
+  const startDay = currWeekObject.startDate;
 
   const columns = [
     {
@@ -41,37 +43,37 @@ const CurrentSystemWeek = () => {
       width: 1,
     },
     {
-      label: "Sun",
+      label: moment(startDay).format("ddd"),
       key: "dayOne",
       width: 1,
     },
     {
-      label: "Mon",
+      label: moment(startDay).add(1, "days").format("ddd"),
       key: "dayTwo",
       width: 1,
     },
     {
-      label: "Tues",
+      label: moment(startDay).add(2, "days").format("ddd"),
       key: "dayThree",
       width: 1,
     },
     {
-      label: "Wed",
+      label: moment(startDay).add(3, "days").format("ddd"),
       key: "dayFour",
       width: 1,
     },
     {
-      label: "Thur",
+      label: moment(startDay).add(4, "days").format("ddd"),
       key: "dayFive",
       width: 1,
     },
     {
-      label: "Fri",
+      label: moment(startDay).add(5, "days").format("ddd"),
       key: "daySix",
       width: 1,
     },
     {
-      label: "Sat",
+      label: moment(startDay).add(6, "days").format("ddd"),
       key: "daySeven",
       width: 1,
     },
