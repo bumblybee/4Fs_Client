@@ -6,6 +6,13 @@ export const StyledStartDateContainer = styled.div`
   justify-content: center;
   align-items: center;
 
+  > div {
+    border: 2px solid #ffffffcc;
+    border-radius: 6px;
+    padding: 0.5rem;
+    color: #ffffffdd;
+  }
+
   label {
     font-family: "Lato";
   }

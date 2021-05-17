@@ -35,7 +35,7 @@ const SystemTableHeader = ({ currWeek, handleStartCurrWeek }) => {
             practice.
           </p>
         ) : (
-          <p>Choose the date you'd like to begin tracking practices. </p>
+          <p>Choose the date you'd like to begin tracking your practices. </p>
         )}
       </div>
       <StyledStartDateContainer>
@@ -46,7 +46,7 @@ const SystemTableHeader = ({ currWeek, handleStartCurrWeek }) => {
           </div>
         ) : (
           <>
-            <label>Start date:</label>
+            {/* <label>Start date:</label> */}
             <StyledDatePicker
               value={date || ""}
               onChange={handleChange}

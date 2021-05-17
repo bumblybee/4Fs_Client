@@ -4,7 +4,7 @@ import moment from "moment";
 import useCRUD from "../../../hooks/useCRUD";
 import generateCellComponent from "../../../utils/generateCellComponent";
 import {
-  getSystem,
+  getCurrentSystem,
   mutateSystem,
   deleteSystem,
   getCurrentWeek,
@@ -20,8 +20,8 @@ import SystemTableHeader from "../../focus/system/SystemTableHeader";
 // TODO: Format startDate and endDate so displays right in header
 
 const System = () => {
-  const [system, handleSave, handleDelete] = useCRUD(
-    getSystem,
+  const [currSystem, handleSave, handleDelete] = useCRUD(
+    getCurrentSystem,
     mutateSystem,
     deleteSystem
   );
@@ -85,15 +85,16 @@ const System = () => {
       width: 1,
     },
   ];
-
+  console.log(currWeek);
   const rows = (additionalRow) => {
-    const rowData = system.map((item) => ({
+    const rowData = currSystem.map((item) => ({
       practice: {
         cellComponent: generateCellComponent("editable", {
           id: item.id,
           onSave: handleSave,
           val: item.practice,
           accessor: "practice",
+          systemWeekId: currWeek.id,
           alignment: "left",
           textWeight: "600",
           placeholder: "New practice...",
@@ -205,10 +206,11 @@ const System = () => {
         cellComponent: generateCellComponent("empty", {
           onSave: handleSave,
           accessor: "practice",
+          systemWeekId: currWeek.id,
           alignment: "left",
           placeholder: currWeek.startDate
             ? "New practice..."
-            : "Choose a start date to begin...",
+            : "Choose a start date to begin week...",
           disabled: currWeek.startDate ? false : true,
         }),
       },

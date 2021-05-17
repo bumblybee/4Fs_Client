@@ -24,3 +24,8 @@ export const getCurrentWeek = async () => {
   const currWeek = await get("/system-week/current");
   return currWeek.data;
 };
+
+export const getCurrentSystem = async () => {
+  const currSystem = await get("/system/current");
+  return currSystem.data || currSystem;
+};
