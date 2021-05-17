@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { startWeek } from "../../../api/focus/systemApi";
+import moment from "moment";
 
 import {
   StyledStartDateContainer,
@@ -7,7 +7,7 @@ import {
   StyledDatePicker,
 } from "./StyledSystem";
 
-const SystemTableHeader = ({ startDate, endDate, handleStartCurrWeek }) => {
+const SystemTableHeader = ({ currWeek, handleStartCurrWeek }) => {
   const [date, setDate] = useState(null);
 
   const handleChange = (e) => {
@@ -19,8 +19,6 @@ const SystemTableHeader = ({ startDate, endDate, handleStartCurrWeek }) => {
     console.log(week);
   };
 
-  // getWeek();
-
   return (
     <div style={{ marginBottom: "0.5rem" }}>
       <div
@@ -30,7 +28,7 @@ const SystemTableHeader = ({ startDate, endDate, handleStartCurrWeek }) => {
         }}
       >
         {/* Dynamically render choose start date text, then input new practice based on if in progress or not - */}
-        {startDate ? (
+        {currWeek.startDate ? (
           <p>
             Input your new practice and define a goal for the amount of times
             you wish to complete it per week. Check off each day you perform the
@@ -41,9 +39,10 @@ const SystemTableHeader = ({ startDate, endDate, handleStartCurrWeek }) => {
         )}
       </div>
       <StyledStartDateContainer>
-        {startDate ? (
+        {currWeek.startDate ? (
           <div>
-            {startDate} - {endDate}
+            {moment(currWeek.startDate).format("MM/DD/YYYY")} -{" "}
+            {moment(currWeek.endDate).format("MM/DD/YYYY")}
           </div>
         ) : (
           <>

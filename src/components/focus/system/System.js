@@ -28,16 +28,6 @@ const System = () => {
 
   const [currWeek, handleStartCurrWeek] = useCRUD(getCurrentWeek, startWeek);
 
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
-
-  useEffect(() => {
-    if (currWeek) {
-      setStartDate(moment(currWeek.startDate).format("MM/DD/YYYY"));
-      setEndDate(moment(currWeek.endDate).format("MM/DD/YYYY"));
-    }
-  }, [currWeek]);
-
   const columns = [
     {
       label: "Practice",
@@ -216,8 +206,10 @@ const System = () => {
           onSave: handleSave,
           accessor: "practice",
           alignment: "left",
-          placeholder: "New practice...",
-          disabled: startDate ? false : true,
+          placeholder: currWeek.startDate
+            ? "New practice..."
+            : "Choose a start date to begin...",
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       goal: {
@@ -225,7 +217,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "goal",
           alignment: "center",
-          disabled: startDate ? false : true,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       dayOne: {
@@ -233,7 +225,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayOne",
           alignment: "center",
-          disabled: startDate ? false : true,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       dayTwo: {
@@ -241,7 +233,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayTwo",
           alignment: "center",
-          disabled: startDate ? false : true,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       dayThree: {
@@ -249,7 +241,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayThree",
           alignment: "center",
-          disabled: startDate ? false : true,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       dayFour: {
@@ -257,7 +249,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayFour",
           alignment: "center",
-          disabled: startDate ? false : true,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       dayFive: {
@@ -265,7 +257,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "dayFive",
           alignment: "center",
-          disabled: startDate ? false : true,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       daySix: {
@@ -273,7 +265,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "daySix",
           alignment: "center",
-          disabled: startDate ? false : true,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       daySeven: {
@@ -281,7 +273,7 @@ const System = () => {
           onSave: handleSave,
           accessor: "daySeven",
           alignment: "center",
-          disabled: startDate ? false : true,
+          disabled: currWeek.startDate ? false : true,
         }),
       },
       performed: {
@@ -317,8 +309,7 @@ const System = () => {
           compact
           descriptionheader={
             <SystemTableHeader
-              startDate={startDate}
-              endDate={endDate}
+              currWeek={currWeek}
               handleStartCurrWeek={handleStartCurrWeek}
             />
           }
