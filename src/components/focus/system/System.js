@@ -16,7 +16,9 @@ const System = () => {
         subtitle="Purpose: To begin doing new practices that will help you with your
           health and wellbeing."
       />
-      <CurrentPractices />
+      <div style={{ marginBottom: "1rem" }}>
+        <CurrentPractices />
+      </div>
       <PriorPractices />
     </div>
   );
