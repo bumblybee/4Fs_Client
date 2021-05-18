@@ -5,7 +5,9 @@ const errorCodeToMessage = {
     "Looks like you already have an account. Please log in.",
   "auth.noToken":
     "Token not found or has expired. Try resetting your password again.",
-  "user.invalidEmailFormat": "Please check the email address formatting",
+  "No authorization token was found":
+    "Uh-oh, looks like you're logged out. Please refresh the page and log in.",
+  "user.invalidEmailFormat": "Please check the email address formatting.",
   "system.invalidDate": "Date must fall on or after today.",
 };
 
