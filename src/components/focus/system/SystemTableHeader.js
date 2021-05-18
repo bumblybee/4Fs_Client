@@ -9,6 +9,7 @@ import {
 
 const SystemTableHeader = ({
   currWeek,
+  handleSave,
   handleStartCurrWeek,
   handleDeleteCurrWeek,
 }) => {
@@ -30,6 +31,7 @@ const SystemTableHeader = ({
       )
     ) {
       await handleDeleteCurrWeek(currWeek.id);
+      handleSave();
     }
     setDate(null);
   };

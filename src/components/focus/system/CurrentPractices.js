@@ -319,6 +319,7 @@ const CurrentPractices = () => {
         descriptionheader={
           <SystemTableHeader
             currWeek={currWeekObject}
+            handleSave={handleSave}
             handleStartCurrWeek={handleStartCurrWeek}
             handleDeleteCurrWeek={handleDeleteCurrWeek}
           />

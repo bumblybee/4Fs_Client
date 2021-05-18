@@ -12,6 +12,7 @@ const useCRUD = (getter, setter, destroyer) => {
   }, [getter]);
 
   const setData = async (data, id) => {
+    if (data) {
     const res = await setter(data, id);
     console.log(res);
 
@@ -20,6 +21,7 @@ const useCRUD = (getter, setter, destroyer) => {
       return;
     }
     clearErrorMessage();
+  }
     await getData();
   };
 

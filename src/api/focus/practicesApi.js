@@ -41,5 +41,5 @@ export const getCurrentWeek = async () => {
 
 export const deleteCurrentWeek = async (id) => {
   const deletedWeek = await destroy(`/practice-weeks/${id}`);
-  return deletedWeek;
+  return deletedWeek.data;
 };
