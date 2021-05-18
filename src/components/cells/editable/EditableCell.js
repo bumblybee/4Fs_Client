@@ -41,6 +41,8 @@ const EditableTableCell = ({ children, ...props }) => {
           placeholder={props.placeholder}
           onChange={(e) => setEditCellVal(e.target.value)}
           onBlur={makeData}
+          aligntext={props.aligntext}
+          alignment={props.alignment}
         />
       );
     } else {
@@ -61,13 +63,15 @@ const EditableTableCell = ({ children, ...props }) => {
 
   return (
     <StyledEditableCell
-      {...props}
       onFocus={() => setEditing(true)}
       onClick={() => setEditing(true)}
       onBlur={() => setEditing(false)}
       style={{}}
       tabIndex="0"
       editCellVal={editCellVal}
+      alignment={props.alignment}
+      aligntext={props.aligntext}
+      textweight={props.textweight}
     >
       {renderCell()}
     </StyledEditableCell>

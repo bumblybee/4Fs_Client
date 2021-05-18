@@ -57,11 +57,12 @@ const EmptyRowCell = ({ children, ...props }) => {
 
   return (
     <StyledEmptyCell
-      {...props}
       onFocus={() => setEditing(true)}
       onClick={() => setEditing(true)}
       onBlur={() => setEditing(false)}
       tabIndex="0"
+      disabled={props.disabled}
+      aligntext={props.aligntext}
     >
       {renderCell()}
     </StyledEmptyCell>

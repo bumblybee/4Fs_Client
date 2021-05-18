@@ -7,7 +7,7 @@ export const StyledEmptyCell = styled.div`
   min-height: 40px;
   color: ${(props) => (props.blankCellVal ? "" : "#aaaaaacc")};
   padding-left: 0.25rem;
-  text-align: ${(props) => props.alignText};
+  text-align: ${(props) => props.aligntext};
 
   display: flex;
   justify-content: ${(props) => props.aligntext};
