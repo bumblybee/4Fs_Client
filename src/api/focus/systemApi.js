@@ -10,6 +10,11 @@ export const getCurrentSystem = async () => {
   return currSystem && currSystem.data ? currSystem.data : currSystem;
 };
 
+export const getPriorSystems = async () => {
+  const priorSystems = await get("/system/prior");
+  return priorSystems && priorSystems.data ? priorSystems.data : priorSystems;
+};
+
 export const mutateSystem = async (data, id) => {
   const system = await post(`/system/${id}`, data);
   return system.data;

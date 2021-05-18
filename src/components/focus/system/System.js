@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import CurrentSystemWeek from "./CurrentSystemWeek";
+import PriorSystemWeeks from "./PriorSystemWeeks";
 
-import TableComponent from "../../table/TableComponent";
 import SectionHeader from "../../layout/SectionHeader";
-import SystemTableHeader from "../../focus/system/SystemTableHeader";
 
 // TODO: Break out two table components, one for progress and one for curr week - logic for separating current week from prev - don't display empty row until current start date set
 
@@ -18,6 +17,7 @@ const System = () => {
           health and wellbeing."
       />
       <CurrentSystemWeek />
+      <PriorSystemWeeks />
     </div>
   );
 };
