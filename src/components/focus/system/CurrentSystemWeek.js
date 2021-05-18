@@ -33,10 +33,11 @@ const CurrentSystemWeek = () => {
   const renderDayOfWeek = (daysFromStart) => {
     const startDay = currWeekObject.startDate;
 
-    if (daysFromStart) {
+    if (startDay) {
       return moment(startDay).add(daysFromStart, "days").format("ddd");
     } else {
-      return moment(startDay).format("ddd");
+      // If no startDay, return undefined and render default Sun-Sat labels
+      return undefined;
     }
   };
 
@@ -52,37 +53,37 @@ const CurrentSystemWeek = () => {
       width: 1,
     },
     {
-      label: renderDayOfWeek(),
+      label: renderDayOfWeek(0) || "Sun",
       key: "dayOne",
       width: 1,
     },
     {
-      label: renderDayOfWeek(1),
+      label: renderDayOfWeek(1) || "Mon",
       key: "dayTwo",
       width: 1,
     },
     {
-      label: renderDayOfWeek(2),
+      label: renderDayOfWeek(2) || "Tues",
       key: "dayThree",
       width: 1,
     },
     {
-      label: renderDayOfWeek(3),
+      label: renderDayOfWeek(3) || "Wed",
       key: "dayFour",
       width: 1,
     },
     {
-      label: renderDayOfWeek(4),
+      label: renderDayOfWeek(4) || "Thur",
       key: "dayFive",
       width: 1,
     },
     {
-      label: renderDayOfWeek(5),
+      label: renderDayOfWeek(5) || "Fri",
       key: "daySix",
       width: 1,
     },
     {
-      label: renderDayOfWeek(6),
+      label: renderDayOfWeek(6) || "Sat",
       key: "daySeven",
       width: 1,
     },

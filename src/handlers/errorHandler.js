@@ -6,6 +6,7 @@ const errorCodeToMessage = {
   "auth.noToken":
     "Token not found or has expired. Try resetting your password again.",
   "user.invalidEmailFormat": "Please check the email address formatting",
+  "system.invalidDate": "Date must fall on or after today.",
 };
 
 // Pass array of errors to handleErrors fn

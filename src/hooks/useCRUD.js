@@ -1,7 +1,9 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useContext } from "react";
+import { ErrorContext } from "../context/error/ErrorContext";
 
 const useCRUD = (getter, setter, destroyer) => {
   const [state, setState] = useState([]);
+  const { setErrorMessage, clearErrorMessage } = useContext(ErrorContext);
 
   const getData = useCallback(async () => {
     const res = await getter();
@@ -13,6 +15,11 @@ const useCRUD = (getter, setter, destroyer) => {
     const res = await setter(data, id);
     console.log(res);
 
+    if (res.error) {
+      setErrorMessage(res.error);
+      return;
+    }
+    clearErrorMessage();
     await getData();
   };
 
