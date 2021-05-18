@@ -180,6 +180,8 @@ const SignupForm = () => {
             formErrors={formErrors}
           />
         );
+      default:
+        return "";
     }
   };
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { StyledEmptyCell, StyledWrapper } from "./StyledEmptyRowCell";
+import { StyledEmptyCell } from "./StyledEmptyRowCell";
 
 const EmptyRowCell = ({ children, ...props }) => {
   const [editing, setEditing] = useState(false);
@@ -10,11 +10,6 @@ const EmptyRowCell = ({ children, ...props }) => {
 
   const makeData = () => {
     if (blankCellVal !== "") {
-      let updateVal = blankCellVal;
-      if (blankCellVal === "") {
-        updateVal = null;
-      }
-
       props.onSave(
         {
           [props.accessor]: blankCellVal,

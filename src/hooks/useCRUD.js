@@ -7,7 +7,7 @@ const useCRUD = (getter, setter, destroyer) => {
     const res = await getter();
     console.log(res);
     setState(res && res.data && res.data.length ? [...res.data] : []);
-  }, []);
+  }, [getter]);
 
   const setData = async (data, id) => {
     const res = await setter(data, id);

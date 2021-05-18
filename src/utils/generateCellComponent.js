@@ -93,7 +93,6 @@ const generateCellComponent = (type, props) => {
           id={props.id}
           className={props.className}
           onSave={props.onSave}
-          label={props.label}
           val={props.val}
           accessor={props.accessor}
           label={props.label}

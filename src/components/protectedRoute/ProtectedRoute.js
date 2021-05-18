@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
 
   useEffect(() => {
     getCurrentUser().then((data) => setUser(data));
-  }, []);
+  }, [getCurrentUser]);
 
   return user ? (
     <Route>{children}</Route>

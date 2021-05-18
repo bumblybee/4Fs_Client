@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CurrentSystemWeek from "./CurrentSystemWeek";
 import PriorSystemWeeks from "./PriorSystemWeeks";
 

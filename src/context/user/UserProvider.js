@@ -14,12 +14,13 @@ const UserProvider = ({ children }) => {
 
   const getCurrentUser = useCallback(async () => {
     const userData = await getUser();
+
     if (userData && !userData.error) {
       setUser(userData.data.user);
       return userData.data.user;
     } else {
       setUser(null);
-      return user;
+      return null;
     }
   }, []);
 

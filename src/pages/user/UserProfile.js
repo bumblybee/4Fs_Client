@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Input, Form, Button } from "semantic-ui-react";
+import { Form, Button } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
 import {
   StyledProfileHeader,
@@ -12,7 +12,7 @@ import {
 import * as sc from "../../styles/GlobalStyledComponents";
 
 const UserProfile = () => {
-  const { user, getCurrentUser, updateUserDetails } = useContext(UserContext);
+  const { user, updateUserDetails } = useContext(UserContext);
 
   const splitPhoneNumber = user && user.phone && user.phone.split("-");
   const [userDetails, setUserDetails] = useState({
@@ -47,6 +47,7 @@ const UserProfile = () => {
     const res = await updateUserDetails(data);
     console.log(res);
   };
+
   const { firstName, lastName, email, age, height, weight, gender, sheetsURL } =
     user;
 

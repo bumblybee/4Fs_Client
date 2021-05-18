@@ -21,7 +21,6 @@ const NavBar = () => {
           <Button
             as="a"
             size="medium"
-            color="#2f528b"
             title="home"
             style={{
               borderRadius: "50%",

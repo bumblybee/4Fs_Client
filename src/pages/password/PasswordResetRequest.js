@@ -8,7 +8,6 @@ import {
   StyledSegment,
   StyledFormHeader,
   StyledForm,
-  StyledFooterMessage,
 } from "../../styles/GlobalStyledComponents";
 
 const PasswordResetRequest = () => {
