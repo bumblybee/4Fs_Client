@@ -26,7 +26,8 @@ const handleErrors = (errorCode) => {
   }
 
   return {
-    error: "Uh-oh, something is unexpectedly broken. Please contact support.",
+    error:
+      "Uh-oh, something is unexpectedly broken. Please contact support if the problem persists.",
   };
 };
 
