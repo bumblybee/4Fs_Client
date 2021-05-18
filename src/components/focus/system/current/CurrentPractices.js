@@ -1,10 +1,10 @@
 import React from "react";
 import moment from "moment";
-import TableComponent from "../../table/TableComponent";
-import SystemTableHeader from "./SystemTableHeader";
+import TableComponent from "../../../table/TableComponent";
+import SystemTableHeader from "../SystemTableHeader";
 
-import useCRUD from "../../../hooks/useCRUD";
-import generateCellComponent from "../../../utils/generateCellComponent";
+import useCRUD from "../../../../hooks/useCRUD";
+import generateCellComponent from "../../../../utils/generateCellComponent";
 import {
   getCurrentPractices,
   mutatePractice,
@@ -12,7 +12,7 @@ import {
   getCurrentWeek,
   startWeek,
   deleteCurrentWeek,
-} from "../../../api/focus/practicesApi";
+} from "../../../../api/focus/practicesApi";
 
 const CurrentPractices = () => {
   const [currPractices, handleSave, handleDelete] = useCRUD(

@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import moment from "moment";
-import useCRUD from "../../../hooks/useCRUD";
-import { getPriorPractices } from "../../../api/focus/practicesApi";
+import useCRUD from "../../../../hooks/useCRUD";
+import {
+  getPriorPractices,
+  getPriorWeeks,
+} from "../../../../api/focus/practicesApi";
 import { Accordion, Icon, Segment } from "semantic-ui-react";
 
 const PriorPractices = () => {
   const [showWeeks, setShowWeeks] = useState(false);
   const [priorPractices] = useCRUD(getPriorPractices);
-  const weeks = priorPractices.map((practice) => ({
-    startDate: practice.practice_week.startDate,
-    endDate: practice.practice_week.endDate,
-  }));
+  const [priorWeeks] = useCRUD(getPriorWeeks);
 
-  // Overflow removes border on accordion - style manually
+  // const weeks = priorPractices.map((practice) => ({
+  //   startDate: practice.practice_week.startDate,
+  //   endDate: practice.practice_week.endDate,
+  // }));
+
   return (
     <div style={{ height: "140px", width: "50%" }}>
       <Segment
@@ -42,7 +46,7 @@ const PriorPractices = () => {
           styled
           fluid
         >
-          {weeks.map((week) => (
+          {priorWeeks.map((week) => (
             <Accordion.Title>
               <Icon name="dropdown" />
               {moment(week.startDate).format("MM/DD/YY")} -{" "}

@@ -39,6 +39,11 @@ export const getCurrentWeek = async () => {
   return currWeek.data;
 };
 
+export const getPriorWeeks = async () => {
+  const priorWeeks = await get("/practice-weeks/prior");
+  return priorWeeks.data;
+};
+
 export const deleteCurrentWeek = async (id) => {
   const deletedWeek = await destroy(`/practice-weeks/${id}`);
   return deletedWeek.data;
