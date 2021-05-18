@@ -50,7 +50,7 @@ export default function TableComponent({ children, ...props }) {
           color: "#fff",
           borderRadius: props.descriptionheader ? "0" : "",
           fontFamily: "Lato",
-          fontSize: "1.1rem",
+          fontSize: props.fontsize || "1.1rem",
         }}
         width={header.width && header.width}
       >

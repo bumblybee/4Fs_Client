@@ -6,19 +6,35 @@ import {
   getPriorWeeks,
 } from "../../../../api/focus/practicesApi";
 import { Accordion, Icon, Segment } from "semantic-ui-react";
+import TableComponent from "../../../table/TableComponent";
 
 const PriorPractices = () => {
   const [showWeeks, setShowWeeks] = useState(false);
-  const [priorPractices] = useCRUD(getPriorPractices);
   const [priorWeeks] = useCRUD(getPriorWeeks);
+  const [activeItem, setActiveItem] = useState(null);
 
-  // const weeks = priorPractices.map((practice) => ({
-  //   startDate: practice.practice_week.startDate,
-  //   endDate: practice.practice_week.endDate,
-  // }));
+  const columns = [
+    { label: "Practice", key: "practice" },
+    { label: "Goal", key: "goal" },
+    { label: "Performed", key: "performed" },
+  ];
+
+  const rows = priorWeeks.map((week) => {
+    return week.practices.map((practice) => ({
+      practice: {
+        cellComponent: <div>{practice.practice}</div>,
+      },
+      goal: { cellComponent: <div>{practice.goal}</div> },
+      performed: {
+        cellComponent: <div>{practice.performed}</div>,
+      },
+    }));
+  });
+
+  console.log(rows);
 
   return (
-    <div style={{ height: "140px", width: "50%" }}>
+    <div style={{ height: "150px", width: "40.9%" }}>
       <Segment
         attached={showWeeks ? "top" : ""}
         style={{
@@ -38,7 +54,7 @@ const PriorPractices = () => {
       {showWeeks && (
         <Accordion
           style={{
-            height: "80px",
+            height: "100px",
             overflowY: "auto",
             borderTopLeftRadius: "0",
             borderTopRightRadius: "0",
@@ -46,12 +62,33 @@ const PriorPractices = () => {
           styled
           fluid
         >
-          {priorWeeks.map((week) => (
-            <Accordion.Title>
-              <Icon name="dropdown" />
-              {moment(week.startDate).format("MM/DD/YY")} -{" "}
-              {moment(week.endDate).format("MM/DD/YY")}
-            </Accordion.Title>
+          {priorWeeks.map((week, idx) => (
+            <>
+              <Accordion.Title
+                key={idx}
+                active={activeItem === idx}
+                onClick={() => setActiveItem(activeItem === idx ? -1 : idx)}
+              >
+                <Icon name="dropdown" />
+                {moment(week.startDate).format("MM/DD/YY")} -{" "}
+                {moment(week.endDate).format("MM/DD/YY")}
+              </Accordion.Title>
+
+              <Accordion.Content
+                style={{ overflowY: "auto" }}
+                active={activeItem === idx}
+              >
+                <TableComponent
+                  aligntext="center"
+                  fontsize="0.9rem"
+                  compact
+                  color="purple"
+                  columns={columns}
+                  rows={rows[idx]}
+                  style={{ width: "90%" }}
+                />
+              </Accordion.Content>
+            </>
           ))}
         </Accordion>
       )}
