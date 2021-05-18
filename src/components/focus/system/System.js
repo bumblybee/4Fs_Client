@@ -4,7 +4,7 @@ import PriorSystemWeeks from "./PriorSystemWeeks";
 
 import SectionHeader from "../../layout/SectionHeader";
 
-// TODO: Break out two table components, one for progress and one for curr week - logic for separating current week from prev - don't display empty row until current start date set
+// TODO: Break out two table components, one for progress and one for curr week
 
 // TODO: Handle updating rowData when week deleted
 

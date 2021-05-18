@@ -27,9 +27,18 @@ const CurrentSystemWeek = () => {
     deleteCurrentWeek
   );
 
-  // Returning curr week object as array so fits current logic in useCRUD
+  // Returning curr week object as array so fits generic data handling in useCRUD
   const currWeekObject = currWeek.length && currWeek[0];
-  const startDay = currWeekObject.startDate;
+
+  const renderDayOfWeek = (daysFromStart) => {
+    const startDay = currWeekObject.startDate;
+
+    if (daysFromStart) {
+      return moment(startDay).add(daysFromStart, "days").format("ddd");
+    } else {
+      return moment(startDay).format("ddd");
+    }
+  };
 
   const columns = [
     {
@@ -43,37 +52,37 @@ const CurrentSystemWeek = () => {
       width: 1,
     },
     {
-      label: moment(startDay).format("ddd"),
+      label: renderDayOfWeek(),
       key: "dayOne",
       width: 1,
     },
     {
-      label: moment(startDay).add(1, "days").format("ddd"),
+      label: renderDayOfWeek(1),
       key: "dayTwo",
       width: 1,
     },
     {
-      label: moment(startDay).add(2, "days").format("ddd"),
+      label: renderDayOfWeek(2),
       key: "dayThree",
       width: 1,
     },
     {
-      label: moment(startDay).add(3, "days").format("ddd"),
+      label: renderDayOfWeek(3),
       key: "dayFour",
       width: 1,
     },
     {
-      label: moment(startDay).add(4, "days").format("ddd"),
+      label: renderDayOfWeek(4),
       key: "dayFive",
       width: 1,
     },
     {
-      label: moment(startDay).add(5, "days").format("ddd"),
+      label: renderDayOfWeek(5),
       key: "daySix",
       width: 1,
     },
     {
-      label: moment(startDay).add(6, "days").format("ddd"),
+      label: renderDayOfWeek(6),
       key: "daySeven",
       width: 1,
     },
