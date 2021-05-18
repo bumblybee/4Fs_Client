@@ -27,7 +27,6 @@ const FTabBar = () => {
           "inset 0 1px 5px 1px rgba(0,0,0,0.2), inset 0 -1px 4px 1px rgba(0,0,0,0.1)",
         padding: "1rem",
       }}
-      centered
     >
       <Menu
         size="massive"

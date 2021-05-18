@@ -32,7 +32,7 @@ const CheckboxCell = (props) => {
       <label>
         <input
           ref={checkboxRef}
-          checked={isChecked}
+          checked={isChecked || false}
           onChange={(e) => handleChange(e)}
           type="checkbox"
           disabled={props.disabled}
