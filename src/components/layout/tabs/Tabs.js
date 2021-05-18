@@ -2,7 +2,7 @@ import { Menu } from "semantic-ui-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const Tabs = ({ path }) => {
+const Tabs = ({ path, subPath }) => {
   const [activeItem, setActiveItem] = useState("milestones");
 
   const tabs = {
@@ -29,11 +29,9 @@ const Tabs = ({ path }) => {
     ));
   };
 
-  const defaultActiveTab = tabs[path][0] && tabs[path][0];
-
   useEffect(() => {
-    setActiveItem(defaultActiveTab);
-  }, [defaultActiveTab]);
+    setActiveItem(subPath);
+  }, [subPath]);
 
   switch (path) {
     case "home":

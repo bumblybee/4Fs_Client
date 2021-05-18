@@ -31,6 +31,7 @@ const SystemTableHeader = ({
       )
     ) {
       await handleDeleteCurrWeek(currWeek.id);
+      // Force practices state to update at useCRUD - may want to handle system state locally to avoid manipulating this way
       handleSave();
     }
     setDate(null);

@@ -6,6 +6,7 @@ import { Container, Menu } from "semantic-ui-react";
 const SectionTabMenu = () => {
   const { pathname } = useLocation();
   const path = pathname.split("/")[1];
+  const subPath = pathname.split("/")[2];
 
   return (
     <Container style={{ margin: "2rem auto 3rem" }}>
@@ -16,7 +17,7 @@ const SectionTabMenu = () => {
         size="huge"
         style={{ width: "max-content", margin: "0 auto 3rem" }}
       >
-        <Tabs path={path} />
+        <Tabs path={path} subPath={subPath} />
       </Menu>
     </Container>
   );
