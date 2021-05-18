@@ -2,10 +2,10 @@ import React from "react";
 import useCRUD from "../../../hooks/useCRUD";
 import { getPriorPractices } from "../../../api/focus/practicesApi";
 
-const PriorSystemWeeks = () => {
-  const [priorSystems] = useCRUD(getPriorPractices);
-  console.log(priorSystems);
+const PriorPractices = () => {
+  const [priorPractices] = useCRUD(getPriorPractices);
+  console.log(priorPractices);
   return <div></div>;
 };
 
-export default PriorSystemWeeks;
+export default PriorPractices;

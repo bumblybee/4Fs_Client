@@ -14,8 +14,8 @@ import {
   deleteCurrentWeek,
 } from "../../../api/focus/practicesApi";
 
-const CurrentSystemWeek = () => {
-  const [currSystem, handleSave, handleDelete] = useCRUD(
+const CurrentPractices = () => {
+  const [currPractices, handleSave, handleDelete] = useCRUD(
     getCurrentPractices,
     mutatePractice,
     deletePractice
@@ -100,14 +100,14 @@ const CurrentSystemWeek = () => {
   ];
 
   const rows = (additionalRow) => {
-    const rowData = currSystem.map((item) => ({
+    const rowData = currPractices.map((item) => ({
       practice: {
         cellComponent: generateCellComponent("editable", {
           id: item.id,
           onSave: handleSave,
           val: item.practice,
           accessor: "practice",
-          systemWeekId: currWeekObject.id,
+          practiceWeekId: currWeekObject.id,
           alignment: "left",
           textWeight: "600",
           placeholder: "New practice...",
@@ -219,7 +219,7 @@ const CurrentSystemWeek = () => {
         cellComponent: generateCellComponent("empty", {
           onSave: handleSave,
           accessor: "practice",
-          systemWeekId: currWeekObject.id,
+          practiceWeekId: currWeekObject.id,
           alignment: "left",
           placeholder: currWeekObject.startDate
             ? "New practice..."
@@ -328,4 +328,4 @@ const CurrentSystemWeek = () => {
   );
 };
 
-export default CurrentSystemWeek;
+export default CurrentPractices;

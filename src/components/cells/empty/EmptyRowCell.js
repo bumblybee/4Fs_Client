@@ -13,7 +13,7 @@ const EmptyRowCell = ({ children, ...props }) => {
       props.onSave(
         {
           [props.accessor]: blankCellVal,
-          systemWeekId: props.systemWeekId,
+          practiceWeekId: props.practiceWeekId,
         },
         props.id
       );

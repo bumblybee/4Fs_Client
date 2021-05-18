@@ -1,6 +1,6 @@
 import React from "react";
-import CurrentSystemWeek from "./CurrentSystemWeek";
-import PriorSystemWeeks from "./PriorSystemWeeks";
+import CurrentPractices from "./CurrentPractices";
+import PriorPractices from "./PriorPractices";
 
 import SectionHeader from "../../layout/SectionHeader";
 
@@ -16,8 +16,8 @@ const System = () => {
         subtitle="Purpose: To begin doing new practices that will help you with your
           health and wellbeing."
       />
-      <CurrentSystemWeek />
-      <PriorSystemWeeks />
+      <CurrentPractices />
+      <PriorPractices />
     </div>
   );
 };

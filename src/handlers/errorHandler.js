@@ -8,7 +8,7 @@ const errorCodeToMessage = {
   "No authorization token was found":
     "Uh-oh, looks like you're logged out. Please refresh the page and log in.",
   "user.invalidEmailFormat": "Please check the email address formatting.",
-  "system.invalidDate": "Date must fall on or after today.",
+  "practices.invalidDate": "Date must fall on or after today.",
 };
 
 // Pass array of errors to handleErrors fn

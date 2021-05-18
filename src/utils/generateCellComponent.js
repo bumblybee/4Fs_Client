@@ -24,7 +24,7 @@ const generateCellComponent = (type, props) => {
           aligntext={props.aligntext}
           textweight={props.textWeight}
           accessor={props.accessor}
-          systemWeekId={props.systemWeekId}
+          practiceWeekId={props.practiceWeekId}
         />
       );
     case "empty":
@@ -36,7 +36,7 @@ const generateCellComponent = (type, props) => {
           alignment={props.alignment}
           aligntext={props.aligntext}
           accessor={props.accessor}
-          systemWeekId={props.systemWeekId}
+          practiceWeekId={props.practiceWeekId}
           disabled={props.disabled}
         />
       );

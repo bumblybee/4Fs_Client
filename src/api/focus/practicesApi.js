@@ -30,16 +30,16 @@ export const deletePractice = async (id) => {
 };
 
 export const startWeek = async (data) => {
-  const week = await post("/system-week", data);
+  const week = await post("/practice-weeks", data);
   return week;
 };
 
 export const getCurrentWeek = async () => {
-  const currWeek = await get("/system-week/current");
+  const currWeek = await get("/practice-weeks/current");
   return currWeek.data;
 };
 
 export const deleteCurrentWeek = async (id) => {
-  const deletedWeek = await destroy(`/system-week/${id}`);
+  const deletedWeek = await destroy(`/practice-weeks/${id}`);
   return deletedWeek;
 };

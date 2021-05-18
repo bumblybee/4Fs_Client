@@ -21,7 +21,7 @@ const EditableTableCell = ({ children, ...props }) => {
         props.onSave(
           {
             [props.accessor]: updateVal,
-            systemWeekId: props.systemWeekId,
+            practiceWeekId: props.practiceWeekId,
           },
           props.id
         );
