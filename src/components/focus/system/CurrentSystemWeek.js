@@ -6,19 +6,19 @@ import SystemTableHeader from "./SystemTableHeader";
 import useCRUD from "../../../hooks/useCRUD";
 import generateCellComponent from "../../../utils/generateCellComponent";
 import {
-  getCurrentSystem,
-  mutateSystem,
-  deleteSystem,
+  getCurrentPractices,
+  mutatePractice,
+  deletePractice,
   getCurrentWeek,
   startWeek,
   deleteCurrentWeek,
-} from "../../../api/focus/systemApi";
+} from "../../../api/focus/practicesApi";
 
 const CurrentSystemWeek = () => {
   const [currSystem, handleSave, handleDelete] = useCRUD(
-    getCurrentSystem,
-    mutateSystem,
-    deleteSystem
+    getCurrentPractices,
+    mutatePractice,
+    deletePractice
   );
 
   const [currWeek, handleStartCurrWeek, handleDeleteCurrWeek] = useCRUD(

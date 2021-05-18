@@ -1,9 +1,9 @@
 import React from "react";
 import useCRUD from "../../../hooks/useCRUD";
-import { getPriorSystems } from "../../../api/focus/systemApi";
+import { getPriorPractices } from "../../../api/focus/practicesApi";
 
 const PriorSystemWeeks = () => {
-  const [priorSystems] = useCRUD(getPriorSystems);
+  const [priorSystems] = useCRUD(getPriorPractices);
   console.log(priorSystems);
   return <div></div>;
 };
