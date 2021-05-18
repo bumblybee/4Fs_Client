@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { StyledEditableCell } from "./StyledEditableCell";
 
-import { Input } from "semantic-ui-react";
-
 const EditableTableCell = ({ children, ...props }) => {
   const [editing, setEditing] = useState(false);
   const [editCellVal, setEditCellVal] = useState(props.val);
@@ -13,7 +11,7 @@ const EditableTableCell = ({ children, ...props }) => {
     if (props.onDelete && editCellVal === "") {
       props.onDelete(props.id);
     } else {
-      if (inputRef.current != editCellVal) {
+      if (inputRef.current !== editCellVal) {
         // If user deleted text and we don't want to delete the record, send null instead of empty string
         let updateVal = editCellVal;
         if (editCellVal === "") {

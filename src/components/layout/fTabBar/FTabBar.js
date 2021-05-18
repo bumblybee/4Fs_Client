@@ -41,6 +41,7 @@ const FTabBar = () => {
         <Link to="/focus">
           <Menu.Item
             name="focus"
+            as="div"
             active={activeItem === "focus"}
             style={{
               background: activeItem === "focus" ? "#2b73ce" : "",
@@ -75,6 +76,7 @@ const FTabBar = () => {
               fontWeight: 400,
             }}
             name="fasting"
+            as="div"
             onClick={(e) => setActiveItem("fasting")}
           >
             <Icon name="wait" size="large" />
@@ -93,6 +95,7 @@ const FTabBar = () => {
             }}
             onClick={(e) => setActiveItem("food")}
             name="food"
+            as="div"
           >
             <Icon name="food" size="large" />
             Food
@@ -111,6 +114,7 @@ const FTabBar = () => {
             }}
             onClick={(e) => setActiveItem("fitness")}
             name="fitness"
+            as="div"
           >
             <Icon name="heartbeat" size="large" />
             Fitness

@@ -19,7 +19,6 @@ const NavBar = () => {
       <div style={{ marginRight: "auto" }}>
         <Link to="/home">
           <Button
-            as="a"
             size="medium"
             title="home"
             style={{

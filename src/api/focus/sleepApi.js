@@ -1,4 +1,4 @@
-import { get, post, put, destroy } from "../baseApi";
+import { get, post, destroy } from "../baseApi";
 
 export const getSleep = async () => {
   const sleep = await get("/sleep");

@@ -20,6 +20,7 @@ const Tabs = ({ path }) => {
         as={Link}
         to={`/${path}/${tab.replace(/\s+/g, "-")}`}
         name={tab}
+        key={tab}
         active={activeItem === tab}
         onClick={() => {
           setActiveItem(tab);

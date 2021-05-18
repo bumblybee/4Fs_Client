@@ -1,4 +1,4 @@
-import { get, post, put, destroy } from "../baseApi";
+import { get, post, destroy } from "../baseApi";
 
 export const getAccomplishments = async () => {
   const accomplishments = await get("/accomplishments");
