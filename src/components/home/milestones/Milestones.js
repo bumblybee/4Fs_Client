@@ -8,6 +8,7 @@ import useCRUD from "../../../hooks/useCRUD";
 import SectionHeader from "../../layout/SectionHeader";
 import TableComponent from "../../table/TableComponent";
 
+// TODO: Align cols
 const Milestones = () => {
   const [milestones, handleSave] = useCRUD(getMilestones, mutateMilestone);
 

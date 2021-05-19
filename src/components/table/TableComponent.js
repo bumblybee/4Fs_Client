@@ -27,7 +27,7 @@ TableComponent.TF = function TF({ children, ...props }) {
   return (
     <Table.Footer {...props} fullWidth>
       <TableComponent.TR>
-        <TableComponent.TH colSpan="8">{children}</TableComponent.TH>
+        <TableComponent.TH colSpan="12">{children}</TableComponent.TH>
       </TableComponent.TR>
     </Table.Footer>
   );

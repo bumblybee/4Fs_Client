@@ -41,7 +41,7 @@ const SystemTableHeader = ({
     <div style={{ marginBottom: "0.5rem" }}>
       <div
         style={{
-          width: "80%",
+          width: "70%",
           margin: "0 auto 1rem",
         }}
       >

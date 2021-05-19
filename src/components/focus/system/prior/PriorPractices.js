@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import moment from "moment";
 import useCRUD from "../../../../hooks/useCRUD";
-import {
-  getPriorPractices,
-  getPriorWeeks,
-} from "../../../../api/focus/practicesApi";
+import { getPriorWeeks } from "../../../../api/focus/practicesApi";
 import { Accordion, Icon, Segment } from "semantic-ui-react";
 import TableComponent from "../../../table/TableComponent";
+
+// TODO: use generateCellComponent and pass props to align rows and cols, color performed if hit goal
 
 const PriorPractices = () => {
   const [showWeeks, setShowWeeks] = useState(false);
@@ -34,15 +33,20 @@ const PriorPractices = () => {
   console.log(rows);
 
   return (
-    <div style={{ height: "150px", width: "40.9%" }}>
+    <div style={{ width: showWeeks ? "50%" : "12%" }}>
       <Segment
         attached={showWeeks ? "top" : ""}
+        basic
         style={{
-          borderTop: "2px solid #800080",
+          // borderTop: "2px solid #800080",
           color: "#800080",
           fontWeight: "600",
           boxShadow: "none",
+          cursor: "pointer",
+          padding: "0.5rem 0.2rem",
+          fontFamily: "Lato",
         }}
+        onClick={() => setShowWeeks(!showWeeks)}
       >
         <Icon
           name={showWeeks ? "caret down" : "caret right"}
@@ -54,7 +58,8 @@ const PriorPractices = () => {
       {showWeeks && (
         <Accordion
           style={{
-            height: "100px",
+            minHeight: "min-content",
+            maxHeight: "120px",
             overflowY: "auto",
             borderTopLeftRadius: "0",
             borderTopRightRadius: "0",
@@ -62,6 +67,9 @@ const PriorPractices = () => {
           styled
           fluid
         >
+          {!priorWeeks.length && (
+            <Accordion.Title>No previous weeks to show</Accordion.Title>
+          )}
           {priorWeeks.map((week, idx) => (
             <>
               <Accordion.Title
@@ -75,7 +83,9 @@ const PriorPractices = () => {
               </Accordion.Title>
 
               <Accordion.Content
-                style={{ overflowY: "auto" }}
+                style={{
+                  overflowY: "auto",
+                }}
                 active={activeItem === idx}
               >
                 <TableComponent
@@ -85,7 +95,7 @@ const PriorPractices = () => {
                   color="purple"
                   columns={columns}
                   rows={rows[idx]}
-                  style={{ width: "90%" }}
+                  style={{ width: "85%" }}
                 />
               </Accordion.Content>
             </>

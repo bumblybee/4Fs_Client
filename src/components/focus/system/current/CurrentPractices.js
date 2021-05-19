@@ -2,6 +2,7 @@ import React from "react";
 import moment from "moment";
 import TableComponent from "../../../table/TableComponent";
 import SystemTableHeader from "../SystemTableHeader";
+import PriorPractices from "../prior/PriorPractices";
 
 import useCRUD from "../../../../hooks/useCRUD";
 import generateCellComponent from "../../../../utils/generateCellComponent";
@@ -14,6 +15,7 @@ import {
   deleteCurrentWeek,
 } from "../../../../api/focus/practicesApi";
 
+// TODO: Limit height of table
 const CurrentPractices = () => {
   const [currPractices, handleSave, handleDelete] = useCRUD(
     getCurrentPractices,
@@ -43,7 +45,14 @@ const CurrentPractices = () => {
 
   const columns = [
     {
-      label: "Practice",
+      label: (
+        <div>
+          Practice <br />
+          <p style={{ fontSize: "0.88rem" }}>
+            <em>(ex. diet, reading, study, fitness)</em>
+          </p>
+        </div>
+      ),
       key: "practice",
       width: 3,
     },
@@ -324,6 +333,7 @@ const CurrentPractices = () => {
             handleDeleteCurrWeek={handleDeleteCurrWeek}
           />
         }
+        footer={<PriorPractices />}
       />
     )
   );

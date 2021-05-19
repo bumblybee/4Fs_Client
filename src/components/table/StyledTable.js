@@ -13,6 +13,7 @@ export const StyledTable = styled(Table)`
   td {
     height: ${(props) => (props.fullheighttd ? "31rem" : "")};
     position: relative;
+    font-family: "Lato", sans-serif;
   }
 
   /* thead,

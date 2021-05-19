@@ -19,7 +19,7 @@ const System = () => {
       <div style={{ marginBottom: "1rem" }}>
         <CurrentPractices />
       </div>
-      <PriorPractices />
+      {/* <PriorPractices /> */}
     </div>
   );
 };

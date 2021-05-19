@@ -7,11 +7,17 @@ export const StyledStaticCell = styled.div`
   font-weight: ${(props) => props.textweight};
 
   .system-performed {
-    color: ${(props) => props.condition && "#21ba45"};
+    color: ${(props) => props.condition && "#21ce0f"};
     font-weight: bold;
     font-size: 1.15rem;
     width: max-content;
     margin: auto 0 auto 35%;
+
+    .label {
+      transform: translateX(-30%);
+      font-size: 1rem;
+      text-align: center;
+    }
   }
 
   .sleep-hours-slept {
