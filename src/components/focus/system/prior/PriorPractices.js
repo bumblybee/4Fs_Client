@@ -3,10 +3,14 @@ import moment from "moment";
 import useCRUD from "../../../../hooks/useCRUD";
 import { getPriorWeeks } from "../../../../api/focus/practicesApi";
 import generateCellComponent from "../../../../utils/generateCellComponent";
-import { Accordion, Icon, Segment } from "semantic-ui-react";
 import TableComponent from "../../../table/TableComponent";
-
-// TODO: use generateCellComponent and pass props to align rows and cols, color performed if hit goal
+import { Accordion, Icon } from "semantic-ui-react";
+import {
+  StyledProgressToggle,
+  StyledAccordion,
+  StyledProgressWrapper,
+  StyledProgressTable,
+} from "./StyledPriorPractices";
 
 const PriorPractices = () => {
   const [showWeeks, setShowWeeks] = useState(false);
@@ -41,21 +45,11 @@ const PriorPractices = () => {
     }));
   });
 
-  console.log(rows);
-
   return (
-    <div style={{ width: showWeeks ? "50%" : "12%" }}>
-      <Segment
+    <StyledProgressWrapper showWeeks={showWeeks}>
+      <StyledProgressToggle
         attached={showWeeks ? "top" : ""}
         basic
-        style={{
-          color: "#800080",
-          fontWeight: "600",
-          boxShadow: "none",
-          cursor: "pointer",
-          padding: "0.5rem 0.2rem",
-          fontFamily: "Lato",
-        }}
         onClick={() => setShowWeeks(!showWeeks)}
       >
         <Icon
@@ -64,19 +58,9 @@ const PriorPractices = () => {
           onClick={() => setShowWeeks(!showWeeks)}
         />
         Progress
-      </Segment>
+      </StyledProgressToggle>
       {showWeeks && (
-        <Accordion
-          style={{
-            minHeight: "min-content",
-            maxHeight: "120px",
-            overflowY: "auto",
-            borderTopLeftRadius: "0",
-            borderTopRightRadius: "0",
-          }}
-          styled
-          fluid
-        >
+        <StyledAccordion styled fluid>
           {!priorWeeks.length && (
             <Accordion.Title>No previous weeks to show</Accordion.Title>
           )}
@@ -98,21 +82,20 @@ const PriorPractices = () => {
                 }}
                 active={activeItem === idx}
               >
-                <TableComponent
+                <StyledProgressTable
                   aligntext="center"
                   fontsize="0.9rem"
                   compact
                   color="purple"
                   columns={columns}
                   rows={rows[idx]}
-                  style={{ width: "85%" }}
                 />
               </Accordion.Content>
             </>
           ))}
-        </Accordion>
+        </StyledAccordion>
       )}
-    </div>
+    </StyledProgressWrapper>
   );
 };
 

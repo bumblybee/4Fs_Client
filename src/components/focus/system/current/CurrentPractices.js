@@ -3,8 +3,8 @@ import moment from "moment";
 import TableComponent from "../../../table/TableComponent";
 import SystemTableHeader from "../SystemTableHeader";
 import PriorPractices from "../prior/PriorPractices";
-
 import useCRUD from "../../../../hooks/useCRUD";
+import { StyledHeader } from "./StyledCurrentPractices";
 import generateCellComponent from "../../../../utils/generateCellComponent";
 import {
   getCurrentPractices,
@@ -46,12 +46,12 @@ const CurrentPractices = () => {
   const columns = [
     {
       label: (
-        <div>
+        <StyledHeader>
           Practice <br />
-          <p style={{ fontSize: "0.9rem" }}>
+          <p>
             <em>(meditation, diet, reading, fitness, etc.)</em>
           </p>
-        </div>
+        </StyledHeader>
       ),
       key: "practice",
       width: 3,
@@ -395,8 +395,6 @@ const CurrentPractices = () => {
       performed: {
         cellComponent: generateCellComponent("static", {
           val: 3,
-          // alignment: "center",
-          // justify: "flex-start",
           className: "system-performed-example",
           textweight: 400,
         }),
