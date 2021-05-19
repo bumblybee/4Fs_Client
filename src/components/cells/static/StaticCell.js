@@ -7,7 +7,7 @@ const StaticCell = (props) => {
     <StyledStaticCell condition={props.condition} {...props}>
       {props.condition ? (
         <div className={props.className}>
-          <Label circular color="green">
+          <Label circular color="olive">
             {props.val}
           </Label>
         </div>

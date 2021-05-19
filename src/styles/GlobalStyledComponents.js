@@ -4,7 +4,7 @@ import { Grid, Segment, Header, Form, Message } from "semantic-ui-react";
 export const StyledFormWrapper = styled(Grid)`
   height: 100vh;
 
-  margin-top: ${(props) => props.origin === "profile" && "-7.5%"};
+  margin-top: ${(props) => props.origin === "profile" && "-6.5%"} !important;
 
   @media (max-width: 620px) {
     margin-top: ${(props) => props.origin === "profile" && "3%"} !important;
@@ -14,6 +14,7 @@ export const StyledFormWrapper = styled(Grid)`
 export const StyledSegment = styled(Segment)`
   max-width: 450px;
   position: relative;
+  border: 2px solid #2185d0 !important;
 `;
 
 export const StyledFormHeader = styled(Header)`

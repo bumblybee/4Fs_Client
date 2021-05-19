@@ -3,10 +3,11 @@ import { Table } from "semantic-ui-react";
 
 export const StyledTable = styled(Table)`
   margin: 0 !important;
+  max-height: 35rem !important;
   tbody {
     /* display: block; */
-    height: ${(props) =>
-      props.rowdata.length > 9 || props.fullheighttable ? "31rem" : "auto"};
+    height: ${(props) => (props.fullheighttable ? "31rem" : "")};
+
     overflow: auto;
   }
 

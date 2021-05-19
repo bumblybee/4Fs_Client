@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Segment } from "semantic-ui-react";
 
 export const StyledFormContainer = styled.div`
-  width: 60%;
+  width: 50%;
   max-width: 100%;
   margin: 0 auto;
   padding: 1rem;
@@ -15,7 +15,7 @@ export const StyledFormContainer = styled.div`
 
 export const StyledSegment = styled(Segment)`
   width: 70% !important;
-
+  border: 2px solid #2185d0 !important;
   @media (max-width: 620px) {
     width: 95% !important;
     height: 98%;
@@ -24,6 +24,7 @@ export const StyledSegment = styled(Segment)`
 
 export const StyledProfileHeader = styled.h1`
   text-align: center;
+  margin-bottom: 2rem;
 `;
 
 export const StyledPhoneWrapper = styled.div`
@@ -45,4 +46,5 @@ export const StyledPhoneWrapper = styled.div`
 export const StyledLinkWrapper = styled.div`
   text-align: center;
   margin: 1rem auto 0;
+  display: grid;
 `;

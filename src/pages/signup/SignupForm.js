@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { ErrorContext } from "../../context/error/ErrorContext";
+import { NotificationContext } from "../../context/notification/NotificationContext";
 import { UserContext } from "../../context/user/UserContext";
 import UserInfo from "./UserInfo";
 import UserDetails from "./UserDetails";
@@ -15,7 +15,8 @@ import {
 const SignupForm = () => {
   const history = useHistory();
 
-  const { setErrorMessage, clearErrorMessage } = useContext(ErrorContext);
+  const { setNotificationMessage, clearNotificationMessage } =
+    useContext(NotificationContext);
 
   const { signUserUp, checkIfEmailExists } = useContext(UserContext);
 
@@ -58,7 +59,7 @@ const SignupForm = () => {
       setUserDetails({ ...userDetails, [input]: e.target.value });
     }
     setFormErrors({ ...formErrors, [input]: false });
-    clearErrorMessage();
+    clearNotificationMessage();
   };
 
   // Check all inputs are filled in
@@ -68,7 +69,10 @@ const SignupForm = () => {
       if (userDetails[item] === "") {
         setFormErrors({ ...formErrors, [item]: true });
 
-        setErrorMessage("Please fill in the highlighted fields");
+        setNotificationMessage(
+          "Please fill in the highlighted fields",
+          "error"
+        );
 
         return false;
       } else {
@@ -86,7 +90,10 @@ const SignupForm = () => {
     if (re.test(userDetails.email.toLowerCase())) {
       return true;
     } else {
-      setErrorMessage("Please check the email address formatting");
+      setNotificationMessage(
+        "Please check the email address formatting",
+        "error"
+      );
     }
   };
 
@@ -123,7 +130,7 @@ const SignupForm = () => {
     } else {
       // Set email input error and error message
       setFormErrors({ ...formErrors, email: true });
-      setErrorMessage(serverEmailStatus.error);
+      setNotificationMessage(serverEmailStatus.error, "error");
     }
   };
 
@@ -148,7 +155,7 @@ const SignupForm = () => {
       const signup = await signUserUp(userDetails);
       // Todo: Refactor how this is handled
       if (signup[0] && signup[0].error) {
-        setErrorMessage(signup[0].error);
+        setNotificationMessage(signup[0].error, "error");
       }
 
       signup.data && history.push("/");
@@ -166,8 +173,8 @@ const SignupForm = () => {
             handleSubmit={handleSubmit}
             setFormErrors={setFormErrors}
             formErrors={formErrors}
-            setErrorMessage={setErrorMessage}
-            clearErrorMessage={clearErrorMessage}
+            setNotificationMessage={setNotificationMessage}
+            clearNotificationMessage={clearNotificationMessage}
           />
         );
       case 2:

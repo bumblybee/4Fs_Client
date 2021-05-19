@@ -1,9 +1,10 @@
 import { useState, useEffect, useCallback, useContext } from "react";
-import { ErrorContext } from "../context/error/ErrorContext";
+import { NotificationContext } from "../context/notification/NotificationContext";
 
 const useCRUD = (getter, setter, destroyer) => {
   const [state, setState] = useState([]);
-  const { setErrorMessage, clearErrorMessage } = useContext(ErrorContext);
+  const { setNotificationMessage, clearNotificationMessage } =
+    useContext(NotificationContext);
 
   const getData = useCallback(async () => {
     const res = await getter();
@@ -13,15 +14,15 @@ const useCRUD = (getter, setter, destroyer) => {
 
   const setData = async (data, id) => {
     if (data) {
-    const res = await setter(data, id);
-    console.log(res);
+      const res = await setter(data, id);
+      console.log(res);
 
-    if (res.error) {
-      setErrorMessage(res.error);
-      return;
+      if (res.error) {
+        setNotificationMessage(res.error, "error");
+        return;
+      }
+      clearNotificationMessage();
     }
-    clearErrorMessage();
-  }
     await getData();
   };
 

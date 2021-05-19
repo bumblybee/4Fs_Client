@@ -38,7 +38,6 @@ const PriorPractices = () => {
         attached={showWeeks ? "top" : ""}
         basic
         style={{
-          // borderTop: "2px solid #800080",
           color: "#800080",
           fontWeight: "600",
           boxShadow: "none",

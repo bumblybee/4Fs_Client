@@ -82,7 +82,7 @@ const Routes = () => {
         <AppWrapper component={<FitnessPlanner />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/resources">
-        <AppWrapper component={<Resources />} />
+        <AppWrapper component={<Resources />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/profile" exact>
         <AppWrapper component={<UserProfile />} />

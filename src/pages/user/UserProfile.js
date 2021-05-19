@@ -1,7 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Menu } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
+import { NotificationContext } from "../../context/notification/NotificationContext";
 import {
   StyledProfileHeader,
   StyledPhoneWrapper,
@@ -13,6 +14,7 @@ import * as sc from "../../styles/GlobalStyledComponents";
 
 const UserProfile = () => {
   const { user, updateUserDetails } = useContext(UserContext);
+  const { setNotificationMessage } = useContext(NotificationContext);
 
   const splitPhoneNumber = user && user.phone && user.phone.split("-");
   const [userDetails, setUserDetails] = useState({
@@ -46,6 +48,7 @@ const UserProfile = () => {
 
     const res = await updateUserDetails(data);
     console.log(res);
+    res && setNotificationMessage("Successfully updated", "info", true);
   };
 
   const { firstName, lastName, email, age, height, weight, gender, sheetsURL } =
@@ -73,8 +76,16 @@ const UserProfile = () => {
   return (
     <sc.StyledFormWrapper verticalAlign="middle" centered origin="profile">
       <StyledSegment className="column" raised>
+        {/* <Button floated="right" size="mini" color="blue" basic>
+          Log out
+        </Button> */}
+
         <StyledFormContainer basic padded>
-          <StyledProfileHeader>Member Profile</StyledProfileHeader>
+          <StyledProfileHeader>
+            {user && user.firstName
+              ? `${user.firstName}'s Profile`
+              : `Member Profile`}
+          </StyledProfileHeader>
           <sc.StyledForm
             countryCode={userDetails.countryCode}
             onSubmit={handleSubmit}
@@ -225,6 +236,7 @@ const UserProfile = () => {
           </sc.StyledForm>
           <StyledLinkWrapper>
             <Link to="/reset-password">Reset your password</Link>
+            <Link to="/logout">Log out</Link>
           </StyledLinkWrapper>
         </StyledFormContainer>
       </StyledSegment>

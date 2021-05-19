@@ -48,7 +48,7 @@ const CurrentPractices = () => {
       label: (
         <div>
           Practice <br />
-          <p style={{ fontSize: "0.88rem" }}>
+          <p style={{ fontSize: "0.9rem" }}>
             <em>(ex. diet, reading, study, fitness)</em>
           </p>
         </div>

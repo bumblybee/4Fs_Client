@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { resetPassword } from "../../api/user/userApi";
-import { ErrorContext } from "../../context/error/ErrorContext";
+import { NotificationContext } from "../../context/notification/NotificationContext";
 import { Image, Button, Form, Segment } from "semantic-ui-react";
 import {
   StyledFormWrapper,
@@ -11,7 +11,8 @@ import {
 } from "../../styles/GlobalStyledComponents";
 
 const PasswordReset = () => {
-  const { setErrorMessage } = useContext(ErrorContext);
+  const { setNotificationMessage, clearNotificationMessage } =
+    useContext(NotificationContext);
   const [newPassword, setNewPassword] = useState("");
   const history = useHistory();
   const location = useLocation();
@@ -30,15 +31,17 @@ const PasswordReset = () => {
 
     if (validPassword) {
       const reset = await resetPassword(token, newPassword);
+      clearNotificationMessage();
 
       if (reset.error || !reset) {
-        setErrorMessage(reset.error, true);
+        setNotificationMessage(reset.error, "error", true);
       } else if (reset.data.id) {
         history.push("/login");
       }
     } else {
-      setErrorMessage(
-        "Password must contain at least 7 characters consisting of numbers and letters"
+      setNotificationMessage(
+        "Password must contain at least 7 characters consisting of numbers and letters",
+        "error"
       );
       return;
     }

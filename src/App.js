@@ -1,20 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 
-import ErrorProvider from "./context/error/ErrorProvider";
+import NotificationProvider from "./context/notification/NotificationProvider";
 import UserProvider from "./context/user/UserProvider";
-import Error from "./components/error/Error";
+import Notification from "./components/notification/Notification";
 import Routes from "./components/routes";
 
 function App() {
   return (
     <Router>
-      <ErrorProvider>
+      <NotificationProvider>
         <UserProvider>
-          <Error />
+          <Notification />
           {<Routes />}
         </UserProvider>
-      </ErrorProvider>
+      </NotificationProvider>
     </Router>
   );
 }

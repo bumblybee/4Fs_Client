@@ -9,8 +9,8 @@ const UserInfo = ({
   formErrors,
   handleSubmit,
   setFormErrors,
-  setErrorMessage,
-  clearErrorMessage,
+  setNotificationMessage,
+  clearNotificationMessage,
 }) => {
   // Make sure password contains at minimum seven character, both nums and lowercase letters
   const validPassword = () => {
@@ -26,12 +26,13 @@ const UserInfo = ({
 
     if (validPassword()) {
       setFormErrors({ ...formErrors, password: false });
-      clearErrorMessage();
+      clearNotificationMessage();
       await handleSubmit(e, "userInfo");
     } else {
       setFormErrors({ ...formErrors, password: true });
-      setErrorMessage(
-        "Password must contain at least 7 characters consisting of numbers and letters"
+      setNotificationMessage(
+        "Password must contain at least 7 characters consisting of numbers and letters",
+        "error"
       );
     }
   };

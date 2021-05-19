@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Message } from "semantic-ui-react";
 
-export const StyledErrorMessage = styled(Message)`
+export const StyledMessage = styled(Message)`
   position: absolute !important;
   top: 2%;
   left: 50%;
