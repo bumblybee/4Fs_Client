@@ -30,7 +30,7 @@ const Tabs = ({ path, subPath }) => {
   };
 
   useEffect(() => {
-    setActiveItem(subPath);
+    setActiveItem(subPath.replace(/-+/g, " "));
   }, [subPath]);
 
   switch (path) {
