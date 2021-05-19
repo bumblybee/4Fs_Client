@@ -5,9 +5,9 @@ export const StyledStaticCell = styled.div`
   display: flex;
   justify-content: ${(props) => props.alignment};
   font-weight: ${(props) => props.textweight};
+  color: ${(props) => props.condition && "#21ce0f"};
 
   .system-performed {
-    color: ${(props) => props.condition && "#21ce0f"};
     font-weight: bold;
     font-size: 1.15rem;
     width: max-content;

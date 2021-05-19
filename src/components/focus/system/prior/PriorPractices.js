@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import moment from "moment";
 import useCRUD from "../../../../hooks/useCRUD";
 import { getPriorWeeks } from "../../../../api/focus/practicesApi";
+import generateCellComponent from "../../../../utils/generateCellComponent";
 import { Accordion, Icon, Segment } from "semantic-ui-react";
 import TableComponent from "../../../table/TableComponent";
 
@@ -21,11 +22,21 @@ const PriorPractices = () => {
   const rows = priorWeeks.map((week) => {
     return week.practices.map((practice) => ({
       practice: {
-        cellComponent: <div>{practice.practice}</div>,
+        cellComponent: generateCellComponent("static", {
+          val: practice.practice,
+          alignment: "center",
+        }),
       },
-      goal: { cellComponent: <div>{practice.goal}</div> },
+      goal: {
+        cellComponent: generateCellComponent("", { val: practice.goal }),
+      },
       performed: {
-        cellComponent: <div>{practice.performed}</div>,
+        cellComponent: generateCellComponent("static", {
+          val: practice.performed,
+          alignment: "center",
+          condition: practice.performed >= practice.goal,
+          textweight: "600",
+        }),
       },
     }));
   });
