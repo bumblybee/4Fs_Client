@@ -48,7 +48,7 @@ export default function TableComponent({ children, ...props }) {
         style={{
           backgroundColor: props.color,
           color: "#fff",
-          borderRadius: props.descriptionheader ? "0" : "",
+          borderRadius: 0,
           fontFamily: "Lato",
           fontSize: props.fontsize || "1.1rem",
         }}
