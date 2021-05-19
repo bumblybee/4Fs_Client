@@ -63,6 +63,7 @@ const EmptyRowCell = ({ children, ...props }) => {
       tabIndex="0"
       disabled={props.disabled}
       aligntext={props.aligntext}
+      disabled={props.disabled}
     >
       {renderCell()}
     </StyledEmptyCell>

@@ -63,7 +63,7 @@ const SystemTableHeader = ({
               {moment(currWeek.startDate).format("MM/DD/YYYY")} -{" "}
               {moment(currWeek.endDate).format("MM/DD/YYYY")}
             </div>
-            <StyledButton inverted size="small" onClick={handleDeleteWeek}>
+            <StyledButton size="small" onClick={handleDeleteWeek}>
               Reset
             </StyledButton>
           </>
@@ -76,9 +76,7 @@ const SystemTableHeader = ({
               date={date}
               min={moment().format("YYYY-MM-DD")}
             />
-            <StyledButton inverted onClick={handleStartWeek}>
-              Start
-            </StyledButton>
+            <StyledButton onClick={handleStartWeek}>Start</StyledButton>
           </>
         )}
       </StyledStartDateContainer>

@@ -49,7 +49,7 @@ const CurrentPractices = () => {
         <div>
           Practice <br />
           <p style={{ fontSize: "0.9rem" }}>
-            <em>(ex. diet, reading, study, fitness)</em>
+            <em>(meditation, diet, reading, fitness, etc.)</em>
           </p>
         </div>
       ),
@@ -108,7 +108,7 @@ const CurrentPractices = () => {
     },
   ];
 
-  const rows = (additionalRow) => {
+  const rows = (exampleRow, emptyRow) => {
     const rowData = currPractices.map((item) => ({
       practice: {
         cellComponent: generateCellComponent("editable", {
@@ -218,7 +218,9 @@ const CurrentPractices = () => {
       },
     }));
 
-    return [...rowData, additionalRow];
+    // Only render example row if user hasn't added practices
+    if (currWeekObject.startDate) return [exampleRow, ...rowData, emptyRow];
+    else return [exampleRow, ...rowData];
   };
 
   const addEmptyRow = () => {
@@ -315,15 +317,110 @@ const CurrentPractices = () => {
     return emptyRow;
   };
 
+  const addExampleRow = () => {
+    const exampleRow = {
+      practice: {
+        cellComponent: generateCellComponent("example", {
+          val: "Example: Go for a walk",
+          alignment: "center",
+          justify: "flex-start",
+          color: "#33333366",
+        }),
+      },
+      goal: {
+        cellComponent: generateCellComponent("number", {
+          val: 3,
+          alignment: "center",
+          justify: "flex-start",
+          disabled: true,
+        }),
+      },
+      dayOne: {
+        cellComponent: generateCellComponent("check", {
+          val: false,
+          alignment: "center",
+          justify: "flex-start",
+          disabled: true,
+        }),
+      },
+      dayTwo: {
+        cellComponent: generateCellComponent("check", {
+          val: false,
+          alignment: "center",
+          justify: "flex-start",
+          disabled: true,
+        }),
+      },
+      dayThree: {
+        cellComponent: generateCellComponent("check", {
+          val: true,
+          alignment: "center",
+          justify: "flex-start",
+          disabled: true,
+        }),
+      },
+      dayFour: {
+        cellComponent: generateCellComponent("check", {
+          val: false,
+          alignment: "center",
+          justify: "flex-start",
+          disabled: true,
+        }),
+      },
+      dayFive: {
+        cellComponent: generateCellComponent("check", {
+          val: true,
+          alignment: "center",
+          justify: "flex-start",
+          disabled: true,
+        }),
+      },
+      daySix: {
+        cellComponent: generateCellComponent("check", {
+          val: true,
+          alignment: "center",
+          justify: "flex-start",
+          disabled: true,
+        }),
+      },
+      daySeven: {
+        cellComponent: generateCellComponent("check", {
+          onSave: handleSave,
+          val: false,
+          alignment: "center",
+          justify: "flex-start",
+          disabled: true,
+        }),
+      },
+      performed: {
+        cellComponent: generateCellComponent("static", {
+          val: 3,
+          // alignment: "center",
+          // justify: "flex-start",
+          className: "system-performed-example",
+          textweight: 400,
+        }),
+      },
+      delete: {
+        cellComponent: generateCellComponent("example", {
+          alignment: "right",
+        }),
+      },
+    };
+
+    return exampleRow;
+  };
+
   return (
     rows && (
       <TableComponent
         columns={columns}
-        rows={rows(addEmptyRow())}
+        rows={rows(addExampleRow(), addEmptyRow())}
         color="purple"
         aligntext="left"
         striped
         compact
+        example
         descriptionheader={
           <SystemTableHeader
             currWeek={currWeekObject}

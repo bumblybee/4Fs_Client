@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 export const StyledEditableCell = styled.div`
-  width: 95%;
-  /* padding-left: 0.5rem; */
   cursor: pointer;
-  /* border-radius: 4px; */
+  width: 95%;
   min-height: 40px;
   overflow: auto;
   display: flex;

@@ -51,12 +51,14 @@ export const StyledDatePicker = styled.input`
 `;
 
 export const StyledButton = styled(Button)`
-  background: #ffffffef !important;
-  color: purple !important;
+  background: #bf81bf !important;
+  border: 1px solid transparent !important;
+
+  color: #ffecff !important;
   margin-left: 0.5rem !important;
 
   :hover {
-    background: transparent !important;
-    color: #fff !important;
+    background: #bf81bfbb !important;
+    border: 1px solid #ffffff55 !important;
   }
 `;

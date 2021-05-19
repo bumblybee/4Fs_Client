@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledEmptyCell = styled.div`
-  width: 95%;
+  width: 99%;
   cursor: ${(props) => (props.disabled ? "default" : "pointer")};
   border-radius: 0;
   min-height: 40px;
@@ -14,9 +14,8 @@ export const StyledEmptyCell = styled.div`
   align-items: center;
 
   :hover {
-    /* background: #eee;
-    border-radius: 6px; */
-    /* border-bottom: 2px solid #eee; */
+    background: ${(props) => (props.disabled ? "" : " #eee")};
+    border-radius: 6px;
   }
 
   input {
@@ -26,7 +25,7 @@ export const StyledEmptyCell = styled.div`
     width: inherit;
     height: inherit;
     text-align: ${(props) => props.aligntext};
-    /* margin: 0 auto; */
+
     text-align-last: center;
     white-space: normal;
     background: #eee;

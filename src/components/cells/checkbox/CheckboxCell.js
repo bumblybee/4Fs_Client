@@ -37,7 +37,7 @@ const CheckboxCell = (props) => {
           type="checkbox"
           disabled={props.disabled}
         />
-        {isChecked ? <Icon name="check" /> : ""}
+        {isChecked ? <Icon name="check" disabled={props.disabled} /> : ""}
       </label>
     </sc.StyledCheckboxWrapper>
   );

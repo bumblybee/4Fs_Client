@@ -20,6 +20,12 @@ export const StyledStaticCell = styled.div`
     }
   }
 
+  .system-performed-example {
+    width: max-content;
+    margin: auto 0 auto 35%;
+    color: #33333377;
+  }
+
   .sleep-hours-slept {
     text-align: center;
     font-weight: bold;

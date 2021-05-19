@@ -96,7 +96,7 @@ export default function TableComponent({ children, ...props }) {
         style={{
           minHeight: "45px",
           textAlign: props.aligntext,
-          background: props.example && idx === 0 && "#daddde99",
+          background: props.example && idx === 0 && "#daddde88",
         }}
       >
         {renderCells(row)}

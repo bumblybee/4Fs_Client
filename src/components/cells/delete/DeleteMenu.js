@@ -7,18 +7,18 @@ const DeleteMenu = ({ toDelete, setToDelete, deleteData }) => {
     <StyledDeleteMenu>
       <Button
         size="mini"
+        onClick={deleteData}
+        style={{ background: "#C41E3Aee", color: "#fff" }}
+      >
+        Delete
+      </Button>
+      <Button
+        size="mini"
         basic
         color="teal"
         onClick={() => setToDelete(!toDelete)}
       >
         Cancel
-      </Button>
-      <Button
-        size="mini"
-        onClick={deleteData}
-        style={{ background: "#C41E3Aee", color: "#fff" }}
-      >
-        Delete
       </Button>
     </StyledDeleteMenu>
   );
