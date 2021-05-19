@@ -202,11 +202,10 @@ const CurrentPractices = () => {
         }),
       },
       performed: {
-        cellComponent: generateCellComponent("static", {
-          id: item.id,
-          onSave: handleSave,
+        cellComponent: generateCellComponent("label", {
           val: item.performed,
           condition: item.performed >= item.goal,
+          color: item.performed >= item.goal ? "green" : "",
           className: "system-performed",
         }),
       },

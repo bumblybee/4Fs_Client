@@ -49,8 +49,9 @@ const UserProvider = ({ children }) => {
   };
 
   const logUserOut = async () => {
-    await logoutUser();
+    const logout = await logoutUser();
     setUser(null);
+    return logout;
   };
 
   useEffect(() => {
@@ -66,6 +67,7 @@ const UserProvider = ({ children }) => {
         getCurrentUser,
         signUserUp,
         logUserIn,
+        logUserOut,
         updateUserDetails,
         checkIfEmailExists,
       }}

@@ -15,12 +15,12 @@ const Milestones = () => {
   const columns = [
     { label: "F", key: "f", width: 2 },
     {
-      label: "Milestone",
+      label: "Milestones",
       key: "milestone",
       width: 4,
     },
     {
-      label: "Personalize",
+      label: "Personalize it",
       key: "personalize",
       width: 4,
     },
@@ -40,15 +40,13 @@ const Milestones = () => {
       f: {
         cellComponent: generateCellComponent("static", {
           val: item.f,
-          // aligntext: "left",
-          alignment: "center",
+          alignment: "left",
           textweight: "600",
         }),
       },
       milestone: {
-        cellComponent: generateCellComponent("static", {
+        cellComponent: generateCellComponent("", {
           val: item.milestone,
-          // aligntext: "left",
           alignment: "center",
         }),
       },
@@ -59,7 +57,6 @@ const Milestones = () => {
           val: item.personalize,
           accessor: "personalize",
           alignment: "center",
-          // aligntext: "left",
         }),
       },
       comments: {
@@ -69,7 +66,6 @@ const Milestones = () => {
           val: item.comments,
           accessor: "comments",
           alignment: "center",
-          // aligntext: "left",
         }),
       },
       status: {
@@ -100,7 +96,7 @@ const Milestones = () => {
           rows={rows()}
           columns={columns}
           color="orange"
-          aligntext="center"
+          aligntext="left"
           striped
         />
       </div>

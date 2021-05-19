@@ -9,6 +9,7 @@ import NumberCell from "../components/cells/number/NumberCell";
 import ButtonCell from "../components/cells/button/ButtonCell";
 import DeleteCell from "../components/cells/delete/DeleteCell";
 import StaticCell from "../components/cells/static/StaticCell";
+import LabelCell from "../components/cells/label/LabelCell";
 
 const generateCellComponent = (type, props) => {
   switch (type) {
@@ -147,6 +148,16 @@ const generateCellComponent = (type, props) => {
           textweight={props.textweight}
         />
       );
+    case "label":
+      return (
+        <LabelCell
+          val={props.val}
+          condition={props.condition}
+          className={props.className}
+          color={props.color}
+        />
+      );
+
     default:
       return <div style={props.style}>{props.val}</div>;
   }

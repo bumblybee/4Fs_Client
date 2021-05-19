@@ -47,4 +47,10 @@ export const StyledLinkWrapper = styled.div`
   text-align: center;
   margin: 1rem auto 0;
   display: grid;
+  font-size: 1rem;
+  color: #2185d0;
+
+  p:hover {
+    cursor: pointer;
+  }
 `;

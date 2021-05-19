@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Form, Button, Menu } from "semantic-ui-react";
+import { Link, useHistory } from "react-router-dom";
+import { Form, Button } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
 import { NotificationContext } from "../../context/notification/NotificationContext";
 import {
@@ -13,8 +13,9 @@ import {
 import * as sc from "../../styles/GlobalStyledComponents";
 
 const UserProfile = () => {
-  const { user, updateUserDetails } = useContext(UserContext);
+  const history = useHistory();
   const { setNotificationMessage } = useContext(NotificationContext);
+  const { user, updateUserDetails, logUserOut } = useContext(UserContext);
 
   const splitPhoneNumber = user && user.phone && user.phone.split("-");
   const [userDetails, setUserDetails] = useState({
@@ -51,35 +52,34 @@ const UserProfile = () => {
     res && setNotificationMessage("Successfully updated", "info", true);
   };
 
-  const { firstName, lastName, email, age, height, weight, gender, sheetsURL } =
-    user;
+  const handleLogout = () => {
+    logUserOut();
+
+    history.replace("/login");
+  };
 
   useEffect(() => {
     user &&
       setUserDetails({
         ...userDetails,
-        firstName,
-        lastName,
-        email,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
         countryCode: splitPhoneNumber ? splitPhoneNumber[0] : 1,
         phone1: splitPhoneNumber && splitPhoneNumber[1],
         phone2: splitPhoneNumber && splitPhoneNumber[2],
         phone3: splitPhoneNumber && splitPhoneNumber[3],
-        age,
-        height,
-        weight,
-        gender,
-        sheetsURL,
+        age: user.age,
+        height: user.height,
+        weight: user.weight,
+        gender: user.gender,
+        sheetsURL: user.sheetsURL,
       });
   }, [user]);
 
   return (
     <sc.StyledFormWrapper verticalAlign="middle" centered origin="profile">
       <StyledSegment className="column" raised>
-        {/* <Button floated="right" size="mini" color="blue" basic>
-          Log out
-        </Button> */}
-
         <StyledFormContainer basic padded>
           <StyledProfileHeader>
             {user && user.firstName
@@ -236,7 +236,7 @@ const UserProfile = () => {
           </sc.StyledForm>
           <StyledLinkWrapper>
             <Link to="/reset-password">Reset your password</Link>
-            <Link to="/logout">Log out</Link>
+            <p onClick={handleLogout}>Log out</p>
           </StyledLinkWrapper>
         </StyledFormContainer>
       </StyledSegment>
