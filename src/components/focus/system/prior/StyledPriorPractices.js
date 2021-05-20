@@ -3,7 +3,7 @@ import { Segment, Accordion } from "semantic-ui-react";
 import TableComponent from "../../../table/TableComponent";
 
 export const StyledProgressWrapper = styled.div`
-  width: ${(props) => (props.showWeeks ? "38.5%" : "12%")};
+  width: ${(props) => (props.showWeeks ? "50.5%" : "12%")};
   i {
     cursor: pointer;
   }

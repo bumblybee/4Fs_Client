@@ -77,12 +77,7 @@ const PriorPractices = () => {
                     {moment(week.endDate).format("MM/DD/YY")}
                   </Accordion.Title>
 
-                  <Accordion.Content
-                    style={{
-                      overflowY: "auto",
-                    }}
-                    active={activeItem === idx}
-                  >
+                  <Accordion.Content active={activeItem === idx}>
                     <StyledProgressTable
                       aligntext="center"
                       fontsize="0.9rem"

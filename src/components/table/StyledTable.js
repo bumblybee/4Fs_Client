@@ -3,7 +3,7 @@ import { Table } from "semantic-ui-react";
 
 export const StyledTable = styled(Table)`
   margin: 0 !important;
-  max-height: 35rem !important;
+  max-height: 3rem !important;
   tbody {
     /* display: block; */
     height: ${(props) => (props.fullheighttable ? "31rem" : "")};
@@ -61,7 +61,7 @@ export const StyledTable = styled(Table)`
       border-bottom-color: ${(props) => props.color};
     }
 
-    /* Hide table headers (but not display: none;, for accessibility) */
+    /* Hide table headers (but not display: none, for accessibility) */
     thead tr {
       position: absolute;
       top: -9999px;

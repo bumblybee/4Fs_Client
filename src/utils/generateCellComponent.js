@@ -75,6 +75,8 @@ const generateCellComponent = (type, props) => {
           performed={props.performed}
           label={props.label}
           accessor={props.accessor}
+          foreignAccessor={props.foreignAccessor}
+          foreignId={props.foreignId}
           disabled={props.disabled}
         />
       );
@@ -86,6 +88,8 @@ const generateCellComponent = (type, props) => {
           val={props.val}
           label={props.label}
           accessor={props.accessor}
+          foreignAccessor={props.foreignAccessor}
+          foreignId={props.foreignId}
           alignment={props.alignment}
           disabled={props.disabled}
         />

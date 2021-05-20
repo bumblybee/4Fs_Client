@@ -14,16 +14,16 @@ const SleepTableHeader = ({ data, columns }) => {
     >
       <div
         style={{ marginRight: "auto", cursor: "pointer" }}
-        title="Download CSV"
+        // title="Download CSV"
       >
         <CsvDownloader
           datas={data}
           columns={columns}
           filename="sleep-tracking"
-          title="Download CSV"
+          // title="Download CSV"
         >
           <Popup
-            content="Download CSV data"
+            content="Download CSV"
             position="top center"
             trigger={<Icon name="download" />}
           />

@@ -129,6 +129,8 @@ const CurrentPractices = () => {
           onSave: handleSave,
           val: item.goal,
           accessor: "goal",
+          foreignAccessor: "practiceWeekId",
+          foreignId: currWeekData.id,
           alignment: "center",
         }),
       },
@@ -139,6 +141,8 @@ const CurrentPractices = () => {
           val: item.dayOne,
           performed: item.performed,
           accessor: "dayOne",
+          foreignAccessor: "practiceWeekId",
+          foreignId: currWeekData.id,
           alignment: "center",
         }),
       },
@@ -149,6 +153,8 @@ const CurrentPractices = () => {
           performed: item.performed,
           val: item.dayTwo,
           accessor: "dayTwo",
+          foreignAccessor: "practiceWeekId",
+          foreignId: currWeekData.id,
           alignment: "center",
         }),
       },
@@ -159,6 +165,8 @@ const CurrentPractices = () => {
           performed: item.performed,
           val: item.dayThree,
           accessor: "dayThree",
+          foreignAccessor: "practiceWeekId",
+          foreignId: currWeekData.id,
           alignment: "center",
         }),
       },
@@ -169,6 +177,8 @@ const CurrentPractices = () => {
           performed: item.performed,
           val: item.dayFour,
           accessor: "dayFour",
+          foreignAccessor: "practiceWeekId",
+          foreignId: currWeekData.id,
           alignment: "center",
         }),
       },
@@ -179,6 +189,8 @@ const CurrentPractices = () => {
           performed: item.performed,
           val: item.dayFive,
           accessor: "dayFive",
+          foreignAccessor: "practiceWeekId",
+          foreignId: currWeekData.id,
           alignment: "center",
         }),
       },
@@ -189,6 +201,8 @@ const CurrentPractices = () => {
           performed: item.performed,
           val: item.daySix,
           accessor: "daySix",
+          foreignAccessor: "practiceWeekId",
+          foreignId: currWeekData.id,
           alignment: "center",
         }),
       },
@@ -199,6 +213,8 @@ const CurrentPractices = () => {
           performed: item.performed,
           val: item.daySeven,
           accessor: "daySeven",
+          foreignAccessor: "practiceWeekId",
+          foreignId: currWeekData.id,
           alignment: "center",
         }),
       },
@@ -429,7 +445,7 @@ const CurrentPractices = () => {
             handleDeleteCurrWeek={handleDeleteCurrWeek}
           />
         }
-        footer={<PriorPractices />}
+        // footer={<PriorPractices />}
       />
     )
   );
