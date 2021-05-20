@@ -30,10 +30,10 @@ const CurrentPractices = () => {
   );
 
   // Returning curr week object as array so fits generic data handling in useCRUD
-  const currWeekObject = currWeek.length && currWeek[0];
+  const currWeekData = currWeek.length && currWeek[0];
 
   const renderDayOfWeek = (daysFromStart) => {
-    const startDay = currWeekObject.startDate;
+    const startDay = currWeekData.startDate;
 
     if (startDay) {
       return moment(startDay).add(daysFromStart, "days").format("ddd");
@@ -116,7 +116,8 @@ const CurrentPractices = () => {
           onSave: handleSave,
           val: item.practice,
           accessor: "practice",
-          practiceWeekId: currWeekObject.id,
+          foreignAccessor: "practiceWeekId",
+          foreignId: currWeekData.id,
           alignment: "left",
           textWeight: "600",
           placeholder: "New practice...",
@@ -218,8 +219,8 @@ const CurrentPractices = () => {
       },
     }));
 
-    // Only render example row if user hasn't added practices
-    if (currWeekObject.startDate) return [exampleRow, ...rowData, emptyRow];
+    // Only render empty row if user has chosen a start date
+    if (currWeekData.startDate) return [exampleRow, ...rowData, emptyRow];
     else return [exampleRow, ...rowData];
   };
 
@@ -229,12 +230,13 @@ const CurrentPractices = () => {
         cellComponent: generateCellComponent("empty", {
           onSave: handleSave,
           accessor: "practice",
-          practiceWeekId: currWeekObject.id,
+          foreignAccessor: "practiceWeekId",
+          foreignId: currWeekData.id,
           alignment: "left",
-          placeholder: currWeekObject.startDate
+          placeholder: currWeekData.startDate
             ? "New practice..."
             : "Choose a start date to begin week...",
-          disabled: currWeekObject.startDate ? false : true,
+          disabled: currWeekData.startDate ? false : true,
         }),
       },
       goal: {
@@ -242,7 +244,7 @@ const CurrentPractices = () => {
           onSave: handleSave,
           accessor: "goal",
           alignment: "center",
-          disabled: currWeekObject.startDate ? false : true,
+          disabled: currWeekData.startDate ? false : true,
         }),
       },
       dayOne: {
@@ -250,7 +252,7 @@ const CurrentPractices = () => {
           onSave: handleSave,
           accessor: "dayOne",
           alignment: "center",
-          disabled: currWeekObject.startDate ? false : true,
+          disabled: currWeekData.startDate ? false : true,
         }),
       },
       dayTwo: {
@@ -258,7 +260,7 @@ const CurrentPractices = () => {
           onSave: handleSave,
           accessor: "dayTwo",
           alignment: "center",
-          disabled: currWeekObject.startDate ? false : true,
+          disabled: currWeekData.startDate ? false : true,
         }),
       },
       dayThree: {
@@ -266,7 +268,7 @@ const CurrentPractices = () => {
           onSave: handleSave,
           accessor: "dayThree",
           alignment: "center",
-          disabled: currWeekObject.startDate ? false : true,
+          disabled: currWeekData.startDate ? false : true,
         }),
       },
       dayFour: {
@@ -274,7 +276,7 @@ const CurrentPractices = () => {
           onSave: handleSave,
           accessor: "dayFour",
           alignment: "center",
-          disabled: currWeekObject.startDate ? false : true,
+          disabled: currWeekData.startDate ? false : true,
         }),
       },
       dayFive: {
@@ -282,7 +284,7 @@ const CurrentPractices = () => {
           onSave: handleSave,
           accessor: "dayFive",
           alignment: "center",
-          disabled: currWeekObject.startDate ? false : true,
+          disabled: currWeekData.startDate ? false : true,
         }),
       },
       daySix: {
@@ -290,7 +292,7 @@ const CurrentPractices = () => {
           onSave: handleSave,
           accessor: "daySix",
           alignment: "center",
-          disabled: currWeekObject.startDate ? false : true,
+          disabled: currWeekData.startDate ? false : true,
         }),
       },
       daySeven: {
@@ -298,7 +300,7 @@ const CurrentPractices = () => {
           onSave: handleSave,
           accessor: "daySeven",
           alignment: "center",
-          disabled: currWeekObject.startDate ? false : true,
+          disabled: currWeekData.startDate ? false : true,
         }),
       },
       performed: {
@@ -421,7 +423,7 @@ const CurrentPractices = () => {
         example
         descriptionheader={
           <SystemTableHeader
-            currWeek={currWeekObject}
+            currWeek={currWeekData}
             handleSave={handleSave}
             handleStartCurrWeek={handleStartCurrWeek}
             handleDeleteCurrWeek={handleDeleteCurrWeek}

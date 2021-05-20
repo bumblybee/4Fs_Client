@@ -3,7 +3,14 @@ import { Segment, Accordion } from "semantic-ui-react";
 import TableComponent from "../../../table/TableComponent";
 
 export const StyledProgressWrapper = styled.div`
-  width: ${(props) => (props.showWeeks ? "49%" : "12%")};
+  width: ${(props) => (props.showWeeks ? "38.5%" : "12%")};
+  i {
+    cursor: pointer;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
 export const StyledProgressToggle = styled(Segment)`
@@ -24,5 +31,5 @@ export const StyledAccordion = styled(Accordion)`
 `;
 
 export const StyledProgressTable = styled(TableComponent)`
-  width: 85% !important;
+  width: 95% !important;
 `;

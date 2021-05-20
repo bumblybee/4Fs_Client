@@ -3,7 +3,6 @@ import moment from "moment";
 import useCRUD from "../../../../hooks/useCRUD";
 import { getPriorWeeks } from "../../../../api/focus/practicesApi";
 import generateCellComponent from "../../../../utils/generateCellComponent";
-import TableComponent from "../../../table/TableComponent";
 import { Accordion, Icon } from "semantic-ui-react";
 import {
   StyledProgressToggle,
@@ -54,7 +53,6 @@ const PriorPractices = () => {
       >
         <Icon
           name={showWeeks ? "caret down" : "caret right"}
-          style={{ cursor: "pointer" }}
           onClick={() => setShowWeeks(!showWeeks)}
         />
         Progress
@@ -64,35 +62,39 @@ const PriorPractices = () => {
           {!priorWeeks.length && (
             <Accordion.Title>No previous weeks to show</Accordion.Title>
           )}
-          {priorWeeks.map((week, idx) => (
-            <>
-              <Accordion.Title
-                key={idx}
-                active={activeItem === idx}
-                onClick={() => setActiveItem(activeItem === idx ? -1 : idx)}
-              >
-                <Icon name="dropdown" />
-                {moment(week.startDate).format("MM/DD/YY")} -{" "}
-                {moment(week.endDate).format("MM/DD/YY")}
-              </Accordion.Title>
+          {priorWeeks.map(
+            (week, idx) =>
+              // If we have data for row at idx, render
+              rows[idx][0] && (
+                <>
+                  <Accordion.Title
+                    key={idx}
+                    active={activeItem === idx}
+                    onClick={() => setActiveItem(activeItem === idx ? -1 : idx)}
+                  >
+                    <Icon name="dropdown" />
+                    {moment(week.startDate).format("MM/DD/YY")} -{" "}
+                    {moment(week.endDate).format("MM/DD/YY")}
+                  </Accordion.Title>
 
-              <Accordion.Content
-                style={{
-                  overflowY: "auto",
-                }}
-                active={activeItem === idx}
-              >
-                <StyledProgressTable
-                  aligntext="center"
-                  fontsize="0.9rem"
-                  compact
-                  color="purple"
-                  columns={columns}
-                  rows={rows[idx]}
-                />
-              </Accordion.Content>
-            </>
-          ))}
+                  <Accordion.Content
+                    style={{
+                      overflowY: "auto",
+                    }}
+                    active={activeItem === idx}
+                  >
+                    <StyledProgressTable
+                      aligntext="center"
+                      fontsize="0.9rem"
+                      compact
+                      color="purple"
+                      columns={columns}
+                      rows={rows[idx]}
+                    />
+                  </Accordion.Content>
+                </>
+              )
+          )}
         </StyledAccordion>
       )}
     </StyledProgressWrapper>

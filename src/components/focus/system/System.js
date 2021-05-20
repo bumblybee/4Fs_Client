@@ -4,7 +4,7 @@ import SectionHeader from "../../layout/SectionHeader";
 
 const System = () => {
   return (
-    <div>
+    <>
       <SectionHeader
         title="Master your System"
         subtitle="Purpose: To begin doing new practices that will help you with your
@@ -12,7 +12,7 @@ const System = () => {
       />
 
       <CurrentPractices />
-    </div>
+    </>
   );
 };
 

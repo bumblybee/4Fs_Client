@@ -53,7 +53,7 @@ const SystemTableHeader = ({
             practice.
           </p>
         ) : (
-          <p>Choose the date you'd like to begin tracking your practices. </p>
+          <p>Choose a start date to begin tracking your practices. </p>
         )}
       </div>
       <StyledStartDateContainer>
