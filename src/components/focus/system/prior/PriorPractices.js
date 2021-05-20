@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import moment from "moment";
 import useCRUD from "../../../../hooks/useCRUD";
-import { getPriorWeeks } from "../../../../api/focus/practicesApi";
+import { getPriorPractices } from "../../../../api/focus/practicesApi";
 import generateCellComponent from "../../../../utils/generateCellComponent";
-import { Accordion, Icon } from "semantic-ui-react";
+import { Segment, Icon } from "semantic-ui-react";
 import {
   StyledProgressToggle,
   StyledAccordion,
@@ -13,42 +13,52 @@ import {
 
 const PriorPractices = () => {
   const [showWeeks, setShowWeeks] = useState(false);
-  const [priorWeeks] = useCRUD(getPriorWeeks);
-  const [activeItem, setActiveItem] = useState(null);
+  const [priorPractices] = useCRUD(getPriorPractices);
+  // const [activeItem, setActiveItem] = useState(null);
 
   const columns = [
-    { label: "Practice", key: "practice" },
-    { label: "Goal", key: "goal" },
-    { label: "Performed", key: "performed" },
+    { label: "Week", key: "dates", width: 3 },
+    { label: "Practice", key: "practice", width: 3 },
+    { label: "Goal", key: "goal", width: 2 },
+    { label: "Performed", key: "performed", width: 2 },
   ];
 
-  const rows = priorWeeks.map((week) => {
-    return week.practices.map((practice) => ({
-      practice: {
-        cellComponent: generateCellComponent("static", {
-          val: practice.practice,
-          alignment: "center",
-        }),
-      },
-      goal: {
-        cellComponent: generateCellComponent("", { val: practice.goal }),
-      },
-      performed: {
-        cellComponent: generateCellComponent("static", {
-          val: practice.performed,
-          alignment: "center",
-          condition: practice.performed >= practice.goal,
-          textweight: "600",
-        }),
-      },
-    }));
-  });
+  const rows = priorPractices.map((practice) => ({
+    dates: {
+      cellComponent: generateCellComponent("static", {
+        val: `${moment(practice.practice_week.startDate).format("MM/DD/YY")} -
+            ${moment(practice.practice_week.endDate).format("MM/DD/YY")}`,
+        alignment: "center",
+      }),
+    },
+    practice: {
+      cellComponent: generateCellComponent("static", {
+        val: practice.practice,
+        alignment: "center",
+      }),
+    },
+    goal: {
+      cellComponent: generateCellComponent("static", {
+        alignment: "center",
+        val: practice.goal,
+      }),
+    },
+    performed: {
+      cellComponent: generateCellComponent("static", {
+        val: practice.performed,
+        alignment: "center",
+        condition: practice.performed >= practice.goal,
+        textweight: "600",
+      }),
+    },
+  }));
 
   return (
     <StyledProgressWrapper showWeeks={showWeeks}>
       <StyledProgressToggle
-        attached={showWeeks ? "top" : ""}
+        // attached={showWeeks ? "top" : ""}
         basic
+        showWeeks={showWeeks}
         onClick={() => setShowWeeks(!showWeeks)}
       >
         <Icon
@@ -58,39 +68,17 @@ const PriorPractices = () => {
         Progress
       </StyledProgressToggle>
       {showWeeks && (
-        <StyledAccordion styled fluid>
-          {!priorWeeks.length && (
-            <Accordion.Title>No previous weeks to show</Accordion.Title>
-          )}
-          {priorWeeks.map(
-            (week, idx) =>
-              // If we have data for row at idx, render
-              rows[idx][0] && (
-                <>
-                  <Accordion.Title
-                    key={idx}
-                    active={activeItem === idx}
-                    onClick={() => setActiveItem(activeItem === idx ? -1 : idx)}
-                  >
-                    <Icon name="dropdown" />
-                    {moment(week.startDate).format("MM/DD/YY")} -{" "}
-                    {moment(week.endDate).format("MM/DD/YY")}
-                  </Accordion.Title>
-
-                  <Accordion.Content active={activeItem === idx}>
-                    <StyledProgressTable
-                      aligntext="center"
-                      fontsize="0.9rem"
-                      compact
-                      color="purple"
-                      columns={columns}
-                      rows={rows[idx]}
-                    />
-                  </Accordion.Content>
-                </>
-              )
-          )}
-        </StyledAccordion>
+        <>
+          {!priorPractices.length && <p>No previous weeks to show</p>}
+          <StyledProgressTable
+            aligntext="center"
+            fontsize="0.9rem"
+            compact
+            color="green"
+            columns={columns}
+            rows={rows}
+          />
+        </>
       )}
     </StyledProgressWrapper>
   );
