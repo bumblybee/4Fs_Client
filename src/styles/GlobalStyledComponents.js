@@ -6,8 +6,12 @@ export const StyledFormWrapper = styled(Grid)`
 
   margin-top: ${(props) => props.origin === "profile" && "-6.5%"} !important;
 
-  @media (max-width: 620px) {
+  @media (max-width: 780px) {
     margin-top: ${(props) => props.origin === "profile" && "3%"} !important;
+  }
+
+  @media (max-width: 620px) {
+    margin-top: ${(props) => props.origin === "profile" && "0.5%"} !important;
   }
 `;
 

@@ -20,10 +20,13 @@ const SleepTableHeader = ({ data, columns }) => {
           datas={data}
           columns={columns}
           filename="sleep-tracking"
-          style={{ color: "#fff" }}
           title="Download CSV"
         >
-          <Icon name="download" />
+          <Popup
+            content="Download CSV data"
+            position="top center"
+            trigger={<Icon name="download" />}
+          />
         </CsvDownloader>
       </div>
       <div style={{ margin: "auto", fontStyle: "italic" }}>

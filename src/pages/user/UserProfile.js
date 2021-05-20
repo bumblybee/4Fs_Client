@@ -49,7 +49,8 @@ const UserProfile = () => {
 
     const res = await updateUserDetails(data);
     console.log(res);
-    res && setNotificationMessage("Successfully updated", "info", true);
+    res &&
+      setNotificationMessage("Your information has been updated", "info", true);
   };
 
   const handleLogout = () => {
