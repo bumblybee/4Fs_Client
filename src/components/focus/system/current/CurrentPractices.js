@@ -314,7 +314,7 @@ const CurrentPractices = () => {
       performed: {
         cellComponent: generateCellComponent("static", {
           val: item.performed,
-          condition: item.performed >= item.goal,
+          condition: item.performed >= item.goal && item.performed !== 0,
           color: item.performed >= item.goal ? "green" : "",
           className: "system-performed",
         }),
@@ -352,10 +352,10 @@ const CurrentPractices = () => {
       goal: {
         cellComponent: generateCellComponent("number", {
           onSave: handleSavePractice,
-          val: "",
+          val: 0,
           accessor: "goal",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: true,
         }),
       },
       dayOne: {
@@ -363,7 +363,7 @@ const CurrentPractices = () => {
           onSave: handleSavePractice,
           accessor: "dayOne",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: true,
         }),
       },
       dayTwo: {
@@ -371,7 +371,7 @@ const CurrentPractices = () => {
           onSave: handleSavePractice,
           accessor: "dayTwo",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: true,
         }),
       },
       dayThree: {
@@ -379,7 +379,7 @@ const CurrentPractices = () => {
           onSave: handleSavePractice,
           accessor: "dayThree",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: true,
         }),
       },
       dayFour: {
@@ -387,7 +387,7 @@ const CurrentPractices = () => {
           onSave: handleSavePractice,
           accessor: "dayFour",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: true,
         }),
       },
       dayFive: {
@@ -395,7 +395,7 @@ const CurrentPractices = () => {
           onSave: handleSavePractice,
           accessor: "dayFive",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: true,
         }),
       },
       daySix: {
@@ -403,7 +403,7 @@ const CurrentPractices = () => {
           onSave: handleSavePractice,
           accessor: "daySix",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: true,
         }),
       },
       daySeven: {
@@ -411,7 +411,7 @@ const CurrentPractices = () => {
           onSave: handleSavePractice,
           accessor: "daySeven",
           alignment: "center",
-          disabled: currWeek.startDate ? false : true,
+          disabled: true,
         }),
       },
       performed: {
