@@ -8,20 +8,20 @@ import {
   StyledProgressToggle,
   StyledProgressWrapper,
   StyledProgressTable,
-} from "./StyledPriorPractices";
+} from "./StyledProgress";
 
 const Progress = () => {
   const [showWeeks, setShowWeeks] = useState(false);
   const [practiceProgress] = useCRUD(getPracticeProgress);
 
   const columns = [
-    { label: "Week", key: "dates", width: 2 },
+    { label: "Week", key: "dates", width: 3 },
     { label: "Practice", key: "practice", width: 3 },
-    { label: "Goal", key: "goal", width: 2 },
-    { label: "Performed", key: "performed", width: 2 },
+    { label: "Goal", key: "goal", width: 1 },
+    { label: "Performed", key: "performed", width: 1 },
   ];
 
-  const rows = (datesRow) => {
+  const rows = () => {
     const rowData = practiceProgress.map((practice) => ({
       dates: {
         cellComponent: generateCellComponent("static", {
@@ -59,7 +59,6 @@ const Progress = () => {
   return (
     <StyledProgressWrapper showWeeks={showWeeks}>
       <StyledProgressToggle
-        // attached={showWeeks ? "top" : ""}
         basic
         showWeeks={showWeeks}
         onClick={() => setShowWeeks(!showWeeks)}
@@ -79,7 +78,7 @@ const Progress = () => {
               aligntext="center"
               fontsize="0.9rem"
               compact
-              color="green"
+              color="#b463b4"
               columns={columns}
               rows={rows()}
             />

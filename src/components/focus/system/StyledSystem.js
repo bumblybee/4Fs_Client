@@ -9,7 +9,7 @@ export const StyledStartDateContainer = styled.div`
   > div {
     border: 2px solid #ffffffcc;
     border-radius: 6px;
-    padding: 0.5rem;
+    padding: 0.52rem;
     color: #ffffffcc;
     cursor: default;
   }
@@ -23,7 +23,7 @@ export const StyledDatePicker = styled.input`
   padding: 1rem 0;
   height: 35px;
   border-radius: 6px;
-  border: 2px solid #ffffff66;
+  border: 2px solid #ffffffcc;
   background: #ffffff55;
   font-size: 0.95rem;
   color: #ffffffdd;
@@ -51,14 +51,15 @@ export const StyledDatePicker = styled.input`
 `;
 
 export const StyledButton = styled(Button)`
-  background: #bf81bf !important;
-  border: 1px solid transparent !important;
+  background: #b76ab7ee !important;
+  border: 2px solid #ffffff88 !important;
 
   color: #ffecff !important;
   margin-left: 0.5rem !important;
 
   :hover {
     background: #bf81bfbb !important;
-    border: 1px solid #ffffff55 !important;
+    border: 2px solid #ffffff55 !important;
+    color: #ffecffcc !important;
   }
 `;
