@@ -8,14 +8,14 @@ const DeleteMenu = ({ toDelete, setToDelete, deleteData }) => {
       <Button
         size="mini"
         onClick={deleteData}
-        style={{ background: "#c41e3a99", color: "#fff" }}
+        style={{ background: "#c41e3add", color: "#fff" }}
       >
         Delete
       </Button>
       <Button
         size="mini"
         basic
-        color="teal"
+        color="purple"
         onClick={() => setToDelete(!toDelete)}
       >
         Cancel
