@@ -8,10 +8,10 @@ export const getSleep = async () => {
 export const mutateSleep = async (data, id) => {
   // Expects yy-mm-dd and 24:00
   const sleep = await post(`/sleep/${id}`, data);
-  return sleep.data;
+  return sleep.data ? sleep.data : sleep;
 };
 
 export const deleteSleep = async (id) => {
   const deletedSleep = await destroy(`/sleep/${id}`);
-  return deletedSleep.data;
+  return deletedSleep.data ? deletedSleep.data : deletedSleep;
 };

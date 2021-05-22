@@ -27,6 +27,7 @@ const generateCellComponent = (type, props) => {
           accessor={props.accessor}
           foreignAccessor={props.foreignAccessor}
           foreignId={props.foreignId}
+          disabled={props.disabled}
         />
       );
     case "empty":

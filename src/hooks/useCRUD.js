@@ -18,18 +18,19 @@ const useCRUD = (getter, setter, destroyer) => {
       console.log(res);
 
       if (res.error) {
-        setNotificationMessage(res.error, "error");
+        setNotificationMessage(res.error, "error", true);
         return;
       }
+
       clearNotificationMessage();
+      setState(res && res.data && res.data.length ? [...res.data] : []);
     }
-    await getData();
   };
 
   const destroyData = async (id) => {
     const res = await destroyer(id);
     console.log(res);
-    await getData();
+    setState(res && res.data && res.data.length ? [...res.data] : []);
   };
 
   useEffect(() => {

@@ -26,6 +26,11 @@ export const StyledStaticCell = styled.div`
     color: #33333377;
   }
 
+  .system-progress-week {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
   .sleep-hours-slept {
     text-align: center;
     font-weight: bold;

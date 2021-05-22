@@ -1,4 +1,5 @@
 import React from "react";
+
 import CurrentPractices from "./current/CurrentPractices";
 import PriorPractices from "./prior/PriorPractices";
 import SectionHeader from "../../layout/SectionHeader";

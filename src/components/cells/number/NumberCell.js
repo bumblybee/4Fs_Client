@@ -15,6 +15,7 @@ const NumberCell = (props) => {
     props.onSave(
       {
         [props.accessor]: value,
+        [props.foreignAccessor]: props.foreignId,
       },
       props.id
     );
@@ -39,7 +40,7 @@ const NumberCell = (props) => {
         transparent
         style={{ width: "35px" }}
         size="small"
-        value={inputVal || 0}
+        value={inputVal || props.val}
         onChange={handleChange}
         type="number"
         disabled={props.disabled}

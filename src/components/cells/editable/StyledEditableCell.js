@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledEditableCell = styled.div`
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? "default" : "pointer")};
   width: 95%;
   min-height: 40px;
   overflow: auto;

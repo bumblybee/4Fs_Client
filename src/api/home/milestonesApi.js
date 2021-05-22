@@ -8,5 +8,5 @@ export const getMilestones = async () => {
 
 export const mutateMilestone = async (data, id) => {
   const milestone = await put(`/milestones/${id}`, data);
-  return milestone.data;
+  return milestone.data ? milestone.data : milestone;
 };

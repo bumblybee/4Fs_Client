@@ -1,18 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
-
+import { startWeek, deleteCurrentWeek } from "../../../api/focus/practicesApi";
 import {
   StyledStartDateContainer,
   StyledButton,
   StyledDatePicker,
 } from "./StyledSystem";
 
-const SystemTableHeader = ({
-  currWeek,
-  handleSave,
-  handleStartCurrWeek,
-  handleDeleteCurrWeek,
-}) => {
+const SystemTableHeader = ({ currWeek, setCurrWeek }) => {
   const [date, setDate] = useState(null);
 
   const handleChange = (e) => {
@@ -20,21 +15,18 @@ const SystemTableHeader = ({
   };
 
   const handleStartWeek = async () => {
-    const week = await handleStartCurrWeek({ startDate: date });
-    console.log(week);
+    const week = await startWeek({ startDate: date });
+    setCurrWeek(week.data);
   };
 
   const handleDeleteWeek = async () => {
-    if (
-      window.confirm(
-        "Are you sure you want to reset the current week? All practices will also be reset."
-      )
-    ) {
-      await handleDeleteCurrWeek(currWeek.id);
+    if (window.confirm("Are you sure you want to reset the current week?")) {
+      await deleteCurrentWeek(currWeek.id);
       // Force practices state to update at useCRUD - may want to handle system state locally to avoid manipulating this way
-      handleSave();
+      // handleSave();
     }
     setDate(null);
+    setCurrWeek({ id: null, startDate: null, endDate: null });
   };
 
   return (

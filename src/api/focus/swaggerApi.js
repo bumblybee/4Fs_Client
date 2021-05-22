@@ -7,12 +7,12 @@ export const getAccomplishments = async () => {
 
 export const mutateAccomplishment = async (data, id) => {
   const accomplishment = await post(`/accomplishments/${id}`, data);
-  return accomplishment.data;
+  return accomplishment.data ? accomplishment.data : accomplishment;
 };
 
 export const deleteAccomplishment = async (id) => {
   const deletedAccomplishment = await destroy(`/accomplishments/${id}`);
-  return deletedAccomplishment;
+  return deletedAccomplishment.data;
 };
 
 export const getMoments = async () => {
@@ -22,12 +22,12 @@ export const getMoments = async () => {
 
 export const mutateMoment = async (data, id) => {
   const moment = await post(`/moments/${id}`, data);
-  return moment.data;
+  return moment.data ? moment.data : moment;
 };
 
 export const deleteMoment = async (id) => {
   const deletedMoment = await destroy(`/moments/${id}`);
-  return deletedMoment;
+  return deletedMoment.data;
 };
 
 export const getSkills = async () => {
@@ -37,10 +37,10 @@ export const getSkills = async () => {
 
 export const mutateSkill = async (data, id) => {
   const skill = await post(`/skills/${id}`, data);
-  return skill.data;
+  return skill.data ? skill.data : skill;
 };
 
 export const deleteSkill = async (id) => {
   const deletedSkill = await destroy(`/skills/${id}`);
-  return deletedSkill;
+  return deletedSkill.data ? deletedSkill.data : deletedSkill;
 };

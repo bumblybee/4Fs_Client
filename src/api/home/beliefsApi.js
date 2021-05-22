@@ -2,7 +2,7 @@ import { get, post, destroy } from "../baseApi";
 
 export const mutateBelief = async (data, id) => {
   const belief = await post(`/beliefs/${id}`, data);
-  return belief;
+  return belief.data ? belief.data : belief;
 };
 
 export const getBeliefs = async () => {

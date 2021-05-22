@@ -18,7 +18,7 @@ export const StyledProgressToggle = styled(Segment)`
   font-weight: 600;
   box-shadow: none;
   cursor: pointer;
-  padding: 0.5rem 0.2rem !important;
+  padding: 0.5rem 0 0 0.2rem !important;
   font-family: "Lato";
 `;
 
@@ -31,5 +31,5 @@ export const StyledAccordion = styled(Accordion)`
 `;
 
 export const StyledProgressTable = styled(TableComponent)`
-  width: 55% !important;
+  width: 50% !important;
 `;
