@@ -7,7 +7,12 @@ import {
   StyledDatePicker,
 } from "./StyledSystem";
 
-const SystemTableHeader = ({ currWeek, setCurrWeek, setCurrPractices }) => {
+const SystemTableHeader = ({
+  currWeek,
+  setCurrWeek,
+  setCurrPractices,
+  getStoredPractices,
+}) => {
   const [date, setDate] = useState(null);
 
   const handleChange = (e) => {
@@ -27,6 +32,7 @@ const SystemTableHeader = ({ currWeek, setCurrWeek, setCurrPractices }) => {
       setDate(null);
       setCurrWeek({ id: null, startDate: null, endDate: null });
       setCurrPractices([]);
+      await getStoredPractices();
     }
   };
 

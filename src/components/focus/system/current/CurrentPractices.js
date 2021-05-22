@@ -50,12 +50,7 @@ const CurrentPractices = () => {
   const getCurrPractices = async () => {
     const practices = await getCurrentPractices();
 
-    if (practices && practices.data) {
-      setCurrPractices(practices.data);
-    } else {
-      const stored = await getStoredPractices();
-      setCurrPractices([...stored]);
-    }
+    setCurrPractices(practices.data);
   };
 
   const getStoredPractices = async () => {
@@ -541,6 +536,7 @@ const CurrentPractices = () => {
             currWeek={currWeek}
             setCurrWeek={setCurrWeek}
             setCurrPractices={setCurrPractices}
+            getStoredPractices={getStoredPractices}
           />
         }
       />
