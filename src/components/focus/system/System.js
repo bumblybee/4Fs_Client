@@ -1,7 +1,7 @@
 import React from "react";
 
 import CurrentPractices from "./current/CurrentPractices";
-import PriorPractices from "./prior/PriorPractices";
+import Progress from "./progress/Progress";
 import SectionHeader from "../../layout/SectionHeader";
 
 const System = () => {
@@ -15,7 +15,7 @@ const System = () => {
       <div style={{ marginBottom: "1rem" }}>
         <CurrentPractices />
       </div>
-      <PriorPractices />
+      <Progress />
     </div>
   );
 };

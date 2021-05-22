@@ -10,7 +10,7 @@ import {
   StyledProgressTable,
 } from "./StyledPriorPractices";
 
-const PriorPractices = () => {
+const Progress = () => {
   const [showWeeks, setShowWeeks] = useState(false);
   const [practiceProgress] = useCRUD(getPracticeProgress);
 
@@ -90,4 +90,4 @@ const PriorPractices = () => {
   );
 };
 
-export default PriorPractices;
+export default Progress;
