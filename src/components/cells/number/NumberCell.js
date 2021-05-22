@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Input } from "semantic-ui-react";
 
 const NumberCell = (props) => {
-  const [inputVal, setInputVal] = useState(0);
-  const inputRef = useRef(null);
+  const [inputVal, setInputVal] = useState(props.val);
 
   const handleChange = (e) => {
     setInputVal(e.target.value);
@@ -19,12 +18,11 @@ const NumberCell = (props) => {
       },
       props.id
     );
-    inputRef.current = value;
   };
-
   useEffect(() => {
     setInputVal(props.val);
   }, [props.val]);
+  console.log(inputVal);
 
   return (
     <div
@@ -40,7 +38,7 @@ const NumberCell = (props) => {
         transparent
         style={{ width: "35px" }}
         size="small"
-        value={inputVal || props.val}
+        value={inputVal}
         onChange={handleChange}
         type="number"
         disabled={props.disabled}

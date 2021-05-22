@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import moment from "moment";
 import TableComponent from "../../../table/TableComponent";
 import SystemTableHeader from "../SystemTableHeader";
-import useCRUD from "../../../../hooks/useCRUD";
 import { StyledHeader } from "./StyledCurrentPractices";
 import generateCellComponent from "../../../../utils/generateCellComponent";
 import {
@@ -37,25 +36,31 @@ const CurrentPractices = () => {
       }
 
       // clearNotificationMessage();
-      setCurrPractices(res && res.data && res.data.length ? [...res.data] : []);
+
+      setCurrPractices([...res.data]);
     }
   };
 
   const handleDeletePractice = async (id) => {
     const res = await deletePractice(id);
     console.log(res);
-    setCurrPractices(res && res.data && res.data.length ? [...res.data] : []);
+    setCurrPractices([...res.data]);
   };
 
   const getCurrPractices = async () => {
     const practices = await getCurrentPractices();
-    setCurrPractices(practices.data);
 
-    console.log(practices);
+    if (practices && practices.data) {
+      setCurrPractices(practices.data);
+    } else {
+      const stored = await getStoredPractices();
+      setCurrPractices([...stored]);
+    }
   };
 
   const getStoredPractices = async () => {
     const storedPractices = await getPracticeStore();
+
     setStoredPractices(storedPractices.data);
   };
 
@@ -161,51 +166,38 @@ const CurrentPractices = () => {
       },
       goal: {
         cellComponent: generateCellComponent("number", {
-          val: item.goal,
           disabled: true,
           alignment: "center",
+          val: "",
         }),
       },
       dayOne: {
         cellComponent: generateCellComponent("", {
-          val: item.dayOne,
+          val: false,
         }),
       },
       dayTwo: {
-        cellComponent: generateCellComponent("", {
-          val: item.dayTwo,
-        }),
+        cellComponent: generateCellComponent("", { val: false }),
       },
       dayThree: {
-        cellComponent: generateCellComponent("", {
-          val: item.dayThree,
-        }),
+        cellComponent: generateCellComponent("", { val: false }),
       },
       dayFour: {
-        cellComponent: generateCellComponent("", {
-          val: item.dayFour,
-        }),
+        cellComponent: generateCellComponent("", { val: false }),
       },
       dayFive: {
-        cellComponent: generateCellComponent("", {
-          val: item.dayFive,
-        }),
+        cellComponent: generateCellComponent("", { val: false }),
       },
       daySix: {
-        cellComponent: generateCellComponent("", {
-          val: item.daySix,
-        }),
+        cellComponent: generateCellComponent("", { val: false }),
       },
       daySeven: {
-        cellComponent: generateCellComponent("", {
-          val: item.daySeven,
-        }),
+        cellComponent: generateCellComponent("", { val: false }),
       },
       performed: {
         cellComponent: generateCellComponent("static", {
-          val: item.performed,
-
           className: "system-performed",
+          val: "",
         }),
       },
       delete: {
@@ -365,6 +357,7 @@ const CurrentPractices = () => {
       goal: {
         cellComponent: generateCellComponent("number", {
           onSave: handleSavePractice,
+          val: "",
           accessor: "goal",
           alignment: "center",
           disabled: currWeek.startDate ? false : true,
@@ -547,6 +540,7 @@ const CurrentPractices = () => {
             // latestPractices={latestPractices}
             currWeek={currWeek}
             setCurrWeek={setCurrWeek}
+            setCurrPractices={setCurrPractices}
           />
         }
       />
