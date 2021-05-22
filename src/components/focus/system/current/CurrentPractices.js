@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import moment from "moment";
+import { NotificationContext } from "../../../../context/notification/NotificationContext";
 import TableComponent from "../../../table/TableComponent";
 import SystemTableHeader from "../SystemTableHeader";
 import { StyledHeader } from "./StyledCurrentPractices";
@@ -14,6 +15,9 @@ import {
 
 // TODO: Limit height of table
 const CurrentPractices = () => {
+  const { setNotificationMessage, clearNotificationMessage } =
+    useContext(NotificationContext);
+  const [storedPractices, setStoredPractices] = useState([]);
   const [currPractices, setCurrPractices] = useState([]);
   const [currWeek, setCurrWeek] = useState({
     id: null,
@@ -21,21 +25,17 @@ const CurrentPractices = () => {
     endDate: null,
   });
 
-  const [storedPractices, setStoredPractices] = useState([]);
-
-  // const [storedPractices] = useCRUD(getPracticeStore);
-
   const handleSavePractice = async (data, id) => {
     if (data) {
       const res = await mutatePractice(data, id);
       console.log(res);
 
       if (res.error) {
-        // setNotificationMessage(res.error, "error", true);
+        setNotificationMessage(res.error, "error", true);
         return;
       }
 
-      // clearNotificationMessage();
+      clearNotificationMessage();
 
       setCurrPractices([...res.data]);
     }
