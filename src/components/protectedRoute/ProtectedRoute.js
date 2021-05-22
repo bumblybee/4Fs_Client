@@ -4,7 +4,7 @@ import { UserContext } from "../../context/user/UserContext";
 
 const ProtectedRoute = ({ children }) => {
   const { getCurrentUser } = useContext(UserContext);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     getCurrentUser().then((data) => setUser(data));
