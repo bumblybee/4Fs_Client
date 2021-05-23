@@ -6,7 +6,7 @@ import SectionContainer from "./SectionContainer";
 
 const AppWrapper = ({ component, tabs }) => {
   return (
-    <div>
+    <div style={{ height: "100%" }}>
       <NavBar />
       <FTabBar />
       {tabs && <TabMenu />}

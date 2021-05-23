@@ -5,6 +5,7 @@ export const StyledStartDateContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Lato", sans-serif;
 
   > div {
     border: 2px solid #ffffffcc;
@@ -13,10 +14,6 @@ export const StyledStartDateContainer = styled.div`
     color: #ffffffcc;
     cursor: default;
     background: #b76ab7cc;
-  }
-
-  label {
-    font-family: "Lato";
   }
 `;
 

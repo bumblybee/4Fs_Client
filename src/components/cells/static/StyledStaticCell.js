@@ -27,9 +27,17 @@ export const StyledStaticCell = styled.div`
   }
 
   .system-progress-week {
+    font-size: 0.925rem;
+    font-family: "Lato", sans-serif;
+  }
+
+  .system-progress-week.dates {
     font-size: 0.9rem;
-    font-weight: 400;
-    font-family: "Lato";
+  }
+
+  .system-progress-week.performed,
+  .system-progress-week.goal {
+    margin-right: 1.5rem;
   }
 
   .system-progress-week.performed {

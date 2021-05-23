@@ -27,14 +27,14 @@ const Progress = () => {
         cellComponent: generateCellComponent("static", {
           val: `${moment(practice.practice_week.startDate).format("MMM D")} -
             ${moment(practice.practice_week.endDate).format("MMM D 'YY")}`,
-          alignment: "center",
-          className: "system-progress-week",
+          alignment: "left",
+          className: "system-progress-week dates",
         }),
       },
       practice: {
         cellComponent: generateCellComponent("static", {
           val: practice.practice,
-          alignment: "center",
+          alignment: "left",
           className: "system-progress-week",
         }),
       },
@@ -42,7 +42,7 @@ const Progress = () => {
         cellComponent: generateCellComponent("static", {
           alignment: "center",
           val: practice.goal,
-          className: "system-progress-week",
+          className: "system-progress-week goal",
         }),
       },
       performed: {
@@ -78,7 +78,7 @@ const Progress = () => {
             <p style={{ paddingLeft: "1.5rem" }}>No previous weeks to show</p>
           ) : (
             <StyledProgressTable
-              aligntext="center"
+              aligntext="left"
               fontsize="0.9rem"
               compact
               color="#b463b4"

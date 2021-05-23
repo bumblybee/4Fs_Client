@@ -28,7 +28,6 @@ const CurrentPractices = () => {
   const handleSavePractice = async (data, id) => {
     if (data) {
       const res = await mutatePractice(data, id);
-      console.log(res);
 
       if (res.error) {
         setNotificationMessage(res.error, "error", true);
@@ -43,7 +42,7 @@ const CurrentPractices = () => {
 
   const handleDeletePractice = async (id) => {
     const res = await deletePractice(id);
-    console.log(res);
+
     setCurrPractices([...res.data]);
   };
 
@@ -351,7 +350,6 @@ const CurrentPractices = () => {
       },
       goal: {
         cellComponent: generateCellComponent("number", {
-          onSave: handleSavePractice,
           val: 0,
           accessor: "goal",
           alignment: "center",
@@ -360,7 +358,6 @@ const CurrentPractices = () => {
       },
       dayOne: {
         cellComponent: generateCellComponent("check", {
-          onSave: handleSavePractice,
           accessor: "dayOne",
           alignment: "center",
           disabled: true,
@@ -368,7 +365,6 @@ const CurrentPractices = () => {
       },
       dayTwo: {
         cellComponent: generateCellComponent("check", {
-          onSave: handleSavePractice,
           accessor: "dayTwo",
           alignment: "center",
           disabled: true,
@@ -376,7 +372,6 @@ const CurrentPractices = () => {
       },
       dayThree: {
         cellComponent: generateCellComponent("check", {
-          onSave: handleSavePractice,
           accessor: "dayThree",
           alignment: "center",
           disabled: true,
@@ -384,7 +379,6 @@ const CurrentPractices = () => {
       },
       dayFour: {
         cellComponent: generateCellComponent("check", {
-          onSave: handleSavePractice,
           accessor: "dayFour",
           alignment: "center",
           disabled: true,
@@ -392,7 +386,6 @@ const CurrentPractices = () => {
       },
       dayFive: {
         cellComponent: generateCellComponent("check", {
-          onSave: handleSavePractice,
           accessor: "dayFive",
           alignment: "center",
           disabled: true,
@@ -400,7 +393,6 @@ const CurrentPractices = () => {
       },
       daySix: {
         cellComponent: generateCellComponent("check", {
-          onSave: handleSavePractice,
           accessor: "daySix",
           alignment: "center",
           disabled: true,
@@ -408,7 +400,6 @@ const CurrentPractices = () => {
       },
       daySeven: {
         cellComponent: generateCellComponent("check", {
-          onSave: handleSavePractice,
           accessor: "daySeven",
           alignment: "center",
           disabled: true,
