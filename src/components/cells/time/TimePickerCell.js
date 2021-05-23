@@ -24,19 +24,6 @@ const TimePickerCell = (props) => {
     // setTime(null);
   };
 
-  // const convertTime = () => {
-  //   if (time) {
-  //     let hour = time.split(":")[0];
-  //     const min = time.split(":")[1];
-  //     const amPm = hour < 12 ? "AM" : "PM";
-  //     hour = hour % 12;
-
-  //     return `${hour}:${min} ${amPm}`;
-  //   } else {
-  //     return;
-  //   }
-  // };
-
   useEffect(() => {
     setTime(props.val);
   }, [props.val]);

@@ -7,11 +7,10 @@ export const StyledDatePickerCellWrapper = styled.div`
   align-items: center;
 
   label {
-    font-family: "Lato";
+    font-family: "Lato", sans-serif;
   }
 
   .sleep-date-picker {
-    /* font-weight: 600; */
     width: 110px;
   }
 `;
@@ -23,7 +22,7 @@ export const StyledDatePickerCell = styled.input`
   border-radius: 6px;
   border: 2px solid #ffffff66;
   background: #ffffff55;
-  font-size: 0.95rem;
+  /* font-size: 0.95rem; */
   font-weight: ${(props) => (props.date ? "600" : "400")};
   color: ${(props) => (props.date ? "" : "#aaaaaa")};
   text-align: ${(props) => props.alignment};

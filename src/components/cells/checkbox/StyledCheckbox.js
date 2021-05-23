@@ -25,8 +25,8 @@ export const StyledCheckboxWrapper = styled.div`
   }
 
   input:checked {
-    background: ${(props) => (props.disabled ? "transparent" : "#800080aa")};
-    border: ${(props) => (props.disabled ? "" : "2px solid #800080")};
+    background: ${(props) => (props.disabled ? "transparent" : "#b463b4")};
+    border: ${(props) => (props.disabled ? "" : "2px solid #800080aa")};
   }
 
   label {

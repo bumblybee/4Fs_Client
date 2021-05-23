@@ -75,7 +75,9 @@ const SystemTableHeader = ({
               date={date}
               min={moment().format("YYYY-MM-DD")}
             />
-            <StyledButton onClick={handleStartWeek}>Start</StyledButton>
+            <StyledButton size="small" onClick={handleStartWeek}>
+              Start
+            </StyledButton>
           </>
         )}
       </StyledStartDateContainer>

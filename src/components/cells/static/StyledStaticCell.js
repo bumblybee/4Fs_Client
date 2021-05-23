@@ -28,6 +28,11 @@ export const StyledStaticCell = styled.div`
 
   .system-progress-week {
     font-size: 0.9rem;
+    font-weight: 400;
+    font-family: "Lato";
+  }
+
+  .system-progress-week.performed {
     font-weight: 600;
   }
 

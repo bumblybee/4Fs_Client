@@ -12,6 +12,7 @@ export const StyledStartDateContainer = styled.div`
     padding: 0.52rem;
     color: #ffffffcc;
     cursor: default;
+    background: #b76ab7cc;
   }
 
   label {
@@ -20,11 +21,10 @@ export const StyledStartDateContainer = styled.div`
 `;
 
 export const StyledDatePicker = styled.input`
-  padding: 1rem 0;
-  height: 35px;
+  height: 37.5px;
   border-radius: 6px;
   border: 2px solid #ffffffcc;
-  background: #ffffff55;
+  background: #b76ab7cc;
   font-size: 0.95rem;
   color: #ffffffdd;
   text-align: center;

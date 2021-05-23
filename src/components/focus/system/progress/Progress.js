@@ -25,8 +25,8 @@ const Progress = () => {
     const rowData = practiceProgress.map((practice) => ({
       dates: {
         cellComponent: generateCellComponent("static", {
-          val: `${moment(practice.practice_week.startDate).format("MM/DD")} -
-            ${moment(practice.practice_week.endDate).format("MM/DD 'YY")}`,
+          val: `${moment(practice.practice_week.startDate).format("MMM D")} -
+            ${moment(practice.practice_week.endDate).format("MMM D 'YY")}`,
           alignment: "center",
           className: "system-progress-week",
         }),
@@ -35,20 +35,23 @@ const Progress = () => {
         cellComponent: generateCellComponent("static", {
           val: practice.practice,
           alignment: "center",
+          className: "system-progress-week",
         }),
       },
       goal: {
         cellComponent: generateCellComponent("static", {
           alignment: "center",
           val: practice.goal,
+          className: "system-progress-week",
         }),
       },
       performed: {
         cellComponent: generateCellComponent("static", {
           val: practice.performed,
           alignment: "center",
-          condition: practice.performed >= practice.goal,
-          textweight: "600",
+          condition:
+            practice.performed >= practice.goal && practice.performed !== 0,
+          className: "system-progress-week performed",
         }),
       },
     }));
