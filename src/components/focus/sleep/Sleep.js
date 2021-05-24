@@ -176,30 +176,25 @@ const Sleep = () => {
         }),
       },
       toBed: {
-        cellComponent: generateCellComponent("time", {
-          onSave: handleSave,
+        cellComponent: generateCellComponent("", {
           accessor: "toBed",
           alignment: "center",
         }),
       },
       woke: {
-        cellComponent: generateCellComponent("time", {
-          onSave: handleSave,
+        cellComponent: generateCellComponent("", {
           accessor: "woke",
           alignment: "center",
         }),
       },
       hoursSlept: {
         cellComponent: generateCellComponent("", {
-          onSave: handleSave,
           accessor: "hoursSlept",
           alignment: "center",
         }),
       },
       comments: {
-        cellComponent: generateCellComponent("empty", {
-          onSave: handleSave,
-          accessor: "comments",
+        cellComponent: generateCellComponent("", {
           alignment: "left",
           aligntext: "left",
         }),
