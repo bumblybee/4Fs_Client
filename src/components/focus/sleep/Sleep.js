@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
 import moment from "moment";
 import useCRUD from "../../../hooks/useCRUD";
+import { NotificationContext } from "../../../context/notification/NotificationContext";
 import generateCellComponent from "../../../utils/generateCellComponent";
 import {
   getSleep,
@@ -12,12 +13,44 @@ import SectionHeader from "../../layout/SectionHeader";
 import SleepTableHeader from "../../focus/sleep/SleepTableHeader";
 
 const Sleep = () => {
-  const [sleep, handleSave, handleDelete] = useCRUD(
-    getSleep,
-    mutateSleep,
-    deleteSleep
-  );
+  const { setNotificationMessage, clearNotificationMessage } =
+    useContext(NotificationContext);
+  const [sleep, setSleep] = useState([]);
+  const [row, setRow] = useState({});
 
+  const getSleepData = async () => {
+    const res = await getSleep();
+    setSleep([...res.data]);
+  };
+
+  const handleSave = async (data, id) => {
+    if (data) {
+      const res = await mutateSleep(data, id);
+
+      if (res.error) {
+        setNotificationMessage(res.error, "error", true);
+        return;
+      }
+
+      clearNotificationMessage();
+      console.log(res.data);
+      if (data.woke) setRow({});
+      setSleep([...res.data]);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    const res = await deleteSleep(id);
+    setSleep(res.data);
+  };
+
+  useEffect(() => {
+    getSleepData();
+  }, []);
+  console.log(sleep);
+  const sortData = (data) => {};
+
+  //!! Maybe define crud fns like CurrPractices. When mutating, manually sort data (remove latest entry from array and append so renders last) that comes back and then set state
   const findHoursSlept = (item) => {
     let timeSlept = null;
 
@@ -119,20 +152,25 @@ const Sleep = () => {
           cellComponent: generateCellComponent("time", {
             id: item.id,
             onSave: handleSave,
+            state: row,
+            setState: setRow,
             val: item.toBed,
             accessor: "toBed",
             className: "sleep-bed-timepicker",
             alignment: "center",
-            hoursSlept: findHoursSlept(item),
+            item,
           }),
         },
         woke: {
           cellComponent: generateCellComponent("time", {
             id: item.id,
+            item,
+            state: row,
+            setState: setRow,
             onSave: handleSave,
             val: item.woke,
             accessor: "woke",
-            hoursSlept: findHoursSlept(item),
+            hoursSlept: () => findHoursSlept,
           }),
         },
         hoursSlept: {
@@ -164,25 +202,32 @@ const Sleep = () => {
 
     return [exampleRow, ...rowData, emptyRow];
   };
-
+  console.log(row);
   const addEmptyRow = () => {
     const emptyRow = {
       date: {
         cellComponent: generateCellComponent("date", {
           onSave: handleSave,
+          state: row,
+          setState: setRow,
           accessor: "date",
           alignment: "left",
           className: "sleep-date-picker",
         }),
       },
       toBed: {
-        cellComponent: generateCellComponent("", {
+        cellComponent: generateCellComponent("time", {
+          onSave: handleSave,
+
           accessor: "toBed",
           alignment: "center",
         }),
       },
       woke: {
-        cellComponent: generateCellComponent("", {
+        cellComponent: generateCellComponent("time", {
+          onSave: handleSave,
+          hoursSlept: () => findHoursSlept,
+
           accessor: "woke",
           alignment: "center",
         }),

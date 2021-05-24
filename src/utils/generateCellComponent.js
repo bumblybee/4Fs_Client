@@ -100,8 +100,10 @@ const generateCellComponent = (type, props) => {
         <DatePickerCell
           id={props.id}
           className={props.className}
-          onSave={props.onSave}
+          state={props.state}
+          setState={props.setState}
           val={props.val}
+          onSave={props.onSave}
           accessor={props.accessor}
           label={props.label}
           width={props.width}
@@ -113,9 +115,11 @@ const generateCellComponent = (type, props) => {
       return (
         <TimePickerCell
           id={props.id}
+          state={props.state}
+          setState={props.setState}
           onSave={props.onSave}
           val={props.val}
-          label={props.label}
+          item={props.item}
           className={props.className}
           accessor={props.accessor}
           width={props.width}

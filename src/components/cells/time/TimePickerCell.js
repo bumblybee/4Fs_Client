@@ -9,15 +9,15 @@ const TimePickerCell = (props) => {
 
   const handleChange = (e) => {
     setTime(e.target.value);
+    props.setState({ ...props.state, [props.accessor]: e.target.value });
     makeData(e);
   };
-
   //TODO: Sort by date asc if hours slept value
   const makeData = (e) => {
     props.onSave(
       {
         [props.accessor]: e.target.value,
-        hoursSlept: props.hoursSlept,
+        hoursSlept: props.hoursSlept && props.hoursSlept(props.item),
       },
       props.id
     );
