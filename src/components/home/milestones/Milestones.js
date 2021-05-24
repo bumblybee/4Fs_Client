@@ -56,7 +56,7 @@ const Milestones = () => {
           onSave: handleSave,
           val: item.personalize,
           accessor: "personalize",
-          alignment: "center",
+          alignment: "left",
         }),
       },
       comments: {
@@ -65,7 +65,7 @@ const Milestones = () => {
           onSave: handleSave,
           val: item.comments,
           accessor: "comments",
-          alignment: "center",
+          alignment: "left",
         }),
       },
       status: {

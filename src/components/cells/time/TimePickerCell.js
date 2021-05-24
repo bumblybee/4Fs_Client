@@ -17,11 +17,10 @@ const TimePickerCell = (props) => {
     props.onSave(
       {
         [props.accessor]: e.target.value,
-        hoursSlept: props.sleepHours,
+        hoursSlept: props.hoursSlept,
       },
       props.id
     );
-    // setTime(null);
   };
 
   useEffect(() => {

@@ -26,6 +26,7 @@ const Sleep = () => {
       const woke = moment(item.woke, "HH:mm:ss");
 
       if (woke.isBefore(slept)) woke.add(1, "day");
+
       const duration = moment.duration(woke.diff(slept));
 
       timeSlept = moment.utc(+duration).format("HH:mm");
@@ -122,7 +123,7 @@ const Sleep = () => {
             accessor: "toBed",
             className: "sleep-bed-timepicker",
             alignment: "center",
-            sleepHours: findHoursSlept(item),
+            hoursSlept: findHoursSlept(item),
           }),
         },
         woke: {
@@ -131,7 +132,7 @@ const Sleep = () => {
             onSave: handleSave,
             val: item.woke,
             accessor: "woke",
-            sleepHours: findHoursSlept(item),
+            hoursSlept: findHoursSlept(item),
           }),
         },
         hoursSlept: {

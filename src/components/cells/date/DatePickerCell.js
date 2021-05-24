@@ -12,9 +12,9 @@ const DatePickerCell = (props) => {
     makeData(e);
   };
   // Todo: ref so when date set, focus follows input or goes away - better yet just figure out sorting
-  // Todo: Remove startDate check once figured out
+
   const makeData = (e) => {
-    if (e.target.value !== "" && props.accessor !== "startDate") {
+    if (e.target.value !== "") {
       props.onSave(
         {
           [props.accessor]: e.target.value,

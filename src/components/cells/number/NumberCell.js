@@ -41,6 +41,7 @@ const NumberCell = (props) => {
         value={inputVal}
         onChange={handleChange}
         type="number"
+        min="0"
         disabled={props.disabled}
       />
     </div>
