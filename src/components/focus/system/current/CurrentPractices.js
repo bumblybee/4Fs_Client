@@ -49,13 +49,13 @@ const CurrentPractices = () => {
   const getCurrPractices = async () => {
     const practices = await getCurrentPractices();
 
-    setCurrPractices(practices.data);
+    setCurrPractices([...practices.data]);
   };
 
   const getStoredPractices = async () => {
     const storedPractices = await getPracticeStore();
 
-    setStoredPractices(storedPractices.data);
+    setStoredPractices([...storedPractices.data]);
   };
 
   const getCurrWeek = async () => {
@@ -69,8 +69,6 @@ const CurrentPractices = () => {
     getCurrPractices();
     getCurrWeek();
   }, []);
-
-  // Returning curr week object as array so fits generic data handling in useCRUD
 
   const renderDayOfWeek = (daysFromStart) => {
     const startDay = currWeek && currWeek.startDate;
