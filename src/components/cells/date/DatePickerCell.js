@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import moment from "moment";
 import {
   StyledDatePickerCellWrapper,
   StyledDatePickerCell,
@@ -33,9 +34,9 @@ const DatePickerCell = (props) => {
       {props.label && <label>{props.label}</label>}
       <StyledDatePickerCell
         className={props.className}
-        value={date || ""}
         onChange={handleChange}
-        // onBlur={makeData}
+        value={date || ""}
+        max={moment().format("YYYY-MM-DD")}
         type="date"
         date={date}
         width={props.width}
