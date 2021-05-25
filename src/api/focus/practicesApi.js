@@ -21,13 +21,23 @@ export const getPracticeStore = async () => {
     : storedPractices;
 };
 
-export const mutatePractice = async (data, id) => {
+export const mutateStoredPractice = async (data, id) => {
+  const practice = await post(`/practices/store/${id}`, data);
+  return practice.data ? practice.data : practice;
+};
+
+export const mutateCurrPractice = async (data, id) => {
   const practice = await post(`/practices/${id}`, data);
   return practice.data ? practice.data : practice;
 };
 
-export const deletePractice = async (id) => {
+export const deleteCurrPractice = async (id) => {
   const deletedPractice = await destroy(`/practices/${id}`);
+  return deletedPractice.data ? deletedPractice.data : deletedPractice;
+};
+
+export const deleteStoredPractice = async (id) => {
+  const deletedPractice = await destroy(`/practices/store/${id}`);
   return deletedPractice.data ? deletedPractice.data : deletedPractice;
 };
 

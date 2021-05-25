@@ -8,8 +8,10 @@ import generateCellComponent from "../../../../utils/generateCellComponent";
 import {
   getCurrentPractices,
   getPracticeStore,
-  mutatePractice,
-  deletePractice,
+  mutateCurrPractice,
+  mutateStoredPractice,
+  deleteCurrPractice,
+  deleteStoredPractice,
   getCurrentWeek,
 } from "../../../../api/focus/practicesApi";
 
@@ -25,9 +27,14 @@ const CurrentPractices = () => {
     endDate: null,
   });
 
-  const handleSavePractice = async (data, id) => {
+  const getCurrWeek = async () => {
+    const week = await getCurrentWeek();
+    week && week.data && setCurrWeek(week.data);
+  };
+
+  const handleSaveCurrPractice = async (data, id) => {
     if (data) {
-      const res = await mutatePractice(data, id);
+      const res = await mutateCurrPractice(data, id);
 
       if (res.error) {
         setNotificationMessage(res.error, "error", true);
@@ -40,8 +47,8 @@ const CurrentPractices = () => {
     }
   };
 
-  const handleDeletePractice = async (id) => {
-    const res = await deletePractice(id);
+  const handleDeleteCurrPractice = async (id) => {
+    const res = await deleteCurrPractice(id);
 
     setCurrPractices([...res.data]);
   };
@@ -52,16 +59,31 @@ const CurrentPractices = () => {
     setCurrPractices([...practices.data]);
   };
 
+  const handleSaveStoredPractice = async (data, id) => {
+    if (data) {
+      const res = await mutateStoredPractice(data, id);
+
+      if (res.error) {
+        setNotificationMessage(res.error, "error", true);
+        return;
+      }
+
+      clearNotificationMessage();
+
+      setStoredPractices([...res.data]);
+    }
+  };
+
+  const handleDeleteStoredPractice = async (id) => {
+    const res = await deleteStoredPractice(id);
+
+    setStoredPractices([...res.data]);
+  };
+
   const getStoredPractices = async () => {
     const storedPractices = await getPracticeStore();
 
     setStoredPractices([...storedPractices.data]);
-  };
-
-  const getCurrWeek = async () => {
-    const week = await getCurrentWeek();
-    week && week.data && setCurrWeek(week.data);
-    console.log(week);
   };
 
   useEffect(() => {
@@ -76,7 +98,7 @@ const CurrentPractices = () => {
     if (startDay) {
       return moment(startDay).add(daysFromStart, "days").format("ddd");
     } else {
-      // If no startDay, return undefined and render default Sun-Sat labels
+      // If no startDay, return undefined which renders default Sun-Sat labels
       return undefined;
     }
   };
@@ -150,10 +172,14 @@ const CurrentPractices = () => {
     const storedRowData = storedPractices.map((item) => ({
       practice: {
         cellComponent: generateCellComponent("editable", {
-          placeholder: item.practice,
-          alignment: "left",
+          id: item.id,
+          val: item.practice,
+          accessor: "practice",
+          onSave: handleSaveStoredPractice,
+          onDelete: handleDeleteStoredPractice,
+          aligntext: "left",
+          alignment: "flex-start",
           textWeight: "600",
-          disabled: true,
         }),
       },
       goal: {
@@ -203,7 +229,7 @@ const CurrentPractices = () => {
       practice: {
         cellComponent: generateCellComponent("editable", {
           id: item.id,
-          onSave: handleSavePractice,
+          onSave: handleSaveCurrPractice,
           val: item.practice,
           accessor: "practice",
           foreignAccessor: "practiceWeekId",
@@ -216,7 +242,7 @@ const CurrentPractices = () => {
       goal: {
         cellComponent: generateCellComponent("number", {
           id: item.id,
-          onSave: handleSavePractice,
+          onSave: handleSaveCurrPractice,
           val: item.goal,
           accessor: "goal",
           foreignAccessor: "practiceWeekId",
@@ -227,7 +253,7 @@ const CurrentPractices = () => {
       dayOne: {
         cellComponent: generateCellComponent("check", {
           id: item.id,
-          onSave: handleSavePractice,
+          onSave: handleSaveCurrPractice,
           val: item.dayOne,
           performed: item.performed,
           accessor: "dayOne",
@@ -239,7 +265,7 @@ const CurrentPractices = () => {
       dayTwo: {
         cellComponent: generateCellComponent("check", {
           id: item.id,
-          onSave: handleSavePractice,
+          onSave: handleSaveCurrPractice,
           performed: item.performed,
           val: item.dayTwo,
           accessor: "dayTwo",
@@ -251,7 +277,7 @@ const CurrentPractices = () => {
       dayThree: {
         cellComponent: generateCellComponent("check", {
           id: item.id,
-          onSave: handleSavePractice,
+          onSave: handleSaveCurrPractice,
           performed: item.performed,
           val: item.dayThree,
           accessor: "dayThree",
@@ -263,7 +289,7 @@ const CurrentPractices = () => {
       dayFour: {
         cellComponent: generateCellComponent("check", {
           id: item.id,
-          onSave: handleSavePractice,
+          onSave: handleSaveCurrPractice,
           performed: item.performed,
           val: item.dayFour,
           accessor: "dayFour",
@@ -275,7 +301,7 @@ const CurrentPractices = () => {
       dayFive: {
         cellComponent: generateCellComponent("check", {
           id: item.id,
-          onSave: handleSavePractice,
+          onSave: handleSaveCurrPractice,
           performed: item.performed,
           val: item.dayFive,
           accessor: "dayFive",
@@ -287,7 +313,7 @@ const CurrentPractices = () => {
       daySix: {
         cellComponent: generateCellComponent("check", {
           id: item.id,
-          onSave: handleSavePractice,
+          onSave: handleSaveCurrPractice,
           performed: item.performed,
           val: item.daySix,
           accessor: "daySix",
@@ -299,7 +325,7 @@ const CurrentPractices = () => {
       daySeven: {
         cellComponent: generateCellComponent("check", {
           id: item.id,
-          onSave: handleSavePractice,
+          onSave: handleSaveCurrPractice,
           performed: item.performed,
           val: item.daySeven,
           accessor: "daySeven",
@@ -319,7 +345,7 @@ const CurrentPractices = () => {
       delete: {
         cellComponent: generateCellComponent("delete", {
           id: item.id,
-          onDelete: handleDeletePractice,
+          onDelete: handleDeleteCurrPractice,
           alignment: "center",
         }),
       },
@@ -328,96 +354,69 @@ const CurrentPractices = () => {
     // If we have a start date, render current practices and empty row, else render stored practices
     if (currWeek && currWeek.startDate)
       return [exampleRow, ...currentRowData, emptyRow];
-    else return [exampleRow, ...storedRowData];
+    else return [exampleRow, ...storedRowData, emptyRow];
   };
 
   const addEmptyRow = () => {
     const emptyRow = {
       practice: {
         cellComponent: generateCellComponent("empty", {
-          onSave: handleSavePractice,
+          onSave: currWeek.startDate
+            ? handleSaveCurrPractice
+            : handleSaveStoredPractice,
           accessor: "practice",
           foreignAccessor: "practiceWeekId",
           foreignId: currWeek.id,
           alignment: "left",
-          placeholder: currWeek.startDate
-            ? "New practice..."
-            : "Choose a start date to begin week...",
-          disabled: currWeek.startDate ? false : true,
+          placeholder: "New practice...",
         }),
       },
       goal: {
         cellComponent: generateCellComponent("number", {
-          val: 0,
-          accessor: "goal",
-          alignment: "center",
           disabled: true,
+          alignment: "center",
+          val: "",
         }),
       },
       dayOne: {
-        cellComponent: generateCellComponent("check", {
-          accessor: "dayOne",
-          alignment: "center",
-          disabled: true,
+        cellComponent: generateCellComponent("", {
+          val: false,
         }),
       },
       dayTwo: {
-        cellComponent: generateCellComponent("check", {
-          accessor: "dayTwo",
-          alignment: "center",
-          disabled: true,
-        }),
+        cellComponent: generateCellComponent("", { val: false }),
       },
       dayThree: {
-        cellComponent: generateCellComponent("check", {
-          accessor: "dayThree",
-          alignment: "center",
-          disabled: true,
-        }),
+        cellComponent: generateCellComponent("", { val: false }),
       },
       dayFour: {
-        cellComponent: generateCellComponent("check", {
-          accessor: "dayFour",
-          alignment: "center",
-          disabled: true,
-        }),
+        cellComponent: generateCellComponent("", { val: false }),
       },
       dayFive: {
-        cellComponent: generateCellComponent("check", {
-          accessor: "dayFive",
-          alignment: "center",
-          disabled: true,
-        }),
+        cellComponent: generateCellComponent("", { val: false }),
       },
       daySix: {
-        cellComponent: generateCellComponent("check", {
-          accessor: "daySix",
-          alignment: "center",
-          disabled: true,
-        }),
+        cellComponent: generateCellComponent("", { val: false }),
       },
       daySeven: {
-        cellComponent: generateCellComponent("check", {
-          accessor: "daySeven",
-          alignment: "center",
-          disabled: true,
-        }),
+        cellComponent: generateCellComponent("", { val: false }),
       },
       performed: {
-        cellComponent: generateCellComponent("", {
-          accessor: "performed",
-          alignment: "right",
+        cellComponent: generateCellComponent("static", {
+          className: "system-performed",
+          val: "",
         }),
       },
       delete: {
         cellComponent: generateCellComponent("", {
-          alignment: "right",
+          alignment: "center",
         }),
       },
     };
     return emptyRow;
   };
 
+  // TODO: Pass className instead of flex props
   const addExampleRow = () => {
     const exampleRow = {
       practice: {
@@ -496,7 +495,6 @@ const CurrentPractices = () => {
         cellComponent: generateCellComponent("static", {
           val: 3,
           className: "system-performed-example",
-          textweight: 400,
         }),
       },
       delete: {
@@ -521,7 +519,6 @@ const CurrentPractices = () => {
         example
         descriptionheader={
           <SystemTableHeader
-            // latestPractices={latestPractices}
             currWeek={currWeek}
             setCurrWeek={setCurrWeek}
             setCurrPractices={setCurrPractices}

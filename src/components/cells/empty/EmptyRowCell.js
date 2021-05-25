@@ -4,15 +4,15 @@ import { StyledEmptyCell } from "./StyledEmptyRowCell";
 const EmptyRowCell = ({ children, ...props }) => {
   const [editing, setEditing] = useState(false);
 
-  const [blankCellVal, setBlankCellVal] = useState("");
+  const [emptyCellVal, setEmptyCellVal] = useState("");
 
   const inputRef = useRef(null);
 
   const makeData = () => {
-    if (blankCellVal !== "") {
+    if (emptyCellVal !== "") {
       props.onSave(
         {
-          [props.accessor]: blankCellVal,
+          [props.accessor]: emptyCellVal,
           [props.foreignAccessor]: props.foreignId,
         },
         props.id
@@ -20,8 +20,8 @@ const EmptyRowCell = ({ children, ...props }) => {
     }
 
     setEditing(false);
-    inputRef.current = blankCellVal;
-    setBlankCellVal("");
+    inputRef.current = emptyCellVal;
+    setEmptyCellVal("");
   };
 
   // TODO: Break input into own component
@@ -30,8 +30,8 @@ const EmptyRowCell = ({ children, ...props }) => {
       return (
         <input
           ref={inputRef}
-          value={blankCellVal || ""}
-          onChange={(e) => setBlankCellVal(e.target.value)}
+          value={emptyCellVal || ""}
+          onChange={(e) => setEmptyCellVal(e.target.value)}
           onBlur={makeData}
           disabled={props.disabled}
         />
@@ -39,7 +39,7 @@ const EmptyRowCell = ({ children, ...props }) => {
     }
     return (
       <p onClick={() => setEditing(true)}>
-        {blankCellVal || props.placeholder}
+        {emptyCellVal || props.placeholder}
       </p>
     );
   };
@@ -52,8 +52,8 @@ const EmptyRowCell = ({ children, ...props }) => {
   }, [editing]);
 
   useEffect(() => {
-    setBlankCellVal(blankCellVal);
-  }, [setBlankCellVal, blankCellVal]);
+    setEmptyCellVal(emptyCellVal);
+  }, [setEmptyCellVal, emptyCellVal]);
 
   return (
     <StyledEmptyCell

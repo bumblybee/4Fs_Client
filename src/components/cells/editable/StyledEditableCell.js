@@ -18,7 +18,7 @@ export const StyledEditableCell = styled.div`
     outline: none;
     width: inherit;
     text-align: ${(props) => props.aligntext};
-    text-align-last: ${(props) => props.alignment};
+    text-align-last: ${(props) => props.aligntext};
     font-family: "Lato";
     white-space: normal;
     background: #eee;

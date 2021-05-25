@@ -12,9 +12,9 @@ const EditableTableCell = ({ children, ...props }) => {
       props.onDelete(props.id);
     } else {
       if (inputRef.current !== editCellVal) {
-        // If user deleted text and we don't want to delete the record, send null instead of empty string
+        // If user deleted value and we don't want flag the record deleted, send null instead of empty string to match default DB case
         let updateVal = editCellVal;
-        if (editCellVal === "") {
+        if (updateVal === "") {
           updateVal = null;
         }
 
@@ -26,12 +26,14 @@ const EditableTableCell = ({ children, ...props }) => {
           props.id
         );
         inputRef.current = editCellVal;
+
+        // Reset editCellVal to returned val
+        setEditCellVal(props.val);
       }
     }
     setEditing(false);
   };
 
-  // TODO: Break input into own component
   const renderCell = () => {
     if (editing) {
       return (

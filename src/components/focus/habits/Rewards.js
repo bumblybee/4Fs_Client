@@ -18,7 +18,7 @@ const Rewards = () => {
 
   const columns = [
     {
-      label: "Reward",
+      label: "Rewards to Consider",
       key: "reward",
     },
   ];

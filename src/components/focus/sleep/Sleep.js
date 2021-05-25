@@ -109,7 +109,7 @@ const Sleep = () => {
   ];
 
   const csvRows = sleep.map((item) => {
-    // item.hoursSlept = findHoursSlept(item);
+    item.hoursSlept = moment(item.hoursSlept, "HH:mm:ss").format("HH:mm");
     return item;
   });
 
