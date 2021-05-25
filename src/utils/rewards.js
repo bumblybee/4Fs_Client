@@ -1,4 +1,4 @@
-[
+export const rewards = [
   "Take a nap",
   "Visit library",
   "Read a book",

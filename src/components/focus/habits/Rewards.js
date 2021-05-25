@@ -6,16 +6,10 @@ import {
   deleteHabit,
 } from "../../../api/focus/habitsApi";
 import useCRUD from "../../../hooks/useCRUD";
-
+import { rewards } from "../../../utils/rewards";
 import TableComponent from "../../table/TableComponent";
 
 const Rewards = () => {
-  const [habits, handleSave, handleDelete] = useCRUD(
-    getHabits,
-    mutateHabit,
-    deleteHabit
-  );
-
   const columns = [
     {
       label: "Rewards to Consider",
@@ -24,15 +18,10 @@ const Rewards = () => {
   ];
 
   const rows = () => {
-    const rowData = habits.map((item) => ({
+    const rowData = rewards.map((item) => ({
       reward: {
         cellComponent: generateCellComponent("", {
-          // id: item.id,
-          // onSave: handleSave,
-          // onDelete: handleDelete,
-          // val: item.reward,
-          // accessor: "reward",
-          // alignment: "center",
+          val: item,
         }),
       },
     }));
