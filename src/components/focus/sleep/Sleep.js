@@ -150,7 +150,7 @@ const Sleep = () => {
         hoursSlept: {
           cellComponent: generateCellComponent("static", {
             id: item.id,
-            val: item.hoursSlept,
+            val: moment(item.hoursSlept, "HH:mm:ss").format("HH:mm"),
             alignment: "center",
             className: "sleep-hours-slept",
           }),
