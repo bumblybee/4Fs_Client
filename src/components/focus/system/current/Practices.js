@@ -2,8 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import moment from "moment";
 import { NotificationContext } from "../../../../context/notification/NotificationContext";
 import TableComponent from "../../../table/TableComponent";
-import SystemTableHeader from "../SystemTableHeader";
-import { StyledHeader } from "./StyledCurrentPractices";
+import SystemTableHeader from "../header/SystemTableHeader";
+import { StyledHeader } from "./StyledPractices";
 import generateCellComponent from "../../../../utils/generateCellComponent";
 import {
   getCurrentPractices,
@@ -16,7 +16,7 @@ import {
 } from "../../../../api/focus/practicesApi";
 
 // TODO: Limit height of table
-const CurrentPractices = () => {
+const Practices = () => {
   const { setNotificationMessage, clearNotificationMessage } =
     useContext(NotificationContext);
   const [storedPractices, setStoredPractices] = useState([]);
@@ -530,4 +530,4 @@ const CurrentPractices = () => {
   );
 };
 
-export default CurrentPractices;
+export default Practices;

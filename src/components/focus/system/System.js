@@ -1,7 +1,7 @@
 import React from "react";
 
-import CurrentPractices from "./current/CurrentPractices";
-import Progress from "./progress/Progress";
+import Practices from "./current/Practices";
+import Progress from "./past/Progress";
 import SectionHeader from "../../layout/SectionHeader";
 
 const System = () => {
@@ -13,7 +13,7 @@ const System = () => {
           health and wellbeing."
       />
       <div style={{ marginBottom: "1rem" }}>
-        <CurrentPractices />
+        <Practices />
       </div>
       <Progress />
     </div>

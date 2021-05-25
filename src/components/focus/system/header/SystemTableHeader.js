@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import moment from "moment";
-import { startWeek, deleteCurrentWeek } from "../../../api/focus/practicesApi";
+import {
+  startWeek,
+  deleteCurrentWeek,
+} from "../../../../api/focus/practicesApi";
 import {
   StyledStartDateContainer,
   StyledButton,
   StyledDatePicker,
-} from "./StyledSystem";
+} from "../StyledSystem";
 
 const SystemTableHeader = ({
   currWeek,
@@ -25,7 +28,7 @@ const SystemTableHeader = ({
     setCurrPractices(week.data.practices);
   };
 
-  const handleDeleteWeek = async () => {
+  const handleResetWeek = async () => {
     if (window.confirm("Are you sure you want to reset the current week?")) {
       await deleteCurrentWeek(currWeek.id);
 
@@ -44,7 +47,7 @@ const SystemTableHeader = ({
           margin: "0 auto 1rem",
         }}
       >
-        {/* Dynamically render choose start date text, then input new practice based on if in progress or not - */}
+        {/* Dynamically render text*/}
         {currWeek.startDate ? (
           <p>
             Input your new practice and define a goal for the amount of times
@@ -62,7 +65,7 @@ const SystemTableHeader = ({
               {moment(currWeek.startDate).format("MM/DD/YYYY")} -{" "}
               {moment(currWeek.endDate).format("MM/DD/YYYY")}
             </div>
-            <StyledButton size="small" onClick={handleDeleteWeek}>
+            <StyledButton size="small" onClick={handleResetWeek}>
               Reset
             </StyledButton>
           </>
