@@ -81,11 +81,13 @@ const HabitsTable = () => {
       habitGoal: {
         cellComponent: generateCellComponent("example", {
           val: "Walk five times this week",
+          color: "#33333388",
         }),
       },
       reward: {
         cellComponent: generateCellComponent("example", {
           val: "Take a bubble bath",
+          color: "#33333388",
         }),
       },
     };
