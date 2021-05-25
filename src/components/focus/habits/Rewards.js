@@ -45,7 +45,7 @@ const Rewards = () => {
       <TableComponent
         rows={rows()}
         columns={columns}
-        color="orange"
+        color="#FBBD08"
         aligntext="center"
         celled
       />

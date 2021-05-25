@@ -10,6 +10,7 @@ import HabitsTableHeader from "./HabitsTableHeader";
 import TableComponent from "../../table/TableComponent";
 
 // TODO: Add example row
+// TODO: Disable reward until goal set
 const HabitsTable = () => {
   const [habits, handleSave, handleDelete] = useCRUD(
     getHabits,
@@ -17,7 +18,7 @@ const HabitsTable = () => {
     deleteHabit
   );
   const columns = [
-    { label: "Goal", key: "habitGoal" },
+    { label: "Habit Goal", key: "habitGoal" },
     {
       label: "Reward",
       key: "reward",
@@ -81,7 +82,7 @@ const HabitsTable = () => {
         descriptionheader={<HabitsTableHeader />}
         rows={rows(addEmptyRow())}
         columns={columns}
-        color="green"
+        color="#6435C9"
         aligntext="center"
         celled
       />

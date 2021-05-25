@@ -13,9 +13,10 @@ const HabitsTableHeader = () => {
       <div
         style={{
           width: "80%",
-          margin: "0 auto 1rem",
+          margin: "0 auto",
           textAlign: "center",
           fontSize: "0.95rem",
+          padding: "0.5rem 0",
         }}
       >
         Action: Think of a reward you can give yourself for doing the new habit.
@@ -24,7 +25,7 @@ const HabitsTableHeader = () => {
       <div style={{ marginLeft: "auto" }}>
         <Popup
           position="top center"
-          content="Use the reward list if you need more ideas."
+          content="Use the rewards list if you need more ideas."
           trigger={<Icon name="question circle outline" />}
         />
       </div>

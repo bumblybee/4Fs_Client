@@ -5,8 +5,8 @@ export const StyledHabitsTableContainer = styled.div`
   justify-content: center;
   align-items: flex-start; */
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 1rem;
+  grid-template-columns: 0.02fr 1.25fr 0.75fr;
+  grid-gap: 0.5rem;
 
   @media (max-width: 1027px) {
     flex-direction: column;
