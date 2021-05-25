@@ -6,10 +6,11 @@ import {
   deleteHabit,
 } from "../../../api/focus/habitsApi";
 import useCRUD from "../../../hooks/useCRUD";
-
+import HabitsTableHeader from "./HabitsTableHeader";
 import TableComponent from "../../table/TableComponent";
 
-const Goals = () => {
+// TODO: Add example row
+const HabitsTable = () => {
   const [habits, handleSave, handleDelete] = useCRUD(
     getHabits,
     mutateHabit,
@@ -77,7 +78,7 @@ const Goals = () => {
   return (
     rows && (
       <TableComponent
-        // descriptionheader={<HabitsTableHeader />}
+        descriptionheader={<HabitsTableHeader />}
         rows={rows(addEmptyRow())}
         columns={columns}
         color="green"
@@ -88,4 +89,4 @@ const Goals = () => {
   );
 };
 
-export default Goals;
+export default HabitsTable;

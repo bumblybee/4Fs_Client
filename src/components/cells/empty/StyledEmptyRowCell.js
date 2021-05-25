@@ -26,7 +26,7 @@ export const StyledEmptyCell = styled.div`
     height: inherit;
     text-align: ${(props) => props.aligntext};
 
-    text-align-last: center;
+    text-align-last: ${(props) => props.aligntext};
     white-space: normal;
     background: #eee;
     padding: 0.75rem;

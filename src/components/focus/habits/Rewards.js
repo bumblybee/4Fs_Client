@@ -23,42 +23,27 @@ const Rewards = () => {
     },
   ];
 
-  const rows = (emptyRow) => {
+  const rows = () => {
     const rowData = habits.map((item) => ({
       reward: {
-        cellComponent: generateCellComponent("editable", {
-          id: item.id,
-          onSave: handleSave,
-          onDelete: handleDelete,
-          val: item.reward,
-          accessor: "reward",
-          alignment: "center",
+        cellComponent: generateCellComponent("", {
+          // id: item.id,
+          // onSave: handleSave,
+          // onDelete: handleDelete,
+          // val: item.reward,
+          // accessor: "reward",
+          // alignment: "center",
         }),
       },
     }));
 
-    return [...rowData, emptyRow];
-  };
-
-  const addEmptyRow = () => {
-    const emptyRow = {
-      reward: {
-        cellComponent: generateCellComponent("empty", {
-          onSave: handleSave,
-          placeholder: "New reward...",
-          accessor: "reward",
-          alignment: "center",
-          aligntext: "center",
-        }),
-      },
-    };
-    return emptyRow;
+    return rowData;
   };
 
   return (
     rows && (
       <TableComponent
-        rows={rows(addEmptyRow())}
+        rows={rows()}
         columns={columns}
         color="orange"
         aligntext="center"

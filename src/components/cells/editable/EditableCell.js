@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { StyledEditableCell } from "./StyledEditableCell";
 
+// TODO: Pass classes in props and style in stylesheet rather than passing alignment, etc.
+
 const EditableTableCell = ({ children, ...props }) => {
   const [editing, setEditing] = useState(false);
   const [editCellVal, setEditCellVal] = useState(props.val);

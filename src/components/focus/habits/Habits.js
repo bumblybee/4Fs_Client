@@ -1,11 +1,8 @@
 import React from "react";
-import Goals from "./Goals";
+import HabitsTable from "./HabitsTable";
 import Rewards from "./Rewards";
 import SectionHeader from "../../layout/SectionHeader";
-import HabitsTableHeader from "./HabitsTableHeader";
-
 import { StyledHabitsTableContainer } from "./StyledHabits";
-import { Segment } from "semantic-ui-react";
 
 const Habits = () => {
   return (
@@ -13,7 +10,7 @@ const Habits = () => {
       <SectionHeader title="Habit Creator" subtitle="" />
 
       <StyledHabitsTableContainer>
-        <Goals />
+        <HabitsTable />
         <Rewards />
       </StyledHabitsTableContainer>
     </div>
