@@ -1,98 +1,40 @@
 import React from "react";
-import generateCellComponent from "../../../utils/generateCellComponent";
+import Goals from "./Goals";
+import Rewards from "./Rewards";
+import SectionHeader from "../../layout/SectionHeader";
 import {
   getHabits,
-  mutateHabits,
-  deleteHabits,
-} from "../../../api/home/milestonesApi";
+  mutateHabit,
+  deleteHabit,
+} from "../../../api/focus/habitsApi";
 import useCRUD from "../../../hooks/useCRUD";
-import SectionHeader from "../../layout/SectionHeader";
-import HabitsTableHeader from "./HabitsTableHeader";
-import TableComponent from "../../table/TableComponent";
+import { StyledHabitsTableContainer } from "./StyledHabits";
 
 const Habits = () => {
   const [habits, handleSave, handleDelete] = useCRUD(
     getHabits,
-    mutateHabits,
-    deleteHabits
+    mutateHabit,
+    deleteHabit
   );
-
-  const columns = [
-    { label: "Goal", key: "goal" },
-    {
-      label: "Reward",
-      key: "reward",
-    },
-  ];
-
-  const rows = (emptyRow) => {
-    const rowData = habits.map((item) => ({
-      goal: {
-        cellComponent: generateCellComponent("editable", {
-          id: item.id,
-          onSave: handleSave,
-          onDelete: handleDelete,
-          val: item.skill,
-          val: item.goal,
-          alignment: "center",
-        }),
-      },
-      reward: {
-        cellComponent: generateCellComponent("editable", {
-          id: item.id,
-          onSave: handleSave,
-          val: item.skill,
-          alignment: "center",
-        }),
-      },
-    }));
-
-    return [...rowData, emptyRow];
-  };
-
-  const addEmptyRow = () => {
-    const emptyRow = {
-      goal: {
-        cellComponent: generateCellComponent("empty", {
-          onSave: handleSave,
-          placeholder: "New goal...",
-
-          accessor: "goal",
-        }),
-      },
-      reward: {
-        cellComponent: generateCellComponent("empty", {
-          onSave: handleSave,
-          placeholder: "New reward...",
-          accessor: "reward",
-          alignment: "center",
-        }),
-      },
-      delete: {
-        cellComponent: generateCellComponent("", {}),
-      },
-    };
-    return emptyRow;
-  };
-
   return (
-    rows && (
-      <div>
-        <SectionHeader
-          title="Habit Creator"
-          subtitle="Purpose: To create satisfaction doing your new habit."
+    <div>
+      <SectionHeader
+        title="Habit Creator"
+        subtitle="Purpose: To create satisfaction doing your new habit."
+      />
+      <StyledHabitsTableContainer>
+        <Goals
+          habits={habits}
+          mutateHabit={mutateHabit}
+          deleteHabit={deleteHabit}
         />
-
-        <TableComponent
-          descriptionheader={<HabitsTableHeader />}
-          rows={rows()}
-          columns={columns}
-          color="orange"
-          aligntext="left"
-          striped
+        <Rewards
+          habits={habits}
+          mutateHabit={mutateHabit}
+          deleteHabit={deleteHabit}
         />
-      </div>
-    )
+      </StyledHabitsTableContainer>
+    </div>
   );
 };
 

@@ -7,7 +7,7 @@ import LoginForm from "../../pages/login/LoginForm";
 import UserProfile from "../../pages/user/UserProfile";
 import Resources from "../resources/Resources";
 import { Milestones, Beliefs, BodyCalculator } from "../home";
-import { System, SwaggerStockpile, Sleep } from "../focus";
+import { System, SwaggerStockpile, Sleep, Habits } from "../focus";
 import { FastingGuide, FastingWindow } from "../../components/fasting";
 import { CalorieRequirements, FoodList, MealPlanner } from "../food";
 import { FitnessActivities, FitnessPlanner } from "../fitness";
@@ -46,7 +46,7 @@ const Routes = () => {
         <AppWrapper component={<Sleep />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/focus/habits">
-        <AppWrapper tabs></AppWrapper>
+        <AppWrapper component={<Habits />} tabs />
       </ProtectedRoute>
 
       <ProtectedRoute path="/fasting" exact>

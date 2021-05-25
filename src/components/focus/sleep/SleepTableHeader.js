@@ -12,10 +12,7 @@ const SleepTableHeader = ({ data, columns }) => {
         width: "100%",
       }}
     >
-      <div
-        style={{ marginRight: "auto", cursor: "pointer" }}
-        // title="Download CSV"
-      >
+      <div style={{ marginRight: "auto", cursor: "pointer" }}>
         <CsvDownloader
           datas={data}
           columns={columns}
