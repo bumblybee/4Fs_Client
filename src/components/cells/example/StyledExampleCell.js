@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledExampleRow = styled.div`
+export const StyledExampleCell = styled.div`
   font-weight: ${(props) => props.textWeight || 400};
   font-style: italic;
   color: ${(props) => props.color || "#333"};

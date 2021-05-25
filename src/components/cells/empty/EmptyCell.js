@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { StyledEmptyCell } from "./StyledEmptyRowCell";
+import { StyledEmptyCell } from "./StyledEmptyCell";
 
-const EmptyRowCell = ({ children, ...props }) => {
+const EmptyCell = ({ children, ...props }) => {
   const [editing, setEditing] = useState(false);
 
   const [emptyCellVal, setEmptyCellVal] = useState("");
@@ -69,4 +69,4 @@ const EmptyRowCell = ({ children, ...props }) => {
   );
 };
 
-export default EmptyRowCell;
+export default EmptyCell;

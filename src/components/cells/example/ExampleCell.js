@@ -1,8 +1,8 @@
 import React from "react";
 import { Popup, Icon } from "semantic-ui-react";
-import { StyledExampleRow, StyledTooltipContainer } from "./StyledExampleRow";
+import { StyledExampleCell, StyledTooltipContainer } from "./StyledExampleCell";
 
-const ExampleRowCell = ({
+const ExampleCell = ({
   val,
   tooltipContent,
   alignment,
@@ -12,7 +12,7 @@ const ExampleRowCell = ({
   color,
 }) => {
   return (
-    <StyledExampleRow
+    <StyledExampleCell
       textWeight={textWeight}
       alignment={alignment}
       justify={justify}
@@ -29,8 +29,8 @@ const ExampleRowCell = ({
           />
         </StyledTooltipContainer>
       )}
-    </StyledExampleRow>
+    </StyledExampleCell>
   );
 };
 
-export default ExampleRowCell;
+export default ExampleCell;

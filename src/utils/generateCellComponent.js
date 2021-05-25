@@ -1,7 +1,7 @@
 import EditableCell from "../components/cells/editable/EditableCell";
-import EmptyRowCell from "../components/cells/empty/EmptyRowCell";
+import EmptyCell from "../components/cells/empty/EmptyCell";
 import DropdownCell from "../components/cells/dropdown/DropdownCell";
-import ExampleRowCell from "../components/cells/example/ExampleRowCell";
+import ExampleCell from "../components/cells/example/ExampleCell";
 import CheckboxCell from "../components/cells/checkbox/CheckboxCell";
 import DatePickerCell from "../components/cells/date/DatePickerCell";
 import TimePickerCell from "../components/cells/time/TimePickerCell";
@@ -32,7 +32,7 @@ const generateCellComponent = (type, props) => {
       );
     case "empty":
       return (
-        <EmptyRowCell
+        <EmptyCell
           onSave={props.onSave}
           val=""
           placeholder={props.placeholder}
@@ -46,7 +46,7 @@ const generateCellComponent = (type, props) => {
       );
     case "example":
       return (
-        <ExampleRowCell
+        <ExampleCell
           val={props.val}
           alignment={props.alignment}
           justify={props.justify}
