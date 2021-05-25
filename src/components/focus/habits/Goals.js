@@ -1,10 +1,20 @@
 import React from "react";
 import generateCellComponent from "../../../utils/generateCellComponent";
+import {
+  getHabits,
+  mutateHabit,
+  deleteHabit,
+} from "../../../api/focus/habitsApi";
+import useCRUD from "../../../hooks/useCRUD";
 
-import HabitsTableHeader from "./HabitsTableHeader";
 import TableComponent from "../../table/TableComponent";
 
-const Goals = ({ habits, handleSave, handleDelete }) => {
+const Goals = () => {
+  const [habits, handleSave, handleDelete] = useCRUD(
+    getHabits,
+    mutateHabit,
+    deleteHabit
+  );
   const columns = [{ label: "Goal", key: "habitGoal" }];
 
   const rows = (emptyRow) => {
@@ -41,16 +51,14 @@ const Goals = ({ habits, handleSave, handleDelete }) => {
 
   return (
     rows && (
-      <div>
-        <TableComponent
-          descriptionheader={<HabitsTableHeader />}
-          rows={rows(addEmptyRow())}
-          columns={columns}
-          color="brown"
-          aligntext="center"
-          celled
-        />
-      </div>
+      <TableComponent
+        // descriptionheader={<HabitsTableHeader />}
+        rows={rows(addEmptyRow())}
+        columns={columns}
+        color="green"
+        aligntext="center"
+        celled
+      />
     )
   );
 };

@@ -14,6 +14,7 @@ const HabitsTableHeader = () => {
         style={{
           width: "70%",
           margin: "0 auto 1rem",
+          textAlign: "center",
         }}
       >
         Action: Think of a reward you can give yourself for doing the new habit.

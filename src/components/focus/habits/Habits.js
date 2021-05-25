@@ -2,37 +2,22 @@ import React from "react";
 import Goals from "./Goals";
 import Rewards from "./Rewards";
 import SectionHeader from "../../layout/SectionHeader";
-import {
-  getHabits,
-  mutateHabit,
-  deleteHabit,
-} from "../../../api/focus/habitsApi";
-import useCRUD from "../../../hooks/useCRUD";
+import HabitsTableHeader from "./HabitsTableHeader";
+
 import { StyledHabitsTableContainer } from "./StyledHabits";
+import { Segment } from "semantic-ui-react";
 
 const Habits = () => {
-  const [habits, handleSave, handleDelete] = useCRUD(
-    getHabits,
-    mutateHabit,
-    deleteHabit
-  );
   return (
     <div>
       <SectionHeader
         title="Habit Creator"
-        subtitle="Purpose: To create satisfaction doing your new habit."
+        subtitle="Action: Think of a reward you can give yourself for doing the new habit. Define what you have to do in order to earn the reward (ex. If I walk 5 times this week I will take a bubble bath)."
       />
+
       <StyledHabitsTableContainer>
-        <Goals
-          habits={habits}
-          mutateHabit={mutateHabit}
-          deleteHabit={deleteHabit}
-        />
-        <Rewards
-          habits={habits}
-          mutateHabit={mutateHabit}
-          deleteHabit={deleteHabit}
-        />
+        <Goals />
+        <Rewards />
       </StyledHabitsTableContainer>
     </div>
   );

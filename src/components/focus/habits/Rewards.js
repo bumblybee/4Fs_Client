@@ -1,10 +1,21 @@
 import React from "react";
 import generateCellComponent from "../../../utils/generateCellComponent";
+import {
+  getHabits,
+  mutateHabit,
+  deleteHabit,
+} from "../../../api/focus/habitsApi";
+import useCRUD from "../../../hooks/useCRUD";
 
-import HabitsTableHeader from "./HabitsTableHeader";
 import TableComponent from "../../table/TableComponent";
 
-const Rewards = ({ habits, handleSave, handleDelete }) => {
+const Rewards = () => {
+  const [habits, handleSave, handleDelete] = useCRUD(
+    getHabits,
+    mutateHabit,
+    deleteHabit
+  );
+
   const columns = [
     {
       label: "Reward",
@@ -18,6 +29,7 @@ const Rewards = ({ habits, handleSave, handleDelete }) => {
         cellComponent: generateCellComponent("editable", {
           id: item.id,
           onSave: handleSave,
+          onDelete: handleDelete,
           val: item.reward,
           accessor: "reward",
           alignment: "center",
@@ -33,7 +45,6 @@ const Rewards = ({ habits, handleSave, handleDelete }) => {
       reward: {
         cellComponent: generateCellComponent("empty", {
           onSave: handleSave,
-          onDelete: handleDelete,
           placeholder: "New reward...",
           accessor: "reward",
           alignment: "center",
@@ -46,15 +57,13 @@ const Rewards = ({ habits, handleSave, handleDelete }) => {
 
   return (
     rows && (
-      <div>
-        <TableComponent
-          rows={rows(addEmptyRow())}
-          columns={columns}
-          color="brown"
-          aligntext="center"
-          celled
-        />
-      </div>
+      <TableComponent
+        rows={rows(addEmptyRow())}
+        columns={columns}
+        color="orange"
+        aligntext="center"
+        celled
+      />
     )
   );
 };
