@@ -2,7 +2,6 @@ import React from "react";
 import { StyledButton } from "./StyledButtonCell";
 
 const ButtonCell = (props) => {
-  // TODO: look into why class necessary if styled component
   return (
     <StyledButton
       size={props.size}
