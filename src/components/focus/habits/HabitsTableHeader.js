@@ -25,7 +25,7 @@ const HabitsTableHeader = () => {
       <div style={{ marginLeft: "auto" }}>
         <Popup
           position="top center"
-          content="Use the rewards list if you need more ideas."
+          content="Use the reward list provided if you need ideas."
           trigger={<Icon name="question circle outline" />}
         />
       </div>

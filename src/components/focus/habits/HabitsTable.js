@@ -10,7 +10,7 @@ import HabitsTableHeader from "./HabitsTableHeader";
 import TableComponent from "../../table/TableComponent";
 
 // TODO: Add example row
-// TODO: Disable reward until goal set
+
 const HabitsTable = () => {
   const [habits, handleSave, handleDelete] = useCRUD(
     getHabits,
@@ -25,7 +25,7 @@ const HabitsTable = () => {
     },
   ];
 
-  const rows = (emptyRow) => {
+  const rows = (exampleRow, emptyRow) => {
     const rowData = habits.map((item) => ({
       habitGoal: {
         cellComponent: generateCellComponent("editable", {
@@ -49,7 +49,7 @@ const HabitsTable = () => {
       },
     }));
 
-    return [...rowData, emptyRow];
+    return [exampleRow, ...rowData, emptyRow];
   };
 
   const addEmptyRow = () => {
@@ -76,15 +76,33 @@ const HabitsTable = () => {
     return emptyRow;
   };
 
+  const addExampleRow = () => {
+    const exampleRow = {
+      habitGoal: {
+        cellComponent: generateCellComponent("example", {
+          val: "Walk five times this week",
+        }),
+      },
+      reward: {
+        cellComponent: generateCellComponent("example", {
+          val: "Take a bubble bath",
+        }),
+      },
+    };
+
+    return exampleRow;
+  };
+
   return (
     rows && (
       <TableComponent
         descriptionheader={<HabitsTableHeader />}
-        rows={rows(addEmptyRow())}
+        rows={rows(addExampleRow(), addEmptyRow())}
         columns={columns}
         color="#6435C9"
         aligntext="center"
         celled
+        example
       />
     )
   );
