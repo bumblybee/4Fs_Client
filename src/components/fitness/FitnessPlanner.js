@@ -7,7 +7,7 @@ const FitnessPlanner = () => {
       colorScheme="purple"
       buttonText="Google Sheets"
       title="Fitness Planner"
-      subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
     />
   );
 };

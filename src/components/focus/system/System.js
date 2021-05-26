@@ -9,7 +9,7 @@ const System = () => {
     <div>
       <SectionHeader
         title="Master your System"
-        subtitle="Purpose: To begin doing new practices that will help you with your
+        subtext="Purpose: To begin doing new practices that will help you with your
           health and wellbeing."
       />
       <div style={{ marginBottom: "1rem" }}>

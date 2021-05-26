@@ -8,7 +8,7 @@ const BodyCalculator = () => {
       buttonText="Google Sheets"
       val="Body Composition Calculator"
       title="Body Composition Calculator"
-      subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
     />
   );
 };

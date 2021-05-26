@@ -88,7 +88,7 @@ const Milestones = () => {
       <div>
         <SectionHeader
           title="Milestones"
-          subtitle="Feel free to add your personal touch to each milestone so that it
+          subtext="Feel free to add your personal touch to each milestone so that it
           works for you!"
         />
 

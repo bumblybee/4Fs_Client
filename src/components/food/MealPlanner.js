@@ -7,7 +7,7 @@ const MealPlanner = () => {
       colorScheme="red"
       buttonText="Google Sheets"
       title="Meal Planner"
-      subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
     />
   );
 };

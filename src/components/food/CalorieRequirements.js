@@ -7,7 +7,7 @@ const CalorieRequirements = () => {
       colorScheme="blue"
       buttonText="Google Sheets"
       title="Calorie Requirements"
-      subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
     />
   );
 };

@@ -7,7 +7,7 @@ const FastingGuide = () => {
       colorScheme="green"
       buttonText="Google Sheets"
       title="Fasting Guide"
-      subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
     />
   );
 };

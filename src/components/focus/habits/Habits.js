@@ -11,7 +11,8 @@ const Habits = () => {
     <>
       <SectionHeader
         title="Habit Creator"
-        subtitle="Purpose: To create satisfaction doing your new habit."
+        subtitle="Step 5: Reward Yourself"
+        subtext="Purpose: To create satisfaction doing your new habit."
         component={
           <StyledButton>
             <Icon name="google drive" />

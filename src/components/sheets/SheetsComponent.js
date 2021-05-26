@@ -5,7 +5,13 @@ import generateCellComponent from "../../utils/generateCellComponent";
 import { UserContext } from "../../context/user/UserContext";
 import { Icon } from "semantic-ui-react";
 
-const SheetsComponent = ({ title, subtitle, buttonText, colorScheme }) => {
+const SheetsComponent = ({
+  title,
+  subtitle,
+  subtext,
+  buttonText,
+  colorScheme,
+}) => {
   // TODO: Specify which sheet to direct user to
 
   const { user } = useContext(UserContext);
@@ -42,7 +48,7 @@ const SheetsComponent = ({ title, subtitle, buttonText, colorScheme }) => {
 
   return (
     <div>
-      <SectionHeader title={title} subtitle={subtitle} />
+      <SectionHeader title={title} subtitle={subtitle} subtext={subtext} />
 
       <TableComponent
         rows={rows()}

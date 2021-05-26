@@ -61,7 +61,7 @@ const Beliefs = () => {
       <div>
         <SectionHeader
           title="Empowering Beliefs"
-          subtitle="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam,
+          subtext="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam,
           laboriosam!"
         />
 

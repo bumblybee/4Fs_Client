@@ -11,7 +11,7 @@ const SwaggerStockpile = () => {
     <div>
       <SectionHeader
         title="Swagger Stockpile"
-        subtitle="Make a list for each category. Write down anything that comes to mind.
+        subtext="Make a list for each category. Write down anything that comes to mind.
         Capture both small and big wins. This will be your stockpile that you
         can reference at any time in order to keep you on your path to success."
       />
