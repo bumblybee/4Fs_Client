@@ -17,7 +17,6 @@ const UserProfile = () => {
   const { setNotificationMessage } = useContext(NotificationContext);
   const { user, updateUserDetails, logUserOut } = useContext(UserContext);
 
-  const splitPhoneNumber = user && user.phone && user.phone.split("-");
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
@@ -33,6 +32,16 @@ const UserProfile = () => {
     sheetsURL: "",
   });
 
+  const formatPhone = () => {
+    let formattedPhone = "";
+    if (user && user.phone && user.phone.includes("null")) {
+      formattedPhone = null;
+    } else if (user && user.phone && !user.phone.contains("null")) {
+      formattedPhone = user.phone.split("-");
+    }
+    return formattedPhone;
+  };
+
   const handleChange = (field) => (e) => {
     setUserDetails({ ...userDetails, [field]: e.target.value });
   };
@@ -40,7 +49,14 @@ const UserProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const phoneNumber = `${userDetails.countryCode}-${userDetails.phone1}-${userDetails.phone2}-${userDetails.phone3}`;
+    for (let key in userDetails) {
+      if (userDetails[key] === "") userDetails[key] = null;
+    }
+
+    const phoneNumber =
+      userDetails.phone1 !== null
+        ? `${userDetails.countryCode}-${userDetails.phone1}-${userDetails.phone2}-${userDetails.phone3}`
+        : null;
 
     const data = (({ countryCode, phone1, phone2, phone3, ...rest }) => rest)({
       ...userDetails,
@@ -60,16 +76,17 @@ const UserProfile = () => {
   };
 
   useEffect(() => {
+    const formattedPhone = formatPhone();
     user &&
       setUserDetails({
         ...userDetails,
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
-        countryCode: splitPhoneNumber ? splitPhoneNumber[0] : 1,
-        phone1: splitPhoneNumber && splitPhoneNumber[1],
-        phone2: splitPhoneNumber && splitPhoneNumber[2],
-        phone3: splitPhoneNumber && splitPhoneNumber[3],
+        countryCode: formattedPhone ? formattedPhone[0] : null,
+        phone1: formattedPhone && formattedPhone[1],
+        phone2: formattedPhone && formattedPhone[2],
+        phone3: formattedPhone && formattedPhone[3],
         age: user.age,
         height: user.height,
         weight: user.weight,
@@ -136,7 +153,7 @@ const UserProfile = () => {
                   type="text"
                   pattern="[0-9]{1}"
                   title="Enter the country code"
-                  value={userDetails.countryCode || 1}
+                  value={userDetails.countryCode}
                   onChange={handleChange("countryCode")}
                 />
               </div>
@@ -147,7 +164,7 @@ const UserProfile = () => {
                 type="text"
                 pattern="[0-9]{3}"
                 title="Enter the area code"
-                value={userDetails.phone1}
+                value={userDetails.phone1 || ""}
                 onChange={handleChange("phone1")}
               />
               <input
@@ -157,7 +174,7 @@ const UserProfile = () => {
                 type="text"
                 pattern="[0-9]{3}"
                 title="Enter first three digits of phone number"
-                value={userDetails.phone2}
+                value={userDetails.phone2 || ""}
                 onChange={handleChange("phone2")}
               />
               <input
@@ -167,7 +184,7 @@ const UserProfile = () => {
                 type="text"
                 title="Enter last four digits of phone number"
                 pattern="[0-9]{4}"
-                value={userDetails.phone3}
+                value={userDetails.phone3 || ""}
                 onChange={handleChange("phone3")}
               />
             </StyledPhoneWrapper>
