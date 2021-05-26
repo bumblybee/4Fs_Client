@@ -91,16 +91,7 @@ export default function TableComponent({ children, ...props }) {
 
   function renderRows(mappedRows) {
     return mappedRows.map((row, idx) => (
-      <TableComponent.TR
-        key={idx}
-        style={{
-          minHeight: "45px",
-          textAlign: props.aligntext,
-          background: props.example && idx === 0 && "#daddde88",
-        }}
-      >
-        {renderCells(row)}
-      </TableComponent.TR>
+      <TableComponent.TR key={idx}>{renderCells(row)}</TableComponent.TR>
     ));
   }
 
@@ -117,7 +108,7 @@ export default function TableComponent({ children, ...props }) {
       color={props.color}
       style={{
         height: "min-content",
-        maxHeight: "31rem",
+        maxHeight: "30rem",
         overflowY: "auto",
         overflowX: "hidden",
 
@@ -129,6 +120,7 @@ export default function TableComponent({ children, ...props }) {
     >
       <StyledTable
         {...props}
+        className={props.className}
         rowdata={rowData}
         color={props.color}
         compact={props.compact}

@@ -33,6 +33,7 @@ const Beliefs = () => {
           val: item.belief,
           accessor: "belief",
           alignment: "center",
+          aligntext: "center",
         }),
       },
     }));

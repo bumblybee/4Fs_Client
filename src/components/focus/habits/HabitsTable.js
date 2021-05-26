@@ -34,6 +34,7 @@ const HabitsTable = () => {
           onSave: handleSave,
           onDelete: item.reward === null && handleDelete,
           val: item.habitGoal,
+          placeholder: "New goal...",
           accessor: "habitGoal",
           alignment: "center",
           aligntext: "center",
@@ -45,6 +46,7 @@ const HabitsTable = () => {
           onSave: handleSave,
           onDelete: item.habitGoal === null && handleDelete,
           val: item.reward,
+          placeholder: "New reward...",
           accessor: "reward",
           alignment: "center",
           aligntext: "center",
@@ -52,7 +54,13 @@ const HabitsTable = () => {
       },
     }));
 
-    return [exampleRow, ...rowData, emptyRow];
+    // If the last record has both a goal and reward, render empty row
+    const lastRow = habits[habits.length - 1];
+    const complete = lastRow.habitGoal && lastRow.reward;
+
+    return complete
+      ? [exampleRow, ...rowData, emptyRow]
+      : [exampleRow, ...rowData];
   };
 
   const addEmptyRow = () => {
@@ -84,13 +92,13 @@ const HabitsTable = () => {
       habitGoal: {
         cellComponent: generateCellComponent("example", {
           val: "Walk five times this week",
-          color: "#33333388",
+          color: "#33333399",
         }),
       },
       reward: {
         cellComponent: generateCellComponent("example", {
           val: "Take a bubble bath",
-          color: "#33333388",
+          color: "#33333399",
         }),
       },
     };

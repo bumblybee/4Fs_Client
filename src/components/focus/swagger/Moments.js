@@ -77,6 +77,7 @@ const Moments = () => {
       <TableComponent
         rows={rows(addExampleRow(), addEmptyRow())}
         columns={columns}
+        descriptionHeaderHeight="40px"
         color="#B5CC18"
         aligntext="center"
         example

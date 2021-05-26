@@ -10,9 +10,39 @@ export const StyledTable = styled(Table)`
 
   tbody {
     height: ${(props) => (props.fullheighttable ? "30rem" : "")};
-
+    position: relative;
     overflow-y: auto;
+    width: 100%;
   }
+
+  tr {
+    min-height: 45px;
+    text-align: ${(props) => props.aligntext};
+    width: 100%;
+  }
+
+  tbody tr:first-child {
+    background: ${(props) => props.example && "#daddde88"};
+  }
+
+  thead {
+    border-top-left-radius: 8px;
+  }
+
+  td {
+    height: ${(props) => (props.fullheighttd ? "31rem" : "")};
+    min-height: 40px;
+    position: relative;
+    font-family: "Lato", sans-serif;
+  }
+
+  /* tbody tr:first-child,
+  tr:first-child td:first-child {
+    position: sticky;
+    top: ${(props) => props.descriptionHeaderHeight};
+    left: ${(props) => props.descriptionHeaderHeight};
+    color: purple;
+  } */
 
   .description-header {
     height: ${(props) => props.descriptionHeaderHeight} !important;
@@ -27,29 +57,6 @@ export const StyledTable = styled(Table)`
       props.descriptionheader ? props.descriptionHeaderHeight : 0};
     z-index: 3;
     border-bottom: none;
-  }
-
-  thead {
-    border-top-left-radius: 8px;
-  }
-
-  td {
-    height: ${(props) => (props.fullheighttd ? "31rem" : "")};
-    min-height: 40px;
-    position: relative;
-    font-family: "Lato", sans-serif;
-  }
-
-  /* thead,
-  tbody tr {
-    display: ${(props) => (props.fullheighttable ? "table" : "")};
-    width: 100%;
-    table-layout: fixed;
-  } */
-
-  tbody,
-  tr {
-    width: 100%;
   }
 
   input[type="text"] {

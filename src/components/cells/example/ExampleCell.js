@@ -10,6 +10,7 @@ const ExampleCell = ({
   textWeight,
   width,
   color,
+  className,
 }) => {
   return (
     <StyledExampleCell
