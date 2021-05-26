@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import { Button } from "semantic-ui-react";
 export const StyledHabitsTableContainer = styled.div`
   display: grid;
@@ -13,7 +15,6 @@ export const StyledHabitsTableContainer = styled.div`
 `;
 
 export const StyledButton = styled(Button)`
-  margin: 0 auto 1.5rem !important;
   font-weight: bold !important;
   background: transparent none !important;
   box-shadow: 0px 0px 0px 1px #6435c9 inset !important;
@@ -32,4 +33,9 @@ export const StyledButton = styled(Button)`
 
     color: #ffffffee !important;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  display: block;
+  margin: 0 auto 1.5rem !important;
 `;
