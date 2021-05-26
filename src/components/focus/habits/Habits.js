@@ -6,8 +6,11 @@ import { StyledHabitsTableContainer } from "./StyledHabits";
 import { Segment } from "semantic-ui-react";
 const Habits = () => {
   return (
-    <div>
-      <SectionHeader title="Habit Creator" subtitle="" />
+    <>
+      <SectionHeader
+        title="Habit Creator"
+        subtitle="Purpose: To create satisfaction doing your new habit. "
+      />
       {/* <Segment color="violet" inverted></Segment> */}
 
       <StyledHabitsTableContainer>
@@ -15,7 +18,7 @@ const Habits = () => {
         <HabitsTable />
         <Rewards />
       </StyledHabitsTableContainer>
-    </div>
+    </>
   );
 };
 

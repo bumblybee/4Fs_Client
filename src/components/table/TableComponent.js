@@ -113,27 +113,39 @@ export default function TableComponent({ children, ...props }) {
   };
 
   return (
-    <StyledTable
-      {...props}
-      rowdata={rowData}
+    <div
       color={props.color}
-      compact={props.compact}
-      unstackable
-      example={props.example}
-      striped={props.striped}
-      collapsing={props.collapsing}
-      celled={props.celled}
+      style={{
+        maxHeight: "450px",
+        overflowY: "auto",
+        width: "100%",
+        border: "1px solid #22242626",
+        borderTop: "none",
+        borderRadius: "0.27rem",
+      }}
     >
-      {props.descriptionheader && renderDescriptionHeader()}
+      <StyledTable
+        {...props}
+        rowdata={rowData}
+        color={props.color}
+        compact={props.compact}
+        unstackable
+        example={props.example}
+        striped={props.striped}
+        collapsing={props.collapsing}
+        celled={props.celled}
+      >
+        {props.descriptionheader && renderDescriptionHeader()}
 
-      <Table.Header>
-        <TableComponent.TR style={{ textAlign: props.aligntext }}>
-          {renderColumns(props.columns)}
-        </TableComponent.TR>
-      </Table.Header>
-      <Table.Body>{renderRows(rowsMappedToColumns)}</Table.Body>
+        <Table.Header>
+          <TableComponent.TR style={{ textAlign: props.aligntext }}>
+            {renderColumns(props.columns)}
+          </TableComponent.TR>
+        </Table.Header>
+        <Table.Body>{renderRows(rowsMappedToColumns)}</Table.Body>
 
-      {props.footer && <TableComponent.TF>{props.footer}</TableComponent.TF>}
-    </StyledTable>
+        {props.footer && <TableComponent.TF>{props.footer}</TableComponent.TF>}
+      </StyledTable>
+    </div>
   );
 }
