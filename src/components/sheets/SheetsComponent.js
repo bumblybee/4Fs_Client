@@ -15,7 +15,7 @@ const SheetsComponent = ({
   // TODO: Specify which sheet to direct user to
 
   const { user } = useContext(UserContext);
-  const [url, setUrl] = useState("user && user.sheetsURL");
+  const [url, setUrl] = useState(user && user.sheetsURL);
 
   const columns = [
     {

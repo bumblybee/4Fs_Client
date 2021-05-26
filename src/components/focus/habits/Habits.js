@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { UserContext } from "../../../context/user/UserContext";
 import HabitsTable from "./HabitsTable";
 import Rewards from "./Rewards";
 import SectionHeader from "../../layout/SectionHeader";
@@ -7,6 +8,13 @@ import { Segment, Button, Icon } from "semantic-ui-react";
 import { StyledButton } from "./StyledHabits";
 
 const Habits = () => {
+  const [url, setUrl] = useState(null);
+  const { user } = useContext(UserContext);
+
+  useEffect(() => {
+    user && user.sheetsURL && setUrl(user.sheetsURL);
+  });
+
   return (
     <>
       <SectionHeader
@@ -16,7 +24,7 @@ const Habits = () => {
         component={
           <StyledButton>
             <Icon name="google drive" />
-            Program Sheet
+            {url ? "Program Sheet" : "Add Google Sheets Link in Profile"}
           </StyledButton>
         }
       />

@@ -16,6 +16,7 @@ const SectionHeader = ({ title, subtitle, subtext, component }) => {
           textAlign: "center",
           margin: "0 auto 0.75rem",
           fontStyle: "italic",
+          color: "#333333",
         }}
       >
         {subtitle}
