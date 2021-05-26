@@ -8,13 +8,14 @@ const HabitsTableHeader = () => {
         display: "flex",
         justifyContent: "center",
         width: "100%",
+        textAlign: "center",
       }}
     >
       <div
         style={{
           width: "80%",
           margin: "0 auto",
-          textAlign: "center",
+
           fontSize: "0.95rem",
           padding: "0.5rem 0",
         }}

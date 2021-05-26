@@ -5,7 +5,7 @@ const FoodList = () => {
   return (
     <SheetsComponent
       colorScheme="orange"
-      buttonText="Google Sheets"
+      buttonText="Program Sheets"
       title="Food List"
       subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
     />

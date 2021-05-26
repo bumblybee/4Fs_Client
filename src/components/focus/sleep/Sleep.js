@@ -290,6 +290,7 @@ const Sleep = () => {
           descriptionheader={
             <SleepTableHeader columns={csvColumns} data={csvRows} />
           }
+          descriptionHeaderHeight="50px"
         />
       </div>
     )

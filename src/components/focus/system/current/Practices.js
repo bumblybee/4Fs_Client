@@ -525,6 +525,7 @@ const Practices = () => {
             getStoredPractices={getStoredPractices}
           />
         }
+        descriptionHeaderHeight="125px"
       />
     )
   );

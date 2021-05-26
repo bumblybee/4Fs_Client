@@ -99,6 +99,7 @@ const HabitsTable = () => {
     rows && (
       <TableComponent
         descriptionheader={<HabitsTableHeader />}
+        descriptionHeaderHeight="90px"
         rows={rows(addExampleRow(), addEmptyRow())}
         columns={columns}
         color="#6435C9"

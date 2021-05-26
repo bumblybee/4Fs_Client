@@ -5,7 +5,7 @@ const CalorieRequirements = () => {
   return (
     <SheetsComponent
       colorScheme="blue"
-      buttonText="Google Sheets"
+      buttonText="Program Sheets"
       title="Calorie Requirements"
       subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
     />

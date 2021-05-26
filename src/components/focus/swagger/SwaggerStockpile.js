@@ -14,17 +14,18 @@ const SwaggerStockpile = () => {
         subtext="Make a list for each category. Write down anything that comes to mind.
         Capture both small and big wins. This will be your stockpile that you
         can reference at any time in order to keep you on your path to success."
+        component={
+          <h4
+            style={{
+              textAlign: "center",
+              margin: "-1rem 0 2rem",
+            }}
+          >
+            <em>"I Think. I Know. I Can. I Do."</em>
+          </h4>
+        }
       />
 
-      <h4
-        style={{
-          textAlign: "center",
-          marginBottom: "2rem",
-          marginTop: "-2.5rem",
-        }}
-      >
-        <em>"I Think. I Know. I Can. I Do."</em>
-      </h4>
       <StyledSwaggerTableContainer>
         <Moments />
         <Accomplishments />

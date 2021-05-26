@@ -6,5 +6,5 @@ export const StyledButton = styled(Button)`
   position: ${(props) => (props.isCentered ? "absolute" : "relative")};
   top: ${(props) => (props.isCentered ? "50%" : "")};
   left: ${(props) => (props.isCentered ? "50%" : "")};
-  transform: ${(props) => (props.isCentered ? "translate(-40%, -50%)" : "")};
+  transform: ${(props) => (props.isCentered ? "translate(-40%, -90%)" : "")};
 `;

@@ -1,27 +1,38 @@
 import styled from "styled-components";
 import { Table } from "semantic-ui-react";
 
-// TODO: Change fullheighttable prop to something like scrollableTable for handling scrollable display
 export const StyledTable = styled(Table)`
   margin: 0 !important;
   border-left: none !important;
   border-right: none !important;
   border-bottom: none !important;
+  border-top: none !important;
+
   tbody {
-    /* display: ${(props) => (props.fullheighttable ? "block" : "")}; */
     height: ${(props) => (props.fullheighttable ? "30rem" : "")};
 
     overflow-y: auto;
   }
 
-  th {
+  .description-header {
+    height: ${(props) => props.descriptionHeaderHeight} !important;
     position: sticky;
     top: 0;
     z-index: 2;
+  }
+
+  th:not(.description-header) {
+    position: sticky;
+    top: ${(props) =>
+      props.descriptionheader ? props.descriptionHeaderHeight : 0};
+    z-index: 3;
     border-bottom: none;
-    /* give class with this styling so only happens on top header */
-    /* border-top-left-radius: 2px !important;
-    border-top-right-radius: 2px !important; */
+  }
+
+  tfoot {
+    position: sticky;
+    top: 100%;
+    z-index: 2;
   }
 
   thead {
@@ -30,6 +41,7 @@ export const StyledTable = styled(Table)`
 
   td {
     height: ${(props) => (props.fullheighttd ? "31rem" : "")};
+    min-height: 40px;
     position: relative;
     font-family: "Lato", sans-serif;
   }

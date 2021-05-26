@@ -71,7 +71,7 @@ export default function TableComponent({ children, ...props }) {
               textAlign: "center",
             }}
             colSpan="16"
-            className="descriptionHeader"
+            className="description-header"
           >
             {props.descriptionheader}
           </TableComponent.TH>
@@ -136,6 +136,7 @@ export default function TableComponent({ children, ...props }) {
         striped={props.striped}
         collapsing={props.collapsing}
         celled={props.celled}
+        descriptionheader={props.descriptionheader}
       >
         {props.descriptionheader && renderDescriptionHeader()}
 
