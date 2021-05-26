@@ -36,7 +36,6 @@ const Rewards = () => {
         columns={columns}
         color="#FBBD08"
         aligntext="center"
-        celled
         fullheighttable
       />
     )

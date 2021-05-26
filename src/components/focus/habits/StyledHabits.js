@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "semantic-ui-react";
 
 export const StyledHabitsTableContainer = styled.div`
   display: grid;
@@ -10,4 +11,9 @@ export const StyledHabitsTableContainer = styled.div`
     display: flex;
     flex-direction: column;
   }
+`;
+
+export const StyledButton = styled(Button)`
+  margin: 0 auto 2rem !important;
+  font-weight: bolder !important;
 `;

@@ -105,6 +105,7 @@ const HabitsTable = () => {
         aligntext="center"
         celled
         example
+        compact
       />
     )
   );
