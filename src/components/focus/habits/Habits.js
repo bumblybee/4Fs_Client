@@ -13,7 +13,7 @@ const Habits = () => {
         title="Habit Creator"
         subtitle="Purpose: To create satisfaction doing your new habit."
         component={
-          <StyledButton className="ui button basic violet">
+          <StyledButton>
             <Icon name="google drive" />
             Google Sheets
           </StyledButton>
