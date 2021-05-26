@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import { Table } from "semantic-ui-react";
 
+// TODO: Change fullheighttable prop to something like scrollableTable for handling scrollable display
 export const StyledTable = styled(Table)`
   margin: 0 !important;
   max-height: 3rem !important;
   tbody {
-    /* display: block; */
-    height: ${(props) => (props.fullheighttable ? "31rem" : "")};
+    display: ${(props) => (props.fullheighttable ? "block" : "")};
+    height: ${(props) => (props.fullheighttable ? "30rem" : "")};
 
-    overflow: auto;
+    overflow-y: auto;
   }
 
   td {
@@ -17,12 +18,17 @@ export const StyledTable = styled(Table)`
     font-family: "Lato", sans-serif;
   }
 
-  /* thead,
+  thead,
   tbody tr {
-    display: table;
+    display: ${(props) => (props.fullheighttable ? "table" : "")};
     width: 100%;
     table-layout: fixed;
-  } */
+  }
+
+  tbody,
+  tr {
+    width: 100%;
+  }
 
   input[type="text"] {
     border: none;

@@ -37,6 +37,7 @@ const Rewards = () => {
         color="#FBBD08"
         aligntext="center"
         celled
+        fullheighttable
       />
     )
   );
