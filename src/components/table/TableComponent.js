@@ -116,12 +116,14 @@ export default function TableComponent({ children, ...props }) {
     <div
       color={props.color}
       style={{
-        maxHeight: "450px",
+        maxHeight: "31rem",
         overflowY: "auto",
-        width: "100%",
+        overflowX: "hidden",
+
         border: "1px solid #22242626",
         borderTop: "none",
         borderRadius: "0.27rem",
+        // margin: 0,
       }}
     >
       <StyledTable

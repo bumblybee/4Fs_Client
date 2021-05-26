@@ -19,6 +19,13 @@ export const StyledTable = styled(Table)`
     top: 0;
     z-index: 2;
     border-bottom: none;
+    /* give class with this styling so only happens on top header */
+    /* border-top-left-radius: 2px !important;
+    border-top-right-radius: 2px !important; */
+  }
+
+  thead {
+    border-top-left-radius: 8px;
   }
 
   td {

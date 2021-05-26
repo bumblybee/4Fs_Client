@@ -5,9 +5,9 @@ export const StyledSwaggerTableContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
 
-  div:not(:last-child) {
-    margin-right: 0.25rem;
-  }
+  /* div:not(:last-child) {
+    margin-right: 0.25rem !important;
+  } */
 
   @media (max-width: 1027px) {
     flex-direction: column;
