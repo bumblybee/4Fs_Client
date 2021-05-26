@@ -5,7 +5,7 @@ const MealPlanner = () => {
   return (
     <SheetsComponent
       colorScheme="red"
-      buttonText="Program Sheets"
+      buttonText="Program Sheet"
       title="Meal Planner"
       subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
     />

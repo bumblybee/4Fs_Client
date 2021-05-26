@@ -5,7 +5,7 @@ const Resources = () => {
   return (
     <SheetsComponent
       colorScheme="blue"
-      buttonText="Program Sheets"
+      buttonText="Program Sheet"
       val="Resources"
       title="Bonus Resources"
       subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."

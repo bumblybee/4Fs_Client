@@ -5,7 +5,7 @@ const BodyCalculator = () => {
   return (
     <SheetsComponent
       colorScheme="teal"
-      buttonText="Program Sheets"
+      buttonText="Program Sheet"
       val="Body Composition Calculator"
       title="Body Composition Calculator"
       subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."

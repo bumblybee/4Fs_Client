@@ -5,7 +5,7 @@ const FitnessActivities = () => {
   return (
     <SheetsComponent
       colorScheme="olive"
-      buttonText="Program Sheets"
+      buttonText="Program Sheet"
       title="Fitness Activities"
       subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
     />

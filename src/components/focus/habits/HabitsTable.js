@@ -18,10 +18,11 @@ const HabitsTable = () => {
     deleteHabit
   );
   const columns = [
-    { label: "Habit Goal", key: "habitGoal" },
+    { label: "Habit Goal", key: "habitGoal", width: 6 },
     {
       label: "Reward",
       key: "reward",
+      width: 6,
     },
   ];
 
@@ -35,6 +36,7 @@ const HabitsTable = () => {
           val: item.habitGoal,
           accessor: "habitGoal",
           alignment: "center",
+          aligntext: "center",
         }),
       },
       reward: {
@@ -45,6 +47,7 @@ const HabitsTable = () => {
           val: item.reward,
           accessor: "reward",
           alignment: "center",
+          aligntext: "center",
         }),
       },
     }));

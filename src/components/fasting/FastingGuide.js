@@ -5,7 +5,7 @@ const FastingGuide = () => {
   return (
     <SheetsComponent
       colorScheme="green"
-      buttonText="Program Sheets"
+      buttonText="Program Sheet"
       title="Fasting Guide"
       subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
     />

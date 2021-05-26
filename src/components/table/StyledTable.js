@@ -29,12 +29,6 @@ export const StyledTable = styled(Table)`
     border-bottom: none;
   }
 
-  tfoot {
-    position: sticky;
-    top: 100%;
-    z-index: 2;
-  }
-
   thead {
     border-top-left-radius: 8px;
   }

@@ -16,7 +16,7 @@ const Habits = () => {
         component={
           <StyledButton>
             <Icon name="google drive" />
-            Program Sheets
+            Program Sheet
           </StyledButton>
         }
       />

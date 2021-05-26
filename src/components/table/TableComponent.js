@@ -116,6 +116,7 @@ export default function TableComponent({ children, ...props }) {
     <div
       color={props.color}
       style={{
+        height: "min-content",
         maxHeight: "31rem",
         overflowY: "auto",
         overflowX: "hidden",
