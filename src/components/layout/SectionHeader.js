@@ -9,22 +9,32 @@ const SectionHeader = ({ title, subtitle, subtext, component }) => {
         justifyContent: "center",
       }}
     >
-      <h1 style={{ textAlign: "center", marginBottom: "0" }}>{title}</h1>
+      <h1
+        style={{
+          textAlign: "center",
+          marginBottom: subtitle ? "0" : "-0.25rem",
+        }}
+      >
+        {title}
+      </h1>
 
-      <h3
+      <h4
         style={{
           textAlign: "center",
           margin: "0 auto 0.75rem",
           fontStyle: "italic",
+          fontFamily: "Lato",
+          fontWeight: "500",
+          fontSize: "1.15rem",
           color: "#333333",
         }}
       >
         {subtitle}
-      </h3>
+      </h4>
       <p
         style={{
           textAlign: "center",
-          margin: component ? "0 auto 1.5rem" : "0 auto 2.25rem",
+          margin: component ? "0 auto 1.5rem" : "0 auto 2.5rem",
           fontSize: "1.2rem",
           fontWeight: "500",
           width: "65%",
