@@ -32,7 +32,7 @@ const HabitsTable = () => {
         cellComponent: generateCellComponent("editable", {
           id: item.id,
           onSave: handleSave,
-          onDelete: handleDelete,
+          onDelete: item.reward === null && handleDelete,
           val: item.habitGoal,
           accessor: "habitGoal",
           alignment: "center",
@@ -43,7 +43,7 @@ const HabitsTable = () => {
         cellComponent: generateCellComponent("editable", {
           id: item.id,
           onSave: handleSave,
-          onDelete: handleDelete,
+          onDelete: item.habitGoal === null && handleDelete,
           val: item.reward,
           accessor: "reward",
           alignment: "center",
