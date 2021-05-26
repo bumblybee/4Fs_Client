@@ -77,7 +77,7 @@ const Skills = () => {
       <TableComponent
         rows={rows(addExampleRow(), addEmptyRow())}
         columns={columns}
-        color="olive"
+        color="#B5CC18"
         aligntext="center"
         example
         compact

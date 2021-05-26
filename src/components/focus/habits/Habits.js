@@ -11,7 +11,7 @@ const Habits = () => {
         title="Habit Creator"
         subtitle="Purpose: To create satisfaction doing your new habit. "
       />
-      {/* <Segment color="violet" inverted></Segment> */}
+      {/* <Segment color="olive" inverted></Segment> */}
 
       <StyledHabitsTableContainer>
         <div></div>
