@@ -4,7 +4,7 @@ import { Container } from "semantic-ui-react";
 
 const TableContainer = ({ children }) => {
   return (
-    <div style={{ paddingBottom: "2rem", height: "40vh" }}>
+    <div style={{ paddingBottom: "2rem" }}>
       <Container style={{ height: "inherit" }}>{children}</Container>
     </div>
   );

@@ -32,6 +32,7 @@ const Skills = () => {
           val: item.skill,
           accessor: "skill",
           alignment: "center",
+          aligntext: "center",
         }),
       },
     }));

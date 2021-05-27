@@ -32,6 +32,7 @@ const Moments = () => {
           val: item.moment,
           accessor: "moment",
           alignment: "center",
+          aligntext: "center",
         }),
       },
     }));

@@ -32,6 +32,7 @@ const Accomplishments = () => {
           val: item.accomplishment,
           accessor: "accomplishment",
           alignment: "center",
+          aligntext: "center",
         }),
       },
     }));
