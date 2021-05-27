@@ -53,7 +53,7 @@ const Routes = () => {
         <Redirect to="/fasting/fasting-window" />
       </ProtectedRoute>
       <ProtectedRoute path="/fasting/fasting-window">
-        <AppWrapper tabs></AppWrapper>
+        <AppWrapper component={<FastingWindow />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/fasting/fasting-guide">
         <AppWrapper component={<FastingGuide />} tabs />

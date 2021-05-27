@@ -170,11 +170,7 @@ const generateCellComponent = (type, props) => {
       );
 
     default:
-      return (
-        <div style={props.style}>
-          {props.val} || {props.component}
-        </div>
-      );
+      return <div style={props.style}>{props.val || props.component}</div>;
   }
 };
 
