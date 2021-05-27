@@ -37,36 +37,15 @@ const FastingProgress = () => {
   };
 
   return (
-    <>
-      <StyledProgressToggle
-        basic
-        showProgress={showProgress}
-        onClick={() => setShowProgress(!showProgress)}
-      >
-        <Icon
-          name={showProgress ? "caret down" : "caret right"}
-          onClick={() => setShowProgress(!showProgress)}
-        />
-        Progress
-      </StyledProgressToggle>
-      {showProgress && (
-        <>
-          {!fastingProgress.length ? (
-            <p style={{ paddingLeft: "1.5rem" }}>No previous weeks to show</p>
-          ) : (
-            <TableComponent
-              aligntext="left"
-              fontsize="0.9rem"
-              compact
-              color="green"
-              columns={columns}
-              rows={rows()}
-              width="80%"
-            />
-          )}
-        </>
-      )}
-    </>
+    <TableComponent
+      aligntext="left"
+      fontsize="0.9rem"
+      compact
+      color="green"
+      columns={columns}
+      rows={rows()}
+      width="80%"
+    />
   );
 };
 
