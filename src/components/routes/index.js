@@ -8,7 +8,7 @@ import UserProfile from "../../pages/user/UserProfile";
 import Resources from "../resources/Resources";
 import { Milestones, Beliefs, BodyCalculator } from "../home";
 import { System, SwaggerStockpile, Sleep, Habits } from "../focus";
-import { FastingGuide, FastingWindow } from "../../components/fasting";
+import { FastingGuide, Fasting } from "../../components/fasting";
 import { CalorieRequirements, FoodList, MealPlanner } from "../food";
 import { FitnessActivities, FitnessPlanner } from "../fitness";
 import PasswordResetRequest from "../../pages/password/PasswordResetRequest";
@@ -53,7 +53,7 @@ const Routes = () => {
         <Redirect to="/fasting/fasting-window" />
       </ProtectedRoute>
       <ProtectedRoute path="/fasting/fasting-window">
-        <AppWrapper component={<FastingWindow />} tabs />
+        <AppWrapper component={<Fasting />} tabs />
       </ProtectedRoute>
       <ProtectedRoute path="/fasting/fasting-guide">
         <AppWrapper component={<FastingGuide />} tabs />

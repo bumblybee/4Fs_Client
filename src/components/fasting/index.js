@@ -1,4 +1,4 @@
 import FastingGuide from "./FastingGuide";
-import FastingWindow from "./FastingWindow";
+import Fasting from "./Fasting";
 
-export { FastingGuide, FastingWindow };
+export { FastingGuide, Fasting };

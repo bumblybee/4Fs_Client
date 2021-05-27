@@ -1,45 +1,40 @@
 import React from "react";
-import TableComponent from "../table/TableComponent";
-import SectionHeader from "../layout/SectionHeader";
-import Fasting from "./Fasting";
-import generateCellComponent from "../../utils/generateCellComponent";
+import FastingMessage from "./FastingMessage";
+import { Form, Button } from "semantic-ui-react";
+import { StyledFastingWrapper, StyledForm } from "./StyledFasting";
 
 const FastingWindow = () => {
-  const columns = [
-    {
-      label: "Fasting Window",
-      key: "window",
-    },
-  ];
-
-  const rows = () => {
-    const rowData = {
-      window: {
-        cellComponent: generateCellComponent("", {
-          component: <Fasting />,
-        }),
-      },
-    };
-
-    return [rowData];
-  };
-
   return (
-    <div>
-      <SectionHeader
-        title="Fasting Window"
-        subtext="Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, distinctio?"
-      />
+    <StyledFastingWrapper>
+      <StyledForm>
+        <Form.Field>
+          <label>Goal Hours</label>
+          <Form.Input
+            type="number"
+            min="1"
+            max="24"
+            name=""
+            id=""
+            size="small"
+          />
+        </Form.Field>
+        <Form.Field>
+          <label>Today's Hours</label>
+          <Form.Input
+            type="number"
+            min="1"
+            max="24"
+            name=""
+            id=""
+            size="small"
+          />
+        </Form.Field>
 
-      <TableComponent
-        rows={rows()}
-        columns={columns}
-        color=""
-        aligntext="center"
-        fullheighttable
-        fullheighttd
-      />
-    </div>
+        <Button color="red">Run</Button>
+      </StyledForm>
+      <div></div>
+      <FastingMessage />
+    </StyledFastingWrapper>
   );
 };
 
