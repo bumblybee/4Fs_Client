@@ -18,7 +18,7 @@ const SwaggerStockpile = () => {
           <h4
             style={{
               textAlign: "center",
-              margin: "-1rem 0 2rem",
+              margin: "-1.75rem 0 2.5rem",
             }}
           >
             <em>"I Think. I Know. I Can. I Do."</em>

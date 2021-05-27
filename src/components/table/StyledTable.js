@@ -47,15 +47,16 @@ export const StyledTable = styled(Table)`
   .description-header {
     height: ${(props) => props.descriptionHeaderHeight} !important;
     position: sticky;
-    top: 0;
+    top: 1px;
     z-index: 2;
+    margin: 0 !important;
   }
 
   th:not(.description-header) {
     position: sticky;
     top: ${(props) =>
       props.descriptionheader ? props.descriptionHeaderHeight : 0};
-    z-index: 3;
+    z-index: 2;
     border-bottom: none;
   }
 
