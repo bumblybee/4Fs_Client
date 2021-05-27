@@ -60,9 +60,9 @@ const Practices = () => {
   };
 
   const handleSaveStoredPractice = async (data, id) => {
-    if (data) {
+    if (data && "practice" in data !== null) {
       const res = await mutateStoredPractice(data, id);
-
+      console.log(data);
       if (res.error) {
         setNotificationMessage(res.error, "error", true);
         return;
@@ -176,7 +176,7 @@ const Practices = () => {
           val: item.practice,
           accessor: "practice",
           onSave: handleSaveStoredPractice,
-          onDelete: handleDeleteStoredPractice,
+          // onDelete: handleDeleteStoredPractice,
           aligntext: "left",
           alignment: "flex-start",
           textWeight: "600",
@@ -219,7 +219,9 @@ const Practices = () => {
         }),
       },
       delete: {
-        cellComponent: generateCellComponent("", {
+        cellComponent: generateCellComponent("delete", {
+          id: item.id,
+          onDelete: handleDeleteStoredPractice,
           alignment: "center",
         }),
       },

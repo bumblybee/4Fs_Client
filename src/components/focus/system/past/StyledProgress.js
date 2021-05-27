@@ -3,7 +3,7 @@ import { Segment } from "semantic-ui-react";
 import TableComponent from "../../../table/TableComponent";
 
 export const StyledProgressWrapper = styled.div`
-  /* width: ${(props) => (props.showWeeks ? "50.5%" : "12%")}; */
+  width: fit-content;
   i {
     cursor: pointer;
   }
@@ -27,5 +27,5 @@ export const StyledProgressToggle = styled(Segment)`
 `;
 
 export const StyledProgressTable = styled(TableComponent)`
-  width: 43% !important;
+  /* width: 43% !important; */
 `;

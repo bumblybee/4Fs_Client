@@ -60,7 +60,7 @@ const Progress = () => {
   };
 
   return (
-    <StyledProgressWrapper showWeeks={showWeeks}>
+    <>
       <StyledProgressToggle
         basic
         showWeeks={showWeeks}
@@ -84,11 +84,12 @@ const Progress = () => {
               color="#b463b4"
               columns={columns}
               rows={rows()}
+              width="40%"
             />
           )}
         </>
       )}
-    </StyledProgressWrapper>
+    </>
   );
 };
 
