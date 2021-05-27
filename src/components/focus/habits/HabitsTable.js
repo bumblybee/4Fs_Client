@@ -17,6 +17,7 @@ const HabitsTable = () => {
     mutateHabit,
     deleteHabit
   );
+
   const columns = [
     { label: "Habit Goal", key: "habitGoal", width: 6 },
     {
@@ -54,14 +55,7 @@ const HabitsTable = () => {
       },
     }));
 
-    // If the last record has both a goal and reward, or we have no habits in db, render empty row
-    const lastRow = habits && habits[habits.length - 1];
-    const complete =
-      (lastRow && lastRow.habitGoal && lastRow.reward) || !habits.length;
-
-    return complete
-      ? [exampleRow, ...rowData, emptyRow]
-      : [exampleRow, ...rowData];
+    return [exampleRow, ...rowData, emptyRow];
   };
 
   const addEmptyRow = () => {
