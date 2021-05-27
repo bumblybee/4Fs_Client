@@ -104,6 +104,7 @@ export default function TableComponent({ children, ...props }) {
   };
 
   return (
+    // TODO Add to stylesheet and take in classNames
     <div
       color={props.color}
       style={{
@@ -111,11 +112,11 @@ export default function TableComponent({ children, ...props }) {
         maxHeight: "30rem",
         overflowY: "auto",
         overflowX: "hidden",
-
+        width: props.width,
         border: "1px solid #22242626",
         borderTop: "none",
         borderRadius: "0.27rem",
-        // margin: 0,
+        margin: props.margin,
       }}
     >
       <StyledTable

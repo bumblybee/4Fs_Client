@@ -71,6 +71,8 @@ const Beliefs = () => {
           columns={columns}
           color="purple"
           aligntext="center"
+          width="60%"
+          margin="0 auto"
         />
       </div>
     )
