@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import generateCellComponent from "../../utils/generateCellComponent";
 import useCRUD from "../../hooks/useCRUD";
 import { getFastingProgress } from "../../api/fasting/fastingApi";
-import TableComponent from "../table/TableComponent";
+import moment from "moment";
 import { Icon } from "semantic-ui-react";
 import { StyledTable } from "./StyledFasting";
 
@@ -20,14 +20,16 @@ const FastingProgress = () => {
     const rowData = fastingProgress.map((item) => ({
       date: {
         cellComponent: generateCellComponent("static", {
-          val: item.date,
-          alignment: "left",
+          val: moment(item.date).format("MM/DD/YY"),
+          className: "fasting-progress",
+          alignment: "flex-start",
+          alignItems: "flex-start",
         }),
       },
       goal: {
-        cellComponent: generateCellComponent("static", {
-          alignment: "center",
-          val: item.goal,
+        cellComponent: generateCellComponent("progress", {
+          alignment: "flex-start",
+          val: item.performed,
           className: "",
         }),
       },
@@ -39,13 +41,14 @@ const FastingProgress = () => {
   return (
     rows && (
       <StyledTable
-        // aligntext="left"
+        aligntext="left"
         fontsize="0.9rem"
         color="#21BA45"
         columns={columns}
         rows={rows()}
-        // width="80%"
-        basic="very"
+        celled
+        fullheighttd={false}
+        compact="very"
       />
     )
   );

@@ -4,8 +4,10 @@ export const StyledStaticCell = styled.div`
   text-align: ${(props) => props.aligntext};
   display: flex;
   justify-content: ${(props) => props.alignment};
+  align-items: ${(props) => props.alignItems};
   font-weight: ${(props) => props.textweight};
   color: ${(props) => props.condition && "#21ce0f"};
+  height: 100%;
 
   .system-performed {
     font-weight: bold;
@@ -48,5 +50,9 @@ export const StyledStaticCell = styled.div`
     text-align: center;
     font-weight: bold;
     color: #008089;
+  }
+
+  .fasting-progress {
+    /* margin-bottom: 15% !important; */
   }
 `;

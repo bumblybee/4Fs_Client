@@ -35,7 +35,7 @@ const Fasting = () => {
         color="black"
         aligntext="center"
         // fullheighttable
-        fullheighttd
+        // fullheighttd
       />
     </div>
   );

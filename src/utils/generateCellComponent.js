@@ -10,6 +10,7 @@ import ButtonCell from "../components/cells/button/ButtonCell";
 import DeleteCell from "../components/cells/delete/DeleteCell";
 import StaticCell from "../components/cells/static/StaticCell";
 import LabelCell from "../components/cells/label/LabelCell";
+import ProgressCell from "../components/cells/progress/ProgressCell";
 
 const generateCellComponent = (type, props) => {
   switch (type) {
@@ -168,6 +169,8 @@ const generateCellComponent = (type, props) => {
           color={props.color}
         />
       );
+    case "progress":
+      return <ProgressCell />;
 
     default:
       return <div style={props.style}>{props.val || props.component}</div>;
