@@ -11,7 +11,7 @@ const FastingProgress = () => {
   const [showProgress, setShowProgress] = useState(false);
 
   const columns = [
-    { label: "Date", key: "date", width: 2 },
+    { label: "Date", key: "date", width: 1 },
 
     { label: "Goal", key: "goal", width: 10 },
   ];
@@ -41,7 +41,7 @@ const FastingProgress = () => {
       <StyledTable
         // aligntext="left"
         fontsize="0.9rem"
-        color="green"
+        color="#21BA45"
         columns={columns}
         rows={rows()}
         // width="80%"

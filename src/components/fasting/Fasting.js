@@ -32,7 +32,7 @@ const Fasting = () => {
       <TableComponent
         rows={rows()}
         columns={columns}
-        color="grey"
+        color="black"
         aligntext="center"
         // fullheighttable
         fullheighttd

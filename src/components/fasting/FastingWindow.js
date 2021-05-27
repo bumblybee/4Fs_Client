@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FastingProgress from "./FastingProgress";
 import FastingMessage from "./FastingMessage";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Segment } from "semantic-ui-react";
 import {
   StyledFastingWrapper,
   StyledFastingCalcWrapper,
@@ -22,6 +22,7 @@ const FastingWindow = () => {
 
   return (
     <StyledFastingWrapper>
+      {/* <Segment color="red" inverted></Segment> */}
       <StyledFastingCalcWrapper>
         <StyledForm>
           <Form.Field>
@@ -48,7 +49,7 @@ const FastingWindow = () => {
           </Form.Field>
 
           <Button
-            color="grey"
+            color="black"
             toggle
             active={run}
             compact

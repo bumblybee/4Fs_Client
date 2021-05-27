@@ -4,7 +4,7 @@ import TableComponent from "../table/TableComponent";
 
 export const StyledFastingWrapper = styled.div`
   height: 100%;
-  padding: 1rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
 `;
