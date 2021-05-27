@@ -110,9 +110,10 @@ const HabitsTable = () => {
         columns={columns}
         color="#6435C9"
         aligntext="center"
-        celled
+        // celled
         example
         compact
+        maxHeight="31rem"
       />
     )
   );

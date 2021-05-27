@@ -73,6 +73,7 @@ const Beliefs = () => {
           aligntext="center"
           width="60%"
           margin="0 auto"
+          compact
         />
       </div>
     )

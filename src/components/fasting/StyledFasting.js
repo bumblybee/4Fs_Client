@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Form, Segment } from "semantic-ui-react";
+import TableComponent from "../table/TableComponent";
 
 export const StyledFastingWrapper = styled.div`
   height: 100%;
@@ -12,7 +13,7 @@ export const StyledFastingCalcWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   width: 90%;
-  margin: 1rem auto 4rem;
+  margin: 1rem auto 6rem;
 `;
 
 export const StyledForm = styled(Form)`
@@ -27,19 +28,12 @@ export const StyledForm = styled(Form)`
 `;
 
 export const StyledFastingProgressWrapper = styled.div`
-  width: 100%;
+  width: 83%;
+  margin: 0 auto;
 `;
 
-export const StyledProgressToggle = styled(Segment)`
-  color: green;
-  font-weight: 600;
-  box-shadow: none;
-  cursor: pointer;
-  padding: 0.5rem 0 0 0.2rem !important;
-  font-family: "Lato";
-  width: 25%;
-
-  i {
-    color: green;
+export const StyledTable = styled(TableComponent)`
+  thead th {
+    padding-bottom: 0 !important;
   }
 `;

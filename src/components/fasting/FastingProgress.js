@@ -4,7 +4,7 @@ import useCRUD from "../../hooks/useCRUD";
 import { getFastingProgress } from "../../api/fasting/fastingApi";
 import TableComponent from "../table/TableComponent";
 import { Icon } from "semantic-ui-react";
-import { StyledProgressToggle } from "./StyledFasting";
+import { StyledTable } from "./StyledFasting";
 
 const FastingProgress = () => {
   const [fastingProgress] = useCRUD(getFastingProgress);
@@ -37,15 +37,17 @@ const FastingProgress = () => {
   };
 
   return (
-    <TableComponent
-      aligntext="left"
-      fontsize="0.9rem"
-      compact
-      color="green"
-      columns={columns}
-      rows={rows()}
-      width="80%"
-    />
+    rows && (
+      <StyledTable
+        // aligntext="left"
+        fontsize="0.9rem"
+        color="green"
+        columns={columns}
+        rows={rows()}
+        // width="80%"
+        basic="very"
+      />
+    )
   );
 };
 
