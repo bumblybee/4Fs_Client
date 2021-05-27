@@ -15,9 +15,7 @@ const Fasting = () => {
   const rows = () => {
     const rowData = {
       window: {
-        cellComponent: generateCellComponent("", {
-          component: <FastingWindow />,
-        }),
+        cellComponent: <FastingWindow />,
       },
     };
 
@@ -36,7 +34,7 @@ const Fasting = () => {
         columns={columns}
         color="grey"
         aligntext="center"
-        fullheighttable
+        // fullheighttable
         fullheighttd
       />
     </div>

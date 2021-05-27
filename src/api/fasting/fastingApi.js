@@ -7,5 +7,5 @@ export const mutateFastingWindow = async (data, id) => {
 
 export const getFastingProgress = async () => {
   const fasting = await get("/fasting");
-  return fasting.data ? fasting.data : fasting;
+  return fasting && fasting.data ? fasting.data : fasting;
 };

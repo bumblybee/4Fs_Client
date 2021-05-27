@@ -4,9 +4,11 @@ import FastingMessage from "./FastingMessage";
 import { Form, Button } from "semantic-ui-react";
 import {
   StyledFastingWrapper,
-  StyledFastingRevverWrapper,
+  StyledFastingCalcWrapper,
   StyledForm,
+  StyledFastingProgressWrapper,
 } from "./StyledFasting";
+import Fasting from "./Fasting";
 
 const FastingWindow = () => {
   const [run, setRun] = useState(false);
@@ -19,38 +21,49 @@ const FastingWindow = () => {
   };
 
   return (
-    <StyledFastingRevverWrapper>
-      <StyledForm>
-        <Form.Field>
-          <label>Goal Hours</label>
-          <Form.Input
-            type="number"
-            min="1"
-            max="24"
-            name=""
-            id=""
-            size="small"
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Today's Hours</label>
-          <Form.Input
-            type="number"
-            min="1"
-            max="24"
-            name=""
-            id=""
-            size="small"
-          />
-        </Form.Field>
+    <StyledFastingWrapper>
+      <StyledFastingCalcWrapper>
+        <StyledForm>
+          <Form.Field>
+            <label>Goal Hours</label>
+            <Form.Input
+              type="number"
+              min="1"
+              max="24"
+              name=""
+              id=""
+              size="small"
+            />
+          </Form.Field>
+          <Form.Field>
+            <label>Today's Hours</label>
+            <Form.Input
+              type="number"
+              min="1"
+              max="24"
+              name=""
+              id=""
+              size="small"
+            />
+          </Form.Field>
 
-        <Button color="grey" toggle active={run} compact onClick={handleClick}>
-          Run
-        </Button>
-      </StyledForm>
-      <div></div>
-      <FastingMessage />
-    </StyledFastingRevverWrapper>
+          <Button
+            color="grey"
+            toggle
+            active={run}
+            compact
+            onClick={handleClick}
+          >
+            Run
+          </Button>
+        </StyledForm>
+        <div></div>
+        <FastingMessage />
+      </StyledFastingCalcWrapper>
+      <StyledFastingProgressWrapper>
+        <FastingProgress />
+      </StyledFastingProgressWrapper>
+    </StyledFastingWrapper>
   );
 };
 
