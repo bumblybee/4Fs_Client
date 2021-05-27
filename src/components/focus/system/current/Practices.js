@@ -60,7 +60,7 @@ const Practices = () => {
   };
 
   const handleSaveStoredPractice = async (data, id) => {
-    if (data && "practice" in data !== null) {
+    if (data) {
       const res = await mutateStoredPractice(data, id);
       console.log(data);
       if (res.error) {

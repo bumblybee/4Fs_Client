@@ -54,9 +54,10 @@ const HabitsTable = () => {
       },
     }));
 
-    // If the last record has both a goal and reward, render empty row
+    // If the last record has both a goal and reward, or we have no habits in db, render empty row
     const lastRow = habits && habits[habits.length - 1];
-    const complete = lastRow && lastRow.habitGoal && lastRow.reward;
+    const complete =
+      (lastRow && lastRow.habitGoal && lastRow.reward) || !habits.length;
 
     return complete
       ? [exampleRow, ...rowData, emptyRow]
