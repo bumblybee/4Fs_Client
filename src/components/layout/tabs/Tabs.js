@@ -11,7 +11,6 @@ const Tabs = ({ path, subPath }) => {
     fasting: ["fasting window", "fasting guide"],
     food: ["calories", "food list", "meal planner"],
     fitness: ["fitness activities", "fitness planner"],
-    resources: ["resources"],
   };
 
   const renderTabs = (tabArr) => {
@@ -30,7 +29,7 @@ const Tabs = ({ path, subPath }) => {
   };
 
   useEffect(() => {
-    setActiveItem(subPath.replace(/-+/g, " "));
+    setActiveItem(subPath && subPath.replace(/-+/g, " "));
   }, [subPath]);
 
   switch (path) {
