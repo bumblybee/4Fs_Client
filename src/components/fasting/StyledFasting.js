@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Form } from "semantic-ui-react";
 
-export const StyledFastingWrapper = styled.div`
+export const StyledFastingRevverWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   width: 90%;
@@ -13,7 +13,6 @@ export const StyledForm = styled(Form)`
   flex-direction: column;
   width: 50%;
   margin: 0 auto;
-  /* border: 1px solid #eee; */
 
   input {
     text-align: center;

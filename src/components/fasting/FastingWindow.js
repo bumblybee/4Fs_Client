@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import FastingProgress from "./FastingProgress";
 import FastingMessage from "./FastingMessage";
 import { Form, Button } from "semantic-ui-react";
-import { StyledFastingWrapper, StyledForm } from "./StyledFasting";
+import {
+  StyledFastingWrapper,
+  StyledFastingRevverWrapper,
+  StyledForm,
+} from "./StyledFasting";
 
 const FastingWindow = () => {
+  const [run, setRun] = useState(false);
+
+  const handleClick = () => {
+    setRun(true);
+    setTimeout(() => {
+      setRun(false);
+    }, 600);
+  };
+
   return (
-    <StyledFastingWrapper>
+    <StyledFastingRevverWrapper>
       <StyledForm>
         <Form.Field>
           <label>Goal Hours</label>
@@ -30,11 +44,13 @@ const FastingWindow = () => {
           />
         </Form.Field>
 
-        <Button color="red">Run</Button>
+        <Button color="grey" toggle active={run} compact onClick={handleClick}>
+          Run
+        </Button>
       </StyledForm>
       <div></div>
       <FastingMessage />
-    </StyledFastingWrapper>
+    </StyledFastingRevverWrapper>
   );
 };
 
