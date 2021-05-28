@@ -32,7 +32,9 @@ const Habits = () => {
 
       <StyledHabitsTableContainer>
         <div></div>
+
         <HabitsTable />
+
         <Rewards />
       </StyledHabitsTableContainer>
     </>

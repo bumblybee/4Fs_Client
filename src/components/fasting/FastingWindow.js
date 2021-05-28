@@ -104,7 +104,7 @@ const FastingWindow = () => {
         <FastingMessage percentage={percentage} />
       </StyledFastingCalcWrapper>
       <StyledFastingProgressWrapper>
-        <FastingProgress fastingProgress={fasting} />
+        <FastingProgress fastingProgress={fasting} percentage={percentage} />
       </StyledFastingProgressWrapper>
     </StyledFastingWrapper>
   );
