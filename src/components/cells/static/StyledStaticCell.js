@@ -54,6 +54,7 @@ export const StyledStaticCell = styled.div`
 
   .fasting-progress {
     margin-top: -0.15rem;
-    font-size: 0.9rem;
+    font-size: 0.89rem;
+    font-weight: 600;
   }
 `;

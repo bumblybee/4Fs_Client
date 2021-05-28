@@ -6,7 +6,8 @@ export const StyledTable = styled(Table)`
   border-left: none !important;
   border-right: none !important;
   border-bottom: none !important;
-  border-top: ${(props) => `1px solid ${props.color}`};
+  /* border-top: ${(props) => `1px solid ${props.color}`}; */
+  border-top: none !important;
 
   tbody {
     height: ${(props) => (props.fullheighttable ? "30rem" : "")};
@@ -47,7 +48,7 @@ export const StyledTable = styled(Table)`
   .description-header {
     height: ${(props) => props.descriptionHeaderHeight} !important;
     position: sticky;
-    top: 1px;
+    top: -1px;
     z-index: 2;
     margin: 0 !important;
   }
@@ -55,7 +56,7 @@ export const StyledTable = styled(Table)`
   th:not(.description-header) {
     position: sticky;
     top: ${(props) =>
-      props.descriptionheader ? props.descriptionHeaderHeight : 0};
+      props.descriptionheader ? props.descriptionHeaderHeight : "0"};
     z-index: 2;
     border-bottom: none;
   }

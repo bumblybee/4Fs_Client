@@ -4,12 +4,14 @@ import { StyledProgress, StyledHours } from "./StyledProgress";
 
 const ProgressCell = (props) => {
   const renderColor = (percentage) => {
-    if (percentage < 45) {
+    if (percentage < 30) {
       return "#dd2828";
-    } else if (percentage >= 45 && percentage < 75) {
-      return "#f2711c";
+    } else if (percentage >= 25 && percentage < 50) {
+      return "#f75e34 ";
+    } else if (percentage >= 50 && percentage < 75) {
+      return "#ffb647";
     } else if (percentage >= 75 && percentage < 100) {
-      return "#FFCc08";
+      return "#ffd930";
     } else {
       return "#56e300";
     }

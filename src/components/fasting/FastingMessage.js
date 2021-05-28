@@ -19,7 +19,7 @@ const FastingMessage = ({ percentage }) => {
   return (
     <div style={{ marginTop: "20%" }}>
       <h1 style={{ fontSize: "2.25rem", marginBottom: "0.25rem" }}>
-        {percentage}%
+        {percentage && `${percentage}%`}
       </h1>
       <h3 style={{ fontStyle: "italic", marginTop: "0" }}>{renderMessage()}</h3>
     </div>

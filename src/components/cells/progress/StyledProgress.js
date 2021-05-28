@@ -3,7 +3,7 @@ import { Progress } from "semantic-ui-react";
 
 export const StyledProgress = styled(Progress)`
   margin: 0 !important;
-
+  width: 96%;
   position: relative !important;
   .bar {
     background: ${(props) => props.color} !important;
