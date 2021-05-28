@@ -4,6 +4,7 @@ import useCRUD from "../../hooks/useCRUD";
 import moment from "moment";
 import FastingProgress from "./FastingProgress";
 import FastingMessage from "./FastingMessage";
+import Gauge from "./Gauge";
 import { Form, Button, Segment } from "semantic-ui-react";
 import {
   StyledFastingWrapper,
@@ -15,6 +16,7 @@ import {
 const FastingWindow = () => {
   const [fasting, handleSave] = useCRUD(getFasting, createFasting);
   const [percentage, setPercentage] = useState(null);
+  const [hours, setHours] = useState("");
   const [run, setRun] = useState(false);
   const [window, setWindow] = useState({
     goalWindow: "",
@@ -23,17 +25,13 @@ const FastingWindow = () => {
   });
 
   const handleClick = () => {
-    setRun(true);
-    setTimeout(() => {
-      setRun(false);
-    }, 200);
-
     const performed = calcPercentagePerformed(
       window.todayWindow,
       window.goalWindow
     );
 
     setWindow({ ...window, performed });
+    setHours(window.todayWindow);
     setPercentage(performed * 100);
   };
 
@@ -57,7 +55,7 @@ const FastingWindow = () => {
       <StyledFastingCalcWrapper>
         <StyledForm onSubmit={handleSubmit}>
           <Form.Field>
-            <label>Goal Hours</label>
+            <label>Goal Window</label>
             <Form.Input
               type="number"
               min="1"
@@ -73,7 +71,7 @@ const FastingWindow = () => {
             />
           </Form.Field>
           <Form.Field>
-            <label>Today's Hours</label>
+            <label>Today's Window</label>
             <Form.Input
               type="number"
               min="1"
@@ -90,9 +88,8 @@ const FastingWindow = () => {
           </Form.Field>
 
           <Button
-            color="black"
+            color="grey"
             toggle
-            active={run}
             compact
             size="large"
             onClick={handleClick}
@@ -100,7 +97,7 @@ const FastingWindow = () => {
             Run
           </Button>
         </StyledForm>
-        <div></div>
+        <Gauge percentage={percentage} hours={hours} fasting={fasting} />
         <FastingMessage percentage={percentage} />
       </StyledFastingCalcWrapper>
       <StyledFastingProgressWrapper>

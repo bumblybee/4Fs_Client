@@ -44,12 +44,13 @@ const FastingProgress = ({ fastingProgress }) => {
       <StyledTable
         aligntext="center"
         fontsize="0.9rem"
-        color="grey"
+        color="black"
         columns={columns}
         rows={rows()}
         // celled
         compact="very"
         maxHeight="9rem"
+        // inverted
       />
     )
   );

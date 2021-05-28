@@ -5,8 +5,13 @@ export const StyledProgress = styled(Progress)`
   margin: 0 !important;
   width: 96%;
   position: relative !important;
+
   .bar {
     background: ${(props) => props.color} !important;
+  }
+
+  .bar .progress {
+    color: #fff !important;
   }
 `;
 
@@ -15,6 +20,6 @@ export const StyledHours = styled.div`
   top: 8%;
   left: 50%;
   transform: translateX(-50%);
-  color: #ffffffdd;
+  color: #fff;
   font-weight: 600;
 `;

@@ -35,6 +35,7 @@ const Fasting = () => {
         color="black"
         aligntext="center"
         height="34rem"
+        // inverted
       />
     </div>
   );

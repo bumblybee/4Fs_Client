@@ -8,17 +8,19 @@ const ProgressCell = (props) => {
   const renderColor = (percentage) => {
     if (percentage < 30) {
       return "#dd2828";
-    } else if (percentage >= 25 && percentage < 50) {
-      return "#f75e34 ";
-    } else if (percentage >= 50 && percentage < 75) {
-      return "#ffb742";
-    } else if (percentage >= 75 && percentage < 100) {
-      return "#ffd930";
+    } else if (percentage >= 30 && percentage < 50) {
+      return "#ff6f36";
+    } else if (percentage >= 50 && percentage < 70) {
+      return "#ffaf36";
+    } else if (percentage >= 70 && percentage < 90) {
+      return "#f5e23b";
+    } else if (percentage >= 90 && percentage < 100) {
+      return "#e3e322";
     } else {
-      return "#56e300";
+      return "#78db3b";
     }
   };
-  console.log(props.val);
+
   return (
     <>
       <StyledProgress
@@ -26,6 +28,7 @@ const ProgressCell = (props) => {
         size="small"
         color={renderColor(props.val)}
         progress
+        max="120"
       />
       <StyledHours>
         <small>

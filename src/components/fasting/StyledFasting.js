@@ -11,13 +11,13 @@ export const StyledFastingWrapper = styled.div`
 
 export const StyledFastingCalcWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 3fr 1.5fr;
+  grid-template-columns: 1.5fr 3fr 1.5fr;
   width: 80%;
   margin: 0 auto 1.5rem;
   border: 1px solid #22242626;
   border-radius: 0.27rem;
-
-  padding: 2.25rem 1.5rem;
+  padding: 2rem 1.5rem 1.25rem;
+  background: #000;
 `;
 
 export const StyledForm = styled(Form)`
@@ -26,8 +26,23 @@ export const StyledForm = styled(Form)`
   width: 55%;
   margin: 0 auto;
 
+  label {
+    color: #fff !important;
+  }
+
   input {
     text-align: center !important;
+    /* padding: 0 !important; */
+  }
+
+  .ui.small.input {
+    width: 60% !important;
+  }
+
+  button {
+    width: 60% !important;
+    margin: 0 auto !important;
+    display: block;
   }
 
   input::placeholder {
