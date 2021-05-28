@@ -26,7 +26,11 @@ export const StyledForm = styled(Form)`
   margin: 0 auto;
 
   input {
-    text-align: center;
+    text-align: center !important;
+  }
+
+  input::placeholder {
+    text-align: center !important;
   }
 `;
 

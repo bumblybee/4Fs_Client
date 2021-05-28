@@ -6,7 +6,7 @@ export const createFasting = async (data) => {
   return fasting && fasting.data ? fasting.data : fasting;
 };
 
-export const getFastingProgress = async () => {
+export const getFasting = async () => {
   const fasting = await get("/fasting");
   return fasting && fasting.data ? fasting.data : fasting;
 };

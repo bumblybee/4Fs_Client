@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { createFasting } from "../../api/fasting/fastingApi";
+import React, { useState, useEffect } from "react";
+import { createFasting, getFasting } from "../../api/fasting/fastingApi";
+import useCRUD from "../../hooks/useCRUD";
 import moment from "moment";
 import FastingProgress from "./FastingProgress";
 import FastingMessage from "./FastingMessage";
@@ -12,6 +13,7 @@ import {
 } from "./StyledFasting";
 
 const FastingWindow = () => {
+  const [fasting, handleSave] = useCRUD(getFasting, createFasting);
   const [run, setRun] = useState(false);
   const [window, setWindow] = useState({ goalWindow: "", todayWindow: "" });
 
@@ -33,7 +35,7 @@ const FastingWindow = () => {
     const data = { date, performed, ...window };
     console.log(data);
 
-    const res = await createFasting(data);
+    const res = handleSave(data);
     console.log(res);
   };
 
@@ -42,6 +44,15 @@ const FastingWindow = () => {
     const fixedQuotient = quotient.toFixed(2);
     return Number(fixedQuotient);
   };
+
+  //   const getFasting = async () => {
+  //     const res = await getFasting();
+  //     setFasting([...res.data]);
+  //   };
+
+  //   useEffect(() => {
+  //     getFasting();
+  //   }, [getFasting]);
 
   return (
     <StyledFastingWrapper>
@@ -56,6 +67,7 @@ const FastingWindow = () => {
               name=""
               id=""
               size="small"
+              placeholder="0"
               required
               onChange={(e) =>
                 setWindow({ ...window, goalWindow: e.target.value })
@@ -71,6 +83,7 @@ const FastingWindow = () => {
               name=""
               id=""
               size="small"
+              placeholder="0"
               required
               onChange={(e) =>
                 setWindow({ ...window, todayWindow: e.target.value })
@@ -83,6 +96,7 @@ const FastingWindow = () => {
             toggle
             active={run}
             compact
+            size="large"
             onClick={handleClick}
           >
             Run
@@ -92,7 +106,7 @@ const FastingWindow = () => {
         <FastingMessage />
       </StyledFastingCalcWrapper>
       <StyledFastingProgressWrapper>
-        <FastingProgress />
+        <FastingProgress fastingProgress={fasting} />
       </StyledFastingProgressWrapper>
     </StyledFastingWrapper>
   );

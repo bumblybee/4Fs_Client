@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import generateCellComponent from "../../utils/generateCellComponent";
-import useCRUD from "../../hooks/useCRUD";
-import { getFastingProgress } from "../../api/fasting/fastingApi";
+
 import moment from "moment";
 import { Icon } from "semantic-ui-react";
 import { StyledTable } from "./StyledFasting";
 
-const FastingProgress = () => {
-  const [fastingProgress] = useCRUD(getFastingProgress);
+const FastingProgress = ({ fastingProgress }) => {
   const [showProgress, setShowProgress] = useState(false);
 
   const columns = [
