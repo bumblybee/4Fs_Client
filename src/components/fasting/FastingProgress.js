@@ -47,8 +47,8 @@ const FastingProgress = () => {
         columns={columns}
         rows={rows()}
         celled
-        fullheighttd={false}
         compact="very"
+        maxHeight="10rem"
       />
     )
   );

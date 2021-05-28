@@ -7,7 +7,6 @@ const useCRUD = (getter, setter, destroyer) => {
     useContext(NotificationContext);
 
   const getData = useCallback(async () => {
-    console.log(getter);
     const res = await getter();
     console.log(res);
     setState(res && res.data && res.data.length ? [...res.data] : []);

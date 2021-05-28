@@ -34,8 +34,7 @@ const Fasting = () => {
         columns={columns}
         color="black"
         aligntext="center"
-        // fullheighttable
-        // fullheighttd
+        height="34rem"
       />
     </div>
   );

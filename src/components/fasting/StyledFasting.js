@@ -12,7 +12,7 @@ export const StyledFastingWrapper = styled.div`
 export const StyledFastingCalcWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  width: 83%;
+  width: 80%;
   margin: 0 auto 2rem;
   border: 1px solid #cccccc99;
   border-radius: 4px;
@@ -31,7 +31,7 @@ export const StyledForm = styled(Form)`
 `;
 
 export const StyledFastingProgressWrapper = styled.div`
-  width: 83%;
+  width: 80%;
   margin: 0 auto;
 `;
 

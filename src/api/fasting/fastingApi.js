@@ -1,8 +1,9 @@
 import { get, post, put, destroy } from "../baseApi";
 
-export const mutateFastingWindow = async (data, id) => {
+export const createFasting = async (data) => {
   // Expects yy-mm-dd
-  return await post(`/fasting-window/${id}`, data);
+  const fasting = await post("/fasting", data);
+  return fasting && fasting.data ? fasting.data : fasting;
 };
 
 export const getFastingProgress = async () => {
