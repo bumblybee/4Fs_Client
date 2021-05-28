@@ -12,8 +12,9 @@ export const StyledProgress = styled(Progress)`
 
 export const StyledHours = styled.div`
   position: absolute;
-  top: 6.5%;
+  top: 8%;
   left: 50%;
   transform: translateX(-50%);
-  color: #fff;
+  color: #ffffffdd;
+  font-weight: 600;
 `;

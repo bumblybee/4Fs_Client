@@ -11,18 +11,19 @@ export const StyledFastingWrapper = styled.div`
 
 export const StyledFastingCalcWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 3fr 1.5fr;
   width: 80%;
   margin: 0 auto 1.5rem;
   border: 1px solid #22242626;
-  border-radius: 4px;
+  border-radius: 0.27rem;
+
   padding: 2.25rem 1.5rem;
 `;
 
 export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 55%;
   margin: 0 auto;
 
   input {

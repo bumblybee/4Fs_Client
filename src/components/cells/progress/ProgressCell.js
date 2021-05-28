@@ -8,6 +8,8 @@ const ProgressCell = (props) => {
       return "#dd2828";
     } else if (percentage >= 45 && percentage < 75) {
       return "#f2711c";
+    } else if (percentage >= 75 && percentage < 100) {
+      return "#FFCc08";
     } else {
       return "#56e300";
     }

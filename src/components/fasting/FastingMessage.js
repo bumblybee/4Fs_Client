@@ -1,10 +1,27 @@
 import React from "react";
 
-const FastingMessage = () => {
+const FastingMessage = ({ percentage }) => {
+  const renderMessage = () => {
+    if (percentage) {
+      if (percentage < 50) {
+        return "You'll get it next time!";
+      }
+      if (percentage >= 50 && percentage < 75) {
+        return "You're doing great, keep at it!";
+      } else if (percentage >= 75 && percentage < 100) {
+        return "You're killing it! Keep it up!";
+      } else {
+        return "Awesome! You're rocking it!";
+      }
+    }
+  };
+
   return (
-    <div style={{ marginTop: "30%" }}>
-      <h1 style={{ fontSize: "2.5rem", marginBottom: "0.25rem" }}>100%</h1>
-      <h2 style={{ fontStyle: "italic", marginTop: "0" }}>Way to go!</h2>
+    <div style={{ marginTop: "20%" }}>
+      <h1 style={{ fontSize: "2.25rem", marginBottom: "0.25rem" }}>
+        {percentage}%
+      </h1>
+      <h3 style={{ fontStyle: "italic", marginTop: "0" }}>{renderMessage()}</h3>
     </div>
   );
 };

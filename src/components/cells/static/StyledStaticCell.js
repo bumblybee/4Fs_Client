@@ -53,6 +53,7 @@ export const StyledStaticCell = styled.div`
   }
 
   .fasting-progress {
-    margin-top: -0.25rem;
+    margin-top: -0.15rem;
+    font-size: 0.9rem;
   }
 `;

@@ -14,29 +14,36 @@ import {
 
 const FastingWindow = () => {
   const [fasting, handleSave] = useCRUD(getFasting, createFasting);
+  const [percentage, setPercentage] = useState(null);
   const [run, setRun] = useState(false);
-  const [window, setWindow] = useState({ goalWindow: "", todayWindow: "" });
+  const [window, setWindow] = useState({
+    goalWindow: "",
+    todayWindow: "",
+    performed: null,
+  });
 
   const handleClick = () => {
     setRun(true);
     setTimeout(() => {
       setRun(false);
-    }, 600);
-  };
+    }, 200);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const date = moment().format("YYYY-MM-DD");
     const performed = calcPercentagePerformed(
       window.todayWindow,
       window.goalWindow
     );
 
-    const data = { date, performed, ...window };
-    console.log(data);
+    setWindow({ ...window, performed });
+    setPercentage(performed * 100);
+  };
 
-    const res = handleSave(data);
-    console.log(res);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const date = moment().format("YYYY-MM-DD");
+
+    const data = { date, ...window };
+
+    handleSave(data);
   };
 
   const calcPercentagePerformed = (today, goal) => {
@@ -44,15 +51,6 @@ const FastingWindow = () => {
     const fixedQuotient = quotient.toFixed(2);
     return Number(fixedQuotient);
   };
-
-  //   const getFasting = async () => {
-  //     const res = await getFasting();
-  //     setFasting([...res.data]);
-  //   };
-
-  //   useEffect(() => {
-  //     getFasting();
-  //   }, [getFasting]);
 
   return (
     <StyledFastingWrapper>
@@ -103,7 +101,7 @@ const FastingWindow = () => {
           </Button>
         </StyledForm>
         <div></div>
-        <FastingMessage />
+        <FastingMessage percentage={percentage} />
       </StyledFastingCalcWrapper>
       <StyledFastingProgressWrapper>
         <FastingProgress fastingProgress={fasting} />
