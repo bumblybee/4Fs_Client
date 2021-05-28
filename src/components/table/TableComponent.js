@@ -117,6 +117,8 @@ export default function TableComponent({ children, ...props }) {
         border: "1px solid #22242626",
         borderTop: "none",
         borderRadius: "0.27rem",
+        // boxShadow: "0 0 4px rgba(0, 0, 0, 0.1)",
+
         margin: props.margin,
       }}
     >

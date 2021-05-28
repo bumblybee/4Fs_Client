@@ -170,7 +170,7 @@ const generateCellComponent = (type, props) => {
         />
       );
     case "progress":
-      return <ProgressCell />;
+      return <ProgressCell val={props.val} day={props.day} goal={props.goal} />;
 
     default:
       return <div style={props.style}>{props.val || props.component}</div>;

@@ -11,7 +11,7 @@ const FastingProgress = ({ fastingProgress }) => {
   const columns = [
     { label: "Date", key: "date", width: 1 },
 
-    { label: "Goal", key: "goal", width: 10 },
+    { label: "Performed", key: "performed", width: 6 },
   ];
 
   const rows = () => {
@@ -20,14 +20,17 @@ const FastingProgress = ({ fastingProgress }) => {
         cellComponent: generateCellComponent("static", {
           val: moment(item.date).format("MM/DD/YY"),
           className: "fasting-progress",
-          alignment: "flex-start",
+          alignment: "center",
           alignItems: "flex-start",
         }),
       },
-      goal: {
+      performed: {
         cellComponent: generateCellComponent("progress", {
-          alignment: "flex-start",
-          val: item.performed,
+          alignment: "center",
+          aligntext: "center",
+          val: item.performed * 100,
+          goal: item.goalWindow,
+          day: item.todayWindow,
           className: "",
         }),
       },
@@ -39,14 +42,14 @@ const FastingProgress = ({ fastingProgress }) => {
   return (
     rows && (
       <StyledTable
-        aligntext="left"
+        aligntext="center"
         fontsize="0.9rem"
-        color="#21BA45"
+        color="grey"
         columns={columns}
         rows={rows()}
-        celled
+        // celled
         compact="very"
-        maxHeight="10rem"
+        maxHeight="9rem"
       />
     )
   );

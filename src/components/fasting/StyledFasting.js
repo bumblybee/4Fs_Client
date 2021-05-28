@@ -13,8 +13,8 @@ export const StyledFastingCalcWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   width: 80%;
-  margin: 0 auto 2rem;
-  border: 1px solid #cccccc99;
+  margin: 0 auto 1.5rem;
+  border: 1px solid #22242626;
   border-radius: 4px;
   padding: 2.25rem 1.5rem;
 `;
@@ -41,7 +41,6 @@ export const StyledFastingProgressWrapper = styled.div`
 
 export const StyledTable = styled(TableComponent)`
   thead th {
-    padding-bottom: 0 !important;
-    padding-left: 0.5rem !important;
+    padding: 0 !important;
   }
 `;
