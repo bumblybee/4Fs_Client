@@ -20,13 +20,13 @@ const FastingMessage = ({ percentage }) => {
   };
 
   return (
-    <div style={{ marginTop: "25%", color: "#fff" }}>
+    <div style={{ marginTop: "20%", color: "#333" }}>
       {percentage >= 100 &&
         Array(3)
           .fill("")
           .map((el) => <Icon name="star " size="large" color="green" />)}
-      <h2 style={{ marginBottom: "0" }}>
-        {`${percentage}`}% <small>of goal</small>
+      <h2 style={{ margin: "1rem 0 0.25rem" }}>
+        {percentage && `${percentage.toFixed(0)}% of Goal`}
       </h2>
       <h3
         style={{

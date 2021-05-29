@@ -17,7 +17,7 @@ export const StyledFastingCalcWrapper = styled.div`
   border: 1px solid #22242626;
   border-radius: 0.27rem;
   padding: 2rem 1.5rem 1.25rem;
-  background: #000;
+  /* background: #000000dd; */
 `;
 
 export const StyledForm = styled(Form)`
@@ -27,7 +27,7 @@ export const StyledForm = styled(Form)`
   margin: 0 auto;
 
   label {
-    color: #fff !important;
+    /* color: #fff !important; */
   }
 
   input {
@@ -36,11 +36,11 @@ export const StyledForm = styled(Form)`
   }
 
   .ui.small.input {
-    width: 60% !important;
+    width: 75% !important;
   }
 
   button {
-    width: 60% !important;
+    width: 75% !important;
     margin: 0 auto !important;
     display: block;
   }

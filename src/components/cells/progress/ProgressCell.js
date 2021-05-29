@@ -13,7 +13,7 @@ const ProgressCell = (props) => {
     } else if (percentage >= 50 && percentage < 70) {
       return "#ffaf36";
     } else if (percentage >= 70 && percentage < 90) {
-      return "#f5e23b";
+      return "#ffe600";
     } else if (percentage >= 90 && percentage < 100) {
       return "#e3e322";
     } else {

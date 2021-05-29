@@ -4,7 +4,7 @@ import useCRUD from "../../hooks/useCRUD";
 import moment from "moment";
 import FastingProgress from "./FastingProgress";
 import FastingMessage from "./FastingMessage";
-import Gauge from "./Gauge";
+import GaugeTest2 from "./GaugeTest2";
 import { Form, Button, Segment } from "semantic-ui-react";
 import {
   StyledFastingWrapper,
@@ -16,9 +16,10 @@ import {
 const FastingWindow = () => {
   const [fasting, handleSave] = useCRUD(getFasting, createFasting);
   const [percentage, setPercentage] = useState(null);
-  const [hours, setHours] = useState("");
+  const [todayHours, setTodayHours] = useState("");
+  const [goalHours, setGoalHours] = useState("");
   const [run, setRun] = useState(false);
-  const [window, setWindow] = useState({
+  const [fastingWindow, setFastingWindow] = useState({
     goalWindow: "",
     todayWindow: "",
     performed: null,
@@ -26,12 +27,13 @@ const FastingWindow = () => {
 
   const handleClick = () => {
     const performed = calcPercentagePerformed(
-      window.todayWindow,
-      window.goalWindow
+      fastingWindow.todayWindow,
+      fastingWindow.goalWindow
     );
 
-    setWindow({ ...window, performed });
-    setHours(window.todayWindow);
+    setFastingWindow({ ...fastingWindow, performed });
+    setTodayHours(fastingWindow.todayWindow);
+    setGoalHours(fastingWindow.goalWindow);
     setPercentage(performed * 100);
   };
 
@@ -39,7 +41,7 @@ const FastingWindow = () => {
     e.preventDefault();
     const date = moment().format("YYYY-MM-DD");
 
-    const data = { date, ...window };
+    const data = { date, ...fastingWindow };
 
     handleSave(data);
   };
@@ -66,7 +68,10 @@ const FastingWindow = () => {
               placeholder="0"
               required
               onChange={(e) =>
-                setWindow({ ...window, goalWindow: e.target.value })
+                setFastingWindow({
+                  ...fastingWindow,
+                  goalWindow: e.target.value,
+                })
               }
             />
           </Form.Field>
@@ -82,13 +87,16 @@ const FastingWindow = () => {
               placeholder="0"
               required
               onChange={(e) =>
-                setWindow({ ...window, todayWindow: e.target.value })
+                setFastingWindow({
+                  ...fastingWindow,
+                  todayWindow: e.target.value,
+                })
               }
             />
           </Form.Field>
 
           <Button
-            color="grey"
+            color="black"
             toggle
             compact
             size="large"
@@ -97,7 +105,12 @@ const FastingWindow = () => {
             Run
           </Button>
         </StyledForm>
-        <Gauge percentage={percentage} hours={hours} fasting={fasting} />
+        <GaugeTest2
+          percentage={percentage}
+          today={todayHours}
+          goal={goalHours}
+          fasting={fasting}
+        />
         <FastingMessage percentage={percentage} />
       </StyledFastingCalcWrapper>
       <StyledFastingProgressWrapper>
