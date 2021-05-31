@@ -4,7 +4,7 @@ import useCRUD from "../../hooks/useCRUD";
 import moment from "moment";
 import FastingProgress from "./FastingProgress";
 import FastingMessage from "./FastingMessage";
-import GaugeTest2 from "./GaugeTest2";
+import GaugeTest from "./GaugeTest";
 import { Form, Button, Segment } from "semantic-ui-react";
 import {
   StyledFastingWrapper,
@@ -96,7 +96,7 @@ const FastingWindow = () => {
           </Form.Field>
 
           <Button
-            color="black"
+            color="grey"
             toggle
             compact
             size="large"
@@ -105,7 +105,7 @@ const FastingWindow = () => {
             Run
           </Button>
         </StyledForm>
-        <GaugeTest2
+        <GaugeTest
           percentage={percentage}
           today={todayHours}
           goal={goalHours}

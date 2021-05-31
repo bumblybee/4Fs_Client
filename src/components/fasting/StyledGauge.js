@@ -4,7 +4,7 @@ export const StyledGaugeWrapper = styled.div`
   position: relative;
   height: 100%;
   margin-top: 0.75rem;
-  color: #fff;
+  color: #333;
 
   .zero {
     position: absolute;

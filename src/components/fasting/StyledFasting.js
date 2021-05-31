@@ -4,7 +4,7 @@ import TableComponent from "../table/TableComponent";
 
 export const StyledFastingWrapper = styled.div`
   height: 100%;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   display: flex;
   flex-direction: column;
 `;
@@ -12,11 +12,11 @@ export const StyledFastingWrapper = styled.div`
 export const StyledFastingCalcWrapper = styled.div`
   display: grid;
   grid-template-columns: 1.5fr 3fr 1.5fr;
-  width: 80%;
-  margin: 0 auto 1.5rem;
+  width: 70%;
+  margin: 0 auto 1.35rem;
   border: 1px solid #22242626;
   border-radius: 0.27rem;
-  padding: 2rem 1.5rem 1.25rem;
+  padding: 2rem 1.5rem 1.5rem;
   /* background: #000000dd; */
 `;
 
@@ -51,7 +51,7 @@ export const StyledForm = styled(Form)`
 `;
 
 export const StyledFastingProgressWrapper = styled.div`
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
 `;
 
