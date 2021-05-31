@@ -7,11 +7,10 @@ const GaugeTest = ({ percentage, today, goal, fasting }) => {
   const [colors, setColors] = useState([]);
   const [labels, setLabels] = useState([]);
 
-  console.log(today, goal);
   useEffect(() => {
     setStops([0, Number(today), Number(goal), 24]);
-    // renderLabels();
     renderColors(today, goal);
+    renderLabels();
   }, [today, goal]);
 
   const renderColors = (today, goal) => {
@@ -20,9 +19,9 @@ const GaugeTest = ({ percentage, today, goal, fasting }) => {
 
     if (today) {
       if (today === goal || today > goal) {
-        setColors(["#78db3bdd", "#78db3b", "#cccccc55"]);
+        setColors(["#78db3bdd", "#63ff00", "#cccccc55"]);
       } else {
-        setColors(["#78db3bdd", "#dd2828cc", "#cccccc55"]);
+        setColors(["#78db3bdd", "#dd2828bb", "#cccccc55"]);
       }
     }
   };
@@ -31,42 +30,54 @@ const GaugeTest = ({ percentage, today, goal, fasting }) => {
     today &&
       setLabels([
         {
-          text: `Achieved: ${today}`,
+          text: `Achieved`,
           position: "OUTSIDE",
-          color: "#d8dee9",
+          color: "#999",
         },
         {
-          text: `Goal: ${goal}`,
+          text: ``,
           position: "OUTSIDE",
-          color: "#d8dee9",
+          color: "#999",
         },
         {
-          text: `24`,
+          text: ``,
           position: "OUTSIDE",
-          color: "#d8dee9",
+          color: "",
         },
       ]);
   };
 
   return (
-    <StyledGaugeWrapper>
+    <StyledGaugeWrapper today={today}>
+      {today && <span className="zero">0</span>}
+
+      <span className="six">6</span>
+      <span className="twelve">12</span>
+
+      <span className="eighteen">18</span>
+
+      {today && <span className="twenty-four">24</span>}
+
       <ReactSpeedometer
         forceRender={true}
         needleHeightRatio={0.7}
-        maxSegmentLabels={8}
+        maxSegmentLabels={0}
         segments={12}
         customSegmentStops={stops}
         needleTransition="easeBackOut"
         // needleTransitionDuration={500}
         segmentColors={colors}
         needleColor={"#000000ee"}
-        currentValueText={today && `Achieved ${today} of ${goal} hours`}
+        customSegmentLabels={labels}
+        currentValueText={
+          today ? `Achieved ${today} of ${goal} hours` : "hours"
+        }
         ringWidth={130}
         minValue={0}
         maxValue={24}
         value={today}
         height={180}
-        textColor={"#000000ee"}
+        textColor={"#333"}
         valueTextFontSize={13}
       />
     </StyledGaugeWrapper>

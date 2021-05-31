@@ -96,7 +96,7 @@ const FastingWindow = () => {
           </Form.Field>
 
           <Button
-            color="grey"
+            color="black"
             toggle
             compact
             size="large"

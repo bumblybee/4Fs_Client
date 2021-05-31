@@ -8,24 +8,48 @@ export const StyledGaugeWrapper = styled.div`
 
   .zero {
     position: absolute;
-    bottom: 22%;
-    left: 11%;
+    bottom: 18%;
+    left: 8.5%;
     font-weight: 600;
+    transform: rotate(-90deg);
+    color: #666;
   }
 
-  .fifty {
+  .six {
     position: absolute;
-    top: -5%;
+    top: 25%;
+    left: 19%;
+    font-weight: 600;
+    transform: rotate(-60deg);
+    color: #666;
+  }
+
+  .twelve {
+    position: absolute;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     font-weight: 600;
+    color: #666;
   }
 
-  .hundred {
+  .eighteen {
     position: absolute;
-    bottom: 22%;
+    top: 25%;
+    right: 17.5%;
+    font-weight: 600;
+    transform: rotate(60deg);
+    color: #666;
+  }
+
+  .twenty-four {
+    position: absolute;
+    bottom: 19%;
     right: 7.5%;
     font-weight: 600;
+    color: #666;
+
+    transform: rotate(90deg);
   }
 
   svg g.text-group text {
@@ -37,5 +61,21 @@ export const StyledGaugeWrapper = styled.div`
   svg g.text-group text:last-child {
     font-size: 1.2rem !important;
     /* fill: #78db3b !important; */
+  }
+
+  svg g.label text.segment-value {
+    /* text-anchor: end !important; */
+    /* transform: translate(-13%, -78%) rotate(-30deg) !important; */
+    font-style: italic !important;
+    /* text-shadow: 1px 1px 0 black; */
+    z-index: 100 !important;
+  }
+
+  svg g.label text.segment-value:nth-child(2) {
+    /* transform: translate(33%, -60%) rotate(30deg) !important; */
+  }
+
+  svg g.arc path.speedo-segment {
+    fill: ${(props) => !props.today && "#cccccc55"};
   }
 `;
