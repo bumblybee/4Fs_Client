@@ -30,12 +30,15 @@ const GaugeTest = ({ percentage, today, goal, fasting }) => {
     today &&
       setLabels([
         {
-          text: today >= goal ? "Goal Achieved!" : "Achieved",
+          text:
+            Number(today) >= Number(goal)
+              ? "Goal Achieved!"
+              : `Achieved ${today}`,
           position: "INSIDE",
           color: "#fff",
         },
         {
-          // text: today < goal ? "Goal" : "",
+          text: today < goal ? `Goal ${goal}` : "",
           position: "INSIDE",
           color: "#fff",
         },

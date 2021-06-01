@@ -29,12 +29,12 @@ export const StyledStaticCell = styled.div`
   }
 
   .system-progress-week {
-    font-size: 0.925rem;
+    font-size: 0.895rem;
     font-family: "Lato", sans-serif;
   }
 
   .system-progress-week.dates {
-    font-size: 0.9rem;
+    font-size: 0.89rem;
   }
 
   .system-progress-week.performed,
@@ -53,7 +53,8 @@ export const StyledStaticCell = styled.div`
   }
 
   .fasting-progress,
-  .progress-date {
+  .progress-date,
+  .system-progress-week.dates {
     margin-top: -0.15rem;
     font-size: 0.89rem;
     font-weight: 600;

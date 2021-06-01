@@ -8,7 +8,7 @@ const FastingProgress = ({ fastingProgress }) => {
   const columns = [
     { label: "Date", key: "date", width: 1 },
 
-    { label: "Performed", key: "performed", width: 6 },
+    { label: "Performed", key: "performed", width: 8 },
   ];
 
   const rows = () => {
@@ -49,7 +49,7 @@ const FastingProgress = ({ fastingProgress }) => {
         striped
         compact="very"
         maxHeight="9rem"
-        // inverted
+        celled
       />
     )
   );

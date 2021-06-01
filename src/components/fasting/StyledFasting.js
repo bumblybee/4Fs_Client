@@ -31,15 +31,15 @@ export const StyledForm = styled(Form)`
 
   input {
     text-align: center !important;
-    /* padding: 0 !important; */
+    padding: 0.25 !important;
   }
 
   .ui.small.input {
-    width: 75% !important;
+    width: 65% !important;
   }
 
   button {
-    width: 75% !important;
+    width: 65% !important;
     margin: 0 auto !important;
     display: block;
   }

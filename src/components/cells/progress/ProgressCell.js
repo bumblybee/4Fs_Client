@@ -3,7 +3,7 @@ import {
   StyledProgressWrapper,
   StyledPercent,
   StyledHours,
-} from "./StyledProgress";
+} from "./StyledProgressCell";
 
 const ProgressCell = (props) => {
   const percentage = props.val.toFixed(0);
@@ -23,7 +23,7 @@ const ProgressCell = (props) => {
   };
   console.log(props.percentage);
   return (
-    <StyledProgressWrapper width="90%" color={renderColor(percentage)}>
+    <StyledProgressWrapper color={renderColor(percentage)}>
       <progress min="0" max="100" value={props.val}></progress>
       <StyledPercent percentage={percentage} val={props.val}>
         {percentage}%

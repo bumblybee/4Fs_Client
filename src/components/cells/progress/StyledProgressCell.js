@@ -7,9 +7,10 @@ export const StyledProgressWrapper = styled.div`
   font-weight: 700;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
   font-family: "Lato";
+  padding: 0 1rem;
 
   progress[value] {
-    width: ${(props) => props.width};
+    /* width: ${(props) => props.width}; */
     width: 100%;
     appearance: none;
 
@@ -29,7 +30,7 @@ export const StyledProgressWrapper = styled.div`
 
 export const StyledPercent = styled.span`
   position: absolute;
-  left: ${(props) => (props.val > 100 ? "94%" : `calc(${props.val}% - 6%)`)};
+  left: ${(props) => (props.val >= 100 ? "92%" : `calc(${props.val}% - 6%)`)};
   top: -6%;
   font-size: 0.75rem;
 `;
