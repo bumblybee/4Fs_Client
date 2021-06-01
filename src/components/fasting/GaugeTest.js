@@ -74,7 +74,7 @@ const GaugeTest = ({ percentage, today, goal, fasting }) => {
         minValue={0}
         maxValue={24}
         value={today}
-        height={180}
+        height={190}
         textColor={"#333"}
         valueTextFontSize={13}
       />

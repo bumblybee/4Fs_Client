@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import moment from "moment";
 import {
   startWeek,
   deleteCurrentWeek,
 } from "../../../../api/focus/practicesApi";
+import { NotificationContext } from "../../../../context/notification/NotificationContext";
 import {
   StyledStartDateContainer,
   StyledButton,
@@ -16,6 +17,7 @@ const SystemTableHeader = ({
   setCurrPractices,
   getStoredPractices,
 }) => {
+  const { setNotificationMessage } = useContext(NotificationContext);
   const [date, setDate] = useState(null);
 
   const handleChange = (e) => {
@@ -24,6 +26,11 @@ const SystemTableHeader = ({
 
   const handleStartWeek = async () => {
     const week = await startWeek({ startDate: date });
+    if (week.error) {
+      setNotificationMessage(week.error, "error", true);
+      return;
+    }
+
     setCurrWeek(week.data);
     setCurrPractices(week.data.practices);
   };
