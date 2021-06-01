@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import generateCellComponent from "../../utils/generateCellComponent";
+import React from "react";
+import generateCellComponent from "../../../utils/generateCellComponent";
 
 import moment from "moment";
 import { StyledTable } from "./StyledFasting";

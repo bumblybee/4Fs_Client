@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { createFasting, getFasting } from "../../api/fasting/fastingApi";
-import useCRUD from "../../hooks/useCRUD";
+import React, { useState } from "react";
+import { createFasting, getFasting } from "../../../api/fasting/fastingApi";
+import useCRUD from "../../../hooks/useCRUD";
 import moment from "moment";
 import FastingProgress from "./FastingProgress";
 import FastingMessage from "./FastingMessage";
-import GaugeTest from "./GaugeTest";
+import Gauge from "../gauge/Gauge";
 import { Form, Button, Segment } from "semantic-ui-react";
 import {
   StyledFastingWrapper,
@@ -96,17 +96,11 @@ const FastingWindow = () => {
             />
           </Form.Field>
 
-          <Button
-            color="black"
-            toggle
-            compact
-            size="large"
-            onClick={handleClick}
-          >
+          <Button color="green" toggle compact size="" onClick={handleClick}>
             Run
           </Button>
         </StyledForm>
-        <GaugeTest
+        <Gauge
           percentage={percentage}
           today={todayHours}
           goal={goalHours}

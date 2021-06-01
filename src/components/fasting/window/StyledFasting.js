@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Form, Segment } from "semantic-ui-react";
-import TableComponent from "../table/TableComponent";
+import TableComponent from "../../table/TableComponent";
 
 export const StyledFastingWrapper = styled.div`
   height: 100%;
@@ -23,25 +23,28 @@ export const StyledFastingCalcWrapper = styled.div`
 export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
+  padding: 0.25rem 1rem 0.25rem;
+  border-radius: 0.27rem;
 
   input {
     text-align: center !important;
-    /* padding: 0.5rem 0 !important; */
-    margin: 0 !important;
+    padding: 0.5rem 0.25rem 0.5rem 0 !important;
     ::-webkit-inner-spin-button {
-      appearance: none;
+      padding: 0 !important;
+      opacity: 1;
     }
   }
 
   .ui.small.input {
-    width: 60% !important;
+    width: 55% !important;
   }
 
   button {
-    width: 60% !important;
+    width: 55% !important;
     margin: 0 auto !important;
+    padding: 0.75rem 0.5rem !important;
   }
 
   input::placeholder {

@@ -1,6 +1,6 @@
 import React from "react";
-import TableComponent from "../table/TableComponent";
-import SectionHeader from "../layout/SectionHeader";
+import TableComponent from "../../table/TableComponent";
+import SectionHeader from "../../layout/SectionHeader";
 import FastingWindow from "./FastingWindow";
 
 const Fasting = () => {
