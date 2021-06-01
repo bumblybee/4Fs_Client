@@ -57,7 +57,7 @@ export const StyledTable = styled(Table)`
   .description-header {
     height: ${(props) => props.descriptionHeaderHeight} !important;
     position: sticky;
-    top: -1px;
+    top: 0;
     z-index: 2;
     margin: 0 !important;
   }
