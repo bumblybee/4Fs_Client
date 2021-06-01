@@ -9,12 +9,12 @@ const FastingMessage = ({ percentage }) => {
     if (percentage) {
       if (percentage < 40) {
         return "Keep pushing. You'll get it next time!";
-      } else if (percentage >= 40 && percentage < 50) {
+      } else if (percentage >= 40 && percentage < 60) {
         return "You're on the right track!";
       }
-      if (percentage >= 50 && percentage < 75) {
+      if (percentage >= 60 && percentage < 80) {
         return "You're doing great, keep at it!";
-      } else if (percentage >= 75 && percentage < 100) {
+      } else if (percentage >= 80 && percentage < 100) {
         return "Awesome! Almost there!";
       } else {
         return "Woo-hoo! You're a rock star!";
@@ -29,14 +29,13 @@ const FastingMessage = ({ percentage }) => {
   return (
     <Transition animation="tada" duration={600} visible={visible}>
       <StyledMessage>
-        <h2>
+        <div>
           {percentage >= 100 &&
             Array(3)
               .fill("")
               .map((el) => <Icon name="star" color="green" />)}
-
-          {percentage && `${percentage.toFixed(0)}% of Goal`}
-        </h2>
+        </div>
+        <h2>{percentage && `${percentage.toFixed(0)}% of Goal`}</h2>
         <h3>{renderMessage()}</h3>
       </StyledMessage>
     </Transition>

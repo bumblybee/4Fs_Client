@@ -8,7 +8,7 @@ export const StyledGaugeWrapper = styled.div`
 
   .zero {
     position: absolute;
-    bottom: 15%;
+    bottom: 18%;
     left: 8.5%;
     font-weight: 600;
     transform: rotate(-90deg);
@@ -44,7 +44,7 @@ export const StyledGaugeWrapper = styled.div`
 
   .twenty-four {
     position: absolute;
-    bottom: 17%;
+    bottom: 18%;
     right: 7.5%;
     font-weight: 600;
     color: #666;

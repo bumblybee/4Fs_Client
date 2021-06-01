@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactSpeedometer from "react-d3-speedometer";
 import { StyledGaugeWrapper } from "./StyledGauge";
 
-const Gauge = ({ percentage, today, goal, fasting }) => {
+const Gauge = ({ percentage, today, goal }) => {
   const [stops, setStops] = useState([]);
   const [colors, setColors] = useState([]);
   const [labels, setLabels] = useState([]);
@@ -36,7 +36,7 @@ const Gauge = ({ percentage, today, goal, fasting }) => {
           color: "#fff",
         },
         {
-          text: today < goal ? `Goal ${goal}` : "",
+          text: Number(today) < Number(goal) ? `Goal ${goal}` : "",
           position: "INSIDE",
           color: "#fff",
         },
