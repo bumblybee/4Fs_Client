@@ -54,6 +54,7 @@ const FastingWindow = () => {
 
   return (
     <StyledFastingWrapper>
+      {/* <Segment inverted color="olive"></Segment> */}
       <StyledFastingCalcWrapper>
         <StyledForm onSubmit={handleSubmit}>
           <Form.Field>

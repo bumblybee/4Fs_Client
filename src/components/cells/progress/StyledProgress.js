@@ -1,25 +1,42 @@
 import styled from "styled-components";
-import { Progress } from "semantic-ui-react";
 
-export const StyledProgress = styled(Progress)`
-  margin: 0 !important;
-  width: 96%;
-  position: relative !important;
+export const StyledProgressWrapper = styled.div`
+  margin: 0;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+  font-family: "Lato";
 
-  .bar {
-    background: ${(props) => props.color} !important;
+  progress[value] {
+    width: ${(props) => props.width};
+    width: 100%;
+    appearance: none;
+
+    ::-webkit-progress-bar {
+      height: 12px;
+      border-radius: 20px;
+      background-color: #ddddddee;
+    }
+
+    ::-webkit-progress-value {
+      height: 12px;
+      border-radius: 20px;
+      background: ${(props) => props.color};
+    }
   }
+`;
 
-  .bar .progress {
-    color: #fff !important;
-  }
+export const StyledPercent = styled.span`
+  position: absolute;
+  left: ${(props) => (props.val > 100 ? "94%" : `calc(${props.val}% - 6%)`)};
+  top: -6%;
+  font-size: 0.75rem;
 `;
 
 export const StyledHours = styled.div`
   position: absolute;
-  top: 8%;
+  top: -18%;
   left: 50%;
   transform: translateX(-50%);
-  color: #fff;
-  font-weight: 600;
 `;

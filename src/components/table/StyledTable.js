@@ -37,6 +37,15 @@ export const StyledTable = styled(Table)`
     font-family: "Lato", sans-serif;
   }
 
+  .fasting-progress td {
+    padding: 0.4rem 0.25rem 0 !important;
+  }
+
+  /* .fasting-progress tr:first-child th:first-child {
+    text-align: left;
+    padding-left: 0.5rem !important; */
+  /* } */
+
   /* tbody tr:first-child,
   tr:first-child td:first-child {
     position: sticky;

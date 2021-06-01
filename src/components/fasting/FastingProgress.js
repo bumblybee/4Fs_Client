@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import generateCellComponent from "../../utils/generateCellComponent";
 
 import moment from "moment";
-import { Icon } from "semantic-ui-react";
 import { StyledTable } from "./StyledFasting";
 
 const FastingProgress = ({ fastingProgress }) => {
-  const [showProgress, setShowProgress] = useState(false);
-
   const columns = [
     { label: "Date", key: "date", width: 1 },
 
@@ -22,6 +19,7 @@ const FastingProgress = ({ fastingProgress }) => {
           className: "fasting-progress",
           alignment: "center",
           alignItems: "flex-start",
+          className: "progress-date",
         }),
       },
       performed: {
@@ -31,7 +29,7 @@ const FastingProgress = ({ fastingProgress }) => {
           val: item.performed * 100,
           goal: item.goalWindow,
           day: item.todayWindow,
-          className: "",
+          className: "progress-bar",
         }),
       },
     }));
@@ -42,12 +40,13 @@ const FastingProgress = ({ fastingProgress }) => {
   return (
     rows && (
       <StyledTable
+        className="fasting-progress"
         aligntext="center"
         fontsize="0.9rem"
-        color="black"
+        color="#1B1C1D"
         columns={columns}
         rows={rows()}
-        // celled
+        striped
         compact="very"
         maxHeight="9rem"
         // inverted

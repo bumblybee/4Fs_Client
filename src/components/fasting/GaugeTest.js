@@ -30,14 +30,14 @@ const GaugeTest = ({ percentage, today, goal, fasting }) => {
     today &&
       setLabels([
         {
-          text: `Achieved`,
-          position: "OUTSIDE",
-          color: "#999",
+          text: today >= goal ? "Goal Achieved!" : "Achieved",
+          position: "INSIDE",
+          color: "#fff",
         },
         {
-          text: ``,
-          position: "OUTSIDE",
-          color: "#999",
+          // text: today < goal ? "Goal" : "",
+          position: "INSIDE",
+          color: "#fff",
         },
         {
           text: ``,
@@ -49,14 +49,11 @@ const GaugeTest = ({ percentage, today, goal, fasting }) => {
 
   return (
     <StyledGaugeWrapper today={today}>
-      {today && <span className="zero">0</span>}
-
+      <span className="zero">0</span>
       <span className="six">6</span>
       <span className="twelve">12</span>
-
       <span className="eighteen">18</span>
-
-      {today && <span className="twenty-four">24</span>}
+      <span className="twenty-four">24</span>
 
       <ReactSpeedometer
         forceRender={true}

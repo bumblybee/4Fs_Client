@@ -52,7 +52,8 @@ export const StyledStaticCell = styled.div`
     color: #008089;
   }
 
-  .fasting-progress {
+  .fasting-progress,
+  .progress-date {
     margin-top: -0.15rem;
     font-size: 0.89rem;
     font-weight: 600;

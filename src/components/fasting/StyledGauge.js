@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const StyledGaugeWrapper = styled.div`
   position: relative;
   height: 100%;
-  margin-top: 0.75rem;
+  margin-top: 0.25rem;
   color: #333;
 
   .zero {
     position: absolute;
-    bottom: 18%;
+    bottom: 15%;
     left: 8.5%;
     font-weight: 600;
     transform: rotate(-90deg);
@@ -44,7 +44,7 @@ export const StyledGaugeWrapper = styled.div`
 
   .twenty-four {
     position: absolute;
-    bottom: 19%;
+    bottom: 17%;
     right: 7.5%;
     font-weight: 600;
     color: #666;
@@ -64,10 +64,9 @@ export const StyledGaugeWrapper = styled.div`
   }
 
   svg g.label text.segment-value {
-    /* text-anchor: end !important; */
-    /* transform: translate(-13%, -78%) rotate(-30deg) !important; */
     font-style: italic !important;
-    /* text-shadow: 1px 1px 0 black; */
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+
     z-index: 100 !important;
   }
 

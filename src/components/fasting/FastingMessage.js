@@ -20,15 +20,16 @@ const FastingMessage = ({ percentage }) => {
   };
 
   return (
-    <div style={{ marginTop: "35%", color: "#333" }}>
+    <div style={{ marginTop: "30%", color: "#333" }}>
       {percentage >= 100 &&
         Array(3)
           .fill("")
-          .map((el) => <Icon name="star " size="large" color="green" />)}
+          .map((el) => <Icon name="star" color="green" />)}
       <h2
         style={{
           margin: "0 0 0.25rem",
-          fontSize: "1.5rem",
+          fontSize: "1.35rem",
+          fontStyle: "italic",
           fontFamily: "Lato",
         }}
       >
@@ -38,7 +39,7 @@ const FastingMessage = ({ percentage }) => {
         style={{
           fontStyle: "italic",
           marginTop: "0",
-          fontSize: "1.15rem",
+          fontSize: "1.1rem",
           fontWeight: "500",
           width: "85%",
           margin: "0 auto",

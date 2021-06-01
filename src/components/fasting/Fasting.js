@@ -2,7 +2,6 @@ import React from "react";
 import TableComponent from "../table/TableComponent";
 import SectionHeader from "../layout/SectionHeader";
 import FastingWindow from "./FastingWindow";
-import generateCellComponent from "../../utils/generateCellComponent";
 
 const Fasting = () => {
   const columns = [
@@ -26,13 +25,13 @@ const Fasting = () => {
     <div>
       <SectionHeader
         title="Fasting Window"
-        subtext="Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, distinctio?"
+        subtext="Enter today's goal fasting hours and actual hours fasted. Click run to see results."
       />
 
       <TableComponent
         rows={rows()}
         columns={columns}
-        color="black"
+        color="#1B1C1D"
         aligntext="center"
         height="34rem"
         // inverted
