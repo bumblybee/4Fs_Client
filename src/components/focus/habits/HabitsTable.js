@@ -113,7 +113,7 @@ const HabitsTable = () => {
         // celled
         example
         compact
-        maxHeight="31rem"
+        maxHeight="30rem"
       />
     )
   );

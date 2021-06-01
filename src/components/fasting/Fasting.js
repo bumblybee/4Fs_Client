@@ -25,7 +25,7 @@ const Fasting = () => {
     <div>
       <SectionHeader
         title="Fasting Window"
-        subtext="Enter today's goal fasting hours and actual hours fasted. Click run to see results."
+        subtext="Enter your goal fasting window and the number of hours you fasted today. Click run to see results."
       />
 
       <TableComponent

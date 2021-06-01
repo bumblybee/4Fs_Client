@@ -66,7 +66,7 @@ export const StyledGaugeWrapper = styled.div`
   svg g.label text.segment-value {
     font-style: italic !important;
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
-
+    font-size: 0.9rem !important;
     z-index: 100 !important;
   }
 
@@ -76,5 +76,9 @@ export const StyledGaugeWrapper = styled.div`
 
   svg g.arc path.speedo-segment {
     fill: ${(props) => !props.today && "#cccccc55"};
+  }
+
+  svg g text.current-value {
+    font-family: "Montserrat", sans-serif;
   }
 `;

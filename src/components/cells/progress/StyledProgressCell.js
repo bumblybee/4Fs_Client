@@ -10,7 +10,6 @@ export const StyledProgressWrapper = styled.div`
   padding: 0 1rem;
 
   progress[value] {
-    /* width: ${(props) => props.width}; */
     width: 100%;
     appearance: none;
 
