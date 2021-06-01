@@ -9,6 +9,12 @@ const EditableTableCell = ({ children, ...props }) => {
 
   const inputRef = useRef(null);
 
+  const handleKeyPress = (e) => {
+    if (e.keyCode === 13) {
+      makeData();
+    }
+  };
+
   const makeData = () => {
     if (props.onDelete && editCellVal === "") {
       props.onDelete(props.id);
@@ -29,7 +35,7 @@ const EditableTableCell = ({ children, ...props }) => {
         );
         inputRef.current = editCellVal;
 
-        // Reset editCellVal to returned val
+        // Reset editCellVal to returned data
         setEditCellVal(props.val);
       }
     }
@@ -43,11 +49,12 @@ const EditableTableCell = ({ children, ...props }) => {
           ref={inputRef}
           value={editCellVal}
           placeholder={props.placeholder}
-          onChange={(e) => setEditCellVal(e.target.value)}
-          onBlur={makeData}
           aligntext={props.aligntext}
           alignment={props.alignment}
           disabled={props.disabled}
+          onChange={(e) => setEditCellVal(e.target.value)}
+          onBlur={makeData}
+          onKeyDown={handleKeyPress}
         />
       );
     } else {

@@ -8,6 +8,12 @@ const EmptyCell = ({ children, ...props }) => {
 
   const inputRef = useRef(null);
 
+  const handleKeyPress = (e) => {
+    if (e.keyCode === 13) {
+      makeData();
+    }
+  };
+
   const makeData = () => {
     if (emptyCellVal !== "") {
       props.onSave(
@@ -33,6 +39,7 @@ const EmptyCell = ({ children, ...props }) => {
           value={emptyCellVal || ""}
           onChange={(e) => setEmptyCellVal(e.target.value)}
           onBlur={makeData}
+          onKeyDown={handleKeyPress}
           disabled={props.disabled}
         />
       );
