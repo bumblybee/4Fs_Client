@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactSpeedometer from "react-d3-speedometer";
 import { StyledGaugeWrapper } from "./StyledGauge";
 
-const Gauge = ({ percentage, today, goal }) => {
+const Gauge = ({ today, goal }) => {
   const [stops, setStops] = useState([]);
   const [colors, setColors] = useState([]);
   const [labels, setLabels] = useState([]);

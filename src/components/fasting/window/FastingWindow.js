@@ -5,7 +5,7 @@ import moment from "moment";
 import FastingProgress from "./FastingProgress";
 import FastingMessage from "./FastingMessage";
 import Gauge from "../gauge/Gauge";
-import { Form, Button, Segment } from "semantic-ui-react";
+import { Form, Button } from "semantic-ui-react";
 import {
   StyledFastingWrapper,
   StyledFastingCalcWrapper,
@@ -18,7 +18,7 @@ const FastingWindow = () => {
   const [percentage, setPercentage] = useState(null);
   const [todayHours, setTodayHours] = useState("");
   const [goalHours, setGoalHours] = useState("");
-  const [run, setRun] = useState(false);
+
   const [fastingWindow, setFastingWindow] = useState({
     goalWindow: "",
     todayWindow: "",
@@ -63,8 +63,8 @@ const FastingWindow = () => {
               type="number"
               min="1"
               max="24"
-              name=""
-              id=""
+              name="goal"
+              id="goal"
               size="small"
               placeholder="0"
               required
@@ -82,8 +82,8 @@ const FastingWindow = () => {
               type="number"
               min="1"
               max="24"
-              name=""
-              id=""
+              name="today"
+              id="today"
               size="small"
               placeholder="0"
               required

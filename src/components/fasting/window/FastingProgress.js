@@ -16,7 +16,6 @@ const FastingProgress = ({ fastingProgress }) => {
       date: {
         cellComponent: generateCellComponent("static", {
           val: moment(item.date).format("MM/DD/YY"),
-          className: "fasting-progress",
           alignment: "center",
           alignItems: "flex-start",
           className: "progress-date",

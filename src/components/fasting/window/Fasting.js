@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { getShared, mutateShared } from "../../../api/share/shareApi";
 import useCRUD from "../../../hooks/useCRUD";
 import TableComponent from "../../table/TableComponent";

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Form, Segment } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 import TableComponent from "../../table/TableComponent";
 
 export const StyledFastingWrapper = styled.div`
