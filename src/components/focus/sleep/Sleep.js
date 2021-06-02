@@ -25,7 +25,7 @@ const Sleep = () => {
 
   const getSleepData = async () => {
     const res = await getSleep();
-    setSleep([...res.data]);
+    res && res.data && setSleep([...res.data]);
   };
 
   const handleSave = async (data, id, clearState) => {
