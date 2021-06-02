@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback, useContext } from "react";
 import { NotificationContext } from "../context/notification/NotificationContext";
-import { getShared } from "../api/share/shareApi";
 
 const useCRUD = (getter, setter, destroyer) => {
   const [state, setState] = useState([]);
@@ -8,7 +7,6 @@ const useCRUD = (getter, setter, destroyer) => {
     useContext(NotificationContext);
 
   const getData = useCallback(async () => {
-    await getShared();
     const res = await getter();
     console.log(res);
     setState(res && res.data && res.data.length ? [...res.data] : []);

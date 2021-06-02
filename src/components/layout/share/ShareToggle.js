@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Radio } from "semantic-ui-react";
 import { StyledToggle } from "./StyledShareToggle";
 
-const ShareToggle = ({ shared, handleSave, field }) => {
+const ShareToggle = ({ shared, handleSave, field, width }) => {
   const [value, setValue] = useState();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const ShareToggle = ({ shared, handleSave, field }) => {
   };
 
   return (
-    <StyledToggle>
+    <StyledToggle width={width}>
       <Radio
         label="Share"
         name="share"

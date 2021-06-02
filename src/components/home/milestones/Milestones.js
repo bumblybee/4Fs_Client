@@ -1,16 +1,19 @@
 import React from "react";
 import generateCellComponent from "../../../utils/generateCellComponent";
+import useCRUD from "../../../hooks/useCRUD";
 import {
   getMilestones,
   mutateMilestone,
 } from "../../../api/home/milestonesApi";
-import useCRUD from "../../../hooks/useCRUD";
+import { getShared, mutateShared } from "../../../api/share/shareApi";
+import ShareToggle from "../../layout/share/ShareToggle";
 import SectionHeader from "../../layout/SectionHeader";
 import TableComponent from "../../table/TableComponent";
 
 // TODO: Align cols
 const Milestones = () => {
   const [milestones, handleSave] = useCRUD(getMilestones, mutateMilestone);
+  const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
 
   const columns = [
     { label: "F", key: "f", width: 2 },
@@ -91,7 +94,11 @@ const Milestones = () => {
           subtext="Feel free to add your personal touch to each milestone so that it
           works for you!"
         />
-
+        <ShareToggle
+          shared={shared[0]}
+          handleSave={handleSaveShared}
+          field="milestone"
+        />
         <TableComponent
           rows={rows()}
           columns={columns}

@@ -1,6 +1,4 @@
 import React from "react";
-import TableComponent from "../../table/TableComponent";
-import SectionHeader from "../../layout/SectionHeader";
 import generateCellComponent from "../../../utils/generateCellComponent";
 import useCRUD from "../../../hooks/useCRUD";
 import {
@@ -8,6 +6,10 @@ import {
   mutateBelief,
   deleteBelief,
 } from "../../../api/home/beliefsApi";
+import { getShared, mutateShared } from "../../../api/share/shareApi";
+import ShareToggle from "../../layout/share/ShareToggle";
+import TableComponent from "../../table/TableComponent";
+import SectionHeader from "../../layout/SectionHeader";
 
 const Beliefs = () => {
   const [beliefs, handleSave, handleDelete] = useCRUD(
@@ -15,6 +17,7 @@ const Beliefs = () => {
     mutateBelief,
     deleteBelief
   );
+  const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
 
   const columns = [
     {
@@ -65,7 +68,12 @@ const Beliefs = () => {
           subtext="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam,
           laboriosam!"
         />
-
+        <ShareToggle
+          shared={shared[0]}
+          handleSave={handleSaveShared}
+          field="belief"
+          width="60%"
+        />
         <TableComponent
           rows={rows(addEmptyRow())}
           columns={columns}
