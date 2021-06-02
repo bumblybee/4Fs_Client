@@ -29,14 +29,20 @@ export const StyledProgressWrapper = styled.div`
 
 export const StyledPercent = styled.span`
   position: absolute;
-  left: ${(props) => (props.val >= 100 ? "92%" : `calc(${props.val}% - 6%)`)};
-  top: -8%;
+  position: absolute;
+  left: ${(props) =>
+    props.val >= 100
+      ? "92%"
+      : props.val >= 50 && props.val <= 59
+      ? "42%"
+      : `calc(${props.val}% - 6%)`};
+  top: -6%;
   font-size: 0.75rem;
 `;
 
 export const StyledHours = styled.div`
   position: absolute;
-  top: -20%;
+  top: -18%;
   left: 50%;
   transform: translateX(-50%);
 `;

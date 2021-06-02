@@ -25,7 +25,7 @@ const ProgressCell = (props) => {
       <StyledPercent percentage={percentage} val={props.val}>
         {percentage}%
       </StyledPercent>
-      <StyledHours>
+      <StyledHours val={props.val}>
         <small>
           {props.day} / {props.goal} hrs
         </small>

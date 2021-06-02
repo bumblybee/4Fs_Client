@@ -12,7 +12,7 @@ const SectionHeader = ({ title, subtext, component }) => {
       <h1
         style={{
           textAlign: "center",
-          marginBottom: "0.75rem",
+          marginBottom: "0.5rem",
         }}
       >
         {title}
@@ -21,7 +21,7 @@ const SectionHeader = ({ title, subtext, component }) => {
       <p
         style={{
           textAlign: "center",
-          margin: "0 auto 2.5rem",
+          margin: "0 auto 2.25rem",
           fontSize: "1.2rem",
           fontWeight: "500",
           width: "65%",

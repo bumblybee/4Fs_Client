@@ -9,8 +9,8 @@ const WelcomeMessage = () => {
   const list = [
     "To come back to the home page, click the 4Fs logo in the top left corner",
     "To access your profile, click the user icon in the top right corner",
-    "Use the large rectangular menu above to move through each of the four F's",
-    "Use the smaller menu directly above this message to access each section within the four F's",
+    "Use the F's menu at top center to move through the four F's",
+    "Use the smaller menu directly above this message to access sections within each F",
   ];
 
   return (
