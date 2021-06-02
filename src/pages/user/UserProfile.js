@@ -12,6 +12,8 @@ import {
 } from "./StyledUserProfile";
 import * as sc from "../../styles/GlobalStyledComponents";
 
+// TODO: format sheets url before sending to server - url.split("#")[0] - removes id so can add dynamically later
+
 const UserProfile = () => {
   const history = useHistory();
   const { setNotificationMessage } = useContext(NotificationContext);
@@ -64,7 +66,7 @@ const UserProfile = () => {
     });
 
     const res = await updateUserDetails(data);
-    console.log(res);
+
     res &&
       setNotificationMessage("Your information has been updated", "info", true);
   };
