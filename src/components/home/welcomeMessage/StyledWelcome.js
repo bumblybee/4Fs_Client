@@ -2,21 +2,16 @@ import styled from "styled-components";
 import { Message } from "semantic-ui-react";
 
 export const StyledWelcomeMessage = styled(Message)`
-  width: 25% !important;
-  margin: -1.5% auto 0.75% !important;
+  width: 24% !important;
+  margin: -1.25% auto 0.75% !important;
   /* background: ${(props) => !props.visible && "#fff !important"};
   box-shadow: ${(props) => !props.visible && "none !important"}; */
-  text-align: justify;
-  position: relative;
-  cursor: pointer;
+  text-align: center;
+  font-size: 0.975rem !important;
+  padding: 1rem !important;
 
   .header {
     text-align: center;
-  }
-
-  i {
-    position: absolute;
-    top: ${(props) => (props.visible ? "5%" : "25%")};
-    right: 2%;
+    font-size: 1.1rem !important;
   }
 `;

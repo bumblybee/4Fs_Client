@@ -11,8 +11,10 @@ const AppWrapper = ({ component, tabs }) => {
     <div style={{ height: "100%" }}>
       <NavBar />
       <FTabBar />
+
       {tabs && <TabMenu />}
       {component.type.name === "Milestones" && <WelcomeMessage />}
+
       <SectionContainer>{component}</SectionContainer>
       {component.type.name === "Milestones" && <Contact />}
     </div>

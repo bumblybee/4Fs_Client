@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactSpeedometer from "react-d3-speedometer";
+import { RadialGauge } from "react-canvas-gauges";
 import { StyledGaugeWrapper } from "./StyledGauge";
 
 const Gauge = ({ today, goal }) => {
@@ -78,6 +79,15 @@ const Gauge = ({ today, goal }) => {
         textColor={"#333"}
         valueTextFontSize={13}
       />
+      {/* <RadialGauge
+        units="hours"
+        title="Fasting Window"
+        value={today ? today : 0}
+        minValue={0}
+        maxValue={24}
+        majorTicks={["0", "4", "8", "12", "16", "20", "24"]}
+        minorTicks={2}
+      ></RadialGauge> */}
     </StyledGaugeWrapper>
   );
 };
