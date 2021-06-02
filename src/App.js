@@ -10,10 +10,8 @@ function App() {
   return (
     <Router>
       <NotificationProvider>
-        <UserProvider>
-          <Notification />
-          {<Routes />}
-        </UserProvider>
+        <Notification />
+        {<Routes />}
       </NotificationProvider>
     </Router>
   );
