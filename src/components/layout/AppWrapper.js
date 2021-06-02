@@ -4,7 +4,7 @@ import FTabBar from "./fTabBar/FTabBar";
 import TabMenu from "./tabs/TabMenu";
 import SectionContainer from "./SectionContainer";
 import Contact from "./contact/Contact";
-import WelcomeMessage from "../home/welcomeMessage/WelcomeMessage";
+import WelcomeMessage from "../home/welcome/WelcomeMessage";
 
 const AppWrapper = ({ component, tabs }) => {
   return (
