@@ -3,10 +3,9 @@ import NavBar from "../nav/NavBar";
 import FTabBar from "./fTabBar/FTabBar";
 import TabMenu from "./tabs/TabMenu";
 import SectionContainer from "./SectionContainer";
-import Contact from "./Contact";
+import Contact from "./contact/Contact";
 
 const AppWrapper = ({ component, tabs }) => {
-  console.log(component);
   return (
     <div style={{ height: "100%" }}>
       <NavBar />
