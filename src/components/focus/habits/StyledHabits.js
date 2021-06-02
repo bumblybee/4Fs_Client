@@ -15,7 +15,7 @@ export const StyledHabitsTableContainer = styled.div`
 `;
 
 export const StyledButton = styled(Button)`
-  margin: 0 auto 1.75rem !important;
+  margin: 0 auto 1.25rem !important;
   font-weight: bold !important;
   background: transparent none !important;
   box-shadow: 0px 0px 0px 1px #6435c9 inset !important;
