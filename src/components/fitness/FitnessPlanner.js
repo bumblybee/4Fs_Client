@@ -4,6 +4,7 @@ import SheetsComponent from "../sheets/SheetsComponent";
 const FitnessPlanner = () => {
   return (
     <SheetsComponent
+      field="fitness"
       colorScheme="purple"
       buttonText="Google Sheets"
       title="Fitness Planner"

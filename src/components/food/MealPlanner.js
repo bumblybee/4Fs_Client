@@ -4,6 +4,7 @@ import SheetsComponent from "../sheets/SheetsComponent";
 const MealPlanner = () => {
   return (
     <SheetsComponent
+      field="food"
       colorScheme="red"
       buttonText="Program Sheet"
       title="Meal Planner"

@@ -72,7 +72,7 @@ const Beliefs = () => {
           shared={shared[0]}
           handleSave={handleSaveShared}
           field="belief"
-          width="60%"
+          width="59%"
         />
         <TableComponent
           rows={rows(addEmptyRow())}

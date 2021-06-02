@@ -1,4 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
+import useCRUD from "../../hooks/useCRUD";
+import { getShared, mutateShared } from "../../api/share/shareApi";
+import ShareToggle from "../layout/share/ShareToggle";
 import TableComponent from "../table/TableComponent";
 import SectionHeader from "../layout/SectionHeader";
 import generateCellComponent from "../../utils/generateCellComponent";
@@ -11,9 +14,10 @@ const SheetsComponent = ({
   subtext,
   buttonText,
   colorScheme,
+  field,
 }) => {
   // TODO: Specify which sheet to direct user to
-
+  const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
   const { user } = useContext(UserContext);
   const [url, setUrl] = useState(user && user.sheetsURL);
 
@@ -49,6 +53,13 @@ const SheetsComponent = ({
   return (
     <div>
       <SectionHeader title={title} subtitle={subtitle} subtext={subtext} />
+      {field && (
+        <ShareToggle
+          shared={shared[0]}
+          handleSave={handleSaveShared}
+          field={field}
+        />
+      )}
 
       <TableComponent
         rows={rows()}
