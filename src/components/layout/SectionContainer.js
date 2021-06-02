@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container } from "semantic-ui-react";
 
-const TableContainer = ({ children }) => {
+const SectionContainer = ({ children }) => {
   return (
     <div style={{ paddingBottom: "2rem" }}>
       <Container style={{ height: "inherit" }}>{children}</Container>
@@ -10,4 +10,4 @@ const TableContainer = ({ children }) => {
   );
 };
 
-export default TableContainer;
+export default SectionContainer;

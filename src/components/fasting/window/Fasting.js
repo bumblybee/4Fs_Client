@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import { getShared, mutateShared } from "../../../api/share/shareApi";
+import useCRUD from "../../../hooks/useCRUD";
 import TableComponent from "../../table/TableComponent";
+import ShareToggle from "../../layout/share/ShareToggle";
 import SectionHeader from "../../layout/SectionHeader";
 import FastingWindow from "./FastingWindow";
 
 const Fasting = () => {
+  const [shared, handleSave] = useCRUD(getShared, mutateShared);
   const columns = [
     {
       label: "Fasting Window",
@@ -27,7 +31,7 @@ const Fasting = () => {
         title="Fasting Window"
         subtext="Enter your goal fasting window and the number of hours you fasted today. Click run to see results."
       />
-
+      <ShareToggle shared={shared[0]} handleSave={handleSave} field="fasting" />
       <TableComponent
         rows={rows()}
         columns={columns}
