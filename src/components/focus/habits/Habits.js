@@ -16,7 +16,7 @@ const Habits = () => {
 
   useEffect(() => {
     user && user.sheetsURL && setUrl(user.sheetsURL);
-  });
+  }, [user]);
 
   return (
     <>
