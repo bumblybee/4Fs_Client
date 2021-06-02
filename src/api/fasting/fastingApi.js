@@ -1,4 +1,4 @@
-import { get, post, put, destroy } from "../baseApi";
+import { get, post } from "../baseApi";
 
 export const createFasting = async (data) => {
   // Expects yy-mm-dd

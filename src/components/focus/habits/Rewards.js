@@ -1,11 +1,5 @@
 import React from "react";
 import generateCellComponent from "../../../utils/generateCellComponent";
-import {
-  getHabits,
-  mutateHabit,
-  deleteHabit,
-} from "../../../api/focus/habitsApi";
-import useCRUD from "../../../hooks/useCRUD";
 import { rewards } from "../../../utils/rewards";
 import TableComponent from "../../table/TableComponent";
 

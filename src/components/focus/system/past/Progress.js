@@ -4,11 +4,7 @@ import useCRUD from "../../../../hooks/useCRUD";
 import { getPracticeProgress } from "../../../../api/focus/practicesApi";
 import generateCellComponent from "../../../../utils/generateCellComponent";
 import { Icon } from "semantic-ui-react";
-import {
-  StyledProgressToggle,
-  StyledProgressWrapper,
-  StyledProgressTable,
-} from "./StyledProgress";
+import { StyledProgressToggle, StyledProgressTable } from "./StyledProgress";
 
 const Progress = () => {
   const [showWeeks, setShowWeeks] = useState(false);
@@ -63,7 +59,7 @@ const Progress = () => {
     <>
       <StyledProgressToggle
         basic
-        showWeeks={showWeeks}
+        showweeks={showWeeks}
         onClick={() => setShowWeeks(!showWeeks)}
       >
         <Icon

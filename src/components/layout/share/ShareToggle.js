@@ -10,7 +10,7 @@ const ShareToggle = ({ shared, handleSave, field, width }) => {
     if (shared) {
       setValue(shared[field]);
     }
-  }, [shared]);
+  }, [shared, field]);
 
   const handleChange = (e) => {
     setValue(!value);

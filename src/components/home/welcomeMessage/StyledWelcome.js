@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Segment, Message } from "semantic-ui-react";
+import { Message } from "semantic-ui-react";
 
 export const StyledWelcomeMessage = styled(Message)`
   width: 25% !important;

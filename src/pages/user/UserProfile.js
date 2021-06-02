@@ -77,8 +77,8 @@ const UserProfile = () => {
     history.replace("/login");
   };
 
+  const formattedPhone = formatPhone();
   useEffect(() => {
-    const formattedPhone = formatPhone();
     user &&
       setUserDetails({
         ...userDetails,
@@ -117,7 +117,7 @@ const UserProfile = () => {
                 iconPosition="left"
                 placeholder="First name"
                 label="First Name"
-                value={userDetails.firstName}
+                value={userDetails.firstName || ""}
                 onChange={handleChange("firstName")}
               />
 
@@ -127,7 +127,7 @@ const UserProfile = () => {
                 iconPosition="left"
                 placeholder="Last name"
                 label="Last Name"
-                value={userDetails.lastName}
+                value={userDetails.lastName || ""}
                 onChange={handleChange("lastName")}
               />
             </Form.Group>
@@ -138,7 +138,7 @@ const UserProfile = () => {
               placeholder="example@example.com"
               label="Email"
               type="email"
-              value={userDetails.email}
+              value={userDetails.email || ""}
               onChange={handleChange("email")}
             />
             <StyledPhoneWrapper>
@@ -155,7 +155,7 @@ const UserProfile = () => {
                   type="text"
                   pattern="[0-9]{1}"
                   title="Enter the country code"
-                  value={userDetails.countryCode}
+                  value={userDetails.countryCode || ""}
                   onChange={handleChange("countryCode")}
                 />
               </div>
@@ -196,7 +196,7 @@ const UserProfile = () => {
               iconPosition="left"
               placeholder="https://docs.google.com/spreadsheets/d/CveaIsVeKQ"
               label="Google Sheets Link"
-              value={userDetails.sheetsURL}
+              value={userDetails.sheetsURL || ""}
               onChange={handleChange("sheetsURL")}
             />
             <Form.Group widths="equal">
@@ -209,7 +209,7 @@ const UserProfile = () => {
                 placeholder="in"
                 min="40"
                 max="90"
-                value={userDetails.height}
+                value={userDetails.height || ""}
                 onChange={handleChange("height")}
               />
 
@@ -221,7 +221,7 @@ const UserProfile = () => {
                 label="Weight"
                 placeholder="lb"
                 min="70"
-                value={userDetails.weight}
+                value={userDetails.weight || ""}
                 onChange={handleChange("weight")}
               />
             </Form.Group>
@@ -234,7 +234,7 @@ const UserProfile = () => {
                 placeholder="yr"
                 min="15"
                 type="number"
-                value={userDetails.age}
+                value={userDetails.age || ""}
                 onChange={handleChange("age")}
               />
               <Form.Select
@@ -246,7 +246,7 @@ const UserProfile = () => {
                   { key: "f", text: "Female", value: "female" },
                   { key: "o", text: "Other", value: "other" },
                 ]}
-                value={userDetails.gender}
+                value={userDetails.gender || ""}
                 onChange={handleChange("gender")}
               />
             </Form.Group>
