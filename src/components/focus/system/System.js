@@ -19,7 +19,7 @@ const System = () => {
       <ShareToggle
         shared={shared[0]}
         handleSave={handleSaveShared}
-        field="practice"
+        field="system"
       />
       <div style={{ marginBottom: "1rem" }}>
         <Practices />

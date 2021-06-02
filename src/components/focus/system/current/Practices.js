@@ -56,7 +56,7 @@ const Practices = () => {
   const getCurrPractices = async () => {
     const practices = await getCurrentPractices();
 
-    setCurrPractices([...practices.data]);
+    practices && practices.data && setCurrPractices([...practices.data]);
   };
 
   const handleSaveStoredPractice = async (data, id) => {
@@ -83,7 +83,9 @@ const Practices = () => {
   const getStoredPractices = async () => {
     const storedPractices = await getPracticeStore();
 
-    setStoredPractices([...storedPractices.data]);
+    storedPractices &&
+      storedPractices.data &&
+      setStoredPractices([...storedPractices.data]);
   };
 
   useEffect(() => {
