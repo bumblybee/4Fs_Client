@@ -4,6 +4,7 @@ import FTabBar from "./fTabBar/FTabBar";
 import TabMenu from "./tabs/TabMenu";
 import SectionContainer from "./SectionContainer";
 import Contact from "./contact/Contact";
+import WelcomeMessage from "../home/welcomeMessage/WelcomeMessage";
 
 const AppWrapper = ({ component, tabs }) => {
   return (
@@ -11,6 +12,7 @@ const AppWrapper = ({ component, tabs }) => {
       <NavBar />
       <FTabBar />
       {tabs && <TabMenu />}
+      {component.type.name === "Milestones" && <WelcomeMessage />}
       <SectionContainer>{component}</SectionContainer>
       {component.type.name === "Milestones" && <Contact />}
     </div>

@@ -15,12 +15,9 @@ const UserProvider = ({ children }) => {
   const getCurrentUser = useCallback(async () => {
     const userData = await getUser();
 
-    if (userData && !userData.error) {
+    if (userData && userData.data && !userData.error) {
       setUser(userData.data.user);
       return userData.data.user;
-    } else {
-      setUser(null);
-      return null;
     }
   }, []);
 
@@ -33,7 +30,7 @@ const UserProvider = ({ children }) => {
   const logUserIn = async (userDetails) => {
     const userData = await loginUser(userDetails);
 
-    userData.data && setUser(userData.data.data);
+    userData && userData.data && setUser(userData.data.data);
     return userData;
   };
 
