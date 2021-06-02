@@ -1,4 +1,7 @@
 import React from "react";
+import useCRUD from "../../../hooks/useCRUD";
+import { getShared, mutateShared } from "../../../api/share/shareApi";
+import ShareToggle from "../../layout/share/ShareToggle";
 import Accomplishments from "./Accomplishments";
 import Moments from "./Moments";
 import Skills from "./Skills";
@@ -7,6 +10,8 @@ import { StyledSwaggerTableContainer } from "./StyledSwagger";
 
 // Todo: Add skills table
 const SwaggerStockpile = () => {
+  const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
+
   return (
     <div>
       <SectionHeader
@@ -25,7 +30,12 @@ const SwaggerStockpile = () => {
           </h4>
         }
       />
-
+      <ShareToggle
+        shared={shared[0]}
+        handleSave={handleSaveShared}
+        field="swagger"
+        width="89.5%"
+      />
       <StyledSwaggerTableContainer>
         <Moments />
         <Accomplishments />

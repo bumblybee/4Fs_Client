@@ -1,14 +1,16 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Route } from "react-router-dom";
 import { UserContext } from "../../../context/user/UserContext";
+import useCRUD from "../../../hooks/useCRUD";
+import { getShared, mutateShared } from "../../../api/share/shareApi";
+import ShareToggle from "../../layout/share/ShareToggle";
 import HabitsTable from "./HabitsTable";
 import Rewards from "./Rewards";
 import SectionHeader from "../../layout/SectionHeader";
-
-import { Segment, Button, Icon } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 import { StyledHabitsTableContainer, StyledButton } from "./StyledHabits";
 
 const Habits = () => {
+  const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
   const [url, setUrl] = useState(null);
   const { user } = useContext(UserContext);
 
@@ -28,7 +30,12 @@ const Habits = () => {
           </StyledButton>
         }
       />
-      {/* <Segment color="olive" inverted></Segment> */}
+      <ShareToggle
+        shared={shared[0]}
+        handleSave={handleSaveShared}
+        field="habit"
+        width="95%"
+      />
 
       <StyledHabitsTableContainer>
         <div></div>

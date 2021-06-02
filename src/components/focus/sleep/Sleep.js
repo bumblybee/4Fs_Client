@@ -1,20 +1,25 @@
 import React, { useState, useContext, useEffect } from "react";
 import moment from "moment";
 import useCRUD from "../../../hooks/useCRUD";
-import { NotificationContext } from "../../../context/notification/NotificationContext";
-import generateCellComponent from "../../../utils/generateCellComponent";
 import {
   getSleep,
   mutateSleep,
   deleteSleep,
 } from "../../../api/focus/sleepApi";
+import { getShared, mutateShared } from "../../../api/share/shareApi";
+import ShareToggle from "../../layout/share/ShareToggle";
+import { NotificationContext } from "../../../context/notification/NotificationContext";
+import generateCellComponent from "../../../utils/generateCellComponent";
 import TableComponent from "../../table/TableComponent";
 import SectionHeader from "../../layout/SectionHeader";
 import SleepTableHeader from "../../focus/sleep/SleepTableHeader";
 
 const Sleep = () => {
+  const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
+
   const { setNotificationMessage, clearNotificationMessage } =
     useContext(NotificationContext);
+
   const [sleep, setSleep] = useState([]);
   const [newRow, setNewRow] = useState({});
 
@@ -277,6 +282,11 @@ const Sleep = () => {
         <SectionHeader
           title="Sleep Tracker"
           subtext="Purpose: To bring awareness to how much sleep you are getting and help you focus on getting your desired rest."
+        />
+        <ShareToggle
+          shared={shared[0]}
+          handleSave={handleSaveShared}
+          field="sleep"
         />
         <TableComponent
           columns={columns}
