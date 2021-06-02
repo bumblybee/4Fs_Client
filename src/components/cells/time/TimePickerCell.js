@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import moment from "moment";
 import {
   StyledTimePickerCellWrapper,
   StyledTimePickerCell,
@@ -33,23 +32,6 @@ const TimePickerCell = (props) => {
       }
     }
   };
-
-  // function findHoursSlept(data) {
-  //   let timeSlept = null;
-
-  //   if (data.toBed && data.woke) {
-  //     const slept = moment(data.toBed, "HH:mm:ss");
-  //     const woke = moment(data.woke, "HH:mm:ss");
-
-  //     if (woke.isBefore(slept)) woke.add(1, "day");
-
-  //     const duration = moment.duration(woke.diff(slept));
-
-  //     timeSlept = moment.utc(+duration).format("HH:mm");
-  //   }
-
-  //   return timeSlept;
-  // }
 
   useEffect(() => {
     setTime(props.val);

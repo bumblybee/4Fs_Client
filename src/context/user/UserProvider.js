@@ -55,8 +55,6 @@ const UserProvider = ({ children }) => {
     getCurrentUser();
   }, [getCurrentUser]);
 
-  console.log(user);
-
   return (
     <UserContext.Provider
       value={{
