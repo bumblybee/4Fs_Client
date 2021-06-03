@@ -4,7 +4,7 @@ import useCRUD from "../../../hooks/useCRUD";
 import moment from "moment";
 import FastingProgress from "./FastingProgress";
 import FastingMessage from "./FastingMessage";
-import Gauge2 from "../gauge/Gauge2";
+import Gauge from "../gauge/Gauge";
 import { Form, Button } from "semantic-ui-react";
 import {
   StyledFastingWrapper,
@@ -100,7 +100,7 @@ const FastingWindow = () => {
             Run
           </Button>
         </StyledForm>
-        <Gauge2
+        <Gauge
           percentage={percentage}
           today={todayHours}
           goal={goalHours}

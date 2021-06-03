@@ -38,7 +38,7 @@ export const StyledTable = styled(Table)`
   }
 
   .fasting-progress td {
-    padding: 0.4rem 0.25rem 0 !important;
+    padding: 0.5rem 0.25rem 0.3rem !important;
   }
 
   /* .fasting-progress tr:first-child th:first-child {

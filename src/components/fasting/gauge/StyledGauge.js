@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const StyledGaugeWrapper = styled.div`
   position: relative;
   height: 100%;
-  margin-top: 0.25rem;
+  margin-top: 1.6rem;
   color: #333;
 
   .zero {
     position: absolute;
-    bottom: 18%;
-    left: 8.5%;
+    bottom: 22%;
+    left: 9%;
     font-weight: 600;
     transform: rotate(-90deg);
     color: #666;
@@ -26,8 +26,8 @@ export const StyledGaugeWrapper = styled.div`
 
   .twelve {
     position: absolute;
-    top: 0;
-    left: 50%;
+    top: -8%;
+    left: 49%;
     transform: translateX(-50%);
     font-weight: 600;
     color: #666;
@@ -44,16 +44,16 @@ export const StyledGaugeWrapper = styled.div`
 
   .twenty-four {
     position: absolute;
-    bottom: 18%;
-    right: 7.5%;
+    bottom: 22%;
+    right: 10%;
     font-weight: 600;
     color: #666;
 
     transform: rotate(90deg);
   }
 
-  svg g.text-group text {
-    font-size: 1.75rem !important;
+  svg g g.text-group text.percent-text {
+    font-size: 1.15rem !important;
     font-weight: 600;
   }
 

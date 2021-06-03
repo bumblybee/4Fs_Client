@@ -1,93 +1,68 @@
-import React, { useEffect, useState } from "react";
-import ReactSpeedometer from "react-d3-speedometer";
-import { RadialGauge } from "react-canvas-gauges";
+import React from "react";
+import GaugeChart from "react-advanced-gauge-chart";
 import { StyledGaugeWrapper } from "./StyledGauge";
 
-const Gauge = ({ today, goal }) => {
-  const [stops, setStops] = useState([]);
-  const [colors, setColors] = useState([]);
-  const [labels, setLabels] = useState([]);
+const Gauge = ({ today, goal, fasting }) => {
+  const renderColors = () => {
+    const todayHours = Number(today);
+    const goalHours = Number(goal);
+    const hoursUnderGoal = goalHours - todayHours;
+    // 12 levels in gauge, so divide today hours by 2 to find placement in 24 hour gauge
+    const stop = Math.round(todayHours / 2 - 1);
 
-  useEffect(() => {
-    setStops([0, Number(today), Number(goal), 24]);
-    renderColors(today, goal);
-    renderLabels();
-  }, [today, goal]);
-
-  const renderColors = (today, goal) => {
-    today = Number(today);
-    goal = Number(goal);
-
-    if (today) {
-      if (today === goal || today > goal) {
-        setColors(["#78db3bdd", "#63ff00", "#cccccc55"]);
+    if (todayHours) {
+      if (todayHours === goalHours || todayHours > goalHours) {
+        return Array(12)
+          .fill("")
+          .map((el, i) => (i <= stop ? "#00ff00" : "#ccc"));
+      } else if (hoursUnderGoal > 4) {
+        return Array(12)
+          .fill("")
+          .map((el, i) => (i <= stop ? "#ff0000" : "#ccc"));
+      } else if (hoursUnderGoal <= 4 && hoursUnderGoal > 2) {
+        return Array(12)
+          .fill("")
+          .map((el, i) =>
+            i <= stop - 2 ? "#ff0000" : i <= stop ? "#ff8b00" : "#ccc"
+          );
       } else {
-        setColors(["#78db3bdd", "#dd2828bb", "#cccccc55"]);
+        return Array(12)
+          .fill("")
+          .map((el, i) =>
+            i <= stop - 4
+              ? "#ff0000"
+              : i <= stop - 2
+              ? "#ff8b00"
+              : i <= stop
+              ? "#fff200"
+              : "#ccc"
+          );
       }
     }
   };
 
-  const renderLabels = () => {
-    today &&
-      setLabels([
-        {
-          text:
-            Number(today) >= Number(goal) ? "Goal Achieved!" : `Today ${today}`,
-          position: "INSIDE",
-          color: "#fff",
-        },
-        {
-          text: Number(today) < Number(goal) ? `Goal ${goal}` : "",
-          position: "INSIDE",
-          color: "#fff",
-        },
-        {
-          text: ``,
-          position: "OUTSIDE",
-          color: "",
-        },
-      ]);
-  };
-
   return (
-    <StyledGaugeWrapper today={today}>
-      <span className="zero">0</span>
-      <span className="six">6</span>
+    <StyledGaugeWrapper>
+      {/* <span className="zero">0</span>
       <span className="twelve">12</span>
-      <span className="eighteen">18</span>
-      <span className="twenty-four">24</span>
-
-      <ReactSpeedometer
-        forceRender={true}
-        needleHeightRatio={0.7}
-        maxSegmentLabels={0}
-        segments={12}
-        customSegmentStops={stops}
-        needleTransition="easeBackOut"
-        // needleTransitionDuration={500}
-        segmentColors={colors}
-        needleColor={"#000000ee"}
-        customSegmentLabels={labels}
-        currentValueText={
-          today ? `Achieved ${today} of ${goal} hours` : "hours"
+      <span className="twenty-four">24</span> */}
+      <GaugeChart
+        style={{ width: "350px" }}
+        id="gauge-chart3"
+        nrOfLevels={12}
+        colors={renderColors()}
+        arcWidth={0.31}
+        arcPadding={0.03}
+        percent={today / 24}
+        // previousValue={fasting[1].performed}
+        needleColor="grey"
+        needleBaseColor="grey"
+        animDelay={50}
+        textColor="black"
+        formatTextValue={(val) =>
+          !today ? "0 / 24 hours" : `${today}/${goal} hours`
         }
-        ringWidth={130}
-        minValue={0}
-        maxValue={24}
-        value={today}
-        height={190}
-        textColor={"#333"}
-        valueTextFontSize={13}
       />
-      {/* <RadialGauge
-        units="hours"
-        title="Fasting Window"
-        value={today ? today : 0}
-        minValue={0}
-        maxValue={24}
-        majorTicks={["0", "4", "8", "12", "16", "20", "24"]}
-        minorTicks={2}
-      ></RadialGauge> */}
     </StyledGaugeWrapper>
   );
 };
