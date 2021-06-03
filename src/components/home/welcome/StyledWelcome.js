@@ -3,7 +3,7 @@ import { Message } from "semantic-ui-react";
 
 export const StyledWelcomeMessage = styled(Message)`
   width: 24% !important;
-  margin: -1.25% auto 0.75% !important;
+  margin: -1.25% auto 0.55% !important;
   /* background: ${(props) => !props.visible && "#fff !important"};
   box-shadow: ${(props) => !props.visible && "none !important"}; */
   text-align: center;

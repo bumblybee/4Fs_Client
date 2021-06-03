@@ -6,7 +6,7 @@ import SectionContainer from "./SectionContainer";
 import Contact from "./contact/Contact";
 import WelcomeMessage from "../home/welcome/WelcomeMessage";
 
-const AppWrapper = ({ component, tabs }) => {
+const AppWrapper = ({ component, tabs, landing }) => {
   console.log(component);
   return (
     <div style={{ height: "100%" }}>
@@ -14,10 +14,10 @@ const AppWrapper = ({ component, tabs }) => {
       <FTabBar />
 
       {tabs && <TabMenu />}
-      {component.type.name === "Milestones" && <WelcomeMessage />}
+      {landing && <WelcomeMessage />}
 
       <SectionContainer>{component}</SectionContainer>
-      {component.type.name === "Milestones" && <Contact />}
+      {landing && <Contact />}
     </div>
   );
 };

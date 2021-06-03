@@ -24,7 +24,7 @@ const Routes = () => {
         <Redirect to="/home/milestones" />
       </ProtectedRoute>
       <ProtectedRoute path="/home/milestones">
-        <AppWrapper component={<Milestones />} tabs />
+        <AppWrapper component={<Milestones />} tabs landing />
       </ProtectedRoute>
       <ProtectedRoute path="/home/beliefs">
         <AppWrapper component={<Beliefs />} tabs />
