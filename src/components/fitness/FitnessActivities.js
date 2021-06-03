@@ -5,9 +5,9 @@ const FitnessActivities = () => {
   return (
     <SheetsComponent
       colorScheme="olive"
-      buttonText="Program Sheet"
       title="Fitness Activities"
       subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      sheetId="#gid=1359877998"
     />
   );
 };

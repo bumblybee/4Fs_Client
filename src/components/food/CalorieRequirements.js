@@ -5,9 +5,9 @@ const CalorieRequirements = () => {
   return (
     <SheetsComponent
       colorScheme="blue"
-      buttonText="Program Sheet"
       title="Calorie Requirements"
       subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      sheetId="#gid=1239424910"
     />
   );
 };

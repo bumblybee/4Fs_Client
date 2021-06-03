@@ -7,6 +7,8 @@ const ButtonCell = (props) => {
       size={props.size}
       as="a"
       href={props.to}
+      target="_blank"
+      rel="noopener"
       accessor={props.accessor}
       color={props.color}
       isCentered={props.isCentered}

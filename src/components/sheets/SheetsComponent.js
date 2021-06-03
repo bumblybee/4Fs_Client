@@ -12,14 +12,13 @@ const SheetsComponent = ({
   title,
   subtitle,
   subtext,
-  buttonText,
   colorScheme,
   field,
+  sheetId,
 }) => {
-  // TODO: Specify which sheet to direct user to
   const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
   const { user } = useContext(UserContext);
-  const [url, setUrl] = useState(user && user.sheetsURL);
+  const [url, setUrl] = useState(user && user.sheetsURL + sheetId);
 
   const columns = [
     {
@@ -27,13 +26,13 @@ const SheetsComponent = ({
       key: "sheetsURL",
     },
   ];
-
+  console.log(url);
   const rows = () => {
     const rowData = {
       sheetsURL: {
         cellComponent: generateCellComponent("button", {
           to: url ? url : "/profile",
-          val: url ? buttonText : "Add Google Sheets Link in Profile",
+          val: url ? "Program Sheet" : "Add Google Sheets Link in Profile",
           accessor: "sheetsURL",
           color: colorScheme,
           size: "huge",
@@ -47,7 +46,7 @@ const SheetsComponent = ({
   };
 
   useEffect(() => {
-    user && user.sheetsURL && setUrl(user.sheetsURL);
+    user && user.sheetsURL && setUrl(user.sheetsURL + sheetId);
   }, [user]);
 
   return (

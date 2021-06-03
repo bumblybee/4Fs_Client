@@ -6,9 +6,9 @@ const MealPlanner = () => {
     <SheetsComponent
       field="food"
       colorScheme="red"
-      buttonText="Program Sheet"
       title="Meal Planner"
       subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      sheetId="#gid=679021059"
     />
   );
 };

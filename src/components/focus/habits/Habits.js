@@ -15,7 +15,7 @@ const Habits = () => {
   const { user } = useContext(UserContext);
 
   useEffect(() => {
-    user && user.sheetsURL && setUrl(user.sheetsURL);
+    user && user.sheetsURL && setUrl(user.sheetsURL + "#gid=1514598991");
   }, [user]);
 
   return (
@@ -24,7 +24,12 @@ const Habits = () => {
         title="Habit Creator"
         subtext="Purpose: To create satisfaction doing your new habit."
         component={
-          <StyledButton as="a" href={url ? url : "/profile"}>
+          <StyledButton
+            as="a"
+            href={url ? url : "/profile"}
+            target="_blank"
+            rel="noopener"
+          >
             <Icon name="google drive" />
             {url ? "Program Sheet" : "Add Google Sheets Link in Profile"}
           </StyledButton>

@@ -6,9 +6,9 @@ const FitnessPlanner = () => {
     <SheetsComponent
       field="fitness"
       colorScheme="purple"
-      buttonText="Google Sheets"
       title="Fitness Planner"
       subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      sheetId="#gid=1062021121"
     />
   );
 };

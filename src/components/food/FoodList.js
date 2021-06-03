@@ -5,9 +5,9 @@ const FoodList = () => {
   return (
     <SheetsComponent
       colorScheme="orange"
-      buttonText="Program Sheet"
       title="Food List"
       subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      sheetId="#gid=1557042622"
     />
   );
 };
