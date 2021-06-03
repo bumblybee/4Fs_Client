@@ -2,7 +2,9 @@ import axios from "axios";
 import { handleErrors, handleErrorsArray } from "../handlers/errorHandler";
 
 const baseURL =
-  process.env.NODE_ENV === "development" ? "http://localhost:9000" : "";
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:9000"
+    : "http://localhost:9000";
 
 const instance = axios.create({
   baseURL,
