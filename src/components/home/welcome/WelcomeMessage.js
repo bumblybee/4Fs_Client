@@ -17,10 +17,9 @@ const WelcomeMessage = () => {
     user && (
       <StyledWelcomeMessage
         header={`Welcome ${user.firstName}!`}
-        list={list}
-        size="small"
-        // color="orange"
-        // floating
+        // list={list}
+        // size="small"
+        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores similique laboriosam porro nobis expedita blanditiis error aliquam beatae minus perferendis, sapiente aperiam hic in iusto ex magni? Veritatis architecto, alias asperiores quis incidunt pariatur reprehenderit explicabo quas at tempore quae nesciunt obcaecati, numquam nemo neque. Velit tenetur nisi expedita dignissimos?error aliquam beatae minus perferendis, sapiente aperiam hic "
       ></StyledWelcomeMessage>
     )
   );

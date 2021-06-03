@@ -2,13 +2,11 @@ import styled from "styled-components";
 import { Message } from "semantic-ui-react";
 
 export const StyledWelcomeMessage = styled(Message)`
-  width: 23% !important;
-  margin: -1.25% auto 0.55% !important;
-  /* background: ${(props) => !props.visible && "#fff !important"};
-  box-shadow: ${(props) => !props.visible && "none !important"}; */
+  width: 30% !important;
+  margin: -1.25% auto 0.65% !important;
   text-align: center;
-  font-size: 0.975rem !important;
-  padding: 1rem !important;
+  /* font-size: 1rem !important; */
+  padding: 1.5rem !important;
 
   .header {
     text-align: center;
