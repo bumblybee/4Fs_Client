@@ -4,7 +4,7 @@ import { handleErrors, handleErrorsArray } from "../handlers/errorHandler";
 const baseURL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:9000"
-    : "http://localhost:9000";
+    : "https://four-fs-server.herokuapp.com";
 
 const instance = axios.create({
   baseURL,
