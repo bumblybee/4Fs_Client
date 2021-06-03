@@ -15,9 +15,8 @@ const AppWrapper = ({ component, tabs, landing }) => {
       {tabs && <TabMenu />}
       {landing && <WelcomeMessage />}
 
-      <SectionContainer>
-        {component} {landing && <Contact />}
-      </SectionContainer>
+      <SectionContainer>{component}</SectionContainer>
+      {landing && <Contact />}
     </div>
   );
 };

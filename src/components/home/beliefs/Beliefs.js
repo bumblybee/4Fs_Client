@@ -66,20 +66,20 @@ const Beliefs = () => {
         <SectionHeader
           title="Empowering Beliefs"
           subtext="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam,
-          laboriosam!"
+          laboriosam! Lorem ipsum dolor sit amet."
         />
         <ShareToggle
           shared={shared[0]}
           handleSave={handleSaveShared}
           field="belief"
-          width="59%"
+          width="64%"
         />
         <TableComponent
           rows={rows(addEmptyRow())}
           columns={columns}
           color="purple"
           aligntext="center"
-          width="60%"
+          width="65%"
           margin="0 auto"
           compact
         />

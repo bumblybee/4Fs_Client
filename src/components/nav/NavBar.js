@@ -4,7 +4,6 @@ import { Image, Button, Icon } from "semantic-ui-react";
 import { StyledNav, StyledUserButton, StyledLogoButton } from "./StyledNavBar";
 
 const NavBar = () => {
-  // Using history push when click user profile so forces full page reload to ensure user date loaded - maybe send state with link instead?
   const history = useHistory();
   return (
     <StyledNav>
