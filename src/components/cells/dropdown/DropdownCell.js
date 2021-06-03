@@ -39,7 +39,7 @@ const DropdownCell = ({ label, options, defaultState, ...props }) => {
       style={{ minWidth: "120px", maxWidth: "120px" }}
       selection
       text={state}
-      disable={configureOptions().length === 0}
+      disabled={configureOptions().length === 0}
       options={configureOptions()}
       onChange={(e, data) => handleSelect(e, data)}
     />

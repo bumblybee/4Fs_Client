@@ -19,6 +19,7 @@ const ProgressCell = (props) => {
       return "#78db3b";
     }
   };
+
   return (
     <StyledProgressWrapper color={renderColor(percentage)}>
       <progress min="0" max="100" value={props.val}></progress>
