@@ -17,6 +17,7 @@ const UserProvider = ({ children }) => {
 
     if (userData && userData.data && !userData.error) {
       setUser(userData.data.user);
+      console.log(userData.data.user);
       return userData.data.user;
     }
   }, []);

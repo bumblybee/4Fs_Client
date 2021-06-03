@@ -13,7 +13,6 @@ import {
 import * as sc from "../../styles/GlobalStyledComponents";
 
 // TODO: format sheets url before sending to server - url.split("#")[0] - removes id so can add dynamically later
-
 const UserProfile = () => {
   const history = useHistory();
   const { setNotificationMessage } = useContext(NotificationContext);
@@ -34,14 +33,24 @@ const UserProfile = () => {
     sheetsURL: "",
   });
 
+  const formatSheetsUrl = (url) => {
+    return url.split("#")[0];
+  };
+
   const formatPhone = () => {
     let formattedPhone = "";
     if (user && user.phone && user.phone.includes("null")) {
       formattedPhone = null;
-    } else if (user && user.phone && !user.phone.contains("null")) {
+    } else if (user && user.phone && !user.phone.includes("null")) {
       formattedPhone = user.phone.split("-");
     }
-    return formattedPhone;
+
+    return {
+      countryCode: formattedPhone[0],
+      phone1: formattedPhone[1],
+      phone2: formattedPhone[2],
+      phone3: formattedPhone[3],
+    };
   };
 
   const handleChange = (field) => (e) => {
@@ -57,16 +66,19 @@ const UserProfile = () => {
 
     const phoneNumber =
       userDetails.phone1 !== null
-        ? `${userDetails.countryCode}-${userDetails.phone1}-${userDetails.phone2}-${userDetails.phone3}`
+        ? `${userDetails.countryCode || 1}-${userDetails.phone1}-${
+            userDetails.phone2
+          }-${userDetails.phone3}`
         : null;
 
     const data = (({ countryCode, phone1, phone2, phone3, ...rest }) => rest)({
       ...userDetails,
       phone: phoneNumber,
+      sheetsURL: formatSheetsUrl(userDetails.sheetsURL),
     });
 
     const res = await updateUserDetails(data);
-
+    console.log(res);
     res &&
       setNotificationMessage("Your information has been updated", "info", true);
   };
@@ -77,7 +89,7 @@ const UserProfile = () => {
     history.replace("/login");
   };
 
-  const formattedPhone = formatPhone();
+  const { countryCode, phone1, phone2, phone3 } = formatPhone();
   useEffect(() => {
     user &&
       setUserDetails({
@@ -85,10 +97,10 @@ const UserProfile = () => {
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
-        countryCode: formattedPhone ? formattedPhone[0] : null,
-        phone1: formattedPhone && formattedPhone[1],
-        phone2: formattedPhone && formattedPhone[2],
-        phone3: formattedPhone && formattedPhone[3],
+        countryCode,
+        phone1,
+        phone2,
+        phone3,
         age: user.age,
         height: user.height,
         weight: user.weight,
