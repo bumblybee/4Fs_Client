@@ -7,6 +7,7 @@ import Contact from "./contact/Contact";
 import WelcomeMessage from "../home/welcome/WelcomeMessage";
 
 const AppWrapper = ({ component, tabs }) => {
+  console.log(component);
   return (
     <div style={{ height: "100%" }}>
       <NavBar />
