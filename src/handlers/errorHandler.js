@@ -7,6 +7,8 @@ const errorCodeToMessage = {
     "Token not found or has expired. Try resetting your password again.",
   "No authorization token was found":
     "Uh-oh, looks like you're logged out. Please refresh the page and log in.",
+  "user.unauthorized":
+    "Uh-oh, looks like you aren't logged in. Please refresh the page and log in.",
   "user.invalidEmailFormat": "Please check the email address formatting.",
   "practices.invalidDate": "Date must fall on or after today.",
 };
