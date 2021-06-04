@@ -12,5 +12,5 @@ export const StyledSwaggerTableContainer = styled.div`
 
 export const StyledSectionHeaderText = styled.h4`
   text-align: center;
-  margin: -1.75rem 0 2.5rem;
+  margin: -1.75rem 0 2.25rem !important;
 `;

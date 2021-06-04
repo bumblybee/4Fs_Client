@@ -23,12 +23,7 @@ const SwaggerStockpile = () => {
         Capture both small and big wins. This will be your stockpile that you
         can reference at any time in order to keep you on your path to success."
         component={
-          <StyledSectionHeaderText
-            style={{
-              textAlign: "center",
-              margin: "-1.75rem 0 2.5rem",
-            }}
-          >
+          <StyledSectionHeaderText>
             <em>"I Think. I Know. I Can. I Do."</em>
           </StyledSectionHeaderText>
         }

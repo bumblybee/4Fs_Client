@@ -10,6 +10,7 @@ import {
   StyledButton,
   StyledDatePicker,
 } from "../StyledSystem";
+import { StyledSystemHeaderWrapper } from "./StyledSystemTableHeader";
 
 const SystemTableHeader = ({
   currWeek,
@@ -47,13 +48,8 @@ const SystemTableHeader = ({
   };
 
   return (
-    <div style={{ marginBottom: "0.25rem" }}>
-      <div
-        style={{
-          width: "70%",
-          margin: "0 auto 1rem",
-        }}
-      >
+    <StyledSystemHeaderWrapper>
+      <div>
         {/* Dynamically render text*/}
         {currWeek.startDate ? (
           <p>
@@ -91,7 +87,7 @@ const SystemTableHeader = ({
           </>
         )}
       </StyledStartDateContainer>
-    </div>
+    </StyledSystemHeaderWrapper>
   );
 };
 

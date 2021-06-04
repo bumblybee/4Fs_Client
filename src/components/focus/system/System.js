@@ -5,6 +5,7 @@ import ShareToggle from "../../layout/share/ShareToggle";
 import Practices from "./current/Practices";
 import Progress from "./past/Progress";
 import SectionHeader from "../../layout/SectionHeader";
+import { StyledSystemWrapper } from "./StyledSystem";
 
 const System = () => {
   const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
@@ -21,9 +22,9 @@ const System = () => {
         handleSave={handleSaveShared}
         field="system"
       />
-      <div style={{ marginBottom: "1rem" }}>
+      <StyledSystemWrapper>
         <Practices />
-      </div>
+      </StyledSystemWrapper>
       <Progress />
     </div>
   );

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { Button } from "semantic-ui-react";
 
+export const StyledSystemWrapper = styled.div`
+  margin-bottom: 1rem;
+`;
+
 export const StyledStartDateContainer = styled.div`
   display: flex;
   justify-content: center;
