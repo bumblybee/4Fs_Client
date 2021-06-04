@@ -33,12 +33,16 @@ export const StyledGaugeWrapper = styled.div`
   svg g text.current-value {
     font-family: "Montserrat", sans-serif;
   }
+
+  @media (max-width: 900px) {
+    align-items: flex-end;
+  }
 `;
 
 export const StyledGauge = styled(GaugeChart)`
   width: 360px !important;
 
-  @media (max-width: 900px) {
-    width: 280px !important;
+  @media (max-width: 1027px) {
+    width: 282px !important;
   }
 `;

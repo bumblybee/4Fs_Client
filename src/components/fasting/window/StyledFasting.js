@@ -21,11 +21,8 @@ export const StyledFastingCalcWrapper = styled.div`
   padding: 2rem 1.5rem 1.5rem 1rem;
   background: #fff;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1027px) {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 `;
 
@@ -59,13 +56,13 @@ export const StyledForm = styled(Form)`
     text-align: center !important;
   }
 
-  @media (max-width: 900px) {
-    width: 100%;
+  @media (max-width: 1027px) {
+    width: 25%;
   }
 
   .ui.small.input,
   button {
-    width: 80% !important;
+    width: 100% !important;
   }
 `;
 
@@ -73,7 +70,7 @@ export const StyledFastingProgressWrapper = styled.div`
   width: 70%;
   margin: 0 auto;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1027px) {
     width: 100%;
   }
 `;
