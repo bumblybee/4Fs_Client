@@ -16,8 +16,8 @@ import {
 const FastingWindow = () => {
   const [fasting, handleSave] = useCRUD(getFasting, createFasting);
   const [percentage, setPercentage] = useState(null);
-  const [todayHours, setTodayHours] = useState("");
-  const [goalHours, setGoalHours] = useState("");
+  const [todayHours, setTodayHours] = useState(0);
+  const [goalHours, setGoalHours] = useState(0);
 
   const [fastingWindow, setFastingWindow] = useState({
     goalWindow: "",
@@ -71,7 +71,7 @@ const FastingWindow = () => {
               onChange={(e) =>
                 setFastingWindow({
                   ...fastingWindow,
-                  goalWindow: e.target.value,
+                  goalWindow: Number(e.target.value),
                 })
               }
             />
@@ -90,7 +90,7 @@ const FastingWindow = () => {
               onChange={(e) =>
                 setFastingWindow({
                   ...fastingWindow,
-                  todayWindow: e.target.value,
+                  todayWindow: Number(e.target.value),
                 })
               }
             />
