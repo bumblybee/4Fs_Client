@@ -9,6 +9,7 @@ import {
   StyledFormHeader,
   StyledForm,
 } from "../../styles/GlobalStyledComponents";
+import { StyledPasswordResetHeader } from "./StyledPasswordReset";
 
 const PasswordReset = () => {
   const { setNotificationMessage, clearNotificationMessage } =
@@ -50,22 +51,13 @@ const PasswordReset = () => {
   return (
     <StyledFormWrapper verticalAlign="middle" centered>
       <StyledSegment className="column" raised>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            marginBottom: "2rem",
-          }}
-        >
+        <StyledPasswordResetHeader>
           <StyledFormHeader as="h2" origin="password" image>
             <Image className="logo" src="/4flogo.png" alt="4fs logo" />
             Create Password
           </StyledFormHeader>
-          <p style={{ textAlign: "center", width: "80%", margin: "0 auto" }}>
-            Enter your new password
-          </p>
-        </div>
+          <p>Enter your new password</p>
+        </StyledPasswordResetHeader>
         <StyledForm onSubmit={handleSubmit}>
           <Segment basic style={{ textAlign: "left" }}>
             <Form.Input
@@ -79,11 +71,10 @@ const PasswordReset = () => {
               onChange={(e) => setNewPassword(e.target.value)}
               required
             />
-            <div style={{ display: "grid", gridGap: "0.5rem" }}>
-              <Button fluid size="large" color="blue" type="submit">
-                Submit
-              </Button>
-            </div>
+
+            <Button fluid size="large" color="blue" type="submit">
+              Submit
+            </Button>
           </Segment>
         </StyledForm>
       </StyledSegment>

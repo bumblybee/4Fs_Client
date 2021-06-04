@@ -9,7 +9,6 @@ const FTabBar = () => {
   const path = pathname.split("/")[1];
 
   const [activeItem, setActiveItem] = useState("");
-  // ea8b1c;
 
   useEffect(() => {
     setActiveItem(path);
@@ -21,7 +20,6 @@ const FTabBar = () => {
         <Link to="/focus">
           <Menu.Item
             name="focus"
-            tab="focus"
             as="div"
             active={activeItem === "focus"}
             onClick={(e) => setActiveItem("focus")}

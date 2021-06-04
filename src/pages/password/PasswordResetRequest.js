@@ -9,6 +9,10 @@ import {
   StyledFormHeader,
   StyledForm,
 } from "../../styles/GlobalStyledComponents";
+import {
+  StyledPasswordResetHeader,
+  StyledPasswordResetButtonContainer,
+} from "./StyledPasswordReset";
 
 const PasswordResetRequest = () => {
   const history = useHistory();
@@ -29,23 +33,16 @@ const PasswordResetRequest = () => {
   ) : (
     <StyledFormWrapper verticalAlign="middle" centered>
       <StyledSegment className="column" raised>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            marginBottom: "2rem",
-          }}
-        >
+        <StyledPasswordResetHeader>
           <StyledFormHeader as="h2" origin="password" image>
             <Image className="logo" src="/4flogo.png" alt="4fs logo" />
             Reset Password
           </StyledFormHeader>
-          <p style={{ textAlign: "center", width: "80%", margin: "0 auto" }}>
+          <p>
             A link to reset your password will be sent to the email address
             provided
           </p>
-        </div>
+        </StyledPasswordResetHeader>
         <StyledForm onSubmit={handleSubmit}>
           <Segment basic style={{ textAlign: "left" }}>
             <Form.Input
@@ -58,7 +55,7 @@ const PasswordResetRequest = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <div style={{ display: "grid", gridGap: "0.5rem" }}>
+            <StyledPasswordResetButtonContainer>
               <Button fluid size="large" color="blue" type="submit">
                 Submit
               </Button>
@@ -66,7 +63,7 @@ const PasswordResetRequest = () => {
               <Button basic fluid onClick={() => history.goBack()}>
                 Cancel
               </Button>
-            </div>
+            </StyledPasswordResetButtonContainer>
           </Segment>
         </StyledForm>
       </StyledSegment>
