@@ -5,12 +5,13 @@ import {
   deleteCurrentWeek,
 } from "../../../../api/focus/practicesApi";
 import { NotificationContext } from "../../../../context/notification/NotificationContext";
+
 import {
+  StyledSystemHeaderWrapper,
   StyledStartDateContainer,
   StyledButton,
   StyledDatePicker,
-} from "../StyledSystem";
-import { StyledSystemHeaderWrapper } from "./StyledSystemTableHeader";
+} from "./StyledSystemTableHeader";
 
 const SystemTableHeader = ({
   currWeek,
