@@ -40,7 +40,7 @@ const SystemTableHeader = ({
   const handleResetWeek = async () => {
     if (
       window.confirm(
-        "Are you sure you want to reset the current week? This will delete all all goals and progress for the week."
+        "Are you sure you want to reset the current week? This will delete all all goals and progress for the."
       )
     ) {
       await deleteCurrentWeek(currWeek.id);
@@ -86,7 +86,11 @@ const SystemTableHeader = ({
               date={date}
               min={moment().format("YYYY-MM-DD")}
             />
-            <StyledButton size="small" onClick={handleStartWeek}>
+            <StyledButton
+              title="Delete current week"
+              size="small"
+              onClick={handleStartWeek}
+            >
               Start
             </StyledButton>
           </>

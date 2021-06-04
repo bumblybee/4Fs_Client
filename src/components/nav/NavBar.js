@@ -14,7 +14,7 @@ const NavBar = () => {
           title="home"
           onClick={() => history.push("/home")}
         >
-          <Image src="/4flogo.png" circular />
+          <Image src="/4flogo.png" alt="4Fs logo" circular />
         </StyledLogoButton>
       </div>
 

@@ -25,7 +25,7 @@ export const StyledNav = styled.div`
 
 export const StyledUserButton = styled(Button)`
   border-radius: 50% !important;
-  padding: 13px 11px 13px 13px !important;
+  padding: 13px 11px 14px 13px !important;
   box-shadow: 0 0 10px 2px rgba(17, 47, 167, 0.3);
   color: #2f528b;
   border: 2px solid #2f528b;
