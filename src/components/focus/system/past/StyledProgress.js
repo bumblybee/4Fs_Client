@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Segment } from "semantic-ui-react";
-import TableComponent from "../../../table/TableComponent";
 
 export const StyledProgressToggle = styled(Segment)`
   color: ${(props) => (props.showweeks ? "#b463b4" : "#800080")};
@@ -15,6 +14,6 @@ export const StyledProgressToggle = styled(Segment)`
   }
 `;
 
-export const StyledProgressTable = styled(TableComponent)`
-  /* width: 43% !important; */
+export const StyledProgressText = styled.p`
+  padding-left: 1.5rem;
 `;

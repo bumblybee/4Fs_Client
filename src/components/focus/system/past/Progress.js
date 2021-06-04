@@ -3,8 +3,14 @@ import moment from "moment";
 import useCRUD from "../../../../hooks/useCRUD";
 import { getPracticeProgress } from "../../../../api/focus/practicesApi";
 import generateCellComponent from "../../../../utils/generateCellComponent";
+import TableComponent from "../../../table/TableComponent";
+
 import { Icon } from "semantic-ui-react";
-import { StyledProgressToggle, StyledProgressTable } from "./StyledProgress";
+import {
+  StyledProgressToggle,
+  StyledProgressTable,
+  StyledProgressText,
+} from "./StyledProgress";
 
 const Progress = () => {
   const [showWeeks, setShowWeeks] = useState(false);
@@ -71,9 +77,9 @@ const Progress = () => {
       {showWeeks && (
         <>
           {!practiceProgress.length ? (
-            <p style={{ paddingLeft: "1.5rem" }}>No previous weeks to show</p>
+            <StyledProgressText>No previous weeks to show</StyledProgressText>
           ) : (
-            <StyledProgressTable
+            <TableComponent
               aligntext="left"
               fontsize="0.9rem"
               compact
