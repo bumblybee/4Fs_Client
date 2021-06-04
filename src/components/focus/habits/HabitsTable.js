@@ -6,7 +6,7 @@ import {
   deleteHabit,
 } from "../../../api/focus/habitsApi";
 import useCRUD from "../../../hooks/useCRUD";
-import HabitsTableHeader from "./HabitsTableHeader";
+import HabitsTableHeader from "./header/HabitsTableHeader";
 import TableComponent from "../../table/TableComponent";
 
 // TODO: Add example row

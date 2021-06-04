@@ -1,7 +1,7 @@
 import React from "react";
-import generateCellComponent from "../../../utils/generateCellComponent";
-import { rewards } from "../../../utils/rewards";
-import TableComponent from "../../table/TableComponent";
+import generateCellComponent from "../../../../utils/generateCellComponent";
+import { rewards } from "../../../../utils/rewards";
+import TableComponent from "../../../table/TableComponent";
 
 const Rewards = () => {
   const columns = [

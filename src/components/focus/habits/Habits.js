@@ -4,7 +4,7 @@ import useCRUD from "../../../hooks/useCRUD";
 import { getShared, mutateShared } from "../../../api/share/shareApi";
 import ShareToggle from "../../layout/share/ShareToggle";
 import HabitsTable from "./HabitsTable";
-import Rewards from "./Rewards";
+import Rewards from "./rewards/Rewards";
 import SectionHeader from "../../layout/SectionHeader";
 import { Icon } from "semantic-ui-react";
 import { StyledHabitsTableContainer, StyledButton } from "./StyledHabits";
