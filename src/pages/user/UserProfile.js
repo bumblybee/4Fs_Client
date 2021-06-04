@@ -34,7 +34,7 @@ const UserProfile = () => {
   });
 
   const formatSheetsUrl = (url) => {
-    return url.split("#")[0];
+    return url ? url.split("#")[0] : null;
   };
 
   const formatPhone = () => {
