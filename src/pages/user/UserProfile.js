@@ -39,6 +39,13 @@ const UserProfile = () => {
   };
 
   const formatPhone = () => {
+    if (!user || !user.phone)
+      return {
+        phone1: null,
+        phone2: null,
+        phone3: null,
+      };
+
     let formattedPhone = "";
     if (user && user.phone && user.phone.includes("null")) {
       formattedPhone = null;
@@ -52,7 +59,7 @@ const UserProfile = () => {
       phone3: formattedPhone[2],
     };
   };
-
+  console.log(formatPhone());
   const handleChange = (field) => (e) => {
     setUserDetails({ ...userDetails, [field]: e.target.value });
   };
@@ -66,7 +73,7 @@ const UserProfile = () => {
 
     const phoneNumber =
       userDetails.phone1 !== null
-        ? `$${userDetails.phone1}-${userDetails.phone2}-${userDetails.phone3}`
+        ? `${userDetails.phone1}-${userDetails.phone2}-${userDetails.phone3}`
         : null;
 
     const data = (({ phone1, phone2, phone3, ...rest }) => rest)({
