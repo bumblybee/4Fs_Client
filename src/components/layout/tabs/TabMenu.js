@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Tabs from "./Tabs";
 import { StyledTabContainer, StyledTabMenu } from "./StyledTabs";
 
+// TODO: bring in window resize fn from ftab and use to set size of menu
 const TabMenu = () => {
   const { pathname } = useLocation();
   const path = pathname.split("/")[1];

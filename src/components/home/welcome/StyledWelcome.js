@@ -12,4 +12,9 @@ export const StyledWelcomeMessage = styled(Message)`
     text-align: center;
     font-size: 1.1rem !important;
   }
+
+  @media (max-width: 620px) {
+    width: 90% !important;
+    margin: -5% auto 5% !important;
+  }
 `;
