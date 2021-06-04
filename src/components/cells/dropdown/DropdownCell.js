@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Dropdown } from "semantic-ui-react";
+import { StyledDropdown } from "./StyledDropdownCell";
 
 const DropdownCell = ({ label, options, defaultState, ...props }) => {
   const [state, setState] = useState(defaultState);
@@ -33,10 +33,9 @@ const DropdownCell = ({ label, options, defaultState, ...props }) => {
   };
 
   return (
-    <Dropdown
+    <StyledDropdown
       tabIndex="0"
       ref={dropdownRef}
-      style={{ minWidth: "120px", maxWidth: "120px" }}
       selection
       text={state}
       disabled={configureOptions().length === 0}

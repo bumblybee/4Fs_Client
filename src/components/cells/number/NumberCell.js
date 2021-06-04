@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { StyledNumberCell } from "./StyledNumberCell";
 import { Input } from "semantic-ui-react";
 
 const NumberCell = (props) => {
@@ -24,18 +24,9 @@ const NumberCell = (props) => {
   }, [props.val]);
 
   return (
-    <div
-      style={{
-        width: "55px",
-        display: "flex",
-        justifyContent: props.alignment,
-        alignItems: props.alignment,
-        cursor: props.disabled ? "default" : "pointer",
-      }}
-    >
+    <StyledNumberCell disabled={props.disabled} alignment={props.alignment}>
       <Input
         transparent
-        style={{ width: "35px" }}
         size="small"
         value={inputVal}
         onChange={handleChange}
@@ -43,7 +34,7 @@ const NumberCell = (props) => {
         min="0"
         disabled={props.disabled}
       />
-    </div>
+    </StyledNumberCell>
   );
 };
 

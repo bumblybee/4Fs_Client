@@ -78,7 +78,6 @@ const EditableTableCell = ({ children, ...props }) => {
       onFocus={() => !props.disabled && setEditing(true)}
       onClick={() => !props.disabled && setEditing(true)}
       onBlur={() => setEditing(false)}
-      style={{}}
       tabIndex="0"
       editCellVal={editCellVal}
       alignment={props.alignment}
