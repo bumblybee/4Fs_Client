@@ -4,7 +4,7 @@ import TableComponent from "../../table/TableComponent";
 
 export const StyledFastingWrapper = styled.div`
   height: 100%;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
 `;
@@ -15,7 +15,7 @@ export const StyledFastingCalcWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 70%;
-  margin: 0 auto 1.35rem;
+  margin: 0 auto 1.2rem;
   border: 1px solid #22242626;
   border-radius: 0.27rem;
   padding: 2rem 1.5rem 1.5rem 1rem;

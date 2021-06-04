@@ -5,10 +5,11 @@ import TabMenu from "./tabs/TabMenu";
 import SectionContainer from "./SectionContainer";
 import Contact from "./contact/Contact";
 import WelcomeMessage from "../home/welcome/WelcomeMessage";
+import { StyledAppWrapper } from "./StyledAppWrapper";
 
 const AppWrapper = ({ component, tabs, landing }) => {
   return (
-    <div style={{ height: "100%" }}>
+    <StyledAppWrapper>
       <NavBar />
       <FTabBar />
 
@@ -17,7 +18,7 @@ const AppWrapper = ({ component, tabs, landing }) => {
 
       <SectionContainer>{component}</SectionContainer>
       {landing && <Contact />}
-    </div>
+    </StyledAppWrapper>
   );
 };
 
