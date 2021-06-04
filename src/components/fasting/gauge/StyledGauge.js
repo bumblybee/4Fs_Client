@@ -1,10 +1,14 @@
 import styled from "styled-components";
+import GaugeChart from "react-advanced-gauge-chart";
 
 export const StyledGaugeWrapper = styled.div`
   position: relative;
   height: 100%;
-  margin-top: 1.6rem;
+  /* margin-top: 3.6rem; */
   color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .zero {
     position: absolute;
@@ -70,15 +74,19 @@ export const StyledGaugeWrapper = styled.div`
     z-index: 100 !important;
   }
 
-  svg g.label text.segment-value:nth-child(2) {
-    /* transform: translate(33%, -60%) rotate(30deg) !important; */
-  }
-
   svg g.arc path.speedo-segment {
     fill: ${(props) => !props.today && "#cccccc55"};
   }
 
   svg g text.current-value {
     font-family: "Montserrat", sans-serif;
+  }
+`;
+
+export const StyledGauge = styled(GaugeChart)`
+  width: 360px !important;
+
+  @media (max-width: 900px) {
+    width: 280px !important;
   }
 `;

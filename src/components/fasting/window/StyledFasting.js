@@ -10,20 +10,29 @@ export const StyledFastingWrapper = styled.div`
 `;
 
 export const StyledFastingCalcWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1.5fr 3fr 1.5fr;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 70%;
   margin: 0 auto 1.35rem;
   border: 1px solid #22242626;
   border-radius: 0.27rem;
   padding: 2rem 1.5rem 1.5rem 1rem;
   background: #fff;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 15%;
   margin: 0 auto;
   padding: 0.25rem 1rem 0.25rem;
 
@@ -37,17 +46,26 @@ export const StyledForm = styled(Form)`
   }
 
   .ui.small.input {
-    width: 55% !important;
+    width: 25% !important;
   }
 
   button {
-    width: 55% !important;
+    width: 35% !important;
     margin: 0 auto !important;
     padding: 0.75rem 0.5rem !important;
   }
 
   input::placeholder {
     text-align: center !important;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+
+  .ui.small.input,
+  button {
+    width: 80% !important;
   }
 `;
 

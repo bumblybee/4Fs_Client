@@ -1,6 +1,6 @@
 import React from "react";
 import GaugeChart from "react-advanced-gauge-chart";
-import { StyledGaugeWrapper } from "./StyledGauge";
+import { StyledGaugeWrapper, StyledGauge } from "./StyledGauge";
 
 const Gauge = ({ today, goal, fasting }) => {
   console.log(today, goal);
@@ -35,8 +35,7 @@ const Gauge = ({ today, goal, fasting }) => {
 
   return (
     <StyledGaugeWrapper>
-      <GaugeChart
-        style={{ width: "350px" }}
+      <StyledGauge
         id="gauge-chart3"
         nrOfLevels={12}
         colors={renderColors()}
