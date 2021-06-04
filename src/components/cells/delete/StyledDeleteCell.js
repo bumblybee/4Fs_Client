@@ -9,7 +9,6 @@ export const StyledDeleteCell = styled.div`
 
   i {
     cursor: pointer;
-    color: #c41e3aaa;
   }
 `;
 

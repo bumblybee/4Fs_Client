@@ -24,6 +24,7 @@ const DeleteCell = (props) => {
         title="Delete"
         name="delete"
         onClick={() => setToDelete(!toDelete)}
+        color="red"
       />
     </StyledDeleteCell>
   );

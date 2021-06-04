@@ -25,9 +25,9 @@ const EmptyCell = ({ children, ...props }) => {
       );
     }
 
-    setEditing(false);
-    inputRef.current = emptyCellVal;
+    inputRef.current.value = emptyCellVal;
     setEmptyCellVal("");
+    setEditing(false);
   };
 
   // TODO: Break input into own component
@@ -66,7 +66,7 @@ const EmptyCell = ({ children, ...props }) => {
     <StyledEmptyCell
       onFocus={() => setEditing(true)}
       onClick={() => setEditing(true)}
-      onBlur={() => setEditing(false)}
+      // onBlur={() => setEditing(false)}
       tabIndex="0"
       disabled={props.disabled}
       aligntext={props.aligntext}
