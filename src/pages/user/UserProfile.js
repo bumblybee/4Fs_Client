@@ -1,11 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Input } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
 import { NotificationContext } from "../../context/notification/NotificationContext";
 import {
   StyledProfileHeader,
   StyledPhoneWrapper,
+  StyledPhoneInputsWrapper,
   StyledLinkWrapper,
   StyledFormContainer,
   StyledSegment,
@@ -46,10 +47,9 @@ const UserProfile = () => {
     }
 
     return {
-      countryCode: formattedPhone[0],
-      phone1: formattedPhone[1],
-      phone2: formattedPhone[2],
-      phone3: formattedPhone[3],
+      phone1: formattedPhone[0],
+      phone2: formattedPhone[1],
+      phone3: formattedPhone[2],
     };
   };
 
@@ -66,12 +66,10 @@ const UserProfile = () => {
 
     const phoneNumber =
       userDetails.phone1 !== null
-        ? `${userDetails.countryCode || 1}-${userDetails.phone1}-${
-            userDetails.phone2
-          }-${userDetails.phone3}`
+        ? `$${userDetails.phone1}-${userDetails.phone2}-${userDetails.phone3}`
         : null;
 
-    const data = (({ countryCode, phone1, phone2, phone3, ...rest }) => rest)({
+    const data = (({ phone1, phone2, phone3, ...rest }) => rest)({
       ...userDetails,
       phone: phoneNumber,
       sheetsURL: formatSheetsUrl(userDetails.sheetsURL),
@@ -89,7 +87,7 @@ const UserProfile = () => {
     history.replace("/login");
   };
 
-  const { countryCode, phone1, phone2, phone3 } = formatPhone();
+  const { phone1, phone2, phone3 } = formatPhone();
   useEffect(() => {
     user &&
       setUserDetails({
@@ -97,7 +95,7 @@ const UserProfile = () => {
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
-        countryCode,
+
         phone1,
         phone2,
         phone3,
@@ -154,53 +152,40 @@ const UserProfile = () => {
               onChange={handleChange("email")}
             />
             <StyledPhoneWrapper>
-              <div>
-                <label style={{ display: "block" }} htmlFor="">
-                  Phone
-                </label>
-                <Form.Input
-                  fluid
-                  className="country-code phone"
-                  placeholder="1"
+              <label htmlFor="">Phone</label>
+              <StyledPhoneInputsWrapper>
+                <Input
+                  placeholder="555"
                   icon="phone"
                   iconPosition="left"
                   type="text"
-                  pattern="[0-9]{1}"
-                  title="Enter the country code"
-                  value={userDetails.countryCode || ""}
-                  onChange={handleChange("countryCode")}
+                  pattern="[0-9]{3}"
+                  title="Enter the area code"
+                  value={userDetails.phone1 || ""}
+                  onChange={handleChange("phone1")}
                 />
-              </div>
-              <input
-                className="phone"
-                placeholder="555"
-                label=""
-                type="text"
-                pattern="[0-9]{3}"
-                title="Enter the area code"
-                value={userDetails.phone1 || ""}
-                onChange={handleChange("phone1")}
-              />
-              <input
-                className="phone"
-                placeholder="555"
-                label=""
-                type="text"
-                pattern="[0-9]{3}"
-                title="Enter first three digits of phone number"
-                value={userDetails.phone2 || ""}
-                onChange={handleChange("phone2")}
-              />
-              <input
-                className="phone"
-                placeholder="5555"
-                label=" "
-                type="text"
-                title="Enter last four digits of phone number"
-                pattern="[0-9]{4}"
-                value={userDetails.phone3 || ""}
-                onChange={handleChange("phone3")}
-              />
+
+                <input
+                  className="phone "
+                  placeholder="555"
+                  label=""
+                  type="text"
+                  pattern="[0-9]{3}"
+                  title="Enter first three digits of phone number"
+                  value={userDetails.phone2 || ""}
+                  onChange={handleChange("phone2")}
+                />
+                <input
+                  className="phone "
+                  placeholder="5555"
+                  label=" "
+                  type="text"
+                  title="Enter last four digits of phone number"
+                  pattern="[0-9]{4}"
+                  value={userDetails.phone3 || ""}
+                  onChange={handleChange("phone3")}
+                />
+              </StyledPhoneInputsWrapper>
             </StyledPhoneWrapper>
             <Form.Input
               fluid
