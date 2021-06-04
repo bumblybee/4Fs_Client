@@ -38,7 +38,11 @@ const SystemTableHeader = ({
   };
 
   const handleResetWeek = async () => {
-    if (window.confirm("Are you sure you want to reset the current week?")) {
+    if (
+      window.confirm(
+        "Are you sure you want to reset the current week? This will delete all all goals and progress for the week."
+      )
+    ) {
       await deleteCurrentWeek(currWeek.id);
 
       setDate(null);
