@@ -65,7 +65,6 @@ const SheetsComponent = ({
         columns={columns}
         color={colorScheme}
         aligntext="center"
-        fullheighttable
         fullheighttd
       />
     </div>
