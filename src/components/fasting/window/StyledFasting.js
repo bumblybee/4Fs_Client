@@ -72,6 +72,10 @@ export const StyledForm = styled(Form)`
 export const StyledFastingProgressWrapper = styled.div`
   width: 70%;
   margin: 0 auto;
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
 export const StyledTable = styled(TableComponent)`
