@@ -6,7 +6,10 @@ import Accomplishments from "./Accomplishments";
 import Moments from "./Moments";
 import Skills from "./Skills";
 import SectionHeader from "../../layout/SectionHeader";
-import { StyledSwaggerTableContainer } from "./StyledSwagger";
+import {
+  StyledSwaggerTableContainer,
+  StyledSectionHeaderText,
+} from "./StyledSwagger";
 
 // Todo: Add skills table
 const SwaggerStockpile = () => {
@@ -20,14 +23,14 @@ const SwaggerStockpile = () => {
         Capture both small and big wins. This will be your stockpile that you
         can reference at any time in order to keep you on your path to success."
         component={
-          <h4
+          <StyledSectionHeaderText
             style={{
               textAlign: "center",
               margin: "-1.75rem 0 2.5rem",
             }}
           >
             <em>"I Think. I Know. I Can. I Do."</em>
-          </h4>
+          </StyledSectionHeaderText>
         }
       />
       <ShareToggle
