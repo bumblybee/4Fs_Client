@@ -24,6 +24,24 @@ export const StyledFTabBar = styled.div`
         : "2px solid transparent"};
     color: #2b73ce;
   }
+
+  @media (max-width: 620px) {
+    padding: 0.5rem;
+    height: 12%;
+
+    i {
+      font-size: 1rem !important;
+    }
+
+    .resources {
+      top: auto;
+      bottom: 0;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const StyledFMenu = styled(Menu)`
@@ -47,5 +65,14 @@ export const StyledFMenu = styled(Menu)`
     background: #2b73ce !important;
     color: hsl(217, 49%, 99%) !important;
     font-weight: 500 !important;
+  }
+
+  @media (max-width: 620px) {
+    max-width: 100% !important;
+
+    .item {
+      padding: 1rem !important;
+      font-size: 1.1rem !important;
+    }
   }
 `;
