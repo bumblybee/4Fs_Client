@@ -27,7 +27,7 @@ const Habits = () => {
           <StyledButton
             as="a"
             href={url ? url : "/profile"}
-            target="_blank"
+            target={url && "_blank"}
             rel="noopener"
           >
             <Icon name="google drive" />

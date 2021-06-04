@@ -61,7 +61,7 @@ export const StyledLinkWrapper = styled.div`
   color: #2185d0;
 
   p {
-    margin-top: 0.15rem;
+    margin-top: 0.25rem;
   }
 
   p:hover {

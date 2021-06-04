@@ -138,6 +138,7 @@ const generateCellComponent = (type, props) => {
           isCentered={props.isCentered}
           icon={props.icon}
           val={props.val}
+          newWindow={props.newWindow}
         />
       );
     case "delete":

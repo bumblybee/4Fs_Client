@@ -38,6 +38,7 @@ const SheetsComponent = ({
           size: "huge",
           icon: <Icon name="google drive" />,
           isCentered: true,
+          newWindow: url ? true : false,
         }),
       },
     };
