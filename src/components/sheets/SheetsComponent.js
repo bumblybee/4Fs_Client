@@ -18,7 +18,7 @@ const SheetsComponent = ({
 }) => {
   const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
   const { user } = useContext(UserContext);
-  const [url, setUrl] = useState(user && user.sheetsURL + sheetId);
+  const [url, setUrl] = useState("");
 
   const columns = [
     {
