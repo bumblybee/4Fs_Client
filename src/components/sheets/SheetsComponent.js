@@ -26,7 +26,7 @@ const SheetsComponent = ({
       key: "sheetsURL",
     },
   ];
-  console.log(url);
+
   const rows = () => {
     const rowData = {
       sheetsURL: {

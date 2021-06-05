@@ -4,7 +4,7 @@ import { StyledButton } from "./StyledButtonCell";
 const ButtonCell = (props) => {
   return (
     <StyledButton
-      size={props.size}
+      // size={props.size}
       as="a"
       href={props.to}
       target={props.newWindow && "_blank"}
@@ -12,7 +12,7 @@ const ButtonCell = (props) => {
       accessor={props.accessor}
       color={props.color}
       isCentered={props.isCentered}
-      className={`ui ${props.color} ${props.size} button`}
+      className={`ui ${props.color} button`}
     >
       {props.icon && props.icon}
       {props.val}
