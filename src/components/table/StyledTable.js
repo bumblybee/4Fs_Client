@@ -87,6 +87,10 @@ export const StyledTable = styled(Table)`
     }
   }
 
+  @media (max-width: 620px) {
+    border-top: ${(props) => `1px solid ${props.color} !important`};
+  }
+
   /* Responsive table */
 
   @media only screen and (max-width: 760px),
