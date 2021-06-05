@@ -27,8 +27,6 @@ const FTabBar = () => {
     };
   }, []);
 
-  console.log(windowSize);
-
   return (
     <StyledFTabBar path={path}>
       <StyledFMenu
