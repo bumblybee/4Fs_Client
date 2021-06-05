@@ -9,20 +9,26 @@ export const StyledFormContainer = styled.div`
 
   @media (max-width: 1200px) {
     width: 90%;
+    padding-top: 0;
   }
 `;
 
 export const StyledSegment = styled(Segment)`
   width: 70% !important;
   border: 2px solid #2185d0 !important;
+
   @media (max-width: 700px) {
-    width: 99% !important;
+    width: 95% !important;
   }
 `;
 
 export const StyledProfileHeader = styled.h1`
   text-align: center;
   margin-bottom: 2rem;
+
+  @media (max-width: 700px) {
+    font-size: 1.75rem;
+  }
 `;
 
 export const StyledPhoneWrapper = styled.div`
@@ -47,10 +53,6 @@ export const StyledPhoneInputsWrapper = styled.div`
   .ui.left.icon.input {
     width: calc(90% / 3) !important;
   }
-
-  /* input:first-child {
-    position: relative !important;
-  } */
 `;
 
 export const StyledLinkWrapper = styled.div`
