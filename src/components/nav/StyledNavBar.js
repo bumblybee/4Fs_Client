@@ -67,10 +67,10 @@ export const StyledUserButton = styled(Button)`
   }
 
   @media (max-width: 620px) {
-    padding: 13px 10px 13px 12px !important;
+    padding: 12px 9px 12px 11px !important;
 
     i {
-      font-size: 1.25rem !important;
+      font-size: 1.2rem !important;
     }
   }
 `;
@@ -113,7 +113,7 @@ export const StyledLogoButton = styled(Button)`
 
   @media (max-width: 620px) {
     img {
-      height: 1.95rem;
+      height: 1.775rem;
     }
   }
 `;

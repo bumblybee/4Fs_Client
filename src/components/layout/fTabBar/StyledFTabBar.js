@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Menu, Icon } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
 
 export const StyledFTabBar = styled.div`
   position: relative;
@@ -27,7 +27,7 @@ export const StyledFTabBar = styled.div`
 
   @media (max-width: 620px) {
     padding: 0.5rem;
-    height: 11%;
+    height: 10.5%;
 
     i {
       font-size: 1rem !important;
@@ -35,7 +35,7 @@ export const StyledFTabBar = styled.div`
 
     .resources {
       top: auto;
-      bottom: 0;
+      bottom: -2%;
       right: auto;
       left: 50%;
       transform: translateX(-50%);

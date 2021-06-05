@@ -3,6 +3,10 @@ import { Container, Menu } from "semantic-ui-react";
 
 export const StyledTabContainer = styled(Container)`
   margin: 2rem auto 3rem;
+
+  @media (max-width: 620px) {
+    margin: 1.25rem auto 0;
+  }
 `;
 
 export const StyledTabMenu = styled(Menu)`
