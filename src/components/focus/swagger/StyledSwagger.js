@@ -7,6 +7,14 @@ export const StyledSwaggerTableContainer = styled.div`
 
   @media (max-width: 1027px) {
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    > div {
+      margin-bottom: 1rem;
+      width: 100%;
+    }
   }
 `;
 
