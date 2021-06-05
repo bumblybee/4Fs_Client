@@ -26,7 +26,7 @@ export const StyledFTabBar = styled.div`
   }
 
   @media (max-width: 620px) {
-    padding: 0.5rem;
+    padding: 0.75rem 0.5rem 0.75rem;
     height: 10.5%;
 
     i {

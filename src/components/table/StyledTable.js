@@ -6,8 +6,8 @@ export const StyledTable = styled(Table)`
   border-left: none !important;
   border-right: none !important;
   border-bottom: none !important;
-  /* border-top: ${(props) => `1px solid ${props.color}`}; */
-  border-top: none !important;
+  border-top: ${(props) => `1px solid ${props.color}`};
+  /* border-top: none !important; */
 
   tbody {
     height: ${(props) => (props.fullheighttable ? "30rem" : "")};

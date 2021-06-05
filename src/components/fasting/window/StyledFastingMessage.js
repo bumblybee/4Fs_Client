@@ -9,7 +9,7 @@ export const StyledMessage = styled.div`
   align-items: center;
   font-style: italic;
   height: "min-content";
-  width: 175px;
+  width: 220px;
 
   h2 {
     margin: 0;
@@ -24,9 +24,9 @@ export const StyledMessage = styled.div`
   }
 
   @media (max-width: 1027px) {
-    width: 150px;
+    width: 100%;
     h2 {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
     }
 
     h3 {

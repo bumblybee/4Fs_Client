@@ -4,13 +4,17 @@ import TableComponent from "../../table/TableComponent";
 
 export const StyledFastingWrapper = styled.div`
   height: 100%;
+  width: 100%;
   padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 700px) {
+    padding: 0.5rem;
+  }
 `;
 
 export const StyledFastingCalcWrapper = styled.div`
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,15 +25,22 @@ export const StyledFastingCalcWrapper = styled.div`
   padding: 2rem 1.5rem 1.5rem 1rem;
   background: #fff;
 
-  @media (max-width: 1027px) {
+  @media (max-width: 1024px) {
     width: 100%;
+  }
+
+  @media (max-width: 525px) {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    flex-direction: column-reverse;
+    height: 300px;
   }
 `;
 
 export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  width: 15%;
+  width: 18%;
   margin: 0 auto;
   padding: 0.25rem 1rem 0.25rem;
 
@@ -42,12 +53,8 @@ export const StyledForm = styled(Form)`
     }
   }
 
-  .ui.small.input {
-    width: 25% !important;
-  }
-
   button {
-    width: 35% !important;
+    width: 100% !important;
     margin: 0 auto !important;
     padding: 0.75rem 0.5rem !important;
   }
@@ -57,12 +64,51 @@ export const StyledForm = styled(Form)`
   }
 
   @media (max-width: 1027px) {
-    width: 25%;
+    width: 80%;
+    .ui.small.input,
+    button {
+      width: 30% !important;
+    }
   }
 
-  .ui.small.input,
-  button {
-    width: 100% !important;
+  @media (max-width: 768px) {
+    .ui.small.input,
+    button {
+      width: 45% !important;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .ui.small.input,
+    button {
+      width: 100% !important;
+    }
+  }
+
+  @media (max-width: 525px) {
+    width: 63%;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    flex-direction: row;
+    padding: 0;
+
+    input,
+    label {
+      margin-right: 0.5rem !important;
+    }
+
+    .field {
+      margin-bottom: 0 !important;
+    }
+
+    .ui.small.input {
+      width: 70px !important;
+    }
+
+    button {
+      padding: 0.6rem 0.3rem !important;
+      display: block;
+    }
   }
 `;
 
