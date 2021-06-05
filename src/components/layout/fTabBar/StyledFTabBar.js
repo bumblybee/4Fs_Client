@@ -27,7 +27,7 @@ export const StyledFTabBar = styled.div`
 
   @media (max-width: 620px) {
     padding: 0.5rem;
-    height: 12%;
+    height: 11%;
 
     i {
       font-size: 1rem !important;
@@ -35,7 +35,7 @@ export const StyledFTabBar = styled.div`
 
     .resources {
       top: auto;
-      bottom: 3%;
+      bottom: 0;
       right: auto;
       left: 50%;
       transform: translateX(-50%);

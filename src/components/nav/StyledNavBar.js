@@ -21,6 +21,10 @@ export const StyledNav = styled.div`
   div:nth-child(2) {
     margin-left: auto;
   }
+
+  @media (max-width: 620px) {
+    padding: 0.75rem;
+  }
 `;
 
 export const StyledUserButton = styled(Button)`
@@ -61,6 +65,14 @@ export const StyledUserButton = styled(Button)`
     }
     box-shadow: 0 0 2px 1px rgba(17, 47, 167, 0.4);
   }
+
+  @media (max-width: 620px) {
+    padding: 13px 10px 13px 12px !important;
+
+    i {
+      font-size: 1.25rem !important;
+    }
+  }
 `;
 
 export const StyledLogoButton = styled(Button)`
@@ -96,6 +108,12 @@ export const StyledLogoButton = styled(Button)`
 
     img {
       transform: scale(0.99);
+    }
+  }
+
+  @media (max-width: 620px) {
+    img {
+      height: 1.95rem;
     }
   }
 `;
