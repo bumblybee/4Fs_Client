@@ -27,7 +27,7 @@ export const StyledFTabBar = styled.div`
 
   @media (max-width: 620px) {
     padding: 0.75rem 0.5rem 0.75rem;
-    height: 10.5%;
+    height: 12%;
 
     i {
       font-size: 1rem !important;
@@ -35,11 +35,18 @@ export const StyledFTabBar = styled.div`
 
     .resources {
       top: auto;
-      bottom: -2%;
+      bottom: 0;
       right: auto;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 1rem;
+      font-size: 0.975rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    height: 13%;
+    .resources {
+      bottom: -1%;
     }
   }
 
@@ -50,7 +57,7 @@ export const StyledFTabBar = styled.div`
       right: auto;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 1rem;
+      font-size: 0.96rem;
     }
   }
 `;
@@ -79,18 +86,18 @@ export const StyledFMenu = styled(Menu)`
   }
 
   @media (max-width: 620px) {
-    width: 100% !important;
-
     .item {
-      padding: 0.8rem !important;
+      padding: 1rem 0.8rem !important;
       font-size: 1rem !important;
     }
   }
 
   @media (max-width: 380px) {
-    width: 100% !important;
+    width: 96% !important;
+    max-width: 100% !important;
+
     .item {
-      padding: 0.75rem !important;
+      padding: 1rem 0.69rem !important;
       font-size: 1rem !important;
     }
   }

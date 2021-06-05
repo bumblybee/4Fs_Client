@@ -29,7 +29,7 @@ const TabMenu = () => {
         pointing
         secondary
         color="blue"
-        size={windowSize && windowSize.width > 1027 ? "huge" : "small"}
+        size={windowSize && windowSize.width > 1027 ? "huge" : ""}
       >
         <Tabs path={path} subPath={subPath} />
       </StyledTabMenu>
