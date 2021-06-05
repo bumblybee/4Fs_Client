@@ -18,4 +18,15 @@ export const StyledSectionHeader = styled.div`
     width: 60%;
     color: #333333;
   }
+
+  @media (max-width: 700px) {
+    h1 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      width: 92%;
+      font-size: 1.1rem;
+    }
+  }
 `;
