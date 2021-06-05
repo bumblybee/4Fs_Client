@@ -42,8 +42,13 @@ export const StyledFormHeader = styled(Header)`
   .logo {
     display: block;
     margin: 0 auto;
-    height: 60px;
-    width: 70px;
+    height: 55px !important;
+    width: 65px;
+    /* background: #2185d0ff; */
+    /* border: 2px solid #555 !important; */
+
+    /* padding: 0.65rem 0.5rem;
+    border-radius: 50%; */
   }
 `;
 

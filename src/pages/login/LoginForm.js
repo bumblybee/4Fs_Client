@@ -1,9 +1,14 @@
 import React, { useState, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Image } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
 import { NotificationContext } from "../../context/notification/NotificationContext";
-import { StyledSegment } from "../../styles/GlobalStyledComponents";
+import {
+  StyledFormWrapper,
+  StyledSegment,
+  StyledFormHeader,
+  StyledForm,
+} from "../../styles/GlobalStyledComponents";
 
 const LoginForm = () => {
   const history = useHistory();
@@ -23,30 +28,14 @@ const LoginForm = () => {
   };
 
   return (
-    <div
-      style={{ height: "100vh" }}
-      className="ui middle aligned center aligned grid"
-    >
+    <StyledFormWrapper verticalAlign="middle" centered>
       <StyledSegment className="column" raised>
-        <h2
-          className="ui image header blue"
-          style={{ textShadow: "0 0 0px #eeeeee99" }}
-        >
-          <img
-            className="image"
-            src="/4flogo.png"
-            alt="4fs logo"
-            style={{
-              display: "block",
-              margin: "0 auto",
-              height: "60px",
-              width: "70px",
-            }}
-          />{" "}
-          Log In
-        </h2>
+        <StyledFormHeader as="h2" image>
+          <Image className="logo" src="/4flogo.png" alt="4fs logo" />
+          Log in
+        </StyledFormHeader>
 
-        <Form onSubmit={handleSubmit}>
+        <StyledForm onSubmit={handleSubmit}>
           <div
             className="ui segment basic"
             style={{ boxShadow: "none", textAlign: "left" }}
@@ -99,9 +88,9 @@ const LoginForm = () => {
               </div>
             </div>
           </div>
-        </Form>
+        </StyledForm>
       </StyledSegment>
-    </div>
+    </StyledFormWrapper>
   );
 };
 
