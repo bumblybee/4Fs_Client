@@ -32,6 +32,7 @@ const NumberCell = (props) => {
         onChange={handleChange}
         type="number"
         min="0"
+        max={props.accessor === "goal" && 7}
         disabled={props.disabled}
       />
     </StyledNumberCell>
