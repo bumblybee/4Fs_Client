@@ -1,12 +1,28 @@
 import styled from "styled-components";
 import { Table } from "semantic-ui-react";
 
+export const StyledTableWrapper = styled.div`
+  height: ${(props) => props.height || "min-content"};
+  width: ${(props) => props.width};
+  min-height: 48px;
+  max-height: ${(props) => props.maxHeight || "34rem"};
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid #22242626;
+  border-top: none;
+  border-radius: 0.27rem;
+  margin: ${(props) => props.margin};
+
+  @media (max-width: 620px) {
+    width: ${(props) => `calc(${props.width} + 30%)`};
+  }
+`;
+
 export const StyledTable = styled(Table)`
   margin: 0 !important;
   border-left: none !important;
   border-right: none !important;
   border-bottom: none !important;
-  /* border-top: ${(props) => `1px solid ${props.color}`}; */
   border-top: none !important;
 
   tbody {

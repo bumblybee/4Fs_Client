@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "semantic-ui-react";
-import { StyledTable } from "./StyledTable";
+import { StyledTable, StyledTableWrapper } from "./StyledTable";
 
 TableComponent.TD = function TD({ children, ...props }) {
   return (
@@ -105,22 +105,12 @@ export default function TableComponent({ children, ...props }) {
 
   return (
     // TODO Add to stylesheet and take in classNames
-    <div
+    <StyledTableWrapper
       color={props.color}
-      style={{
-        height: props.height || "min-content",
-        minHeight: "48px",
-        maxHeight: props.maxHeight || "34rem",
-        overflowY: "auto",
-        overflowX: "hidden",
-        width: props.width,
-        border: "1px solid #22242626",
-        borderTop: "none",
-        borderRadius: "0.27rem",
-        // boxShadow: "0 0 4px rgba(0, 0, 0, 0.1)",
-
-        margin: props.margin,
-      }}
+      width={props.width}
+      height={props.height}
+      maxHeight={props.maxHeight}
+      margin={props.margin}
     >
       <StyledTable
         {...props}
@@ -146,6 +136,6 @@ export default function TableComponent({ children, ...props }) {
 
         {props.footer && <TableComponent.TF>{props.footer}</TableComponent.TF>}
       </StyledTable>
-    </div>
+    </StyledTableWrapper>
   );
 }
