@@ -195,6 +195,7 @@ const UserProfile = () => {
               </StyledPhoneInputsWrapper>
             </StyledPhoneWrapper>
             <Form.Input
+              id="sheets"
               fluid
               icon="google drive"
               iconPosition="left"
