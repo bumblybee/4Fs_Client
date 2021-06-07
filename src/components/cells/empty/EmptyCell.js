@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
+import DOMPurify from "dompurify";
+
 import { StyledEmptyCell } from "./StyledEmptyCell";
 
 const EmptyCell = ({ children, ...props }) => {
-  const [editing, setEditing] = useState(false);
+  const sanitize = DOMPurify.sanitize;
 
+  const [editing, setEditing] = useState(false);
   const [emptyCellVal, setEmptyCellVal] = useState("");
 
   const inputRef = useRef(null);
@@ -46,7 +49,7 @@ const EmptyCell = ({ children, ...props }) => {
     }
     return (
       <p onClick={() => setEditing(true)}>
-        {emptyCellVal || props.placeholder}
+        {sanitize(emptyCellVal) || props.placeholder}
       </p>
     );
   };

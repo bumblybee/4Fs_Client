@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import EditableCell from "../components/cells/editable/EditableCell";
 import EmptyCell from "../components/cells/empty/EmptyCell";
 import DropdownCell from "../components/cells/dropdown/DropdownCell";
@@ -13,6 +14,8 @@ import LabelCell from "../components/cells/label/LabelCell";
 import ProgressCell from "../components/cells/progress/ProgressCell";
 
 const generateCellComponent = (type, props) => {
+  const sanitize = DOMPurify.sanitize;
+
   switch (type) {
     case "editable":
       return (
@@ -181,7 +184,9 @@ const generateCellComponent = (type, props) => {
       );
 
     default:
-      return <div style={props.style}>{props.val || props.component}</div>;
+      return (
+        <div style={props.style}>{sanitize(props.val) || props.component}</div>
+      );
   }
 };
 

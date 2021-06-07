@@ -23,22 +23,26 @@ export const getPracticeStore = async () => {
 
 export const mutateStoredPractice = async (data, id) => {
   const practice = await post(`/practices/store/${id}`, data);
-  return practice.data ? practice.data : practice;
+  return practice && practice.data ? practice.data : practice;
 };
 
 export const mutateCurrPractice = async (data, id) => {
   const practice = await post(`/practices/${id}`, data);
-  return practice.data ? practice.data : practice;
+  return practice && practice.data ? practice.data : practice;
 };
 
 export const deleteCurrPractice = async (id) => {
   const deletedPractice = await destroy(`/practices/${id}`);
-  return deletedPractice.data ? deletedPractice.data : deletedPractice;
+  return deletedPractice && deletedPractice.data
+    ? deletedPractice.data
+    : deletedPractice;
 };
 
 export const deleteStoredPractice = async (id) => {
   const deletedPractice = await destroy(`/practices/store/${id}`);
-  return deletedPractice.data ? deletedPractice.data : deletedPractice;
+  return deletedPractice && deletedPractice.data
+    ? deletedPractice.data
+    : deletedPractice;
 };
 
 export const startWeek = async (data) => {
@@ -53,10 +57,10 @@ export const getCurrentWeek = async () => {
 
 export const getPriorWeeks = async () => {
   const priorWeeks = await get("/practice-weeks/prior");
-  return priorWeeks.data;
+  return priorWeeks && priorWeeks.data;
 };
 
 export const deleteCurrentWeek = async (id) => {
   const deletedWeek = await destroy(`/practice-weeks/${id}`);
-  return deletedWeek.data ? deletedWeek.data : deletedWeek;
+  return deletedWeek && deletedWeek.data ? deletedWeek.data : deletedWeek;
 };

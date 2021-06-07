@@ -11,13 +11,14 @@ const NumberCell = (props) => {
   };
 
   const makeData = (value) => {
-    props.onSave(
-      {
-        [props.accessor]: value,
-        [props.foreignAccessor]: props.foreignId,
-      },
-      props.id
-    );
+    value &&
+      props.onSave(
+        {
+          [props.accessor]: value,
+          [props.foreignAccessor]: props.foreignId,
+        },
+        props.id
+      );
   };
   useEffect(() => {
     setInputVal(props.val);

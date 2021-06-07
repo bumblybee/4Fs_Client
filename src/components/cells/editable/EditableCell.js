@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
+import DOMPurify from "dompurify";
 import { StyledEditableCell } from "./StyledEditableCell";
 
 // TODO: Pass classes in props and style in stylesheet rather than passing alignment, etc.
 
 const EditableTableCell = ({ children, ...props }) => {
+  const sanitize = DOMPurify.sanitize;
+
   const [editing, setEditing] = useState(false);
   const [editCellVal, setEditCellVal] = useState(props.val);
 
@@ -58,7 +61,7 @@ const EditableTableCell = ({ children, ...props }) => {
         />
       );
     } else {
-      return editCellVal ? editCellVal : props.placeholder;
+      return editCellVal ? sanitize(editCellVal) : props.placeholder;
     }
   };
 

@@ -20,5 +20,6 @@ export const StyledButton = styled(Button)`
       props.newWindow ? "50px !important" : "60px !important"};
     font-size: 1rem !important;
     padding: 16.5px 7px !important;
+    transform: ${(props) => (props.isCentered ? "translate(-40%, -50%)" : "")};
   }
 `;
