@@ -4,7 +4,7 @@ import { Menu } from "semantic-ui-react";
 export const StyledFTabBar = styled.div`
   position: relative;
   background: #daddde;
-  height: 11.5%;
+  /* height: 11.5%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,9 +33,11 @@ export const StyledFTabBar = styled.div`
   }
 
   @media (max-width: 768px) {
+    height: 96px;
+
     .resources {
       top: auto;
-      bottom: 4%;
+      bottom: 0;
       right: auto;
       left: 50%;
       transform: translateX(-50%);
@@ -44,9 +46,7 @@ export const StyledFTabBar = styled.div`
   }
 
   @media (max-width: 620px) {
-    padding: 0.75rem 0.5rem 0.75rem;
-    height: 12%;
-
+    height: 94px;
     .resources {
       bottom: 0.5%;
       font-size: 0.925rem;
@@ -54,20 +54,17 @@ export const StyledFTabBar = styled.div`
   }
 
   @media (max-width: 380px) {
-    height: 13%;
     .resources {
       bottom: 2%;
     }
   }
 
   @media (max-width: 320px) {
-    height: 14%;
+    height: 92px;
+
     .resources {
-      top: auto;
-      bottom: -3%;
-      right: auto;
+      bottom: 1%;
       left: 50%;
-      transform: translateX(-50%);
       font-size: 0.96rem;
     }
   }
@@ -97,33 +94,21 @@ export const StyledFMenu = styled(Menu)`
   }
 
   @media (max-width: 620px) {
+    max-width: 100% !important;
+
     .item {
       padding: 1rem 0.8rem !important;
       font-size: 1rem !important;
     }
   }
 
-  @media (max-width: 380px) {
-    width: 96% !important;
-    max-width: 100% !important;
-
-    .item {
-      padding: 1rem 0.69rem !important;
-    }
-  }
-
   @media (max-width: 360px) {
-    width: 79% !important;
-
     .item {
-      padding: 0.75rem 0.3rem !important;
-      font-size: 0.975rem !important;
+      font-size: 0.95rem !important;
     }
   }
 
   @media (max-width: 320px) {
-    width: 88% !important;
-
     .item {
       padding: 0.75rem 0.25rem !important;
     }

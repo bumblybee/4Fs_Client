@@ -33,7 +33,7 @@ const FTabBar = () => {
         size={
           windowSize && windowSize.width >= 1024
             ? "massive"
-            : windowSize && windowSize.width >= 375
+            : windowSize && windowSize.width >= 360
             ? "large"
             : "small"
         }

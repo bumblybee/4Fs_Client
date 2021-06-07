@@ -9,6 +9,6 @@ export const StyledToggle = styled.div`
   }
 
   @media (max-width: 620px) {
-    width: ${(props) => `calc(${props.width} + 30%)`};
+    width: ${(props) => `calc(${props.width} + 33%)`};
   }
 `;
