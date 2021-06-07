@@ -76,6 +76,7 @@ const Skills = () => {
   return (
     rows && (
       <TableComponent
+        className="swagger"
         rows={rows(addExampleRow(), addEmptyRow())}
         columns={columns}
         color="#B5CC18"

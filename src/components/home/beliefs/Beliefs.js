@@ -75,6 +75,7 @@ const Beliefs = () => {
           width="64%"
         />
         <TableComponent
+          className="beliefs"
           rows={rows(addEmptyRow())}
           columns={columns}
           color="purple"

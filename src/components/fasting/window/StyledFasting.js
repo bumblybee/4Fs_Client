@@ -86,7 +86,7 @@ export const StyledForm = styled(Form)`
   }
 
   @media (max-width: 525px) {
-    width: 63%;
+    width: 70%;
     justify-content: space-between !important;
     align-items: flex-end !important;
     flex-direction: row;

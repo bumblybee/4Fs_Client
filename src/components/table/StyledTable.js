@@ -15,7 +15,7 @@ export const StyledTableWrapper = styled.div`
 
   @media (max-width: 620px) {
     width: ${(props) => `calc(${props.width} + 33%)`};
-    max-height: ${(props) => props.maxHeight || "19rem"};
+    max-height: ${(props) => props.maxHeight || "20rem"};
   }
 `;
 
@@ -111,6 +111,12 @@ export const StyledTable = styled(Table)`
     }
   }
 
+  @media (max-width: 620px) {
+    td {
+      height: ${(props) => (props.fullheighttd ? "24rem" : "")};
+    }
+  }
+
   @media (max-width: 1024px) {
     border-top: ${(props) => `2px solid ${props.color} !important`};
   }
@@ -130,9 +136,10 @@ export const StyledTable = styled(Table)`
     }
 
     tr {
-      border-bottom-width: 2px;
-      border-bottom-style: solid;
-      border-bottom-color: ${(props) => props.color};
+      border-bottom: ${(props) =>
+        props.className !== "beliefs" &&
+        props.className !== "swagger" &&
+        `2px solid ${props.color}`};
     }
 
     /* Hide table headers (but not display: none, for accessibility) */
@@ -159,12 +166,6 @@ export const StyledTable = styled(Table)`
       width: 45%;
       padding-right: 10px;
       white-space: nowrap; */
-    }
-  }
-
-  @media (max-width: 620px) {
-    td {
-      height: ${(props) => (props.fullheighttd ? "18rem" : "")};
     }
   }
 `;

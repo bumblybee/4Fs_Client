@@ -76,6 +76,7 @@ const Moments = () => {
   return (
     rows && (
       <TableComponent
+        className="swagger"
         rows={rows(addExampleRow(), addEmptyRow())}
         columns={columns}
         descriptionHeaderHeight="40px"
