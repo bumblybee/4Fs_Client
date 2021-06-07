@@ -35,7 +35,7 @@ export const StyledFTabBar = styled.div`
 
     .resources {
       top: auto;
-      bottom: 0;
+      bottom: -1%;
       right: auto;
       left: 50%;
       transform: translateX(-50%);

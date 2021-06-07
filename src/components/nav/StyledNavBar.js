@@ -24,6 +24,7 @@ export const StyledNav = styled.div`
 
   @media (max-width: 620px) {
     padding: 0.75rem;
+    height: 8.25%;
   }
 `;
 
@@ -67,10 +68,18 @@ export const StyledUserButton = styled(Button)`
   }
 
   @media (max-width: 620px) {
-    padding: 12px 8px 12px 11px !important;
+    padding: 12px 9px 12px 11px !important;
 
     i {
       font-size: 1.25rem !important;
+    }
+
+    :active {
+      /* padding: 11px 8px 12px 11px !important; */
+
+      i {
+        font-size: 1.2475rem !important;
+      }
     }
   }
 `;
@@ -113,7 +122,7 @@ export const StyledLogoButton = styled(Button)`
 
   @media (max-width: 620px) {
     img {
-      height: 1.8rem;
+      height: 1.85rem;
     }
   }
 `;

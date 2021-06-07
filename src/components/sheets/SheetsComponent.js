@@ -32,7 +32,7 @@ const SheetsComponent = ({
       sheetsURL: {
         cellComponent: generateCellComponent("button", {
           to: url ? url : "/profile",
-          val: url ? "Program Sheet" : "Add Google Sheets Link in Profile",
+          val: url ? "Program Sheet" : "Add Google Sheets Link",
           accessor: "sheetsURL",
           color: colorScheme,
           size: "huge",

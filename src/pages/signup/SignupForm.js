@@ -63,7 +63,6 @@ const SignupForm = () => {
   };
 
   // Check all inputs are filled in
-
   const validateFieldsAreComplete = (fields) => {
     for (const item of fields) {
       if (userDetails[item] === "") {
@@ -90,10 +89,7 @@ const SignupForm = () => {
     if (re.test(userDetails.email.toLowerCase())) {
       return true;
     } else {
-      setNotificationMessage(
-        "Please check the email address formatting",
-        "error"
-      );
+      setNotificationMessage("Please check the email address format", "error");
     }
   };
 
@@ -110,8 +106,6 @@ const SignupForm = () => {
     if (!validatedFields) return;
 
     if (!validateEmailFormat()) return;
-
-    // API returns a code for available/unavailable email
 
     // Check email doesn't exist in db
     const serverEmailStatus = await checkIfEmailExists({
@@ -153,11 +147,12 @@ const SignupForm = () => {
       if (!validatedFields) return;
 
       const signup = await signUserUp(userDetails);
-      // Todo: Refactor how this is handled
-      if (signup[0] && signup[0].error) {
-        setNotificationMessage(signup[0].error, "error");
-      }
+      const err = signup[0] && signup[0].error;
 
+      if (err) {
+        setNotificationMessage(err, "error");
+      }
+      console.log(signup);
       signup.data && history.push("/");
     }
   };

@@ -13,16 +13,20 @@ import {
 const LoginForm = () => {
   const history = useHistory();
   const { logUserIn } = useContext(UserContext);
-  const { setNotificationMessage } = useContext(NotificationContext);
+  const { setNotificationMessage, clearNotificationMessage } =
+    useContext(NotificationContext);
   const [userDetails, setUserDetails] = useState({ email: "", password: "" });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const login = await logUserIn(userDetails);
+
     if (login.error) {
-      setNotificationMessage(login.error, "error", true);
+      setNotificationMessage(login.error, "error");
       return;
     } else {
+      clearNotificationMessage();
       login.data && history.push("/home");
     }
   };
