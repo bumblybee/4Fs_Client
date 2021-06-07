@@ -26,6 +26,14 @@ export const StyledNav = styled.div`
     padding: 0.75rem;
     height: 8.25%;
   }
+
+  @media (max-width: 380px) {
+    height: 10%;
+  }
+
+  @media (max-width: 320px) {
+    height: 12%;
+  }
 `;
 
 export const StyledUserButton = styled(Button)`

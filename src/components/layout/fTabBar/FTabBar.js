@@ -30,7 +30,13 @@ const FTabBar = () => {
   return (
     <StyledFTabBar path={path}>
       <StyledFMenu
-        size={windowSize && windowSize.width > 1027 ? "massive" : "large"}
+        size={
+          windowSize && windowSize.width >= 1024
+            ? "massive"
+            : windowSize && windowSize.width >= 375
+            ? "large"
+            : "small"
+        }
       >
         <Link to="/focus">
           <Menu.Item
@@ -39,7 +45,16 @@ const FTabBar = () => {
             active={activeItem === "focus"}
             onClick={(e) => setActiveItem("focus")}
           >
-            <Icon name="bullseye" size="large" />
+            <Icon
+              name="bullseye"
+              size={
+                windowSize && windowSize.width >= 1024
+                  ? "large"
+                  : windowSize && windowSize.width >= 375
+                  ? ""
+                  : "small"
+              }
+            />
             Focus
           </Menu.Item>
         </Link>
@@ -50,7 +65,16 @@ const FTabBar = () => {
             active={activeItem === "fasting"}
             onClick={(e) => setActiveItem("fasting")}
           >
-            <Icon name="wait" size="large" />
+            <Icon
+              name="wait"
+              size={
+                windowSize && windowSize.width >= 1024
+                  ? "large"
+                  : windowSize && windowSize.width >= 375
+                  ? ""
+                  : "small"
+              }
+            />
             Fasting
           </Menu.Item>
         </Link>
@@ -61,7 +85,16 @@ const FTabBar = () => {
             as="div"
             active={activeItem === "food"}
           >
-            <Icon name="food" size="large" />
+            <Icon
+              name="food"
+              size={
+                windowSize && windowSize.width >= 1024
+                  ? "large"
+                  : windowSize && windowSize.width >= 375
+                  ? ""
+                  : "small"
+              }
+            />
             Food
           </Menu.Item>
         </Link>
@@ -72,7 +105,16 @@ const FTabBar = () => {
             active={activeItem === "fitness"}
             as="div"
           >
-            <Icon name="heartbeat" size="large" />
+            <Icon
+              name="heartbeat"
+              size={
+                windowSize && windowSize.width >= 1024
+                  ? "large"
+                  : windowSize && windowSize.width >= 375
+                  ? ""
+                  : "small"
+              }
+            />
             Fitness
           </Menu.Item>
         </Link>

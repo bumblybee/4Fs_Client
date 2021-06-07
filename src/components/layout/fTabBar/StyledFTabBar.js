@@ -25,35 +25,46 @@ export const StyledFTabBar = styled.div`
     color: #2b73ce;
   }
 
+  @media (max-width: 1024px) {
+    .resources {
+      right: 8%;
+      top: 44%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .resources {
+      top: auto;
+      bottom: 4%;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1rem;
+    }
+  }
+
   @media (max-width: 620px) {
     padding: 0.75rem 0.5rem 0.75rem;
     height: 12%;
 
-    i {
-      font-size: 1rem !important;
-    }
-
     .resources {
-      top: auto;
-      bottom: -1%;
-      right: auto;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.975rem;
+      bottom: 0.5%;
+      font-size: 0.925rem;
     }
   }
 
   @media (max-width: 380px) {
     height: 13%;
     .resources {
-      bottom: -2%;
+      bottom: 2%;
     }
   }
 
   @media (max-width: 320px) {
+    height: 14%;
     .resources {
       top: auto;
-      bottom: 0;
+      bottom: -3%;
       right: auto;
       left: 50%;
       transform: translateX(-50%);
@@ -98,14 +109,23 @@ export const StyledFMenu = styled(Menu)`
 
     .item {
       padding: 1rem 0.69rem !important;
-      font-size: 1rem !important;
+    }
+  }
+
+  @media (max-width: 360px) {
+    width: 79% !important;
+
+    .item {
+      padding: 0.75rem 0.3rem !important;
+      font-size: 0.975rem !important;
     }
   }
 
   @media (max-width: 320px) {
+    width: 88% !important;
+
     .item {
       padding: 0.75rem 0.25rem !important;
-      font-size: 1rem !important;
     }
   }
 `;
