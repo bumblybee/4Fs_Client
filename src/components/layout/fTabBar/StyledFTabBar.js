@@ -49,7 +49,7 @@ export const StyledFTabBar = styled.div`
     height: 94px;
     .resources {
       bottom: 1%;
-      font-size: 0.925rem;
+      font-size: 0.96rem;
     }
   }
 
@@ -65,7 +65,6 @@ export const StyledFTabBar = styled.div`
     .resources {
       bottom: 1%;
       left: 50%;
-      font-size: 0.96rem;
     }
   }
 `;
@@ -104,7 +103,7 @@ export const StyledFMenu = styled(Menu)`
 
   @media (max-width: 360px) {
     .item {
-      font-size: 0.95rem !important;
+      font-size: 0.955rem !important;
     }
   }
 

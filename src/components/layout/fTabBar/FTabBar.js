@@ -35,7 +35,7 @@ const FTabBar = () => {
             ? "massive"
             : windowSize && windowSize.width >= 360
             ? "huge"
-            : "small"
+            : "large"
         }
       >
         <Link to="/focus">
@@ -47,13 +47,7 @@ const FTabBar = () => {
           >
             <Icon
               name="bullseye"
-              size={
-                windowSize && windowSize.width >= 1024
-                  ? "large"
-                  : windowSize && windowSize.width >= 375
-                  ? ""
-                  : "small"
-              }
+              size={windowSize && windowSize.width >= 1024 ? "large" : ""}
             />
             Focus
           </Menu.Item>
@@ -67,13 +61,7 @@ const FTabBar = () => {
           >
             <Icon
               name="wait"
-              size={
-                windowSize && windowSize.width >= 1024
-                  ? "large"
-                  : windowSize && windowSize.width >= 375
-                  ? ""
-                  : "small"
-              }
+              size={windowSize && windowSize.width >= 1024 ? "large" : ""}
             />
             Fasting
           </Menu.Item>
@@ -87,13 +75,7 @@ const FTabBar = () => {
           >
             <Icon
               name="food"
-              size={
-                windowSize && windowSize.width >= 1024
-                  ? "large"
-                  : windowSize && windowSize.width >= 375
-                  ? ""
-                  : "small"
-              }
+              size={windowSize && windowSize.width >= 1024 ? "large" : ""}
             />
             Food
           </Menu.Item>
@@ -107,13 +89,7 @@ const FTabBar = () => {
           >
             <Icon
               name="heartbeat"
-              size={
-                windowSize && windowSize.width >= 1024
-                  ? "large"
-                  : windowSize && windowSize.width >= 375
-                  ? ""
-                  : "small"
-              }
+              size={windowSize && windowSize.width >= 1024 ? "large" : ""}
             />
             Fitness
           </Menu.Item>
