@@ -48,7 +48,7 @@ export const StyledFTabBar = styled.div`
   @media (max-width: 620px) {
     height: 94px;
     .resources {
-      bottom: 0.5%;
+      bottom: 1%;
       font-size: 0.925rem;
     }
   }
@@ -97,8 +97,8 @@ export const StyledFMenu = styled(Menu)`
     max-width: 100% !important;
 
     .item {
-      padding: 1rem 0.8rem !important;
-      font-size: 1rem !important;
+      padding: 1rem 0.5rem !important;
+      font-size: 0.96rem !important;
     }
   }
 

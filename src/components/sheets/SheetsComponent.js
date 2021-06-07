@@ -62,6 +62,7 @@ const SheetsComponent = ({
       )}
 
       <TableComponent
+        className="sheets"
         rows={rows()}
         columns={columns}
         color={colorScheme}

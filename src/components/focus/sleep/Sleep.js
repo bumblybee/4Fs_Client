@@ -290,6 +290,7 @@ const Sleep = () => {
           field="sleep"
         />
         <TableComponent
+          className="sleep"
           columns={columns}
           rows={rows(addExampleRow(), addEmptyRow())}
           color="teal"

@@ -15,6 +15,7 @@ export const StyledTableWrapper = styled.div`
 
   @media (max-width: 620px) {
     width: ${(props) => `calc(${props.width} + 33%)`};
+    max-height: ${(props) => props.maxHeight || "19rem"};
   }
 `;
 
@@ -51,6 +52,13 @@ export const StyledTable = styled(Table)`
     min-height: 40px;
     position: relative;
     font-family: "Lato", sans-serif;
+  }
+
+  .sheets td {
+    display: flex;
+    /* flex-direction: center; */
+    align-items: center;
+    justify-content: center;
   }
 
   .fasting-progress td {
@@ -103,8 +111,8 @@ export const StyledTable = styled(Table)`
     }
   }
 
-  @media (max-width: 620px) {
-    border-top: ${(props) => `1px solid ${props.color} !important`};
+  @media (max-width: 1024px) {
+    border-top: ${(props) => `2px solid ${props.color} !important`};
   }
 
   /* Responsive table */
@@ -139,18 +147,24 @@ export const StyledTable = styled(Table)`
       border: none;
       border-bottom: 1px solid #eee;
       position: relative;
-      padding-left: 50%;
+      /* padding-left: 50%; */
     }
 
     td:before {
       /* Now like a table header */
-      position: absolute;
+      /* position: absolute; */
       /* Top/left values mimic padding */
-      top: 6px;
+      /* top: 6px;
       left: 6px;
       width: 45%;
       padding-right: 10px;
-      white-space: nowrap;
+      white-space: nowrap; */
+    }
+  }
+
+  @media (max-width: 620px) {
+    td {
+      height: ${(props) => (props.fullheighttd ? "18rem" : "")};
     }
   }
 `;

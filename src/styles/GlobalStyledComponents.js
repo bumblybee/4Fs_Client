@@ -3,33 +3,19 @@ import { Grid, Segment, Header, Form, Message } from "semantic-ui-react";
 
 export const StyledFormWrapper = styled(Grid)`
   height: 100% !important;
-
   margin-top: ${(props) => props.origin === "profile" && "3%"} !important;
-
-  @media (max-width: 780px) {
-    margin-top: ${(props) => props.origin === "profile" && "3%"} !important;
-  }
-
-  @media (max-width: 1027px) {
-    margin-top: ${(props) => props.origin !== "profile" && "-20%"} !important;
-  }
-
-  @media (max-width: 620px) {
-    margin-top: ${(props) =>
-      props.origin === "profile" ? "6%" : "-15%"} !important;
-    margin-bottom: 2% !important;
-  }
 `;
 
 export const StyledSegment = styled(Segment)`
   max-width: 450px;
   position: relative;
   border: 2px solid #2185d0 !important;
+  margin-top: 12% !important;
 
   @media (max-width: 620px) {
     width: 88% !important;
     max-width: 98%;
-    margin-top: 20% !important;
+    margin-top: 30% !important;
   }
 `;
 
@@ -47,13 +33,8 @@ export const StyledFormHeader = styled(Header)`
   .logo {
     display: block;
     margin: 0 auto;
-    height: 55px !important;
+    height: 55px;
     width: 65px;
-    /* background: #2185d0ff; */
-    /* border: 2px solid #555 !important; */
-
-    /* padding: 0.65rem 0.5rem;
-    border-radius: 50%; */
   }
 `;
 
