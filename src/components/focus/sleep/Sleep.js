@@ -166,6 +166,7 @@ const Sleep = () => {
             onSave: handleSave,
             val: item.comments,
             accessor: "comments",
+            placeholder: "Comments...",
           }),
         },
         delete: {

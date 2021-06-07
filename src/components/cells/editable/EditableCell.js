@@ -51,7 +51,7 @@ const EditableTableCell = ({ children, ...props }) => {
         <input
           ref={inputRef}
           value={editCellVal}
-          placeholder={props.placeholder}
+          // placeholder={props.placeholder}
           aligntext={props.aligntext}
           alignment={props.alignment}
           disabled={props.disabled}

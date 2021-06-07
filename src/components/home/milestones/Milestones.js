@@ -60,6 +60,7 @@ const Milestones = () => {
           val: item.personalize,
           accessor: "personalize",
           alignment: "left",
+          placeholder: "Personalize...",
         }),
       },
       comments: {
@@ -69,6 +70,7 @@ const Milestones = () => {
           val: item.comments,
           accessor: "comments",
           alignment: "left",
+          placeholder: "Comments...",
         }),
       },
       status: {
