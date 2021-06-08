@@ -15,7 +15,7 @@ export const StyledSegment = styled(Segment)`
   @media (max-width: 620px) {
     width: 88% !important;
     max-width: 98%;
-    margin-top: 30% !important;
+    margin-top: 0 !important;
   }
 `;
 
