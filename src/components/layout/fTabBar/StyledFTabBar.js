@@ -71,6 +71,7 @@ export const StyledFMenu = styled(Menu)`
     border-radius: 0 !important;
     font-family: "Montserrat", sans-serif !important;
     font-weight: 400 !important;
+    margin: 0 !important;
   }
 
   .item:not(.active) {
@@ -95,14 +96,12 @@ export const StyledFMenu = styled(Menu)`
   @media (max-width: 620px) {
     .item {
       padding: 1rem 0.66rem !important;
-      font-size: 0.9679rem !important;
     }
   }
 
   @media (max-width: 385px) {
     .item {
       padding: 1rem 0.4rem !important;
-      font-size: 0.9679rem !important;
     }
   }
 

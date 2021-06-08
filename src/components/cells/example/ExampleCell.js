@@ -24,7 +24,7 @@ const ExampleCell = ({
       {tooltipContent && (
         <StyledTooltipContainer alignment={alignment}>
           <Popup
-            position="top center"
+            position="top right"
             content={tooltipContent}
             trigger={<Icon name="question circle outline" color="grey" />}
           />
