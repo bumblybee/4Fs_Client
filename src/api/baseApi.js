@@ -29,6 +29,7 @@ export const get = async (url) => {
 export const post = async (url, data) => {
   return await instance.post(url, data).catch((e) => {
     if (e.response) {
+      console.log(e.response);
       if (e.response && e.response.data.errors) {
         const errors = handleErrorsArray(e.response.data.errors);
 
