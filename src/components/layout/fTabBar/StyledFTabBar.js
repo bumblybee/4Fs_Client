@@ -99,7 +99,7 @@ export const StyledFMenu = styled(Menu)`
     }
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 385px) {
     .item {
       padding: 1rem 0.4rem !important;
       font-size: 0.9679rem !important;
