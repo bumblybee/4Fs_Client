@@ -91,13 +91,19 @@ export default function TableComponent({ children, ...props }) {
 
   function renderRows(mappedRows) {
     return mappedRows.map((row, idx) => (
-      <TableComponent.TR key={idx}>{renderCells(row)}</TableComponent.TR>
+      <TableComponent.TR key={idx} className={props.className}>
+        {renderCells(row)}
+      </TableComponent.TR>
     ));
   }
 
   const renderCells = (row) => {
     return row.map((cellComponent, idx) => (
-      <TableComponent.TD key={idx} collapsing={cellComponent.collapsing}>
+      <TableComponent.TD
+        className={props.className}
+        key={idx}
+        collapsing={cellComponent.collapsing}
+      >
         {cellComponent}
       </TableComponent.TD>
     ));
@@ -132,7 +138,9 @@ export default function TableComponent({ children, ...props }) {
             {renderColumns(props.columns)}
           </TableComponent.TR>
         </Table.Header>
-        <Table.Body>{renderRows(rowsMappedToColumns)}</Table.Body>
+        <Table.Body className={props.className}>
+          {renderRows(rowsMappedToColumns)}
+        </Table.Body>
 
         {props.footer && <TableComponent.TF>{props.footer}</TableComponent.TF>}
       </StyledTable>

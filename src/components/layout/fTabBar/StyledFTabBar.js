@@ -102,13 +102,13 @@ export const StyledFMenu = styled(Menu)`
   @media (max-width: 385px) {
     .item {
       padding: 1rem 0.4rem !important;
-      font-size: 0.9625rem !important;
     }
   }
 
   @media (max-width: 320px) {
     .item {
       padding: 0.75rem 0.25rem !important;
+      font-size: 0.9625rem !important;
     }
   }
 `;

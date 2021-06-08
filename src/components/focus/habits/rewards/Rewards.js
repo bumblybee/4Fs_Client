@@ -26,6 +26,7 @@ const Rewards = () => {
   return (
     rows && (
       <TableComponent
+        id="rewards"
         className="rewards"
         rows={rows()}
         columns={columns}

@@ -6,6 +6,12 @@ import {
 import { Popup, Icon } from "semantic-ui-react";
 
 const HabitsTableHeader = () => {
+  const tooltipContent = () => {
+    return (
+      <a href="#rewards">Use the rewards list provided if you need ideas.</a>
+    );
+  };
+
   return (
     <StyledHabitsHeaderWrapper>
       <StyledHabitsHeader>
@@ -15,8 +21,10 @@ const HabitsTableHeader = () => {
       </StyledHabitsHeader>
       <div>
         <Popup
-          position="top center"
-          content="Use the reward list provided if you need ideas."
+          size="small"
+          offset={[10, -2]}
+          position="top right"
+          content={tooltipContent}
           trigger={<Icon name="question circle outline" />}
         />
       </div>

@@ -9,11 +9,18 @@ export const StyledHabitsHeaderWrapper = styled.div`
 
 export const StyledHabitsHeader = styled.div`
   width: 85%;
+  height: 100%;
   margin: 0 auto;
   font-family: "Lato", sans-serif;
   font-style: italic;
   font-size: 1.025rem;
   padding: 0.5rem 0;
+
+  @media (max-width: 620px) {
+    width: 88%;
+    font-size: 1rem;
+    padding: 0.25rem 0;
+  }
 
   > div {
     width: 40%;
@@ -22,5 +29,10 @@ export const StyledHabitsHeader = styled.div`
     font-size: 1.23rem;
     font-family: "Montserrat", sans-serif;
     font-style: normal;
+
+    @media (max-width: 620px) {
+      width: 80%;
+      font-size: 1.1rem;
+    }
   }
 `;

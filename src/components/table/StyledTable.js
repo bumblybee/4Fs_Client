@@ -4,7 +4,7 @@ import { Table } from "semantic-ui-react";
 export const StyledTableWrapper = styled.div`
   height: ${(props) => props.height || "min-content"};
   width: ${(props) => props.width};
-  max-width: 99%;
+  max-width: 100%;
   min-height: 48px;
   max-height: ${(props) => props.maxHeight || "34rem"};
   overflow-y: auto;
@@ -19,8 +19,9 @@ export const StyledTableWrapper = styled.div`
   }
 
   @media (max-width: 620px) {
-    width: ${(props) => `calc(${props.width} + 32%)`};
+    width: ${(props) => `calc(${props.width} + 35%)`};
     max-height: ${(props) => props.maxHeight || "20rem"};
+    /* overflow-y: scroll; */
   }
 `;
 
@@ -116,12 +117,6 @@ export const StyledTable = styled(Table)`
     }
   }
 
-  @media (max-width: 620px) {
-    td {
-      height: ${(props) => (props.fullheighttd ? "20rem" : "")};
-    }
-  }
-
   /* Responsive table */
 
   @media only screen and (max-width: 760px),
@@ -136,20 +131,43 @@ export const StyledTable = styled(Table)`
       display: block;
     }
 
+    // Below keeps table header intact
+
+    /* .habits thead th {
+      display: table-header-group;
+      position: sticky;
+      top: 0;
+    } */
+
+    .habits tr {
+      display: flex;
+      width: 100%;
+      justify-content: stretch;
+    }
+
+    .habits tr th {
+      width: 50% !important;
+    }
+
+    // Below keeps row and cells spread across width
+
+    .habits tr td {
+      width: 100%;
+    }
+
     tr {
       border-bottom: ${(props) =>
-        props.className !== "beliefs" &&
-        props.className !== "swagger" &&
-        props.className !== "rewards" &&
-        `2px solid ${props.color}`};
+        props.className === "milestones" && `2px solid ${props.color}`};
     }
 
     /* Hide table headers (but not display: none, for accessibility) */
-    :not(.rewards) thead {
+    :not(.rewards):not(.habits):not(.beliefs):not(.swagger) thead {
       position: absolute;
       top: -9999px;
       left: -9999px;
     }
+
+    // Sticky table heads that are being kept
 
     thead.rewards {
       position: sticky !important;
@@ -157,6 +175,12 @@ export const StyledTable = styled(Table)`
       z-index: 2 !important;
       margin: 0 !important;
       color: red;
+    }
+
+    thead.habits:not(.description-header) {
+      position: sticky;
+      top: 23.7%;
+      z-index: 2;
     }
 
     td {
@@ -176,6 +200,12 @@ export const StyledTable = styled(Table)`
       width: 45%;
       padding-right: 10px;
       white-space: nowrap;
+    }
+  }
+
+  @media (max-width: 620px) {
+    td {
+      height: ${(props) => (props.fullheighttd ? "20rem" : "")};
     }
   }
 `;

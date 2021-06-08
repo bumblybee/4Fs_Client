@@ -102,6 +102,7 @@ const Milestones = () => {
           field="milestone"
         />
         <TableComponent
+          className="milestones"
           rows={rows()}
           columns={columns}
           color="orange"

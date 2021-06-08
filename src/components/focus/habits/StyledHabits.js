@@ -5,7 +5,7 @@ export const StyledHabitsTableContainer = styled.div`
   display: grid;
   grid-template-columns: 0.02fr 1.4fr 0.75fr;
   grid-gap: 1rem;
-  height: inherit;
+  height: 100%;
 
   @media (max-width: 1027px) {
     display: flex;

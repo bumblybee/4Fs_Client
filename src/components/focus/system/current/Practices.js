@@ -514,6 +514,7 @@ const Practices = () => {
   return (
     rows && (
       <TableComponent
+        className="system"
         columns={columns}
         rows={rows(addExampleRow(), addEmptyRow())}
         color="purple"
