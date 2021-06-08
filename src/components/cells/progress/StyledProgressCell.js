@@ -41,14 +41,29 @@ export const StyledPercent = styled.span`
   @media (max-width: 620px) {
     left: ${(props) =>
       props.val >= 100
-        ? "86%"
+        ? "85%"
         : props.val >= 0 && props.val < 45
-        ? `calc(${props.val}% - 7%)`
-        : props.val >= 45 && props.val <= 60
-        ? "34.5%"
-        : props.val > 60 && props.val <= 67
-        ? "59%"
-        : `calc(${props.val}% - 11%)`};
+        ? `calc(${props.val}% - 9%)`
+        : props.val >= 45 && props.val <= 65
+        ? "34%"
+        : props.val > 65 && props.val <= 70
+        ? "60%"
+        : `calc(${props.val}% - 40px)`};
+  }
+
+  @media (max-width: 385px) {
+    left: ${(props) =>
+      props.val >= 100
+        ? "85%"
+        : props.val >= 0 && props.val < 45
+        ? `calc(${props.val}% - 9%)`
+        : props.val >= 45 && props.val <= 65
+        ? "34%"
+        : props.val > 65 && props.val <= 70
+        ? "60%"
+        : `calc(${props.val}% - 40px)`};
+
+    top: -11.5%;
   }
 `;
 
@@ -57,4 +72,13 @@ export const StyledHours = styled.div`
   top: -19%;
   left: 50%;
   transform: translateX(-50%);
+
+  @media (max-width: 620px) {
+    top: -12%;
+    font-size: 0.9375rem;
+  }
+
+  @media (max-width: 385px) {
+    top: -16%;
+  }
 `;
