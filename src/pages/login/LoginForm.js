@@ -52,7 +52,7 @@ const LoginForm = () => {
               label="Email"
               value={userDetails.email}
               onChange={(e) =>
-                setUserDetails({ ...userDetails, email: e.target.value })
+                setUserDetails({ ...userDetails, email: e.target.value.trim() })
               }
               required
             />

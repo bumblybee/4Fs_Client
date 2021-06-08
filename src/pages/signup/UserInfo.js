@@ -31,7 +31,7 @@ const UserInfo = ({
     } else {
       setFormErrors({ ...formErrors, password: true });
       setNotificationMessage(
-        "Password must contain at least 7 characters consisting of numbers and letters",
+        "Password must contain at least 7 characters consisting of numbers and letters. Special characters optional.",
         "error"
       );
     }

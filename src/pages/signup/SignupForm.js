@@ -56,7 +56,7 @@ const SignupForm = () => {
     if (input === "gender") {
       setUserDetails({ ...userDetails, gender: data.value });
     } else {
-      setUserDetails({ ...userDetails, [input]: e.target.value });
+      setUserDetails({ ...userDetails, [input]: e.target.value.trim() });
     }
     setFormErrors({ ...formErrors, [input]: false });
     clearNotificationMessage();
