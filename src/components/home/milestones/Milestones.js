@@ -107,6 +107,7 @@ const Milestones = () => {
           color="orange"
           aligntext="left"
           striped
+          maxHeight="100%"
         />
       </div>
     )

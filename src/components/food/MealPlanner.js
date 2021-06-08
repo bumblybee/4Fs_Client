@@ -7,7 +7,7 @@ const MealPlanner = () => {
       field="food"
       colorScheme="red"
       title="Meal Planner"
-      subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates."
       sheetId="#gid=679021059"
     />
   );

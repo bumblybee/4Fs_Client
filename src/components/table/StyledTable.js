@@ -4,6 +4,7 @@ import { Table } from "semantic-ui-react";
 export const StyledTableWrapper = styled.div`
   height: ${(props) => props.height || "min-content"};
   width: ${(props) => props.width};
+  max-width: 99%;
   min-height: 48px;
   max-height: ${(props) => props.maxHeight || "34rem"};
   overflow-y: auto;
@@ -13,8 +14,12 @@ export const StyledTableWrapper = styled.div`
   border-radius: 0.27rem;
   margin: ${(props) => props.margin};
 
+  @media (max-height: 1024px) {
+    border-top: ${(props) => `2px solid ${props.color} !important`};
+  }
+
   @media (max-width: 620px) {
-    width: ${(props) => `calc(${props.width} + 33%)`};
+    width: ${(props) => `calc(${props.width} + 32%)`};
     max-height: ${(props) => props.maxHeight || "20rem"};
   }
 `;
@@ -113,12 +118,8 @@ export const StyledTable = styled(Table)`
 
   @media (max-width: 620px) {
     td {
-      height: ${(props) => (props.fullheighttd ? "24rem" : "")};
+      height: ${(props) => (props.fullheighttd ? "18rem" : "")};
     }
-  }
-
-  @media (max-width: 1024px) {
-    border-top: ${(props) => `2px solid ${props.color} !important`};
   }
 
   /* Responsive table */

@@ -34,4 +34,8 @@ export const StyledButton = styled(Button)`
 
     color: #ffffffee !important;
   }
+
+  @media (max-width: 620px) {
+    margin: -1rem auto 1.75rem !important;
+  }
 `;

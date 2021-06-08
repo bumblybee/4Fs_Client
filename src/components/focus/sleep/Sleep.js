@@ -303,6 +303,7 @@ const Sleep = () => {
             <SleepTableHeader columns={csvColumns} data={csvRows} />
           }
           descriptionHeaderHeight="50px"
+          maxHeight="26rem"
         />
       </div>
     )

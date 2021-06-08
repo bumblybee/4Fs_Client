@@ -6,13 +6,20 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  height: auto !important;
+}
+
 body {
   font-family: "Lato", sans-serif !important;
 }
 
-.App {
+/* .App {
   height: 100vh;
-}
+} */
 
 h1,
 h2,

@@ -28,4 +28,12 @@ export const StyledTooltipContainer = styled.div`
   position: absolute;
   top: 0;
   right: -2.5%;
+
+  @media (max-width: 1024px) {
+    right: 0;
+  }
+
+  @media (max-width: 620px) {
+    right: -2%;
+  }
 `;

@@ -7,7 +7,7 @@ const FitnessPlanner = () => {
       field="fitness"
       colorScheme="purple"
       title="Fitness Planner"
-      subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      subtext="Use the fitness planner to increase your energy consumption throughout the day."
       sheetId="#gid=1062021121"
     />
   );

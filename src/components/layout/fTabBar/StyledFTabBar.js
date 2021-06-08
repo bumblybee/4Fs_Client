@@ -4,7 +4,6 @@ import { Menu } from "semantic-ui-react";
 export const StyledFTabBar = styled.div`
   position: relative;
   background: #daddde;
-  /* height: 11.5%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,11 +32,11 @@ export const StyledFTabBar = styled.div`
   }
 
   @media (max-width: 768px) {
-    height: 96px;
+    height: 100px;
 
     .resources {
       top: auto;
-      bottom: 0;
+      bottom: 1%;
       right: auto;
       left: 50%;
       transform: translateX(-50%);
@@ -46,16 +45,15 @@ export const StyledFTabBar = styled.div`
   }
 
   @media (max-width: 620px) {
-    height: 94px;
     .resources {
       bottom: 1%;
-      font-size: 0.96rem;
+      font-size: 0.975rem;
     }
   }
 
   @media (max-width: 380px) {
     .resources {
-      bottom: 2%;
+      bottom: 0;
     }
   }
 
@@ -64,7 +62,6 @@ export const StyledFTabBar = styled.div`
 
     .resources {
       bottom: 1%;
-      left: 50%;
     }
   }
 `;
@@ -92,18 +89,25 @@ export const StyledFMenu = styled(Menu)`
     font-weight: 500 !important;
   }
 
-  @media (max-width: 620px) {
+  @media (max-width: 768px) {
     max-width: 100% !important;
 
     .item {
-      padding: 1.1rem 0.5rem !important;
-      font-size: 0.96rem !important;
+      padding: 1rem 1.75rem !important;
+      font-size: 0.9679rem !important;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .item {
+      padding: 1rem 0.66rem !important;
+      font-size: 0.9679rem !important;
     }
   }
 
   @media (max-width: 360px) {
     .item {
-      font-size: 0.955rem !important;
+      font-size: 0.96rem !important;
     }
   }
 

@@ -6,7 +6,7 @@ const CalorieRequirements = () => {
     <SheetsComponent
       colorScheme="blue"
       title="Calorie Requirements"
-      subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      subtext="Calculate the amount of calories you need each day in order to determine how to best approach your weight loss."
       sheetId="#gid=1239424910"
     />
   );

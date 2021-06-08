@@ -6,7 +6,7 @@ const FastingGuide = () => {
     <SheetsComponent
       colorScheme="green"
       title="Fasting Guide"
-      subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      subtext="Use the fasting guide to shift your body's normal eating window."
       sheetId="#gid=166266414"
     />
   );
