@@ -26,11 +26,13 @@ const Rewards = () => {
   return (
     rows && (
       <TableComponent
+        className="rewards"
         rows={rows()}
         columns={columns}
         color="#FBBD08"
         aligntext="center"
         height="30rem"
+        maxHeight="25rem"
       />
     )
   );

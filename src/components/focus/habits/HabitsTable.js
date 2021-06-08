@@ -104,6 +104,7 @@ const HabitsTable = () => {
   return (
     rows && (
       <TableComponent
+        className="habits"
         descriptionheader={<HabitsTableHeader />}
         descriptionHeaderHeight="115px"
         rows={rows(addExampleRow(), addEmptyRow())}

@@ -140,14 +140,23 @@ export const StyledTable = styled(Table)`
       border-bottom: ${(props) =>
         props.className !== "beliefs" &&
         props.className !== "swagger" &&
+        props.className !== "rewards" &&
         `2px solid ${props.color}`};
     }
 
     /* Hide table headers (but not display: none, for accessibility) */
-    thead tr {
+    :not(.rewards) thead {
       position: absolute;
       top: -9999px;
       left: -9999px;
+    }
+
+    thead.rewards {
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 2 !important;
+      margin: 0 !important;
+      color: red;
     }
 
     td {
@@ -160,13 +169,13 @@ export const StyledTable = styled(Table)`
 
     td:before {
       /* Now like a table header */
-      /* position: absolute; */
+      position: absolute;
       /* Top/left values mimic padding */
-      /* top: 6px;
+      top: 6px;
       left: 6px;
       width: 45%;
       padding-right: 10px;
-      white-space: nowrap; */
+      white-space: nowrap;
     }
   }
 `;
