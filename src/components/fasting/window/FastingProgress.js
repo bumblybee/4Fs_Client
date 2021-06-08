@@ -12,6 +12,25 @@ const FastingProgress = ({ fastingProgress }) => {
   ];
 
   const rows = () => {
+    // Placeholder cells if no progress to show
+    if (!fastingProgress.length) {
+      return [
+        {
+          date: {
+            cellComponent: generateCellComponent("static", {
+              val: "",
+            }),
+          },
+          performed: {
+            cellComponent: generateCellComponent("static", {
+              val: "Fasting window progress will be displayed here",
+              alignment: "center",
+            }),
+          },
+        },
+      ];
+    }
+
     const rowData = fastingProgress.map((item) => ({
       date: {
         cellComponent: generateCellComponent("static", {

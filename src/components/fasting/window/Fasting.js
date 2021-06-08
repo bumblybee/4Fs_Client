@@ -38,7 +38,7 @@ const Fasting = () => {
         color="#1B1C1D"
         aligntext="center"
         height="34rem"
-        maxHeight="95%"
+        maxHeight="99%"
       />
     </div>
   );

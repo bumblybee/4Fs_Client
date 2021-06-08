@@ -19,6 +19,7 @@ export const StyledFastingCalcWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 70%;
+  height: 100%;
   margin: 0 auto 1.2rem;
   border: 1px solid #22242626;
   border-radius: 0.27rem;
@@ -30,7 +31,6 @@ export const StyledFastingCalcWrapper = styled.div`
   }
 
   @media (max-width: 525px) {
-    width: 100%;
     padding: 1rem 0.5rem;
     flex-direction: column-reverse;
     height: 300px;
@@ -42,7 +42,7 @@ export const StyledForm = styled(Form)`
   flex-direction: column;
   width: 18%;
   margin: 0 auto;
-  padding: 0.25rem 1rem 0.25rem;
+  padding: 0.5rem 1rem;
 
   input {
     text-align: center !important;
