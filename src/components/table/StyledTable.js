@@ -118,7 +118,7 @@ export const StyledTable = styled(Table)`
 
   @media (max-width: 620px) {
     td {
-      height: ${(props) => (props.fullheighttd ? "18rem" : "")};
+      height: ${(props) => (props.fullheighttd ? "20rem" : "")};
     }
   }
 
