@@ -242,7 +242,8 @@ export const StyledTable = styled(Table)`
 
     // Sticky table heads that are being kept visible
 
-    thead.rewards {
+    thead.rewards,
+    thead.swagger {
       position: sticky !important;
       top: 0 !important;
       z-index: 2 !important;
@@ -250,17 +251,18 @@ export const StyledTable = styled(Table)`
       color: red;
     }
 
-    /* thead.habits:not(.description-header) {
-      position: sticky;
-      top: 14.25%;
-      z-index: 2;
+    // Attempt at stickying example cell
+    /* tbody.swagger tr:first-of-type {
+      position: sticky !important;
+      top: 0.1% !important;
+      z-index: 2 !important;
     } */
 
     td:not(.fasting) {
       /* Behave  like a "row" */
       border: none !important;
       border-bottom: 1px solid #eee !important;
-      position: relative;
+      /* position: relative; */
     }
 
     td:before {

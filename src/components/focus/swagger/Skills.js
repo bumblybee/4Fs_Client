@@ -83,6 +83,7 @@ const Skills = () => {
         aligntext="center"
         example
         compact
+        // mobileHeight="100%"
       />
     )
   );
