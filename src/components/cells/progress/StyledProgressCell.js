@@ -14,13 +14,13 @@ export const StyledProgressWrapper = styled.div`
     appearance: none;
 
     ::-webkit-progress-bar {
-      height: 12px;
+      height: 14px;
       border-radius: 20px;
       background-color: #ddddddee;
     }
 
     ::-webkit-progress-value {
-      height: 12px;
+      height: 14px;
       border-radius: 20px;
       background: ${(props) => props.color};
     }

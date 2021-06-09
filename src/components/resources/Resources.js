@@ -4,7 +4,7 @@ import SheetsComponent from "../sheets/SheetsComponent";
 const Resources = () => {
   return (
     <SheetsComponent
-      colorScheme="blue"
+      colorScheme="grey"
       val="Resources"
       title="Bonus Resources"
       subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."

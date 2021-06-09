@@ -27,8 +27,6 @@ export const StyledTableWrapper = styled.div`
   @media (max-width: 620px) {
     width: ${(props) => `calc(${props.width} + 35%)`};
     max-height: ${(props) => props.mobileHeight || "20rem"};
-
-    /* overflow-y: scroll; */
   }
 `;
 
@@ -65,14 +63,10 @@ export const StyledTable = styled(Table)`
     min-height: 45px !important;
     position: relative;
     font-family: "Lato", sans-serif;
-
-    @media (max-width: 620px) {
-    }
   }
 
   .sheets td {
     display: flex;
-    /* flex-direction: center; */
     align-items: center;
     justify-content: center;
   }
@@ -82,23 +76,8 @@ export const StyledTable = styled(Table)`
   }
 
   .fasting-progress thead th {
-    padding: 0 !important;
+    padding: 0.1rem !important;
   }
-
-  // Sticky example row
-
-  /* .fasting-progress tr:first-child th:first-child {
-    text-align: left;
-    padding-left: 0.5rem !important; */
-  /* } */
-
-  /* tbody tr:first-child,
-  tr:first-child td:first-child {
-    position: sticky;
-    top: ${(props) => props.descriptionHeaderHeight};
-    left: ${(props) => props.descriptionHeaderHeight};
-    color: purple;
-  } */
 
   .description-header {
     height: ${(props) => props.descriptionHeaderHeight} !important;
@@ -197,15 +176,6 @@ export const StyledTable = styled(Table)`
       height: 20px !important;
     }
 
-    /* .fasting-progress tr th {
-      width: 79% !important;
-      height: 45%;
-    }
-
-    .fasting-progress tr th:first-child {
-      width: 21% !important;
-    } */
-
     // Below keeps row and cells spread across width
 
     .habits tr td,
@@ -219,11 +189,6 @@ export const StyledTable = styled(Table)`
       min-height: 30px !important;
       max-height: 30px !important;
     }
-
-    /* .fasting-progress tr td:first-child {
-      width: 21% !important;
-      min-height: 31px !important;
-    } */
 
     tr {
       border-bottom: ${(props) =>

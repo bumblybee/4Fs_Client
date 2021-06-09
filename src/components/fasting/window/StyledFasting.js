@@ -4,7 +4,7 @@ import { Form } from "semantic-ui-react";
 export const StyledFastingWrapper = styled.div`
   height: 100%;
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.15rem 1rem;
   display: flex;
   flex-direction: column;
 
@@ -19,7 +19,7 @@ export const StyledFastingCalcWrapper = styled.div`
   align-items: center;
   width: 70%;
   height: 100%;
-  margin: 0 auto 1.2rem;
+  margin: 0 auto 0.9rem;
   border: 1px solid #22242626;
   border-radius: 0.27rem;
   padding: 2rem 1.5rem 1.5rem 1rem;
