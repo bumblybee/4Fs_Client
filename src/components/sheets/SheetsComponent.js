@@ -68,6 +68,7 @@ const SheetsComponent = ({
         color={colorScheme}
         aligntext="center"
         fullheighttd
+        mobileHeight="100%"
       />
     </div>
   );

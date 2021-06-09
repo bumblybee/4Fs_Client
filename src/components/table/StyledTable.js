@@ -15,7 +15,13 @@ export const StyledTableWrapper = styled.div`
   margin: ${(props) => props.margin};
 
   @media (max-width: 1024px) {
-    border-top: ${(props) => `2px solid ${props.color} !important`};
+    border-top: ${(props) =>
+      props.className === "sheets"
+        ? `2px solid ${props.color} !important`
+        : props.className === "milestones"
+        ? `2px solid ${props.color} !important`
+        : props.className === "fasting" &&
+          `2px solid ${props.color} !important`};
   }
 
   @media (max-width: 620px) {

@@ -112,6 +112,7 @@ export default function TableComponent({ children, ...props }) {
   return (
     // TODO Add to stylesheet and take in classNames
     <StyledTableWrapper
+      className={props.className}
       color={props.color}
       width={props.width}
       height={props.height}
