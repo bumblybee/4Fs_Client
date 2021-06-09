@@ -115,6 +115,7 @@ const HabitsTable = () => {
         example
         compact
         maxHeight="35rem"
+        mobileHeight="34rem"
       />
     )
   );

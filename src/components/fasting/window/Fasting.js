@@ -33,12 +33,14 @@ const Fasting = () => {
       />
       <ShareToggle shared={shared[0]} handleSave={handleSave} field="fasting" />
       <TableComponent
+        className="fasting"
         rows={rows()}
         columns={columns}
         color="#1B1C1D"
         aligntext="center"
         height="34rem"
         maxHeight="99%"
+        mobileHeight="34rem"
       />
     </div>
   );

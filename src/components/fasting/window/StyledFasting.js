@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Form } from "semantic-ui-react";
-import TableComponent from "../../table/TableComponent";
 
 export const StyledFastingWrapper = styled.div`
   height: 100%;
@@ -33,7 +32,7 @@ export const StyledFastingCalcWrapper = styled.div`
   @media (max-width: 525px) {
     padding: 1rem 0.5rem;
     flex-direction: column-reverse;
-    height: 300px;
+    height: 320px;
   }
 `;
 
@@ -86,7 +85,7 @@ export const StyledForm = styled(Form)`
   }
 
   @media (max-width: 525px) {
-    width: 70%;
+    width: 72%;
     justify-content: space-between !important;
     align-items: flex-end !important;
     flex-direction: row;
@@ -118,11 +117,5 @@ export const StyledFastingProgressWrapper = styled.div`
 
   @media (max-width: 1027px) {
     width: 100%;
-  }
-`;
-
-export const StyledTable = styled(TableComponent)`
-  thead th {
-    padding: 0 !important;
   }
 `;

@@ -25,6 +25,10 @@ export const StyledProgressWrapper = styled.div`
       background: ${(props) => props.color};
     }
   }
+
+  @media (max-width: 620px) {
+    padding: 0 0.25rem;
+  }
 `;
 
 export const StyledPercent = styled.span`
@@ -58,12 +62,13 @@ export const StyledPercent = styled.span`
         : props.val >= 0 && props.val < 45
         ? `calc(${props.val}% - 9%)`
         : props.val >= 45 && props.val <= 65
-        ? "34%"
+        ? "31%"
         : props.val > 65 && props.val <= 70
         ? "60%"
-        : `calc(${props.val}% - 40px)`};
+        : `calc(${props.val}% - 30px)`};
 
     top: -11.5%;
+    font-size: 0.7rem;
   }
 `;
 
@@ -80,5 +85,6 @@ export const StyledHours = styled.div`
 
   @media (max-width: 385px) {
     top: -16%;
+    font-size: 0.825rem;
   }
 `;

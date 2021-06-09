@@ -58,7 +58,7 @@ export const StyledGauge = styled(GaugeChart)`
   }
 
   @media (max-width: 480px) {
-    width: 275px !important;
-    height: 100px !important;
+    width: 290px !important;
+    height: 120px !important;
   }
 `;

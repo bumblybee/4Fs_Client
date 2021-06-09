@@ -6,7 +6,7 @@ TableComponent.TD = function TD({ children, ...props }) {
   return (
     <Table.Cell
       {...props}
-      style={{ minHeight: "45px" }}
+      // style={{ minHeight: "45px" }}
       collapsing={props.collapsing}
       textAlign={props.alignment}
     >
@@ -116,6 +116,7 @@ export default function TableComponent({ children, ...props }) {
       width={props.width}
       height={props.height}
       maxHeight={props.maxHeight}
+      mobileHeight={props.mobileHeight}
       margin={props.margin}
     >
       <StyledTable

@@ -1,8 +1,7 @@
 import React from "react";
 import generateCellComponent from "../../../utils/generateCellComponent";
-
+import TableComponent from "../../table/TableComponent";
 import moment from "moment";
-import { StyledTable } from "./StyledFasting";
 
 const FastingProgress = ({ fastingProgress }) => {
   const columns = [
@@ -57,7 +56,7 @@ const FastingProgress = ({ fastingProgress }) => {
 
   return (
     rows && (
-      <StyledTable
+      <TableComponent
         className="fasting-progress"
         aligntext="center"
         fontsize="0.9rem"
@@ -66,7 +65,8 @@ const FastingProgress = ({ fastingProgress }) => {
         rows={rows()}
         striped
         compact="very"
-        maxHeight="9rem"
+        maxHeight="10rem"
+        mobileHeight="10rem"
         celled
       />
     )
