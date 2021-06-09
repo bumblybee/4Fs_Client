@@ -7,7 +7,7 @@ const Resources = () => {
       colorScheme="blue"
       val="Resources"
       title="Bonus Resources"
-      subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
     />
   );
 };

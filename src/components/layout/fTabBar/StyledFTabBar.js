@@ -10,6 +10,7 @@ export const StyledFTabBar = styled.div`
   box-shadow: inset 0 1px 5px 1px rgba(0, 0, 0, 0.2),
     inset 0 -1px 4px 1px rgba(0, 0, 0, 0.1);
   padding: 1rem;
+  height: 100px;
 
   .resources {
     position: absolute;
@@ -32,7 +33,7 @@ export const StyledFTabBar = styled.div`
   }
 
   @media (max-width: 768px) {
-    height: 110px;
+    /* height: 110px; */
 
     .resources {
       top: auto;
@@ -46,7 +47,7 @@ export const StyledFTabBar = styled.div`
 
   @media (max-width: 620px) {
     .resources {
-      bottom: 3%;
+      bottom: 1%;
       font-size: 0.975rem;
     }
   }
