@@ -84,7 +84,8 @@ const Accomplishments = () => {
         aligntext="center"
         example
         compact
-        // mobileHeight="100%"
+        mobileHeight="25rem"
+        // maxHeight="100%"
       />
     )
   );

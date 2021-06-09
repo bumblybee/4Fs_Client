@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 export const StyledEmptyCell = styled.div`
   width: 99%;
+  height: 35px;
   cursor: ${(props) => (props.disabled ? "default" : "pointer")};
   border-radius: 0;
-  min-height: 40px;
   color: ${(props) => (props.blankCellVal ? "" : "#aaaaaacc")};
-  padding-left: 0.25rem;
   text-align: ${(props) => props.aligntext};
 
   display: flex;

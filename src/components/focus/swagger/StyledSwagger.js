@@ -1,15 +1,19 @@
 import styled from "styled-components";
 
 export const StyledSwaggerTableContainer = styled.div`
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; */
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 
   @media (max-width: 1027px) {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
 
     > div {
       margin-bottom: 1rem;

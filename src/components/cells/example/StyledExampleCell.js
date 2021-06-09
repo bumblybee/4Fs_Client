@@ -2,12 +2,18 @@ import styled from "styled-components";
 
 export const StyledExampleCell = styled.div`
   position: relative;
-  text-align: "center";
+  text-align: center;
   font-weight: ${(props) => props.textWeight || 400};
   font-style: italic;
   color: ${(props) => props.color || "#333"};
   width: 100%;
-  /* height: 2.75rem; */
+  min-height: 35px;
+  height: auto;
+
+  > div {
+    margin: auto;
+  }
+
   display: flex;
   justify-content: ${(props) => props.justify || "center"};
   align-items: "${(props) => props.alignment || "center"}";

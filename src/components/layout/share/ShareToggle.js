@@ -19,7 +19,7 @@ const ShareToggle = ({ shared, handleSave, field, width }) => {
   };
 
   return (
-    <StyledToggle width={width}>
+    <StyledToggle width={width} title={`Share ${field} progress`}>
       <Radio
         label="Share"
         name="share"

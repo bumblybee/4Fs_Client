@@ -6,7 +6,7 @@ export const StyledTableWrapper = styled.div`
   width: ${(props) => props.width};
   max-width: 100%;
   min-height: 48px;
-  max-height: ${(props) => props.maxHeight || "34rem"};
+  max-height: ${(props) => props.maxHeight || "31rem"};
   overflow-y: auto;
   overflow-x: hidden;
   border: 1px solid #22242626;
@@ -147,6 +147,10 @@ export const StyledTable = styled(Table)`
       display: block;
     }
 
+    td.milestones {
+      height: ${(props) => (props.fullheighttd ? "30rem" : "auto")};
+    }
+
     // Below keeps table header intact and displayed across width
 
     /* .habits thead th {
@@ -279,7 +283,7 @@ export const StyledTable = styled(Table)`
 
   @media (max-width: 620px) {
     td {
-      height: ${(props) => (props.fullheighttd ? "20rem" : "")};
+      height: ${(props) => (props.fullheighttd ? "20rem" : "auto")};
     }
   }
 `;

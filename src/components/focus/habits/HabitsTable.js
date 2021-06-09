@@ -88,12 +88,14 @@ const HabitsTable = () => {
         cellComponent: generateCellComponent("example", {
           val: "Walk five times this week",
           color: "#33333399",
+          alignment: "center",
         }),
       },
       reward: {
         cellComponent: generateCellComponent("example", {
           val: "Take a bubble bath",
           color: "#33333399",
+          alignment: "center",
         }),
       },
     };
@@ -115,6 +117,7 @@ const HabitsTable = () => {
         example
         compact
         maxHeight="35rem"
+        // maxHeight="100%"
         mobileHeight="100%"
       />
     )

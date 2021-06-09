@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const StyledEditableCell = styled.div`
   cursor: ${(props) => (props.disabled ? "default" : "pointer")};
   width: 98%;
-  overflow: auto;
+  height: auto;
+  min-height: 35px;
   display: flex;
   justify-content: ${(props) => props.alignment};
   align-items: center;
@@ -23,11 +24,5 @@ export const StyledEditableCell = styled.div`
     background: #eee;
     padding: 0.75rem;
     border-radius: 6px;
-  }
-
-  :hover {
-    /* background: #eee;
-    border-radius: 6px; */
-    /* border-bottom: 2px solid #eee; */
   }
 `;

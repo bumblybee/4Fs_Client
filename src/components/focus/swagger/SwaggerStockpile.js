@@ -32,7 +32,6 @@ const SwaggerStockpile = () => {
         shared={shared[0]}
         handleSave={handleSaveShared}
         field="swagger"
-        width="89.5%"
       />
       <StyledSwaggerTableContainer>
         <Moments />
