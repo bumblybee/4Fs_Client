@@ -429,6 +429,7 @@ const Practices = () => {
           alignment: "center",
           justify: "flex-start",
           color: "#33333366",
+          className: "system",
         }),
       },
       goal: {

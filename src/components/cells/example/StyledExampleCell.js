@@ -10,13 +10,13 @@ export const StyledExampleCell = styled.div`
   min-height: 35px;
   height: auto;
 
-  > div {
-    margin: auto;
-  }
-
   display: flex;
   justify-content: ${(props) => props.justify || "center"};
   align-items: "${(props) => props.alignment || "center"}";
+
+  > div {
+    margin: auto 0;
+  }
 
   div:first-child {
     width: ${(props) => props.width || ""};

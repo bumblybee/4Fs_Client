@@ -14,6 +14,7 @@ const ExampleCell = ({
 }) => {
   return (
     <StyledExampleCell
+      className={className}
       textWeight={textWeight}
       alignment={alignment}
       justify={justify}

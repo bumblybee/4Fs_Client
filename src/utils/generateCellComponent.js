@@ -58,6 +58,7 @@ const generateCellComponent = (type, props) => {
           color={props.color}
           textWeight={props.textweight}
           tooltipContent={props.tooltipContent}
+          className={props.className}
         />
       );
     case "dropdown":

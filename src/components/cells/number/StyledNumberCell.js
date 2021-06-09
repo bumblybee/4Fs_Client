@@ -9,5 +9,6 @@ export const StyledNumberCell = styled.div`
 
   input {
     width: 35px;
+    font-size: 1rem;
   }
 `;
