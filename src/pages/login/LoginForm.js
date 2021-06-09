@@ -35,7 +35,11 @@ const LoginForm = () => {
     <StyledFormWrapper verticalAlign="middle" centered>
       <StyledSegment className="column" raised>
         <StyledFormHeader as="h2" image>
-          <Image className="logo" src="/4flogo.png" alt="4fs logo" />
+          <Image
+            className="logo"
+            src="/4flogowhiteoutline.png"
+            alt="4fs logo"
+          />
           Log in
         </StyledFormHeader>
 
