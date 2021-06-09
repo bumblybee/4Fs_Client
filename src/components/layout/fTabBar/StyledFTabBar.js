@@ -67,6 +67,7 @@ export const StyledFMenu = styled(Menu)`
   border: 2px solid #2b73ce !important;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.6) !important;
   max-width: 32% !important;
+  height: 89%;
   margin: 0 !important;
 
   .item {
@@ -99,6 +100,8 @@ export const StyledFMenu = styled(Menu)`
   }
 
   @media (max-width: 620px) {
+    height: 80%;
+
     margin: 0 0em 1rem !important;
     .item {
     }
