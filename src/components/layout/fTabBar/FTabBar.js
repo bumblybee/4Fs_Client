@@ -32,62 +32,61 @@ const FTabBar = () => {
       <StyledFMenu
         size={windowSize && windowSize.width > 360 ? "massive" : "large"}
       >
-        <Link to="/focus">
-          <Menu.Item
-            name="focus"
-            as="div"
-            active={activeItem === "focus"}
-            onClick={(e) => setActiveItem("focus")}
-          >
-            <Icon
-              name="bullseye"
-              size={windowSize && windowSize.width > 360 ? "large" : ""}
-            />
-            Focus
-          </Menu.Item>
-        </Link>
-        <Link to="/fasting">
-          <Menu.Item
-            name="fasting"
-            as="div"
-            active={activeItem === "fasting"}
-            onClick={(e) => setActiveItem("fasting")}
-          >
-            <Icon
-              name="wait"
-              size={windowSize && windowSize.width > 360 ? "large" : ""}
-            />
-            Fasting
-          </Menu.Item>
-        </Link>
-        <Link to="/food">
-          <Menu.Item
-            onClick={(e) => setActiveItem("food")}
+        <Menu.Item
+          name="focus"
+          as={Link}
+          to="/focus"
+          active={activeItem === "focus"}
+          onClick={(e) => setActiveItem("focus")}
+        >
+          <Icon
+            name="bullseye"
+            size={windowSize && windowSize.width > 360 ? "large" : ""}
+          />
+          Focus
+        </Menu.Item>
+
+        <Menu.Item
+          name="fasting"
+          as={Link}
+          to="/fasting"
+          active={activeItem === "fasting"}
+          onClick={(e) => setActiveItem("fasting")}
+        >
+          <Icon
+            name="wait"
+            size={windowSize && windowSize.width > 360 ? "large" : ""}
+          />
+          Fasting
+        </Menu.Item>
+
+        <Menu.Item
+          onClick={(e) => setActiveItem("food")}
+          name="food"
+          as={Link}
+          to="/food"
+          active={activeItem === "food"}
+        >
+          <Icon
             name="food"
-            as="div"
-            active={activeItem === "food"}
-          >
-            <Icon
-              name="food"
-              size={windowSize && windowSize.width > 360 ? "large" : ""}
-            />
-            Food
-          </Menu.Item>
-        </Link>
-        <Link to="/fitness">
-          <Menu.Item
-            onClick={(e) => setActiveItem("fitness")}
-            name="fitness"
-            active={activeItem === "fitness"}
-            as="div"
-          >
-            <Icon
-              name="heartbeat"
-              size={windowSize && windowSize.width > 360 ? "large" : ""}
-            />
-            Fitness
-          </Menu.Item>
-        </Link>
+            size={windowSize && windowSize.width > 360 ? "large" : ""}
+          />
+          Food
+        </Menu.Item>
+
+        <Menu.Item
+          onClick={(e) => setActiveItem("fitness")}
+          name="fitness"
+          active={activeItem === "fitness"}
+          as={Link}
+          to="/fitness"
+        >
+          <Icon
+            name="heartbeat"
+            size={windowSize && windowSize.width > 360 ? "large" : ""}
+          />
+          Fitness
+        </Menu.Item>
       </StyledFMenu>
       <Link to="/resources">
         <p className="resources">Bonus Resources</p>
