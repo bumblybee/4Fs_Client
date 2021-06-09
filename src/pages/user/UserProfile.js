@@ -83,10 +83,13 @@ const UserProfile = () => {
     });
 
     const res = await updateUserDetails(data);
-    console.log(res);
+
     if (!res.error) {
       setNotificationMessage("Your information has been updated", "info", true);
       window.scrollTo(0, 0);
+    } else {
+      window.scrollTo(0, 0);
+      setNotificationMessage("Error updating your information", "error", true);
     }
   };
 
