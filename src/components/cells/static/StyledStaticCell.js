@@ -4,7 +4,7 @@ export const StyledStaticCell = styled.div`
   text-align: ${(props) => props.aligntext};
   display: flex;
   justify-content: ${(props) => props.alignment};
-  align-items: ${(props) => props.alignItems};
+  align-items: ${(props) => props.alignItems || "center"};
   font-weight: ${(props) => props.textweight};
   color: ${(props) => props.condition && "#21ce0f"};
   height: 100%;

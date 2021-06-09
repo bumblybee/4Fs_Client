@@ -61,7 +61,7 @@ export const StyledTable = styled(Table)`
   }
 
   td {
-    height: ${(props) => (props.fullheighttd ? "30rem" : "")};
+    height: ${(props) => (props.fullheighttd ? "30rem" : "45px")};
     min-height: 45px !important;
     position: relative;
     font-family: "Lato", sans-serif;
