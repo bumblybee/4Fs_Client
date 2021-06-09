@@ -2,15 +2,15 @@ import styled from "styled-components";
 import { Menu } from "semantic-ui-react";
 
 export const StyledFTabBar = styled.div`
-  position: relative;
-  background: #daddde;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #daddde;
   box-shadow: inset 0 1px 5px 1px rgba(0, 0, 0, 0.2),
     inset 0 -1px 4px 1px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   height: 100px;
+  position: relative;
 
   .resources {
     position: absolute;
@@ -46,6 +46,8 @@ export const StyledFTabBar = styled.div`
   }
 
   @media (max-width: 620px) {
+    height: 105px;
+
     .resources {
       bottom: 3%;
       font-size: 0.975rem;
@@ -103,7 +105,6 @@ export const StyledFMenu = styled(Menu)`
 
   @media (max-width: 320px) {
     .item {
-      font-size: 0.9625rem !important;
     }
   }
 `;

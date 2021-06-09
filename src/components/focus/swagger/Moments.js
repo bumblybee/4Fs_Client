@@ -63,7 +63,7 @@ const Moments = () => {
           val: "Make a list of moments you're proud of that relate to weight loss",
           tooltipContent:
             "ex. got a complement on the beach, won a beauty pageant, ran a mile, etc.",
-          alignment: "flex-start",
+          alignment: "center",
           width: "90%",
           textweight: 600,
         }),
