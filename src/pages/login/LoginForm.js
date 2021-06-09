@@ -51,9 +51,13 @@ const LoginForm = () => {
               placeholder="example@example.com"
               label="Email"
               value={userDetails.email}
-              onChange={(e) =>
-                setUserDetails({ ...userDetails, email: e.target.value.trim() })
-              }
+              onChange={(e) => {
+                setUserDetails({
+                  ...userDetails,
+                  email: e.target.value.trim(),
+                });
+                clearNotificationMessage();
+              }}
               required
             />
             <Form.Input
@@ -64,9 +68,10 @@ const LoginForm = () => {
               type="password"
               label="Password"
               value={userDetails.password}
-              onChange={(e) =>
-                setUserDetails({ ...userDetails, password: e.target.value })
-              }
+              onChange={(e) => {
+                setUserDetails({ ...userDetails, password: e.target.value });
+                clearNotificationMessage();
+              }}
               required
             />
 

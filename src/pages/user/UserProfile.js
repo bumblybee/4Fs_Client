@@ -59,7 +59,7 @@ const UserProfile = () => {
       phone3: formattedPhone[2],
     };
   };
-  console.log(formatPhone());
+
   const handleChange = (field) => (e) => {
     setUserDetails({ ...userDetails, [field]: e.target.value });
   };
@@ -84,8 +84,10 @@ const UserProfile = () => {
 
     const res = await updateUserDetails(data);
     console.log(res);
-    res &&
+    if (!res.error) {
       setNotificationMessage("Your information has been updated", "info", true);
+      window.scrollTo(0, 0);
+    }
   };
 
   const handleLogout = () => {

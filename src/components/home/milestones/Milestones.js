@@ -48,9 +48,8 @@ const Milestones = () => {
         }),
       },
       milestone: {
-        cellComponent: generateCellComponent("", {
+        cellComponent: generateCellComponent("static", {
           val: item.milestone,
-          alignment: "center",
         }),
       },
       personalize: {
