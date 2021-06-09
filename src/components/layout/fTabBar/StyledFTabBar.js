@@ -88,7 +88,6 @@ export const StyledFMenu = styled(Menu)`
     max-width: 100% !important;
 
     .item {
-      font-size: 0.9679rem !important;
     }
   }
 
