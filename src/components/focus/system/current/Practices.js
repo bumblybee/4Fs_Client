@@ -532,6 +532,7 @@ const Practices = () => {
         }
         descriptionHeaderHeight="125px"
         maxHeight="30rem"
+        mobileHeight="20rem"
       />
     )
   );

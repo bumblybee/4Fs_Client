@@ -28,6 +28,16 @@ export const StyledProgressWrapper = styled.div`
 
   @media (max-width: 620px) {
     padding: 0 0.25rem;
+
+    progress[value] {
+      ::-webkit-progress-bar {
+        height: 13px;
+      }
+
+      ::-webkit-progress-value {
+        height: 13px;
+      }
+    }
   }
 `;
 
@@ -85,6 +95,6 @@ export const StyledHours = styled.div`
 
   @media (max-width: 385px) {
     top: -16%;
-    font-size: 0.825rem;
+    font-size: 0.85rem;
   }
 `;

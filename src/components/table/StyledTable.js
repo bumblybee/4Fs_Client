@@ -27,7 +27,7 @@ export const StyledTableWrapper = styled.div`
   @media (max-width: 620px) {
     width: ${(props) => `calc(${props.width} + 35%)`};
     max-height: ${(props) => props.mobileHeight || "20rem"};
-    /* height: min-content; */
+
     /* overflow-y: scroll; */
   }
 `;
@@ -67,7 +67,6 @@ export const StyledTable = styled(Table)`
     font-family: "Lato", sans-serif;
 
     @media (max-width: 620px) {
-      /* min-height: 25px !important; */
     }
   }
 
@@ -85,6 +84,8 @@ export const StyledTable = styled(Table)`
   .fasting-progress thead th {
     padding: 0 !important;
   }
+
+  // Sticky example row
 
   /* .fasting-progress tr:first-child th:first-child {
     text-align: left;
@@ -136,7 +137,7 @@ export const StyledTable = styled(Table)`
 
   @media only screen and (max-width: 760px),
     (min-device-width: 768px) and (max-device-width: 1024px) {
-    /* Force table to not be like tables anymore */
+    /* Force table to not be like table anymore */
     table,
     thead,
     tbody,
@@ -156,11 +157,18 @@ export const StyledTable = styled(Table)`
 
     .habits tr,
     .fasting-progress tr {
-      display: flex;
-      width: 100%;
-
+      /* display: flex;
+      
       justify-content: stretch;
-      align-items: flex-start;
+      align-items: center; */
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      /* height: 100%; */
+    }
+
+    .fasting-progress tr {
+      grid-template-columns: 1fr 4fr;
     }
 
     .fasting-progress tr,
@@ -168,42 +176,57 @@ export const StyledTable = styled(Table)`
       height: 20px !important;
     }
 
-    .habits tr th {
-      width: 50% !important;
+    .habits tr th,
+    .fasting-progress tr th {
+      width: 100% !important;
     }
 
-    .fasting-progress tr th {
+    /* .fasting-progress td {
+      padding: 0.5rem 0.25rem 0.3rem !important;
+    } */
+
+    .fasting-progress thead th {
+      padding: 0 !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 20px !important;
+    }
+
+    /* .fasting-progress tr th {
       width: 79% !important;
-      /* height: 45%; */
+      height: 45%;
     }
 
     .fasting-progress tr th:first-child {
       width: 21% !important;
-    }
+    } */
 
     // Below keeps row and cells spread across width
 
-    .habits tr td {
-      width: 100%;
-    }
-
+    .habits tr td,
     .fasting-progress tr td.fasting-progress {
-      width: 79%;
-      min-height: 20px !important;
-      max-height: 20px !important;
+      width: 100%;
+      height: 100%;
     }
 
-    .fasting-progress tr td:first-child {
+    .fasting-progress tr td.fasting-progress,
+    .fasting-progress tr {
+      min-height: 30px !important;
+      max-height: 30px !important;
+    }
+
+    /* .fasting-progress tr td:first-child {
       width: 21% !important;
       min-height: 31px !important;
-    }
+    } */
 
     tr {
       border-bottom: ${(props) =>
         props.className === "milestones" && `2px solid ${props.color}`};
     }
 
-    /* Hide table headers (but not display: none, for accessibility) */
+    /* Hide certain table headers (but not display: none, for accessibility) */
     :not(.rewards):not(.habits):not(.beliefs):not(.swagger) thead {
       position: absolute;
       top: -9999px;
@@ -227,16 +250,16 @@ export const StyledTable = styled(Table)`
       color: red;
     }
 
-    thead.habits:not(.description-header) {
+    /* thead.habits:not(.description-header) {
       position: sticky;
-      top: 23.7%;
+      top: 14.25%;
       z-index: 2;
-    }
+    } */
 
-    td {
+    td:not(.fasting) {
       /* Behave  like a "row" */
-      border: none;
-      border-bottom: 0 solid #eee;
+      border: none !important;
+      border-bottom: 1px solid #eee !important;
       position: relative;
     }
 
