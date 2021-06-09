@@ -3,6 +3,10 @@ import { Grid, Segment, Header, Form, Message } from "semantic-ui-react";
 
 export const StyledFormWrapper = styled(Grid)`
   height: 100vh !important;
+
+  @media (max-width: 620px) {
+    /* margin-bottom: 5rem !important; */
+  }
 `;
 
 export const StyledSegment = styled(Segment)`

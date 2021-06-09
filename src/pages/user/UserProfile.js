@@ -121,7 +121,7 @@ const UserProfile = () => {
 
   return (
     <sc.StyledFormWrapper verticalAlign="middle" centered origin="profile">
-      <StyledSegment className="column" raised>
+      <StyledSegment className="column">
         <StyledFormContainer basic padded>
           <StyledProfileHeader>
             {user && user.firstName

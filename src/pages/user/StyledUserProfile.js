@@ -8,17 +8,28 @@ export const StyledFormContainer = styled.div`
   padding: 1rem;
 
   @media (max-width: 1200px) {
-    width: 90%;
-    padding-top: 0;
+    width: 94%;
+    padding: 0 1rem;
   }
 `;
 
 export const StyledSegment = styled(Segment)`
   width: 70% !important;
   border: 2px solid #2185d0 !important;
+  margin-top: -12% !important;
 
-  @media (max-width: 700px) {
-    width: 95% !important;
+  @media (max-width: 1200px) {
+    margin-top: -60% !important;
+  }
+
+  @media (max-width: 768px) {
+    width: 80% !important;
+    margin-top: -33% !important;
+  }
+
+  @media (max-width: 620px) {
+    width: 100% !important;
+    margin-top: 3.5% !important;
   }
 `;
 
