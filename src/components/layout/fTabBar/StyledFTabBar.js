@@ -46,7 +46,7 @@ export const StyledFTabBar = styled.div`
   }
 
   @media (max-width: 620px) {
-    height: 105px;
+    height: 90px;
 
     .resources {
       bottom: 3%;
@@ -73,7 +73,7 @@ export const StyledFMenu = styled(Menu)`
     border-radius: 0 !important;
     font-family: "Montserrat", sans-serif !important;
     font-weight: 400 !important;
-    margin: 0 !important;
+    /* margin: 0 !important; */
   }
 
   .item:not(.active) {
@@ -86,6 +86,11 @@ export const StyledFMenu = styled(Menu)`
     font-weight: 500 !important;
   }
 
+  .item:last-child.active {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
   @media (max-width: 768px) {
     max-width: 100% !important;
 
@@ -94,6 +99,7 @@ export const StyledFMenu = styled(Menu)`
   }
 
   @media (max-width: 620px) {
+    margin: 0 0em 1rem !important;
     .item {
     }
   }
