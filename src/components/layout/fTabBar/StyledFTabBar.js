@@ -64,11 +64,10 @@ export const StyledFTabBar = styled.div`
 export const StyledFMenu = styled(Menu)`
   border: 2px solid #2b73ce !important;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.6) !important;
-  max-width: 90% !important;
+  max-width: 32% !important;
   margin: 0 !important;
 
   .item {
-    padding: 1.25rem 1.75rem !important;
     border-radius: 0 !important;
     font-family: "Montserrat", sans-serif !important;
     font-weight: 400 !important;
@@ -89,26 +88,22 @@ export const StyledFMenu = styled(Menu)`
     max-width: 100% !important;
 
     .item {
-      padding: 1rem 1.75rem !important;
       font-size: 0.9679rem !important;
     }
   }
 
   @media (max-width: 620px) {
     .item {
-      padding: 1rem 0.66rem !important;
     }
   }
 
   @media (max-width: 385px) {
     .item {
-      padding: 1rem 0.4rem !important;
     }
   }
 
   @media (max-width: 320px) {
     .item {
-      padding: 0.75rem 0.25rem !important;
       font-size: 0.9625rem !important;
     }
   }

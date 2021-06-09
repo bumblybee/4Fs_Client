@@ -30,7 +30,8 @@ const FTabBar = () => {
   return (
     <StyledFTabBar path={path}>
       <StyledFMenu
-        size={windowSize && windowSize.width > 360 ? "massive" : "large"}
+        size={windowSize && windowSize.width > 600 ? "massive" : "small"}
+        widths={4}
       >
         <Menu.Item
           name="focus"
