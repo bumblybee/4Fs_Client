@@ -108,6 +108,7 @@ const Milestones = () => {
           aligntext="left"
           striped
           maxHeight="100%"
+          mobileHeight="100%"
         />
       </div>
     )

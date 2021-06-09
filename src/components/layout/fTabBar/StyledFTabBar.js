@@ -33,7 +33,7 @@ export const StyledFTabBar = styled.div`
   }
 
   @media (max-width: 768px) {
-    /* height: 110px; */
+    height: 110px;
 
     .resources {
       top: auto;
@@ -47,7 +47,7 @@ export const StyledFTabBar = styled.div`
 
   @media (max-width: 620px) {
     .resources {
-      bottom: 1%;
+      bottom: 3%;
       font-size: 0.975rem;
     }
   }
