@@ -8,7 +8,15 @@ export const StyledToggle = styled.div`
     font-weight: 600;
   }
 
+  @media (max-width: 1024px) {
+    margin: ${(props) =>
+      props.field === "fasting"
+        ? "0 0 0 2rem"
+        : props.field === "habit" && "0 0.5rem -0.5rem"};
+  }
+
   @media (max-width: 620px) {
     width: ${(props) => `calc(${props.width} + 33%)`};
+    margin: ${(props) => props.field === "fasting" && "0 0 0 1.25rem"};
   }
 `;

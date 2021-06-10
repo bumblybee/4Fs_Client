@@ -66,7 +66,7 @@ const Gauge = ({ today, goal, percentage, fasting }) => {
       }
     } else {
       return colors.map((el, i) =>
-        i <= 3 ? "#ff0000" : i <= 6 ? "#ff8b00" : i <= 9 ? "#fff200" : "#00ff00"
+        i < 3 ? "#ff0000" : i <= 5 ? "#ff8b00" : i < 9 ? "#fff200" : "#00ff00"
       );
     }
   };

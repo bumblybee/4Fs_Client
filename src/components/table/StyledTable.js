@@ -6,7 +6,6 @@ export const StyledTableWrapper = styled.div`
   width: ${(props) => props.width};
   max-width: 100%;
   min-height: 48px;
-  /* max-height: ${(props) => props.maxHeight || "31rem"}; */
   overflow-y: auto;
   overflow-x: hidden;
   border: 1px solid #22242626;
@@ -20,13 +19,13 @@ export const StyledTableWrapper = styled.div`
         ? `2px solid ${props.color} !important`
         : props.className === "milestones"
         ? `2px solid ${props.color} !important`
-        : props.className === "fasting" &&
-          `2px solid ${props.color} !important`};
+        : props.className === "fasting" && `none`};
+
+    border: ${(props) => props.className === "fasting" && "none"};
   }
 
   @media (max-width: 620px) {
     width: ${(props) => `calc(${props.width} + 35%)`};
-    /* max-height: ${(props) => props.mobileHeight || "20rem"}; */
   }
 `;
 

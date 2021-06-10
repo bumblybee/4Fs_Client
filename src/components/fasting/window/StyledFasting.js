@@ -5,12 +5,12 @@ export const StyledFastingWrapper = styled.div`
   height: 100%;
   width: 100%;
   padding: 0.15rem 1rem;
-
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
+
   @media (max-width: 700px) {
-    padding: 0.5rem;
+    padding: 0;
   }
 `;
 
@@ -31,7 +31,7 @@ export const StyledFastingCalcWrapper = styled.div`
   }
 
   @media (max-width: 525px) {
-    padding: 1rem 0.5rem;
+    padding: 1rem 0.25rem;
     flex-direction: column-reverse;
     height: 320px;
   }
@@ -114,7 +114,7 @@ export const StyledForm = styled(Form)`
     }
 
     .ui.small.input {
-      width: 70px !important;
+      width: 72px !important;
     }
 
     button {

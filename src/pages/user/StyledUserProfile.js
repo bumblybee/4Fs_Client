@@ -30,6 +30,7 @@ export const StyledSegment = styled(Segment)`
   @media (max-width: 620px) {
     width: 100% !important;
     margin-top: 3.5% !important;
+    border-radius: 0 !important;
   }
 `;
 
