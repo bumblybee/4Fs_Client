@@ -10,5 +10,15 @@ export const StyledNumberCell = styled.div`
   input {
     width: 35px;
     font-size: 1rem;
+    -moz-appearance: textfield;
+
+    :hover {
+      -moz-appearance: auto;
+      cursor: pointer;
+    }
+
+    :focus {
+      -moz-appearance: auto;
+    }
   }
 `;

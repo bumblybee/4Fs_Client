@@ -36,11 +36,13 @@ export const StyledTable = styled(Table)`
   border-right: none !important;
   border-bottom: none !important;
   border-top: none !important;
+  overflow-x: hidden;
 
   tbody {
     height: ${(props) => (props.fullheighttable ? "30rem" : "")};
     position: relative;
     overflow-y: auto;
+    overflow-x: hidden;
     width: 100%;
   }
 

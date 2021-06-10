@@ -200,14 +200,17 @@ const UserProfile = () => {
               </StyledPhoneInputsWrapper>
             </StyledPhoneWrapper>
             <Form.Input
-              id="sheets"
               fluid
+              id="sheets"
               icon="google drive"
               iconPosition="left"
               placeholder="https://docs.google.com/spreadsheets/d/CveaIsVeKQ"
               label="Google Sheets Link"
               value={userDetails.sheetsURL || ""}
               onChange={handleChange("sheetsURL")}
+              type="url"
+              pattern="https://docs\.google\.com/?.+"
+              title="Please enter a valid 4Fs Google Sheets link"
             />
             <Form.Group widths="equal">
               <Form.Input
