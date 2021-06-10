@@ -15,15 +15,19 @@ export const StyledProgressWrapper = styled.div`
     border: none;
     background: #fff;
 
-    ::-webkit-progress-bar,
     ::-moz-progress-bar {
+      height: 14px;
+      border-radius: 20px;
+      background: ${(props) => props.color};
+    }
+
+    ::-webkit-progress-bar {
       height: 14px;
       border-radius: 20px;
       background-color: #ddddddee;
     }
 
-    ::-webkit-progress-value,
-    ::-moz-progress-bar {
+    ::-webkit-progress-value {
       height: 14px;
       border-radius: 20px;
       background: ${(props) => props.color};

@@ -5,8 +5,7 @@ export const StyledFastingWrapper = styled.div`
   height: 100%;
   width: 100%;
   padding: 0.15rem 1rem;
-  /* display: flex;
-  flex-direction: column; */
+
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 0.5rem;

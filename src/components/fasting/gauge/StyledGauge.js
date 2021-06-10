@@ -39,7 +39,7 @@ export const StyledGaugeWrapper = styled.div`
     align-items: flex-end;
   }
 
-  @media (max-width: 525px) {
+  @media (max-width: 768px) {
     align-items: center;
   }
 `;
@@ -47,7 +47,7 @@ export const StyledGaugeWrapper = styled.div`
 export const StyledGauge = styled(GaugeChart)`
   width: 360px !important;
 
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     width: 280px !important;
     height: 100px !important;
   }

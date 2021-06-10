@@ -2,10 +2,7 @@ import React from "react";
 import { StyledGaugeWrapper, StyledGauge } from "./StyledGauge";
 
 const Gauge = ({ today, goal, percentage, fasting }) => {
-  console.log(today, goal);
   const renderColors = () => {
-    const hoursUnderGoal = goal - today;
-    // 12 levels in gauge, so divide today hours by 2 to find placement in 24 hour gauge
     const stop = Math.round(today / 2 - 1);
     const colors = Array(12).fill("");
 

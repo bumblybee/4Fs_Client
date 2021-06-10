@@ -61,7 +61,8 @@ export const StyledTable = styled(Table)`
   }
 
   td {
-    height: ${(props) => (props.fullheighttd ? "30rem" : "45px")};
+    // Changed below from 45px to auto to fix fasting
+    height: ${(props) => (props.fullheighttd ? "30rem" : "auto")};
     min-height: 45px !important;
     position: relative;
     font-family: "Lato", sans-serif;
