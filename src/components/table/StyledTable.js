@@ -191,13 +191,6 @@ export const StyledTable = styled(Table)`
       color: red;
     }
 
-    // Attempt at stickying example cell
-    /* tbody.swagger tr:first-of-type {
-      position: sticky !important;
-      top: 0.1% !important;
-      z-index: 2 !important;
-    } */
-
     td:not(.fasting) {
       /* Behave  like a "row" */
       border: none !important;
