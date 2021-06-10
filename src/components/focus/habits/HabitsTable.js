@@ -116,9 +116,6 @@ const HabitsTable = () => {
         // celled
         example
         compact
-        // maxHeight="32rem"
-        maxHeight="100%"
-        mobileHeight="100%"
       />
     )
   );

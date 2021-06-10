@@ -84,8 +84,6 @@ const Moments = () => {
         aligntext="center"
         example
         compact
-        mobileHeight="100%"
-        maxHeight="100%"
       />
     )
   );

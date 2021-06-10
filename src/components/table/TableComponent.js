@@ -116,7 +116,6 @@ export default function TableComponent({ children, ...props }) {
       color={props.color}
       width={props.width}
       height={props.height}
-      maxHeight={props.maxHeight}
       mobileHeight={props.mobileHeight}
       margin={props.margin}
     >
