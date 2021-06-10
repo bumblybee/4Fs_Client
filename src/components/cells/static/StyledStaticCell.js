@@ -9,6 +9,17 @@ export const StyledStaticCell = styled.div`
   color: ${(props) => props.condition && "#21ce0f"};
   height: 100%;
 
+  .f {
+    font-family: "Montserrat";
+    font-weight: 700;
+  }
+
+  .milestone {
+    /* font-weight: 600;
+    color: #f2711c;
+    text-shadow: 0 1px 1px #33333333; */
+  }
+
   .system-performed {
     font-weight: bold;
     font-size: 1.15rem;

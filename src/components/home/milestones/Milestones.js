@@ -45,11 +45,13 @@ const Milestones = () => {
           val: item.f,
           alignment: "left",
           textweight: "600",
+          className: "f",
         }),
       },
       milestone: {
         cellComponent: generateCellComponent("static", {
           val: item.milestone,
+          className: "milestone",
         }),
       },
       personalize: {

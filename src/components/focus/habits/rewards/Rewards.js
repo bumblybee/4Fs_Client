@@ -33,7 +33,7 @@ const Rewards = () => {
         color="#FBBD08"
         aligntext="center"
         height="35rem"
-        maxHeight="35rem"
+        maxHeight="26.25rem"
         mobileHeight="25rem"
       />
     )

@@ -12,27 +12,15 @@ const FTabBar = () => {
   const location = useLocation();
   const { pathname } = location;
   const path = pathname.split("/")[1];
-  const [windowSize, setWindowSize] = useState();
   const [activeItem, setActiveItem] = useState("");
 
   useEffect(() => {
     setActiveItem(path);
   }, [path]);
 
-  useEffect(() => {
-    window.addEventListener("resize", setWindowSize(getWindowDimensions));
-
-    return () => {
-      window.removeEventListener("resize", setWindowSize(getWindowDimensions));
-    };
-  }, []);
-
   return (
     <StyledFTabBar path={path}>
-      <StyledFMenu
-        size={windowSize && windowSize.width > 620 ? "massive" : "small"}
-        widths={4}
-      >
+      <StyledFMenu size="large" widths={4}>
         <Menu.Item
           name="focus"
           as={Link}
@@ -40,10 +28,7 @@ const FTabBar = () => {
           active={activeItem === "focus"}
           onClick={(e) => setActiveItem("focus")}
         >
-          <Icon
-            name="bullseye"
-            size={windowSize && windowSize.width > 360 ? "large" : ""}
-          />
+          <Icon name="bullseye" size="large" />
           Focus
         </Menu.Item>
 
@@ -54,10 +39,7 @@ const FTabBar = () => {
           active={activeItem === "fasting"}
           onClick={(e) => setActiveItem("fasting")}
         >
-          <Icon
-            name="wait"
-            size={windowSize && windowSize.width > 360 ? "large" : ""}
-          />
+          <Icon name="wait" />
           Fasting
         </Menu.Item>
 
@@ -68,10 +50,7 @@ const FTabBar = () => {
           to="/food"
           active={activeItem === "food"}
         >
-          <Icon
-            name="food"
-            size={windowSize && windowSize.width > 360 ? "large" : ""}
-          />
+          <Icon name="food" size="large" />
           Food
         </Menu.Item>
 
@@ -82,10 +61,7 @@ const FTabBar = () => {
           as={Link}
           to="/fitness"
         >
-          <Icon
-            name="heartbeat"
-            size={windowSize && windowSize.width > 360 ? "large" : ""}
-          />
+          <Icon name="heartbeat" size="large" />
           Fitness
         </Menu.Item>
       </StyledFMenu>

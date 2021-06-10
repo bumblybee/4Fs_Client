@@ -54,8 +54,13 @@ export const StyledFTabBar = styled.div`
     }
   }
 
+  @media (max-width: 385px) {
+    padding: 1rem 0.7rem;
+  }
+
   @media (max-width: 320px) {
-    height: 96px;
+    height: 90px;
+    padding: 1rem 0.5rem;
 
     .resources {
       bottom: 1.5%;
@@ -74,7 +79,7 @@ export const StyledFMenu = styled(Menu)`
     border-radius: 0 !important;
     font-family: "Montserrat", sans-serif !important;
     font-weight: 400 !important;
-    /* margin: 0 !important; */
+    font-size: 1.25rem;
   }
 
   .item:not(.active) {
@@ -84,7 +89,7 @@ export const StyledFMenu = styled(Menu)`
   .item.active {
     background: #2b73ce !important;
     color: hsl(217, 49%, 99%) !important;
-    font-weight: 500 !important;
+    font-weight: 600 !important;
   }
 
   .item:last-child.active {
@@ -107,16 +112,20 @@ export const StyledFMenu = styled(Menu)`
 
     margin: 0 0em 1rem !important;
     .item {
+      font-size: 1rem !important;
     }
   }
 
-  @media (max-width: 385px) {
+  @media (max-width: 360px) {
+    height: 75%;
     .item {
+      font-size: 0.95rem !important;
     }
   }
 
   @media (max-width: 320px) {
     .item {
+      font-size: 0.875rem !important;
     }
   }
 `;
