@@ -20,6 +20,8 @@ const Notification = () => {
     }
   };
 
+  if (notification !== null) window.scrollTo(0, 0);
+
   return (
     notification !== null && (
       <StyledMessage color={setColor()}>

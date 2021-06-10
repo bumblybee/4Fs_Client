@@ -60,8 +60,12 @@ const UserProfile = () => {
     };
   };
 
-  const handleChange = (field) => (e) => {
-    setUserDetails({ ...userDetails, [field]: e.target.value });
+  const handleChange = (field) => (e, data) => {
+    if (field === "gender") {
+      setUserDetails({ ...userDetails, gender: data.value });
+    } else {
+      setUserDetails({ ...userDetails, [field]: e.target.value });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -86,9 +90,7 @@ const UserProfile = () => {
 
     if (!res.error) {
       setNotificationMessage("Your information has been updated", "info", true);
-      window.scrollTo(0, 0);
     } else {
-      window.scrollTo(0, 0);
       setNotificationMessage("Error updating your information", "error", true);
     }
   };
