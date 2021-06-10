@@ -13,6 +13,7 @@ import { CalorieRequirements, FoodList, MealPlanner } from "../food";
 import { FitnessActivities, FitnessPlanner } from "../fitness";
 import PasswordResetRequest from "../../pages/password/PasswordResetRequest";
 import PasswordReset from "../../pages/password/PasswordReset";
+import NotFound from "../../pages/404/NotFound";
 
 const Routes = () => {
   return (
@@ -99,6 +100,10 @@ const Routes = () => {
       </Route>
       <Route path="/signup">
         <SignupForm />
+      </Route>
+
+      <Route path="">
+        <NotFound />
       </Route>
     </Switch>
   );

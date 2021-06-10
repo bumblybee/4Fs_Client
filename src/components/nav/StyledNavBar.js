@@ -47,6 +47,7 @@ export const StyledUserButton = styled(Button)`
 
   i {
     font-size: 1.6rem !important;
+    color: #2f528b !important;
   }
 
   :hover {
