@@ -15,7 +15,7 @@ const useCRUD = (getter, setter, destroyer) => {
   const setData = async (data, id) => {
     if (data) {
       const res = await setter(data, id);
-      console.log(res);
+      // console.log(res);
 
       if (res.error) {
         setNotificationMessage(res.error, "error", true);
@@ -29,7 +29,7 @@ const useCRUD = (getter, setter, destroyer) => {
 
   const destroyData = async (id) => {
     const res = await destroyer(id);
-    console.log(res);
+    // console.log(res);
     setState(res && res.data && res.data.length ? [...res.data] : []);
   };
 
