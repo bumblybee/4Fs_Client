@@ -1,8 +1,7 @@
 import React from "react";
-import GaugeChart from "react-advanced-gauge-chart";
 import { StyledGaugeWrapper, StyledGauge } from "./StyledGauge";
 
-const Gauge = ({ today, goal, fasting }) => {
+const Gauge = ({ today, goal, percentage, fasting }) => {
   console.log(today, goal);
   const renderColors = () => {
     const hoursUnderGoal = goal - today;
@@ -10,16 +9,22 @@ const Gauge = ({ today, goal, fasting }) => {
     const stop = Math.round(today / 2 - 1);
     const colors = Array(12).fill("");
 
-    if (today) {
-      if (today === goal || today > goal) {
-        return colors.map((el, i) => (i <= stop ? "#00ff00" : "#ccc"));
-      } else if (hoursUnderGoal > 4) {
+    if (today && percentage) {
+      if (percentage < 50) {
         return colors.map((el, i) => (i <= stop ? "#ff0000" : "#ccc"));
-      } else if (hoursUnderGoal <= 4 && hoursUnderGoal > 2) {
+      } else if (percentage >= 50 && percentage < 60) {
+        return colors.map((el, i) =>
+          i <= stop - 1 ? "#ff0000" : i <= stop ? "#ff8b00" : "#ccc"
+        );
+      } else if (percentage >= 60 && percentage < 70) {
         return colors.map((el, i) =>
           i <= stop - 2 ? "#ff0000" : i <= stop ? "#ff8b00" : "#ccc"
         );
-      } else {
+      } else if (percentage >= 70 && percentage < 75) {
+        return colors.map((el, i) =>
+          i <= stop - 3 ? "#ff0000" : i <= stop ? "#ff8b00" : "#ccc"
+        );
+      } else if (percentage >= 75 && percentage < 80) {
         return colors.map((el, i) =>
           i <= stop - 4
             ? "#ff0000"
@@ -29,6 +34,28 @@ const Gauge = ({ today, goal, fasting }) => {
             ? "#fff200"
             : "#ccc"
         );
+      } else if (percentage >= 80 && percentage < 85) {
+        return colors.map((el, i) =>
+          i <= stop - 4
+            ? "#ff0000"
+            : i <= stop - 1
+            ? "#ff8b00"
+            : i <= stop
+            ? "#fff200"
+            : "#ccc"
+        );
+      } else if (percentage >= 85 && percentage < 99) {
+        return colors.map((el, i) =>
+          i <= stop - 5
+            ? "#ff0000"
+            : i <= stop - 2
+            ? "#ff8b00"
+            : i <= stop
+            ? "#fff200"
+            : "#ccc"
+        );
+      } else {
+        return colors.map((el, i) => (i <= stop ? "#00ff00" : "#ccc"));
       }
     }
   };

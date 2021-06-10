@@ -46,14 +46,23 @@ export const StyledPercent = styled.span`
   left: ${(props) =>
     props.val >= 100
       ? "92%"
-      : props.val >= 50 && props.val <= 59
+      : props.val <= 99 && props.val > 70
+      ? `calc(${props.val}% - 40px)`
+      : props.val <= 70 && props.val > 60
+      ? `calc(${props.val}% - 35px)`
+      : (props.val <= 60 && props.val > 50) ||
+        (props.val < 45 && props.val >= 10)
+      ? `calc(${props.val}% - 30px)`
+      : props.val <= 50 && props.val > 45
       ? "42%"
-      : `calc(${props.val}% - 6%)`};
-  top: -8%;
+      : props.val < 10
+      ? `calc(${props.val}% - 10px)`
+      : "3%"};
+  top: -7%;
   font-size: 0.75rem;
 
   @media (max-width: 620px) {
-    left: ${(props) =>
+    /* left: ${(props) =>
       props.val >= 100
         ? "85%"
         : props.val >= 0 && props.val < 45
@@ -62,20 +71,22 @@ export const StyledPercent = styled.span`
         ? "34%"
         : props.val > 65 && props.val <= 70
         ? "60%"
-        : `calc(${props.val}% - 40px)`};
+        : `calc(${props.val}% - 40px)`}; */
   }
 
   @media (max-width: 385px) {
     left: ${(props) =>
       props.val >= 100
-        ? "85%"
-        : props.val >= 0 && props.val < 45
-        ? `calc(${props.val}% - 9%)`
-        : props.val >= 45 && props.val <= 65
-        ? "31%"
-        : props.val > 65 && props.val <= 70
-        ? "60%"
-        : `calc(${props.val}% - 30px)`};
+        ? "87%"
+        : props.val <= 99 && props.val > 75
+        ? `calc(${props.val}% - 30px)`
+        : props.val < 45 && props.val >= 10
+        ? `calc(${props.val}% - 22px)`
+        : props.val <= 70 && props.val > 45
+        ? "32%"
+        : props.val < 10
+        ? `calc(${props.val}% - 9px)`
+        : `calc(${props.val}% - 25px)`};
 
     top: -11.5%;
     font-size: 0.7rem;
@@ -84,7 +95,7 @@ export const StyledPercent = styled.span`
 
 export const StyledHours = styled.div`
   position: absolute;
-  top: -19%;
+  top: -17%;
   left: 50%;
   transform: translateX(-50%);
 

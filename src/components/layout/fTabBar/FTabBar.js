@@ -30,7 +30,7 @@ const FTabBar = () => {
   return (
     <StyledFTabBar path={path}>
       <StyledFMenu
-        size={windowSize && windowSize.width > 600 ? "massive" : "small"}
+        size={windowSize && windowSize.width > 620 ? "massive" : "small"}
         widths={4}
       >
         <Menu.Item

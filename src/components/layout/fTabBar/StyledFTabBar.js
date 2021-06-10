@@ -27,8 +27,8 @@ export const StyledFTabBar = styled.div`
 
   @media (max-width: 1024px) {
     .resources {
-      right: 8%;
-      top: 44%;
+      right: 9%;
+      top: 40%;
     }
   }
 
@@ -92,15 +92,18 @@ export const StyledFMenu = styled(Menu)`
     border-bottom-left-radius: 4px;
   }
 
-  @media (max-width: 768px) {
-    max-width: 100% !important;
+  @media (max-width: 1024px) {
+    max-width: 57% !important;
+  }
 
-    .item {
-    }
+  @media (max-width: 768px) {
+    height: 75%;
+    max-width: 80% !important;
   }
 
   @media (max-width: 620px) {
     height: 80%;
+    max-width: 100% !important;
 
     margin: 0 0em 1rem !important;
     .item {

@@ -10,13 +10,13 @@ const ProgressCell = (props) => {
 
   const renderColor = (percent) => {
     if (percent < 50) {
-      return "#dd2828";
+      return "#e62626";
     } else if (percent >= 50 && percent < 75) {
       return "#ff6f36";
     } else if (percent >= 50 && percent < 99) {
       return "#fcd928";
     } else {
-      return "#78db3b";
+      return "#7cea39";
     }
   };
 
