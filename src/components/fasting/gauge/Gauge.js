@@ -9,29 +9,19 @@ const Gauge = ({ today, goal, percentage, fasting }) => {
     if (today && percentage) {
       if (percentage < 50) {
         return colors.map((el, i) => (i <= stop ? "#ff0000" : "#ccc"));
-      } else if (percentage >= 50 && percentage < 60) {
-        return colors.map((el, i) =>
-          i <= stop - 1 ? "#ff0000" : i <= stop ? "#ff8b00" : "#ccc"
-        );
-      } else if (percentage >= 60 && percentage < 70) {
+      } else if (percentage >= 50 && percentage < 55) {
         return colors.map((el, i) =>
           i <= stop - 2 ? "#ff0000" : i <= stop ? "#ff8b00" : "#ccc"
         );
-      } else if (percentage >= 70 && percentage < 75) {
+      } else if (percentage >= 55 && percentage < 60) {
+        return colors.map((el, i) =>
+          i <= stop - 3 ? "#ff0000" : i <= stop ? "#ff8b00" : "#ccc"
+        );
+      } else if (percentage >= 60 && percentage < 75) {
         return colors.map((el, i) =>
           i <= stop - 3 ? "#ff0000" : i <= stop ? "#ff8b00" : "#ccc"
         );
       } else if (percentage >= 75 && percentage < 80) {
-        return colors.map((el, i) =>
-          i <= stop - 4
-            ? "#ff0000"
-            : i <= stop - 2
-            ? "#ff8b00"
-            : i <= stop
-            ? "#fff200"
-            : "#ccc"
-        );
-      } else if (percentage >= 80 && percentage < 85) {
         return colors.map((el, i) =>
           i <= stop - 4
             ? "#ff0000"
@@ -41,11 +31,31 @@ const Gauge = ({ today, goal, percentage, fasting }) => {
             ? "#fff200"
             : "#ccc"
         );
-      } else if (percentage >= 85 && percentage < 99) {
+      } else if (percentage >= 80 && percentage < 85) {
+        return colors.map((el, i) =>
+          i <= stop - 4
+            ? "#ff0000"
+            : i <= stop - 2
+            ? "#ff8b00"
+            : i <= stop
+            ? "#fff200"
+            : "#ccc"
+        );
+      } else if (percentage >= 85 && percentage < 95) {
         return colors.map((el, i) =>
           i <= stop - 5
             ? "#ff0000"
-            : i <= stop - 2
+            : i <= stop - 3
+            ? "#ff8b00"
+            : i <= stop
+            ? "#fff200"
+            : "#ccc"
+        );
+      } else if (percentage >= 95 && percentage < 99) {
+        return colors.map((el, i) =>
+          i <= stop - 7
+            ? "#ff0000"
+            : i <= stop - 4
             ? "#ff8b00"
             : i <= stop
             ? "#fff200"
