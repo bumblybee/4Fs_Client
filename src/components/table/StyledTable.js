@@ -120,14 +120,9 @@ export const StyledTable = styled(Table)`
 
     .habits tr,
     .fasting-progress tr {
-      /* display: flex;
-      
-      justify-content: stretch;
-      align-items: center; */
       display: grid;
       grid-template-columns: 1fr 1fr;
       width: 100%;
-      /* height: 100%; */
     }
 
     .fasting-progress tr {
@@ -143,10 +138,6 @@ export const StyledTable = styled(Table)`
     .fasting-progress tr th {
       width: 100% !important;
     }
-
-    /* .fasting-progress td {
-      padding: 0.5rem 0.25rem 0.3rem !important;
-    } */
 
     .fasting-progress thead th {
       padding: 0 !important;
