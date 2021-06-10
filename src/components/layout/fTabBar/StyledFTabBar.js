@@ -107,12 +107,17 @@ export const StyledFMenu = styled(Menu)`
   }
 
   @media (max-width: 620px) {
-    height: 80%;
     max-width: 100% !important;
 
     margin: 0 0em 1rem !important;
     .item {
       font-size: 1rem !important;
+    }
+  }
+
+  @media (max-width: 385px) {
+    .item {
+      font-size: 0.98rem !important;
     }
   }
 
