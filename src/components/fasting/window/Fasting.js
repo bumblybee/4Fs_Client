@@ -29,7 +29,7 @@ const Fasting = () => {
     <div>
       <SectionHeader
         title="Fasting Window"
-        subtext="Enter your goal fasting window and the number of hours you fasted today. Click run to see results."
+        subtext="To track your fasting progress, enter your goal fasting window and the hours you've fasted today."
       />
       <ShareToggle shared={shared[0]} handleSave={handleSave} field="fasting" />
       <TableComponent
@@ -38,8 +38,7 @@ const Fasting = () => {
         columns={columns}
         color="#1B1C1D"
         aligntext="center"
-        height="34rem"
-        maxHeight="99%"
+        // height="34rem"
         mobileHeight="34rem"
       />
     </div>

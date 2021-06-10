@@ -32,9 +32,7 @@ const Rewards = () => {
         columns={columns}
         color="#FBBD08"
         aligntext="center"
-        height="35rem"
-        maxHeight="26.25rem"
-        mobileHeight="25rem"
+        height="26rem"
       />
     )
   );

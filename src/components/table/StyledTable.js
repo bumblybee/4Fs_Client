@@ -6,7 +6,7 @@ export const StyledTableWrapper = styled.div`
   width: ${(props) => props.width};
   max-width: 100%;
   min-height: 48px;
-  max-height: ${(props) => props.maxHeight || "31rem"};
+  /* max-height: ${(props) => props.maxHeight || "31rem"}; */
   overflow-y: auto;
   overflow-x: hidden;
   border: 1px solid #22242626;
@@ -26,7 +26,7 @@ export const StyledTableWrapper = styled.div`
 
   @media (max-width: 620px) {
     width: ${(props) => `calc(${props.width} + 35%)`};
-    max-height: ${(props) => props.mobileHeight || "20rem"};
+    /* max-height: ${(props) => props.mobileHeight || "20rem"}; */
   }
 `;
 
@@ -134,12 +134,6 @@ export const StyledTable = styled(Table)`
     }
 
     // Below keeps table header intact and displayed across width
-
-    /* .habits thead th {
-      display: table-header-group;
-      position: sticky;
-      top: 0;
-    } */
 
     .habits tr,
     .fasting-progress tr {

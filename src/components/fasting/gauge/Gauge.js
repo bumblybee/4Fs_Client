@@ -11,17 +11,17 @@ const Gauge = ({ today, goal, percentage, fasting }) => {
         return colors.map((el, i) => (i <= stop ? "#ff0000" : "#ccc"));
       } else if (percentage >= 50 && percentage < 55) {
         return colors.map((el, i) =>
+          i <= stop - 1 ? "#ff0000" : i <= stop ? "#ff8b00" : "#ccc"
+        );
+      } else if (percentage >= 55 && percentage < 65) {
+        return colors.map((el, i) =>
           i <= stop - 2 ? "#ff0000" : i <= stop ? "#ff8b00" : "#ccc"
         );
-      } else if (percentage >= 55 && percentage < 60) {
+      } else if (percentage >= 65 && percentage < 75) {
         return colors.map((el, i) =>
           i <= stop - 3 ? "#ff0000" : i <= stop ? "#ff8b00" : "#ccc"
         );
-      } else if (percentage >= 60 && percentage < 75) {
-        return colors.map((el, i) =>
-          i <= stop - 3 ? "#ff0000" : i <= stop ? "#ff8b00" : "#ccc"
-        );
-      } else if (percentage >= 75 && percentage < 80) {
+      } else if (percentage >= 75 && percentage < 85) {
         return colors.map((el, i) =>
           i <= stop - 4
             ? "#ff0000"
@@ -31,7 +31,7 @@ const Gauge = ({ today, goal, percentage, fasting }) => {
             ? "#fff200"
             : "#ccc"
         );
-      } else if (percentage >= 80 && percentage < 85) {
+      } else if (percentage >= 85 && percentage < 85) {
         return colors.map((el, i) =>
           i <= stop - 4
             ? "#ff0000"
@@ -45,7 +45,7 @@ const Gauge = ({ today, goal, percentage, fasting }) => {
         return colors.map((el, i) =>
           i <= stop - 5
             ? "#ff0000"
-            : i <= stop - 3
+            : i <= stop - 2
             ? "#ff8b00"
             : i <= stop
             ? "#fff200"
@@ -53,9 +53,9 @@ const Gauge = ({ today, goal, percentage, fasting }) => {
         );
       } else if (percentage >= 95 && percentage < 99) {
         return colors.map((el, i) =>
-          i <= stop - 7
+          i <= stop - 6
             ? "#ff0000"
-            : i <= stop - 4
+            : i <= stop - 3
             ? "#ff8b00"
             : i <= stop
             ? "#fff200"
@@ -64,6 +64,10 @@ const Gauge = ({ today, goal, percentage, fasting }) => {
       } else {
         return colors.map((el, i) => (i <= stop ? "#00ff00" : "#ccc"));
       }
+    } else {
+      return colors.map((el, i) =>
+        i <= 3 ? "#ff0000" : i <= 6 ? "#ff8b00" : i <= 9 ? "#fff200" : "#00ff00"
+      );
     }
   };
 
@@ -77,7 +81,7 @@ const Gauge = ({ today, goal, percentage, fasting }) => {
         arcPadding={0.03}
         percent={today / 24}
         needleColor="grey"
-        needleBaseColor="grey"
+        needleBaseColor="black"
         animDelay={50}
         textColor="black"
         formatTextValue={(val) =>

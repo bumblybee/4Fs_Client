@@ -19,6 +19,8 @@ const FastingMessage = ({ percentage }) => {
       } else {
         return "Woo-hoo! You're a rock star!";
       }
+    } else {
+      return "and click run to see results";
     }
   };
 
@@ -27,7 +29,11 @@ const FastingMessage = ({ percentage }) => {
   }, [percentage]);
 
   return (
-    <Transition animation="tada" duration={600} visible={visible}>
+    <Transition
+      animation={percentage && "tada"}
+      duration={600}
+      visible={visible}
+    >
       <StyledMessage>
         <div>
           {percentage >= 100 &&
@@ -35,7 +41,11 @@ const FastingMessage = ({ percentage }) => {
               .fill("")
               .map((el) => <Icon name="star" color="green" />)}
         </div>
-        <h2>{percentage && `${percentage.toFixed(0)}% of Goal`}</h2>
+        <h2>
+          {percentage
+            ? `${percentage.toFixed(0)}% of Goal`
+            : "Enter your fasting hours"}
+        </h2>
         <h3>{renderMessage()}</h3>
       </StyledMessage>
     </Transition>

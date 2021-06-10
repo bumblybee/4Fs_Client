@@ -5,7 +5,7 @@ export const StyledProgressWrapper = styled.div`
   position: relative;
   color: #fff;
   font-weight: 700;
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.21);
   font-family: "Lato";
   padding: 0 1rem;
 
@@ -69,20 +69,11 @@ export const StyledPercent = styled.span`
   top: -7%;
   font-size: 0.75rem;
 
-  @media (max-width: 620px) {
-    /* left: ${(props) =>
-      props.val >= 100
-        ? "85%"
-        : props.val >= 0 && props.val < 45
-        ? `calc(${props.val}% - 9%)`
-        : props.val >= 45 && props.val <= 65
-        ? "34%"
-        : props.val > 65 && props.val <= 70
-        ? "60%"
-        : `calc(${props.val}% - 40px)`}; */
+  @media (max-width: 768px) {
+    left: ${(props) => props.val >= 50 && props.val <= 60 && "40%"};
   }
 
-  @media (max-width: 385px) {
+  @media (max-width: 620px) {
     left: ${(props) =>
       props.val >= 100
         ? "87%"
@@ -90,12 +81,17 @@ export const StyledPercent = styled.span`
         ? `calc(${props.val}% - 30px)`
         : props.val < 45 && props.val >= 10
         ? `calc(${props.val}% - 22px)`
-        : props.val <= 70 && props.val > 45
+        : props.val < 70 && props.val > 45
         ? "32%"
         : props.val < 10
         ? `calc(${props.val}% - 9px)`
         : `calc(${props.val}% - 25px)`};
 
+    top: -10.5%;
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 385px) {
     top: -11.5%;
     font-size: 0.7rem;
   }
@@ -108,7 +104,7 @@ export const StyledHours = styled.div`
   transform: translateX(-50%);
 
   @media (max-width: 620px) {
-    top: -12%;
+    top: -15.5%;
     font-size: 0.9375rem;
   }
 

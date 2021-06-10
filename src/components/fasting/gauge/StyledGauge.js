@@ -4,7 +4,7 @@ import GaugeChart from "react-advanced-gauge-chart";
 export const StyledGaugeWrapper = styled.div`
   position: relative;
   height: 100%;
-  width: 100%;
+  /* width: 50%; */
   color: #333;
   display: flex;
   align-items: center;
@@ -27,7 +27,8 @@ export const StyledGaugeWrapper = styled.div`
 `;
 
 export const StyledGauge = styled(GaugeChart)`
-  width: 360px !important;
+  width: 350px !important;
+  height: 140px;
 
   @media (max-width: 768px) {
     width: 280px !important;
@@ -40,7 +41,7 @@ export const StyledGauge = styled(GaugeChart)`
   }
 
   @media (max-width: 480px) {
-    width: 290px !important;
-    height: 120px !important;
+    width: 305px !important;
+    height: 125px !important;
   }
 `;

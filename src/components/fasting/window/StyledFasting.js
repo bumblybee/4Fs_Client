@@ -8,7 +8,7 @@ export const StyledFastingWrapper = styled.div`
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 0.5rem;
+  grid-gap: 1rem;
   @media (max-width: 700px) {
     padding: 0.5rem;
   }
@@ -21,9 +21,9 @@ export const StyledFastingCalcWrapper = styled.div`
   width: 70%;
   height: 100%;
   margin: 0 auto 0.9rem;
-  border: 1px solid #22242626;
+  border: 2px solid #1b1c1d;
   border-radius: 0.27rem;
-  padding: 2rem 1.5rem 1.5rem 1rem;
+  padding: 2rem 2rem 1.5rem 0;
   background: #fff;
 
   @media (max-width: 1024px) {
@@ -40,14 +40,14 @@ export const StyledFastingCalcWrapper = styled.div`
 export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  width: 18%;
+  width: 14%;
   margin: 0 auto;
   padding: 0.5rem 1rem;
 
   input {
     text-align: center !important;
     padding: 0.5rem 0.25rem 0.5rem 0 !important;
-
+    border: 1px solid #000 !important;
     ::-webkit-inner-spin-button {
       padding: 0 !important;
       opacity: 1;
@@ -98,7 +98,7 @@ export const StyledForm = styled(Form)`
   }
 
   @media (max-width: 525px) {
-    width: 72%;
+    width: 70%;
     justify-content: space-between !important;
     align-items: flex-end !important;
     flex-direction: row;
