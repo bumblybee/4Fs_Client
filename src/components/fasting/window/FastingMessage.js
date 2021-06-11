@@ -8,7 +8,7 @@ const FastingMessage = ({ percentage }) => {
   const renderMessage = () => {
     if (percentage) {
       if (percentage < 40) {
-        return "Keep pushing. You'll get it next time!";
+        return "Keep pushing, you'll get it next time!";
       } else if (percentage >= 40 && percentage < 60) {
         return "You're on the right track!";
       }
@@ -17,7 +17,7 @@ const FastingMessage = ({ percentage }) => {
       } else if (percentage >= 80 && percentage < 100) {
         return "Awesome! Almost there!";
       } else {
-        return "Woo-hoo! You're a rock star!";
+        return "Woo-hoo! You did it!";
       }
     } else {
       return "and click run to see results";
