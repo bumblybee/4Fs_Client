@@ -8,6 +8,7 @@ import {
   StyledSegment,
   StyledFormHeader,
   StyledForm,
+  StyledFormButton,
 } from "../../styles/GlobalStyledComponents";
 
 const LoginForm = () => {
@@ -80,9 +81,9 @@ const LoginForm = () => {
             />
 
             {/* TODO: attach message */}
-            <Button fluid size="large" color="blue" type="submit">
+            <StyledFormButton fluid size="large" type="submit">
               Log in
-            </Button>
+            </StyledFormButton>
             <div
               style={{
                 textAlign: "center",

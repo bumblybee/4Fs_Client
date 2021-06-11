@@ -15,7 +15,7 @@ export const StyledFormContainer = styled.div`
 
 export const StyledSegment = styled(Segment)`
   width: 70% !important;
-  border: 2px solid #2185d0 !important;
+  border: 2px solid #3353ab !important;
   margin-top: -12% !important;
 
   @media (max-width: 1200px) {

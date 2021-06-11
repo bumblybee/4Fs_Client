@@ -1,5 +1,12 @@
 import styled from "styled-components";
-import { Grid, Segment, Header, Form, Message } from "semantic-ui-react";
+import {
+  Grid,
+  Segment,
+  Header,
+  Form,
+  Message,
+  Button,
+} from "semantic-ui-react";
 
 export const StyledFormWrapper = styled(Grid)`
   height: 100vh !important;
@@ -8,7 +15,7 @@ export const StyledFormWrapper = styled(Grid)`
 export const StyledSegment = styled(Segment)`
   max-width: 450px;
   position: relative;
-  border: 2px solid #2185d0 !important;
+  border: 2px solid #3353ab !important;
   margin-top: 3% !important;
 
   @media (max-width: 620px) {
@@ -26,7 +33,7 @@ export const StyledFormHeader = styled(Header)`
   width: 100%;
   text-align: center;
   text-shadow: 0 0 0px #eeeeee99;
-  color: #2185d0;
+  color: #3353ab;
   margin-bottom: ${(props) => (props.origin === "password" ? 0 : "")};
 
   .logo {
@@ -52,6 +59,11 @@ export const StyledForm = styled(Form)`
   div.item.active {
     background: #dce9fe !important;
   }
+`;
+
+export const StyledFormButton = styled(Button)`
+  background: #3353ab !important;
+  color: #fff !important;
 `;
 
 export const StyledFooterMessage = styled(Message)`

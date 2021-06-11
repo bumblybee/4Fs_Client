@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Form, Button, Segment } from "semantic-ui-react";
-import { StyledFooterMessage } from "../../styles/GlobalStyledComponents";
+import {
+  StyledFooterMessage,
+  StyledFormButton,
+} from "../../styles/GlobalStyledComponents";
 
 const UserDetails = ({
   userDetails,
@@ -80,15 +83,14 @@ const UserDetails = ({
         <Button fluid size="large" onClick={reverseForm}>
           Back
         </Button>
-        <Button
+        <StyledFormButton
           fluid
           size="large"
-          color="blue"
           type="submit"
           onClick={handleSubmit}
         >
           Submit
-        </Button>
+        </StyledFormButton>
       </div>
       <StyledFooterMessage>
         Have an account? <Link to="/login">Log in</Link>

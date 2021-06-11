@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Form, Button, Icon } from "semantic-ui-react";
-import { StyledFooterMessage } from "../../styles/GlobalStyledComponents";
+import { Form, Icon } from "semantic-ui-react";
+import {
+  StyledFooterMessage,
+  StyledFormButton,
+} from "../../styles/GlobalStyledComponents";
 
 const UserInfo = ({
   userDetails,
@@ -92,16 +95,10 @@ const UserInfo = ({
         required
       />
       {/* TODO: attach message */}
-      <Button
-        fluid
-        size="large"
-        color="blue"
-        type="submit"
-        onClick={advanceForm}
-      >
+      <StyledFormButton fluid size="large" type="submit" onClick={advanceForm}>
         Next
         <Icon name="right arrow" />
-      </Button>
+      </StyledFormButton>
       <StyledFooterMessage>
         Have an account? <Link to="/login">Log in</Link>
       </StyledFooterMessage>

@@ -292,9 +292,7 @@ const UserProfile = () => {
                 onChange={handleChange("gender")}
               />
             </Form.Group>
-            <Button color="blue" fluid>
-              Update
-            </Button>
+            <sc.StyledFormButton fluid>Update</sc.StyledFormButton>
           </sc.StyledForm>
           <StyledLinkWrapper>
             <Link to="/reset-password">Reset your password</Link>

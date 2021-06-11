@@ -6,10 +6,11 @@ export const StyledNav = styled.div`
   background: linear-gradient(
     135deg,
     rgba(105, 165, 232, 1) -1%,
-    rgba(49, 103, 158, 1) 30%,
-    rgba(40, 124, 202, 1) 91%,
-    rgba(115, 165, 232, 1) 100%
+    rgba(51, 83, 171, 1) 30%,
+    rgba(51, 118, 202, 1) 91%,
+    rgba(105, 165, 232, 1) 100%
   );
+
   display: flex;
   align-content: center;
   width: 100%;
@@ -31,8 +32,8 @@ export const StyledUserButton = styled(Button)`
   border-radius: 50% !important;
   padding: 13px 11px 14px 13px !important;
   box-shadow: 0 0 10px 2px rgba(17, 47, 167, 0.3);
-  color: #2f528b;
-  border: 2px solid #2f528b;
+  color: #3353ab;
+  border: 2px solid #3353ab;
   margin-right: 0;
   background: linear-gradient(
     135deg,
@@ -47,7 +48,7 @@ export const StyledUserButton = styled(Button)`
 
   i {
     font-size: 1.6rem !important;
-    color: #2f528b !important;
+    color: #3353ab !important;
   }
 
   :hover {
@@ -75,8 +76,6 @@ export const StyledUserButton = styled(Button)`
     }
 
     :active {
-      /* padding: 11px 8px 12px 11px !important; */
-
       i {
         font-size: 1.2475rem !important;
       }
@@ -88,7 +87,7 @@ export const StyledLogoButton = styled(Button)`
   border-radius: 50% !important;
   padding: 8px 7px;
   box-shadow: 0 0 10px 2px rgba(17, 47, 167, 0.3);
-  border: 2px solid #2f528b;
+  border: 2px solid #3353ab;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 1) 0%,
