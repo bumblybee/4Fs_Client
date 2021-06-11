@@ -7,14 +7,14 @@ export const StyledExampleCell = styled.div`
   font-style: italic;
   color: ${(props) => props.color || "#333"};
   width: 100%;
-  min-height: 35px;
+  min-height: 38px;
   height: auto;
 
   display: flex;
   justify-content: ${(props) => props.justify || "center"};
   align-items: "${(props) => props.alignment || "center"}";
 
-  > div {
+  :not(.skills) > div {
     margin: auto 0;
   }
 

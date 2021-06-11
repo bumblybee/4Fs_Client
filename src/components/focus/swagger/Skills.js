@@ -66,6 +66,7 @@ const Skills = () => {
           alignment: "center",
           width: "90%",
           textweight: 600,
+          className: "skills",
         }),
       },
     };
