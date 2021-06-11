@@ -23,7 +23,7 @@ const LoginForm = () => {
 
     const login = await logUserIn(userDetails);
 
-    if (login.error) {
+    if (login && login.error) {
       setNotificationMessage(login.error, "error");
       return;
     } else {

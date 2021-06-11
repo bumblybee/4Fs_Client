@@ -1,11 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import * as Sentry from "@sentry/react";
+
 import "semantic-ui-less/semantic.less";
 import "./styles/index.css";
 import UserProvider from "./context/user/UserProvider";
-
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+Sentry.init({
+  dsn: "https://0ae8c82f90084151bed9a761f3baa7df@o450602.ingest.sentry.io/5812505",
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+});
 
 ReactDOM.render(
   <React.StrictMode>
