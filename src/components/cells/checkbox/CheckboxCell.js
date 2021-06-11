@@ -12,6 +12,13 @@ const CheckboxCell = (props) => {
     makeData(e);
   };
 
+  // const handleKeyPress = (e) => {
+  //   if (e.keyCode === 13) {
+  //     console.log(e.target.checked);
+  //     handleChange(e);
+  //   }
+  // };
+
   const makeData = (e) => {
     // Updating performed based on checked or unchecked
     props.onSave(
@@ -31,6 +38,7 @@ const CheckboxCell = (props) => {
     <sc.StyledCheckboxWrapper {...props}>
       <label>
         <input
+          tabIndex="0"
           ref={checkboxRef}
           checked={isChecked || false}
           onChange={(e) => handleChange(e)}

@@ -48,6 +48,7 @@ const EditableTableCell = ({ children, ...props }) => {
     if (editing) {
       return (
         <input
+          tabIndex="0"
           ref={inputRef}
           value={editCellVal}
           aligntext={props.aligntext}

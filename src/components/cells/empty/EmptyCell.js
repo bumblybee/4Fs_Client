@@ -38,6 +38,7 @@ const EmptyCell = ({ children, ...props }) => {
     if (editing) {
       return (
         <input
+          tabIndex="0"
           ref={inputRef}
           value={emptyCellVal || ""}
           onChange={(e) => setEmptyCellVal(e.target.value)}
@@ -69,7 +70,7 @@ const EmptyCell = ({ children, ...props }) => {
     <StyledEmptyCell
       onFocus={() => setEditing(true)}
       onClick={() => setEditing(true)}
-      // onBlur={() => setEditing(false)}
+      onBlur={() => setEditing(false)}
       tabIndex="0"
       disabled={props.disabled}
       aligntext={props.aligntext}
