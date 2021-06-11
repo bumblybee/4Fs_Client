@@ -8,6 +8,7 @@ import {
   StyledSegment,
   StyledFormHeader,
   StyledForm,
+  StyledFormButton,
 } from "../../styles/GlobalStyledComponents";
 import { StyledPasswordResetHeader } from "./StyledPasswordReset";
 
@@ -72,9 +73,9 @@ const PasswordReset = () => {
               required
             />
 
-            <Button fluid size="large" color="blue" type="submit">
+            <StyledFormButton fluid size="large" type="submit">
               Submit
-            </Button>
+            </StyledFormButton>
           </Segment>
         </StyledForm>
       </StyledSegment>
