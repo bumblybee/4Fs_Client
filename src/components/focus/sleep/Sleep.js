@@ -21,13 +21,14 @@ const Sleep = () => {
     useContext(NotificationContext);
 
   const [sleep, setSleep] = useState([]);
-  const [newRow, setNewRow] = useState({});
+  const [newRowData, setNewRowData] = useState({});
 
   const getSleepData = async () => {
     const res = await getSleep();
     res && res.data && setSleep([...res.data]);
   };
 
+  // TODO: Separate fn for new save because this way calls api when woke entered, even if there's nothing in the date and toBed inputs
   const handleSave = async (data, id, clearState) => {
     if (data) {
       const res = await mutateSleep(data, id);
@@ -39,7 +40,7 @@ const Sleep = () => {
 
       clearNotificationMessage();
       setSleep([...res.data]);
-      clearState && setNewRow({});
+      clearState && setNewRowData({});
     }
   };
 
@@ -187,8 +188,8 @@ const Sleep = () => {
     const emptyRow = {
       date: {
         cellComponent: generateCellComponent("date", {
-          state: newRow,
-          setState: setNewRow,
+          state: newRowData,
+          setState: setNewRowData,
           accessor: "date",
           alignment: "left",
           className: "sleep-date-picker",
@@ -196,8 +197,8 @@ const Sleep = () => {
       },
       toBed: {
         cellComponent: generateCellComponent("time", {
-          state: newRow,
-          setState: setNewRow,
+          state: newRowData,
+          setState: setNewRowData,
           accessor: "toBed",
           alignment: "center",
         }),
@@ -205,8 +206,8 @@ const Sleep = () => {
       woke: {
         cellComponent: generateCellComponent("time", {
           onSave: handleSave,
-          state: newRow,
-          setState: setNewRow,
+          state: newRowData,
+          setState: setNewRowData,
           accessor: "woke",
           alignment: "center",
         }),
