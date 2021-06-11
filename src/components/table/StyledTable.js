@@ -81,6 +81,15 @@ export const StyledTable = styled(Table)`
     padding: 0.1rem !important;
   }
 
+  thead.rewards,
+  thead.swagger {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 2 !important;
+    margin: 0 !important;
+    color: red;
+  }
+
   input[type="text"] {
     border: none;
 
