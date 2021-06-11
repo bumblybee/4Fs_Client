@@ -48,7 +48,11 @@ const UserProfile = () => {
 
     let formattedPhone = "";
     if (user && user.phone && user.phone.includes("null")) {
-      formattedPhone = null;
+      return {
+        phone1: null,
+        phone2: null,
+        phone3: null,
+      };
     } else if (user && user.phone && !user.phone.includes("null")) {
       formattedPhone = user.phone.split("-");
     }
@@ -75,14 +79,33 @@ const UserProfile = () => {
       if (userDetails[key] === "") userDetails[key] = null;
     }
 
-    const phoneNumber =
-      userDetails.phone1 !== null
-        ? `${userDetails.phone1}-${userDetails.phone2}-${userDetails.phone3}`
-        : null;
+    const validatePhoneNumber = (obj) => {
+      let count = 0;
+
+      for (const key in obj) {
+        if (obj[key] == null) {
+          count++;
+        }
+      }
+
+      if (count === 3) {
+        return null;
+      }
+
+      if (count === 1 || count === 2) {
+        return user.phone;
+      } else {
+        return `${obj.phone1}-${obj.phone2}-${obj.phone3}`;
+      }
+    };
 
     const data = (({ phone1, phone2, phone3, ...rest }) => rest)({
       ...userDetails,
-      phone: phoneNumber,
+      phone: validatePhoneNumber({
+        phone1: userDetails.phone1,
+        phone2: userDetails.phone2,
+        phone3: userDetails.phone3,
+      }),
       sheetsURL: formatSheetsUrl(userDetails.sheetsURL),
     });
 
@@ -91,7 +114,11 @@ const UserProfile = () => {
     if (!res.error) {
       setNotificationMessage("Your information has been updated", "info", true);
     } else {
-      setNotificationMessage("Error updating your information", "error", true);
+      setNotificationMessage(
+        "Error updating your information. If issue persists, contact support.",
+        "error",
+        true
+      );
     }
   };
 

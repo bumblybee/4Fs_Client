@@ -12,7 +12,7 @@ const Notification = () => {
       case "error":
         return "red";
       case "info":
-        return "info";
+        return "green";
       case "warning":
         return "yellow";
       default:
@@ -24,7 +24,7 @@ const Notification = () => {
 
   return (
     notification !== null && (
-      <StyledMessage color={setColor()}>
+      <StyledMessage size="large" color={setColor()}>
         <StyledMessage.Header>{title}</StyledMessage.Header>
         <p>{body}</p>
       </StyledMessage>
