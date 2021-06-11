@@ -5,11 +5,11 @@ const BodyCalculator = () => {
   return (
     <SheetsComponent
       colorScheme="teal"
-      val="Body Composition Calculator"
+      val=""
       title="Body Composition Calculator"
       subtext="Click the button below to check out the Body Composition Calculator in the program sheet."
       sheetId="#gid=737455075"
-      // buttonText="Body Composition Calculator"
+      buttonText="Body Composition Calculator"
     />
   );
 };

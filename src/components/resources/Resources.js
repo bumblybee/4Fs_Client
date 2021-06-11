@@ -5,9 +5,10 @@ const Resources = () => {
   return (
     <SheetsComponent
       colorScheme="grey"
-      val="Resources"
+      val=""
       title="Bonus Resources"
       subtext="Click the button below to check out your free bonus resources."
+      buttonText="Bonus Resources"
     />
   );
 };

@@ -9,6 +9,7 @@ const FitnessPlanner = () => {
       title="Fitness Planner"
       subtext="Click the button below to check out the Fitness Planner in the program sheet."
       sheetId="#gid=1062021121"
+      buttonText="Fitness Planner"
     />
   );
 };

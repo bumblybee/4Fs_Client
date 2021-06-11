@@ -8,6 +8,7 @@ const FitnessActivities = () => {
       title="Fitness Activities"
       subtext="Click the button below to check out the Fitness Activities list in the program sheet."
       sheetId="#gid=1359877998"
+      buttonText="Fitness Activities"
     />
   );
 };

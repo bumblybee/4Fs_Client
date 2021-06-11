@@ -8,6 +8,7 @@ const CalorieRequirements = () => {
       title="Calorie Requirements"
       subtext="Click the button below to check out the Calorie Requirements Calculator in the program sheet."
       sheetId="#gid=1239424910"
+      buttonText="Calorie Requirements"
     />
   );
 };

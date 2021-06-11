@@ -9,12 +9,14 @@ import { UserContext } from "../../context/user/UserContext";
 import { Icon } from "semantic-ui-react";
 
 const SheetsComponent = ({
+  val,
   title,
   subtitle,
   subtext,
   colorScheme,
   field,
   sheetId,
+  buttonText,
 }) => {
   const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
   const { user } = useContext(UserContext);
@@ -22,7 +24,7 @@ const SheetsComponent = ({
 
   const columns = [
     {
-      label: title,
+      label: val,
       key: "sheetsURL",
     },
   ];
@@ -32,7 +34,7 @@ const SheetsComponent = ({
       sheetsURL: {
         cellComponent: generateCellComponent("button", {
           to: url ? url : "/profile/#sheets",
-          val: url ? "Program Sheet" : "",
+          val: url ? buttonText : "",
           accessor: "sheetsURL",
           color: colorScheme,
           size: "huge",

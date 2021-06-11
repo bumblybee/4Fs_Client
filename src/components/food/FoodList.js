@@ -8,6 +8,7 @@ const FoodList = () => {
       title="Food List"
       subtext="Click the button below to check out the Food List in the program sheet."
       sheetId="#gid=1557042622"
+      buttonText="Food List"
     />
   );
 };
