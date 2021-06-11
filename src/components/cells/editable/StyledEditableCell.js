@@ -25,4 +25,19 @@ export const StyledEditableCell = styled.div`
     padding: 0.75rem;
     border-radius: 6px;
   }
+
+  textarea {
+    border: none;
+    border-color: transparent;
+    background: #eee;
+    outline: none;
+    width: inherit;
+    height: 100%;
+    resize: none;
+    line-height: 1.4285;
+    font-size: 0.965rem;
+    font-family: "Lato";
+    border-radius: 6px;
+    padding-left: 0.25rem;
+  }
 `;

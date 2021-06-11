@@ -21,6 +21,7 @@ const generateCellComponent = (type, props) => {
       return (
         <EditableCell
           id={props.id}
+          first={props.first}
           onSave={props.onSave}
           onDelete={props.onDelete}
           val={props.val}

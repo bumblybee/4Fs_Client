@@ -39,7 +39,7 @@ const Milestones = () => {
   ];
 
   const rows = () => {
-    const rowData = milestones.map((item) => ({
+    const rowData = milestones.map((item, idx) => ({
       f: {
         cellComponent: generateCellComponent("static", {
           val: item.f,
@@ -57,6 +57,7 @@ const Milestones = () => {
       personalize: {
         cellComponent: generateCellComponent("editable", {
           id: item.id,
+          first: idx === 0,
           onSave: handleSave,
           val: item.personalize,
           accessor: "personalize",

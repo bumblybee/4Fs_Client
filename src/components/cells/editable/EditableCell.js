@@ -11,6 +11,7 @@ const EditableTableCell = ({ children, ...props }) => {
   const [editCellVal, setEditCellVal] = useState(props.val);
 
   const inputRef = useRef(null);
+  // const textRef = useRef(null);
 
   const handleKeyPress = (e) => {
     if (e.keyCode === 13) {
@@ -23,7 +24,7 @@ const EditableTableCell = ({ children, ...props }) => {
       props.onDelete(props.id);
     } else {
       if (inputRef.current !== editCellVal) {
-        // If user deleted value and we don't want flag the record deleted, send null instead of empty string to match default DB case
+        // If user deleted value and we don't want to flag the record deleted, send null instead of empty string to match default DB case
         let updateVal = editCellVal;
         if (updateVal === "") {
           updateVal = null;
@@ -47,19 +48,34 @@ const EditableTableCell = ({ children, ...props }) => {
 
   const renderCell = () => {
     if (editing) {
-      return (
-        <input
-          ref={inputRef}
-          value={editCellVal}
-          // placeholder={props.placeholder}
-          aligntext={props.aligntext}
-          alignment={props.alignment}
-          disabled={props.disabled}
-          onChange={(e) => setEditCellVal(e.target.value)}
-          onBlur={makeData}
-          onKeyDown={handleKeyPress}
-        />
-      );
+      if (props.first) {
+        return (
+          <textarea
+            ref={inputRef}
+            aligntext={props.aligntext}
+            alignment={props.alignment}
+            disabled={props.disabled}
+            onChange={(e) => setEditCellVal(e.target.value)}
+            onBlur={makeData}
+            onKeyDown={handleKeyPress}
+            value={editCellVal}
+          ></textarea>
+        );
+      } else {
+        return (
+          <input
+            ref={inputRef}
+            value={editCellVal}
+            // placeholder={props.placeholder}
+            aligntext={props.aligntext}
+            alignment={props.alignment}
+            disabled={props.disabled}
+            onChange={(e) => setEditCellVal(e.target.value)}
+            onBlur={makeData}
+            onKeyDown={handleKeyPress}
+          />
+        );
+      }
     } else {
       return editCellVal ? sanitize(editCellVal) : props.placeholder;
     }
@@ -67,6 +83,11 @@ const EditableTableCell = ({ children, ...props }) => {
 
   // focus the cursor in the input field on edit start
   useEffect(() => {
+    // if (editing && !textRef.current && inputRef.current) {
+    //   inputRef.current.focus();
+    // } else if (editing && textRef.current) {
+    //   textRef.current.focus();
+    // }
     if (editing && inputRef.current) {
       inputRef.current.focus();
     }

@@ -6,7 +6,7 @@ const FitnessActivities = () => {
     <SheetsComponent
       colorScheme="olive"
       title="Fitness Activities"
-      subtext="Use the list to explore activities and their intensity."
+      subtext="Explore a list of activities and their intensity."
       sheetId="#gid=1359877998"
     />
   );
