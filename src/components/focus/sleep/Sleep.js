@@ -32,7 +32,7 @@ const Sleep = () => {
   const handleSave = async (data, id, clearState) => {
     if (data) {
       const res = await mutateSleep(data, id);
-      console.log(res);
+      // console.log(res);
       if (res.error) {
         setNotificationMessage(res.error, "error", true);
         return;
