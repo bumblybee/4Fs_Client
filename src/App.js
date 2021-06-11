@@ -6,6 +6,7 @@ import Notification from "./components/notification/Notification";
 import Routes from "./components/routes";
 
 function App() {
+  throw new Error("Sentry error check");
   return (
     <Router>
       <NotificationProvider>
