@@ -18,7 +18,7 @@ const TimePickerCell = (props) => {
   };
 
   const makeData = (e) => {
-    if (props.onSave) {
+    if (props.onSave && e.target.value !== "") {
       // If props.state, want to call api with parent state, else call api with local state
       if (props.state) {
         props.onSave(props.state, props.id, true);
