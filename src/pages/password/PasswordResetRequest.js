@@ -23,7 +23,6 @@ const PasswordResetRequest = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await triggerPasswordReset(email);
-    console.log(res);
     if (!res.error) {
       setSubmitted(true);
     }

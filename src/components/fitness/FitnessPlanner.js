@@ -7,7 +7,7 @@ const FitnessPlanner = () => {
       field="fitness"
       colorScheme="purple"
       title="Fitness Planner"
-      subtext="Use the fitness planner to increase your energy consumption throughout the day."
+      subtext="Click the button below to check out the Fitness Planner in the program sheet."
       sheetId="#gid=1062021121"
     />
   );

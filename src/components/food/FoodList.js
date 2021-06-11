@@ -6,7 +6,7 @@ const FoodList = () => {
     <SheetsComponent
       colorScheme="orange"
       title="Food List"
-      subtext="Use the list to determine if your food is alkaline, neutral or acidic."
+      subtext="Click the button below to check out the Food List in the program sheet."
       sheetId="#gid=1557042622"
     />
   );

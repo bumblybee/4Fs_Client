@@ -7,7 +7,7 @@ const Resources = () => {
       colorScheme="grey"
       val="Resources"
       title="Bonus Resources"
-      subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      subtext="Click the button below to check out your free bonus resources."
     />
   );
 };

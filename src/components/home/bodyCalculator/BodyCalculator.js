@@ -7,8 +7,9 @@ const BodyCalculator = () => {
       colorScheme="teal"
       val="Body Composition Calculator"
       title="Body Composition Calculator"
-      subtext="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptate voluptates, dolor aspernatur maiores qui."
+      subtext="Click the button below to check out the Body Composition Calculator in the program sheet."
       sheetId="#gid=737455075"
+      // buttonText="Body Composition Calculator"
     />
   );
 };

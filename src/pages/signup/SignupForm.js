@@ -152,7 +152,7 @@ const SignupForm = () => {
       if (err) {
         setNotificationMessage(err, "error");
       }
-      console.log(signup);
+
       signup.data && history.push("/");
     }
   };
