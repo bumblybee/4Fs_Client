@@ -73,4 +73,12 @@ export const StyledFormButton = styled(Button)`
 export const StyledFooterMessage = styled(Message)`
   text-align: center;
   font-size: 1.1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    margin: 0 0.25rem;
+  }
 `;

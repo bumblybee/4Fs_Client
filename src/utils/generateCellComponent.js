@@ -184,9 +184,7 @@ const generateCellComponent = (type, props) => {
       );
 
     default:
-      return (
-        <div style={props.style}>{sanitize(props.val) || props.component}</div>
-      );
+      return <div>{sanitize(props.val) || props.component}</div>;
   }
 };
 

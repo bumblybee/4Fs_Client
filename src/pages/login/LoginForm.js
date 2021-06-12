@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Form, Button, Image } from "semantic-ui-react";
+import { Form, Image } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
 import { NotificationContext } from "../../context/notification/NotificationContext";
 import {
@@ -9,6 +9,7 @@ import {
   StyledFormHeader,
   StyledForm,
   StyledFormButton,
+  StyledFooterMessage,
 } from "../../styles/GlobalStyledComponents";
 
 const LoginForm = () => {
@@ -81,23 +82,15 @@ const LoginForm = () => {
             <StyledFormButton fluid size="large" type="submit">
               Log in
             </StyledFormButton>
-            <div
-              style={{
-                textAlign: "center",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-              className="ui message align center"
-            >
-              <div style={{ marginRight: "0.5rem" }}>
+            <StyledFooterMessage className="ui message align center">
+              <div>
                 <Link to="/signup">Create account</Link>
               </div>
               |
-              <div style={{ marginLeft: "0.5rem" }}>
+              <div>
                 <Link to="/reset-password"> Reset password</Link>
               </div>
-            </div>
+            </StyledFooterMessage>
           </div>
         </StyledForm>
       </StyledSegment>
