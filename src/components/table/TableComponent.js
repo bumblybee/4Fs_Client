@@ -6,7 +6,6 @@ TableComponent.TD = function TD({ children, ...props }) {
   return (
     <Table.Cell
       {...props}
-      // style={{ minHeight: "45px" }}
       collapsing={props.collapsing}
       textAlign={props.alignment}
     >
@@ -45,13 +44,7 @@ export default function TableComponent({ children, ...props }) {
       <TableComponent.TH
         key={idx}
         textAlign={header.aligntext}
-        style={{
-          backgroundColor: props.color,
-          color: "#fff",
-          borderRadius: 0,
-          fontFamily: "Lato",
-          fontSize: props.fontsize || "1.1rem",
-        }}
+        {...props}
         width={header.width && header.width}
       >
         {header.label}
@@ -64,15 +57,7 @@ export default function TableComponent({ children, ...props }) {
     return (
       <Table.Header className="description-header">
         <TableComponent.TR>
-          <TableComponent.TH
-            style={{
-              backgroundColor: props.color,
-              color: "#fff",
-              textAlign: "center",
-            }}
-            colSpan="16"
-            className="description-header"
-          >
+          <TableComponent.TH colSpan="16" className="description-header">
             {props.descriptionheader}
           </TableComponent.TH>
         </TableComponent.TR>
@@ -135,9 +120,7 @@ export default function TableComponent({ children, ...props }) {
         {props.descriptionheader && renderDescriptionHeader()}
 
         <Table.Header className={props.className}>
-          <TableComponent.TR style={{ textAlign: props.aligntext }}>
-            {renderColumns(props.columns)}
-          </TableComponent.TR>
+          <TableComponent.TR>{renderColumns(props.columns)}</TableComponent.TR>
         </Table.Header>
         <Table.Body className={props.className}>
           {renderRows(rowsMappedToColumns)}

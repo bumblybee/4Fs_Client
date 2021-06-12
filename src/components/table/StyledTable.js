@@ -46,10 +46,23 @@ export const StyledTable = styled(Table)`
     width: 100%;
   }
 
+  th {
+    background-color: ${(props) => props.color} !important;
+    color: #fff !important;
+    border-radius: 0 !important;
+    font-family: "Lato";
+    font-size: ${(props) => props.fontsize || "1.1rem"};
+  }
+
+  th.description-header {
+    text-align: center !important;
+  }
+
   tr {
     min-height: 45px;
     text-align: ${(props) => props.aligntext};
     width: 100%;
+    text-align: ${(props) => props.aligntext};
   }
 
   tbody tr:first-child {
@@ -189,12 +202,11 @@ export const StyledTable = styled(Table)`
       left: -9999px;
     }
 
-    .fasting-progress thead {
-      /* position: static !important;
+    /* .fasting-progress thead.fasting-progress {
+      position: sticky !important;
       top: 0 !important;
-      left: 0; */
-      /* height: 20px !important; */
-    }
+      left: 0;
+    } */
 
     thead.fasting-progress,
     thead.fasting-progress th {
@@ -207,13 +219,11 @@ export const StyledTable = styled(Table)`
       left: 0 !important;
       z-index: 2;
       margin: 0 !important;
-      /* height: 20px !important; */
     }
 
     // Sticky table heads that are being kept visible
 
-    thead.rewards,
-    thead.swagger {
+    thead.rewards {
       position: sticky !important;
       top: 0 !important;
       z-index: 2 !important;
