@@ -116,7 +116,7 @@ export default function TableComponent({ children, ...props }) {
       color={props.color}
       width={props.width}
       height={props.height}
-      mobileHeight={props.mobileHeight}
+      maxHeight={props.maxHeight}
       margin={props.margin}
     >
       <StyledTable

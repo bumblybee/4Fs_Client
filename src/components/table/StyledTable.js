@@ -6,6 +6,7 @@ export const StyledTableWrapper = styled.div`
   width: ${(props) => props.width};
   max-width: 100%;
   min-height: 48px;
+  max-height: ${(props) => props.maxHeight || ""};
   overflow-y: auto;
   overflow-x: hidden;
   border: 1px solid #22242626;
@@ -73,12 +74,26 @@ export const StyledTable = styled(Table)`
     justify-content: center;
   }
 
+  .fasting-progress th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    margin: 0 !important;
+  }
+
   .fasting-progress td {
     padding: 0.5rem 0.25rem 0.3rem !important;
   }
 
   .fasting-progress thead th {
     padding: 0.1rem !important;
+  }
+
+  .fasting-progress thead {
+    position: static !important;
+    top: 0;
+    left: 0;
+    /* height: 20px !important; */
   }
 
   thead.rewards,
@@ -148,14 +163,6 @@ export const StyledTable = styled(Table)`
       width: 100% !important;
     }
 
-    .fasting-progress thead th {
-      padding: 0 !important;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 20px !important;
-    }
-
     // Below keeps row and cells spread across width
 
     .habits tr td,
@@ -183,10 +190,24 @@ export const StyledTable = styled(Table)`
     }
 
     .fasting-progress thead {
-      position: static !important;
-      top: 0;
-      left: 0;
-      height: 20px !important;
+      /* position: static !important;
+      top: 0 !important;
+      left: 0; */
+      /* height: 20px !important; */
+    }
+
+    thead.fasting-progress,
+    thead.fasting-progress th {
+      padding: 0 !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: sticky !important;
+      top: 0 !important;
+      left: 0 !important;
+      z-index: 2;
+      margin: 0 !important;
+      /* height: 20px !important; */
     }
 
     // Sticky table heads that are being kept visible
@@ -197,14 +218,13 @@ export const StyledTable = styled(Table)`
       top: 0 !important;
       z-index: 2 !important;
       margin: 0 !important;
-      color: red;
     }
 
     td:not(.fasting) {
       /* Behave  like a "row" */
       border: none !important;
       border-bottom: 1px solid #eee !important;
-      /* position: relative; */
+      position: relative;
     }
 
     td:before {

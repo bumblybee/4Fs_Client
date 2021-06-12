@@ -66,6 +66,7 @@ const FastingProgress = ({ fastingProgress }) => {
         striped
         compact="very"
         celled
+        maxHeight="12rem"
       />
     )
   );
