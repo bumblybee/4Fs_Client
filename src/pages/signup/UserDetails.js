@@ -5,6 +5,7 @@ import {
   StyledFooterMessage,
   StyledFormButton,
 } from "../../styles/GlobalStyledComponents";
+import { StyledButtonWrapper } from "./StyledSignupForm";
 
 const UserDetails = ({
   userDetails,
@@ -78,8 +79,7 @@ const UserDetails = ({
         required
       />
 
-      {/* TODO: attach message */}
-      <div style={{ display: "flex", alignContent: "space-between" }}>
+      <StyledButtonWrapper>
         <Button fluid size="large" onClick={reverseForm}>
           Back
         </Button>
@@ -91,7 +91,7 @@ const UserDetails = ({
         >
           Submit
         </StyledFormButton>
-      </div>
+      </StyledButtonWrapper>
       <StyledFooterMessage>
         Have an account? <Link to="/login">Log in</Link>
       </StyledFooterMessage>

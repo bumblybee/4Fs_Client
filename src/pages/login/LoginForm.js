@@ -45,10 +45,7 @@ const LoginForm = () => {
         </StyledFormHeader>
 
         <StyledForm onSubmit={handleSubmit}>
-          <div
-            className="ui segment basic"
-            style={{ boxShadow: "none", textAlign: "left" }}
-          >
+          <div className="ui segment basic">
             <Form.Input
               fluid
               icon="envelope"
