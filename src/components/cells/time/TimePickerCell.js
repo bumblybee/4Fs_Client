@@ -10,26 +10,22 @@ const TimePickerCell = (props) => {
   const handleChange = (e) => {
     setTime(e.target.value);
 
-    props.setState &&
-      props.setState({
-        ...props.state,
-        [props.accessor]: e.target.value,
-      });
+    // If new row data, we update parent state and call api in parent when we have data for entire row
+    if (props.updateRow) {
+      props.updateRow(props.accessor, e.target.value);
+
+      return;
+    }
   };
 
   const makeData = (e) => {
     if (props.onSave && e.target.value !== "") {
-      // If props.state, want to call api with parent state, else call api with local state
-      if (props.state) {
-        props.onSave(props.state, props.id, true);
-      } else {
-        props.onSave(
-          {
-            [props.accessor]: e.target.value,
-          },
-          props.id
-        );
-      }
+      props.onSave(
+        {
+          [props.accessor]: e.target.value,
+        },
+        props.id
+      );
     }
   };
 

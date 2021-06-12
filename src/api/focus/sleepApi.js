@@ -5,6 +5,11 @@ export const getSleep = async () => {
   return sleep.data;
 };
 
+export const createSleep = async (data) => {
+  const sleep = await post("/sleep", data);
+  return sleep && sleep.data ? sleep.data : sleep;
+};
+
 export const mutateSleep = async (data, id) => {
   // Expects yy-mm-dd and 24:00
   const sleep = await post(`/sleep/${id}`, data);

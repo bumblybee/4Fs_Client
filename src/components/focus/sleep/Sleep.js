@@ -3,6 +3,7 @@ import moment from "moment";
 import useCRUD from "../../../hooks/useCRUD";
 import {
   getSleep,
+  createSleep,
   mutateSleep,
   deleteSleep,
 } from "../../../api/focus/sleepApi";
@@ -23,35 +24,71 @@ const Sleep = () => {
   const [sleep, setSleep] = useState([]);
   const [newRowData, setNewRowData] = useState({});
 
+  const updateRowData = async (key, data) => {
+    setNewRowData({ ...newRowData, [key]: data });
+  };
+
   const getSleepData = async () => {
     const res = await getSleep();
+
+    if (res && res.error) {
+      setNotificationMessage(res.error, "error", true);
+      return;
+    }
+
+    clearNotificationMessage();
     res && res.data && setSleep([...res.data]);
   };
 
-  // TODO: Separate fn for new save because this way calls api when woke entered, even if there's nothing in the date and toBed inputs
-  const handleSave = async (data, id, clearState) => {
+  const handleSaveCell = async (data, id) => {
     if (data) {
       const res = await mutateSleep(data, id);
 
-      if (res.error) {
+      if (res && res.error) {
         setNotificationMessage(res.error, "error", true);
         return;
       }
 
       clearNotificationMessage();
       setSleep([...res.data]);
-      clearState && setNewRowData({});
     }
+  };
+
+  const handleSaveNewRow = async () => {
+    const res = await createSleep(newRowData);
+
+    if (res && res.error) {
+      setNotificationMessage(res.error, "error", true);
+    }
+    clearNotificationMessage();
+    setSleep(res.data);
+    setNewRowData({});
   };
 
   const handleDelete = async (id) => {
     const res = await deleteSleep(id);
+
+    if (res && res.error) {
+      setNotificationMessage(res.error, "error", true);
+    }
+
+    clearNotificationMessage();
     setSleep(res.data);
   };
 
   useEffect(() => {
     getSleepData();
   }, []);
+
+  useEffect(() => {
+    // If we have data for every cell in new row, call api
+    const rowComplete =
+      "date" in newRowData && "toBed" in newRowData && "woke" in newRowData;
+
+    if (rowComplete) {
+      handleSaveNewRow();
+    }
+  }, [newRowData]);
 
   const columns = [
     {
@@ -114,8 +151,19 @@ const Sleep = () => {
     },
   ];
 
+  const formatCsvHours = (hours) => {
+    return moment(hours, "HH:mm:ss").format("hh:mm A");
+  };
+
   const csvRows = sleep.map((item) => {
-    item.hoursSlept = moment(item.hoursSlept, "HH:mm:ss").format("HH:mm");
+    const formattedWoke = formatCsvHours(item.woke);
+    const formattedToBed = formatCsvHours(item.toBed);
+    const formattedHoursSlept = formatCsvHours(item.hoursSlept);
+
+    item.woke = formattedWoke;
+    item.toBed = formattedToBed;
+    item.hoursSlept = formattedHoursSlept;
+
     return item;
   });
 
@@ -125,7 +173,7 @@ const Sleep = () => {
         date: {
           cellComponent: generateCellComponent("date", {
             id: item.id,
-            onSave: handleSave,
+            onSave: handleSaveCell,
             val: item.date,
             accessor: "date",
             placeholder: "mm/dd/yyyy",
@@ -136,7 +184,7 @@ const Sleep = () => {
         toBed: {
           cellComponent: generateCellComponent("time", {
             id: item.id,
-            onSave: handleSave,
+            onSave: handleSaveCell,
 
             val: item.toBed,
             accessor: "toBed",
@@ -148,7 +196,7 @@ const Sleep = () => {
         woke: {
           cellComponent: generateCellComponent("time", {
             id: item.id,
-            onSave: handleSave,
+            onSave: handleSaveCell,
             val: item.woke,
             accessor: "woke",
           }),
@@ -156,7 +204,9 @@ const Sleep = () => {
         hoursSlept: {
           cellComponent: generateCellComponent("static", {
             id: item.id,
-            val: moment(item.hoursSlept, "HH:mm:ss").format("HH:mm"),
+            val:
+              item.hoursSlept &&
+              moment(item.hoursSlept, "HH:mm:ss").format("HH:mm"),
             alignment: "center",
             className: "sleep-hours-slept",
           }),
@@ -164,7 +214,7 @@ const Sleep = () => {
         comments: {
           cellComponent: generateCellComponent("editable", {
             id: item.id,
-            onSave: handleSave,
+            onSave: handleSaveCell,
             val: item.comments,
             accessor: "comments",
             placeholder: "Comments...",
@@ -188,8 +238,7 @@ const Sleep = () => {
     const emptyRow = {
       date: {
         cellComponent: generateCellComponent("date", {
-          state: newRowData,
-          setState: setNewRowData,
+          updateRow: updateRowData,
           accessor: "date",
           alignment: "left",
           className: "sleep-date-picker",
@@ -197,17 +246,14 @@ const Sleep = () => {
       },
       toBed: {
         cellComponent: generateCellComponent("time", {
-          state: newRowData,
-          setState: setNewRowData,
+          updateRow: updateRowData,
           accessor: "toBed",
           alignment: "center",
         }),
       },
       woke: {
         cellComponent: generateCellComponent("time", {
-          onSave: handleSave,
-          state: newRowData,
-          setState: setNewRowData,
+          updateRow: updateRowData,
           accessor: "woke",
           alignment: "center",
         }),
