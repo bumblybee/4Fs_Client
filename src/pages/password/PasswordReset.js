@@ -60,7 +60,7 @@ const PasswordReset = () => {
           <p>Enter your new password</p>
         </StyledPasswordResetHeader>
         <StyledForm onSubmit={handleSubmit}>
-          <Segment basic style={{ textAlign: "left" }}>
+          <Segment basic>
             <Form.Input
               fluid
               icon="lock"

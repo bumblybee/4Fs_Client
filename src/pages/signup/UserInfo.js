@@ -41,10 +41,7 @@ const UserInfo = ({
   };
 
   return (
-    <div
-      className="ui segment basic"
-      style={{ boxShadow: "none", textAlign: "left" }}
-    >
+    <div className="ui segment basic">
       <Form.Group widths="equal">
         <Form.Input
           fluid

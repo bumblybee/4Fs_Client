@@ -44,7 +44,7 @@ const PasswordResetRequest = () => {
           </p>
         </StyledPasswordResetHeader>
         <StyledForm onSubmit={handleSubmit}>
-          <Segment basic style={{ textAlign: "left" }}>
+          <Segment basic>
             <Form.Input
               fluid
               icon="envelope"

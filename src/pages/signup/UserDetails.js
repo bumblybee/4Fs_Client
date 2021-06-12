@@ -19,7 +19,7 @@ const UserDetails = ({
   };
 
   return (
-    <Segment basic style={{ textAlign: "left" }}>
+    <Segment basic>
       <Form.Group widths="equal">
         <Form.Input
           fluid

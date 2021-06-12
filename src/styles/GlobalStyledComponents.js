@@ -59,6 +59,10 @@ export const StyledForm = styled(Form)`
   div.item.active {
     background: #dce9fe !important;
   }
+
+  .ui .basic .segment {
+    text-align: left;
+  }
 `;
 
 export const StyledFormButton = styled(Button)`
