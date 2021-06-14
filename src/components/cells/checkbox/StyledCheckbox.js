@@ -24,7 +24,7 @@ export const StyledCheckboxWrapper = styled.div`
     padding: 0 0 0 0.5rem;
 
     @media (max-width: 620px) {
-      margin-left: -1.2rem;
+      margin-left: -1.25rem;
     }
   }
 

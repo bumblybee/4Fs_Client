@@ -14,7 +14,7 @@ const ButtonCell = (props) => {
         color={props.color}
         isCentered={props.isCentered}
         newWindow={props.newWindow}
-        size={props.size}
+        size="huge"
       >
         {props.icon && props.icon}
         {props.val || "Add Google Sheets Link"}

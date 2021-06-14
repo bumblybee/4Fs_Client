@@ -141,7 +141,7 @@ export const StyledTable = styled(Table)`
   @media only screen and (max-width: 760px),
     (min-device-width: 768px) and (max-device-width: 1024px) {
     /* Force table to not be like table anymore */
-    table:not(.system),
+    table:not(.system):not(.fasting-progress),
     thead,
     tbody:not(.system),
     th:not(.system),
@@ -261,7 +261,7 @@ export const StyledTable = styled(Table)`
     }
 
     td:not(.fasting) {
-      /* Behave  like a "row" */
+      /* Border bottom to look like row */
       border: none !important;
       border-bottom: 1px solid #eee !important;
       position: relative;
