@@ -47,22 +47,15 @@ const UserProfile = () => {
         phone3: null,
       };
 
-    let formattedPhone = "";
-    if (user && user.phone && user.phone.includes("null")) {
-      return {
-        phone1: null,
-        phone2: null,
-        phone3: null,
-      };
-    } else if (user && user.phone && !user.phone.includes("null")) {
-      formattedPhone = user.phone.split("-");
-    }
+    if (user && user.phone) {
+      const formattedPhone = user.phone.split("-");
 
-    return {
-      phone1: formattedPhone[0],
-      phone2: formattedPhone[1],
-      phone3: formattedPhone[2],
-    };
+      return {
+        phone1: formattedPhone[0],
+        phone2: formattedPhone[1],
+        phone3: formattedPhone[2],
+      };
+    }
   };
 
   const handleChange = (field) => (e, data) => {
