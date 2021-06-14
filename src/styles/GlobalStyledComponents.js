@@ -63,6 +63,21 @@ export const StyledForm = styled(Form)`
   .ui .basic .segment {
     text-align: left;
   }
+
+  input:focus,
+  select:focus,
+  div.dropdown:focus,
+  input:hover,
+  select:hover,
+  div.dropdown:hover {
+    background: #fcfdff !important;
+    border: 1px solid #2b73ce !important;
+  }
+  input:focus,
+  select:focus,
+  div.dropdown:focus {
+    background: #dce9fe44 !important;
+  }
 `;
 
 export const StyledFormButton = styled(Button)`
