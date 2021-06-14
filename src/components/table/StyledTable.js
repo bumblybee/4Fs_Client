@@ -145,7 +145,7 @@ export const StyledTable = styled(Table)`
     thead,
     tbody:not(.system),
     th:not(.system),
-    td:not(.system),
+    td:not(.system):not(.sheets),
     tr:not(.system) {
       display: block;
     }
