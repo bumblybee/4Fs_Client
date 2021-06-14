@@ -4,6 +4,7 @@ export const StyledCheckboxWrapper = styled.div`
   width: 23px;
   display: flex;
   justify-content: center;
+  position: relative;
 
   input {
     -webkit-appearance: none;
@@ -21,13 +22,15 @@ export const StyledCheckboxWrapper = styled.div`
     background: ${(props) => (props.disabled ? "transparent" : "#ffffff88")};
     cursor: ${(props) => (props.disabled ? "default" : "pointer")};
     padding: 0 0 0 0.5rem;
-    position: relative;
+
+    @media (max-width: 620px) {
+      margin-left: 2rem;
+    }
   }
 
   input:checked {
     background: ${(props) => (props.disabled ? "transparent" : "#b463b4")};
     border: ${(props) => (props.disabled ? "" : "2px solid #800080aa")};
-    /* outline: none; */
   }
 
   input:focus {
@@ -39,8 +42,17 @@ export const StyledCheckboxWrapper = styled.div`
     font-size: 1rem;
     top: 50%;
     left: 50%;
-    transform: translate(-160%, -85%);
+    transform: translate(-40%, -85%);
     color: ${(props) => (props.disabled ? "#33333377" : " #fff")};
     cursor: ${(props) => (props.disabled ? "default" : "pointer")};
+
+    @media (max-width: 620px) {
+      left: 103%;
+      top: 55%;
+    }
+  }
+
+  @media (max-width: 620px) {
+    margin-right: 0.35rem;
   }
 `;

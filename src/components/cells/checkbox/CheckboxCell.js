@@ -12,13 +12,6 @@ const CheckboxCell = (props) => {
     makeData(e);
   };
 
-  // const handleKeyPress = (e) => {
-  //   if (e.keyCode === 13) {
-  //     console.log(e.target.checked);
-  //     handleChange(e);
-  //   }
-  // };
-
   const makeData = (e) => {
     // Updating performed based on checked or unchecked
     props.onSave(

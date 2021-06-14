@@ -21,6 +21,15 @@ export const StyledExampleCell = styled.div`
   div:first-child {
     width: ${(props) => props.width || ""};
   }
+
+  @media (max-width: 620px) {
+    width: ${(props) => props.className === "system-practice" && "65px"};
+
+    /* justify-content: ${(props) =>
+      props.className === "system-practice" && "flex-start"}; */
+
+    text-align: ${(props) => props.className === "system-practice" && "left"};
+  }
 `;
 
 export const StyledTooltipContainer = styled.div`

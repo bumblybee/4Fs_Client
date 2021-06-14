@@ -14,12 +14,6 @@ export const StyledStaticCell = styled.div`
     font-weight: 700;
   }
 
-  .milestone {
-    /* font-weight: 600;
-    color: #f2711c;
-    text-shadow: 0 1px 1px #33333333; */
-  }
-
   .system-performed {
     font-weight: bold;
     font-size: 1.15rem;
@@ -69,5 +63,14 @@ export const StyledStaticCell = styled.div`
     margin-top: -0.15rem;
     font-size: 0.89rem;
     font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    .system-performed,
+    .system-performed-example {
+      padding-bottom: 0.25rem;
+      width: 50px;
+      text-align: right;
+    }
   }
 `;

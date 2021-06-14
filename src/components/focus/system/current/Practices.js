@@ -15,7 +15,6 @@ import {
   getCurrentWeek,
 } from "../../../../api/focus/practicesApi";
 
-// TODO: Limit height of table
 const Practices = () => {
   const { setNotificationMessage, clearNotificationMessage } =
     useContext(NotificationContext);
@@ -241,6 +240,7 @@ const Practices = () => {
           alignment: "left",
           textWeight: "600",
           placeholder: "New practice...",
+          className: "system-practice",
         }),
       },
       goal: {
@@ -252,6 +252,7 @@ const Practices = () => {
           foreignAccessor: "practiceWeekId",
           foreignId: currWeek.id,
           alignment: "center",
+          className: "system-goal",
         }),
       },
       dayOne: {
@@ -373,6 +374,7 @@ const Practices = () => {
           foreignId: currWeek.id,
           alignment: "left",
           placeholder: "New practice...",
+          className: "system-practice",
         }),
       },
       goal: {
@@ -429,7 +431,7 @@ const Practices = () => {
           alignment: "center",
           justify: "flex-start",
           color: "#33333366",
-          className: "system",
+          className: "system-practice",
         }),
       },
       goal: {
@@ -504,6 +506,7 @@ const Practices = () => {
       },
       delete: {
         cellComponent: generateCellComponent("example", {
+          val: "",
           alignment: "right",
         }),
       },

@@ -68,6 +68,7 @@ const EmptyCell = ({ children, ...props }) => {
 
   return (
     <StyledEmptyCell
+      className={props.className}
       onFocus={() => setEditing(true)}
       onClick={() => setEditing(true)}
       onBlur={() => setEditing(false)}

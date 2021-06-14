@@ -77,6 +77,7 @@ const EditableTableCell = ({ children, ...props }) => {
 
   return (
     <StyledEditableCell
+      className={props.className}
       onFocus={() => !props.disabled && setEditing(true)}
       onClick={() => !props.disabled && setEditing(true)}
       onBlur={() => setEditing(false)}

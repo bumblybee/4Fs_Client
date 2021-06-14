@@ -25,7 +25,11 @@ const NumberCell = (props) => {
   }, [props.val]);
 
   return (
-    <StyledNumberCell disabled={props.disabled} alignment={props.alignment}>
+    <StyledNumberCell
+      disabled={props.disabled}
+      alignment={props.alignment}
+      className={`number ${props.className}`}
+    >
       <Input
         transparent
         size="small"

@@ -21,6 +21,7 @@ const generateCellComponent = (type, props) => {
       return (
         <EditableCell
           id={props.id}
+          className={props.className}
           first={props.first}
           onSave={props.onSave}
           onDelete={props.onDelete}
@@ -38,6 +39,7 @@ const generateCellComponent = (type, props) => {
     case "empty":
       return (
         <EmptyCell
+          className={props.className}
           onSave={props.onSave}
           val=""
           placeholder={props.placeholder}
@@ -99,6 +101,7 @@ const generateCellComponent = (type, props) => {
           foreignId={props.foreignId}
           alignment={props.alignment}
           disabled={props.disabled}
+          className={props.className}
         />
       );
     case "date":

@@ -106,7 +106,6 @@ export const StyledTable = styled(Table)`
     position: static !important;
     top: 0;
     left: 0;
-    /* height: 20px !important; */
   }
 
   thead.rewards,
@@ -140,13 +139,18 @@ export const StyledTable = styled(Table)`
   @media only screen and (max-width: 760px),
     (min-device-width: 768px) and (max-device-width: 1024px) {
     /* Force table to not be like table anymore */
-    table,
+    table:not(.system),
     thead,
-    tbody,
-    th,
-    td,
-    tr {
+    tbody:not(.system),
+    th:not(.system),
+    td:not(.system),
+    tr:not(.system) {
       display: block;
+    }
+
+    .system tbody,
+    .system table {
+      overflow-x: scroll;
     }
 
     td.milestones {
@@ -154,6 +158,26 @@ export const StyledTable = styled(Table)`
     }
 
     // Below keeps table header intact and displayed across width
+
+    .system tr {
+      display: flex;
+      grid-template-columns: repeat(11, 1fr);
+    }
+
+    .system td.system {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* min-width: 50px; */
+    }
+
+    .system tr td.system:nth-child(2) {
+      width: 45px;
+    }
+
+    .system td.system .delete {
+      width: 50px;
+    }
 
     .habits tr,
     .fasting-progress tr {
@@ -172,7 +196,8 @@ export const StyledTable = styled(Table)`
     }
 
     .habits tr th,
-    .fasting-progress tr th {
+    .fasting-progress tr th,
+    .system tr th {
       width: 100% !important;
     }
 
@@ -196,7 +221,7 @@ export const StyledTable = styled(Table)`
     }
 
     /* Hide certain table headers (but not display: none, for accessibility) */
-    :not(.rewards):not(.habits):not(.beliefs):not(.swagger) thead {
+    :not(.rewards):not(.habits):not(.beliefs):not(.swagger):not(.system) thead {
       position: absolute;
       top: -9999px;
       left: -9999px;
@@ -228,6 +253,10 @@ export const StyledTable = styled(Table)`
       top: 0 !important;
       z-index: 2 !important;
       margin: 0 !important;
+    }
+
+    thead.rewards th {
+      height: 45px !important;
     }
 
     td:not(.fasting) {

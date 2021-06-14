@@ -12,7 +12,7 @@ const DeleteCell = (props) => {
   };
 
   return (
-    <StyledDeleteCell>
+    <StyledDeleteCell className="delete">
       {toDelete && (
         <DeleteMenu
           toDelete={toDelete}

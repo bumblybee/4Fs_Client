@@ -31,6 +31,10 @@ export const StyledEmptyCell = styled.div`
     padding: 0.75rem;
     border-radius: 6px;
   }
+
+  @media (max-width: 620px) {
+    width: ${(props) => props.className === "system-practice" && "160px"};
+  }
 `;
 
 export const StyledWrapper = styled.div``;
