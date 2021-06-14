@@ -8,6 +8,7 @@ const useCRUD = (getter, setter, destroyer) => {
 
   const getData = useCallback(async () => {
     const res = await getter();
+    console.log(res);
     setState(res && res.data && res.data.length ? [...res.data] : []);
   }, [getter]);
 

@@ -72,6 +72,29 @@ const UserProfile = () => {
     }
   };
 
+  const validatePhoneNumber = (obj) => {
+    let count = 0;
+
+    for (const key in obj) {
+      if (obj[key] == null) {
+        count++;
+      }
+    }
+
+    // If count = 3, delete phone
+    if (count === 3) {
+      return null;
+    }
+
+    // If cleared one or two inputs, don't update phone, use what's in context
+    if (count === 1 || count === 2) {
+      return user.phone;
+    } else {
+      // If all inputs filled, return formatted phone
+      return `${obj.phone1}-${obj.phone2}-${obj.phone3}`;
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -79,25 +102,7 @@ const UserProfile = () => {
       if (userDetails[key] === "") userDetails[key] = null;
     }
 
-    const validatePhoneNumber = (obj) => {
-      let count = 0;
-
-      for (const key in obj) {
-        if (obj[key] == null) {
-          count++;
-        }
-      }
-
-      if (count === 3) {
-        return null;
-      }
-
-      if (count === 1 || count === 2) {
-        return user.phone;
-      } else {
-        return `${obj.phone1}-${obj.phone2}-${obj.phone3}`;
-      }
-    };
+    // TODO: If userDetails val isn't different from user val, don't update
 
     const data = (({ phone1, phone2, phone3, ...rest }) => rest)({
       ...userDetails,

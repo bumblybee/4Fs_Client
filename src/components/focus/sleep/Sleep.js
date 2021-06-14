@@ -152,19 +152,20 @@ const Sleep = () => {
   ];
 
   const formatCsvHours = (hours) => {
-    return moment(hours, "HH:mm:ss").format("hh:mm A");
+    return moment(hours, "HH:mm:ss A").format("hh:mm A");
   };
 
   const csvRows = sleep.map((item) => {
-    const formattedWoke = formatCsvHours(item.woke);
-    const formattedToBed = formatCsvHours(item.toBed);
-    const formattedHoursSlept = formatCsvHours(item.hoursSlept);
+    let csvItem = { ...item };
+    const formattedWoke = formatCsvHours(csvItem.woke);
+    const formattedToBed = formatCsvHours(csvItem.toBed);
+    const formattedHoursSlept = formatCsvHours(csvItem.hoursSlept);
 
-    item.woke = formattedWoke;
-    item.toBed = formattedToBed;
-    item.hoursSlept = formattedHoursSlept;
+    csvItem.woke = formattedWoke;
+    csvItem.toBed = formattedToBed;
+    csvItem.hoursSlept = formattedHoursSlept;
 
-    return item;
+    return csvItem;
   });
 
   const rows = (exampleRow, emptyRow) => {
@@ -185,7 +186,6 @@ const Sleep = () => {
           cellComponent: generateCellComponent("time", {
             id: item.id,
             onSave: handleSaveCell,
-
             val: item.toBed,
             accessor: "toBed",
             className: "sleep-bed-timepicker",
@@ -276,7 +276,7 @@ const Sleep = () => {
     };
     return emptyRow;
   };
-  // TODO: Classname prop and remove styling related props
+  // TODO: Class name prop and remove styling related props
   const addExampleRow = () => {
     const exampleRow = {
       date: {
