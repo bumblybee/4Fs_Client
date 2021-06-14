@@ -19,11 +19,11 @@ const UserProfile = () => {
   const { setNotificationMessage } = useContext(NotificationContext);
   const { user, updateUserDetails, logUserOut } = useContext(UserContext);
 
+  const [formChanges, setFormChanges] = useState(0);
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    countryCode: "1",
     phone1: "",
     phone2: "",
     phone3: "",
@@ -34,6 +34,7 @@ const UserProfile = () => {
     sheetsURL: "",
   });
 
+  // Remove id from sheet url here, add to components that link to sheets to access specific sheet by id when clicking button
   const formatSheetsUrl = (url) => {
     return url ? url.split("#")[0] : null;
   };
@@ -70,60 +71,70 @@ const UserProfile = () => {
     } else {
       setUserDetails({ ...userDetails, [field]: e.target.value });
     }
+
+    setFormChanges(formChanges + 1);
   };
 
-  const validatePhoneNumber = (obj) => {
-    let count = 0;
+  const validatePhoneNumber = (phone) => {
+    let nullCount = 0;
 
-    for (const key in obj) {
-      if (obj[key] == null) {
-        count++;
+    for (const key in phone) {
+      if (phone[key] == null) {
+        nullCount++;
       }
     }
 
-    // If count = 3, delete phone
-    if (count === 3) {
+    // If all three inputs cleared, delete phone
+    if (nullCount === 3) {
       return null;
     }
 
     // If cleared one or two inputs, don't update phone, use what's in context
-    if (count === 1 || count === 2) {
+    if (nullCount === 1 || nullCount === 2) {
       return user.phone;
     } else {
       // If all inputs filled, return formatted phone
-      return `${obj.phone1}-${obj.phone2}-${obj.phone3}`;
+      return `${phone.phone1}-${phone.phone2}-${phone.phone3}`;
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    for (let key in userDetails) {
-      if (userDetails[key] === "") userDetails[key] = null;
-    }
+    // Only call api if a change has been made
+    if (formChanges > 0) {
+      // If cleared input, send null to API
+      for (let key in userDetails) {
+        if (userDetails[key] === "") userDetails[key] = null;
+      }
 
-    // TODO: If userDetails val isn't different from user val, don't update
+      const userData = (({ phone1, phone2, phone3, ...rest }) => rest)({
+        ...userDetails,
+        phone: validatePhoneNumber({
+          phone1: userDetails.phone1,
+          phone2: userDetails.phone2,
+          phone3: userDetails.phone3,
+        }),
+        sheetsURL: formatSheetsUrl(userDetails.sheetsURL),
+      });
 
-    const data = (({ phone1, phone2, phone3, ...rest }) => rest)({
-      ...userDetails,
-      phone: validatePhoneNumber({
-        phone1: userDetails.phone1,
-        phone2: userDetails.phone2,
-        phone3: userDetails.phone3,
-      }),
-      sheetsURL: formatSheetsUrl(userDetails.sheetsURL),
-    });
+      const res = await updateUserDetails(userData);
 
-    const res = await updateUserDetails(data);
+      if (!res.error) {
+        setNotificationMessage(
+          "Your information has been updated",
+          "info",
+          true
+        );
+      } else {
+        setNotificationMessage(
+          "Error updating your information. If issue persists, contact support.",
+          "error",
+          true
+        );
+      }
 
-    if (!res.error) {
-      setNotificationMessage("Your information has been updated", "info", true);
-    } else {
-      setNotificationMessage(
-        "Error updating your information. If issue persists, contact support.",
-        "error",
-        true
-      );
+      setFormChanges(0);
     }
   };
 
@@ -141,7 +152,6 @@ const UserProfile = () => {
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
-
         phone1,
         phone2,
         phone3,
