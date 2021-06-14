@@ -68,6 +68,17 @@ export const StyledForm = styled(Form)`
 export const StyledFormButton = styled(Button)`
   background: #3353ab !important;
   color: #fff !important;
+  transition: background 0.1s ease, color 0.1s ease;
+
+  :hover {
+    background: #2e4a98 !important;
+    color: #ffffffef !important;
+  }
+
+  :active {
+    background: #284082 !important;
+    color: #ffffffef !important;
+  }
 `;
 
 export const StyledFooterMessage = styled(Message)`
