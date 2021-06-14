@@ -7,6 +7,10 @@ export const StyledSystemHeaderWrapper = styled.div`
   > div {
     width: 70%;
     margin: 0 auto 1rem;
+
+    @media (max-width: 620px) {
+      width: 90%;
+    }
   }
 `;
 
@@ -23,6 +27,10 @@ export const StyledStartDateContainer = styled.div`
     color: #ffffffcc;
     cursor: default;
     background: #b76ab7cc;
+
+    @media (max-width: 620px) {
+      font-size: 0.925rem;
+    }
   }
 `;
 

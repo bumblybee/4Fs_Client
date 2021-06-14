@@ -24,7 +24,7 @@ export const StyledCheckboxWrapper = styled.div`
     padding: 0 0 0 0.5rem;
 
     @media (max-width: 620px) {
-      margin-left: -1rem;
+      margin-left: -1.2rem;
     }
   }
 
@@ -47,12 +47,12 @@ export const StyledCheckboxWrapper = styled.div`
     cursor: ${(props) => (props.disabled ? "default" : "pointer")};
 
     @media (max-width: 620px) {
-      left: 15%;
+      left: 7%;
       top: 53%;
     }
   }
 
   @media (max-width: 620px) {
-    margin-right: 0.35rem;
+    margin-right: 0.65rem;
   }
 `;
