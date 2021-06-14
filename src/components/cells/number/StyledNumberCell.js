@@ -22,7 +22,7 @@ export const StyledNumberCell = styled.div`
     }
 
     @media (max-width: 620px) {
-      text-align: center !important;
+      /* text-align: center !important; */
     }
   }
 `;

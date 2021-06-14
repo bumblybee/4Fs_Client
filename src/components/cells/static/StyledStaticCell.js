@@ -70,7 +70,7 @@ export const StyledStaticCell = styled.div`
     .system-performed-example {
       padding-bottom: 0.25rem;
       width: 50px;
-      text-align: right;
+      text-align: center;
     }
   }
 `;

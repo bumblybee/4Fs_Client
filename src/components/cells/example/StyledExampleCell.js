@@ -23,7 +23,7 @@ export const StyledExampleCell = styled.div`
   }
 
   @media (max-width: 620px) {
-    width: ${(props) => props.className === "system-practice" && "65px"};
+    width: ${(props) => props.className === "system-practice" && "80px"};
 
     /* justify-content: ${(props) =>
       props.className === "system-practice" && "flex-start"}; */

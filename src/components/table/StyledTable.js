@@ -27,6 +27,8 @@ export const StyledTableWrapper = styled.div`
 
   @media (max-width: 620px) {
     width: ${(props) => `calc(${props.width} + 35%)`};
+
+    overflow-x: ${(props) => props.className === "system" && "auto"};
   }
 `;
 
@@ -148,8 +150,8 @@ export const StyledTable = styled(Table)`
       display: block;
     }
 
-    .system tbody,
-    .system table {
+    .system tbody.system,
+    .system table.system {
       overflow-x: scroll;
     }
 
@@ -168,7 +170,6 @@ export const StyledTable = styled(Table)`
       display: flex;
       justify-content: center;
       align-items: center;
-      /* min-width: 50px; */
     }
 
     .system tr td.system:nth-child(2) {

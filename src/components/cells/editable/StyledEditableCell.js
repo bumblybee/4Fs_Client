@@ -42,6 +42,6 @@ export const StyledEditableCell = styled.div`
   }
 
   @media (max-width: 620px) {
-    width: ${(props) => props.className === "system-practice" && "65px"};
+    width: ${(props) => props.className === "system-practice" && "80px"};
   }
 `;
