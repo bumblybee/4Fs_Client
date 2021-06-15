@@ -10,6 +10,12 @@ const NumberCell = (props) => {
     makeData(e.target.value);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.keyCode === 13) {
+      e.target.blur();
+    }
+  };
+
   const makeData = (value) => {
     value &&
       props.onSave(
@@ -35,6 +41,7 @@ const NumberCell = (props) => {
         size="small"
         value={inputVal}
         onChange={handleChange}
+        onKeyDown={handleKeyPress}
         type="number"
         min="0"
         max={props.accessor === "goal" && 7}
