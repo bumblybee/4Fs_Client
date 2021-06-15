@@ -20,7 +20,9 @@ const SheetsComponent = ({
 }) => {
   const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
   const { user } = useContext(UserContext);
-  const [url, setUrl] = useState("");
+  const [userSheetsUrl, setUserSheetsUrl] = useState("");
+  const baseSheetsUrl =
+    "https://docs.google.com/spreadsheets/d/1lHHdK__W5iB6fHLU_xEVdCveaIsVeKQvGrEuY9YWYtE";
 
   const columns = [
     {
@@ -29,18 +31,21 @@ const SheetsComponent = ({
     },
   ];
 
+  // TODO: When Vlad gets instructions, if have user has sheets url set url id to sheetId, else send to instructions page base url
+
   const rows = () => {
     const rowData = {
       sheetsURL: {
         cellComponent: generateCellComponent("button", {
-          to: url ? url : "/profile/#sheets",
-          val: url ? "Program Sheet" : "",
+          to: userSheetsUrl ? userSheetsUrl : baseSheetsUrl,
+          val: "Program Sheet",
           accessor: "sheetsURL",
           color: colorScheme,
           size: "huge",
           icon: <Icon name="google drive" />,
           isCentered: true,
-          newWindow: url ? true : false,
+          // newWindow: userSheetsUrl ? true : false,
+          newWindow: true,
         }),
       },
     };
@@ -49,7 +54,7 @@ const SheetsComponent = ({
   };
 
   useEffect(() => {
-    user && user.sheetsURL && setUrl(user.sheetsURL + sheetId);
+    user && user.sheetsURL && setUserSheetsUrl(user.sheetsURL + sheetId);
   }, [user]);
 
   return (
