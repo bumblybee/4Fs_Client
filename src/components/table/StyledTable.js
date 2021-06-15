@@ -141,14 +141,6 @@ export const StyledTable = styled(Table)`
   @media only screen and (max-width: 760px),
     (min-device-width: 768px) and (max-device-width: 1024px) {
     /* Force table to not be like table anymore */
-    /* table:not(.system):not(.fasting-progress),
-    thead,
-    tbody:not(.system),
-    th:not(.system),
-    td:not(.system):not(.sheets),
-    tr:not(.system) {
-      display: block;
-    } */
 
     table.milestones,
     thead.milestones,
@@ -160,25 +152,6 @@ export const StyledTable = styled(Table)`
     }
 
     // Below keeps table header intact and displayed across width
-
-    /* .system tr {
-      display: flex;
-      grid-template-columns: repeat(11, 1fr);
-    } */
-
-    /* .system td.system {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    } */
-
-    .system tr td.system:nth-child(2) {
-      width: 45px;
-    }
-
-    .system td.system .delete {
-      /* width: 50px; */
-    }
 
     .habits tr,
     .fasting-progress tr {
@@ -197,8 +170,7 @@ export const StyledTable = styled(Table)`
     }
 
     .habits tr th,
-    .fasting-progress tr th,
-    .system tr th {
+    .fasting-progress tr th {
       width: 100% !important;
     }
 
@@ -232,11 +204,7 @@ export const StyledTable = styled(Table)`
       left: -9999px;
     }
 
-    /* .fasting-progress thead.fasting-progress {
-      position: sticky !important;
-      top: 0 !important;
-      left: 0;
-    } */
+    // Sticky table headers that are being kept visible
 
     thead.fasting-progress,
     thead.fasting-progress th {
@@ -250,8 +218,6 @@ export const StyledTable = styled(Table)`
       z-index: 2;
       margin: 0 !important;
     }
-
-    // Sticky table heads that are being kept visible
 
     thead.rewards {
       position: sticky !important;

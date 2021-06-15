@@ -64,14 +64,4 @@ export const StyledStaticCell = styled.div`
     font-size: 0.89rem;
     font-weight: 600;
   }
-
-  @media (max-width: 600px) {
-    .system-performed,
-    .system-performed-example {
-      padding-bottom: 0.25rem;
-      width: 50px;
-      text-align: center;
-      margin: 0;
-    }
-  }
 `;
