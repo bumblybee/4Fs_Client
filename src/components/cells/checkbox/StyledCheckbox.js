@@ -31,7 +31,6 @@ export const StyledCheckbox = styled.div`
     background: ${(props) => (props.disabled ? "transparent" : "#ffffff88")};
     cursor: ${(props) => (props.disabled ? "default" : "pointer")};
     padding: 0 0 0 0.5rem;
-
     @media (max-width: 620px) {
       margin-left: 0;
     }

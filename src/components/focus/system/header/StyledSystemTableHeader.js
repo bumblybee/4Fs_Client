@@ -47,6 +47,8 @@ export const StyledDatePicker = styled.input`
   ::-webkit-calendar-picker-indicator {
     margin-left: 0px;
     filter: invert(1);
+    height: 1.25rem;
+    width: 1.25rem;
   }
 
   :focus {
