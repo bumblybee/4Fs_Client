@@ -17,7 +17,7 @@ const ButtonCell = (props) => {
         size="huge"
       >
         {props.icon && props.icon}
-        {props.val || "Add Google Sheets Link"}
+        {props.val}
       </Button>
     </StyledButtonCell>
   );

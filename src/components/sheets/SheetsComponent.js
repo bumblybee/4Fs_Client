@@ -31,14 +31,14 @@ const SheetsComponent = ({
     },
   ];
 
-  // TODO: When Vlad gets instructions, if have user has sheets url set url id to sheetId, else send to instructions page base url
+  // TODO: When Vlad gets instructions, if have user has sheets url set url id to sheetId, else send to instructions page base url. Remove newWindow prop if not sending user to profile to add
 
   const rows = () => {
     const rowData = {
       sheetsURL: {
         cellComponent: generateCellComponent("button", {
           to: userSheetsUrl ? userSheetsUrl : baseSheetsUrl,
-          val: "Program Sheet",
+          val: buttonText,
           accessor: "sheetsURL",
           color: colorScheme,
           size: "huge",
