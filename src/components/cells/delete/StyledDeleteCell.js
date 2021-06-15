@@ -10,13 +10,17 @@ export const StyledDeleteCell = styled.div`
 
   i {
     cursor: pointer;
+
+    :hover {
+      color: #c91e14 !important;
+    }
   }
 `;
 
 export const StyledDeleteMenu = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -0.425rem;
+  right: 1.75rem;
   background: #fff;
   padding: 1rem;
   z-index: 500;
@@ -27,7 +31,6 @@ export const StyledDeleteMenu = styled.div`
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.09);
 
   @media (max-width: 620px) {
-    right: 1.25rem;
-    top: 0.75rem;
+    right: 0;
   }
 `;
