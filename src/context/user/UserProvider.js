@@ -11,47 +11,36 @@ import { UserContext } from "./UserContext";
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
 
   const getCurrentUser = async () => {
-    setLoading(true);
     const userData = await getUser();
 
     if (userData && userData.data) {
       setUser(userData.data.user);
-      setLoading(false);
-
       return userData.data.user;
     }
 
     if (userData && userData.error) {
       setUser(null);
-      console.log(userData);
+      return userData;
     }
-
-    setLoading(false);
   };
 
   const signUserUp = async (userDetails) => {
-    setLoading(true);
     const userData = await signupUser(userDetails);
     if (userData && userData.data) {
       setUser(userData.data);
     }
 
-    setLoading(false);
     return userData;
   };
 
   const logUserIn = async (userDetails) => {
-    setLoading(true);
-
     const userData = await loginUser(userDetails);
     if (userData && userData.data) {
       setUser(userData.data.data);
     }
 
-    setLoading(false);
     return userData;
   };
 
@@ -67,12 +56,9 @@ const UserProvider = ({ children }) => {
   };
 
   const logUserOut = async () => {
-    setLoading(true);
-
     const logout = await logoutUser();
     setUser(null);
 
-    setLoading(false);
     return logout;
   };
 
@@ -83,8 +69,8 @@ const UserProvider = ({ children }) => {
   return (
     <UserContext.Provider
       value={{
-        loading,
         user,
+        setUser,
         getCurrentUser,
         signUserUp,
         logUserIn,
