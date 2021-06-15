@@ -141,43 +141,43 @@ export const StyledTable = styled(Table)`
   @media only screen and (max-width: 760px),
     (min-device-width: 768px) and (max-device-width: 1024px) {
     /* Force table to not be like table anymore */
-    table:not(.system):not(.fasting-progress),
+    /* table:not(.system):not(.fasting-progress),
     thead,
     tbody:not(.system),
     th:not(.system),
     td:not(.system):not(.sheets),
     tr:not(.system) {
       display: block;
-    }
+    } */
 
-    .system tbody.system,
-    .system table.system {
-      overflow-x: scroll;
-    }
-
-    td.milestones {
-      height: ${(props) => (props.fullheighttd ? "30rem" : "auto")};
+    table.milestones,
+    thead.milestones,
+    tbody.milestones,
+    th.milestones,
+    td.milestones,
+    tr.milestones {
+      display: block;
     }
 
     // Below keeps table header intact and displayed across width
 
-    .system tr {
+    /* .system tr {
       display: flex;
       grid-template-columns: repeat(11, 1fr);
-    }
+    } */
 
-    .system td.system {
+    /* .system td.system {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
+    } */
 
     .system tr td.system:nth-child(2) {
       width: 45px;
     }
 
     .system td.system .delete {
-      width: 50px;
+      /* width: 50px; */
     }
 
     .habits tr,
@@ -200,6 +200,10 @@ export const StyledTable = styled(Table)`
     .fasting-progress tr th,
     .system tr th {
       width: 100% !important;
+    }
+
+    td.milestones {
+      height: ${(props) => (props.fullheighttd ? "30rem" : "auto")};
     }
 
     // Below keeps row and cells spread across width

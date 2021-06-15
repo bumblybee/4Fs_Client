@@ -33,7 +33,7 @@ export const StyledEmptyCell = styled.div`
   }
 
   @media (max-width: 620px) {
-    width: ${(props) => props.className === "system-practice" && "160px"};
+    width: ${(props) => props.className === "system-practice" && "120px"};
   }
 `;
 

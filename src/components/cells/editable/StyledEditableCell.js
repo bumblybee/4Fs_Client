@@ -40,8 +40,4 @@ export const StyledEditableCell = styled.div`
     border-radius: 6px;
     padding-left: 0.25rem;
   }
-
-  @media (max-width: 620px) {
-    width: ${(props) => props.className === "system-practice" && "80px"};
-  }
 `;

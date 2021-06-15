@@ -28,18 +28,20 @@ const CheckboxCell = (props) => {
   }, [props.val]);
 
   return (
-    <sc.StyledCheckboxWrapper {...props}>
-      <label>
-        <input
-          tabIndex="0"
-          ref={checkboxRef}
-          checked={isChecked || false}
-          onChange={(e) => handleChange(e)}
-          type="checkbox"
-          disabled={props.disabled}
-        />
-        {isChecked ? <Icon name="check" disabled={props.disabled} /> : ""}
-      </label>
+    <sc.StyledCheckboxWrapper>
+      <sc.StyledCheckbox {...props}>
+        <label>
+          <input
+            tabIndex="0"
+            ref={checkboxRef}
+            checked={isChecked || false}
+            onChange={(e) => handleChange(e)}
+            type="checkbox"
+            disabled={props.disabled}
+          />
+          {isChecked ? <Icon name="check" disabled={props.disabled} /> : ""}
+        </label>
+      </sc.StyledCheckbox>
     </sc.StyledCheckboxWrapper>
   );
 };

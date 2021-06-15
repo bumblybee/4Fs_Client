@@ -13,4 +13,8 @@ export const StyledMessage = styled(Message)`
   @media (max-width: 900px) {
     width: 70%;
   }
+
+  @media (max-width: 620px) {
+    width: 90%;
+  }
 `;

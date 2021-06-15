@@ -20,9 +20,5 @@ export const StyledNumberCell = styled.div`
     :focus {
       -moz-appearance: auto;
     }
-
-    @media (max-width: 620px) {
-      /* text-align: center !important; */
-    }
   }
 `;

@@ -7,7 +7,7 @@ export const StyledExampleCell = styled.div`
   font-style: italic;
   color: ${(props) => props.color || "#333"};
   width: 100%;
-  min-height: 38px;
+  min-height: 37px;
   height: auto;
 
   display: flex;
@@ -23,11 +23,6 @@ export const StyledExampleCell = styled.div`
   }
 
   @media (max-width: 620px) {
-    width: ${(props) => props.className === "system-practice" && "80px"};
-
-    /* justify-content: ${(props) =>
-      props.className === "system-practice" && "flex-start"}; */
-
     text-align: ${(props) => props.className === "system-practice" && "left"};
   }
 `;

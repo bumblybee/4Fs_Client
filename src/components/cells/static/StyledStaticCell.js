@@ -71,6 +71,7 @@ export const StyledStaticCell = styled.div`
       padding-bottom: 0.25rem;
       width: 50px;
       text-align: center;
+      margin: 0;
     }
   }
 `;
