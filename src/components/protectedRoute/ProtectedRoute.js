@@ -1,11 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Route, Redirect } from "react-router-dom";
 import { UserContext } from "../../context/user/UserContext";
 
 const ProtectedRoute = ({ children }) => {
-  const { loading, user } = useContext(UserContext);
+  const { getCurrentUser } = useContext(UserContext);
+  const [user, setUser] = useState({});
 
-  if (loading) return null;
+  useEffect(() => {
+    getCurrentUser().then((data) => setUser(data));
+  }, [getCurrentUser]);
 
   return user ? (
     <Route>{children}</Route>

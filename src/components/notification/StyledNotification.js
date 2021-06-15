@@ -3,7 +3,7 @@ import { Message } from "semantic-ui-react";
 
 export const StyledMessage = styled(Message)`
   position: absolute !important;
-  top: 1.5%;
+  top: 0.5%;
   left: 50%;
   transform: translate(-50%);
   z-index: 1000;
