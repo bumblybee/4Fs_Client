@@ -3,11 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, Icon } from "semantic-ui-react";
 import { StyledFTabBar, StyledFMenu } from "./StyledFTabBar";
 
-const getWindowDimensions = () => {
-  const { innerWidth: width, innerHeight: height } = window;
-  return { width, height };
-};
-
 const FTabBar = () => {
   const location = useLocation();
   const { pathname } = location;

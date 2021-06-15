@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { resetPassword } from "../../api/user/userApi";
 import { NotificationContext } from "../../context/notification/NotificationContext";
-import { Image, Button, Form, Segment } from "semantic-ui-react";
+import { Image, Form, Segment } from "semantic-ui-react";
 import {
   StyledFormWrapper,
   StyledSegment,

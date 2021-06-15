@@ -7,6 +7,8 @@ const Notification = () => {
   const title = notification && notification.message.split(".")[0];
   const body = notification && notification.message.split(".")[1];
 
+  const sessionExp = title === "Your session has expired";
+
   const setColor = () => {
     switch (notification.type) {
       case "error":
@@ -26,7 +28,13 @@ const Notification = () => {
     notification !== null && (
       <StyledMessage size="large" color={setColor()}>
         <StyledMessage.Header>{title}</StyledMessage.Header>
-        <p>{body}</p>
+        {sessionExp ? (
+          <a href="/login">
+            <p>{body}</p>
+          </a>
+        ) : (
+          <p>{body}</p>
+        )}
       </StyledMessage>
     )
   );

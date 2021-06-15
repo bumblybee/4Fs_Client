@@ -6,11 +6,7 @@ import generateCellComponent from "../../../../utils/generateCellComponent";
 import TableComponent from "../../../table/TableComponent";
 
 import { Icon } from "semantic-ui-react";
-import {
-  StyledProgressToggle,
-  StyledProgressTable,
-  StyledProgressText,
-} from "./StyledProgress";
+import { StyledProgressToggle, StyledProgressText } from "./StyledProgress";
 
 const Progress = () => {
   const [showWeeks, setShowWeeks] = useState(false);

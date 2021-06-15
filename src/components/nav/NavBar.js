@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
-import { Image, Button, Icon } from "semantic-ui-react";
+import { useHistory } from "react-router-dom";
+import { Image, Icon } from "semantic-ui-react";
 import { StyledNav, StyledUserButton, StyledLogoButton } from "./StyledNavBar";
 
 const NavBar = () => {
