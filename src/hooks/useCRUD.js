@@ -9,13 +9,17 @@ const useCRUD = (getter, setter, destroyer) => {
   const getData = useCallback(async () => {
     const res = await getter();
     setState(res && res.data && res.data.length ? [...res.data] : []);
+
+    if (res && res.error) {
+      setNotificationMessage(res.error, "error");
+    }
   }, [getter]);
 
   const setData = async (data, id) => {
     if (data) {
       const res = await setter(data, id);
 
-      if (res.error) {
+      if (res && res.error) {
         setNotificationMessage(res.error, "error", true);
         return;
       }

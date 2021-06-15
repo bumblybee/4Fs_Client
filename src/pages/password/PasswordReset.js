@@ -32,8 +32,9 @@ const PasswordReset = () => {
     const token = location.pathname.split("/")[2];
 
     if (validPassword) {
-      const reset = await resetPassword(token, newPassword);
       clearNotificationMessage();
+
+      const reset = await resetPassword(token, newPassword);
 
       if (reset.error || !reset) {
         setNotificationMessage(reset.error, "error", true);
