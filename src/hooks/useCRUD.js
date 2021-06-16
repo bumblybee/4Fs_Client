@@ -11,7 +11,12 @@ const useCRUD = (getter, setter, destroyer) => {
     setState(res && res.data && res.data.length ? [...res.data] : []);
 
     if (res && res.error) {
-      setNotificationMessage(res.error, "error");
+      // If error is that user is logged out, don't auto clear, else do
+      if (res.error === "Your session has expired. Click here to log in.") {
+        setNotificationMessage(res.error, "error");
+      } else {
+        setNotificationMessage(res.error, "error", true);
+      }
     }
   }, [getter]);
 
