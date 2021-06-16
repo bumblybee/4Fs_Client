@@ -61,7 +61,7 @@ const Practices = () => {
   const handleSaveStoredPractice = async (data, id) => {
     if (data) {
       const res = await mutateStoredPractice(data, id);
-      console.log(data);
+
       if (res.error) {
         setNotificationMessage(res.error, "error", true);
         return;

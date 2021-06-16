@@ -11,8 +11,7 @@ const useCRUD = (getter, setter, destroyer) => {
     setState(res && res.data && res.data.length ? [...res.data] : []);
 
     if (res && res.error) {
-      console.log(res);
-      setNotificationMessage(res.error, "error");
+      setNotificationMessage(res.error, "error", true);
     }
   }, [getter]);
 
