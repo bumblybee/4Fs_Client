@@ -28,7 +28,9 @@ export const StyledTableWrapper = styled.div`
   @media (max-width: 620px) {
     width: ${(props) => `calc(${props.width} + 35%)`};
 
-    overflow-x: ${(props) => props.className === "system" && "auto"};
+    overflow-x: ${(props) =>
+      (props.className === "system" && "auto") ||
+      (props.className === "sleep" && "auto")};
   }
 `;
 
@@ -76,7 +78,6 @@ export const StyledTable = styled(Table)`
   }
 
   td {
-    // Changed below from 45px to auto to fix fasting
     height: ${(props) => (props.fullheighttd ? "30rem" : "auto")};
     min-height: 45px !important;
     position: relative;
@@ -151,6 +152,10 @@ export const StyledTable = styled(Table)`
       display: block;
     }
 
+    .sleep tr {
+      text-align: left !important;
+    }
+
     // Below keeps table header intact and displayed across width
 
     .habits tr,
@@ -198,7 +203,8 @@ export const StyledTable = styled(Table)`
     }
 
     /* Hide certain table headers (but not display: none, for accessibility) */
-    :not(.rewards):not(.habits):not(.beliefs):not(.swagger):not(.system) thead {
+    :not(.rewards):not(.habits):not(.beliefs):not(.swagger):not(.system):not(.sleep)
+      thead {
       position: absolute;
       top: -9999px;
       left: -9999px;

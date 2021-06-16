@@ -284,6 +284,7 @@ const Sleep = () => {
           val: "04/25/2021",
           alignment: "center",
           justify: "center",
+          className: "sleep",
         }),
       },
       toBed: {
@@ -291,6 +292,7 @@ const Sleep = () => {
           val: "10:00 PM",
           alignment: "center",
           color: "#33333399",
+          className: "sleep",
         }),
       },
       woke: {
@@ -298,6 +300,7 @@ const Sleep = () => {
           val: "07:00 AM",
           alignment: "center",
           color: "#33333399",
+          className: "sleep",
         }),
       },
       hoursSlept: {
@@ -305,6 +308,7 @@ const Sleep = () => {
           val: "09:00",
           alignment: "center",
           color: "#33333399",
+          className: "sleep",
         }),
       },
       comments: {
@@ -312,11 +316,13 @@ const Sleep = () => {
           val: "Woke up once to go to washroom. Sleep felt great. Woke up feeling very refreshed.",
           alignment: "center",
           color: "#33333399",
+          className: "sleep",
         }),
       },
       delete: {
         cellComponent: generateCellComponent("example", {
           val: "",
+          className: "sleep",
         }),
       },
     };
