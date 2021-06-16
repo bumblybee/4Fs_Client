@@ -6,8 +6,8 @@ const errorCodeToMessage = {
   "auth.noToken":
     "Password reset link has expired. Please reset your password again from the login page.",
   "No authorization token was found":
-    "Your session has expired. Please log in.",
-  "user.unauthorized": "Your session has expired. Please log in.",
+    "Your session has expired. Click here to log in.",
+  "user.unauthorized": "Your session has expired. Click here to log in.",
   "user.invalidEmailFormat": "Please check the email address formatting.",
   "practices.invalidDate": "Date must fall on or after today.",
 };

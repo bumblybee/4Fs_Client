@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Route, Redirect } from "react-router-dom";
 import { UserContext } from "../../context/user/UserContext";
 
-const ProtectedRoute = ({ children, path }) => {
+const ProtectedRoute = ({ children }) => {
   const { getCurrentUser } = useContext(UserContext);
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(false);
@@ -11,6 +11,7 @@ const ProtectedRoute = ({ children, path }) => {
     setLoading(true);
 
     getCurrentUser().then((data) => {
+      console.log("hit");
       if (data && data.id) {
         setUser(data);
         setLoading(false);
@@ -19,12 +20,12 @@ const ProtectedRoute = ({ children, path }) => {
         setLoading(false);
       }
     });
-  }, [path]);
+  }, []);
 
   if (loading) return null;
 
   return user ? (
-    <Route path={path}>{children}</Route>
+    <Route>{children}</Route>
   ) : (
     <Route>
       <Redirect to="/login" />
