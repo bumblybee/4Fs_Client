@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import { resetPassword } from "../../api/user/userApi";
+import { UserContext } from "../../context/user/UserContext";
 import { NotificationContext } from "../../context/notification/NotificationContext";
 import { Image, Form, Segment } from "semantic-ui-react";
 import {
@@ -15,6 +15,8 @@ import { StyledPasswordResetHeader } from "./StyledPasswordReset";
 const PasswordReset = () => {
   const { setNotificationMessage, clearNotificationMessage } =
     useContext(NotificationContext);
+  const { resetUserPassword } = useContext(UserContext);
+
   const [newPassword, setNewPassword] = useState("");
   const history = useHistory();
   const location = useLocation();
@@ -34,12 +36,12 @@ const PasswordReset = () => {
     if (validPassword) {
       clearNotificationMessage();
 
-      const reset = await resetPassword(token, newPassword);
+      const reset = await resetUserPassword(token, newPassword);
 
-      if (reset.error || !reset) {
+      if (reset && reset.error) {
         setNotificationMessage(reset.error, "error", true);
       } else if (reset.data.id) {
-        history.push("/login");
+        history.push("/home");
       }
     } else {
       setNotificationMessage(

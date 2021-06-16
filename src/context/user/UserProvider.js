@@ -6,6 +6,7 @@ import {
   loginUser,
   logoutUser,
   updateUser,
+  resetPassword,
 } from "../../api/user/userApi";
 import { UserContext } from "./UserContext";
 
@@ -28,6 +29,7 @@ const UserProvider = ({ children }) => {
 
   const signUserUp = async (userDetails) => {
     const userData = await signupUser(userDetails);
+
     if (userData && userData.data) {
       setUser(userData.data);
     }
@@ -55,6 +57,18 @@ const UserProvider = ({ children }) => {
     return userData;
   };
 
+  const resetUserPassword = async (token, newPassword) => {
+    const userData = await resetPassword(token, newPassword);
+
+    if (userData && userData.error) {
+      setUser(null);
+    } else {
+      setUser(userData.data);
+    }
+
+    return userData;
+  };
+
   const logUserOut = async () => {
     const logout = await logoutUser();
     setUser(null);
@@ -77,6 +91,7 @@ const UserProvider = ({ children }) => {
         logUserOut,
         updateUserDetails,
         checkIfEmailExists,
+        resetUserPassword,
       }}
     >
       {children}
