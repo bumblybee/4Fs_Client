@@ -15,7 +15,8 @@ const SleepTableHeader = ({ data, columns }) => {
         >
           <Popup
             content="Download CSV"
-            position="top center"
+            offset={[-11, -2]}
+            position="top right"
             trigger={<Icon name="download" />}
           />
         </CsvDownloader>
@@ -26,7 +27,8 @@ const SleepTableHeader = ({ data, columns }) => {
       </div>
       <div className="info">
         <Popup
-          position="top center"
+          offset={[10, -2]}
+          position="top right"
           content="Hours slept will calculate automatically based on the time you went to bed and the time you woke up."
           trigger={<Icon name="question circle outline" />}
         />
