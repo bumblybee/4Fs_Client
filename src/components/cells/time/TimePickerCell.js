@@ -41,7 +41,6 @@ const TimePickerCell = (props) => {
         onBlur={makeData}
         type="time"
         time={time}
-        width={props.width}
       />
     </StyledTimePickerCellWrapper>
   );

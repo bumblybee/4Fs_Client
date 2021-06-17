@@ -16,7 +16,7 @@ const SleepTableHeader = ({ data, columns }) => {
           <Popup
             content="Download CSV"
             offset={[-11, -2]}
-            position="top right"
+            position="top left"
             trigger={<Icon name="download" />}
           />
         </CsvDownloader>

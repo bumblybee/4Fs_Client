@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { history } from "../../utils/customHistory";
 import { UserContext } from "../../context/user/UserContext";
 import { NotificationContext } from "../../context/notification/NotificationContext";
 import { Image, Form, Segment } from "semantic-ui-react";
@@ -18,7 +19,7 @@ const PasswordReset = () => {
   const { resetUserPassword } = useContext(UserContext);
 
   const [newPassword, setNewPassword] = useState("");
-  const history = useHistory();
+
   const location = useLocation();
 
   const validPassword = () => {

@@ -1,10 +1,9 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { history } from "../../utils/customHistory";
 import { Image, Icon } from "semantic-ui-react";
 import { StyledNav, StyledUserButton, StyledLogoButton } from "./StyledNavBar";
 
 const NavBar = () => {
-  const history = useHistory();
   return (
     <StyledNav>
       <div>

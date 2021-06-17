@@ -7,7 +7,7 @@ const NotFound = () => {
   return (
     <StyledNotFoundWrapper>
       <div>
-        <Icon name="desktop" color="blue" />
+        <Icon name="desktop" />
         <img src="/4flogowhiteoutline.png" alt="4Fs logo" />
         <h3>Page Not Found</h3>
       </div>

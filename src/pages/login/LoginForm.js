@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { history } from "../../utils/customHistory";
 import { Form, Image } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
 import { NotificationContext } from "../../context/notification/NotificationContext";
@@ -13,7 +14,6 @@ import {
 } from "../../styles/GlobalStyledComponents";
 
 const LoginForm = () => {
-  const history = useHistory();
   const { logUserIn } = useContext(UserContext);
   const { setNotificationMessage, clearNotificationMessage } =
     useContext(NotificationContext);

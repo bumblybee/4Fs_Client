@@ -1,5 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { history } from "../../utils/customHistory";
+import { pushToLogin } from "../../utils/customHistory";
 import { Form, Input } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
 import { NotificationContext } from "../../context/notification/NotificationContext";
@@ -15,7 +17,6 @@ import * as sc from "../../styles/GlobalStyledComponents";
 
 // TODO: format sheets url before sending to server - url.split("#")[0] - removes id so can add dynamically later
 const UserProfile = () => {
-  const history = useHistory();
   const { setNotificationMessage } = useContext(NotificationContext);
   const { user, updateUserDetails, logUserOut } = useContext(UserContext);
 
@@ -120,11 +121,11 @@ const UserProfile = () => {
           true
         );
       } else {
-        setNotificationMessage(
-          "Error updating your information. If issue persists, contact support.",
-          "error",
-          true
-        );
+        setNotificationMessage(res.error, "error", true);
+
+        if (res.error === "Your session has expired.") {
+          pushToLogin();
+        }
       }
 
       setFormChanges(0);
@@ -154,7 +155,7 @@ const UserProfile = () => {
         gender: user.gender,
         sheetsURL: user.sheetsURL,
       });
-  }, [user]);
+  }, []);
 
   return (
     <sc.StyledFormWrapper verticalAlign="middle" centered origin="profile">

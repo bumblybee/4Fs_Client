@@ -5,9 +5,8 @@ const errorCodeToMessage = {
     "Looks like you already have an account. Please log in.",
   "auth.noToken":
     "Password reset link has expired. Please reset your password again from the login page.",
-  "No authorization token was found":
-    "Your session has expired. Click here to log in.",
-  "user.unauthorized": "Your session has expired. Click here to log in.",
+  "No authorization token was found": "Your session has expired.",
+  "user.unauthorized": "Your session has expired.",
   "user.invalidEmailFormat": "Please check the email address formatting.",
   "practices.invalidDate": "Date must fall on or after today.",
 };

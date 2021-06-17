@@ -10,11 +10,6 @@ import reportWebVitals from "./reportWebVitals";
 
 Sentry.init({
   dsn: "https://0ae8c82f90084151bed9a761f3baa7df@o450602.ingest.sentry.io/5812505",
-
-  // Set tracesSampleRate to 1.0 to capture 100%
-  // of transactions for performance monitoring.
-  // We recommend adjusting this value in production
-  tracesSampleRate: 1.0,
 });
 
 ReactDOM.render(

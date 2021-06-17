@@ -6,7 +6,6 @@ const Notification = () => {
   const { notification } = useContext(NotificationContext);
   const title = notification && notification.message.split(".")[0];
   const body = notification && notification.message.split(".")[1];
-  const sessionExpired = title === "Your session has expired";
 
   const setColor = () => {
     switch (notification.type) {
@@ -27,13 +26,8 @@ const Notification = () => {
     notification !== null && (
       <StyledMessage size="large" color={setColor()}>
         <StyledMessage.Header>{title}</StyledMessage.Header>
-        {sessionExpired ? (
-          <a href="/login">
-            <p>{body}</p>
-          </a>
-        ) : (
-          <p>{body}</p>
-        )}
+
+        <p>{body}</p>
       </StyledMessage>
     )
   );

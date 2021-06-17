@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useContext } from "react";
 import { NotificationContext } from "../context/notification/NotificationContext";
+import { pushToLogin } from "../utils/customHistory";
 
 const useCRUD = (getter, setter, destroyer) => {
   const [state, setState] = useState([]);
@@ -8,16 +9,16 @@ const useCRUD = (getter, setter, destroyer) => {
 
   const getData = useCallback(async () => {
     const res = await getter();
-    setState(res && res.data && res.data.length ? [...res.data] : []);
 
     if (res && res.error) {
-      // If error is that user is logged out, don't auto clear, else do
-      if (res.error === "Your session has expired. Click here to log in.") {
-        setNotificationMessage(res.error, "error");
-      } else {
-        setNotificationMessage(res.error, "error", true);
+      setNotificationMessage(res.error, "error", true);
+
+      if (res.error === "Your session has expired.") {
+        pushToLogin();
       }
     }
+
+    setState(res && res.data && res.data.length ? [...res.data] : []);
   }, [getter]);
 
   const setData = async (data, id) => {
@@ -26,6 +27,10 @@ const useCRUD = (getter, setter, destroyer) => {
 
       if (res && res.error) {
         setNotificationMessage(res.error, "error", true);
+
+        if (res.error === "Your session has expired.") {
+          pushToLogin();
+        }
         return;
       }
 
@@ -36,6 +41,16 @@ const useCRUD = (getter, setter, destroyer) => {
 
   const destroyData = async (id) => {
     const res = await destroyer(id);
+
+    if (res && res.error) {
+      setNotificationMessage(res.error, "error", true);
+
+      if (res.error === "Your session has expired.") {
+        pushToLogin();
+      }
+      return;
+    }
+
     setState(res && res.data && res.data.length ? [...res.data] : []);
   };
 

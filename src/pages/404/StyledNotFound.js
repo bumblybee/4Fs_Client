@@ -21,6 +21,7 @@ export const StyledNotFoundWrapper = styled.div`
     width: auto;
     height: auto;
     position: relative !important;
+    color: #3353ab !important;
   }
 
   img {

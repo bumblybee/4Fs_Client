@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { history } from "../../utils/customHistory";
+
 import { NotificationContext } from "../../context/notification/NotificationContext";
 import { UserContext } from "../../context/user/UserContext";
 import UserInfo from "./UserInfo";
@@ -13,8 +14,6 @@ import {
 } from "../../styles/GlobalStyledComponents";
 
 const SignupForm = () => {
-  const history = useHistory();
-
   const { setNotificationMessage, clearNotificationMessage } =
     useContext(NotificationContext);
 

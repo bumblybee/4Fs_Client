@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { history } from "../../utils/customHistory";
+
 import { triggerPasswordReset } from "../../api/user/userApi";
 import PasswordRequestConfirmation from "./PasswordRequestConfirmation";
 import { Form, Button, Segment, Image } from "semantic-ui-react";
@@ -16,7 +17,6 @@ import {
 } from "./StyledPasswordReset";
 
 const PasswordResetRequest = () => {
-  const history = useHistory();
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
