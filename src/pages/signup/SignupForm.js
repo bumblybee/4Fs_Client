@@ -75,6 +75,7 @@ const SignupForm = () => {
         return false;
       } else {
         setFormErrors({ ...formErrors, [item]: false });
+        clearNotificationMessage();
       }
     }
 
