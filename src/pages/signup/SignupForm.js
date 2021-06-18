@@ -57,6 +57,7 @@ const SignupForm = () => {
     } else {
       setUserDetails({ ...userDetails, [input]: e.target.value.trim() });
     }
+
     setFormErrors({ ...formErrors, [input]: false });
     clearNotificationMessage();
   };
