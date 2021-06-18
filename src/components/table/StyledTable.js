@@ -31,6 +31,14 @@ export const StyledTableWrapper = styled.div`
     overflow-x: ${(props) =>
       (props.className === "system" && "auto") ||
       (props.className === "sleep" && "auto")};
+
+    ::-webkit-scrollbar,
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-thumb {
+      display: ${(props) =>
+        (props.className === "system" && "block") ||
+        (props.className === "sleep" && "block")};
+    }
   }
 `;
 
