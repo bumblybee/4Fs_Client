@@ -5,6 +5,12 @@ export const StyledTimePickerCellWrapper = styled.div`
   justify-content: center;
   width: 100%;
   padding: 0 0 0 0.25rem;
+
+  @media (max-width: 620px) {
+    justify-content: flex-end;
+    padding: 0;
+    /* margin-right: 0.5rem; */
+  }
 `;
 
 export const StyledTimePickerCell = styled.input`
@@ -34,6 +40,14 @@ export const StyledTimePickerCell = styled.input`
   :hover {
     ::-webkit-calendar-picker-indicator {
       cursor: pointer;
+      filter: invert(0);
+    }
+  }
+
+  @media (max-width: 620px) {
+    margin: 0;
+
+    ::-webkit-calendar-picker-indicator {
       filter: invert(0);
     }
   }

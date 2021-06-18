@@ -28,9 +28,12 @@ export const StyledTableWrapper = styled.div`
   @media (max-width: 620px) {
     width: ${(props) => `calc(${props.width} + 35%)`};
 
+    // Scroll and show scrollbar sleep and system mobile
     overflow-x: ${(props) =>
       (props.className === "system" && "auto") ||
       (props.className === "sleep" && "auto")};
+
+    width: ${(props) => props.className === "sleep" && "100%"};
 
     ::-webkit-scrollbar,
     ::-webkit-scrollbar-track,
@@ -77,6 +80,7 @@ export const StyledTable = styled(Table)`
     text-align: ${(props) => props.aligntext};
   }
 
+  // Color example cells
   tbody tr:first-child {
     background: ${(props) => props.example && "#daddde88"};
   }
@@ -92,6 +96,7 @@ export const StyledTable = styled(Table)`
     font-family: "Lato", sans-serif;
   }
 
+  // Center sheet components buttons
   .sheets td {
     display: flex;
     align-items: center;
@@ -149,14 +154,19 @@ export const StyledTable = styled(Table)`
 
   @media only screen and (max-width: 760px),
     (min-device-width: 768px) and (max-device-width: 1024px) {
-    /* Force table to not be like table anymore */
-
+    // Don't display milestones like table
     table.milestones,
+    table.sleep,
     thead.milestones,
+    thead.sleep,
     tbody.milestones,
+    tbody.sleep,
     th.milestones,
+    th.sleep,
     td.milestones,
-    tr.milestones {
+    td.sleep,
+    tr.milestones,
+    tr.sleep {
       display: block;
     }
 
@@ -164,14 +174,21 @@ export const StyledTable = styled(Table)`
       text-align: left !important;
     }
 
-    // Below keeps table header intact and displayed across width
+    // Below keeps table header intact and displayed across width and keeps heights reasonable
 
     .habits tr,
     .fasting-progress tr {
       display: grid;
-      grid-template-columns: 1fr 1fr;
       width: 100%;
     }
+
+    .habits tr {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* .sleep tr {
+      grid-template-columns: 2fr 2fr 2fr 2fr 4fr 1fr;
+    } */
 
     .fasting-progress tr {
       grid-template-columns: 1fr 4fr;
@@ -189,6 +206,18 @@ export const StyledTable = styled(Table)`
 
     td.milestones {
       height: ${(props) => (props.fullheighttd ? "30rem" : "auto")};
+    }
+
+    td.sleep {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    // Hide example row and empty row delete cell
+    tbody.sleep tr:first-child,
+    tbody.sleep tr:last-child td:last-child {
+      display: none;
     }
 
     // Below keeps row and cells spread across width
@@ -211,11 +240,15 @@ export const StyledTable = styled(Table)`
     }
 
     /* Hide certain table headers (but not display: none, for accessibility) */
-    :not(.rewards):not(.habits):not(.beliefs):not(.swagger):not(.system):not(.sleep)
-      thead {
+    :not(.rewards):not(.habits):not(.beliefs):not(.swagger):not(.system) thead {
       position: absolute;
       top: -9999px;
       left: -9999px;
+    }
+
+    // Show description header
+    thead.sleep:first-of-type {
+      position: static !important;
     }
 
     // Sticky table headers that are being kept visible
@@ -251,15 +284,31 @@ export const StyledTable = styled(Table)`
       position: relative;
     }
 
+    // faux table header
     td:before {
-      /* Now like a table header */
       position: absolute;
-      /* Top/left values mimic padding */
-      top: 6px;
-      left: 6px;
+      top: 25%;
+      left: 5%;
       width: 45%;
       padding-right: 10px;
       white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .sleep td:nth-child(1):before {
+      content: "Date";
+    }
+    .sleep td:nth-child(2):before {
+      content: "Went to bed";
+    }
+    .sleep td:nth-child(3):before {
+      content: "Woke up";
+    }
+    .sleep td:nth-child(4):before {
+      content: "Hours Slept";
+    }
+    .sleep td:nth-child(5):before {
+      content: "Comments";
     }
   }
 

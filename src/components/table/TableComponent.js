@@ -55,9 +55,12 @@ export default function TableComponent({ children, ...props }) {
   const renderDescriptionHeader = () => {
     /* If we have an additional header with descriptive text */
     return (
-      <Table.Header className="description-header">
+      <Table.Header className={`description-header ${props.className}`}>
         <TableComponent.TR>
-          <TableComponent.TH colSpan="16" className="description-header">
+          <TableComponent.TH
+            colSpan="16"
+            className={`description-header ${props.className}`}
+          >
             {props.descriptionheader}
           </TableComponent.TH>
         </TableComponent.TR>

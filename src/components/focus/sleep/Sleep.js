@@ -218,6 +218,7 @@ const Sleep = () => {
             val: item.comments,
             accessor: "comments",
             placeholder: "Comments...",
+            className: "sleep",
           }),
         },
         delete: {
@@ -226,6 +227,7 @@ const Sleep = () => {
             onDelete: handleDelete,
             alignment: "center",
             collapsing: true,
+            className: "sleep",
           }),
         },
       };
@@ -316,7 +318,7 @@ const Sleep = () => {
           val: "Woke up once to go to washroom. Sleep felt great. Woke up feeling very refreshed.",
           alignment: "center",
           color: "#33333399",
-          className: "sleep",
+          className: "sleep sleep-comments",
         }),
       },
       delete: {

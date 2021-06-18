@@ -15,6 +15,23 @@ export const StyledDeleteCell = styled.div`
       color: #c91e14 !important;
     }
   }
+
+  span {
+    display: none;
+  }
+
+  @media (max-width: 620px) {
+    justify-content: ${(props) => props.className === "sleep" && "flex-end"};
+
+    span.sleep {
+      display: inline;
+      font-size: 0.9rem;
+      padding-top: 0.4rem;
+      color: #db2828;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
 `;
 
 export const StyledDeleteMenu = styled.div`
@@ -31,6 +48,6 @@ export const StyledDeleteMenu = styled.div`
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.09);
 
   @media (max-width: 620px) {
-    right: 0;
+    right: ${(props) => (props.className === "sleep" ? "8rem" : "0")};
   }
 `;

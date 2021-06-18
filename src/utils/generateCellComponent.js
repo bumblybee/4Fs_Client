@@ -154,6 +154,7 @@ const generateCellComponent = (type, props) => {
           onDelete={props.onDelete}
           alignment={props.alignment}
           collapsing={props.collapsing}
+          className={props.className}
         />
       );
     case "static":

@@ -64,4 +64,16 @@ export const StyledStaticCell = styled.div`
     font-size: 0.89rem;
     font-weight: 600;
   }
+
+  @media (max-width: 620px) {
+    justify-content: ${(props) =>
+      (props.className = "sleep-hours-slept" && "flex-end")};
+    align-items: ${(props) =>
+      (props.className = "sleep-hours-slept" && "center")};
+
+    .sleep-hours-slept {
+      text-align: left;
+      margin-right: 0.5rem;
+    }
+  }
 `;

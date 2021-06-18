@@ -13,6 +13,14 @@ export const StyledDatePickerCellWrapper = styled.div`
   .sleep-date-picker {
     width: 110px;
   }
+
+  @media (max-width: 620px) {
+    width: fit-content;
+    .sleep-date-picker {
+      /* font-size: 0.9rem !important; */
+      font-weight: 400;
+    }
+  }
 `;
 
 export const StyledDatePickerCell = styled.input`
@@ -42,6 +50,16 @@ export const StyledDatePickerCell = styled.input`
   :hover {
     ::-webkit-calendar-picker-indicator {
       cursor: pointer;
+      filter: invert(0);
+    }
+  }
+
+  @media (max-width: 620px) {
+    text-align: left;
+    margin-left: 0;
+    width: fit-content;
+
+    ::-webkit-calendar-picker-indicator {
       filter: invert(0);
     }
   }

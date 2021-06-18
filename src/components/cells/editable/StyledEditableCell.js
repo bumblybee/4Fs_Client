@@ -40,4 +40,11 @@ export const StyledEditableCell = styled.div`
     border-radius: 6px;
     padding-left: 0.25rem;
   }
+
+  @media (max-width: 620px) {
+    justify-content: ${(props) => props.className === "sleep" && "flex-end"};
+    margin-right: ${(props) => props.className === "sleep" && "0.25rem"};
+    width: ${(props) => props.className === "sleep" && "45%"};
+    text-align: ${(props) => props.className === "sleep" && "right"};
+  }
 `;

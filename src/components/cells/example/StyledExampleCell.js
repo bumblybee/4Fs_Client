@@ -23,7 +23,15 @@ export const StyledExampleCell = styled.div`
   }
 
   @media (max-width: 620px) {
-    text-align: ${(props) => props.className === "system-practice" && "left"};
+    text-align: ${(props) =>
+      (props.className === "system-practice" && "left") ||
+      (props.className === "sleep sleep-comments" && "right")};
+
+    justify-content: ${(props) => props.className === "sleep" && "flex-end"};
+
+    width: ${(props) => props.className === "sleep sleep-comments" && "50%"};
+
+    /* display: ${(props) => props.className === "sleep" && "none"}; */
   }
 `;
 

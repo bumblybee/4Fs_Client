@@ -12,20 +12,25 @@ const DeleteCell = (props) => {
   };
 
   return (
-    <StyledDeleteCell className="delete">
+    <StyledDeleteCell className={`delete ${props.className}`}>
       {toDelete && (
         <DeleteMenu
+          className={props.className}
           toDelete={toDelete}
           setToDelete={setToDelete}
           deleteData={deleteData}
         />
       )}
       <Icon
+        className={props.className}
         title="Delete"
         name="delete"
         onClick={() => setToDelete(!toDelete)}
         color="red"
       />
+      <span className={props.className} onClick={() => setToDelete(!toDelete)}>
+        Delete
+      </span>
     </StyledDeleteCell>
   );
 };
