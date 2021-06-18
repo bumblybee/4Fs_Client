@@ -20,7 +20,8 @@ export const StyledTimePickerCell = styled.input`
 
   ::-webkit-calendar-picker-indicator {
     margin-left: 0px;
-    filter: ${(props) => props.time && "invert(1)"};
+    /* filter: ${(props) => props.time && "invert(1)"}; */
+    filter: invert(1);
   }
 
   :focus {
