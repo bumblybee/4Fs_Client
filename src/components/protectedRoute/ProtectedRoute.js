@@ -11,7 +11,6 @@ const ProtectedRoute = ({ children }) => {
     setLoading(true);
 
     getCurrentUser().then((data) => {
-      console.log("hit");
       if (data && data.id) {
         setUser(data);
         setLoading(false);
