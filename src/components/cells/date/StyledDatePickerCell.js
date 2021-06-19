@@ -48,7 +48,6 @@ export const StyledDatePickerCell = styled.input`
     background: none;
     z-index: 1;
     margin: 0;
-    /* filter: invert(1); */
   }
 
   ::-webkit-datetime-edit-text {
@@ -62,7 +61,6 @@ export const StyledDatePickerCell = styled.input`
   ::-webkit-datetime-edit-year-field {
     padding: 0;
     margin: 0;
-    /* color: teal; */
   }
 
   :before {
@@ -71,7 +69,7 @@ export const StyledDatePickerCell = styled.input`
     display: block;
     font-family: "FontAwesome";
     content: "";
-    /* This is the calendar icon in FontAwesome */
+
     width: 15px;
     height: 20px;
     position: absolute;
@@ -102,10 +100,26 @@ export const StyledDatePickerCell = styled.input`
   }
 
   @media (max-width: 620px) {
-    /* text-align: left; */
     margin: 0;
+    text-align: right;
     :before {
-      content: "\f073";
+      content: "";
+    }
+
+    ::-webkit-calendar-picker-indicator {
+      margin-left: -0.75rem;
+    }
+
+    :focus {
+      :before {
+        content: "";
+      }
+    }
+
+    :hover {
+      :before {
+        content: "";
+      }
     }
   }
 `;

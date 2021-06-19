@@ -40,7 +40,6 @@ export const StyledTimePickerCell = styled.input`
     z-index: 1;
     margin: 0;
     margin-left: -0.25rem;
-    /* filter: invert(1); */
   }
 
   ::-webkit-datetime-edit-hour-field,
@@ -69,7 +68,6 @@ export const StyledTimePickerCell = styled.input`
 
   :focus {
     ::-webkit-calendar-picker-indicator {
-      filter: invert(0);
       cursor: pointer;
     }
 
@@ -90,15 +88,26 @@ export const StyledTimePickerCell = styled.input`
 
   @media (max-width: 620px) {
     margin: 0;
+    text-align: right;
+
+    ::-webkit-calendar-picker-indicator {
+      margin-left: -0.5rem;
+    }
 
     :before {
-      content: "\f017";
+      content: "";
+    }
+
+    :focus {
+      :before {
+        content: "";
+      }
+    }
+
+    :hover {
+      :before {
+        content: "";
+      }
     }
   }
-
-  /* :before {
-    content: "Select time";
-    margin-right: 0.6em;
-    color: #9d9d9d;
-  } */
 `;
