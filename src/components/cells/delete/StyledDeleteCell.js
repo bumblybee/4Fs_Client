@@ -29,7 +29,7 @@ export const StyledDeleteCell = styled.div`
   @media (max-width: 620px), (orientation: landscape) {
     span.sleep {
       display: block;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       padding-top: 0.35rem;
       color: #db2828;
       font-weight: 600;
