@@ -16,6 +16,12 @@ export const StyledDeleteCell = styled.div`
     }
   }
 
+  div.delete-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   span {
     display: none;
   }
@@ -24,9 +30,9 @@ export const StyledDeleteCell = styled.div`
     justify-content: ${(props) => props.className === "sleep" && "flex-end"};
 
     span.sleep {
-      display: inline;
+      display: block;
       font-size: 0.9rem;
-      padding-top: 0.4rem;
+      padding-top: 0.35rem;
       color: #db2828;
       font-weight: 600;
       cursor: pointer;
