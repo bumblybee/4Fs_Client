@@ -18,7 +18,7 @@ export const StyledDatePickerCellWrapper = styled.div`
     justify-content: flex-end;
 
     .sleep-date-picker {
-      width: 102px;
+      width: 104px;
       font-weight: 400;
     }
   }
@@ -52,7 +52,6 @@ export const StyledDatePickerCell = styled.input`
   ::-webkit-datetime-edit-text {
     padding: 0;
     margin: 0;
-    /* color: teal; */
   }
 
   :before {

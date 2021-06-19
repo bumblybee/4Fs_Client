@@ -43,7 +43,7 @@ export const StyledEditableCell = styled.div`
 
   @media (max-width: 620px) {
     justify-content: ${(props) => props.className === "sleep" && "flex-end"};
-    margin-right: ${(props) => props.className === "sleep" && "0.7rem"};
+    margin-right: ${(props) => props.className === "sleep" && "0.5rem"};
     width: ${(props) => props.className === "sleep" && "55%"};
     text-align: ${(props) => props.className === "sleep" && "justify"};
   }

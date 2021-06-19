@@ -9,7 +9,7 @@ export const StyledTimePickerCellWrapper = styled.div`
   @media (max-width: 620px) {
     justify-content: flex-end;
     padding: 0;
-    width: 102px;
+    width: 80px;
   }
 `;
 
@@ -23,12 +23,7 @@ export const StyledTimePickerCell = styled.input`
   cursor: pointer;
   margin: 0 0 0 1.5rem;
   position: relative;
-  /* ::-webkit-calendar-picker-indicator { */
-  /* margin-left: 0px; */
-  /* filter: ${(props) => props.time && "invert(1)"}; */
-  /* filter: invert(1); */
 
-  /* } */
   ::-webkit-inner-spin-button,
   ::-webkit-outer-spin-button {
     display: none;
@@ -81,7 +76,7 @@ export const StyledTimePickerCell = styled.input`
   @media (max-width: 620px) {
     margin: 0;
     text-align: right !important;
-
+    width: inherit;
     ::-webkit-calendar-picker-indicator {
       margin-left: -0.5rem;
     }

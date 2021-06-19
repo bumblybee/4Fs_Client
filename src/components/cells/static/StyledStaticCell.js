@@ -73,7 +73,7 @@ export const StyledStaticCell = styled.div`
 
     .sleep-hours-slept {
       text-align: left;
-      margin-right: 1rem;
+      margin-right: 0.5rem;
     }
   }
 `;
