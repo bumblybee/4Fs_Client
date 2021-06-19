@@ -9,7 +9,7 @@ export const StyledTimePickerCellWrapper = styled.div`
   @media (max-width: 620px) {
     justify-content: flex-end;
     padding: 0;
-    width: 85px;
+    width: 84px;
   }
 `;
 
