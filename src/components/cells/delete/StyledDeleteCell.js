@@ -52,7 +52,10 @@ export const StyledDeleteMenu = styled.div`
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.09);
 
   @media (max-width: 620px), (orientation: landscape) {
+    button {
+      font-size: 0.825rem !important;
+    }
     top: ${(props) => (props.className === "sleep" ? "-1.2rem" : "")};
-    right: ${(props) => (props.className === "sleep" ? "6rem" : "")};
+    right: ${(props) => (props.className === "sleep" ? "5.75rem" : "")};
   }
 `;
