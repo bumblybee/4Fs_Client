@@ -1,6 +1,7 @@
 {
   "short_name": "4Fs Portal",
   "name": "4Fs of Weight Loss Member Portal",
+  "description": "4Fs of Weight Loss Member Portal",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,5 +22,6 @@
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#2f528b",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "orientation": "portrait"
 }

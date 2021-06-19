@@ -26,7 +26,7 @@ export const StyledDeleteCell = styled.div`
     display: none;
   }
 
-  @media (max-width: 620px) {
+  @media (max-width: 620px), (orientation: landscape) {
     span.sleep {
       display: block;
       font-size: 0.9rem;
@@ -51,7 +51,7 @@ export const StyledDeleteMenu = styled.div`
   border-radius: 6px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.09);
 
-  @media (max-width: 620px) {
+  @media (max-width: 620px), (orientation: landscape) {
     top: ${(props) => (props.className === "sleep" ? "-1.2rem" : "")};
     right: ${(props) => (props.className === "sleep" ? "6rem" : "")};
   }

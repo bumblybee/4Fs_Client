@@ -154,7 +154,7 @@ export const StyledTable = styled(Table)`
 
   @media only screen and (max-width: 760px),
     (min-device-width: 768px) and (max-device-width: 1024px) {
-    // Don't display milestones like table
+    // Don't display milestones or sleep like table
     table.milestones,
     table.sleep,
     thead.milestones,
@@ -168,6 +168,10 @@ export const StyledTable = styled(Table)`
     tr.milestones,
     tr.sleep {
       display: block;
+    }
+
+    thead.sleep {
+      display: flex;
     }
 
     .sleep tr {
@@ -185,10 +189,6 @@ export const StyledTable = styled(Table)`
     .habits tr {
       grid-template-columns: 1fr 1fr;
     }
-
-    /* .sleep tr {
-      grid-template-columns: 2fr 2fr 2fr 2fr 4fr 1fr;
-    } */
 
     .fasting-progress tr {
       grid-template-columns: 1fr 4fr;

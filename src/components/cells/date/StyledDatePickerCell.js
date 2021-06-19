@@ -14,7 +14,7 @@ export const StyledDatePickerCellWrapper = styled.div`
     width: 110px;
   }
 
-  @media (max-width: 620px) {
+  @media (max-width: 620px), (orientation: landscape) {
     justify-content: flex-end;
 
     .sleep-date-picker {
