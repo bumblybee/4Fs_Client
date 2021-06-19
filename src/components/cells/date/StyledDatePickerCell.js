@@ -15,8 +15,10 @@ export const StyledDatePickerCellWrapper = styled.div`
   }
 
   @media (max-width: 620px) {
-    width: fit-content;
+    justify-content: flex-end;
+
     .sleep-date-picker {
+      width: 101px;
       /* font-size: 0.9rem !important; */
       font-weight: 400;
     }
@@ -34,33 +36,76 @@ export const StyledDatePickerCell = styled.input`
   color: ${(props) => (props.date ? "" : "#aaaaaa")};
   text-align: ${(props) => props.alignment};
   margin-left: 1.5rem;
+  position: relative;
+
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    display: none;
+  }
 
   ::-webkit-calendar-picker-indicator {
-    margin-left: 0px;
-    filter: invert(1);
+    color: transparent;
+    background: none;
+    z-index: 1;
+    margin: 0;
+    /* filter: invert(1); */
+  }
+
+  ::-webkit-datetime-edit-text {
+    padding: 0;
+    margin: 0;
+    /* color: teal; */
+  }
+
+  ::-webkit-datetime-edit-month-field,
+  ::-webkit-datetime-edit-day-field,
+  ::-webkit-datetime-edit-year-field {
+    padding: 0;
+    margin: 0;
+    /* color: teal; */
+  }
+
+  :before {
+    color: transparent;
+    background: none;
+    display: block;
+    font-family: "FontAwesome";
+    content: "";
+    /* This is the calendar icon in FontAwesome */
+    width: 15px;
+    height: 20px;
+    position: absolute;
+    top: 6px;
+    right: 4px;
+    color: teal;
+    font-weight: 400;
   }
 
   :focus {
     ::-webkit-calendar-picker-indicator {
-      filter: invert(0);
       cursor: pointer;
+    }
+
+    :before {
+      content: "\f073";
     }
   }
 
   :hover {
     ::-webkit-calendar-picker-indicator {
       cursor: pointer;
-      filter: invert(0);
+    }
+
+    :before {
+      content: "\f073";
     }
   }
 
   @media (max-width: 620px) {
-    text-align: left;
-    margin-left: 0;
-    width: fit-content;
-
-    ::-webkit-calendar-picker-indicator {
-      filter: invert(0);
+    /* text-align: left; */
+    margin: 0;
+    :before {
+      content: "\f073";
     }
   }
 `;
