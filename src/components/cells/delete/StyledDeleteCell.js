@@ -27,8 +27,6 @@ export const StyledDeleteCell = styled.div`
   }
 
   @media (max-width: 620px) {
-    justify-content: ${(props) => props.className === "sleep" && "flex-end"};
-
     span.sleep {
       display: block;
       font-size: 0.9rem;
@@ -54,6 +52,7 @@ export const StyledDeleteMenu = styled.div`
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.09);
 
   @media (max-width: 620px) {
-    right: ${(props) => (props.className === "sleep" ? "8rem" : "0")};
+    top: ${(props) => (props.className === "sleep" ? "-1.2rem" : "")};
+    right: ${(props) => (props.className === "sleep" ? "6rem" : "")};
   }
 `;
