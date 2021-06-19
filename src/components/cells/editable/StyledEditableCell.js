@@ -48,6 +48,10 @@ export const StyledEditableCell = styled.div`
     text-align: ${(props) => props.className === "sleep" && "right"};
   }
 
+  @media (max-width: 620px) and (orientation: landscape) {
+    text-align: ${(props) => props.className === "sleep" && "left"};
+  }
+
   input {
     width: ${(props) => props.className === "sleep" && "100%"};
   }
