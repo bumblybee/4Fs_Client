@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const StyledTimePickerCellWrapper = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
-  width: 100%;
   padding: 0 0 0 0.25rem;
 
   @media (max-width: 620px) {
     justify-content: flex-end;
     padding: 0;
-    width: min-content;
+    width: 102px;
   }
 `;
 
@@ -40,14 +40,6 @@ export const StyledTimePickerCell = styled.input`
     z-index: 1;
     margin: 0;
     margin-left: -0.25rem;
-  }
-
-  ::-webkit-datetime-edit-hour-field,
-  ::-webkit-datetime-edit-minute-field,
-  ::-webkit-datetime-edit-ampm-field {
-    padding: 0;
-    margin: 0;
-    /* color: teal; */
   }
 
   :before {
@@ -88,10 +80,17 @@ export const StyledTimePickerCell = styled.input`
 
   @media (max-width: 620px) {
     margin: 0;
-    text-align: right;
+    text-align: right !important;
 
     ::-webkit-calendar-picker-indicator {
       margin-left: -0.5rem;
+    }
+
+    ::-webkit-datetime-edit-hour-field,
+    ::-webkit-datetime-edit-minute-field,
+    ::-webkit-datetime-edit-ampm-field {
+      padding: 0;
+      margin: 0;
     }
 
     :before {

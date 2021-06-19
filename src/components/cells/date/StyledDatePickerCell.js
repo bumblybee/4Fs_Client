@@ -18,8 +18,7 @@ export const StyledDatePickerCellWrapper = styled.div`
     justify-content: flex-end;
 
     .sleep-date-picker {
-      width: 101px;
-      /* font-size: 0.9rem !important; */
+      width: 102px;
       font-weight: 400;
     }
   }
@@ -54,13 +53,6 @@ export const StyledDatePickerCell = styled.input`
     padding: 0;
     margin: 0;
     /* color: teal; */
-  }
-
-  ::-webkit-datetime-edit-month-field,
-  ::-webkit-datetime-edit-day-field,
-  ::-webkit-datetime-edit-year-field {
-    padding: 0.025em;
-    margin: 0;
   }
 
   :before {
@@ -104,6 +96,13 @@ export const StyledDatePickerCell = styled.input`
     text-align: right;
     :before {
       content: "";
+    }
+
+    ::-webkit-datetime-edit-month-field,
+    ::-webkit-datetime-edit-day-field,
+    ::-webkit-datetime-edit-year-field {
+      padding: 0.025em;
+      margin: 0;
     }
 
     ::-webkit-calendar-picker-indicator {
