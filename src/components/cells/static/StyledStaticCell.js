@@ -67,9 +67,9 @@ export const StyledStaticCell = styled.div`
 
   @media (max-width: 620px) {
     justify-content: ${(props) =>
-      (props.className = "sleep-hours-slept" && "flex-end")};
+      props.className === "sleep-hours-slept" && "flex-end"};
     align-items: ${(props) =>
-      (props.className = "sleep-hours-slept" && "center")};
+      props.className === "sleep-hours-slept" && "center"};
 
     .sleep-hours-slept {
       text-align: left;
