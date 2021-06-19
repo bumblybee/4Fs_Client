@@ -59,7 +59,7 @@ export const StyledDatePickerCell = styled.input`
   ::-webkit-datetime-edit-month-field,
   ::-webkit-datetime-edit-day-field,
   ::-webkit-datetime-edit-year-field {
-    padding: 0;
+    padding: 0.025em;
     margin: 0;
   }
 
