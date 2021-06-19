@@ -34,7 +34,7 @@ const TimePickerCell = (props) => {
   }, [props.val]);
 
   return (
-    <StyledTimePickerCellWrapper>
+    <StyledTimePickerCellWrapper hour={time && time.split(":")[0]}>
       <StyledTimePickerCell
         value={time || ""}
         onChange={handleChange}
