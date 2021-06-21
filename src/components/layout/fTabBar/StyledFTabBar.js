@@ -32,7 +32,7 @@ export const StyledFTabBar = styled.div`
     }
   }
 
-  @media (max-width: 768px), (orientation: landscape) {
+  @media (max-width: 768px), (max-width: 1366px) and (orientation: landscape) {
     height: 110px;
 
     .resources {
@@ -97,7 +97,7 @@ export const StyledFMenu = styled(Menu)`
     border-bottom-left-radius: 4px;
   }
 
-  @media (max-width: 1024px), (orientation: landscape) {
+  @media (max-width: 1024px) {
     max-width: 57% !important;
   }
 

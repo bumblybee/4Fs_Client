@@ -30,7 +30,7 @@ export const StyledDatePickerCell = styled.input`
   height: 35px;
   border-radius: 6px;
   border: 2px solid #ffffff66;
-  background: #ffffff55;
+  background: #ffffff11;
   font-weight: ${(props) => (props.date ? "600" : "400")};
   color: ${(props) => (props.date ? "" : "#aaaaaa")};
   text-align: ${(props) => props.alignment};
