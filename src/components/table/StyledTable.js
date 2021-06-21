@@ -190,6 +190,11 @@ export const StyledTable = styled(Table)`
       grid-template-columns: 1fr 1fr;
     }
 
+    // Keep description header spread across width
+    thead.habits.description-header tr {
+      display: block;
+    }
+
     .fasting-progress tr {
       grid-template-columns: 1fr 4fr;
     }

@@ -20,20 +20,22 @@ export const StyledDeleteCell = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    span {
+      display: none;
+    }
   }
 
-  span {
-    display: none;
-  }
-
-  @media (max-width: 620px), (orientation: landscape) {
-    span.sleep {
-      display: block;
-      font-size: 0.95rem;
-      padding-top: 0.35rem;
-      color: #db2828;
-      font-weight: 600;
-      cursor: pointer;
+  @media (max-width: 620px) {
+    div.delete-wrapper {
+      span.sleep {
+        display: block;
+        font-size: 0.95rem;
+        padding-top: 0.35rem;
+        color: #db2828;
+        font-weight: 600;
+        cursor: pointer;
+      }
     }
   }
 `;
@@ -51,7 +53,7 @@ export const StyledDeleteMenu = styled.div`
   border-radius: 6px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.09);
 
-  @media (max-width: 620px), (orientation: landscape) {
+  @media (max-width: 620px) {
     button {
       font-size: 0.825rem !important;
     }
