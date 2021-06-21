@@ -315,31 +315,40 @@ export const StyledTable = styled(Table)`
       content: "Practice";
     }
     .system td:nth-child(2):before {
-      content: "${(props) => props.columns[1].label}";
+      content: "${(props) =>
+        props.className === "system" && props.columns[1].label}";
     }
     .system td:nth-child(3):before {
-      content: "${(props) => props.columns[2].label}";
+      content: "${(props) =>
+        props.className === "system" && props.columns[2].label}";
     }
     .system td:nth-child(4):before {
-      content: "${(props) => props.columns[3].label}";
+      content: "${(props) =>
+        props.className === "system" && props.columns[3].label}";
     }
     .system td:nth-child(5):before {
-      content: "${(props) => props.columns[4].label}";
+      content: "${(props) =>
+        props.className === "system" && props.columns[4].label}";
     }
     .system td:nth-child(6):before {
-      content: "${(props) => props.columns[5].label}";
+      content: "${(props) =>
+        props.className === "system" && props.columns[5].label}";
     }
     .system td:nth-child(7):before {
-      content: "${(props) => props.columns[6].label}";
+      content: "${(props) =>
+        props.className === "system" && props.columns[6].label}";
     }
     .system td:nth-child(8):before {
-      content: "${(props) => props.columns[7].label}";
+      content: "${(props) =>
+        props.className === "system" && props.columns[7].label}";
     }
     .system td:nth-child(9):before {
-      content: "${(props) => props.columns[8].label}";
+      content: "${(props) =>
+        props.className === "system" && props.columns[8].label}";
     }
     .system td:nth-child(10):before {
-      content: "${(props) => props.columns[9].label}";
+      content: "${(props) =>
+        props.className === "system" && props.columns[9].label}";
     }
     .system td:nth-child(11):before {
       content: "";
