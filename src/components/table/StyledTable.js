@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Table } from "semantic-ui-react";
 
 export const StyledTableWrapper = styled.div`
@@ -156,16 +156,22 @@ export const StyledTable = styled(Table)`
     (min-device-width: 768px) and (max-device-width: 1024px) {
     // Don't display milestones or sleep like table
     table.milestones,
+    table.system,
     table.sleep,
     thead.milestones,
+    thead.system,
     thead.sleep,
     tbody.milestones,
+    tbody.system,
     tbody.sleep,
     th.milestones,
+    th.system,
     th.sleep,
     td.milestones,
+    td.system,
     td.sleep,
     tr.milestones,
+    tr.system,
     tr.sleep {
       display: block;
     }
@@ -221,7 +227,9 @@ export const StyledTable = styled(Table)`
 
     // Hide example row and empty row delete cell
     tbody.sleep tr:first-child,
-    tbody.sleep tr:last-child td:last-child {
+    tbody.sleep tr:last-child td:last-child,
+    tbody.system tr:first-child,
+    tbody.system tr:last-child td:last-child {
       display: none;
     }
 
@@ -245,14 +253,15 @@ export const StyledTable = styled(Table)`
     }
 
     /* Hide certain table headers (but not display: none, for accessibility) */
-    :not(.rewards):not(.habits):not(.beliefs):not(.swagger):not(.system) thead {
+    :not(.rewards):not(.habits):not(.beliefs):not(.swagger) thead {
       position: absolute;
       top: -9999px;
       left: -9999px;
     }
 
     // Show description header
-    thead.sleep:first-of-type {
+    thead.sleep:first-of-type,
+    thead.system:first-of-type {
       position: static !important;
     }
 
@@ -298,6 +307,42 @@ export const StyledTable = styled(Table)`
       padding-right: 10px;
       white-space: nowrap;
       font-weight: 600;
+    }
+
+    // Content to render before td
+
+    .system td:nth-child(1):before {
+      content: "Practice";
+    }
+    .system td:nth-child(2):before {
+      content: "${(props) => props.columns[1].label}";
+    }
+    .system td:nth-child(3):before {
+      content: "${(props) => props.columns[2].label}";
+    }
+    .system td:nth-child(4):before {
+      content: "${(props) => props.columns[3].label}";
+    }
+    .system td:nth-child(5):before {
+      content: "${(props) => props.columns[4].label}";
+    }
+    .system td:nth-child(6):before {
+      content: "${(props) => props.columns[5].label}";
+    }
+    .system td:nth-child(7):before {
+      content: "${(props) => props.columns[6].label}";
+    }
+    .system td:nth-child(8):before {
+      content: "${(props) => props.columns[7].label}";
+    }
+    .system td:nth-child(9):before {
+      content: "${(props) => props.columns[8].label}";
+    }
+    .system td:nth-child(10):before {
+      content: "${(props) => props.columns[9].label}";
+    }
+    .system td:nth-child(11):before {
+      content: "";
     }
 
     .sleep td:nth-child(1):before {

@@ -91,12 +91,13 @@ export default function TableComponent({ children, ...props }) {
         className={props.className}
         key={idx}
         collapsing={cellComponent.collapsing}
+        {...props}
       >
         {cellComponent}
       </TableComponent.TD>
     ));
   };
-
+  console.log(props.columns);
   return (
     // TODO Add to stylesheet and take in classNames
     <StyledTableWrapper
