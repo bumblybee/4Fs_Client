@@ -42,17 +42,21 @@ export const StyledEditableCell = styled.div`
   }
 
   @media (max-width: 620px), (max-width: 1024px) and (orientation: landscape) {
-    justify-content: ${(props) => props.className === "sleep" && "flex-end"};
+    justify-content: ${(props) =>
+      (props.className === "sleep" && "flex-end") ||
+      (props.className === "system-practice" && "flex-end")};
     margin-right: ${(props) => props.className === "sleep" && "0.25rem"};
-    width: ${(props) => props.className === "sleep" && "71%"};
-    text-align: ${(props) => props.className === "sleep" && "right"};
-  }
+    width: ${(props) =>
+      (props.className === "sleep" && "71%") ||
+      (props.className === "system-practice" && "71%")};
+    text-align: ${(props) =>
+      (props.className === "sleep" && "left") ||
+      (props.className === "system-practice" && "justify-all")};
+    font-weight: ${(props) => props.className === "system-practice" && 400};
 
-  @media (max-width: 620px), (max-width: 1024px) and (orientation: landscape) {
-    text-align: ${(props) => props.className === "sleep" && "left"};
-  }
-
-  input {
-    width: ${(props) => props.className === "sleep" && "100%"};
+    input {
+      width: ${(props) => props.className === "sleep" && "100%"};
+      padding: 0.65rem;
+    }
   }
 `;

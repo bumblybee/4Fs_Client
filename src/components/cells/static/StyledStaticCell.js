@@ -75,5 +75,9 @@ export const StyledStaticCell = styled.div`
       text-align: right;
       margin-right: 0.25rem;
     }
+
+    .system-performed {
+      margin-right: 1rem;
+    }
   }
 `;

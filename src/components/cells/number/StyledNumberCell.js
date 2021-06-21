@@ -20,5 +20,17 @@ export const StyledNumberCell = styled.div`
     :focus {
       -moz-appearance: auto;
     }
+
+    @media (max-width: 620px),
+      (max-width: 1024px) and (orientation: landscape) {
+      text-align: right !important;
+    }
+  }
+
+  @media (max-width: 620px), (max-width: 1024px) and (orientation: landscape) {
+    justify-content: ${(props) =>
+      props.className === "number system-goal" && "flex-end"};
+    text-align: right;
+    padding-right: 0.5rem;
   }
 `;

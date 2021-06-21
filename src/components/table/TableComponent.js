@@ -97,7 +97,7 @@ export default function TableComponent({ children, ...props }) {
       </TableComponent.TD>
     ));
   };
-  console.log(props.columns);
+  console.log(props.currWeek);
   return (
     // TODO Add to stylesheet and take in classNames
     <StyledTableWrapper

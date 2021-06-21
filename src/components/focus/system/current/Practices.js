@@ -181,6 +181,7 @@ const Practices = () => {
           aligntext: "left",
           alignment: "flex-start",
           textWeight: "600",
+          className: "system-practice",
         }),
       },
       goal: {
@@ -521,6 +522,7 @@ const Practices = () => {
         className="system"
         columns={columns}
         rows={rows(addExampleRow(), addEmptyRow())}
+        currWeek={currWeek}
         color="purple"
         aligntext="left"
         striped

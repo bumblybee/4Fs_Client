@@ -219,7 +219,8 @@ export const StyledTable = styled(Table)`
       height: ${(props) => (props.fullheighttd ? "30rem" : "auto")};
     }
 
-    td.sleep {
+    td.sleep,
+    td.system {
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -352,6 +353,19 @@ export const StyledTable = styled(Table)`
     }
     .system td:nth-child(11):before {
       content: "";
+    }
+
+    .system td:nth-child(2),
+    .system td:nth-child(3),
+    .system td:nth-child(4),
+    .system td:nth-child(5),
+    .system td:nth-child(6),
+    .system td:nth-child(7),
+    .system td:nth-child(8),
+    .system td:nth-child(9),
+    .system td:nth-child(10),
+    .system td:nth-child(11) {
+      display: ${(props) => !props.currWeek.startDate && "none"};
     }
 
     .sleep td:nth-child(1):before {
