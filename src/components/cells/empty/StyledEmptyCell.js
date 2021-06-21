@@ -33,7 +33,7 @@ export const StyledEmptyCell = styled.div`
   }
 
   @media (max-width: 620px) {
-    width: ${(props) => props.className === "system-practice" && "150px"};
+    width: ${(props) => props.className === "system-practice" && "170px"};
     justify-content: ${(props) =>
       props.className === "system-practice" && "flex-end"};
   }

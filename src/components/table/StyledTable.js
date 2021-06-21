@@ -254,7 +254,13 @@ export const StyledTable = styled(Table)`
 
     tr {
       border-bottom: ${(props) =>
-        props.className === "milestones" && `2px solid ${props.color}`};
+        (props.className === "milestones" && `2px solid ${props.color}`) ||
+        (props.className === "sleep" && `2px solid ${props.color}`)};
+    }
+
+    tr:not(:last-of-type) {
+      border-bottom: ${(props) =>
+        props.className === "system" && `2px solid ${props.color}`};
     }
 
     /* Hide certain table headers (but not display: none, for accessibility) */
@@ -315,7 +321,6 @@ export const StyledTable = styled(Table)`
     }
 
     // Content to render before td
-
     .system td:nth-child(1):before {
       content: "Practice";
     }
@@ -359,6 +364,7 @@ export const StyledTable = styled(Table)`
       content: "";
     }
 
+    // If we don't have a start date, don't show anything but practice row
     .system td:nth-child(2),
     .system td:nth-child(3),
     .system td:nth-child(4),
@@ -373,6 +379,7 @@ export const StyledTable = styled(Table)`
         props.className === "system" && !props.currWeek.startDate && "none"};
     }
 
+    // If no val at practice, only show practice, don't show goal, days, etc.
     .system tr:last-of-type td:not(:first-of-type) {
       display: ${(props) =>
         props.className === "system" &&
