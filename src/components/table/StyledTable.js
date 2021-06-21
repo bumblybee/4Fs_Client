@@ -53,6 +53,10 @@ export const StyledTable = styled(Table)`
   border-top: none !important;
   overflow-x: hidden;
 
+  /* .system td:nth-child(11) div.delete-wrapper i:active {
+    background: blue;
+  } */
+
   tbody {
     height: ${(props) => (props.fullheighttable ? "30rem" : "")};
     position: relative;
@@ -365,7 +369,16 @@ export const StyledTable = styled(Table)`
     .system td:nth-child(9),
     .system td:nth-child(10),
     .system td:nth-child(11) {
-      display: ${(props) => !props.currWeek.startDate && "none"};
+      display: ${(props) =>
+        props.className === "system" && !props.currWeek.startDate && "none"};
+    }
+
+    .system tr:last-of-type td:not(:first-of-type) {
+      display: ${(props) =>
+        props.className === "system" &&
+        props.rowdata[props.rowdata.length - 1].practice.cellComponent.props
+          .val === "" &&
+        "none"};
     }
 
     .sleep td:nth-child(1):before {

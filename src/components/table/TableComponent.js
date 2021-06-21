@@ -8,6 +8,7 @@ TableComponent.TD = function TD({ children, ...props }) {
       {...props}
       collapsing={props.collapsing}
       textAlign={props.alignment}
+      highlight={props.highlightRow}
     >
       {children}
     </Table.Cell>
@@ -79,7 +80,11 @@ export default function TableComponent({ children, ...props }) {
 
   function renderRows(mappedRows) {
     return mappedRows.map((row, idx) => (
-      <TableComponent.TR key={idx} className={props.className}>
+      <TableComponent.TR
+        key={idx}
+        className={props.className}
+        highlight={props.highlightRow}
+      >
         {renderCells(row)}
       </TableComponent.TR>
     ));
@@ -97,9 +102,8 @@ export default function TableComponent({ children, ...props }) {
       </TableComponent.TD>
     ));
   };
-  console.log(props.currWeek);
+  console.log(renderRows(rowsMappedToColumns));
   return (
-    // TODO Add to stylesheet and take in classNames
     <StyledTableWrapper
       className={props.className}
       color={props.color}

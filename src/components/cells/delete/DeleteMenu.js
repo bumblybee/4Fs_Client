@@ -2,7 +2,13 @@ import React from "react";
 import { Button } from "semantic-ui-react";
 import { StyledDeleteMenu } from "./StyledDeleteCell";
 
-const DeleteMenu = ({ toDelete, setToDelete, deleteData, className }) => {
+const DeleteMenu = ({
+  toDelete,
+  setToDelete,
+  deleteData,
+  className,
+  highlightRow,
+}) => {
   return (
     <StyledDeleteMenu className={className}>
       <Button size="mini" onClick={deleteData} color="red">
@@ -12,7 +18,10 @@ const DeleteMenu = ({ toDelete, setToDelete, deleteData, className }) => {
         size="mini"
         basic
         color="purple"
-        onClick={() => setToDelete(!toDelete)}
+        onClick={() => {
+          setToDelete(!toDelete);
+          highlightRow(null);
+        }}
       >
         Cancel
       </Button>

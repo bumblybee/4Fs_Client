@@ -25,6 +25,7 @@ const Practices = () => {
     startDate: null,
     endDate: null,
   });
+  const [highlightRow, setHighlightRow] = useState(null);
 
   const getCurrWeek = async () => {
     const week = await getCurrentWeek();
@@ -177,7 +178,7 @@ const Practices = () => {
           val: item.practice,
           accessor: "practice",
           onSave: handleSaveStoredPractice,
-          // onDelete: handleDeleteStoredPractice,
+          onDelete: handleDeleteStoredPractice,
           aligntext: "left",
           alignment: "flex-start",
           textWeight: "600",
@@ -352,7 +353,9 @@ const Practices = () => {
         cellComponent: generateCellComponent("delete", {
           id: item.id,
           onDelete: handleDeleteCurrPractice,
+          highlightRow: setHighlightRow,
           alignment: "center",
+          className: "system",
         }),
       },
     }));
@@ -523,6 +526,7 @@ const Practices = () => {
         columns={columns}
         rows={rows(addExampleRow(), addEmptyRow())}
         currWeek={currWeek}
+        highlightRow={highlightRow}
         color="purple"
         aligntext="left"
         striped

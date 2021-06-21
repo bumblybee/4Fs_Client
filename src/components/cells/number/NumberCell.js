@@ -27,7 +27,7 @@ const NumberCell = (props) => {
       );
   };
   useEffect(() => {
-    setInputVal(props.val);
+    setInputVal(props.val === 0 ? null : props.val);
   }, [props.val]);
 
   return (

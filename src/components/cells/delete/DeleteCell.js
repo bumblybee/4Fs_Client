@@ -9,6 +9,7 @@ const DeleteCell = (props) => {
   const deleteData = () => {
     props.onDelete(props.id);
     setToDelete(!toDelete);
+    props.highlightRow(null);
   };
 
   return (
@@ -19,10 +20,17 @@ const DeleteCell = (props) => {
           toDelete={toDelete}
           setToDelete={setToDelete}
           deleteData={deleteData}
+          highlightRow={props.highlightRow}
         />
       )}
 
-      <div className="delete-wrapper" onClick={() => setToDelete(!toDelete)}>
+      <div
+        className="delete-wrapper"
+        onClick={() => {
+          setToDelete(!toDelete);
+          props.highlightRow(props.id);
+        }}
+      >
         <Icon
           className={props.className}
           title="Delete"
