@@ -382,7 +382,7 @@ const Practices = () => {
         }),
       },
       goal: {
-        cellComponent: generateCellComponent("number", {
+        cellComponent: generateCellComponent("", {
           disabled: true,
           alignment: "center",
           val: "",

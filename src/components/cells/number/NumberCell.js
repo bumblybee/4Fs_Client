@@ -40,6 +40,7 @@ const NumberCell = (props) => {
         transparent
         size="small"
         value={inputVal}
+        placeholder={inputVal || 0}
         onChange={handleChange}
         onKeyDown={handleKeyPress}
         type="number"

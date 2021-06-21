@@ -45,12 +45,12 @@ export const StyledEditableCell = styled.div`
     justify-content: ${(props) =>
       (props.className === "sleep" && "flex-end") ||
       (props.className === "system-practice" && "flex-end")};
-    margin-right: ${(props) => props.className === "sleep" && "0.25rem"};
+    /* margin-right: ${(props) => props.className === "sleep" && "-0.7rem"}; */
     width: ${(props) =>
-      (props.className === "sleep" && "71%") ||
-      (props.className === "system-practice" && "71%")};
+      (props.className === "sleep" && "65%") ||
+      (props.className === "system-practice" && "70%")};
     text-align: ${(props) =>
-      (props.className === "sleep" && "left") ||
+      (props.className === "sleep" && "right") ||
       (props.className === "system-practice" && "justify-all")};
     font-weight: ${(props) => props.className === "system-practice" && 400};
 
