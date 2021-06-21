@@ -6,9 +6,11 @@ export const StyledNav = styled.div`
   background: linear-gradient(
     135deg,
     rgba(105, 165, 232, 1) -1%,
-    rgba(51, 83, 171, 1) 30%,
-    rgba(51, 118, 202, 1) 91%,
-    rgba(105, 165, 232, 1) 100%
+    rgba(51, 118, 202, 1) 0,
+    rgba(51, 83, 171, 1) 18%,
+    rgba(51, 83, 171, 1) 82%,
+    rgba(51, 118, 202, 1) 100%,
+    rgba(105, 165, 232, 1) 101%
   );
 
   display: flex;
