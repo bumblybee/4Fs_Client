@@ -26,7 +26,7 @@ export const StyledDeleteCell = styled.div`
     }
   }
 
-  @media (max-width: 620px) {
+  @media (max-width: 620px), (max-width: 1024px) and (orientation: landscape) {
     div.delete-wrapper {
       span.sleep {
         display: block;

@@ -41,14 +41,14 @@ export const StyledEditableCell = styled.div`
     padding-left: 0.25rem;
   }
 
-  @media (max-width: 620px) {
+  @media (max-width: 620px), (max-width: 1024px) and (orientation: landscape) {
     justify-content: ${(props) => props.className === "sleep" && "flex-end"};
     margin-right: ${(props) => props.className === "sleep" && "0.25rem"};
     width: ${(props) => props.className === "sleep" && "71%"};
     text-align: ${(props) => props.className === "sleep" && "right"};
   }
 
-  @media (max-width: 620px) and (orientation: landscape) {
+  @media (max-width: 620px), (max-width: 1024px) and (orientation: landscape) {
     text-align: ${(props) => props.className === "sleep" && "left"};
   }
 
