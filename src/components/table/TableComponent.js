@@ -102,7 +102,7 @@ export default function TableComponent({ children, ...props }) {
       </TableComponent.TD>
     ));
   };
-  console.log(renderRows(rowsMappedToColumns));
+
   return (
     <StyledTableWrapper
       className={props.className}

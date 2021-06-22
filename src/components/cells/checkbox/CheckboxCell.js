@@ -12,6 +12,14 @@ const CheckboxCell = (props) => {
     makeData(e);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.keyCode === 13) {
+      setIsChecked(!isChecked);
+      e.target.checked = !e.target.checked;
+      makeData(e);
+    }
+  };
+
   const makeData = (e) => {
     // Updating performed based on checked or unchecked
     props.onSave(
@@ -38,6 +46,7 @@ const CheckboxCell = (props) => {
             onChange={(e) => handleChange(e)}
             type="checkbox"
             disabled={props.disabled}
+            onKeyDown={handleKeyDown}
           />
           {isChecked ? <Icon name="check" disabled={props.disabled} /> : ""}
         </label>
