@@ -7,7 +7,7 @@ import DOMPurify from "dompurify";
 
 const EditableTableCell = ({ children, ...props }) => {
   const sanitize = DOMPurify.sanitize;
-  const { shiftCell, setShiftCell } = useContext(CellContext);
+  const { focusNextCell, setFocusNextCell } = useContext(CellContext);
   const [editing, setEditing] = useState(false);
   const [editCellVal, setEditCellVal] = useState(props.val);
 
@@ -44,7 +44,7 @@ const EditableTableCell = ({ children, ...props }) => {
       }
     }
     setEditing(false);
-    setShiftCell(false);
+    setFocusNextCell(false);
   };
 
   const renderCell = () => {
@@ -77,7 +77,7 @@ const EditableTableCell = ({ children, ...props }) => {
   useEffect(() => {
     setEditCellVal(props.val);
 
-    shiftCell && setEditing(true);
+    focusNextCell && setEditing(true);
   }, [props.val]);
 
   return (

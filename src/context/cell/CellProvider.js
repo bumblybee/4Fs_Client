@@ -2,10 +2,10 @@ import React, { useState, useContext } from "react";
 import { CellContext } from "./CellContext";
 
 const CellProvider = ({ children }) => {
-  const [shiftCell, setShiftCell] = useState(false);
+  const [focusNextCell, setFocusNextCell] = useState(false);
 
   return (
-    <CellContext.Provider value={{ shiftCell, setShiftCell }}>
+    <CellContext.Provider value={{ focusNextCell, setFocusNextCell }}>
       {children}
     </CellContext.Provider>
   );
