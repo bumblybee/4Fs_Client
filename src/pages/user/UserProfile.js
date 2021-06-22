@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { history } from "../../utils/customHistory";
 import { pushToLogin } from "../../utils/customHistory";
-import { Form, Input } from "semantic-ui-react";
+import { Form, Input, Icon } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
 import { NotificationContext } from "../../context/notification/NotificationContext";
 import {
@@ -18,7 +18,8 @@ import * as sc from "../../styles/GlobalStyledComponents";
 // TODO: format sheets url before sending to server - url.split("#")[0] - removes id so can add dynamically later
 const UserProfile = () => {
   const { setNotificationMessage } = useContext(NotificationContext);
-  const { user, updateUserDetails, logUserOut } = useContext(UserContext);
+  const { loading, user, updateUserDetails, logUserOut } =
+    useContext(UserContext);
 
   const [formChanges, setFormChanges] = useState(0);
   const [userDetails, setUserDetails] = useState({
@@ -301,7 +302,9 @@ const UserProfile = () => {
                 onChange={handleChange("gender")}
               />
             </Form.Group>
-            <sc.StyledFormButton fluid>Update</sc.StyledFormButton>
+            <sc.StyledFormButton fluid>
+              {loading ? <Icon loading name="spinner" /> : "Update"}
+            </sc.StyledFormButton>
           </sc.StyledForm>
           <StyledLinkWrapper>
             <Link to="/reset-password">Reset your password</Link>

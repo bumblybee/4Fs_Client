@@ -12,6 +12,7 @@ import { UserContext } from "./UserContext";
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const getCurrentUser = async () => {
     const userData = await getUser();
@@ -52,8 +53,13 @@ const UserProvider = ({ children }) => {
   };
 
   const updateUserDetails = async (userDetails) => {
+    setLoading(true);
     const userData = await updateUser(userDetails);
+
+    userData && setLoading(false);
+
     await getCurrentUser();
+
     return userData;
   };
 
@@ -83,6 +89,7 @@ const UserProvider = ({ children }) => {
   return (
     <UserContext.Provider
       value={{
+        loading,
         user,
         setUser,
         getCurrentUser,
