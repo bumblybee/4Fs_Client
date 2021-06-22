@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
+import { CellContext } from "../../../context/cell/CellContext";
 import { StyledEditableCell } from "./StyledEditableCell";
 import DOMPurify from "dompurify";
 
@@ -6,6 +7,7 @@ import DOMPurify from "dompurify";
 
 const EditableTableCell = ({ children, ...props }) => {
   const sanitize = DOMPurify.sanitize;
+  const { shiftCell, setShiftCell } = useContext(CellContext);
   const [editing, setEditing] = useState(false);
   const [editCellVal, setEditCellVal] = useState(props.val);
 
@@ -38,10 +40,11 @@ const EditableTableCell = ({ children, ...props }) => {
         inputRef.current = editCellVal;
 
         // Reset editCellVal to returned data
-        setEditCellVal(props.val);
+        // setEditCellVal(props.val);
       }
     }
     setEditing(false);
+    setShiftCell(false);
   };
 
   const renderCell = () => {
@@ -73,6 +76,8 @@ const EditableTableCell = ({ children, ...props }) => {
 
   useEffect(() => {
     setEditCellVal(props.val);
+
+    shiftCell && setEditing(true);
   }, [props.val]);
 
   return (

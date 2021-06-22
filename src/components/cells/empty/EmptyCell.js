@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import DOMPurify from "dompurify";
-
+import { CellContext } from "../../../context/cell/CellContext";
 import { StyledEmptyCell } from "./StyledEmptyCell";
 
 const EmptyCell = ({ children, ...props }) => {
   const sanitize = DOMPurify.sanitize;
-
+  const { setShiftCell } = useContext(CellContext);
   const [editing, setEditing] = useState(false);
   const [emptyCellVal, setEmptyCellVal] = useState("");
 
@@ -28,9 +28,10 @@ const EmptyCell = ({ children, ...props }) => {
       );
     }
 
-    inputRef.current.value = emptyCellVal;
+    inputRef.current = emptyCellVal;
     setEmptyCellVal("");
     setEditing(false);
+    props.accessor === "habitGoal" && setShiftCell(true);
   };
 
   // TODO: Break input into own component
@@ -65,6 +66,8 @@ const EmptyCell = ({ children, ...props }) => {
   useEffect(() => {
     setEmptyCellVal(emptyCellVal);
   }, [setEmptyCellVal, emptyCellVal]);
+
+  console.log(inputRef.current);
 
   return (
     <StyledEmptyCell
