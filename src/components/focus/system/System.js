@@ -13,7 +13,7 @@ const System = () => {
   return (
     <div>
       <SectionHeader
-        title="Master your System"
+        title="Master Your System"
         subtext="Purpose: To begin doing new practices that will help you with your
           health and wellbeing."
       />
