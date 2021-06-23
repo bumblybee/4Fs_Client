@@ -12,7 +12,7 @@ const Notification = () => {
       case "error":
         return "red";
       case "info":
-        return "green";
+        return "olive";
       case "warning":
         return "yellow";
       default:

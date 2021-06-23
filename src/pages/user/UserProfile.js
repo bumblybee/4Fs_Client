@@ -60,17 +60,7 @@ const UserProfile = () => {
     }
   };
 
-  const handleChange = (field) => (e, data) => {
-    if (field === "gender") {
-      setUserDetails({ ...userDetails, gender: data.value });
-    } else {
-      setUserDetails({ ...userDetails, [field]: e.target.value });
-    }
-
-    setFormChanges(formChanges + 1);
-  };
-
-  const validatePhoneNumber = (phone) => {
+  const updateOrDeletePhone = (phone) => {
     let nullCount = 0;
 
     for (const key in phone) {
@@ -93,6 +83,25 @@ const UserProfile = () => {
     }
   };
 
+  // const checkIfInfoUpdated = () => {
+  //   let updatedCount = 0;
+  //   for (const key in userDetails) {
+  //     if (userDetails[key] !== user[key]) {
+  //       updatedCount++;
+  //     }
+  //   }
+  // };
+
+  const handleChange = (field) => (e, data) => {
+    if (field === "gender") {
+      setUserDetails({ ...userDetails, gender: data.value });
+    } else {
+      setUserDetails({ ...userDetails, [field]: e.target.value });
+    }
+
+    setFormChanges(formChanges + 1);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -105,7 +114,7 @@ const UserProfile = () => {
 
       const userData = (({ phone1, phone2, phone3, ...rest }) => rest)({
         ...userDetails,
-        phone: validatePhoneNumber({
+        phone: updateOrDeletePhone({
           phone1: userDetails.phone1,
           phone2: userDetails.phone2,
           phone3: userDetails.phone3,
@@ -156,7 +165,7 @@ const UserProfile = () => {
         gender: user.gender,
         sheetsURL: user.sheetsURL,
       });
-  }, []);
+  }, [user]);
 
   return (
     <sc.StyledFormWrapper verticalAlign="middle" centered origin="profile">
