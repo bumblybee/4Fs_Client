@@ -1,10 +1,11 @@
 import axios from "axios";
 import { handleErrors, handleErrorsArray } from "../handlers/errorHandler";
 
+// !! Add env vars for test heroku server and prod heroku server urls
 const baseURL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:9000"
-    : "https://four-fs-server.herokuapp.com";
+    : "https://app-4fs.herokuapp.com";
 
 const instance = axios.create({
   baseURL,
