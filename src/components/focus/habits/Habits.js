@@ -10,12 +10,16 @@ import { Icon } from "semantic-ui-react";
 import { StyledHabitsTableContainer, StyledButton } from "./StyledHabits";
 
 const Habits = () => {
+  const baseSheetsUrl =
+    "https://docs.google.com/spreadsheets/d/1lHHdK__W5iB6fHLU_xEVdCveaIsVeKQvGrEuY9YWYtE";
   const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
-  const [url, setUrl] = useState(null);
+  const [userSheetsUrl, setUserSheetsUrl] = useState("");
   const { user } = useContext(UserContext);
 
   useEffect(() => {
-    user && user.sheetsURL && setUrl(user.sheetsURL + "#gid=1514598991");
+    user &&
+      user.sheetsURL &&
+      setUserSheetsUrl(user.sheetsURL + "#gid=1514598991");
   }, [user]);
 
   return (
@@ -26,12 +30,12 @@ const Habits = () => {
         component={
           <StyledButton
             as="a"
-            href={url ? url : "/profile"}
-            target={url && "_blank"}
+            href={userSheetsUrl ? userSheetsUrl : baseSheetsUrl}
+            target="_blank"
             rel="noopener"
           >
             <Icon name="google drive" />
-            {url ? "Program Sheet" : "Add Google Sheets Link in Profile"}
+            Habit Creator Program Sheet
           </StyledButton>
         }
       />
