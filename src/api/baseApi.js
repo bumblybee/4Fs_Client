@@ -1,6 +1,5 @@
 import axios from "axios";
 import { handleErrors, handleErrorsArray } from "../handlers/errorHandler";
-import { setServerUrl } from "../config/config";
 
 const baseURL = process.env.REACT_APP_SERVER_URL;
 
