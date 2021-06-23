@@ -1,11 +1,8 @@
 import axios from "axios";
 import { handleErrors, handleErrorsArray } from "../handlers/errorHandler";
+import { setServerUrl } from "../config/config";
 
-// !! Add env vars for test heroku server and prod heroku server urls
-const baseURL =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:9000"
-    : "https://app-4fs.herokuapp.com";
+const baseURL = process.env.REACT_APP_SERVER_URL;
 
 const instance = axios.create({
   baseURL,

@@ -23,9 +23,9 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
+    "start": "env-cmd -f .env.dev craco start",
+    "build:prod": "env-cmd -f .env.prod craco build",
+    "build": "env-cmd -f .env.prod_test craco build",
     "eject": "craco eject"
   },
   "eslintConfig": {
@@ -49,6 +49,7 @@
   "devDependencies": {
     "@craco/craco": "^6.1.1",
     "@semantic-ui-react/craco-less": "^1.2.1",
+    "env-cmd": "^10.1.0",
     "semantic-ui-less": "^2.4.1"
   }
 }
