@@ -58,12 +58,15 @@ const SystemTableHeader = ({
         {/* Dynamically render text*/}
         {currWeek.startDate ? (
           <p>
-            Input your new practice and define a goal for the amount of times
+            Input your new practice and define a goal for the number of times
             you wish to complete it per week. Check off each day you perform the
             practice.
           </p>
         ) : (
-          <p>Choose a start date to begin tracking your practices. </p>
+          <p>
+            To begin, select a date when you want to start doing your new
+            practice.
+          </p>
         )}
       </div>
       <StyledStartDateContainer>

@@ -10,6 +10,7 @@ import { getShared, mutateShared } from "../../../api/share/shareApi";
 import ShareToggle from "../../layout/share/ShareToggle";
 import TableComponent from "../../table/TableComponent";
 import SectionHeader from "../../layout/SectionHeader";
+import { StyledSectionHeaderText } from "./StyledBeliefs";
 
 const Beliefs = () => {
   const [beliefs, handleSave, handleDelete] = useCRUD(
@@ -65,8 +66,15 @@ const Beliefs = () => {
       <div>
         <SectionHeader
           title="Empowering Beliefs"
-          subtext="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam,
-          laboriosam! Lorem ipsum dolor sit amet."
+          subtext="Fill out below your personalized empowering belief using your new goal, identity, and result."
+          component={
+            <StyledSectionHeaderText>
+              <em>
+                “I (system) every day because I (name) am (new identity). My new
+                life allows me to (enables what).
+              </em>
+            </StyledSectionHeaderText>
+          }
         />
         <ShareToggle
           shared={shared[0]}

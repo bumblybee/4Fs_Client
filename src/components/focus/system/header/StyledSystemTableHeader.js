@@ -10,6 +10,7 @@ export const StyledSystemHeaderWrapper = styled.div`
 
     @media (max-width: 620px) {
       width: 90%;
+      font-size: 1.05rem;
     }
   }
 `;

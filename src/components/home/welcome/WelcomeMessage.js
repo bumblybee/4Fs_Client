@@ -19,7 +19,7 @@ const WelcomeMessage = () => {
         header={`Welcome ${user.firstName}!`}
         // list={list}
         // size="small"
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores similique laboriosam porro nobis expedita blanditiis error aliquam beatae minus perferendis, sapiente aperiam hic in iusto ex magni? Veritatis architecto, alias asperiores quis incidunt pariatur reprehenderit explicabo quas at tempore quae nesciunt obcaecati, numquam nemo neque. Velit tenetur nisi expedita dignissimos?error aliquam beatae minus perferendis, sapiente aperiam hic "
+        content="This is your personalized 4Fs of Weight Loss dashboard. Use it to help you along your weight loss journey and to support your healthy lifestyle."
       ></StyledWelcomeMessage>
     )
   );

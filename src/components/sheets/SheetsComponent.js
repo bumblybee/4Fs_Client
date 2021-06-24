@@ -31,13 +31,23 @@ const SheetsComponent = ({
     },
   ];
 
+  const renderTo = () => {
+    if (buttonText === "Bonus Resources") {
+      return "https://www.dropbox.com/sh/m79fx6qqxdos71b/AAAebujGLoaGnP3-cyjbPtg_a?dl=0";
+    } else if (userSheetsUrl) {
+      return userSheetsUrl;
+    } else {
+      return baseSheetsUrl;
+    }
+  };
+
   // TODO: When Vlad gets instructions, if have user has sheets url set url id to sheetId, else send to instructions page base url. Remove newWindow prop if not sending user to profile to add
 
   const rows = () => {
     const rowData = {
       sheetsURL: {
         cellComponent: generateCellComponent("button", {
-          to: userSheetsUrl ? userSheetsUrl : baseSheetsUrl,
+          to: renderTo(),
           val: buttonText,
           accessor: "sheetsURL",
           color: colorScheme,
