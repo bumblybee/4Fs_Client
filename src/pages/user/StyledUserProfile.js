@@ -82,3 +82,18 @@ export const StyledLinkWrapper = styled.div`
     cursor: pointer;
   }
 `;
+
+export const StyledSheetsWrapper = styled.div`
+  position: relative;
+
+  i {
+    position: absolute;
+    top: 0;
+    left: 32%;
+    color: #333;
+
+    @media (max-width: 768px) {
+      left: 38%;
+    }
+  }
+`;

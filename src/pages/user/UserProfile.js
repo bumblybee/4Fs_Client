@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { history } from "../../utils/customHistory";
 import { pushToLogin } from "../../utils/customHistory";
-import { Form, Input, Icon } from "semantic-ui-react";
+import { Form, Input, Icon, Popup } from "semantic-ui-react";
 import { UserContext } from "../../context/user/UserContext";
 import { NotificationContext } from "../../context/notification/NotificationContext";
 import {
@@ -12,6 +12,7 @@ import {
   StyledLinkWrapper,
   StyledFormContainer,
   StyledSegment,
+  StyledSheetsWrapper,
 } from "./StyledUserProfile";
 import * as sc from "../../styles/GlobalStyledComponents";
 
@@ -247,19 +248,27 @@ const UserProfile = () => {
                 />
               </StyledPhoneInputsWrapper>
             </StyledPhoneWrapper>
-            <Form.Input
-              fluid
-              id="sheets"
-              icon="google drive"
-              iconPosition="left"
-              placeholder="https://docs.google.com/spreadsheets/d/CveaIsVeKQ"
-              label="Google Sheets Link"
-              value={userDetails.sheetsURL || ""}
-              onChange={handleChange("sheetsURL")}
-              type="url"
-              pattern="https://docs\.google\.com/?.+"
-              title="Please enter a valid 4Fs Google Sheets link"
-            />
+            <StyledSheetsWrapper>
+              <Form.Input
+                fluid
+                id="sheets"
+                icon="google drive"
+                iconPosition="left"
+                placeholder="ex: https://docs.google.com/spreadsheets/d/CveaIsVeKQ"
+                label="Google Sheets Link"
+                value={userDetails.sheetsURL || ""}
+                onChange={handleChange("sheetsURL")}
+                type="url"
+                pattern="https://docs\.google\.com/?.+"
+                title="Please enter a valid 4Fs Google Sheets link"
+              />
+              <Popup
+                content="Enter the link to your copy of the program worksheet."
+                offset={[0, -2]}
+                position="top center"
+                trigger={<Icon name="question mark circle outline" />}
+              />
+            </StyledSheetsWrapper>
             <Form.Group widths="equal">
               <Form.Input
                 fluid
