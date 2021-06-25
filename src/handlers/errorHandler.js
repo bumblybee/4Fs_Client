@@ -3,6 +3,8 @@ const errorCodeToMessage = {
     "Invalid Credentials. Check credentials and try again, or create an account if you haven't already.",
   "auth.existingCredentials":
     "Looks like you already have an account. Please log in.",
+  "auth.existingEmail": "Email address already in use.",
+  "email must be unique": "Email address already in use",
   "auth.noToken":
     "Password reset link has expired. Please reset your password again from the login page.",
   "No authorization token was found": "Your session has expired.",
