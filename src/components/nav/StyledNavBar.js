@@ -27,6 +27,15 @@ export const StyledNav = styled.div`
 
   @media (max-width: 620px) {
     padding: 0.75rem;
+    background: linear-gradient(
+      135deg,
+      rgba(105, 165, 232, 1) -1%,
+      rgba(51, 118, 202, 1) 0,
+      rgba(51, 83, 171, 1) 33%,
+      rgba(51, 83, 171, 1) 70%,
+      rgba(51, 118, 202, 1) 100%,
+      rgba(105, 165, 232, 1) 101%
+    );
   }
 `;
 
