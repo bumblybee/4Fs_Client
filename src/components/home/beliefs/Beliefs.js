@@ -71,7 +71,7 @@ const Beliefs = () => {
             <StyledSectionHeaderText>
               <em>
                 “I (system) every day because I (name) am (new identity). My new
-                life allows me to (enables what).
+                life allows me to (enables what)."
               </em>
             </StyledSectionHeaderText>
           }

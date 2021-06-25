@@ -29,7 +29,7 @@ const Fasting = () => {
     <div>
       <SectionHeader
         title="Fasting Window"
-        subtext="To track your fasting progress, enter your goal fasting window and the hours you've fasted today."
+        subtext="To track your fasting progress, enter your goal fasting window and the number of hours you've fasted today."
       />
       <ShareToggle shared={shared[0]} handleSave={handleSave} field="fasting" />
       <TableComponent
