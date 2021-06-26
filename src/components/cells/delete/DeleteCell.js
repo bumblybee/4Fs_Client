@@ -9,7 +9,6 @@ const DeleteCell = (props) => {
   const deleteData = () => {
     props.onDelete(props.id);
     setToDelete(!toDelete);
-    props.highlightRow(null);
   };
 
   return (
@@ -28,7 +27,6 @@ const DeleteCell = (props) => {
         className={`delete-wrapper ${props.className}`}
         onClick={() => {
           setToDelete(!toDelete);
-          props.highlightRow(props.id);
         }}
       >
         <Icon

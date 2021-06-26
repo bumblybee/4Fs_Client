@@ -9,8 +9,10 @@ const TimePickerCell = (props) => {
 
   const handleChange = (e) => {
     setTime(e.target.value);
+  };
 
-    // If new row data, we update parent state and call api in parent when we have data for entire row
+  // If new row data, we update parent state and call api in parent when we have data for entire row
+  const makeNewRowData = (e) => {
     if (props.updateRow) {
       props.updateRow(props.accessor, e.target.value);
 
@@ -38,7 +40,7 @@ const TimePickerCell = (props) => {
       <StyledTimePickerCell
         value={time || ""}
         onChange={handleChange}
-        onBlur={makeData}
+        onBlur={props.updateRow ? makeNewRowData : makeData}
         type="time"
         time={time}
       />
