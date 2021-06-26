@@ -438,6 +438,14 @@ export const StyledTable = styled(Table)`
       display: table-row;
     }
 
+    th.sleep {
+      width: 16% !important;
+    }
+
+    th.sleep:nth-child(5) {
+      width: 30% !important;
+    }
+
     .sleep td:nth-child(1):before,
     .sleep td:nth-child(2):before,
     .sleep td:nth-child(3):before,

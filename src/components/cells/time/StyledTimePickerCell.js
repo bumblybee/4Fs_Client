@@ -15,7 +15,7 @@ export const StyledTimePickerCellWrapper = styled.div`
   @media (max-width: 1024px) and (orientation: landscape) {
     /* justify-content: flex-end; */
     /* padding: 0; */
-    width: ${(props) => (props.hour >= 10 ? "92px" : "84px")};
+    width: ${(props) => (props.hour >= 10 ? "70px" : "70px")};
   }
 `;
 

@@ -59,6 +59,6 @@ export const StyledEditableCell = styled.div`
   }
 
   @media (max-width: 1024px) and (orientation: landscape) {
-    justify-content: ${(props) => props.className === "sleep" && "flex-start"};
+    justify-content: ${(props) => props.className === "sleep" && "center"};
   }
 `;
