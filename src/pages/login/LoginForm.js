@@ -29,7 +29,7 @@ const LoginForm = () => {
       return;
     } else {
       clearNotificationMessage();
-      login.data && history.push("/home");
+      login && login.data && history.push("/home");
     }
   };
 

@@ -19,7 +19,7 @@ const useCRUD = (getter, setter, destroyer) => {
     }
 
     setState(res && res.data && res.data.length ? [...res.data] : []);
-  }, [getter]);
+  }, [getter, setNotificationMessage]);
 
   const setData = async (data, id) => {
     if (data) {
