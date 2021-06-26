@@ -22,10 +22,12 @@ export const StyledTableWrapper = styled.div`
         ? `2px solid ${props.color} !important`
         : props.className === "fasting" && `none`};
 
+    width: ${(props) => props.className === "system-progress" && "60%"};
+
     border: ${(props) => props.className === "fasting" && "none"};
   }
 
-  @media (max-width: 620px) {
+  @media (max-width: 640px) {
     width: ${(props) => `calc(${props.width} + 35%)`};
 
     // Scroll and show scrollbar sleep and system mobile
@@ -33,7 +35,9 @@ export const StyledTableWrapper = styled.div`
       (props.className === "system" && "auto") ||
       (props.className === "sleep" && "auto")};
 
-    width: ${(props) => props.className === "sleep" && "100%"};
+    width: ${(props) =>
+      (props.className === "sleep" && "100%") ||
+      (props.className === "system-progress" && "100%")};
 
     ::-webkit-scrollbar,
     ::-webkit-scrollbar-track,
@@ -42,6 +46,10 @@ export const StyledTableWrapper = styled.div`
         (props.className === "system" && "block") ||
         (props.className === "sleep" && "block")};
     }
+  }
+
+  @media (max-width: 1024px) and (orientation: landscape) {
+    width: ${(props) => props.className === "system-progress" && "60%"};
   }
 `;
 
@@ -260,7 +268,8 @@ export const StyledTable = styled(Table)`
     }
 
     /* Hide certain table headers (but not display: none, for accessibility) */
-    :not(.rewards):not(.habits):not(.beliefs):not(.swagger) thead {
+    :not(.rewards):not(.habits):not(.beliefs):not(.swagger):not(.system-progress)
+      thead {
       position: absolute;
       top: -9999px;
       left: -9999px;
@@ -407,7 +416,8 @@ export const StyledTable = styled(Table)`
     }
   }
 
-  @media (max-width: 1024px) and (orientation: landscape) {
+  @media (max-width: 1024px) and (orientation: landscape),
+    (min-width: 768px) and (max-width: 1024px) {
     thead.sleep:nth-of-type(2),
     thead.system:nth-of-type(2) {
       position: static !important;

@@ -76,6 +76,7 @@ const Progress = () => {
             <StyledProgressText>No previous weeks to show</StyledProgressText>
           ) : (
             <TableComponent
+              className="system-progress"
               aligntext="left"
               fontsize="0.9rem"
               compact

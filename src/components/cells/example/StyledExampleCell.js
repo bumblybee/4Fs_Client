@@ -32,7 +32,7 @@ export const StyledExampleCell = styled.div`
     width: ${(props) => props.className === "sleep sleep-comments" && "50%"};
   }
 
-  @media (max-width: 1024px) and (orientation: landscape) {
+  @media (max-width: 1366px) and (orientation: landscape) {
     text-align: ${(props) =>
       (props.className === "sleep sleep-comments" && "left") ||
       (props.className === "system-practice" && "left")};
