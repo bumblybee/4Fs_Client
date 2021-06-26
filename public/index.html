@@ -4,8 +4,17 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script>
+      var viewport = document.querySelector("meta[name=viewport]");
+      viewport.setAttribute(
+        "content",
+        viewport.content + ", height=" + window.innerHeight
+      );
+    </script>
+
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="4Fs of Weight Loss Member Portal" />
+    <meta name="description" content="4Fs of Weight Loss Portal" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
