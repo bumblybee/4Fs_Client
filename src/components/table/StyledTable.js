@@ -407,7 +407,7 @@ export const StyledTable = styled(Table)`
     }
   }
 
-  @media (max-width: 1024px), (max-width: 1366px) and (orientation: landscape) {
+  @media (max-width: 1024px) and (orientation: landscape) {
     thead.sleep:nth-of-type(2),
     thead.system:nth-of-type(2) {
       position: static !important;
