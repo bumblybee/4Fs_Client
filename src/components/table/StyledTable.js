@@ -39,13 +39,13 @@ export const StyledTableWrapper = styled.div`
       (props.className === "sleep" && "100%") ||
       (props.className === "system-progress" && "100%")}; */
 
-    ::-webkit-scrollbar,
+    /* ::-webkit-scrollbar,
     ::-webkit-scrollbar-track,
     ::-webkit-scrollbar-thumb {
       display: ${(props) =>
-        (props.className === "system" && "block") ||
-        (props.className === "sleep" && "block")};
-    }
+      (props.className === "system" && "block") ||
+      (props.className === "sleep" && "block")};
+    } */
   }
 
   @media (max-width: 1024px) and (orientation: landscape) {
@@ -416,7 +416,7 @@ export const StyledTable = styled(Table)`
     }
   }
 
-  @media (max-width: 1024px) and (orientation: landscape),
+  @media screen and (max-width: 1024px) and (orientation: landscape),
     (min-width: 768px) and (max-width: 1024px) {
     thead.sleep:nth-of-type(2),
     thead.system:nth-of-type(2) {
