@@ -11,7 +11,7 @@ export const StyledSystemHeaderWrapper = styled.div`
     @media (max-width: 620px),
       (max-width: 1024px) and (orientation: landscape) {
       width: 90%;
-      font-size: 1.05rem;
+      font-size: 1.045rem;
     }
   }
 `;
