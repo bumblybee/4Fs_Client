@@ -32,6 +32,14 @@ export const StyledSegment = styled(Segment)`
     margin-top: 3.5% !important;
     border-radius: 0 !important;
   }
+
+  @media (max-width: 1024px) and (orientation: landscape) {
+    margin-top: -2% !important;
+  }
+
+  @media (max-width: 855px) and (orientation: landscape) {
+    margin-top: 4% !important;
+  }
 `;
 
 export const StyledProfileHeader = styled.h1`
