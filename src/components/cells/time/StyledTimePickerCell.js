@@ -6,7 +6,7 @@ export const StyledTimePickerCellWrapper = styled.div`
   justify-content: center;
   padding: 0 0 0 0.25rem;
 
-  @media (max-width: 620px), (max-width: 1024px) and (orientation: landscape) {
+  @media (max-width: 620px) {
     justify-content: flex-end;
     padding: 0;
     width: ${(props) => (props.hour >= 10 ? "92px" : "84px")};

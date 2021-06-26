@@ -7,6 +7,7 @@ export const StyledDeleteCell = styled.div`
   margin-left: auto;
   position: relative;
   width: 100%;
+  background: inherit;
 
   i {
     cursor: pointer;
@@ -27,7 +28,7 @@ export const StyledDeleteCell = styled.div`
   }
 
   @media (max-width: 620px), (max-width: 1024px) and (orientation: landscape) {
-    div.delete-wrapper {
+    div.delete-wrapper:not(.sleep) {
       span {
         display: block;
         font-size: 0.95rem;

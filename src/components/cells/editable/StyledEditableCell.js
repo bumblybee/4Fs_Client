@@ -41,11 +41,10 @@ export const StyledEditableCell = styled.div`
     padding-left: 0.25rem;
   }
 
-  @media (max-width: 620px), (max-width: 1024px) and (orientation: landscape) {
+  @media (max-width: 620px) {
     justify-content: ${(props) =>
       (props.className === "sleep" && "flex-end") ||
       (props.className === "system-practice" && "flex-end")};
-    /* margin-right: ${(props) => props.className === "sleep" && "-0.7rem"}; */
     width: ${(props) =>
       (props.className === "sleep" && "65%") ||
       (props.className === "system-practice" && "70%")};
@@ -53,9 +52,21 @@ export const StyledEditableCell = styled.div`
       (props.className === "sleep" && "right") ||
       (props.className === "system-practice" && "justify-all")};
     font-weight: ${(props) => props.className === "system-practice" && 400};
-
     input {
       width: ${(props) => props.className === "sleep" && "100%"};
+      padding: 0.65rem;
+    }
+  }
+
+  @media (max-width: 1024px) and (orientation: landscape) {
+    justify-content: ${(props) =>
+      props.className === "system-practice" && "flex-end"};
+    width: ${(props) => props.className === "system-practice" && "70%"};
+    text-align: ${(props) =>
+      props.className === "system-practice" && "justify-all"};
+    font-weight: ${(props) => props.className === "system-practice" && 400};
+
+    input {
       padding: 0.65rem;
     }
   }

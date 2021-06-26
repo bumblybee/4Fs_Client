@@ -25,7 +25,7 @@ const DeleteCell = (props) => {
       )}
 
       <div
-        className="delete-wrapper"
+        className={`delete-wrapper ${props.className}`}
         onClick={() => {
           setToDelete(!toDelete);
           props.highlightRow(props.id);

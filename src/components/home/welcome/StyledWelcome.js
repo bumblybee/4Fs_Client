@@ -24,7 +24,14 @@ export const StyledWelcomeMessage = styled(Message)`
   }
 
   @media (max-width: 620px) {
-    width: 93% !important;
+    width: 92% !important;
     margin: -5% auto 5% !important;
+    font-size: 1rem !important;
+    padding: 1.75rem !important;
+
+    .header {
+      text-align: center;
+      font-size: 1.18rem !important;
+    }
   }
 `;

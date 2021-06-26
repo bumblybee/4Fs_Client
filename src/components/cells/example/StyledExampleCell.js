@@ -30,8 +30,11 @@ export const StyledExampleCell = styled.div`
     justify-content: ${(props) => props.className === "sleep" && "flex-end"};
 
     width: ${(props) => props.className === "sleep sleep-comments" && "50%"};
+  }
 
-    /* display: ${(props) => props.className === "sleep" && "none"}; */
+  @media (max-width: 1024px) and (orientation: landscape) {
+    text-align: ${(props) =>
+      props.className === "sleep sleep-comments" && "left"};
   }
 `;
 

@@ -226,6 +226,7 @@ const Practices = () => {
           id: item.id,
           onDelete: handleDeleteStoredPractice,
           alignment: "center",
+          className: "system",
         }),
       },
     }));

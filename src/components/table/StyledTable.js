@@ -410,4 +410,54 @@ export const StyledTable = styled(Table)`
       height: ${(props) => (props.fullheighttd ? "20rem" : "auto")};
     }
   }
+
+  @media (max-width: 1024px) and (orientation: landscape) {
+    thead.sleep:nth-of-type(2) {
+      position: static !important;
+    }
+
+    table.sleep {
+      display: table;
+    }
+    thead.sleep {
+      display: table-header-group;
+    }
+    tbody.sleep {
+      display: table-row-group;
+    }
+    th.sleep {
+      display: table-cell;
+    }
+    td.sleep {
+      display: table-cell;
+    }
+    tr.sleep {
+      display: table-row;
+    }
+
+    .sleep td:nth-child(1):before {
+      content: "";
+    }
+    .sleep td:nth-child(2):before {
+      content: "";
+    }
+    .sleep td:nth-child(3):before {
+      content: "";
+    }
+    .sleep td:nth-child(4):before {
+      content: "";
+    }
+    .sleep td:nth-child(5):before {
+      content: "";
+    }
+
+    // Show example row in landscape
+    tbody.sleep tr:first-child {
+      display: table-row;
+    }
+    // Show empty delete cell in landscape
+    tbody.sleep tr:last-child td:last-child {
+      display: table-cell;
+    }
+  }
 `;
