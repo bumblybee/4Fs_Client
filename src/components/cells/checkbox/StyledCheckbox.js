@@ -8,7 +8,7 @@ export const StyledCheckboxWrapper = styled.div`
   width: 100%;
   height: 100%;
 
-  @media (max-width: 620px), (max-width: 1024px) and (orientation: landscape) {
+  @media (max-width: 620px) {
     justify-content: flex-end;
   }
 `;
@@ -35,6 +35,7 @@ export const StyledCheckbox = styled.div`
     background: ${(props) => (props.disabled ? "transparent" : "#ffffff88")};
     cursor: ${(props) => (props.disabled ? "default" : "pointer")};
     padding: 0 0 0 0.5rem;
+
     @media (max-width: 620px) {
       margin-left: 0;
     }

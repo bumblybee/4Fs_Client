@@ -21,13 +21,12 @@ export const StyledNumberCell = styled.div`
       -moz-appearance: auto;
     }
 
-    @media (max-width: 620px),
-      (max-width: 1024px) and (orientation: landscape) {
+    @media (max-width: 620px) {
       text-align: right !important;
     }
   }
 
-  @media (max-width: 620px), (max-width: 1024px) and (orientation: landscape) {
+  @media (max-width: 620px) {
     justify-content: ${(props) =>
       props.className === "number system-goal" && "flex-end"};
     text-align: right;

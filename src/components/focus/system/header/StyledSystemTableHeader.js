@@ -8,7 +8,8 @@ export const StyledSystemHeaderWrapper = styled.div`
     width: 70%;
     margin: 0 auto 1rem;
 
-    @media (max-width: 620px) {
+    @media (max-width: 620px),
+      (max-width: 1024px) and (orientation: landscape) {
       width: 90%;
       font-size: 1.05rem;
     }
@@ -29,7 +30,8 @@ export const StyledStartDateContainer = styled.div`
     cursor: default;
     background: #b76ab7cc;
 
-    @media (max-width: 620px) {
+    @media (max-width: 620px),
+      (max-width: 1024px) and (orientation: landscape) {
       font-size: 0.925rem;
     }
   }

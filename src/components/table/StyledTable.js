@@ -53,10 +53,6 @@ export const StyledTable = styled(Table)`
   border-top: none !important;
   overflow-x: hidden;
 
-  /* .system td:nth-child(11) div.delete-wrapper i:active {
-    background: blue;
-  } */
-
   tbody {
     height: ${(props) => (props.fullheighttable ? "30rem" : "")};
     position: relative;
@@ -412,52 +408,87 @@ export const StyledTable = styled(Table)`
   }
 
   @media (max-width: 1024px) and (orientation: landscape) {
-    thead.sleep:nth-of-type(2) {
+    thead.sleep:nth-of-type(2),
+    thead.system:nth-of-type(2) {
       position: static !important;
     }
 
-    table.sleep {
+    table.sleep,
+    table.system {
       display: table;
     }
-    thead.sleep {
+    thead.sleep,
+    thead.system {
       display: table-header-group;
     }
-    tbody.sleep {
+    tbody.sleep,
+    tbody.system {
       display: table-row-group;
     }
-    th.sleep {
+    th.sleep,
+    th.system {
       display: table-cell;
     }
-    td.sleep {
+    td.sleep,
+    td.system {
       display: table-cell;
     }
-    tr.sleep {
+    tr.sleep,
+    tr.system {
       display: table-row;
     }
 
-    .sleep td:nth-child(1):before {
+    .sleep td:nth-child(1):before,
+    .sleep td:nth-child(2):before,
+    .sleep td:nth-child(3):before,
+    .sleep td:nth-child(4):before,
+    .sleep td:nth-child(5):before,
+    .system td:nth-child(1):before,
+    .system td:nth-child(2):before,
+    .system td:nth-child(3):before,
+    .system td:nth-child(4):before,
+    .system td:nth-child(5):before,
+    .system td:nth-child(6):before,
+    .system td:nth-child(7):before,
+    .system td:nth-child(8):before,
+    .system td:nth-child(9):before,
+    .system td:nth-child(10):before {
       content: "";
     }
-    .sleep td:nth-child(2):before {
-      content: "";
-    }
-    .sleep td:nth-child(3):before {
-      content: "";
-    }
-    .sleep td:nth-child(4):before {
-      content: "";
-    }
-    .sleep td:nth-child(5):before {
-      content: "";
+
+    // In portrait mode these are set to display none if there's no startDate so that the bottom row only shows practice cell. Want to display again in landscape mode
+    .system td:nth-child(2),
+    .system td:nth-child(3),
+    .system td:nth-child(4),
+    .system td:nth-child(5),
+    .system td:nth-child(6),
+    .system td:nth-child(7),
+    .system td:nth-child(8),
+    .system td:nth-child(9),
+    .system td:nth-child(10),
+    .system td:nth-child(11) {
+      display: table-cell;
     }
 
     // Show example row in landscape
-    tbody.sleep tr:first-child {
+    tbody.sleep tr:first-child,
+    tbody.system tr:first-child {
       display: table-row;
     }
+
     // Show empty delete cell in landscape
-    tbody.sleep tr:last-child td:last-child {
+    tbody.sleep tr:last-child td:last-child,
+    tbody.system tr:last-child td:last-child {
       display: table-cell;
+    }
+
+    // Re-show system cells in last row - hidden in mobile portrait mode
+    .system tr:last-of-type td:not(:first-of-type) {
+      display: ${(props) =>
+        props.className === "system" &&
+        props.rowdata[props.rowdata.length - 1].practice.cellComponent.props
+          .val === "" &&
+        "table-cell"};
     }
   }
 `;

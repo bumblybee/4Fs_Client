@@ -57,17 +57,4 @@ export const StyledEditableCell = styled.div`
       padding: 0.65rem;
     }
   }
-
-  @media (max-width: 1024px) and (orientation: landscape) {
-    justify-content: ${(props) =>
-      props.className === "system-practice" && "flex-end"};
-    width: ${(props) => props.className === "system-practice" && "70%"};
-    text-align: ${(props) =>
-      props.className === "system-practice" && "justify-all"};
-    font-weight: ${(props) => props.className === "system-practice" && 400};
-
-    input {
-      padding: 0.65rem;
-    }
-  }
 `;

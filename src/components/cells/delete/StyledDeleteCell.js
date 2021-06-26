@@ -27,8 +27,8 @@ export const StyledDeleteCell = styled.div`
     }
   }
 
-  @media (max-width: 620px), (max-width: 1024px) and (orientation: landscape) {
-    div.delete-wrapper:not(.sleep) {
+  @media (max-width: 620px) {
+    div.delete-wrapper {
       span {
         display: block;
         font-size: 0.95rem;
@@ -60,5 +60,10 @@ export const StyledDeleteMenu = styled.div`
     }
     top: -1.2rem;
     right: 5.75rem;
+  }
+
+  @media (max-width: 1024px) and (orientation: landscape) {
+    right: 0.5rem;
+    top: -0.25rem;
   }
 `;

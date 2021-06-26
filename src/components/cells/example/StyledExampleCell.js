@@ -34,7 +34,8 @@ export const StyledExampleCell = styled.div`
 
   @media (max-width: 1024px) and (orientation: landscape) {
     text-align: ${(props) =>
-      props.className === "sleep sleep-comments" && "left"};
+      (props.className === "sleep sleep-comments" && "left") ||
+      (props.className === "system-practice" && "left")};
   }
 `;
 
