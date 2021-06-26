@@ -65,7 +65,7 @@ export const StyledStaticCell = styled.div`
     font-weight: 600;
   }
 
-  @media (max-width: 620px), (max-width: 1024px) and (orientation: landscape) {
+  @media (max-width: 620px) {
     justify-content: ${(props) =>
       props.className === "sleep sleep-hours-slept" && "flex-end"};
     align-items: ${(props) =>

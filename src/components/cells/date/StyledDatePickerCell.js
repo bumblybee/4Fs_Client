@@ -22,6 +22,13 @@ export const StyledDatePickerCellWrapper = styled.div`
       font-weight: 400;
     }
   }
+
+  @media (max-width: 1024px) and (orientation: landscape) {
+    .sleep-date-picker {
+      /* width: min-content;
+      font-weight: 400; */
+    }
+  }
 `;
 
 export const StyledDatePickerCell = styled.input`

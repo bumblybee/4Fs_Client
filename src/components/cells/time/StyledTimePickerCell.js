@@ -11,10 +11,15 @@ export const StyledTimePickerCellWrapper = styled.div`
     padding: 0;
     width: ${(props) => (props.hour >= 10 ? "92px" : "84px")};
   }
+
+  @media (max-width: 1024px) and (orientation: landscape) {
+    /* justify-content: flex-end; */
+    /* padding: 0; */
+    width: ${(props) => (props.hour >= 10 ? "92px" : "84px")};
+  }
 `;
 
 export const StyledTimePickerCell = styled.input`
-  /* width: ${(props) => (props.time ? "auto" : "65px")}; */
   height: 35px;
   border-radius: 6px;
   border: 2px solid #ffffff66;

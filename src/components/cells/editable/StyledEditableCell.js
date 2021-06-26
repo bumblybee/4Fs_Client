@@ -57,4 +57,8 @@ export const StyledEditableCell = styled.div`
       padding: 0.65rem;
     }
   }
+
+  @media (max-width: 1024px) and (orientation: landscape) {
+    justify-content: ${(props) => props.className === "sleep" && "flex-start"};
+  }
 `;

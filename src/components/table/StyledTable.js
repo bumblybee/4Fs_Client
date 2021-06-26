@@ -471,7 +471,7 @@ export const StyledTable = styled(Table)`
     }
 
     // Show example row in landscape
-    tbody.sleep tr:first-child,
+
     tbody.system tr:first-child {
       display: table-row;
     }
