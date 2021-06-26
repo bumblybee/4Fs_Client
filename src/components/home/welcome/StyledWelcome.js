@@ -24,10 +24,10 @@ export const StyledWelcomeMessage = styled(Message)`
   }
 
   @media (max-width: 620px) {
-    width: 92% !important;
+    width: 93% !important;
     margin: -5% auto 5% !important;
     font-size: 1rem !important;
-    padding: 1.75rem !important;
+    padding: 1.5rem !important;
 
     .header {
       text-align: center;
