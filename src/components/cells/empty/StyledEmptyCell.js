@@ -36,6 +36,8 @@ export const StyledEmptyCell = styled.div`
     width: ${(props) => props.className === "system-practice" && "170px"};
     justify-content: ${(props) =>
       props.className === "system-practice" && "flex-end"};
+    margin-right: ${(props) =>
+      props.className === "system-practice" && "0.5rem"};
   }
 `;
 

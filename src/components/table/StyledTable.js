@@ -31,13 +31,13 @@ export const StyledTableWrapper = styled.div`
     width: ${(props) => `calc(${props.width} + 35%)`};
 
     // Scroll and show scrollbar sleep and system mobile
-    overflow-x: ${(props) =>
+    /* overflow-x: ${(props) =>
       (props.className === "system" && "auto") ||
       (props.className === "sleep" && "auto")};
 
     width: ${(props) =>
       (props.className === "sleep" && "100%") ||
-      (props.className === "system-progress" && "100%")};
+      (props.className === "system-progress" && "100%")}; */
 
     ::-webkit-scrollbar,
     ::-webkit-scrollbar-track,
