@@ -88,6 +88,7 @@ const Routes = () => {
       <ProtectedRoute path="/profile" exact>
         <AppWrapper component={<UserProfile />} />
       </ProtectedRoute>
+
       <Route path="/reset-password/:token" exact>
         <PasswordReset />
       </Route>
