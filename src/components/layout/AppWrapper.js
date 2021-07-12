@@ -5,6 +5,7 @@ import TabMenu from "./tabs/TabMenu";
 import SectionContainer from "./SectionContainer";
 import Contact from "./contact/Contact";
 import WelcomeMessage from "../home/welcome/WelcomeMessage";
+import CookieConsent from "./cookie/CookieConsent";
 import { StyledAppWrapper } from "./StyledAppWrapper";
 
 const AppWrapper = ({ component, tabs, landing }) => {
@@ -14,10 +15,15 @@ const AppWrapper = ({ component, tabs, landing }) => {
       <FTabBar />
 
       {tabs && <TabMenu />}
+
       {landing && <WelcomeMessage />}
 
       <SectionContainer>{component}</SectionContainer>
+
       {landing && <Contact />}
+
+      {/* Cookie consent here so not rendered at login/signup */}
+      <CookieConsent />
     </StyledAppWrapper>
   );
 };

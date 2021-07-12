@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Segment, Button } from "semantic-ui-react";
 
 export const StyledCookieContainer = styled.div`
   display: flex;
@@ -10,9 +9,11 @@ export const StyledCookieContainer = styled.div`
   bottom: 0;
   z-index: 200;
   width: 100%;
-  background: #9c9c9c;
-  padding: 0.75rem;
+  background: #838384;
+  padding: 1.95rem;
   color: #fff;
+  box-shadow: 0 -2px 8px rgba(47, 54, 64, 0.3);
+  opacity: 0.975;
 `;
 
 export const StyledCookieButtonContainer = styled.div`
@@ -24,7 +25,7 @@ export const StyledCookieButton = styled.button`
   color: #fff;
   font-weight: bolder;
   border: none;
-  padding: 0.425em 1em;
+  padding: 0.6em 1.1em;
   border-radius: 0.28571429rem;
 
   :hover {

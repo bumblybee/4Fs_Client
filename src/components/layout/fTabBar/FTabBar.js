@@ -34,7 +34,7 @@ const FTabBar = () => {
           active={activeItem === "fasting"}
           onClick={(e) => setActiveItem("fasting")}
         >
-          <Icon name="wait" />
+          <Icon name="wait" size="large" />
           Fasting
         </Menu.Item>
 
