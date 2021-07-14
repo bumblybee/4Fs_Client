@@ -17,6 +17,8 @@ export const StyledCookieContainer = styled.div`
 
   @media screen and (max-width: 620px) {
     flex-direction: column;
+    padding: 1.5em 4em;
+    text-align: left;
   }
 `;
 
@@ -25,6 +27,7 @@ export const StyledCookieButtonContainer = styled.div`
 
   @media screen and (max-width: 620px) {
     margin: 0.5rem 0 0;
+    width: 100%;
   }
 `;
 
@@ -43,5 +46,10 @@ export const StyledCookieButton = styled.button`
 
   :active {
     background: #3353ab;
+  }
+
+  @media screen and (max-width: 620px) {
+    display: block;
+    width: 100%;
   }
 `;
