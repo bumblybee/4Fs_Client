@@ -9,11 +9,11 @@ export const StyledCookieContainer = styled.div`
   bottom: 0;
   width: 100%;
   z-index: 200;
-  background: #838384;
+  background: #2d2d2d;
   padding: 1.85rem;
   color: #fff;
   box-shadow: 0 -2px 8px rgba(47, 54, 64, 0.3);
-  opacity: 0.975;
+  opacity: 0.99;
 
   @media screen and (max-width: 620px) {
     flex-direction: column;
