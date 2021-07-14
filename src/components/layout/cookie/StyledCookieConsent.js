@@ -10,7 +10,7 @@ export const StyledCookieContainer = styled.div`
   z-index: 200;
   width: 100%;
   background: #838384;
-  padding: 1.95rem;
+  padding: 1.85rem;
   color: #fff;
   box-shadow: 0 -2px 8px rgba(47, 54, 64, 0.3);
   opacity: 0.975;
