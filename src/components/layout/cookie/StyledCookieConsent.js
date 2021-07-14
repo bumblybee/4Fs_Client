@@ -7,8 +7,8 @@ export const StyledCookieContainer = styled.div`
   text-align: center;
   position: fixed;
   bottom: 0;
-  z-index: 200;
   width: 100%;
+  z-index: 200;
   background: #838384;
   padding: 1.85rem;
   color: #fff;

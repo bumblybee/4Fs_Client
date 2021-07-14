@@ -22,7 +22,7 @@ const CookieConsent = () => {
   return (
     showConsent && (
       <StyledCookieContainer inverted color="grey" basic>
-        We use cookies to to ensure the best user experience
+        We use cookies to ensure the best user experience
         <StyledCookieButtonContainer>
           <StyledCookieButton onClick={handleClick}>Okay</StyledCookieButton>
         </StyledCookieButtonContainer>
