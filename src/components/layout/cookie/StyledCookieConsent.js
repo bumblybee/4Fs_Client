@@ -14,10 +14,18 @@ export const StyledCookieContainer = styled.div`
   color: #fff;
   box-shadow: 0 -2px 8px rgba(47, 54, 64, 0.3);
   opacity: 0.975;
+
+  @media screen and (max-width: 620px) {
+    flex-direction: column;
+  }
 `;
 
 export const StyledCookieButtonContainer = styled.div`
   margin-left: 0.75rem;
+
+  @media screen and (max-width: 620px) {
+    margin: 0.5rem 0 0;
+  }
 `;
 
 export const StyledCookieButton = styled.button`
