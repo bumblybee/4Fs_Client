@@ -11,7 +11,7 @@ import { StyledHabitsTableContainer, StyledButton } from "./StyledHabits";
 
 const Habits = () => {
   const baseSheetsUrl =
-    "https://docs.google.com/spreadsheets/d/1lHHdK__W5iB6fHLU_xEVdCveaIsVeKQvGrEuY9YWYtE";
+    "https://docs.google.com/spreadsheets/d/1zksCXROONYMDs4D7lKezJBBBEhYSRqAAqw8h-PwDYvY";
   const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
   const [userSheetsUrl, setUserSheetsUrl] = useState("");
   const { user } = useContext(UserContext);
