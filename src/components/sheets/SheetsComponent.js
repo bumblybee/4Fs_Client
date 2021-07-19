@@ -22,7 +22,7 @@ const SheetsComponent = ({
   const { user } = useContext(UserContext);
   const [userSheetsUrl, setUserSheetsUrl] = useState("");
   const baseSheetsUrl =
-    "https://docs.google.com/spreadsheets/d/1lHHdK__W5iB6fHLU_xEVdCveaIsVeKQvGrEuY9YWYtE";
+    "https://docs.google.com/spreadsheets/d/1zksCXROONYMDs4D7lKezJBBBEhYSRqAAqw8h-PwDYvY/edit?usp=sharing";
 
   const columns = [
     {
