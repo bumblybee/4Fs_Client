@@ -16,11 +16,13 @@ const DropdownCell = ({ label, options, defaultState, ...props }) => {
       group["value"] = option;
       optionsArray.push(group);
     }
+
     return optionsArray;
   };
 
   const handleSelect = (e, data) => {
     setState(data.value);
+
     if (dropdownRef.current !== state) {
       props.onSave(
         {

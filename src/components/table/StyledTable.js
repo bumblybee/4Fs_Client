@@ -7,12 +7,14 @@ export const StyledTableWrapper = styled.div`
   max-width: 100%;
   min-height: 48px;
   max-height: ${(props) => props.maxHeight || ""};
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow-y: ${(props) => (props.className === "milestones" ? "" : "auto")};
+  overflow-x: ${(props) => (props.className === "milestones" ? "" : "hidden")};
   border: 1px solid #22242626;
   border-top: none;
   border-radius: 0.27rem;
   margin: ${(props) => props.margin};
+  position: relative;
+  z-index: 1;
 
   @media (max-width: 1024px) {
     border-top: ${(props) =>
