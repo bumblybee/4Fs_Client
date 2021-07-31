@@ -12,11 +12,13 @@ import { StyledHabitsTableContainer, StyledButton } from "./StyledHabits";
 const Habits = () => {
   const baseSheetsUrl =
     "https://docs.google.com/spreadsheets/d/1zksCXROONYMDs4D7lKezJBBBEhYSRqAAqw8h-PwDYvY";
+
   const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
   const [userSheetsUrl, setUserSheetsUrl] = useState("");
   const { user } = useContext(UserContext);
 
   useEffect(() => {
+    // Attach sheet id to end of sheet url
     user &&
       user.sheetsURL &&
       setUserSheetsUrl(user.sheetsURL + "#gid=1514598991");

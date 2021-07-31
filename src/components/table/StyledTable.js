@@ -31,23 +31,6 @@ export const StyledTableWrapper = styled.div`
 
   @media (max-width: 640px) {
     width: ${(props) => `calc(${props.width} + 35%)`};
-
-    // Scroll and show scrollbar sleep and system mobile
-    /* overflow-x: ${(props) =>
-      (props.className === "system" && "auto") ||
-      (props.className === "sleep" && "auto")};
-
-    width: ${(props) =>
-      (props.className === "sleep" && "100%") ||
-      (props.className === "system-progress" && "100%")}; */
-
-    /* ::-webkit-scrollbar,
-    ::-webkit-scrollbar-track,
-    ::-webkit-scrollbar-thumb {
-      display: ${(props) =>
-      (props.className === "system" && "block") ||
-      (props.className === "sleep" && "block")};
-    } */
   }
 
   @media (max-width: 1024px) and (orientation: landscape) {
@@ -140,7 +123,6 @@ export const StyledTable = styled(Table)`
     top: 0 !important;
     z-index: 2 !important;
     margin: 0 !important;
-    color: red;
   }
 
   input[type="text"] {
@@ -303,10 +285,6 @@ export const StyledTable = styled(Table)`
       top: 0 !important;
       z-index: 2 !important;
       margin: 0 !important;
-    }
-
-    thead.rewards th {
-      height: 45px !important;
     }
 
     td:not(.fasting) {

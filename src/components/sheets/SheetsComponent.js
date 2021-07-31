@@ -31,6 +31,7 @@ const SheetsComponent = ({
     },
   ];
 
+  // Handle where user navigated to. Send to instructions google sheet if no sheet url. If button is bonus resources, send to dropbox link
   const renderTo = () => {
     if (buttonText === "Bonus Resources") {
       return "https://www.dropbox.com/sh/m79fx6qqxdos71b/AAAebujGLoaGnP3-cyjbPtg_a?dl=0";
@@ -40,8 +41,6 @@ const SheetsComponent = ({
       return baseSheetsUrl;
     }
   };
-
-  // TODO: When Vlad gets instructions, if have user has sheets url set url id to sheetId, else send to instructions page base url. Remove newWindow prop if not sending user to profile to add
 
   const rows = () => {
     const rowData = {

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { Button } from "semantic-ui-react";
+
 export const StyledHabitsTableContainer = styled.div`
   display: grid;
   grid-template-columns: 0.02fr 1.4fr 0.75fr;
@@ -37,5 +38,19 @@ export const StyledButton = styled(Button)`
 
   @media (max-width: 620px) {
     margin: -1rem auto 1.75rem !important;
+  }
+`;
+
+export const StyledRewardsHeader = styled.div`
+  h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1rem;
+    font-style: italic;
   }
 `;

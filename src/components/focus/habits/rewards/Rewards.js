@@ -2,11 +2,17 @@ import React from "react";
 import generateCellComponent from "../../../../utils/generateCellComponent";
 import { rewards } from "../../../../utils/rewards";
 import TableComponent from "../../../table/TableComponent";
+import { StyledRewardsHeader } from "../StyledHabits";
 
 const Rewards = () => {
   const columns = [
     {
-      label: "Rewards to Consider",
+      label: (
+        <StyledRewardsHeader>
+          <h3>Rewards to Consider</h3>
+          <p>Scroll down to view full list</p>
+        </StyledRewardsHeader>
+      ),
       key: "reward",
     },
   ];
