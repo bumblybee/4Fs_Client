@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { NotificationContext } from "../../context/notification/NotificationContext";
+import EmailLink from "../layout/contact/EmailLink";
 import { StyledMessage } from "./StyledNotification";
 
 const Notification = () => {
@@ -26,8 +27,16 @@ const Notification = () => {
     notification !== null && (
       <StyledMessage size="large" color={setColor()}>
         <StyledMessage.Header>{title}</StyledMessage.Header>
-
         <p>{body}</p>
+        {notification.type === "error" && (
+          <div>
+            <EmailLink
+              link="mailto:4fshelp@gmail.com"
+              title="Message Support"
+              text="Need help?"
+            />
+          </div>
+        )}
       </StyledMessage>
     )
   );

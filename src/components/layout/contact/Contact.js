@@ -1,16 +1,15 @@
 import React from "react";
+import EmailLink from "./EmailLink";
 import { StyledContact } from "./StyledContact";
 
 const Contact = () => {
   return (
     <StyledContact>
-      <a
-        href="mailto:hello@4fsofweightloss.com"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Contact us
-      </a>
+      <EmailLink
+        link="mailto:hello@4fsofweightloss.com"
+        title="Send us a message"
+        text="Contact us"
+      />
     </StyledContact>
   );
 };
