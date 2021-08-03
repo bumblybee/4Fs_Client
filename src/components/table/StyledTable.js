@@ -31,6 +31,7 @@ export const StyledTableWrapper = styled.div`
 
   @media (max-width: 640px) {
     width: ${(props) => `calc(${props.width} + 35%)`};
+    width: ${(props) => props.className === "system-progress" && "100%"};
   }
 
   @media (max-width: 1024px) and (orientation: landscape) {
