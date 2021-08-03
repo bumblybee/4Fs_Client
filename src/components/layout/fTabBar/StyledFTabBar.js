@@ -32,8 +32,19 @@ export const StyledFTabBar = styled.div`
     }
   }
 
-  @media (max-width: 768px), (max-width: 1366px) and (orientation: landscape) {
-    height: 110px;
+  /* @media (max-width: 810px) {
+    height: 120px;
+    .resources {
+      top: auto;
+      bottom: -1%;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      /* font-size: 1rem; */
+  /* } */
+
+  @media (max-width: 810px), (max-width: 1366px) and (orientation: landscape) {
+    height: 115px;
 
     .resources {
       top: auto;
@@ -106,7 +117,7 @@ export const StyledFMenu = styled(Menu)`
     max-width: 65% !important;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 810px) {
     height: 75%;
     max-width: 80% !important;
   }
