@@ -69,7 +69,7 @@ export const StyledPercent = styled.span`
   top: -7%;
   font-size: 0.75rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 810px) {
     left: ${(props) => props.val >= 50 && props.val <= 60 && "40%"};
   }
 

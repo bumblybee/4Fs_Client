@@ -83,7 +83,7 @@ export const StyledForm = styled(Form)`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 810px) {
     .ui.small.input,
     button {
       width: 45% !important;

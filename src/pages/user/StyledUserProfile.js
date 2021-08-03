@@ -8,29 +8,40 @@ export const StyledFormContainer = styled.div`
   padding: 1rem;
 
   @media (max-width: 1200px) {
-    width: 94%;
+    width: 85%;
     padding: 0 1rem;
+  }
+
+  @media (max-width: 420px) {
+    width: 90%;
+    padding: 0;
+  }
+
+  @media (max-width: 360px) {
+    width: 100%;
+    padding: 0;
   }
 `;
 
 export const StyledSegment = styled(Segment)`
   width: 70% !important;
   border: 2px solid #3353ab !important;
-  margin-top: -12% !important;
+  margin: 4% auto 0 !important;
 
-  @media (max-width: 1200px) {
-    margin-top: -60% !important;
+  @media (max-width: 1024px) {
+    margin-top: 7% !important;
   }
 
-  @media (max-width: 768px) {
-    width: 80% !important;
-    margin-top: -33% !important;
+  @media (max-width: 810px) {
+    width: 82% !important;
   }
 
   @media (max-width: 620px) {
     width: 100% !important;
-    margin-top: 3.5% !important;
+    /* margin-top: 2% !important; */
     border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 
   @media (max-width: 1024px) and (orientation: landscape) {
@@ -46,8 +57,9 @@ export const StyledProfileHeader = styled.h1`
   text-align: center;
   margin-bottom: 2rem;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1024px) {
     font-size: 1.75rem;
+    margin-top: 1rem !important;
   }
 `;
 
@@ -100,8 +112,28 @@ export const StyledSheetsWrapper = styled.div`
     left: 32%;
     color: #333;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
+      left: 24%;
+    }
+
+    @media (max-width: 810px) {
+      left: 26%;
+    }
+
+    @media (max-width: 620px) {
       left: 38%;
+    }
+
+    @media (max-width: 375px) {
+      left: 39%;
+    }
+
+    @media (max-width: 360px) {
+      left: 37%;
+    }
+
+    @media (max-width: 320px) {
+      left: 43%;
     }
   }
 `;
