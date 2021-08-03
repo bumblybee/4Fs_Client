@@ -38,7 +38,6 @@ export const StyledSegment = styled(Segment)`
 
   @media (max-width: 620px) {
     width: 100% !important;
-    /* margin-top: 2% !important; */
     border-radius: 0 !important;
     border: none !important;
     box-shadow: none !important;
@@ -59,7 +58,6 @@ export const StyledProfileHeader = styled.h1`
 
   @media (max-width: 1024px) {
     font-size: 1.75rem;
-    margin-top: 1rem !important;
   }
 `;
 
