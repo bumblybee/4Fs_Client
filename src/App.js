@@ -5,17 +5,11 @@ import CellProvider from "./context/cell/CellProvider";
 import NotificationProvider from "./context/notification/NotificationProvider";
 import Notification from "./components/notification/Notification";
 import Routes from "./components/routes";
+import Maintenance from "./pages/maintenance/Maintenance";
 
 function App() {
   return (
-    <Router history={history}>
-      <NotificationProvider>
-        <CellProvider>
-          <Notification />
-          {<Routes />}
-        </CellProvider>
-      </NotificationProvider>
-    </Router>
+  <Maintenance />
   );
 }
 
