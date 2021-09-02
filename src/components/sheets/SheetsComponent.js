@@ -46,15 +46,14 @@ const SheetsComponent = ({
     const rowData = {
       sheetsURL: {
         cellComponent: generateCellComponent("button", {
-          to: renderTo(),
+          to: "#",
           val: buttonText,
           accessor: "sheetsURL",
           color: colorScheme,
           size: "huge",
           icon: <Icon name="google drive" />,
           isCentered: true,
-          // newWindow: userSheetsUrl ? true : false,
-          newWindow: true,
+          // newWindow: true,
         }),
       },
     };
