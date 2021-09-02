@@ -8,7 +8,7 @@ Helps members track their progress through various aspects of the 4Fs of Weight 
 
 **Client:** React, Context API, Styled Components, Semantic UI
 
-**Server:** Node, Express
+**[Server](https://github.com/bumblybee/4Fs_server):** Node, Express
 
 **Database:** PostgreSQL
 
