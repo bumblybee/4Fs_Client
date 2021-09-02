@@ -14,17 +14,17 @@ Helps members track their progress through various aspects of the 4Fs of Weight 
 
 ## Code Examples
 
-The majority of the application relies on this reusable table component
+The majority of the application relies on this reusable table component that accepts rows, columns, and props
 > [Table Component](https://github.com/bumblybee/4Fs_Client/blob/master/src/components/table/TableComponent.js)
 
-Utility to generate cell components
+Utility to generate cell components - pass type of cell as first argument and props object as second
 > [Generate Cell Component](https://github.com/bumblybee/4Fs_Client/blob/1aee4a9ea24baaf97153a07585aa2c36d995ae14/src/utils/generateCellComponent.js#L16-L194)
 
-Reusable hook for API calls, significantly cut development time
+Reusable hook to handle API calls - significantly cut development time
 > [useCRUD Hook](https://github.com/bumblybee/4Fs_Client/blob/master/src/hooks/useCRUD.js)
 
-Table, Generate Cell, and API Hook in use
-> [Habits Table](https://github.com/bumblybee/4Fs_Client/blob/61fc12a33e70a192af5d59c4c2b58e290bdfe1d6/src/components/focus/habits/HabitsTable.js#L13-L118)
+Table, Generate Cell, and API hook in use
+> [Milestones Component](https://github.com/bumblybee/4Fs_Client/blob/61fc12a33e70a192af5d59c4c2b58e290bdfe1d6/src/components/home/milestones/Milestones.js#L13-L112)
 
 Component checks for user auth to protect private routes
 > [Protected Route](https://github.com/bumblybee/4Fs_Client/blob/master/src/components/protectedRoute/ProtectedRoute.js)
