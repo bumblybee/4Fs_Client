@@ -17,8 +17,8 @@ Helps members track their progress through various aspects of the 4Fs of Weight 
 The majority of the application relies on this reusable table component
 > [Table Component](https://github.com/bumblybee/4Fs_Client/blob/master/src/components/table/TableComponent.js)
 
-Utility to generate cell components on the fly
-> [Generate Cell](https://github.com/bumblybee/4Fs_Client/blob/master/src/utils/generateCellComponent.js), [Example Use](https://github.com/bumblybee/4Fs_Client/blob/61fc12a33e70a192af5d59c4c2b58e290bdfe1d6/src/components/home/milestones/Milestones.js#L73-L83)
+Utility to generate cell components
+> [Generate Cell Component](https://github.com/bumblybee/4Fs_Client/blob/1aee4a9ea24baaf97153a07585aa2c36d995ae14/src/utils/generateCellComponent.js#L16-L194)
 
 Reusable hook for API calls, significantly cut development time
 > [useCRUD Hook](https://github.com/bumblybee/4Fs_Client/blob/master/src/hooks/useCRUD.js)
