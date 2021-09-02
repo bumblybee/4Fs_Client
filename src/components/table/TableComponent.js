@@ -69,29 +69,32 @@ export default function TableComponent({ children, ...props }) {
     );
   };
 
+  // Map rows to columns to ensure correct order
   const rowsMappedToColumns = rowData.map((row) => {
     const rowCells = props.columns.map((column) => {
       const { key: columnKey } = column;
 
+      // Match row object prop to column key, return cell component
       return row[columnKey].cellComponent;
     });
+
     return rowCells;
   });
 
-  function renderRows(mappedRows) {
-    return mappedRows.map((row, idx) => (
+  function renderRows(rowCells) {
+    return rowCells.map((cells, idx) => (
       <TableComponent.TR
         key={idx}
         className={props.className}
         highlight={props.highlightRow}
       >
-        {renderCells(row)}
+        {renderCells(cells)}
       </TableComponent.TR>
     ));
   }
 
-  const renderCells = (row) => {
-    return row.map((cellComponent, idx) => (
+  const renderCells = (cells) => {
+    return cells.map((cellComponent, idx) => (
       <TableComponent.TD
         className={props.className}
         key={idx}
@@ -131,6 +134,7 @@ export default function TableComponent({ children, ...props }) {
           <TableComponent.TR>{renderColumns(props.columns)}</TableComponent.TR>
         </Table.Header>
         <Table.Body className={props.className}>
+          {/* Map rows to columns before rendering */}
           {renderRows(rowsMappedToColumns)}
         </Table.Body>
 
