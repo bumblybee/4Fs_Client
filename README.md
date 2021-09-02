@@ -6,7 +6,7 @@ Helps members track their progress through various aspects of the 4Fs of Weight 
 
 ## Tech Stack
 
-**Client:** React, Context API, Styled Components, Semantic UI
+**Client:** React, Context API, Styled Components, Semantic UI, Sentry
 
 **[Server](https://github.com/bumblybee/4Fs_server):** Node, Express
 
@@ -39,7 +39,11 @@ Dynamically Render Notifications
   
 ## Screenshots
 
-![AppScreenshot](https://user-images.githubusercontent.com/47286930/131764910-abe4627e-6d58-4fa3-b837-6aa6ade18531.png)
+Rough Prototype
+![SleepMock](https://user-images.githubusercontent.com/47286930/131864581-231db803-1dc5-45eb-a1a8-90c223542eb7.png)
+
+Translated Prototype
+![SleepScreenshot](https://user-images.githubusercontent.com/47286930/131861388-491d514d-dba6-48ee-a334-8aacbf025f70.png)
 
   
 ## Demo
