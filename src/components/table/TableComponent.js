@@ -8,7 +8,6 @@ TableComponent.TD = function TD({ children, ...props }) {
       {...props}
       collapsing={props.collapsing}
       textAlign={props.alignment}
-      highlight={props.highlightRow}
     >
       {children}
     </Table.Cell>
@@ -83,11 +82,7 @@ export default function TableComponent({ children, ...props }) {
 
   function renderRows(rowCells) {
     return rowCells.map((cells, idx) => (
-      <TableComponent.TR
-        key={idx}
-        className={props.className}
-        highlight={props.highlightRow}
-      >
+      <TableComponent.TR key={idx} className={props.className}>
         {renderCells(cells)}
       </TableComponent.TR>
     ));

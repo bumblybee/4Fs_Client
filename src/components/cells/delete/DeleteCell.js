@@ -19,7 +19,6 @@ const DeleteCell = (props) => {
           toDelete={toDelete}
           setToDelete={setToDelete}
           deleteData={deleteData}
-          highlightRow={props.highlightRow}
         />
       )}
 

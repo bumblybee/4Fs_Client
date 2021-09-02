@@ -155,7 +155,6 @@ const generateCellComponent = (type, props) => {
           alignment={props.alignment}
           collapsing={props.collapsing}
           className={props.className}
-          highlightRow={props.highlightRow}
         />
       );
     case "static":
