@@ -20,11 +20,12 @@ const EditableTableCell = ({ children, ...props }) => {
   };
 
   const makeData = () => {
+    // If cell has onDelete method, call onDelete if cell empty to flag as deleted
     if (props.onDelete && editCellVal === "") {
       props.onDelete(props.id);
     } else {
       if (inputRef.current !== editCellVal) {
-        // If user deleted value and we don't want flag the record deleted, send null instead of empty string to match default DB case
+        // If user cleared value and we don't want to flag the record deleted, send null instead of empty string to match default DB case
         let updateVal = editCellVal;
         if (updateVal === "") {
           updateVal = null;
@@ -32,6 +33,7 @@ const EditableTableCell = ({ children, ...props }) => {
 
         props.onSave(
           {
+            // accessor/foreignAccessor = field names
             [props.accessor]: updateVal,
             [props.foreignAccessor]: props.foreignId,
           },

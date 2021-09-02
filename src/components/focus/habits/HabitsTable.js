@@ -9,8 +9,6 @@ import useCRUD from "../../../hooks/useCRUD";
 import HabitsTableHeader from "./header/HabitsTableHeader";
 import TableComponent from "../../table/TableComponent";
 
-// TODO: Add example row
-
 const HabitsTable = () => {
   const [habits, handleSave, handleDelete] = useCRUD(
     getHabits,
@@ -33,7 +31,7 @@ const HabitsTable = () => {
         cellComponent: generateCellComponent("editable", {
           id: item.id,
           onSave: handleSave,
-          onDelete: item.reward === null && handleDelete,
+          onDelete: item.reward === null && handleDelete, // If reward, don't delete
           val: item.habitGoal,
           placeholder: "New goal...",
           accessor: "habitGoal",
@@ -45,7 +43,7 @@ const HabitsTable = () => {
         cellComponent: generateCellComponent("editable", {
           id: item.id,
           onSave: handleSave,
-          onDelete: item.habitGoal === null && handleDelete,
+          onDelete: item.habitGoal === null && handleDelete, // If goal, don't delete
           val: item.reward,
           placeholder: "New reward...",
           accessor: "reward",
@@ -58,6 +56,7 @@ const HabitsTable = () => {
     return [exampleRow, ...rowData, emptyRow];
   };
 
+  // Last row of table - onClick user can input data
   const addEmptyRow = () => {
     const emptyRow = {
       habitGoal: {
@@ -82,6 +81,7 @@ const HabitsTable = () => {
     return emptyRow;
   };
 
+  // Display example in first row
   const addExampleRow = () => {
     const exampleRow = {
       habitGoal: {
@@ -113,7 +113,6 @@ const HabitsTable = () => {
         columns={columns}
         color="#6435C9"
         aligntext="center"
-        // celled
         example
         compact
       />

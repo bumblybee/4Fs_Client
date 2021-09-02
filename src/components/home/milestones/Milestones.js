@@ -10,7 +10,6 @@ import ShareToggle from "../../layout/share/ShareToggle";
 import SectionHeader from "../../layout/SectionHeader";
 import TableComponent from "../../table/TableComponent";
 
-// TODO: Align cols
 const Milestones = () => {
   const [milestones, handleSave] = useCRUD(getMilestones, mutateMilestone);
   const [shared, handleSaveShared] = useCRUD(getShared, mutateShared);
