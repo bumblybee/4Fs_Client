@@ -42,8 +42,6 @@ const Milestones = () => {
       f: {
         cellComponent: generateCellComponent("static", {
           val: item.f,
-          alignment: "left",
-          textweight: "600",
           className: "f",
         }),
       },
@@ -60,7 +58,6 @@ const Milestones = () => {
           onSave: handleSave,
           val: item.personalize,
           accessor: "personalize",
-          alignment: "left",
           placeholder: "Personalize...",
         }),
       },
@@ -70,7 +67,6 @@ const Milestones = () => {
           onSave: handleSave,
           val: item.comments,
           accessor: "comments",
-          alignment: "left",
           placeholder: "Comments...",
         }),
       },
