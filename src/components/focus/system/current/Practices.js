@@ -94,6 +94,7 @@ const Practices = () => {
     getCurrWeek();
   }, []);
 
+  // Render day col headers based on start date
   const renderDayOfWeek = (daysFromStart) => {
     const startDay = currWeek && currWeek.startDate;
 
@@ -171,6 +172,7 @@ const Practices = () => {
   ];
 
   const rows = (exampleRow, emptyRow) => {
+    // If no start date, allow access to stored practices only
     const storedRowData = storedPractices.map((item) => ({
       practice: {
         cellComponent: generateCellComponent("editable", {
@@ -231,6 +233,7 @@ const Practices = () => {
       },
     }));
 
+    // If start date, allow access to all fields
     const currentRowData = currPractices.map((item) => ({
       practice: {
         cellComponent: generateCellComponent("editable", {
